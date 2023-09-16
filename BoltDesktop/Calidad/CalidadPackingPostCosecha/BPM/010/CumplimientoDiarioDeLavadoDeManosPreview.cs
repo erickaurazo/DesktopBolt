@@ -48,7 +48,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
                 }
                 oRpt = new ReportDocument();
                 //oRpt.Load(@"C:\SOLUTION\CumplimientoDiarioDeLavadoDeManosRPT.rpt");
-                oRpt.Load(@"D:\Dev\SAS\PensionistasRefrigerios\Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosRPT.rpt");
+                oRpt.Load(@"C:\Users\LENOVO\OneDrive\Documentos\Visual Studio 2015\Projects\BoltDesktop\BoltDesktop\Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosRPT.rpt");
                 dta = dsReporte.SAS_ListadoLavadoDeManoBySemanaPeriodoRPT;
                 oRpt.SetDataSource(dta);
                 crystalReportViewer1.ReportSource = oRpt;
