@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="ComparativoHorasVisualSATNISIRA.Properties.Settings.NSFAJAConnectionString" connectionString="Data Source=192.168.1.92;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=sa;Password=sagsa2019" providerName="System.Data.SqlClient" />
+        <add name="ComparativoHorasVisualSATNISIRA.Properties.Settings.SATURNOConnectionString" connectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo;Password=.1975Casa" providerName="System.Data.SqlClient" />
+    </connectionStrings>
+
+
+  <appSettings>
+    <!--Agricola2017 | Local-->
+    <add key="BDO" value="Data Source=192.168.1.7;Initial Catalog=BDO;Persist Security Info=True;User ID=sa; Password =usersql$$nisira" />
+    <add key="RutaReportes" value="" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+    <add key="Servidor" value="192.168.1.7" />
+    <add key="BaseDatos" value="BDO" />
+    <add key="bdSaturno" value="SATURNO" />
+    <add key="Usuario" value="sa" />
+    <add key="Clave" value="usersql$$nisira" />
+    <!--Agricola2017 | Publica-->
+    <add key="VSAT" value="Data Source=74.208.128.178;Initial Catalog=SATURNO; Persist Security Info=True;User ID=vsatsaturno; Password = saturno#111" />
+    <add key="SAS" value="Data Source=192.168.1.7   ;Initial Catalog=SATURNO; Persist Security Info=True;User ID=sa;          Password = usersql$$nisira" />
+    <!--<add key="SAS" value="Data Source=192.168.1.7;Initial Catalog=SATURNO_011112021;Persist Security Info=True;User ID=sa; Password = usersql$$nisira"/>-->
+    <add key="NSFAJAS" value="Data Source=192.168.1.92;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=sa; Password = sagsa2019" />
+    <add key="PRutaReportes" value="" />
+    <add key="PClientSettingsProvider.ServiceUri" value="" />
+    <add key="PServidor" value="74.208.128.178" />
+    <add key="PUsuario" value="vsatsaturno" />
+    <add key="PBaseDatos" value="SATURNO" />
+    <add key="PClave" value=" saturno#111" />
+  </appSettings>
+
+  <runtime>
+
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+
+      <dependentAssembly>
+
+        <assemblyIdentity name="CrystalDecisions.CrystalReports.Engine" publicKeyToken="692fbea5521e1304" culture="neutral" />
+
+        <bindingRedirect oldVersion="0.0.0.0-13.0.4000.0" newVersion="13.0.4000.0" />
+
+      </dependentAssembly>
+
+      <dependentAssembly>
+
+        <assemblyIdentity name="CrystalDecisions.Shared" publicKeyToken="692fbea5521e1304" culture="neutral" />
+
+        <bindingRedirect oldVersion="0.0.0.0-13.0.4000.0" newVersion="13.0.4000.0" />
+
+      </dependentAssembly>
+
+    </assemblyBinding>
+
+  </runtime>
+</configuration>

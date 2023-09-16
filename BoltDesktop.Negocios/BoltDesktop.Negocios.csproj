@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asistencia.Negocios</RootNamespace>
+    <AssemblyName>Bolt.Negocios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fire_icon_138608.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MyControlsDataBinding">
+      <HintPath>C:\Librerias\MyControlsDataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreasController.cs" />
+    <Compile Include="AsistenciaController.cs" />
+    <Compile Include="CentroDeCostosController.cs" />
+    <Compile Include="CompaniesController.cs" />
+    <Compile Include="IncumplimientoBuenasPracticasHigieneController.cs" />
+    <Compile Include="MARCA_PRODUCTOSController.cs" />
+    <Compile Include="MODELOPRODUCTOSController.cs" />
+    <Compile Include="PackingListController.cs" />
+    <Compile Include="PresupuestoController.cs" />
+    <Compile Include="ProductoController.cs" />
+    <Compile Include="SAS_AccionesCorrectivasRegistroController.cs" />
+    <Compile Include="SAS_AreasAInspeccionarController.cs" />
+    <Compile Include="SAS_CalidadFrutaVariedadController.cs" />
+    <Compile Include="SAS_ColaboradorGerenciaController.cs" />
+    <Compile Include="SAS_CuentasCorreoController.cs" />
+    <Compile Include="SAS_CuentasDominioController.cs" />
+    <Compile Include="SAS_CuentasVPNController.cs" />
+    <Compile Include="SAS_DispositivoContadoresController.cs" />
+    <Compile Include="SAS_DispositivoMovimientoAlmacenController.cs" />
+    <Compile Include="SAS_DispositivoMovimientoMantenimientosController.cs" />
+    <Compile Include="SAS_DispositivoOrdenTrabajoController.cs" />
+    <Compile Include="SAS_DispositivoSoporteFuncionalController.cs" />
+    <Compile Include="SAS_DispositivoTipoMantenimientoController.cs" />
+    <Compile Include="SAS_DispositivoTipoSoporteFuncionalController.cs" />
+    <Compile Include="SAS_DispostivoColorController.cs" />
+    <Compile Include="SAS_DispostivoController.cs" />
+    <Compile Include="DeviceTypeController.cs" />
+    <Compile Include="SAS_DispositivoComponentesController.cs" />
+    <Compile Include="SAS_DispositivoCuentaUsuariosController.cs" />
+    <Compile Include="SAS_DispositivoDocumentoController.cs" />
+    <Compile Include="SAS_DispositivoHardwareController.cs" />
+    <Compile Include="SAS_DispositivoIPController.cs" />
+    <Compile Include="FormsController.cs" />
+    <Compile Include="LiquidacionVentasExteriorController.cs" />
+    <Compile Include="PaletasPendientesParaPackingListControllers.cs" />
+    <Compile Include="ParteMaquinariaController.cs" />
+    <Compile Include="PedidoControllers.cs" />
+    <Compile Include="PersonalBloqueoController.cs" />
+    <Compile Include="RegistroAbastecimientoController.cs" />
+    <Compile Include="ReporteDiferenciaTCResumenController.cs" />
+    <Compile Include="RevisionDatosContablesControllers.cs" />
+    <Compile Include="SAS_DispositivoSoftwareController.cs" />
+    <Compile Include="SAS_DispositivoTipoCuentaUsuarioController.cs" />
+    <Compile Include="SAS_DispositivoTipoDispositivoController.cs" />
+    <Compile Include="SAS_DispositivoTipoDocumentoController.cs" />
+    <Compile Include="SAS_DispositivoTipoHardwareController.cs" />
+    <Compile Include="SAS_DispositivoTipoSoftwareController.cs" />
+    <Compile Include="SAS_DispositivoUsuariosController.cs" />
+    <Compile Include="SAS_DocumentosAdjuntosAlFormularioController.cs" />
+    <Compile Include="SAS_FormatosDeInspeccionCalidadPacking.cs" />
+    <Compile Include="SAS_InfoPersonalController.cs" />
+    <Compile Include="SAS_LicenciaCorreoController.cs" />
+    <Compile Include="SAS_LineasCelularesCoporativasController.cs" />
+    <Compile Include="SAS_OperadorTelefoniaMovilController.cs" />
+    <Compile Include="SAS_OrdenProduccionLineasController.cs" />
+    <Compile Include="SAS_ParteDiariosDeDispositivosController.cs" />
+    <Compile Include="SAS_PersonalExternoController.cs" />
+    <Compile Include="SAS_PesoPromedioJabasCosechaExportablesController.cs" />
+    <Compile Include="SAS_PlanDeCosechaController.cs" />
+    <Compile Include="SAS_PlanesDeTelefoniaMovilController.cs" />
+    <Compile Include="SAS_ProgramacionDetalleMaquinariaController.cs" />
+    <Compile Include="SAS_RegistroCompraEquipoCelularController.cs" />
+    <Compile Include="SAS_RegistroDeAbastecimientoController.cs" />
+    <Compile Include="SAS_RegistroGasificadoController.cs" />
+    <Compile Include="SAS_RegistroTicketCamaraGasificadoExoneradosController.cs" />
+    <Compile Include="SAS_SegmentoRedController.cs" />
+    <Compile Include="SAS_SolicitudDeEquipamientoTecnologicoController.cs" />
+    <Compile Include="SAS_SolicitudDeRenovacionTelefoniaCelularController.cs" />
+    <Compile Include="SAS_SoporteCanalDeAtencionController.cs" />
+    <Compile Include="SAS_TipoDeSistemaController.cs" />
+    <Compile Include="SAS_TipoMaestroCalidadController.cs" />
+    <Compile Include="SAS_UsuariosBoltController.cs" />
+    <Compile Include="SedesController.cs" />
+    <Compile Include="StockProductosController.cs" />
+    <Compile Include="TermController.cs" />
+    <Compile Include="SAS_TicketReservadoController.cs" />
+    <Compile Include="TipoBloqueoParaAsistenciaController.cs" />
+    <Compile Include="RegistroTransferenciaTransportesController.cs" />
+    <Compile Include="ControlIngresoSalidaPersonalController.cs" />
+    <Compile Include="DestinoMovilidadController.cs" />
+    <Compile Include="GaritaController.cs" />
+    <Compile Include="HistorialController.cs" />
+    <Compile Include="LoginController.cs" />
+    <Compile Include="MesController.cs" />
+    <Compile Include="ModuloSistemaController.cs" />
+    <Compile Include="PersonaParaderoController.cs" />
+    <Compile Include="UsersController.cs" />
+    <Compile Include="WhereaboutsController.cs" />
+    <Compile Include="ParaderosController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoutesController.cs" />
+    <Compile Include="SemanaController.cs" />
+    <Compile Include="TipoMovilidadController.cs" />
+    <Compile Include="CarrierController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BoltDesktop.Datos\BoltDesktop.Datos.csproj">
+      <Project>{915BAA64-C7B0-4275-8D4C-B7982905DB2C}</Project>
+      <Name>BoltDesktop.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fire_icon_138608.ico" />
+    <Content Include="logo4.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

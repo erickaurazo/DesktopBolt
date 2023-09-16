@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.375, 9.125" name="NSFAJAS">
+  <DataContextMoniker Name="/NSFAJASDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2dbd8a28-dc94-4716-af84-b5c4f3425f76" isExpanded="false" absoluteBounds="0.625, 3.625, 3.5, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/LecturasTotalesTransferidas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="899fa8f6-4d93-4477-bae3-f7dc89bc14bf" absoluteBounds="0.63999999999999968, 4.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a6faa59-3a7c-453f-bb97-663602fba524" isExpanded="false" absoluteBounds="3.75, 2.375, 3.625, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_ListadoLecturasIngresoSalidaCamaraGasificado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81058dad-c436-4a41-8cdf-68b8021468dd" absoluteBounds="3.7649999999999997, 2.8350000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a55fc8ae-0fc8-446b-aa68-63ffe82ecfa8" isExpanded="false" absoluteBounds="0.625, 3, 3.125, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_ListadoLecturasAbastecimiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b67e8783-e03e-4428-8955-67b0a84c4518" absoluteBounds="0.63999999999999968, 3.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4aec87f7-54a4-403a-be32-8304b7f2838e" isExpanded="false" absoluteBounds="5.125, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/TicketReservado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5e97fd2-df68-4c98-92e6-9884d61a77a6" absoluteBounds="5.14, 4.0850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1b139db-57b1-4f40-a482-fbdbfab085b4" isExpanded="false" absoluteBounds="8, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_TicketReservados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa1a019e-b941-41ff-a77a-e2b5ee0876bb" absoluteBounds="8.015, 2.9600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54dfaa52-eee9-4150-8ff2-eb5fde96dcfc" isExpanded="false" absoluteBounds="0.625, 1.125, 2.875, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/RegistroAbastecimiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20a3a985-ec44-48c8-9776-f66223e0cb41" absoluteBounds="0.64000000000000012, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0bbe4109-de72-4535-a04c-3bbde7db74da" isExpanded="false" absoluteBounds="3.75, 1.875, 3.125, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/RegistroAbastecimientoDDetalleEliminado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbcb500b-a6b8-4bf7-986c-7c4e40d05866" absoluteBounds="3.7649999999999997, 2.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26688ccd-03b1-4712-9e49-17aff2b80823" isExpanded="false" absoluteBounds="4.125, 0.5, 3.625, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/RegistroAbastecimientoDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a58d27d-d8c7-45c8-ba50-3a625b712249" absoluteBounds="4.14, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 1.125); (4.125 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NSFAJASDataContext/RegistroAbastecimiento/RegistroAbastecimiento_RegistroAbastecimientoDetalle" />
+      <nodes>
+        <classShapeMoniker Id="54dfaa52-eee9-4150-8ff2-eb5fde96dcfc" />
+        <classShapeMoniker Id="26688ccd-03b1-4712-9e49-17aff2b80823" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="93f7ada6-533a-4ab0-aed1-29126d972bc9" isExpanded="false" absoluteBounds="8.375, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_ListadoRegistrosAcopio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff368a4d-ec7d-4be5-8931-f7eb1c219546" absoluteBounds="8.39, 5.585, 1.9700000000000002, 10.0567626953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="544ba2f9-d5b1-4190-b33e-23a6dcd11305" isExpanded="false" absoluteBounds="0.625, 1.75, 2.875, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/IngresoSalidaGasificado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="178fdbea-9119-438c-9c1f-364e470a2aca" absoluteBounds="0.64000000000000012, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc1daec8-9491-4dfb-9e27-b054d83a9db5" isExpanded="false" absoluteBounds="0.625, 2.375, 2.875, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/IngresoSalidaGasificadoEliminado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cce2c065-370a-4ee3-ade2-1e725e09df64" absoluteBounds="0.64000000000000012, 2.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b57d89a-91fc-4750-a25f-3109fa4ed03f" isExpanded="false" absoluteBounds="5.375, 5.625, 3, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_RegistroIngresoSalidaACamaraGasificado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f6b245b-1032-4f65-a5a4-66857c77a74e" absoluteBounds="5.39, 6.0850000000000009, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d814118a-56f0-4e65-a6af-8a004e486eb6" isExpanded="false" absoluteBounds="5.125, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_RegistroGasificadoAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="439c1571-6dd7-4583-a8bd-04ccc1f291ca" absoluteBounds="5.14, 4.71, 1.9700000000000002, 16.9796142578125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dacc8777-dac8-4d4b-89ad-2151b194bac9" isExpanded="false" absoluteBounds="5.875, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_RegistroGasificado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3604d895-7904-4329-8632-b029800fe17c" absoluteBounds="5.89, 7.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3aa08088-bdbd-4b55-bde1-a61f0c09ef08" isExpanded="false" absoluteBounds="9.875, 6.75, 2.25, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_OrdenProduccionLineas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="019c4daa-9510-4f16-ba67-e1608b4bb669" absoluteBounds="9.89, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6eff9e9-b022-41e6-832b-ceb36155bde5" isExpanded="false" absoluteBounds="0.625, 4.25, 3.625, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_RegistroAbastecientoALineasDeProceso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf73eed5-d8e6-4856-838f-5eb37ab4cb49" absoluteBounds="0.63999999999999968, 4.7100000000000009, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d943662-4779-4e19-aae9-97b99da7175d" isExpanded="false" absoluteBounds="9.25, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/RegistroAbastecimientoDDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10fd6be9-a89a-4e67-b421-2f3571c6c75e" absoluteBounds="9.265, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 0.7875); (9.25 : 0.7875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NSFAJASDataContext/RegistroAbastecimientoDetalle/RegistroAbastecimientoDetalle_RegistroAbastecimientoDDetalle" />
+      <nodes>
+        <classShapeMoniker Id="26688ccd-03b1-4712-9e49-17aff2b80823" />
+        <classShapeMoniker Id="3d943662-4779-4e19-aae9-97b99da7175d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d1ea5d25-adb0-4fcf-9a24-4a348095296a" isExpanded="false" absoluteBounds="9.125, 8.375, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_MotivoExoneracionGasificado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed476da0-5f85-4935-b0db-c5e410eacfba" absoluteBounds="9.14, 8.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb48b22c-83a1-4003-9bbb-6584fb7078ba" isExpanded="false" absoluteBounds="5.75, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_RegistroTicketCamaraGasificadoExonerados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0233ea32-cee1-4037-8a30-0a31883f1ac5" absoluteBounds="5.765, 8.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a4d9ea9-32d9-4647-b316-c4aab24213bf" isExpanded="false" absoluteBounds="0.875, 7.5, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/USUARIOSFAJA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40dfa554-9710-429b-9d29-53210fff0327" absoluteBounds="0.88999999999999968, 7.9600000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0733c12-288d-4ec2-8cf2-78c8900a2f1d" isExpanded="false" absoluteBounds="0.875, 8.125, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_ListadoUsuarioBolt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54682280-29d3-4287-9837-835882a1bf99" absoluteBounds="0.88999999999999968, 8.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

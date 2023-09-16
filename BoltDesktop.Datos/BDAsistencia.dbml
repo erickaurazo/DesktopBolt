@@ -1,0 +1,1026 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AGRICOLA2017" Class="BDAsistenciaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="AGRICOLA2017ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vSJ_RHListaUbigeo" Member="vSJ_RHListaUbigeo">
+    <Type Name="vSJ_RHListaUbigeo">
+      <Column Name="Id" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Departamento" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Distrito" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMPRESAS" Member="EMPRESAS">
+    <Type Name="EMPRESAS">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RAZON_SOCIAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RUC" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REPRESENTANTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DOCIDENTIDAD" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="E_MAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="RUTAREPORTES" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RUTAPRODUCTOS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RUTAEMPLEADOS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RUTADOCUMENTOS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SERVIDORBD" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDTIPOESTABLECIMIENTO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="CODESTABLECIMIENTO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DOMICILIOFISCAL" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDCONDICIONESTABLECIMIENTO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDVIA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="NUMERO" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="INTERIOR" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="IDZONA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="NOMBREZONA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REFERENCIA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDUBIGEO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DOCIDENTIDAD2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REPRESENTANTE2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDCLIEPROV" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="CON_SENATI" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="RUTABACKUP" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="USUARIOFTP" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PASSFTP" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="RUTARELOJ" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RUTAGANADO" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BDWEBSERVICE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USUARIO_SOL" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="cod_empresa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="nombre_corto" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="usa_cismovil" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="usa_tareomovil" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_LogTablas" Member="SJ_LogTablas">
+    <Type Name="SJ_LogTablas">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLOG" Type="System.String" DbType="Char(17) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TABLA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCAMPO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CAMPOCLAVE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDTABLA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EVENTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="VALORANTERIOR" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="VALORACTUAL" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAQUINA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VENTANA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHTransportistaChofer" Member="SJ_RHTransportistaChofer">
+    <Type Name="SJ_RHTransportistaChofer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdTransportista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="DNI" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TipoLicencia" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="EsCapacitado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Association Name="SJ_RHTransportista_SJ_RHTransportistaChofer" Member="SJ_RHTransportista" ThisKey="IdTransportista" OtherKey="Id" Type="SJ_RHTransportista" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_Rutaorigen" Member="SJ_Rutaorigen">
+    <Type Name="SJ_Rutaorigen">
+      <Column Name="idruta" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcionruta" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHTransportista" Member="SJ_RHTransportista">
+    <Type Name="SJ_RHTransportista">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RUC" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="NombreCorto" Type="System.String" DbType="Char(300)" CanBeNull="true" />
+      <Column Name="TipoMovilidad" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="NumeroAsientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PesoMaximo" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EsMovilidadLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EsInterLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnioFabricacion" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Modelo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="idclieprov" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Association Name="SJ_RHTransportista_SJ_RHTransportistaChofer" Member="SJ_RHTransportistaChofer" ThisKey="Id" OtherKey="IdTransportista" Type="SJ_RHTransportistaChofer" />
+      <Association Name="SJ_RHTransportista_SJ_RHTransportistaRuta" Member="SJ_RHTransportistaRuta" ThisKey="Id" OtherKey="Id" Type="SJ_RHTransportistaRuta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHTransportistaRuta" Member="SJ_RHTransportistaRutas">
+    <Type Name="SJ_RHTransportistaRuta">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdRuta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PrecioPersona" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PrecioFlete" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PrecioVuelta" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Association Name="SJ_RHTransportista_SJ_RHTransportistaRuta" Member="SJ_RHTransportista" ThisKey="Id" OtherKey="Id" Type="SJ_RHTransportista" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHDestinoMovilidad" Member="SJ_RHDestinoMovilidads">
+    <Type Name="SJ_RHDestinoMovilidad">
+      <Column Name="codigo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHMovimientoMovilidadAsistenciaTrabajador" Member="SJ_RHMovimientoMovilidadAsistenciaTrabajador">
+    <Type Name="SJ_RHMovimientoMovilidadAsistenciaTrabajador">
+      <Column Name="codigoMovimientoMovilidad" Type="System.String" DbType="Char(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="nroDocumento" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="subPlanilla" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idconsumidor" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="idParadero" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="paradero" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="tipoAsistencia" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="hora" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="idRegistroMovil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_PersonalBloqueo" Member="ASJ_PersonalBloqueo">
+    <Type Name="ASJ_PersonalBloqueo">
+      <Column Name="codigoPersonalBloqueo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigoPersonalGeneral" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoBloqueo" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="esPeriodo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="inicioBloqueo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="terminoBloqueo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_PersonalTipoBloqueo" Member="ASJ_PersonalTipoBloqueo">
+    <Type Name="ASJ_PersonalTipoBloqueo">
+      <Column Name="codigoPersonalTipoBloqueo" Type="System.String" DbType="NVarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_ParaderoByPersona" Member="SJ_ParaderoByPersona">
+    <Type Name="SJ_ParaderoByPersona">
+      <Column Name="idEmpresa" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idCodigoParaderoByPersona" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idParadero" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idcodigoGeneral" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHRuta" Member="SJ_RHRuta">
+    <Type Name="SJ_RHRuta">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RutaOrigen" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RutaDestino" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="Distancia" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="TiempoViaje" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="abreviaturaRutaOrigen" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="abreviaturaRuraDestino" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="descripcionCortaDestino" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="descripcionCortaOrigen" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="esIngreso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTROLINGRESOSALIDA_PERSONAL" Member="CONTROLINGRESOSALIDA_PERSONAL">
+    <Type Name="CONTROLINGRESOSALIDA_PERSONAL">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCONTROLINGRESO" Type="System.String" DbType="Char(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDEMISOR" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDDOCUMENTO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="SERIE" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="NUMERO" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERIODO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDRESPONSABLE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDESTADO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDREFERENCIA" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="VENTANAREF" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="generado_zktime" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="GENERO_ASISTENCIA" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VENTANA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PROCESADO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="soloctrl_ingresosalida" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="importado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="COD_SERIEB" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DCONTROLINGRESOSALIDA_PERSONAL" Member="DCONTROLINGRESOSALIDA_PERSONAL">
+    <Type Name="DCONTROLINGRESOSALIDA_PERSONAL">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCONTROLINGRESO" Type="System.String" DbType="Char(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CORRELATIVO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDPERSONAL" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="MARCACION" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idgrupo_trabajo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="soloctrl_ingresosalida" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="origen" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="esimportado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="garita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idmaquina" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="regularizacion_tareo" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CODIGO_CONTROL" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IDSUBPLANILLA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="TIPOMARCACION" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDHORARIOTRABAJO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="idactividad" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idlabor" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_ITEMS_NUEVOS" Member="ASJ_ITEMS_NUEVOS">
+    <Type Name="ASJ_ITEMS_NUEVOS">
+      <Column Name="numero" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_DCONTROLINGRESOSALIDA_PERSONAL" Member="ASJ_DCONTROLINGRESOSALIDA_PERSONAL">
+    <Type Name="ASJ_DCONTROLINGRESOSALIDA_PERSONAL">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCONTROLINGRESO" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CORRELATIVO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDPERSONAL" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="MARCACION" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idgrupo_trabajo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="soloctrl_ingresosalida" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="origen" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="esimportado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="garita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idmaquina" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="regularizacion_tareo" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CODIGO_CONTROL" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IDSUBPLANILLA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="TIPOMARCACION" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDHORARIOTRABAJO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="idactividad" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idlabor" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_RegistroTransferenciaTransportes" Member="ASJ_RegistroTransferenciaTransportes">
+    <Type Name="ASJ_RegistroTransferenciaTransportes">
+      <Column Name="idRegistroMovil" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="idRutaOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="imei" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="dniConductor" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="codigoTransferencia" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="idpuerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_proceso" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoAsistencia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCONTROLINGRESO" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="fechaTransferencia" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="usuarioTransferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_Paraderos" Member="SJ_Paraderos">
+    <Type Name="SJ_Paraderos">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdParadero" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescripcionParadero" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_Semanas" Member="SJ_Semanas">
+    <Type Name="SJ_Semanas">
+      <Column Name="año" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="semana" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJM_PersonaParadero" Member="SJM_PersonaParadero">
+    <Type Name="SJM_PersonaParadero">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCodigoPersonalGeneral" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="dniTrabajador" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="NombresTrabajador" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaTransferencia" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IdParadero" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="paradero" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="contacto" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="nroContacto" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ModuloSistema" Member="ModuloSistema">
+    <Type Name="ModuloSistema">
+      <Column Name="moduloCodigo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="abreviatura" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="ModuloSistema_FormularioSistema" Member="FormularioSistema" ThisKey="moduloCodigo" OtherKey="moduloCodigo" Type="FormularioSistema" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrivilegioFormulario" Member="PrivilegioFormulario">
+    <Type Name="PrivilegioFormulario">
+      <Column Name="usuarioCodigo" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="formularioCodigo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nuevo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="editar" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="anular" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="eliminar" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="imprimir" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="exportar" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ninguno" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="consultar" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="FormularioSistema_PrivilegioFormulario" Member="FormularioSistema" ThisKey="formularioCodigo" OtherKey="formularioCodigo" Type="FormularioSistema" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormularioSistema" Member="FormularioSistema">
+    <Type Name="FormularioSistema">
+      <Column Name="formularioCodigo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="moduloCodigo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreEnSistema" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EsModuloPrincipal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Jerarquia" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="formulario" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="barraPadre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="FormularioSistema_PrivilegioFormulario" Member="PrivilegioFormulario" ThisKey="formularioCodigo" OtherKey="formularioCodigo" Type="PrivilegioFormulario" />
+      <Association Name="ModuloSistema_FormularioSistema" Member="ModuloSistema" ThisKey="moduloCodigo" OtherKey="moduloCodigo" Type="ModuloSistema" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHTransportistaTipoDocumento" Member="SJ_RHTransportistaTipoDocumento">
+    <Type Name="SJ_RHTransportistaTipoDocumento">
+      <Column Name="TypeDocumentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="abbreviature" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHTransportistaContrato" Member="SJ_RHTransportistaContrato">
+    <Type Name="SJ_RHTransportistaContrato">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaTermino" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="TypeDocumentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_USUARIOS" Member="ASJ_USUARIOS">
+    <Type Name="ASJ_USUARIOS">
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdCodigoGeneral" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="idestado" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Local" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nivel" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="id_puerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ASJ_ActualizarAsistenciaObservada" Method="ASJ_ActualizarAsistenciaObservada">
+    <Parameter Name="idControlIngreso" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="item" Type="System.String" DbType="Char(3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ASJ_ActualizarDNIAsistenciaObservada" Method="ASJ_ActualizarDNIAsistenciaObservada">
+    <Parameter Name="idControlIngreso" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="item" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="idpersonal" Type="System.String" DbType="VarChar(9)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ASJ_ListarRegistroMarcacionPersonalEnBusesErroneos" Method="ASJ_ListarRegistroMarcacionPersonalEnBusesErroneos">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="ASJ_ListarRegistroMarcacionPersonalEnBusesErroneosResult">
+      <Column Name="DOCUMENTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDRESPONSABLE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="IDPERSONAL" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDPERSONAL1" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="NombresCompleto" Type="System.String" DbType="VarChar(156)" CanBeNull="true" />
+      <Column Name="hora" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ObtenerListadoDePersonalbloqueado" Method="ASJ_ObtenerListadoDePersonalbloqueado">
+    <ElementType Name="ASJ_ObtenerListadoDePersonalbloqueadoResult">
+      <Column Name="codigoPersonalBloqueo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoPersonalGeneral" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="codigoBloqueo" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="bloqueo" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="esPeriodo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="inicioBloqueo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="terminoBloqueo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="descripcionEstado" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ObtenerListadoDeTipoPersonalbloqueado" Method="ASJ_ObtenerListadoDeTipoPersonalbloqueado">
+    <ElementType Name="ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult">
+      <Column Name="codigoPersonalTipoBloqueo" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="descripcionEstado" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ReporteAsistenciaByPuerta" Method="ASJ_ReporteAsistenciaByPuerta">
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.String" DbType="Char(8)" />
+    <ElementType Name="ASJ_ReporteAsistenciaByPuertaResult">
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IDPERSONAL" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="INGRESO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SALIDA" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ROW#" Member="ROW_" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="tiempo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="cargo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="grupoTrabajador" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoMarcacion" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ReporteAsistenciaByPuertaByDatosCompletos" Method="ASJ_ReporteAsistenciaByPuertaByDatosCompletos">
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="ASJ_ReporteAsistenciaByPuertaByDatosCompletosResult">
+      <Column Name="idcodigoGeneral" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SEXO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="fechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaCese" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idgrupo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="grupo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idtipoTrabajador" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoTrabajador" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaInicioPlanilla" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaFinPlanilla" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idcargo" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="cargo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idtipopersonal" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="idsucursal" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ACTIVADO_EN_ESTAPLANI" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ReporteAsistenciaDiariaByPuertaIngreso" Method="ASJ_ReporteAsistenciaDiariaByPuertaIngreso">
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="IDPLANILLA" Parameter="iDPLANILLA" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="IDFUNDO" Parameter="iDFUNDO" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult">
+      <Column Name="IDCONTROLINGRESO" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="fechacreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id_puerta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IDPERSONAL" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="MARCACION1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION4" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION5" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION6" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION7" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION8" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION9" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="MARCACION10" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ReporteAsistenciaObservados" Method="ASJ_ReporteAsistenciaObservados">
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.String" DbType="Char(8)" />
+    <ElementType Name="ASJ_ReporteAsistenciaObservadosResult">
+      <Column Name="TotalDeMarcacionByDiaByBus" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MarcacionByPuerta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="selecionado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idempresa" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCONTROLINGRESO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ITEM" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CORRELATIVO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idpersonal" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoPlanilla" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="tipoMarcacion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="MARCACION" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="fechatransferencia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idusuario" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="origen" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="idorigen" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BLOQUEADO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RUC" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="razonSocial" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="esimportado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoRegistro" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ObtenerId" Method="ObtenerId">
+    <ElementType Name="ObtenerIdResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_ListadoPasajerosByMovimientoRecorrido" Method="SJ_ListadoPasajerosByMovimientoRecorrido">
+    <Parameter Name="codigoMovimientoMovilidad" Type="System.String" DbType="VarChar(16)" />
+    <ElementType Name="SJ_ListadoPasajerosByMovimientoRecorridoResult">
+      <Column Name="codigoMovimientoMovilidad" Type="System.String" DbType="Char(16) NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="nroDocumento" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="subPlanilla" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="idconsumidor" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="idParadero" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="paradero" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="numeroPasajero" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="esSelecionado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_ListaMovimientoFacturacionPorProveedor" Method="SJ_ListaMovimientoFacturacionPorProveedor">
+    <Parameter Name="idTransportista" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SJ_ListaMovimientoFacturacionPorProveedorResult">
+      <Column Name="codigo" Type="System.String" DbType="Char(16) NOT NULL" CanBeNull="false" />
+      <Column Name="idEmpresa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="idEmisor" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="idSucursal" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="periodo" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idDocumento" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="serie" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="numero" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idClieProv" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ruc" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="razonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="vVenta" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="impuesto" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="importe" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="importeMof" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="importeMex" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="idEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_ListaMovimientoPartesRecorridoPorProveedor" Method="SJ_ListaMovimientoPartesRecorridoPorProveedor">
+    <Parameter Name="idTransportista" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SJ_ListaMovimientoPartesRecorridoPorProveedorResult">
+      <Column Name="Codigo" Type="System.String" DbType="Char(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Movimiento" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IdTransportista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdDocumento" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Serie" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Numero" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NumeroManual" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RegistroRecorrido" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IdRutaOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdRutaDestino" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumeroPersonas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PromedioxPersona" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="IGV" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IdChofer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampoDestino" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodo" Method="SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodo">
+    <Parameter Name="desde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult">
+      <Column Name="fecha" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TipoMovilidad" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="categoriaMovilidad" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="empresaTransporte" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="capacidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="codigoPuerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDRUTAORIGEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoTransportista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ruta" Type="System.String" DbType="VarChar(303)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_ListarCantidadDeUnidadesDeTransporteConIngresoPorFundo" Method="SJ_ListarCantidadDeUnidadesDeTransporteConIngresoPorFundo">
+    <Parameter Name="desde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="idPuerta" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="SJ_ListarCantidadDeUnidadesDeTransporteConIngresoPorFundoResult">
+      <Column Name="nroOrden" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="fecha" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="categoriaMovilidad" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="transportista" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IDRUTAORIGEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idpuerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_ListarLogDeTablasxCodigoLogxNombreTabla" Method="SJ_ListarLogDeTablasxCodigoLogxNombreTabla">
+    <Parameter Name="idLog" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="tabla" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="SJ_ListarLogDeTablasxCodigoLogxNombreTablaResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDLOG" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="TABLA" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="IDCAMPO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CAMPOCLAVE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDTABLA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EVENTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="VALORANTERIOR" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="VALORACTUAL" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAQUINA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VENTANA" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_LogTableObtenerNumeroItem" Method="SJ_LogTableObtenerNumeroItem">
+    <Parameter Name="idLog" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="SJ_LogTableObtenerNumeroItemResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_LogTableObtenerNumeroItemxTablaxCodigo" Method="SJ_LogTableObtenerNumeroItemxTablaxCodigo">
+    <Parameter Name="codigo" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="nombreTabla" Type="System.String" DbType="Char(200)" />
+    <ElementType Name="SJ_LogTableObtenerNumeroItemxTablaxCodigoResult">
+      <Column Name="serie" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHActualizarCodigoTransferenciaMovilFromTransferenciaMovilTrasnporte" Method="SJ_RHActualizarCodigoTransferenciaMovilFromTransferenciaMovilTrasnporte">
+    <Parameter Name="codigoRegistro" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="placa" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="idRuta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idConductor" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tipoAsistencia" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="SJ_RHActualizarCodigoTransferenciaMovilFromTransferenciaMovilTrasnporteResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHDistribucionPersonalPorParadero" Method="SJ_RHDistribucionPersonalPorParadero">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="SJ_RHDistribucionPersonalPorParaderoResult">
+      <Column Name="codigoRegistro" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="numeroSemanaRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="añoFechaRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mesFechaRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreMesFechaRegistro" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idTransportista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="capacidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tarifa" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="idRutaOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desde" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idRutaDestino" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hasta" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="pasajerosTransportados" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="WADINTON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TUMAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TABLAZOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SIPAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[SIN ESPECIFICAR]" Member="SIN_ESPECIFICAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SANTEÑO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[SAN JOSE]" Member="SAN_JOSE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[SAN CARLOS]" Member="SAN_CARLOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SALTUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PUNTILLA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[PUEBLO NUEVO]" Member="PUEBLO_NUEVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PUCALA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROGRESO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POMALCA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PISCI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PATAPO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[PAMPAS TABLAZOS]" Member="PAMPAS_TABLAZOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAMPAGRANDE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PACHERRES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONSEFU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LAMBAYEQUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[LA VICTORIA]" Member="LA_VICTORIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[LA RAMADA]" Member="LA_RAMADA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[LA GRANJA]" Member="LA_GRANJA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[LA CRIA]" Member="LA_CRIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HUANABAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HUACABLANCA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FERREÑAFE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESAGUADERO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUCULI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMBO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHONGOYAPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHICLAYO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAYALTI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CARNICHE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAPOTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CANTERA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CALUPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BORO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BOCATOMA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ARBULU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ALGARROBO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHEliminarMovimientoMovilidadAsistenciaTrabajadorDetallexCodigo" Method="SJ_RHEliminarMovimientoMovilidadAsistenciaTrabajadorDetallexCodigo">
+    <Parameter Name="codigoMovimientoMovilidad" Type="System.String" DbType="Char(16)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_RHEliminarTransportista" Method="SJ_RHEliminarTransportista">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_RHListarCatalogoEmpresasTransportePersonalCampo" Method="SJ_RHListarCatalogoEmpresasTransportePersonalCampo">
+    <ElementType Name="SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RUC" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PseudoNombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IdTipoMovilidad" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="TipoMovilidad" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroAsientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PesoMaximo" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="EsMovilidadLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EsInterLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnioFabricacion" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Modelo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHListarDetalleTransportistaChofer" Method="SJ_RHListarDetalleTransportistaChofer">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SJ_RHListarDetalleTransportistaChoferResult">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TipoLicencia" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EsCapacitado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHListarDetalleTransportistaRuta" Method="SJ_RHListarDetalleTransportistaRuta">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SJ_RHListarDetalleTransportistaRutaResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdRuta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioPersona" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioFlete" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVuelta" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Ruta" Type="System.String" DbType="VarChar(53)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHListarTransportistas" Method="SJ_RHListarTransportistas">
+    <ElementType Name="SJ_RHListarTransportistasResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RUC" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PseudoNombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IdTipoMovilidad" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="TipoMovilidad" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroAsientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PesoMaximo" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="EsMovilidadLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EsInterLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnioFabricacion" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Modelo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PrecioVuelta" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHListaRutas" Method="SJ_RHListaRutas">
+    <ElementType Name="SJ_RHListaRutasResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RutaOrigen" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DepartamentoOrigen" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ProvinciaOrigen" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DistritoOrigen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RutaDestino" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DepartamentoDestino" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ProvinciaDestino" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DistritoDestino" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Distancia" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="TiempoViaje" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IdEstado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="abreviaturaRutaOrigen" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="abreviaturaRuraDestino" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="descripcionCortaDestino" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="descripcionCortaOrigen" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="esIngreso" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHListaUbigeo" Method="SJ_RHListaUbigeo">
+    <ElementType Name="SJ_RHListaUbigeoResult">
+      <Column Name="Id" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Departamento" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Distrito" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHTransportistaChoferListar" Method="SJ_RHTransportistaChoferListar">
+    <Parameter Name="nroRUC" Type="System.String" DbType="Char(12)" />
+    <ElementType Name="SJ_RHTransportistaChoferListarResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTransportista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Item" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TipoLicencia" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="EsCapacitado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RRHHObtenerDatosTrabajadorByAsistencia" Method="SJ_RRHHObtenerDatosTrabajadorByAsistencia">
+    <Parameter Name="IDCODIGOGENERAL" Parameter="iDCODIGOGENERAL" Type="System.String" DbType="Char(12)" />
+    <Parameter Name="nroDocumento" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="fechaDesde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="fechahasta" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="SJ_RRHHObtenerDatosTrabajadorByAsistenciaResult">
+      <Column Name="DniTrabajador" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CodigoPersonal" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="NombresTrabajador" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="SubPlanilla" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Condicion" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCese" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idconsumidor" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="total_horas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ASJ_LISTA_PERSONAL_ASISTENCIA" Method="sp_ASJ_LISTA_PERSONAL_ASISTENCIA">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_RHListarDetalleTransportistaContrato" Method="SJ_RHListarDetalleTransportistaContrato">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SJ_RHListarDetalleTransportistaContratoResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaTermino" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TypeDocumentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHListadoVencimientoDocumentosByUnidadTransportes" Method="SJ_RHListadoVencimientoDocumentosByUnidadTransportes">
+    <ElementType Name="SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RUC" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PseudoNombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="IdTipoMovilidad" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="TipoMovilidad" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroAsientos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PesoMaximo" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="EsMovilidadLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EsInterLocal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnioFabricacion" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Modelo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="itemContrato" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaTermino" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="diasRestantes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoUnidadMovil" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ListarRegistroMarcacionPersonalEnBuses" Method="ASJ_ListarRegistroMarcacionPersonalEnBuses">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="ASJ_ListarRegistroMarcacionPersonalEnBusesResult">
+      <Column Name="EnListaGeneral" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EnOtrasListas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnicoLista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="nombreDia" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="nombreMes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="numeroSemana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="anio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="dniConductor" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreConductor" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idClieProv" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="razonSocial" Type="System.String" DbType="Char(300) NOT NULL" CanBeNull="false" />
+      <Column Name="capacidadTransporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="efectividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dniColaborador" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="IdPlanilla" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="dscPlanilla" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="idRegTansporte" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="idPedidoServicio" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idOrdenServicio" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idrutaOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ruta" Type="System.String" DbType="VarChar(303)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MarcacionDe" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="codtipoMovilidad" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoMovilidad" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="hora" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idpuerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

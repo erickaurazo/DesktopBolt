@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 21, 22.75" name="BDAsistencia">
+  <DataContextMoniker Name="/BDAsistenciaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f658da92-2b88-49e7-92d9-ddd9375995c3" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/vSJ_RHListaUbigeo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e277a25f-a12c-499f-b498-5d7bcf7e2d21" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c147881c-ce8a-4298-90d0-8498b20d79d3" absoluteBounds="9.75, 0.75, 2, 9.2706526692708326">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/EMPRESAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb7873ba-4cc9-423b-89de-818d187631d7" absoluteBounds="9.765, 1.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a38633b-98f2-43b2-942f-0f5fac13b299" absoluteBounds="0.75, 10.75, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_LogTablas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b695405-d1b3-4000-8c4c-e3ce2108385c" absoluteBounds="0.765, 11.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6086258-76e2-45d4-8bf0-7ff6f9ec9131" absoluteBounds="3.5, 7, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportistaChofer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92b0143c-87c8-4870-8483-750591029719" absoluteBounds="3.515, 7.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="271cc2e8-86fc-4e42-9b34-bcda5396f528" absoluteBounds="9.75, 11.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_Rutaorigen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b219856-af8a-4fec-b788-4de880f465f2" absoluteBounds="9.765, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96ce6611-68d3-46a4-976a-f46a303b6ee9" absoluteBounds="0.75, 3.625, 2, 3.6939111328124992">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportista" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3b5de4f-7636-495b-b62f-a96fbc96c510" absoluteBounds="0.765, 4.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f89190e-e833-43c4-9e3c-c833c0f3c966" absoluteBounds="3.5, 4, 2, 2.347801106770834">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportistaRuta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="462ad00c-f0fa-42b4-870e-87ad20d30ea0" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12995318-58de-4a17-98d3-cb8614e955d4" absoluteBounds="12.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHDestinoMovilidad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7521436-4671-458b-ad5f-afcce22d142d" absoluteBounds="12.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05d1ea19-1fbd-4ff7-824c-f5fbe2466374" absoluteBounds="12.75, 3.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHMovimientoMovilidadAsistenciaTrabajador" />
+      <nestedChildShapes>
+        <elementListCompartment Id="563c0b8d-b52e-4097-bae8-ed0a9f87a0ea" absoluteBounds="12.765, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be7a3342-03be-4788-9ce1-25fabbfc9b6c" absoluteBounds="12.75, 8.75, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ASJ_PersonalBloqueo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89c122b7-fde5-4acd-81a9-45269ad7466f" absoluteBounds="12.765, 9.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5c2df61-2c1b-4330-8b40-5f21d78d3cf7" absoluteBounds="12.75, 12.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ASJ_PersonalTipoBloqueo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ef1689c-d28f-4bbd-a349-cfb79d18c727" absoluteBounds="12.765, 13.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d60fada1-dc1c-4f7c-a844-9b80144347af" absoluteBounds="15.75, 0.75, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_ParaderoByPersona" />
+      <nestedChildShapes>
+        <elementListCompartment Id="caaa4f57-cf35-4fd8-92bb-5041206966cf" absoluteBounds="15.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c08ef9f9-56c8-4aac-9843-d4d0c4ee2a52" absoluteBounds="15.75, 3.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHRuta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8adb55a3-fec4-42f3-98a9-3c5c42ece989" absoluteBounds="15.765, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd8bc95d-4258-4395-a209-a86763f19507" absoluteBounds="15.75, 8.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/CONTROLINGRESOSALIDA_PERSONAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c2f2134-2ef3-4329-a384-391bec871434" absoluteBounds="15.765, 9.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41b49eef-822a-4c18-8847-0f9d62ce6b13" absoluteBounds="9.75, 15.75, 2, 5.4246240234375005">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/DCONTROLINGRESOSALIDA_PERSONAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4951cb49-af29-458d-878a-5915f09987f4" absoluteBounds="9.765, 16.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="211fdc65-2ac0-416a-adf1-5d90269e20fe" absoluteBounds="12.75, 15.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ASJ_ITEMS_NUEVOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4caffcdf-bc44-4022-9d63-f8f901c9183f" absoluteBounds="12.765, 16.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60ddbbc0-56c8-4cfd-acfb-df8eac1b3a39" absoluteBounds="15.75, 14.75, 2, 5.4246240234375005">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ASJ_DCONTROLINGRESOSALIDA_PERSONAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efa2a6b6-367e-409b-9a74-989fa4857724" absoluteBounds="15.765, 15.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e062bcc-ae07-4459-8f2e-dc5ec9f9925c" absoluteBounds="18.75, 0.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ASJ_RegistroTransferenciaTransportes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2067606a-427b-4222-bc96-d6e3dea64bcf" absoluteBounds="18.765, 1.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f132a33-1736-43d8-b030-92a623322cf7" absoluteBounds="18.75, 6.75, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_Paraderos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e6b2534-829d-4adf-baf2-5358aab8ef19" absoluteBounds="18.765, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41ce287d-7802-4d2f-a1d8-aed3782a4293" absoluteBounds="18.75, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_Semanas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09a75701-3fa6-4d42-9c34-72aa6260a4f1" absoluteBounds="18.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 7.3189111328125); (1.75 : 8.4295073359375); (3.5 : 8.4295073359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportista/SJ_RHTransportista_SJ_RHTransportistaChofer" />
+      <nodes>
+        <classShapeMoniker Id="96ce6611-68d3-46a4-976a-f46a303b6ee9" />
+        <classShapeMoniker Id="f6086258-76e2-45d4-8bf0-7ff6f9ec9131" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.84375); (3.5 : 4.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportista/SJ_RHTransportista_SJ_RHTransportistaRuta" />
+      <nodes>
+        <classShapeMoniker Id="96ce6611-68d3-46a4-976a-f46a303b6ee9" />
+        <classShapeMoniker Id="2f89190e-e833-43c4-9e3c-c833c0f3c966" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8099a065-3772-4cc6-8e64-2bab55b40dc1" isExpanded="false" absoluteBounds="6.125, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJM_PersonaParadero" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3aff33f-090f-4607-9b76-40ed94e47c55" absoluteBounds="6.14, 3.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4ff580f-307a-4a8e-a332-905b69f9c0e7" absoluteBounds="4.125, 13.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ModuloSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="268ec939-431f-4e43-a363-91772967675f" absoluteBounds="4.14, 14.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e404a55-8a2c-44d0-b451-52b502d6293e" absoluteBounds="4.25, 16.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/PrivilegioFormulario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="709672d9-5bdd-4b71-a728-2924196cbd6a" absoluteBounds="4.265, 16.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a3218ae-8c8d-49ac-ab3c-9822135f3deb" absoluteBounds="2, 20, 2, 2.5401025390625">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/FormularioSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91b6cb0d-2b9c-48ff-b3f1-794d61881577" absoluteBounds="2.0150000000000006, 20.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 21.2700512695313); (5.25 : 21.2700512695313); (5.25 : 18.8574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAsistenciaDataContext/FormularioSistema/FormularioSistema_PrivilegioFormulario" />
+      <nodes>
+        <classShapeMoniker Id="2a3218ae-8c8d-49ac-ab3c-9822135f3deb" />
+        <classShapeMoniker Id="0e404a55-8a2c-44d0-b451-52b502d6293e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.125 : 14.7588525390625); (3.40625 : 14.7588525390625); (3.40625 : 20)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDAsistenciaDataContext/ModuloSistema/ModuloSistema_FormularioSistema" />
+      <nodes>
+        <classShapeMoniker Id="f4ff580f-307a-4a8e-a332-905b69f9c0e7" />
+        <classShapeMoniker Id="2a3218ae-8c8d-49ac-ab3c-9822135f3deb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a82590c5-cd67-4e86-b220-5b716dc5e200" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportistaTipoDocumento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c58876b-3db5-4f94-bd51-a57fe1c05977" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cb66703-3f67-4006-bd72-093e66103c7b" absoluteBounds="3.5, 1, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/SJ_RHTransportistaContrato" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f63f4cf-e908-47e0-8d1c-27b591476640" absoluteBounds="3.5149999999999997, 1.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c07e5f5-7882-4fc0-80d2-947b6c97c7c6" absoluteBounds="7.5, 15.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/BDAsistenciaDataContext/ASJ_USUARIOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0df262f-20ee-4873-888e-d88db26fe088" absoluteBounds="7.515, 16.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

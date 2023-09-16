@@ -1,0 +1,9 @@
+<!--##Configuracion Inicial-->
+usuario: sa
+clave: HK;9mrX%
+instanciaMotordbLocal: BLUESOFT
+instanciaMotordbPublica: BLUESOFT
+baseDatos01:GoSolution
+baseDatos02:GoSolution
+baseDatos03:GoSolution
+baseDatos04:GoSolution

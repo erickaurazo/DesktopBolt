@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDO" Class="DBBDODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=BDO;Persist Security Info=True;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="BDOConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TractorVS" Member="TractorVS">
+    <Type Name="TractorVS">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idConsumidor" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="tractorImplemento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PropioAlquilado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="linea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cultivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TractorVisualSAT" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Semana" Member="Semana">
+    <Type Name="Semana">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="anio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="semana" Member="semana1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SAS_ListadoPartesDeMaquinariaPorSemana" Method="SAS_ListadoPartesDeMaquinariaPorSemana">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="periodo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="semana" Type="System.String" DbType="VarChar(12)" />
+    <ElementType Name="SAS_ListadoPartesDeMaquinariaPorSemanaResult">
+      <Column Name="idpartemaq" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PERIODO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="idTurnoTrabajo" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="idMaquinaria" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="maquinaria" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idImplemento" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idConsumidor" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="consumidor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HORAINICIO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="HORAFINAL" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="HORAS_TRAB" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="HOROMETROINICIAL" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="HOROMETROFINAL" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="diferencia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="idActividad" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="actividad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idLabor" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="labor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IDENTIFICADOr" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trimestre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nroMes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroDeDiaEnLaSemana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nroDiaDelAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NombreDiaSemana" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="nombreMes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoCombustibleAbastecidosATractorPorSemana" Method="SAS_ListadoCombustibleAbastecidosATractorPorSemana">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="periodo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="semana" Type="System.String" DbType="VarChar(12)" />
+    <ElementType Name="SAS_ListadoCombustibleAbastecidosATractorPorSemanaResult">
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="periodo" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="idConsumidor" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="maquinaria" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idproducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="producto" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="llevadoPor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NombreDiaSemana" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ActualizarTransferenciaDeInformacion" Method="SAS_ActualizarTransferenciaDeInformacion">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_ListadoFiltroReporteVisualSAT_NISIRA" Method="SAS_ListadoFiltroReporteVisualSAT_NISIRA">
+    <ElementType Name="SAS_ListadoFiltroReporteVisualSAT_NISIRAResult">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

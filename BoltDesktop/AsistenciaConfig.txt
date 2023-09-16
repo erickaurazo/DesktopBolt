@@ -1,0 +1,7 @@
+##Configuracion Inicial
+usuario: eaurazo
+clave: HK;9mrX%
+Local: SERVER-SOLSOL
+Publica: 192.168.1.7
+baseDatos01:SATURNO | Local
+baseDatos02:SATURNO_TEST | Publica

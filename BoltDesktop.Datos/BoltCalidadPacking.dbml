@@ -1,0 +1,1722 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="BoltCalidadPackingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString6" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SAS_CALIDAD_FORMULARIO" Member="SAS_CALIDAD_FORMULARIO">
+    <Type Name="SAS_CALIDAD_FORMULARIO">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFrecuencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idTipoRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visible" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_TIPO_REGISTRO" Member="SAS_CALIDAD_TIPO_REGISTRO">
+    <Type Name="SAS_CALIDAD_TIPO_REGISTRO">
+      <Column Name="idTipoRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_ACTIVIDAD_LAVADO_MANOS" Member="SAS_CALIDAD_ACTIVIDAD_LAVADO_MANOS">
+    <Type Name="SAS_CALIDAD_ACTIVIDAD_LAVADO_MANOS">
+      <Column Name="idActividad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_AMBIENTES_LUMINARIAS_VIDRIOS_PLASTICOS" Member="SAS_CALIDAD_AMBIENTES_LUMINARIAS_VIDRIOS_PLASTICOS">
+    <Type Name="SAS_CALIDAD_AMBIENTES_LUMINARIAS_VIDRIOS_PLASTICOS">
+      <Column Name="idAmbiente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="cantLuminarias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantVidrios" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantPlasticos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_CABECERA_FORMULARIO" Member="SAS_CALIDAD_CABECERA_FORMULARIO">
+    <Type Name="SAS_CALIDAD_CABECERA_FORMULARIO">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSede" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idTurno" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoEvaluador" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoResponsable" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_CRITERIOS_MANUFACTURA" Member="SAS_CALIDAD_CRITERIOS_MANUFACTURA">
+    <Type Name="SAS_CALIDAD_CRITERIOS_MANUFACTURA">
+      <Column Name="idCriterio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_AMONESTACIONES_INCUMPLIMIENTOS" Member="SAS_CALIDAD_FORM_AMONESTACIONES_INCUMPLIMIENTOS">
+    <Type Name="SAS_CALIDAD_FORM_AMONESTACIONES_INCUMPLIMIENTOS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="codigoTrabajador" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="justificacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="numAmonestacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="recibido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_APLICACION_SO2" Member="SAS_CALIDAD_FORM_APLICACION_SO2">
+    <Type Name="SAS_CALIDAD_FORM_APLICACION_SO2">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idActividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numeroEvaluacion" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleEvaluacion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaInspeccion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_APLICACION_SO2_ACTIVIDADES" Member="SAS_CALIDAD_FORM_APLICACION_SO2_ACTIVIDADES">
+    <Type Name="SAS_CALIDAD_FORM_APLICACION_SO2_ACTIVIDADES">
+      <Column Name="idActividad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idSubProceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_APLICACION_SO2_SUBPROCESO" Member="SAS_CALIDAD_FORM_APLICACION_SO2_SUBPROCESO">
+    <Type Name="SAS_CALIDAD_FORM_APLICACION_SO2_SUBPROCESO">
+      <Column Name="idSubProceso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_CALIBRACION_BALANZAS" Member="SAS_CALIDAD_FORM_CALIBRACION_BALANZAS">
+    <Type Name="SAS_CALIDAD_FORM_CALIBRACION_BALANZAS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoBalanza" Type="System.String" DbType="Char(7) NOT NULL" CanBeNull="false" />
+      <Column Name="cumplePesoCero" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="cumplePesoQuinientos" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="noCumplePesos" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_CALIBRACION_INSTRUMENTOS" Member="SAS_CALIDAD_FORM_CALIBRACION_INSTRUMENTOS">
+    <Type Name="SAS_CALIDAD_FORM_CALIBRACION_INSTRUMENTOS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="instrumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codigoInstrumento" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="calibracion" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleInspeccion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="desviacion" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_CALIBRACION_SENSORES" Member="SAS_CALIDAD_FORM_CALIBRACION_SENSORES">
+    <Type Name="SAS_CALIDAD_FORM_CALIBRACION_SENSORES">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idTunel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cumplimiento" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_CALIBRACION_SENSORES_DETALLE" Member="SAS_CALIDAD_FORM_CALIBRACION_SENSORES_DETALLE">
+    <Type Name="SAS_CALIDAD_FORM_CALIBRACION_SENSORES_DETALLE">
+      <Column Name="idDetalleCalibracion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSensor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tempPatron" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="tempTermometria" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_CHECKLIST_MANUFACTURA" Member="SAS_CALIDAD_FORM_CHECKLIST_MANUFACTURA">
+    <Type Name="SAS_CALIDAD_FORM_CHECKLIST_MANUFACTURA">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idCriterio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cumple" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_CheckListTrazabilidadFCLDespacho" Member="SAS_Calidad_Form_CheckListTrazabilidadFCLDespacho">
+    <Type Name="SAS_Calidad_Form_CheckListTrazabilidadFCLDespacho">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroCalidadFormularioId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="InicioProceso" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FinalProceso" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NumeroOrdenTrabajo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IdLineaNaviera" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="NumeroBooking" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NombreNave" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PesoMaximaCarga" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CondicionExteriorContenedor" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CondicionInteriorContendor" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ObservacionCondicionInterior" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ObservacionCondicionExteriorContenedor" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EstadoDeDrenaje" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CumplEIR" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="BuenaCondicion" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="DevolucionAfiliado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="PrecintoSENASA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrecintoADUANAS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreChofer" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BreveteChofer" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PlacaVehiculo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PlacaCarreta" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura" Member="SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura">
+    <Type Name="SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="Visible" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_CONTROL_DESCARTE_UVA" Member="SAS_CALIDAD_FORM_CONTROL_DESCARTE_UVA">
+    <Type Name="SAS_CALIDAD_FORM_CONTROL_DESCARTE_UVA">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idItem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_DESCARTE_TROZOS_EXPORTABLES" Member="SAS_CALIDAD_FORM_DESCARTE_TROZOS_EXPORTABLES">
+    <Type Name="SAS_CALIDAD_FORM_DESCARTE_TROZOS_EXPORTABLES">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hora" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="lote" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="linea" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="pesoJaba" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="pesoTrozosExportable" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="porcentajeTrozosExportable" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="pesoRacimosExportable" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="porcentajeRacimosExportable" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_DESINFECCION_HERRAMIENTAS" Member="SAS_CALIDAD_FORM_DESINFECCION_HERRAMIENTAS">
+    <Type Name="SAS_CALIDAD_FORM_DESINFECCION_HERRAMIENTAS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idItem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCarga" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCarga">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCarga">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdRegistroPaleta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NumPaleta" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IdCalibre" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Temperatura" Type="System.Decimal" DbType="Decimal(2,2)" CanBeNull="true" />
+      <Column Name="IdEnvase" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IdTipoParihuela" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IdEsquinero" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdGenerador" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdEtiqueta" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IdClamshel" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdEtiquetaTrazabilidad" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Traza" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacion" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacion">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacion">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdRegistroPaleta" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="NumPaleta" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionDispositivoTemperatura" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionDispositivoTemperatura">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionDispositivoTemperatura">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemUbicacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IdTipoDispositivoTemperatura" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="VisibleReporte" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegistroCalidadFormulario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE" Member="SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE">
+    <Type Name="SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="codigoTrabajador" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="uniformeCompleto" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="uniformeLimpio" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="uniformeIntegro" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="usoJoyeria" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="manosDesinfectadas" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conBarba" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conGomaDeMascar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conPeloRecogido" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conPerfume" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conUniasCortasSinEsmalte" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conMaquillaje" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vistoBueno" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_INOCUIDAD" Member="SAS_CALIDAD_FORM_INOCUIDAD">
+    <Type Name="SAS_CALIDAD_FORM_INOCUIDAD">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCriterio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numeroViaje" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleInspeccion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaInspeccion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="placaCamion" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_INOCUIDAD_CRITERIOS" Member="SAS_CALIDAD_FORM_INOCUIDAD_CRITERIOS">
+    <Type Name="SAS_CALIDAD_FORM_INOCUIDAD_CRITERIOS">
+      <Column Name="idCriterio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LAVADO_MANOS" Member="SAS_CALIDAD_FORM_LAVADO_MANOS">
+    <Type Name="SAS_CALIDAD_FORM_LAVADO_MANOS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="codigoTrabajador" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="idActividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LIBERACION_LINEAS" Member="SAS_CALIDAD_FORM_LIBERACION_LINEAS">
+    <Type Name="SAS_CALIDAD_FORM_LIBERACION_LINEAS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idItem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleLiberacion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION" Member="SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION">
+    <Type Name="SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inspeccion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaInspeccion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_CISTERNA" Member="SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_CISTERNA">
+    <Type Name="SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_CISTERNA">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numeroMuestra" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleInspeccion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="dosisRegistrada" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_ITEMS" Member="SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_ITEMS">
+    <Type Name="SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_ITEMS">
+      <Column Name="item" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LIMPIEZA_MANDILES" Member="SAS_CALIDAD_FORM_LIMPIEZA_MANDILES">
+    <Type Name="SAS_CALIDAD_FORM_LIMPIEZA_MANDILES">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idOperario" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleInspeccion" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="inspeccionVisual" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaInspeccion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_LUMINARIAS_VIDRIOS_PLASTICOS" Member="SAS_CALIDAD_FORM_LUMINARIAS_VIDRIOS_PLASTICOS">
+    <Type Name="SAS_CALIDAD_FORM_LUMINARIAS_VIDRIOS_PLASTICOS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idAmbiente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_MONITOREO_PLAGAS" Member="SAS_CALIDAD_FORM_MONITOREO_PLAGAS">
+    <Type Name="SAS_CALIDAD_FORM_MONITOREO_PLAGAS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idValidacion" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_MONITOREO_PLAGAS_DETALLE" Member="SAS_CALIDAD_FORM_MONITOREO_PLAGAS_DETALLE">
+    <Type Name="SAS_CALIDAD_FORM_MONITOREO_PLAGAS_DETALLE">
+      <Column Name="idDetalleMonitoreo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="existePlaga" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcionPlaga" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_MONITOREO_TRAMPAS" Member="SAS_CALIDAD_FORM_MONITOREO_TRAMPAS">
+    <Type Name="SAS_CALIDAD_FORM_MONITOREO_TRAMPAS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="numeroTrampa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreProducto" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="unidades" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="consumo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_TEMPERATURA_CAMARA" Member="SAS_CALIDAD_FORM_TEMPERATURA_CAMARA">
+    <Type Name="SAS_CALIDAD_FORM_TEMPERATURA_CAMARA">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="camara" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="horaMedicion" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="tempCercaVentilador" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="tempEnPuerta" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="tempAlMedio" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="hRelativa" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_TEMPERATURA_CAMARA_DETALLE" Member="SAS_CALIDAD_FORM_TEMPERATURA_CAMARA_DETALLE">
+    <Type Name="SAS_CALIDAD_FORM_TEMPERATURA_CAMARA_DETALLE">
+      <Column Name="idDetalleCamara" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numeroPallet" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaProduccionJuliano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPulpa" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="comentarios" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vistoBueno" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS" Member="SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS">
+    <Type Name="SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS">
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleInspeccionEntrada" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="cumpleInspeccionSalida" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaInspeccion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaReferencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="tipoItem" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORMULARIO" Member="SAS_CALIDAD_FORMULARIO1">
+    <Type Name="SAS_CALIDAD_FORMULARIO1">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFrecuencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idTipoRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visible" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FRECUENCIA_REGISTRO" Member="SAS_CALIDAD_FRECUENCIA_REGISTRO">
+    <Type Name="SAS_CALIDAD_FRECUENCIA_REGISTRO">
+      <Column Name="idFrecuencia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_HERRAMIENTAS_DESINFECCION" Member="SAS_CALIDAD_HERRAMIENTAS_DESINFECCION">
+    <Type Name="SAS_CALIDAD_HERRAMIENTAS_DESINFECCION">
+      <Column Name="idHerramienta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_INSTRUMENTOS" Member="SAS_CALIDAD_INSTRUMENTOS">
+    <Type Name="SAS_CALIDAD_INSTRUMENTOS">
+      <Column Name="idInstrumento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcionTipo" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_ITEMS_DESCARTE_UVA" Member="SAS_CALIDAD_ITEMS_DESCARTE_UVA">
+    <Type Name="SAS_CALIDAD_ITEMS_DESCARTE_UVA">
+      <Column Name="idItem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_ITEMS_LIBERACION_LINEAS" Member="SAS_CALIDAD_ITEMS_LIBERACION_LINEAS">
+    <Type Name="SAS_CALIDAD_ITEMS_LIBERACION_LINEAS">
+      <Column Name="idItem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_SENSORES" Member="SAS_CALIDAD_SENSORES">
+    <Type Name="SAS_CALIDAD_SENSORES">
+      <Column Name="idSensor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_ACCION_CORRECTIVA_REGISTRO" Member="SAS_CALIDAD_ACCION_CORRECTIVA_REGISTRO">
+    <Type Name="SAS_CALIDAD_ACCION_CORRECTIVA_REGISTRO">
+      <Column Name="idAccion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Visible" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoAccionesCorrectivasAll" Member="SAS_ListadoAccionesCorrectivasAll">
+    <Type Name="SAS_ListadoAccionesCorrectivasAll">
+      <Column Name="AccionCorrectivaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccionCorrectiva" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FormularioEvaluacionCodigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Formulario" Type="System.String" DbType="VarChar(268)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EstadoAccionCorrectiva" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Visible" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="VisibleEnReportes" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestrosTipo" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestrosTipo">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestrosTipo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoGrupoTipoDetalleEvaluacion" Member="SAS_ListadoGrupoTipoDetalleEvaluacion">
+    <Type Name="SAS_ListadoGrupoTipoDetalleEvaluacion">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrupoTipoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Abreviatura" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ItemDetalle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VisibleEnReportes" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="GrupoTipo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Abreviatura" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VisibleEnReportes" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_AREA_INSPECCION" Member="SAS_CALIDAD_AREA_INSPECCION">
+    <Type Name="SAS_CALIDAD_AREA_INSPECCION">
+      <Column Name="idArea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="idFormulario" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="orden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="seccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visibleEnRpt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoAreasAInspeccionAll" Member="SAS_ListadoAreasAInspeccionAll">
+    <Type Name="SAS_ListadoAreasAInspeccionAll">
+      <Column Name="AreaInspeccionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaInspeccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FormularioId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Formulario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FormularioCodigoControl" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisibleEnRpt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoFormatoInspeccionAll" Member="SAS_ListadoFormatoInspeccionAll">
+    <Type Name="SAS_ListadoFormatoInspeccionAll">
+      <Column Name="FormatoInspeccionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FormatoInspeccion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FormatoInspeccionCodificacion" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Paguinas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FrecuenciaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Frecuencia" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="GrupoInspeccionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrupoInspeccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="VisibleId" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="Visible" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoItemsParaLiberacionDeLineasAll" Member="SAS_ListadoItemsParaLiberacionDeLineasAll">
+    <Type Name="SAS_ListadoItemsParaLiberacionDeLineasAll">
+      <Column Name="ItemLiberacionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemLiberacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AreaDeInspeccionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="AreaDeInspeccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CalidadTurnosDeEValuacion" Member="SAS_CalidadTurnosDeEValuacion">
+    <Type Name="SAS_CalidadTurnosDeEValuacion">
+      <Column Name="IdTurno" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_VerificacionVidriosTipoDetalle" Member="SAS_VerificacionVidriosTipoDetalle">
+    <Type Name="SAS_VerificacionVidriosTipoDetalle">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="detalleCabecera" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Abrevitura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_AplicacionSO2ActividadesAll" Member="SAS_AplicacionSO2ActividadesAll">
+    <Type Name="SAS_AplicacionSO2ActividadesAll">
+      <Column Name="idActividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSubProceso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubProceso" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItem" Member="SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItem">
+    <Type Name="SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItem">
+      <Column Name="TipoItem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle" Member="SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle">
+    <Type Name="SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Abrevitura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoLimpiezaDesinfeccionItemsByAreaAll" Member="SAS_ListadoLimpiezaDesinfeccionItemsByAreaAll">
+    <Type Name="SAS_ListadoLimpiezaDesinfeccionItemsByAreaAll">
+      <Column Name="item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaAInspeccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoVerificacionVidriosDetalleAll" Member="SAS_ListadoVerificacionVidriosDetalleAll">
+    <Type Name="SAS_ListadoVerificacionVidriosDetalleAll">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemDetalle" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Abrevitura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_APLICACION_SO2" Method="SAS_CALIDAD_VIEW_FORM_APLICACION_SO2">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_APLICACION_SO2Result">
+      <Column Name="idSubProceso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="subp" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codigoAct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="actividad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion2" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion3" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva4" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion4" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva5" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion5" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva6" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion6" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva7" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion7" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva8" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion8" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva9" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codigo9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroEvaluacion9" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="eva10" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_LAVADO_MANOS_valor" Method="SAS_CALIDAD_VIEW_LAVADO_MANOS_valor">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_LAVADO_MANOS_valorResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes4" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes5" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idActividad6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes6" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_CALIBRACION_BALANZAS" Method="SAS_CALIDAD_VIEW_FORM_CALIBRACION_BALANZAS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_CALIBRACION_BALANZASResult">
+      <Column Name="balanza" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="balanzaLunes" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="balanzaMartes" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="balanzaMiercoles" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="balanzaJueves" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="balanzaViernes" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="balanzaSabado" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="balanzaDomingo" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="cumplePesoCeroDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumplePesoQuinientosDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="noCumplePesosDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_CALIBRACION_SENSORES" Method="SAS_CALIDAD_VIEW_FORM_CALIBRACION_SENSORES">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_CALIBRACION_SENSORESResult">
+      <Column Name="detalleTunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel4" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel4" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel5" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel5" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel6" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel6" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_CALIBRACION_SENSORES_AMBIENTE" Method="SAS_CALIDAD_VIEW_FORM_CALIBRACION_SENSORES_AMBIENTE">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_CALIBRACION_SENSORES_AMBIENTEResult">
+      <Column Name="idSensor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="detalleTunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel4" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel4" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel5" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel5" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="detalleTunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sensorTunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempPatronTunel6" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tempTermometriaTunel6" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_CHECKLISTMANUFACTURA" Method="SAS_CALIDAD_VIEW_FORM_CHECKLISTMANUFACTURA">
+    <Parameter Name="idRegistro" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="semana" Type="System.String" DbType="Char(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_HERRAMIENTAS_DESINFECCION" Method="SAS_CALIDAD_VIEW_FORM_HERRAMIENTAS_DESINFECCION">
+    <Parameter Name="idRegistro" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="semana" Type="System.String" DbType="Char(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LAVADO_MANOS" Method="SAS_CALIDAD_VIEW_FORM_LAVADO_MANOS">
+    <Parameter Name="idRegistro" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="semana" Type="System.String" DbType="Char(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LAVADO_MANOS_ACCION_CORRECTIVA" Method="SAS_CALIDAD_VIEW_FORM_LAVADO_MANOS_ACCION_CORRECTIVA">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_LAVADO_MANOS_ACCION_CORRECTIVAResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorLunes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorMartes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorMiercoles" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorJueves" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorViernes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes4" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorSabado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes5" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valorDomingo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes6" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION" Method="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idarea" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCIONResult">
+      <Column Name="items" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomItem" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="item" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaLunes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="item1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaMartes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="item2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaMiercoles" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="item3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaJueves" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="item4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaViernes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="item5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaSabado" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="item6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspeccionDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="fechaDomingo" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION_CISTERNA" Method="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION_CISTERNA">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION_CISTERNAResult">
+      <Column Name="lunesViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="lunesViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="lunesViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="martesViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="martesViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="martesViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="miercolesViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="miercolesViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="miercolesViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="juevesViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="juevesViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="juevesViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="viernesViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viernesViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viernesViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="sabadoViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="sabadoViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="sabadoViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="domingoViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="domingoViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="domingoViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION_DOSIS" Method="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION_DOSIS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_DESINFECCION_DOSISResult">
+      <Column Name="lunesViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="lunesViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="lunesViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="martesViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="martesViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="martesViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="miercolesViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="miercolesViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="miercolesViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="juevesViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="juevesViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="juevesViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="viernesViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="viernesViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="viernesViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="sabadoViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="sabadoViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="sabadoViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="domingoViaje1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="domingoViaje2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="domingoViaje3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LIMPIEZA_MANDILES" Method="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_MANDILES">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_MANDILESResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioLunes" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioMartes" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioMiercoles" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioJueves" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioViernes" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioSabado" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operarioDomingo" Type="System.String" DbType="VarChar(251)" CanBeNull="true" />
+      <Column Name="inspeccionDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LIMPIEZA_MANDILES_FECHAS" Method="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_MANDILES_FECHAS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_LIMPIEZA_MANDILES_FECHASResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaLunes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaMartes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaMiercoles" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaJueves" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaViernes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaSabado" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="idRegistro7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaDomingo" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_LUMINARIAS_VIDRIOS_PLASTICOS" Method="SAS_CALIDAD_VIEW_FORM_LUMINARIAS_VIDRIOS_PLASTICOS">
+    <Parameter Name="idRegistro" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="semana" Type="System.String" DbType="Char(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_MONITOREO_PLAGAS" Method="SAS_CALIDAD_VIEW_FORM_MONITOREO_PLAGAS">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_MONITOREO_PLAGASResult">
+      <Column Name="idDetalleMonitoreo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="area" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="idArea1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="existeplagaarea1" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="plagaarea1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idDetalleMonitoreo1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="existeplagaarea2" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="plagaarea2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idDetalleMonitoreo2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="existeplagaarea3" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="plagaarea3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_MONITOREO_PLAGAS_OBSERVACIONES" Method="SAS_CALIDAD_VIEW_FORM_MONITOREO_PLAGAS_OBSERVACIONES">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_MONITOREO_PLAGAS_OBSERVACIONESResult">
+      <Column Name="obs1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idValidacion" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="obs2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idValidacion1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="obs3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idArea2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idValidacion2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_SENSORES_ACCIONES" Method="SAS_CALIDAD_VIEW_FORM_SENSORES_ACCIONES">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_SENSORES_ACCIONESResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accion1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accion2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accion3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accion4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accion5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accion6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_SENSORES_CUMPLIMIENTO" Method="SAS_CALIDAD_VIEW_FORM_SENSORES_CUMPLIMIENTO">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_SENSORES_CUMPLIMIENTOResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cumpl1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cumpl2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cumpl3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cumpl4" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cumpl5" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cumpl6" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_SENSORES_OBSERVACIONES" Method="SAS_CALIDAD_VIEW_FORM_SENSORES_OBSERVACIONES">
+    <Parameter Name="idRegistro" Type="System.Int32" DbType="Int" />
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_SENSORES_OBSERVACIONESResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obs1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obs2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obs3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obs4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obs5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tunel6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obs6" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD" Method="SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDADResult">
+      <Column Name="idCriterio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomcriterio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="criterio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje1" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje3" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje4" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje5" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje6" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje7" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje8" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje9" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje10" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje11" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje12" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje13" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje14" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio15" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje15" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio16" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje16" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio17" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje17" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio18" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje18" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeUnoInspeccionDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio19" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje19" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeDosInspeccionDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="criterio20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numeroViaje20" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="viajeTresInspeccionDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD_OBS" Method="SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD_OBS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD_OBSResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsLunes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsMartes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsMiercoles" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsJueves" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsViernes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsSabado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsDomingo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD_PLACAS" Method="SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD_PLACAS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_VERIFICACION_INOCUIDAD_PLACASResult">
+      <Column Name="lunesViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="lunesViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="lunesViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="martesViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="martesViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="martesViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="miercolesViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="miercolesViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="miercolesViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="juevesViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="juevesViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="juevesViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="viernesViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="viernesViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="viernesViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="sabadoViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="sabadoViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="sabadoViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="domingoViaje1" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="domingoViaje2" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="domingoViaje3" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS" Method="SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOSResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trabajador" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="itemLunes" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemMartes" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemMiercoles" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemJueves" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemViernes" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemSabado" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemDomingo" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS_TIPO02" Method="SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS_TIPO02">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS_TIPO02Result">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="itemLunes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemMartes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemMiercoles" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemJueves" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemViernes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemSabado" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemDomingo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS_TIPO03" Method="SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS_TIPO03">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_FORM_VERIFICACION_VIDRIOS_TIPO03Result">
+      <Column Name="item" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="itemLunes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaLunes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemMartes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaMartes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemMiercoles" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaMiercoles" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemJueves" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaJueves" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemViernes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaViernes" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemSabado" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaSabado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="itemDomingo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionEntradaDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cumpleInspeccionSalidaDomingo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CALIDAD_VIEW_LAVADO_MANOS_OBS" Method="SAS_CALIDAD_VIEW_LAVADO_MANOS_OBS">
+    <Parameter Name="semana" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CALIDAD_VIEW_LAVADO_MANOS_OBSResult">
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsLunes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaLunes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsMartes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaMartes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsMiercoles" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaMiercoles" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsJueves" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaJueves" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsViernes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaViernes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsSabado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaSabado" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="idRegistro6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="obsDomingo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diaDomingo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteAmonestacionesIncumplimientosByDate" Method="SAS_ReporteAmonestacionesIncumplimientosByDate">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ReporteAmonestacionesIncumplimientosByDateResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSede" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="idTurno" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="turno" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoEvaluador" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigoResponsable" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="estado1" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="observacionesCabecera" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idFrecuencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idTipoRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visible" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="codigoTrabajador" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="colaborador" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="justificacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="numAmonestacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="recibido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="numeroEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteAmonestacionesIncumplimientosById" Method="SAS_ReporteAmonestacionesIncumplimientosById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ReporteAmonestacionesIncumplimientosByIdResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSede" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="idTurno" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="turno" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoEvaluador" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigoResponsable" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="estado1" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="observacionesCabecera" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="accionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idFrecuencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado2" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idTipoRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visible" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="codigoTrabajador" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="colaborador" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="justificacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="numAmonestacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="recibido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="numeroEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteIncumplimientoPracticasHigieneById" Method="SAS_ReporteIncumplimientoPracticasHigieneById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ReporteIncumplimientoPracticasHigieneByIdResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="turno" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrabajadorId" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="trabajador" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="fecha1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="uniformeCompleto" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="uniformeLimpio" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="uniformeIntegro" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="usoJoyeria" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="manosDesinfectadas" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conBarba" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conGomaDeMascar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conPeloRecogido" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conPerfume" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conUniasCortasSinEsmalte" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conMaquillaje" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="asaccionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccionCorrectivaDescripcion" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="vistoBueno" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="VistoBuenosDescripcion" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaReponsable" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaEvaluador" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteIncumplimientoPracticasHigieneByDateAll" Method="SAS_ReporteIncumplimientoPracticasHigieneByDateAll">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ReporteIncumplimientoPracticasHigieneByDateAllResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="turno" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCabeceraRegistro1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TrabajadorId" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="trabajador" Type="System.String" DbType="VarChar(160) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha1" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="uniformeCompleto" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="uniformeLimpio" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="uniformeIntegro" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="usoJoyeria" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="manosDesinfectadas" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conBarba" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conGomaDeMascar" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conPeloRecogido" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conPerfume" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conUniasCortasSinEsmalte" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="conMaquillaje" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AccionCorrectivaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccionCorrectiva" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="vistoBueno" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="firmaReponsable" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaEvaluador" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteIncumplimientoPracticasHigieneByDate" Method="SAS_ReporteIncumplimientoPracticasHigieneByDate">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ReporteIncumplimientoPracticasHigieneByDateResult">
+      <Column Name="idCabeceraRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="turno" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaCabecera" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codigoResponsable" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="versionRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paginas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreRegistro" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaReponsable" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaEvaluador" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoLavadoDeManoAllByDates" Method="SAS_ListadoLavadoDeManoAllByDates">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ListadoLavadoDeManoAllByDatesResult">
+      <Column Name="CabeceraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SedeId" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TurnoId" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Turno" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEvaluacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="EvaluadorId" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FormatoEvaluacionCodigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="FormatoEvaluacionVersion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormatoEvaluacionPaguinas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormatoEvaluacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AcccionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoFormatoEvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoFormatoEvaluacion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EsVisble" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EstadoDeEvaluacion" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaReponsable" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaEvaluador" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDiaSemana" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="periodo" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DetalleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ColaboradorEvaluadoId" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ColaboradorEvaluado" Type="System.String" DbType="VarChar(153)" CanBeNull="true" />
+      <Column Name="ActividadId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Actividad" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

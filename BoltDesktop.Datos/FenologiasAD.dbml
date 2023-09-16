@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FENOLOGIAS" Class="FenologiasADDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=FENOLOGIAS;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="FENOLOGIASConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Consumidor" Member="Consumidor">
+    <Type Name="Consumidor">
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoteId" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nivel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Jerarquia" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Abreviatura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Erp01" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Erp02" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Erp03" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="EsFinal" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ParametroConfiguracion" Member="ParametroConfiguracion">
+    <Type Name="ParametroConfiguracion">
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

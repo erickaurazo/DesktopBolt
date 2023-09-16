@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBBDO">
+  <DataContextMoniker Name="/DBBDODataContext" />
+  <nestedChildShapes>
+    <classShape Id="3c31f28b-a207-4a66-aae4-f6d9619ad1cf" absoluteBounds="0.5, 3.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DBBDODataContext/TractorVS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b0ee771-8a29-4381-85cc-51977cca1398" absoluteBounds="0.51500000000000012, 4.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="98e6a10b-a64a-43d9-866a-0fc0e4790e2f" absoluteBounds="0.5, 1.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DBBDODataContext/Semana" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ad8790f-2fbe-411b-990e-494e6a53a370" absoluteBounds="0.515, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

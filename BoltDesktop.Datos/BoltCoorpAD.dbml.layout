@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.375, 8.5" name="BoltCoorpAD">
+  <DataContextMoniker Name="/BoltCoorpADDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b4ca1376-07fa-4368-928e-ed8b9c7c77a2" absoluteBounds="5.625, 1.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/ProveedorITD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="773ced1b-299d-47f9-b771-01655b26da14" absoluteBounds="5.6400000000000006, 1.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="775d2e6f-ce11-44db-ab28-7614c9a2c981" absoluteBounds="2.875, 1.5, 2.625, 2.7324039713541666">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/ConsumidorFechaAplicacionC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0081ff5d-a815-4931-89c0-7c09ac73bbd5" absoluteBounds="2.8899999999999997, 1.96, 2.5949999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a3d901b6-81ec-4ac4-8a69-fdf47cff2d26" isExpanded="false" absoluteBounds="2.625, 5.25, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/SAS_ListadoDeUsuariosDelSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45e04c8c-e95f-4077-a366-484c7f7ac0a4" absoluteBounds="2.64, 5.71, 3.8449999999999998, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10a2daef-b681-4dfa-8ea2-0fb412f02235" isExpanded="false" absoluteBounds="0.5, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/usuarioMaquinaria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3733017-2b69-4889-851e-988b7066b96e" absoluteBounds="0.51500000000000012, 5.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af356a9d-d7db-4f68-987c-768e5a221e50" absoluteBounds="10.125, 1.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/SAS_ListadoCuentasBoltWeb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee37ae50-c80a-4109-b743-6cb81eaf3d2b" absoluteBounds="10.14, 1.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e5ea16c-5602-42a4-b630-885b2c744d61" absoluteBounds="7.75, 4.375, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/SAS_ListadoAreaCuentaBolt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edb5b6b4-ef53-45be-8fba-b781ce4f433b" absoluteBounds="7.7650000000000006, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbac1ef0-3a8d-4697-a648-e6cc8b6263ba" absoluteBounds="7.75, 5.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/SAS_ListadoPerfilCuentaBolt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9cad8b1c-6e0e-4af7-aac2-a62db7723ad1" absoluteBounds="7.765, 6.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12cef02d-2888-4e0e-a0ff-5d358e5c6900" absoluteBounds="7.75, 1.5, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/BoltCoorpADDataContext/SAS_ListadoUsuariosNISIRAvsUsuarioBoltActivos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="add62d0a-1521-4acd-adf6-b48496d9b6c6" absoluteBounds="7.7650000000000006, 1.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

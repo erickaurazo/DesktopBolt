@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24.25, 16.125" name="BoltCalidadPacking">
+  <DataContextMoniker Name="/BoltCalidadPackingDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bf9278bf-7289-4abc-bb6a-2d106291cb3c" isExpanded="false" absoluteBounds="0.5, 4.75, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORMULARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47da5e52-126c-47f0-be6e-fe0e3d9c9bb8" absoluteBounds="0.51500000000000057, 5.21, 3.8449999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c50ed739-642d-4983-808b-64c8998033f4" isExpanded="false" absoluteBounds="0.5, 3.5, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_TIPO_REGISTRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be3be92b-d1c4-406c-8ffa-94a6cc162aba" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64adb81b-bd26-4895-a965-59be65251cda" isExpanded="false" absoluteBounds="0.5, 4.125, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_ACTIVIDAD_LAVADO_MANOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="220cc7c3-99bb-4d04-974f-abf0b283c7a3" absoluteBounds="0.515, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54cdb96b-999a-4c7c-9c86-6913b8e3a560" isExpanded="false" absoluteBounds="0.5, 2.875, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_AMBIENTES_LUMINARIAS_VIDRIOS_PLASTICOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb804462-a98d-437c-ab66-f2129a56b0bb" absoluteBounds="0.51499999999999968, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="162644cc-4499-4020-adbc-a4c138bb8a24" isExpanded="false" absoluteBounds="0.5, 6.625, 4, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_CABECERA_FORMULARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9efb5f5d-6afa-4590-83ba-756b948faad2" absoluteBounds="0.515, 7.0850000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f166916b-5c17-4b1a-b2bf-82fc85bd1116" isExpanded="false" absoluteBounds="0.5, 1.75, 4, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_CRITERIOS_MANUFACTURA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d86c145f-9fd0-4abe-a2c3-ebc61ecde169" absoluteBounds="0.51500000000000057, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f4460ff-1b11-490f-803e-11cc06783c75" isExpanded="false" absoluteBounds="0.5, 7.25, 4, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_AMONESTACIONES_INCUMPLIMIENTOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3fb2faa-ec3e-43f0-b028-6ea7088e9f4e" absoluteBounds="0.51500000000000012, 7.7100000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="237c51a9-e79b-4b05-9d7d-45a5e18f5e5f" isExpanded="false" absoluteBounds="0.5, 6, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_APLICACION_SO2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="834f7a65-1cfd-4b7d-8d07-4f7810210dce" absoluteBounds="0.51499999999999968, 6.4600000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bb712e7-994d-4660-99fa-8d1b966dc858" isExpanded="false" absoluteBounds="0.5, 7.875, 4.125, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_APLICACION_SO2_ACTIVIDADES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9d0d937-21d8-4d6f-80ec-d330893c5009" absoluteBounds="0.51500000000000057, 8.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3897a5d0-473e-4bf5-87aa-5c13e3f00e78" isExpanded="false" absoluteBounds="5.375, 7.5, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_APLICACION_SO2_SUBPROCESO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a03ad416-3a8f-4d82-b9e2-fa8914752fc4" absoluteBounds="5.3900000000000006, 7.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebffc32a-c1ae-4ac8-863d-7d2e6ad6f817" isExpanded="false" absoluteBounds="12.5, 3.125, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_CALIBRACION_BALANZAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3ba3b58-b119-4e4a-ade7-6b89da3d22ab" absoluteBounds="12.515, 3.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6fc34c3-a46e-471d-8505-d00147436804" isExpanded="false" absoluteBounds="5.375, 4.125, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_CALIBRACION_INSTRUMENTOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f627a087-a863-4716-8cd6-e255e871c02c" absoluteBounds="5.3900000000000006, 4.5850000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f371c14e-a798-48fb-ab5e-7d8f075e677d" isExpanded="false" absoluteBounds="7.25, 1.125, 3.25, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_CALIBRACION_SENSORES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d4f8a78-6906-4678-983d-92af332078f8" absoluteBounds="7.2650000000000006, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9493f967-83e5-412d-ba3c-af0b0821c957" isExpanded="false" absoluteBounds="12.25, 7.25, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_CALIBRACION_SENSORES_DETALLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8471cee4-ef2d-4b37-b6a0-002a21c06334" absoluteBounds="12.265, 7.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6dff42b0-8721-4492-a90d-792002916fea" isExpanded="false" absoluteBounds="0.5, 8.375, 4.375, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_CHECKLIST_MANUFACTURA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cc5be46-7ad6-4965-96c7-bf91272c3cb0" absoluteBounds="0.515, 8.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5bd2ea8-168a-4106-b1a4-ee60b2273101" isExpanded="false" absoluteBounds="5.25, 2.125, 4.25, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_CheckListTrazabilidadFCLDespacho" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49a62aa6-cd04-4639-9035-fd4a1092fc17" absoluteBounds="5.2650000000000006, 2.5850000000000009, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf844167-3cef-48f9-b4b4-27d6bd85052d" isExpanded="false" absoluteBounds="0.5, 1.125, 6.5, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e40cd30a-6f16-4ac5-91fd-d56bac11495e" absoluteBounds="0.51500000000000012, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2cf6f66-a408-4166-b9ba-931c06a7a01e" isExpanded="false" absoluteBounds="12.625, 1.25, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_CONTROL_DESCARTE_UVA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d2ea24a-f477-4656-af4f-93f7d8b747bb" absoluteBounds="12.64, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e55fe31-0b1b-42ae-8cf8-aafe34d909b1" isExpanded="false" absoluteBounds="12.125, 9.125, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_DESCARTE_TROZOS_EXPORTABLES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="699282b6-f962-479b-854c-493f7af806d5" absoluteBounds="12.14, 9.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e5e0358-e734-4fe6-ad8d-8bdd8be92f95" isExpanded="false" absoluteBounds="12.625, 6.25, 4.125, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_DESINFECCION_HERRAMIENTAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9c15bb5-e27d-436d-aea5-667d771f7902" absoluteBounds="12.64, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efeab74f-dca4-4fbe-9482-747f6d06f1f4" isExpanded="false" absoluteBounds="12.5, 3.75, 4.25, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCarga" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d752c293-0202-41c7-84bf-87220ecf3429" absoluteBounds="12.515, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="106fc3cd-18ae-4539-b973-7e621f1f8337" isExpanded="false" absoluteBounds="0.5, 0.5, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bed16776-3432-4842-bc9a-c60772a8a22e" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e24edf09-ec10-41df-ba8a-548b40e87db6" isExpanded="false" absoluteBounds="12.375, 1.875, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionDispositivoTemperatura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3930adcb-2bbf-4258-b18c-9d3ff9a9be3d" absoluteBounds="12.39, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d60a96b-603d-415d-8264-11fe5f363d60" isExpanded="false" absoluteBounds="5.375, 2.75, 6.25, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a04b535-27e9-4d79-902a-b743b0918bcb" absoluteBounds="5.39, 3.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7a93950-ba71-404c-811f-1dc5333611a5" isExpanded="false" absoluteBounds="5.375, 3.5, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ab85750-67fa-4a7b-8e2f-a3997e2c1068" absoluteBounds="5.3900000000000006, 3.9600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2235f99a-0a91-4a1a-87b4-8ba846b04ba1" isExpanded="false" absoluteBounds="18.25, 4.625, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d947d24-aa7c-4619-afab-8c73562cf19c" absoluteBounds="18.265, 5.0850000000000009, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d10d0c0-ea37-4a25-a455-7e688043c023" isExpanded="false" absoluteBounds="18.25, 5.75, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_INOCUIDAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43e8e2ed-a42f-473c-a27f-606a495c2b9f" absoluteBounds="18.265, 6.2100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6937f3c1-aa81-4b59-93c9-8ee550047a79" isExpanded="false" absoluteBounds="18.75, 0.75, 2.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_INOCUIDAD_CRITERIOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="013d8323-6eab-44c6-b684-21bf0188403c" absoluteBounds="18.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbaa0adb-bd7c-4396-90e6-50b6b4acd1c2" isExpanded="false" absoluteBounds="12.5, 4.375, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LAVADO_MANOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="398a8010-6b2e-4b94-ae01-cd2b0978d550" absoluteBounds="12.515, 4.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="441b620b-ecb2-4977-afba-d2d4f65929e4" isExpanded="false" absoluteBounds="12.5, 5.625, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LIBERACION_LINEAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc02370d-2938-4551-b6f4-d832b0025bf2" absoluteBounds="12.515, 6.0850000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="248c70be-07b3-4af7-bad0-197c2a093efc" isExpanded="false" absoluteBounds="12.25, 8.5, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eb974d4-3e16-44e3-9517-3be7d111b2d2" absoluteBounds="12.265, 8.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f52326b-9173-4ba8-942f-13004d7a8beb" isExpanded="false" absoluteBounds="18.25, 4, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_CISTERNA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64752f43-3143-4c45-acf1-0e15607f674d" absoluteBounds="18.265, 4.4600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69935d69-5bfa-4d72-990a-5690eeb8f905" isExpanded="false" absoluteBounds="12.375, 2.5, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LIMPIEZA_DESINFECCION_ITEMS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50843b4b-c5c0-4cb7-a9b4-632d558510b4" absoluteBounds="12.39, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1f87a8a-c6b3-44b7-970d-7f152db5b9f2" isExpanded="false" absoluteBounds="18.25, 6.75, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LIMPIEZA_MANDILES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be951867-c74b-49a8-8c2f-b2a7d8688627" absoluteBounds="18.265, 7.2100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="859bb4d4-3a5c-44a2-80ba-469a7926b759" isExpanded="false" absoluteBounds="18.75, 1.375, 3.125, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_LUMINARIAS_VIDRIOS_PLASTICOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd2b6431-98ea-4f34-824e-ab0bc0a7f6e3" absoluteBounds="18.765, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3bb29c4-fdd8-4419-b3d6-33cea8ff40bf" isExpanded="false" absoluteBounds="5.375, 5.5, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_MONITOREO_PLAGAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15475190-849d-40b9-9884-ee4ef51a37e3" absoluteBounds="5.39, 5.9600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ecb0b924-1113-4c1e-bd65-ba6c7397b221" isExpanded="false" absoluteBounds="5.375, 6.875, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_MONITOREO_PLAGAS_DETALLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d326524-f751-4eda-964a-ae6b6c14856d" absoluteBounds="5.3900000000000006, 7.3350000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d95b6681-ff41-43a2-87c8-4fced37313fc" isExpanded="false" absoluteBounds="12.5, 5, 3.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_MONITOREO_TRAMPAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e4a63ac-356e-49e2-af5d-73f3bf4d96e0" absoluteBounds="12.515, 5.4600000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac7f7efb-12c6-4d62-b3b0-cf1a2085f167" isExpanded="false" absoluteBounds="5.375, 4.875, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_TEMPERATURA_CAMARA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="deb56681-8b27-4c35-b6fe-4eff025ac071" absoluteBounds="5.39, 5.3350000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71321aa8-c050-4b42-8ace-63fca1cb7ad3" isExpanded="false" absoluteBounds="12.25, 6.75, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_TEMPERATURA_CAMARA_DETALLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83c0290f-70cf-451a-bf7c-4f58591309f2" absoluteBounds="12.265, 7.2100000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a86cfff9-e313-4516-aca0-83ee615afebf" isExpanded="false" absoluteBounds="18.25, 3.375, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14678736-7574-46ab-b492-d50a39d6dbfd" absoluteBounds="18.265, 3.8350000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e1139a0-c882-4be9-bafc-3da6c8b6f719" isExpanded="false" absoluteBounds="18.25, 6.25, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORMULARIO1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4feecea3-52f7-45fa-b92d-0d8d2010360a" absoluteBounds="18.265, 6.7100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d89abad-f3ac-4b8b-85c6-39287c607cb5" isExpanded="false" absoluteBounds="18.625, 2, 3.375, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FRECUENCIA_REGISTRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e2a5ba3-b947-485d-b464-2808313b6ebb" absoluteBounds="18.64, 2.46, 3.3449999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad6d4b90-264f-4efc-887c-ff21328416b6" isExpanded="false" absoluteBounds="5.375, 6.25, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_HERRAMIENTAS_DESINFECCION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2df556b0-fe2d-4ccb-983f-58087e306bc1" absoluteBounds="5.3900000000000006, 6.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e879f96a-35d6-47f5-8ebc-60af332d4cc8" isExpanded="false" absoluteBounds="18.25, 5.125, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_INSTRUMENTOS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c50e2935-89a7-49b4-bd17-fa9d2c41d4ff" absoluteBounds="18.265, 5.5850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2140263e-7540-44d3-aeea-41a0e21f9db9" isExpanded="false" absoluteBounds="18.25, 7.25, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_ITEMS_DESCARTE_UVA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72d7a0b7-5564-414b-bd46-9c0dbffc96bb" absoluteBounds="18.265, 7.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0b453a6-a875-463a-bb88-8c2a24ecd927" isExpanded="false" absoluteBounds="18.375, 7.75, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_ITEMS_LIBERACION_LINEAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="246ac732-6239-409a-b624-1bed3ee81d45" absoluteBounds="18.39, 8.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5be40197-3b9c-4d5d-876a-002d447ea5c6" isExpanded="false" absoluteBounds="18.5, 2.75, 3.375, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_SENSORES" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5c2866b-d966-4f33-86e8-3650a0fe131e" absoluteBounds="18.515, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1ae5b7c-3e39-4ba5-9568-6f5c1a1591a4" isExpanded="false" absoluteBounds="5.375, 8.125, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_ACCION_CORRECTIVA_REGISTRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e2134cf-2ed3-49d4-8c93-0d65d772619f" absoluteBounds="5.39, 8.585, 3.0949999999999998, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39e9c9de-cc3c-40f2-a2d9-90ab34fd6d16" isExpanded="false" absoluteBounds="0.5, 2.25, 3.125, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoAccionesCorrectivasAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="424a59fb-305b-4b1f-baa5-2c606b2d7f53" absoluteBounds="0.51499999999999968, 2.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b470c92-4f7a-4256-b5fe-96abf32e1e14" isExpanded="false" absoluteBounds="18.375, 8.375, 5.625, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestrosTipo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77d7c22e-09fe-4556-ab4b-5b5b5a74860e" absoluteBounds="18.39, 8.835, 5.5950000000000006, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79d0e52e-e173-4282-a71e-60d67993626f" isExpanded="false" absoluteBounds="12, 10.125, 4.5, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoGrupoTipoDetalleEvaluacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1876f018-babc-46e4-8477-ba72a162a532" absoluteBounds="12.015, 10.585, 4.4700000000000006, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2227177e-1591-43a8-b29c-f2640e0c47fa" isExpanded="false" absoluteBounds="18.375, 9, 4.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d32ca29b-cb6b-4dc4-8ef6-a47a87b6fcbd" absoluteBounds="18.39, 9.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea7b7064-ba6c-41a5-a2a5-5c116175f0c9" isExpanded="false" absoluteBounds="0.5, 9.125, 4.5, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_AREA_INSPECCION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="624d226f-64fe-4482-8d85-58e6fd2a0e4e" absoluteBounds="0.51499999999999968, 9.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6859c65b-b2e5-4f82-a394-f6e33b6e5006" isExpanded="false" absoluteBounds="5.625, 10, 3.375, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoAreasAInspeccionAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="573196cd-e251-4d1c-8134-424a3406bcec" absoluteBounds="5.64, 10.46, 3.3449999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ca4a04e-9aba-439c-83a3-6f14cc6054ba" isExpanded="false" absoluteBounds="0.5, 5.375, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoFormatoInspeccionAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="022d11d4-b3e8-48fb-b9ac-00e35ee93aa4" absoluteBounds="0.51500000000000057, 5.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="958f1bb9-d9ea-43e8-8b57-5d47bb0e1c78" isExpanded="false" absoluteBounds="12.625, 0.5, 3.125, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoItemsParaLiberacionDeLineasAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ab0f172-031f-4310-b3c1-f0ca26001444" absoluteBounds="12.64, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f156a03-54fe-42c0-8bf0-10c7aa0b9b58" isExpanded="false" absoluteBounds="5.5, 9.125, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CalidadTurnosDeEValuacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cd340e3-4fca-4deb-b096-df87cf99b504" absoluteBounds="5.5150000000000006, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="913accca-df7c-4e0d-aca1-d98f31059aee" isExpanded="false" absoluteBounds="5.75, 11, 2.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_VerificacionVidriosTipoDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47087103-192b-46c5-88c2-66e15aa2091c" absoluteBounds="5.765, 11.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50393aaa-00ee-4523-9682-25b3b511e920" isExpanded="false" absoluteBounds="6, 11.875, 2.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_AplicacionSO2ActividadesAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82d69134-0e36-4063-8af4-e088e6665296" absoluteBounds="6.015, 12.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a14e418-1534-42b1-b6ba-3f04d94ac10c" isExpanded="false" absoluteBounds="6, 13.25, 4.125, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ffcf6e7f-5955-4d44-8e1d-d602ca937c16" absoluteBounds="6.015, 13.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1511233-4e8f-4ae4-9663-abe1db0bb9e9" isExpanded="false" absoluteBounds="6, 12.625, 3.875, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33f342ca-0e02-40fc-83bd-46d69384fc42" absoluteBounds="6.015, 13.085, 3.8449999999999998, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2abdee62-628b-49a4-a025-629c779c45f3" isExpanded="false" absoluteBounds="4.875, 14.125, 4, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoLimpiezaDesinfeccionItemsByAreaAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d31cc8d-6648-474e-97f3-ae007111a3f3" absoluteBounds="4.89, 14.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e68b9b44-8a4e-440c-80d6-f5bd093712f7" isExpanded="false" absoluteBounds="4.5, 15.375, 3.625, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoVerificacionVidriosDetalleAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3052076e-d164-4b9a-951d-5b5b7b393221" absoluteBounds="4.5150000000000006, 15.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

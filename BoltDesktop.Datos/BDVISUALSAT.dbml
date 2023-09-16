@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="saturno" Class="BDVISUALSATDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=74.208.128.178;Initial Catalog=saturno;Persist Security Info=True;User ID=vsatsaturno" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="saturnoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TractoLabor" Member="TractoLabor">
+    <Type Name="TractoLabor">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Turn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tracto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Available" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsLabor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TimeTotalTx" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AreaTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AreaTotalTx" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PerUse" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PerUseTx" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="ElapsedTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ElapsedTotalTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ElapsedTotalLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ElapsedTotalLoteTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ElapsedOutLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ElapsedOutLoteTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Advance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AdvanceVal1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AdvanceVal2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Efficiendy" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EfficiendyVal1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EfficiendyVal2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="nStop" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StopTime" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="StopTimeTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SpeedAvgLote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SAS_ListadoHorasDeTractorPorSemana" Method="SAS_ListadoHorasDeTractorPorSemana">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="periodo" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="semana" Type="System.String" DbType="VarChar(12)" />
+    <ElementType Name="SAS_ListadoHorasDeTractorPorSemanaResult">
+      <Column Name="codigoOperacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaFormatoTexto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="turno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="turnoTrabajo" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="turnoTrabajo2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="turnoTrabajo03" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="disponibilidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TieneDisponibilidad" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="siTieneProgramacionTrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProgramacionDeLabores" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="totalMinutos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="horasTrabajadas" Type="System.Decimal" DbType="Decimal(22,6)" CanBeNull="true" />
+      <Column Name="hrsTrabTX" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hrsTrabTX2" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="minutosEnLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="horasTrabajadasLote" Type="System.Decimal" DbType="Decimal(22,6)" CanBeNull="true" />
+      <Column Name="hrsTrabEnLoteTX" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hrsTrabEnLoteTX2" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="procentajeEnLote" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="procentajeEnLoteTX" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="kilometrosRecorridosTotal" Type="System.Decimal" DbType="Decimal(23,7)" CanBeNull="true" />
+      <Column Name="kilometrosRecorridosTotalTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="kilometrosRecorridosTotalEnLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="kilometrosRecorridosTotalEnLoteTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Avance_KMxTurno" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="minutosEnLote1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="HorasxTurnoDeTrabajo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RendimientoKmEnLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="KmRecorridosEnLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="HorasRecorridosEnLote" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="totalParadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalMinParados" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalMinParadosTx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="velocidadPromedio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trimestre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nroMes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreMes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="diaDeSemana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NombreDiaSemana" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="nroDiaDelAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="anio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tracto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

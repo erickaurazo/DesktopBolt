@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="BoltCoorpADDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString6" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ProveedorITD" Member="ProveedorITD">
+    <Type Name="ProveedorITD">
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdClieprov" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RazonSocial" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
+      <Column Name="Rubro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelImportancia" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="PasaFlujo" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConsumidorFechaAplicacionC" Member="ConsumidorFechaAplicacionC">
+    <Type Name="ConsumidorFechaAplicacionC">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConsumidorId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SiembraId" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampanaAgricolaId" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AnioCampaña" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaAplicacionEnFormacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaAplicacionEnProduccion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TipoRegistro" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoDeUsuariosDelSistema" Member="SAS_ListadoDeUsuariosDelSistema">
+    <Type Name="SAS_ListadoDeUsuariosDelSistema">
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdCodigoGeneral" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idArea" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="idestado" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="sedeId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sede" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="nivelAccesoId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nivelAcceso" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="puerdaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="SituacionPlanilla" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuarioMaquinaria" Member="usuarioMaquinaria">
+    <Type Name="usuarioMaquinaria">
+      <Column Name="idUsuarioMaquinaria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nroDocumento" Type="System.String" DbType="Char(13) NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigoTrabajador" Type="System.String" DbType="Char(13)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="perfil" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="area" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="RutaDeFirma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FIRMA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoCuentasBoltWeb" Member="SAS_ListadoCuentasBoltWeb">
+    <Type Name="SAS_ListadoCuentasBoltWeb">
+      <Column Name="CuentaUsuarioIdentificador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroDocumento" Type="System.String" DbType="Char(13) NOT NULL" CanBeNull="false" />
+      <Column Name="ColaboradorNombresCompletos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ColaboradorCodigo" Type="System.String" DbType="Char(13)" CanBeNull="true" />
+      <Column Name="CuentaUsuario" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="ClaveAcceso" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Perfil" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoCuentaBolt" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="AreaId" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="RutaDeFirma" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="firma" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EstadoCuentaERPId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoCuentaERP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SituacionEnPlanilla" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoAreaCuentaBolt" Member="SAS_ListadoAreaCuentaBolt">
+    <Type Name="SAS_ListadoAreaCuentaBolt">
+      <Column Name="AreaId" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="perfil" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoPerfilCuentaBolt" Member="SAS_ListadoPerfilCuentaBolt">
+    <Type Name="SAS_ListadoPerfilCuentaBolt">
+      <Column Name="PerfilId" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="perfil" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ListadoUsuariosNISIRAvsUsuarioBoltActivos" Member="SAS_ListadoUsuariosNISIRAvsUsuarioBoltActivos">
+    <Type Name="SAS_ListadoUsuariosNISIRAvsUsuarioBoltActivos">
+      <Column Name="UsuarioCodigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PersonalCodigo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PersonalDocumento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EstadoCuentaERP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersonalNombre" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Clave" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="UsuarioCodigoBoltWeb" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="situacionPlanilla" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SAS_ConsumidorFechaAplicacionCListadoPorAnio" Method="SAS_ConsumidorFechaAplicacionCListadoPorAnio">
+    <Parameter Name="anio" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="SAS_ConsumidorFechaAplicacionCListadoPorAnioResult">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ConsumidorId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SiembraId" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="CampanaAgricolaId" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="AnioCampaña" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaAplicacionEnFormacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FechaAplicacionEnProduccion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TipoRegistro" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="area" Type="System.Decimal" DbType="Decimal(15,4)" CanBeNull="true" />
+      <Column Name="inicioCampana" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="finalCampana" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cultivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="variedad" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="tipoCultivo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="sector" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CODIGO_CONTROL" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CODIGO_FITOSOFT" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
