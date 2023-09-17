@@ -96,6 +96,15 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.gbList = new Telerik.WinControls.UI.RadGroupBox();
             this.dgvRegistro = new Telerik.WinControls.UI.RadGridView();
+            this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.anularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.vistaPreviaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImprimirSub = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAprobacionEvaluacionSub = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
@@ -106,15 +115,6 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.anularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.elminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.vistaPreviaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnImprimirSub = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAprobacionEvaluacionSub = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.gbCabecera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo)).BeginInit();
@@ -123,8 +123,8 @@
             this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro.MasterTemplate)).BeginInit();
-            this.stsBarraEstado.SuspendLayout();
             this.subMenu.SuspendLayout();
+            this.stsBarraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // BarraPrincipal
@@ -134,7 +134,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1234, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1234, 62);
             this.BarraPrincipal.TabIndex = 196;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -865,53 +865,6 @@
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
             // 
-            // bgwHilo
-            // 
-            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
-            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
-            // 
-            // stsBarraEstado
-            // 
-            this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblUserNames,
-            this.lblCodeUser,
-            this.lblUser,
-            this.lblFullName,
-            this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 546);
-            this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1234, 22);
-            this.stsBarraEstado.TabIndex = 229;
-            // 
-            // lblUserNames
-            // 
-            this.lblUserNames.Name = "lblUserNames";
-            this.lblUserNames.Size = new System.Drawing.Size(33, 17);
-            this.lblUserNames.Text = "User:";
-            // 
-            // lblCodeUser
-            // 
-            this.lblCodeUser.Name = "lblCodeUser";
-            this.lblCodeUser.Size = new System.Drawing.Size(59, 17);
-            this.lblCodeUser.Text = "username";
-            // 
-            // lblUser
-            // 
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(65, 17);
-            this.lblUser.Text = "Nombres : ";
-            // 
-            // lblFullName
-            // 
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(61, 17);
-            this.lblFullName.Text = "userName";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
             // subMenu
             // 
             this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -924,7 +877,7 @@
             this.btnAprobacionEvaluacionSub,
             this.toolStripSeparator2});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(178, 154);
+            this.subMenu.Size = new System.Drawing.Size(178, 132);
             // 
             // anularToolStripMenuItem
             // 
@@ -981,6 +934,53 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
             // 
+            // bgwHilo
+            // 
+            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
+            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
+            // 
+            // stsBarraEstado
+            // 
+            this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUserNames,
+            this.lblCodeUser,
+            this.lblUser,
+            this.lblFullName,
+            this.progressBar1});
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 546);
+            this.stsBarraEstado.Name = "stsBarraEstado";
+            this.stsBarraEstado.Size = new System.Drawing.Size(1234, 22);
+            this.stsBarraEstado.TabIndex = 229;
+            // 
+            // lblUserNames
+            // 
+            this.lblUserNames.Name = "lblUserNames";
+            this.lblUserNames.Size = new System.Drawing.Size(33, 17);
+            this.lblUserNames.Text = "User:";
+            // 
+            // lblCodeUser
+            // 
+            this.lblCodeUser.Name = "lblCodeUser";
+            this.lblCodeUser.Size = new System.Drawing.Size(59, 17);
+            this.lblCodeUser.Text = "username";
+            // 
+            // lblUser
+            // 
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(65, 17);
+            this.lblUser.Text = "Nombres : ";
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(61, 17);
+            this.lblFullName.Text = "userName";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
             // CumplimientoDiarioDeLavadoDeManosReporte
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1004,9 +1004,9 @@
             this.gbList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).EndInit();
+            this.subMenu.ResumeLayout(false);
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();
-            this.subMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

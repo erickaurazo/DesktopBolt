@@ -2093,10 +2093,9 @@ namespace Asistencia.Negocios
         #endregion
 
 
+        #region Reportes   | PDF() 
 
         #region CumplimientoDiarioDeLavadoDeManosReporte()
-
-
         public List<SAS_ListadoLavadoDeManoAllByDatesResult> ListReporteCumplimientoDiarioDeLavadoDeManosReporte(string connection, string Desde, string Hasta, int EsResumido)
         {
             List<SAS_ListadoLavadoDeManoAllByDatesResult> listado = new List<SAS_ListadoLavadoDeManoAllByDatesResult>();
@@ -2105,48 +2104,48 @@ namespace Asistencia.Negocios
 
             using (BoltCalidadPackingDataContext Modelo = new BoltCalidadPackingDataContext(cnx))
             {
-               var list = Modelo.SAS_ListadoLavadoDeManoAllByDates(Desde,Hasta).OrderBy(x => x.FechaRegistro).ThenBy(x => x.periodo).ToList();
+                var list = Modelo.SAS_ListadoLavadoDeManoAllByDates(Desde, Hasta).OrderBy(x => x.FechaRegistro).ThenBy(x => x.periodo).ToList();
 
                 if (EsResumido == 1)
                 {
                     #region Agrupar Lista
-                     listado = (from item in list
-                                   group item by new { item.CabeceraId } into j
-                                     select new SAS_ListadoLavadoDeManoAllByDatesResult
-                                     {
-                                         CabeceraId = j.Key.CabeceraId,
-                                         RegistroId = j.FirstOrDefault().RegistroId != (int?)null ? j.FirstOrDefault().RegistroId : 0,
-                                         Sede = j.FirstOrDefault().Sede != null ? j.FirstOrDefault().Sede : string.Empty,
-                                         SedeId = j.FirstOrDefault().SedeId != null ? j.FirstOrDefault().SedeId : string.Empty,
-                                         Turno = j.FirstOrDefault().Turno != null ? j.FirstOrDefault().Turno : string.Empty,
-                                         TurnoId = j.FirstOrDefault().TurnoId != null ? j.FirstOrDefault().TurnoId : string.Empty,
-                                         Semana = j.FirstOrDefault().Semana != null ? j.FirstOrDefault().Semana : string.Empty,
-                                         FechaEvaluacion = j.FirstOrDefault().FechaEvaluacion != (DateTime?)null ? j.FirstOrDefault().FechaEvaluacion.Value : (DateTime?)null,
-                                         Responsable = j.FirstOrDefault().Responsable != null ? j.FirstOrDefault().Responsable : string.Empty,
-                                         ResponsableId = j.FirstOrDefault().ResponsableId != null ? j.FirstOrDefault().ResponsableId : string.Empty,
-                                         Evaluador = j.FirstOrDefault().Evaluador != null ? j.FirstOrDefault().Evaluador : string.Empty,
-                                         EvaluadorId = j.FirstOrDefault().EvaluadorId != null ? j.FirstOrDefault().EvaluadorId : string.Empty,
-                                         FormatoEvaluacion = j.FirstOrDefault().FormatoEvaluacion != null ? j.FirstOrDefault().FormatoEvaluacion : string.Empty,
-                                         FormatoEvaluacionCodigo = j.FirstOrDefault().FormatoEvaluacionCodigo != null ? j.FirstOrDefault().FormatoEvaluacionCodigo : string.Empty,
-                                         FormatoEvaluacionVersion = j.FirstOrDefault().FormatoEvaluacionVersion != (int?)null ? j.FirstOrDefault().FormatoEvaluacionVersion : 0,
-                                         FormatoEvaluacionPaguinas = j.FirstOrDefault().FormatoEvaluacionPaguinas != (int?)null ? j.FirstOrDefault().FormatoEvaluacionPaguinas : 0,
-                                         Observaciones = j.FirstOrDefault().Observaciones != null ? j.FirstOrDefault().Observaciones : string.Empty,
-                                         AcccionCorrectiva = j.FirstOrDefault().AcccionCorrectiva != (int?)null ? j.FirstOrDefault().AcccionCorrectiva : 0,
-                                         TipoFormatoEvaluacionId = j.FirstOrDefault().TipoFormatoEvaluacionId != (int?)null ? j.FirstOrDefault().TipoFormatoEvaluacionId : 0,
-                                         EstadoDeEvaluacion = j.FirstOrDefault().EstadoDeEvaluacion != null ? j.FirstOrDefault().EstadoDeEvaluacion : string.Empty,
-                                         firmaEvaluador = j.FirstOrDefault().firmaEvaluador != null ? j.FirstOrDefault().firmaEvaluador : string.Empty,
-                                         firmaReponsable = j.FirstOrDefault().firmaReponsable != null ? j.FirstOrDefault().firmaReponsable : string.Empty,
-                                         nombreDiaSemana = j.FirstOrDefault().nombreDiaSemana != null ? j.FirstOrDefault().nombreDiaSemana : string.Empty,
-                                         periodo = j.FirstOrDefault().periodo != null ? j.FirstOrDefault().periodo : string.Empty,
-                                         FechaRegistro = j.FirstOrDefault().FechaRegistro != (DateTime?)null ? j.FirstOrDefault().FechaRegistro : DateTime.Now,
-                                         ColaboradorEvaluado = j.FirstOrDefault().ColaboradorEvaluado != null ? j.FirstOrDefault().ColaboradorEvaluado : string.Empty,
-                                         ColaboradorEvaluadoId = j.FirstOrDefault().ColaboradorEvaluadoId != null ? j.FirstOrDefault().ColaboradorEvaluadoId : string.Empty,
-                                         Actividad = j.FirstOrDefault().Actividad != null ? j.FirstOrDefault().Actividad : string.Empty,
-                                         ActividadId = j.FirstOrDefault().ActividadId != (int?)null ? j.FirstOrDefault().ActividadId : 0,
-                                         Valor = j.FirstOrDefault().Valor != (char?)null ? j.FirstOrDefault().Valor : Convert.ToChar("0"),
+                    listado = (from item in list
+                               group item by new { item.CabeceraId } into j
+                               select new SAS_ListadoLavadoDeManoAllByDatesResult
+                               {
+                                   CabeceraId = j.Key.CabeceraId,
+                                   RegistroId = j.FirstOrDefault().RegistroId != (int?)null ? j.FirstOrDefault().RegistroId : 0,
+                                   Sede = j.FirstOrDefault().Sede != null ? j.FirstOrDefault().Sede : string.Empty,
+                                   SedeId = j.FirstOrDefault().SedeId != null ? j.FirstOrDefault().SedeId : string.Empty,
+                                   Turno = j.FirstOrDefault().Turno != null ? j.FirstOrDefault().Turno : string.Empty,
+                                   TurnoId = j.FirstOrDefault().TurnoId != null ? j.FirstOrDefault().TurnoId : string.Empty,
+                                   Semana = j.FirstOrDefault().Semana != null ? j.FirstOrDefault().Semana : string.Empty,
+                                   FechaEvaluacion = j.FirstOrDefault().FechaEvaluacion != (DateTime?)null ? j.FirstOrDefault().FechaEvaluacion.Value : (DateTime?)null,
+                                   Responsable = j.FirstOrDefault().Responsable != null ? j.FirstOrDefault().Responsable : string.Empty,
+                                   ResponsableId = j.FirstOrDefault().ResponsableId != null ? j.FirstOrDefault().ResponsableId : string.Empty,
+                                   Evaluador = j.FirstOrDefault().Evaluador != null ? j.FirstOrDefault().Evaluador : string.Empty,
+                                   EvaluadorId = j.FirstOrDefault().EvaluadorId != null ? j.FirstOrDefault().EvaluadorId : string.Empty,
+                                   FormatoEvaluacion = j.FirstOrDefault().FormatoEvaluacion != null ? j.FirstOrDefault().FormatoEvaluacion : string.Empty,
+                                   FormatoEvaluacionCodigo = j.FirstOrDefault().FormatoEvaluacionCodigo != null ? j.FirstOrDefault().FormatoEvaluacionCodigo : string.Empty,
+                                   FormatoEvaluacionVersion = j.FirstOrDefault().FormatoEvaluacionVersion != (int?)null ? j.FirstOrDefault().FormatoEvaluacionVersion : 0,
+                                   FormatoEvaluacionPaguinas = j.FirstOrDefault().FormatoEvaluacionPaguinas != (int?)null ? j.FirstOrDefault().FormatoEvaluacionPaguinas : 0,
+                                   Observaciones = j.FirstOrDefault().Observaciones != null ? j.FirstOrDefault().Observaciones : string.Empty,
+                                   AcccionCorrectiva = j.FirstOrDefault().AcccionCorrectiva != (int?)null ? j.FirstOrDefault().AcccionCorrectiva : 0,
+                                   TipoFormatoEvaluacionId = j.FirstOrDefault().TipoFormatoEvaluacionId != (int?)null ? j.FirstOrDefault().TipoFormatoEvaluacionId : 0,
+                                   EstadoDeEvaluacion = j.FirstOrDefault().EstadoDeEvaluacion != null ? j.FirstOrDefault().EstadoDeEvaluacion : string.Empty,
+                                   firmaEvaluador = j.FirstOrDefault().firmaEvaluador != null ? j.FirstOrDefault().firmaEvaluador : string.Empty,
+                                   firmaReponsable = j.FirstOrDefault().firmaReponsable != null ? j.FirstOrDefault().firmaReponsable : string.Empty,
+                                   nombreDiaSemana = j.FirstOrDefault().nombreDiaSemana != null ? j.FirstOrDefault().nombreDiaSemana : string.Empty,
+                                   periodo = j.FirstOrDefault().periodo != null ? j.FirstOrDefault().periodo : string.Empty,
+                                   FechaRegistro = j.FirstOrDefault().FechaRegistro != (DateTime?)null ? j.FirstOrDefault().FechaRegistro : DateTime.Now,
+                                   ColaboradorEvaluado = j.FirstOrDefault().ColaboradorEvaluado != null ? j.FirstOrDefault().ColaboradorEvaluado : string.Empty,
+                                   ColaboradorEvaluadoId = j.FirstOrDefault().ColaboradorEvaluadoId != null ? j.FirstOrDefault().ColaboradorEvaluadoId : string.Empty,
+                                   Actividad = j.FirstOrDefault().Actividad != null ? j.FirstOrDefault().Actividad : string.Empty,
+                                   ActividadId = j.FirstOrDefault().ActividadId != (int?)null ? j.FirstOrDefault().ActividadId : 0,
+                                   Valor = j.FirstOrDefault().Valor != (char?)null ? j.FirstOrDefault().Valor : Convert.ToChar("0"),
 
-                                     }
-                                     ).ToList();
+                               }
+                                    ).ToList();
                     #endregion
                 }
                 else
@@ -2156,9 +2155,75 @@ namespace Asistencia.Negocios
             }
             return listado;
         }
+        #endregion
 
+        #region ListAmonestacionesIncumplimientosByDates()
+        public List<SAS_ListadoAmonestacionesIncumplimientosByDatesResult> ListAmonestacionesIncumplimientosByDates(string connection, string Desde, string Hasta, int EsResumido)
+        {
+            List<SAS_ListadoAmonestacionesIncumplimientosByDatesResult> listado = new List<SAS_ListadoAmonestacionesIncumplimientosByDatesResult>();
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[(connection == "NSFAJAS" ? "SAS" : connection)].ToString();
+
+            using (BoltCalidadPackingDataContext Modelo = new BoltCalidadPackingDataContext(cnx))
+            {
+                var list = Modelo.SAS_ListadoAmonestacionesIncumplimientosByDates(Desde, Hasta).OrderBy(x => x.FechaRegistro).ThenBy(x => x.periodo).ToList();
+
+                if (EsResumido == 1)
+                {
+                    #region Agrupar Lista
+                    listado = (from item in list
+                               group item by new { item.CabeceraId } into j
+                               select new SAS_ListadoAmonestacionesIncumplimientosByDatesResult
+                               {
+                                   CabeceraId = j.Key.CabeceraId,
+                                   RegistroId = j.FirstOrDefault().RegistroId != (int?)null ? j.FirstOrDefault().RegistroId : 0,
+                                   Sede = j.FirstOrDefault().Sede != null ? j.FirstOrDefault().Sede : string.Empty,
+                                   SedeId = j.FirstOrDefault().SedeId != null ? j.FirstOrDefault().SedeId : string.Empty,
+                                   Turno = j.FirstOrDefault().Turno != null ? j.FirstOrDefault().Turno : string.Empty,
+                                   TurnoId = j.FirstOrDefault().TurnoId != null ? j.FirstOrDefault().TurnoId : string.Empty,
+                                   Semana = j.FirstOrDefault().Semana != null ? j.FirstOrDefault().Semana : string.Empty,
+                                   FechaEvaluacion = j.FirstOrDefault().FechaEvaluacion != (DateTime?)null ? j.FirstOrDefault().FechaEvaluacion.Value : (DateTime?)null,
+                                   Responsable = j.FirstOrDefault().Responsable != null ? j.FirstOrDefault().Responsable : string.Empty,
+                                   ResponsableId = j.FirstOrDefault().ResponsableId != null ? j.FirstOrDefault().ResponsableId : string.Empty,
+                                   Evaluador = j.FirstOrDefault().Evaluador != null ? j.FirstOrDefault().Evaluador : string.Empty,
+                                   EvaluadorId = j.FirstOrDefault().EvaluadorId != null ? j.FirstOrDefault().EvaluadorId : string.Empty,
+                                   FormatoEvaluacion = j.FirstOrDefault().FormatoEvaluacion != null ? j.FirstOrDefault().FormatoEvaluacion : string.Empty,
+                                   FormatoEvaluacionCodigo = j.FirstOrDefault().FormatoEvaluacionCodigo != null ? j.FirstOrDefault().FormatoEvaluacionCodigo : string.Empty,
+                                   FormatoEvaluacionVersion = j.FirstOrDefault().FormatoEvaluacionVersion != (int?)null ? j.FirstOrDefault().FormatoEvaluacionVersion : 0,
+                                   FormatoEvaluacionPaguinas = j.FirstOrDefault().FormatoEvaluacionPaguinas != (int?)null ? j.FirstOrDefault().FormatoEvaluacionPaguinas : 0,
+                                   Observaciones = j.FirstOrDefault().Observaciones != null ? j.FirstOrDefault().Observaciones : string.Empty,
+                                   AcccionCorrectiva = j.FirstOrDefault().AcccionCorrectiva != (int?)null ? j.FirstOrDefault().AcccionCorrectiva : 0,
+                                   TipoFormatoEvaluacionId = j.FirstOrDefault().TipoFormatoEvaluacionId != (int?)null ? j.FirstOrDefault().TipoFormatoEvaluacionId : 0,
+                                   EstadoDeEvaluacion = j.FirstOrDefault().EstadoDeEvaluacion != null ? j.FirstOrDefault().EstadoDeEvaluacion : string.Empty,
+                                   firmaEvaluador = j.FirstOrDefault().firmaEvaluador != null ? j.FirstOrDefault().firmaEvaluador : string.Empty,
+                                   firmaReponsable = j.FirstOrDefault().firmaReponsable != null ? j.FirstOrDefault().firmaReponsable : string.Empty,
+                                   nombreDiaSemana = j.FirstOrDefault().nombreDiaSemana != null ? j.FirstOrDefault().nombreDiaSemana : string.Empty,
+                                   periodo = j.FirstOrDefault().periodo != null ? j.FirstOrDefault().periodo : string.Empty,
+                                   FechaRegistro = j.FirstOrDefault().FechaRegistro != (DateTime?)null ? j.FirstOrDefault().FechaRegistro : DateTime.Now,
+                                   ColaboradorEvaluado = j.FirstOrDefault().ColaboradorEvaluado != null ? j.FirstOrDefault().ColaboradorEvaluado : string.Empty,
+                                   ColaboradorEvaluadoId = j.FirstOrDefault().ColaboradorEvaluadoId != null ? j.FirstOrDefault().ColaboradorEvaluadoId : string.Empty,                                   
+                                   DetalleId = j.FirstOrDefault().DetalleId != null ? j.FirstOrDefault().DetalleId : 0,
+                                   Justificacion = j.FirstOrDefault().Justificacion != null ? j.FirstOrDefault().Justificacion : string.Empty,
+                                   NumeroAmonestacion = j.FirstOrDefault().NumeroAmonestacion != (char?)null ? j.FirstOrDefault().NumeroAmonestacion.Value :0,
+                                   Recibido = j.FirstOrDefault().Recibido != null ? j.FirstOrDefault().Recibido : string.Empty,
+                                   ObservacionDeEvaluacionAColaborador = j.FirstOrDefault().ObservacionDeEvaluacionAColaborador != null ? j.FirstOrDefault().ObservacionDeEvaluacionAColaborador : string.Empty,
+                               }
+                                    ).ToList();
+                    #endregion
+                }
+                else
+                {
+                    listado = list;
+                }
+            }
+            return listado;
+        }
+        #endregion
 
         #endregion
+
+
+
 
     }
 }

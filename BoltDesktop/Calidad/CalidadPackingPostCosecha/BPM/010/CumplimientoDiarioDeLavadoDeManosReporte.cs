@@ -237,6 +237,19 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
 
         #region Métodos() 
 
+        private void VistaPrevia(SAS_ListadoLavadoDeManoAllByDatesResult selectedItem)
+        {
+            if (selectedItem != null)
+            {
+                if (selectedItem.CabeceraId != null && selectedItem.CabeceraId > 0)
+                {
+
+                    CumplimientoDiarioDeLavadoDeManosPreview ofrm = new CumplimientoDiarioDeLavadoDeManosPreview(connection, selectedItem);
+                    ofrm.Show();
+                }
+            }
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             this.dgvRegistro.TableElement.BeginUpdate();
@@ -484,18 +497,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
             VistaPrevia(selectedItem);
         }
 
-        private void VistaPrevia(SAS_ListadoLavadoDeManoAllByDatesResult selectedItem)
-        {
-            if (selectedItem != null)
-            {
-                if (selectedItem.CabeceraId != null && selectedItem.CabeceraId > 0)
-                {
-
-                    CumplimientoDiarioDeLavadoDeManosPreview ofrm = new CumplimientoDiarioDeLavadoDeManosPreview(connection, selectedItem);
-                    ofrm.Show();
-                }
-            }
-        }
-
+      
     }
 }

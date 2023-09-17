@@ -2554,6 +2554,9 @@
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.resx">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.resx">
+      <DependentUpon>VerificacionLimpiezaDesinfeccionPackingReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionLimpiezaDesinfeccionPackingRPT.cs</LastGenOutput>
@@ -2564,6 +2567,12 @@
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionLuminariasVidriosPlasticosDurosRPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.resx">
+      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.resx">
+      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
