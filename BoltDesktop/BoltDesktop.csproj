@@ -950,11 +950,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.Designer.cs">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -972,11 +967,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufactura.Designer.cs">
       <DependentUpon>CheckListBuenasPractivasManufactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckListBuenasPractivasManufacturaDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaEdicion.cs">
       <SubType>Form</SubType>
@@ -2578,6 +2568,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.resx">
+      <DependentUpon>CheckListBuenasPractivasManufacturaPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.resx">
+      <DependentUpon>CheckListBuenasPractivasManufacturaReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckListBuenasPractivasManufacturaRPT.cs</LastGenOutput>
@@ -3378,28 +3374,6 @@
     <None Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosDS.xss">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.xsc">
-      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.xss">
-      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaDS.xsc">
-      <DependentUpon>CheckListBuenasPractivasManufacturaDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CheckListBuenasPractivasManufacturaDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaDS.xss">
-      <DependentUpon>CheckListBuenasPractivasManufacturaDS.xsd</DependentUpon>
-    </None>
     <None Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingDS.xsc">
       <DependentUpon>MonitoreoDetencionPlagasPackingDS.xsd</DependentUpon>
     </None>
@@ -3709,6 +3683,82 @@
     <Content Include="AgricolaSanJoseSAC.ico" />
     <Content Include="AsistenciaConfig.txt" />
     <Content Include="fire_icon_138608.ico" />
+    <Content Include="Image\Bolt Desktop.ico" />
+    <Content Include="Image\Botones\Excel 105.png" />
+    <Content Include="Image\Botones\Excel Pivot.png" />
+    <Content Include="Image\Botones\Exportar Excel 010.png" />
+    <Content Include="Image\Botones\Exportar Excel 012.png" />
+    <Content Include="Image\Botones\Filter 03.png" />
+    <Content Include="Image\Botones\Filter 04.png" />
+    <Content Include="Image\Botones\Filter 05.png" />
+    <Content Include="Image\Botones\Filter.png" />
+    <Content Include="Image\Botones\Filtro 80.png" />
+    <Content Include="Image\Botones\Filtro 81.png" />
+    <Content Include="Image\Botones\Filtro 82.png" />
+    <Content Include="Image\Botones\grabar+.png" />
+    <Content Include="Image\Botones\historial.png" />
+    <Content Include="Image\Botones\importar 10.png" />
+    <Content Include="Image\Botones\importar.png" />
+    <Content Include="Image\Botones\Imprimir 11.png" />
+    <Content Include="Image\Botones\Imprimir NS.png" />
+    <Content Include="Image\Botones\Ir atras 10.png" />
+    <Content Include="Image\Botones\Liberar 99.png" />
+    <Content Include="Image\Botones\list 30.png" />
+    <Content Include="Image\Botones\List 90.png" />
+    <Content Include="Image\Botones\list option 79.png" />
+    <Content Include="Image\Botones\Lista varios documentos.png" />
+    <Content Include="Image\Botones\lupa 10.png" />
+    <Content Include="Image\Botones\new register 89.png" />
+    <Content Include="Image\Botones\Notificaciones activar 10.png" />
+    <Content Include="Image\Botones\Notificaciones cancelar  01.png" />
+    <Content Include="Image\Botones\Notificar 010.png" />
+    <Content Include="Image\Botones\nuevo 80.png" />
+    <Content Include="Image\Botones\nuevo.png" />
+    <Content Include="Image\Botones\pegar.png" />
+    <Content Include="Image\Botones\Pintar 1.png" />
+    <Content Include="Image\Botones\Pintar 2.png" />
+    <Content Include="Image\Botones\Prioridad 10.png" />
+    <Content Include="Image\Botones\QR.png" />
+    <Content Include="Image\Botones\Quitar detalle 91.png" />
+    <Content Include="Image\Botones\refrescar.png" />
+    <Content Include="Image\Botones\refresh list.png" />
+    <Content Include="Image\Botones\Registar 16.png" />
+    <Content Include="Image\Botones\Regresar estado.png" />
+    <Content Include="Image\Botones\reject request.png" />
+    <Content Include="Image\Botones\Reload 80.png" />
+    <Content Include="Image\Botones\Reloj 10.png" />
+    <Content Include="Image\Botones\SALIR 91.png" />
+    <Content Include="Image\Botones\Solicitud alta.png" />
+    <Content Include="Image\Botones\Solicitud baja pacial desde alta.png" />
+    <Content Include="Image\Botones\Solicitud baja.png" />
+    <Content Include="Image\Botones\Solicitud Modificar desde alta.png" />
+    <Content Include="Image\Botones\subtotales3.png" />
+    <Content Include="Image\Botones\To register 02.png" />
+    <Content Include="Image\Botones\user 823.png" />
+    <Content Include="Image\Botones\Usuario.png" />
+    <Content Include="Image\Botones\vista previa 01.png" />
+    <Content Include="Image\Botones\vista previa 90.png" />
+    <Content Include="Image\Botones\vista previa 91.png" />
+    <Content Include="Image\Botones\vista previa.png" />
+    <Content Include="Image\Modulos\Modulo Cosecha.png" />
+    <Content Include="Image\Modulos\Modulo costos.png" />
+    <Content Include="Image\Modulos\Modulo de almacen.png" />
+    <Content Include="Image\Modulos\Modulo de calidad.png" />
+    <Content Include="Image\Modulos\Modulo de Configuración del sistema.png" />
+    <Content Include="Image\Modulos\Modulo de Contabilidad.png" />
+    <Content Include="Image\Modulos\Modulo de hidraulica y fertilización.png" />
+    <Content Include="Image\Modulos\Modulo de ITD.png" />
+    <Content Include="Image\Modulos\Modulo de logística de exportaciones.png" />
+    <Content Include="Image\Modulos\Modulo de logística y compras.png" />
+    <Content Include="Image\Modulos\Modulo de mantenimiento agrícola.png" />
+    <Content Include="Image\Modulos\Modulo de maquinaria agricola.png" />
+    <Content Include="Image\Modulos\Modulo de produccion packing.png" />
+    <Content Include="Image\Modulos\Modulo de sanidad.png" />
+    <Content Include="Image\Modulos\Modulo de ventas y comercial.png" />
+    <Content Include="Image\Modulos\Modulode RRHH.png" />
+    <Content Include="Image\Modulos\salir del formulario 90.png" />
+    <Content Include="Image\Modulos\Sanidad.png" />
+    <Content Include="Image\Modulos\Seguridad y Salud ocupacional.png" />
     <Content Include="Image\nisira2.ico" />
     <Content Include="logo3.ico" />
     <Content Include="logo4.ico" />

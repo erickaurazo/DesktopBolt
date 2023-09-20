@@ -1760,4 +1760,43 @@
       <Column Name="ObservacionDeEvaluacionAColaborador" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SAS_ListadoCheckListManufacturaAllByDates" Method="SAS_ListadoCheckListManufacturaAllByDates">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ListadoCheckListManufacturaAllByDatesResult">
+      <Column Name="CabeceraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SedeId" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Sede" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TurnoId" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Turno" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEvaluacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="EvaluadorId" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FormatoEvaluacionCodigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="FormatoEvaluacionVersion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormatoEvaluacionPaguinas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormatoEvaluacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AcccionCorrectiva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoFormatoEvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoFormatoEvaluacion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EsVisble" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EstadoDeEvaluacion" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaReponsable" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="firmaEvaluador" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDiaSemana" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="periodo" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DetalleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CriterioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Criterio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaDetalleEvaluacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cumplimiento" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

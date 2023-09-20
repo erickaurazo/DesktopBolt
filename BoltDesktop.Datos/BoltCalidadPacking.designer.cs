@@ -976,6 +976,13 @@ namespace Asistencia.Datos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
 			return ((ISingleResult<SAS_ListadoAmonestacionesIncumplimientosByDatesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoCheckListManufacturaAllByDates")]
+		public ISingleResult<SAS_ListadoCheckListManufacturaAllByDatesResult> SAS_ListadoCheckListManufacturaAllByDates([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string hasta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
+			return ((ISingleResult<SAS_ListadoCheckListManufacturaAllByDatesResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_CALIDAD_FORMULARIO")]
@@ -29451,6 +29458,608 @@ namespace Asistencia.Datos
 				if ((this._ObservacionDeEvaluacionAColaborador != value))
 				{
 					this._ObservacionDeEvaluacionAColaborador = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoCheckListManufacturaAllByDatesResult
+	{
+		
+		private int _CabeceraId;
+		
+		private int _RegistroId;
+		
+		private string _SedeId;
+		
+		private string _Sede;
+		
+		private string _TurnoId;
+		
+		private string _Turno;
+		
+		private string _Semana;
+		
+		private System.Nullable<System.DateTime> _FechaEvaluacion;
+		
+		private string _ResponsableId;
+		
+		private string _Responsable;
+		
+		private string _EvaluadorId;
+		
+		private string _Evaluador;
+		
+		private string _FormatoEvaluacionCodigo;
+		
+		private System.Nullable<int> _FormatoEvaluacionVersion;
+		
+		private System.Nullable<int> _FormatoEvaluacionPaguinas;
+		
+		private string _FormatoEvaluacion;
+		
+		private string _Observaciones;
+		
+		private int _AcccionCorrectiva;
+		
+		private System.Nullable<int> _TipoFormatoEvaluacionId;
+		
+		private string _TipoFormatoEvaluacion;
+		
+		private System.Nullable<decimal> _EsVisble;
+		
+		private System.Nullable<char> _EstadoId;
+		
+		private string _EstadoDeEvaluacion;
+		
+		private string _firmaReponsable;
+		
+		private string _firmaEvaluador;
+		
+		private string _nombreDiaSemana;
+		
+		private string _periodo;
+		
+		private int _DetalleId;
+		
+		private int _CriterioId;
+		
+		private string _Criterio;
+		
+		private System.DateTime _FechaDetalleEvaluacion;
+		
+		private char _Cumplimiento;
+		
+		private string _Observacion;
+		
+		public SAS_ListadoCheckListManufacturaAllByDatesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CabeceraId", DbType="Int NOT NULL")]
+		public int CabeceraId
+		{
+			get
+			{
+				return this._CabeceraId;
+			}
+			set
+			{
+				if ((this._CabeceraId != value))
+				{
+					this._CabeceraId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegistroId", DbType="Int NOT NULL")]
+		public int RegistroId
+		{
+			get
+			{
+				return this._RegistroId;
+			}
+			set
+			{
+				if ((this._RegistroId != value))
+				{
+					this._RegistroId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SedeId", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string SedeId
+		{
+			get
+			{
+				return this._SedeId;
+			}
+			set
+			{
+				if ((this._SedeId != value))
+				{
+					this._SedeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede", DbType="VarChar(200)")]
+		public string Sede
+		{
+			get
+			{
+				return this._Sede;
+			}
+			set
+			{
+				if ((this._Sede != value))
+				{
+					this._Sede = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TurnoId", DbType="VarChar(2)")]
+		public string TurnoId
+		{
+			get
+			{
+				return this._TurnoId;
+			}
+			set
+			{
+				if ((this._TurnoId != value))
+				{
+					this._TurnoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Turno", DbType="VarChar(150)")]
+		public string Turno
+		{
+			get
+			{
+				return this._Turno;
+			}
+			set
+			{
+				if ((this._Turno != value))
+				{
+					this._Turno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Semana", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string Semana
+		{
+			get
+			{
+				return this._Semana;
+			}
+			set
+			{
+				if ((this._Semana != value))
+				{
+					this._Semana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaEvaluacion", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FechaEvaluacion
+		{
+			get
+			{
+				return this._FechaEvaluacion;
+			}
+			set
+			{
+				if ((this._FechaEvaluacion != value))
+				{
+					this._FechaEvaluacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsableId", DbType="VarChar(6)")]
+		public string ResponsableId
+		{
+			get
+			{
+				return this._ResponsableId;
+			}
+			set
+			{
+				if ((this._ResponsableId != value))
+				{
+					this._ResponsableId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Responsable", DbType="VarChar(160)")]
+		public string Responsable
+		{
+			get
+			{
+				return this._Responsable;
+			}
+			set
+			{
+				if ((this._Responsable != value))
+				{
+					this._Responsable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaluadorId", DbType="Char(6) NOT NULL", CanBeNull=false)]
+		public string EvaluadorId
+		{
+			get
+			{
+				return this._EvaluadorId;
+			}
+			set
+			{
+				if ((this._EvaluadorId != value))
+				{
+					this._EvaluadorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Evaluador", DbType="VarChar(150)")]
+		public string Evaluador
+		{
+			get
+			{
+				return this._Evaluador;
+			}
+			set
+			{
+				if ((this._Evaluador != value))
+				{
+					this._Evaluador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FormatoEvaluacionCodigo", DbType="VarChar(15)")]
+		public string FormatoEvaluacionCodigo
+		{
+			get
+			{
+				return this._FormatoEvaluacionCodigo;
+			}
+			set
+			{
+				if ((this._FormatoEvaluacionCodigo != value))
+				{
+					this._FormatoEvaluacionCodigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FormatoEvaluacionVersion", DbType="Int")]
+		public System.Nullable<int> FormatoEvaluacionVersion
+		{
+			get
+			{
+				return this._FormatoEvaluacionVersion;
+			}
+			set
+			{
+				if ((this._FormatoEvaluacionVersion != value))
+				{
+					this._FormatoEvaluacionVersion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FormatoEvaluacionPaguinas", DbType="Int")]
+		public System.Nullable<int> FormatoEvaluacionPaguinas
+		{
+			get
+			{
+				return this._FormatoEvaluacionPaguinas;
+			}
+			set
+			{
+				if ((this._FormatoEvaluacionPaguinas != value))
+				{
+					this._FormatoEvaluacionPaguinas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FormatoEvaluacion", DbType="VarChar(250)")]
+		public string FormatoEvaluacion
+		{
+			get
+			{
+				return this._FormatoEvaluacion;
+			}
+			set
+			{
+				if ((this._FormatoEvaluacion != value))
+				{
+					this._FormatoEvaluacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciones", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Observaciones
+		{
+			get
+			{
+				return this._Observaciones;
+			}
+			set
+			{
+				if ((this._Observaciones != value))
+				{
+					this._Observaciones = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AcccionCorrectiva", DbType="Int NOT NULL")]
+		public int AcccionCorrectiva
+		{
+			get
+			{
+				return this._AcccionCorrectiva;
+			}
+			set
+			{
+				if ((this._AcccionCorrectiva != value))
+				{
+					this._AcccionCorrectiva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoFormatoEvaluacionId", DbType="Int")]
+		public System.Nullable<int> TipoFormatoEvaluacionId
+		{
+			get
+			{
+				return this._TipoFormatoEvaluacionId;
+			}
+			set
+			{
+				if ((this._TipoFormatoEvaluacionId != value))
+				{
+					this._TipoFormatoEvaluacionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoFormatoEvaluacion", DbType="VarChar(150)")]
+		public string TipoFormatoEvaluacion
+		{
+			get
+			{
+				return this._TipoFormatoEvaluacion;
+			}
+			set
+			{
+				if ((this._TipoFormatoEvaluacion != value))
+				{
+					this._TipoFormatoEvaluacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsVisble", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> EsVisble
+		{
+			get
+			{
+				return this._EsVisble;
+			}
+			set
+			{
+				if ((this._EsVisble != value))
+				{
+					this._EsVisble = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoId", DbType="Char(1)")]
+		public System.Nullable<char> EstadoId
+		{
+			get
+			{
+				return this._EstadoId;
+			}
+			set
+			{
+				if ((this._EstadoId != value))
+				{
+					this._EstadoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoDeEvaluacion", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string EstadoDeEvaluacion
+		{
+			get
+			{
+				return this._EstadoDeEvaluacion;
+			}
+			set
+			{
+				if ((this._EstadoDeEvaluacion != value))
+				{
+					this._EstadoDeEvaluacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firmaReponsable", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string firmaReponsable
+		{
+			get
+			{
+				return this._firmaReponsable;
+			}
+			set
+			{
+				if ((this._firmaReponsable != value))
+				{
+					this._firmaReponsable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firmaEvaluador", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string firmaEvaluador
+		{
+			get
+			{
+				return this._firmaEvaluador;
+			}
+			set
+			{
+				if ((this._firmaEvaluador != value))
+				{
+					this._firmaEvaluador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreDiaSemana", DbType="VarChar(9)")]
+		public string nombreDiaSemana
+		{
+			get
+			{
+				return this._nombreDiaSemana;
+			}
+			set
+			{
+				if ((this._nombreDiaSemana != value))
+				{
+					this._nombreDiaSemana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_periodo", DbType="Char(6)")]
+		public string periodo
+		{
+			get
+			{
+				return this._periodo;
+			}
+			set
+			{
+				if ((this._periodo != value))
+				{
+					this._periodo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DetalleId", DbType="Int NOT NULL")]
+		public int DetalleId
+		{
+			get
+			{
+				return this._DetalleId;
+			}
+			set
+			{
+				if ((this._DetalleId != value))
+				{
+					this._DetalleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CriterioId", DbType="Int NOT NULL")]
+		public int CriterioId
+		{
+			get
+			{
+				return this._CriterioId;
+			}
+			set
+			{
+				if ((this._CriterioId != value))
+				{
+					this._CriterioId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Criterio", DbType="VarChar(MAX)")]
+		public string Criterio
+		{
+			get
+			{
+				return this._Criterio;
+			}
+			set
+			{
+				if ((this._Criterio != value))
+				{
+					this._Criterio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaDetalleEvaluacion", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaDetalleEvaluacion
+		{
+			get
+			{
+				return this._FechaDetalleEvaluacion;
+			}
+			set
+			{
+				if ((this._FechaDetalleEvaluacion != value))
+				{
+					this._FechaDetalleEvaluacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cumplimiento", DbType="Char(1) NOT NULL")]
+		public char Cumplimiento
+		{
+			get
+			{
+				return this._Cumplimiento;
+			}
+			set
+			{
+				if ((this._Cumplimiento != value))
+				{
+					this._Cumplimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(250)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
 				}
 			}
 		}

@@ -4,6 +4,7 @@ using ComparativoHorasVisualSATNISIRA.Almacen;
 using ComparativoHorasVisualSATNISIRA.Calidad;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._010;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._013;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._014;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maestros;
 using ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha;
 using ComparativoHorasVisualSATNISIRA.Cosecha;
@@ -29,7 +30,7 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte());
+            Application.Run(new CheckListBuenasPractivasManufacturaReporte());
             //Application.Run(new Menu());
         }
     }

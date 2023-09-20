@@ -34,6 +34,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
         
         private SAS_ListadoAmonestacionesIncumplimientosByIdDataTable tableSAS_ListadoAmonestacionesIncumplimientosById;
         
+        private SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +78,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
                 }
                 if ((ds.Tables["SAS_ListadoAmonestacionesIncumplimientosById"] != null)) {
                     base.Tables.Add(new SAS_ListadoAmonestacionesIncumplimientosByIdDataTable(ds.Tables["SAS_ListadoAmonestacionesIncumplimientosById"]));
+                }
+                if ((ds.Tables["SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo"] != null)) {
+                    base.Tables.Add(new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable(ds.Tables["SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +147,16 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
         public SAS_ListadoAmonestacionesIncumplimientosByIdDataTable SAS_ListadoAmonestacionesIncumplimientosById {
             get {
                 return this.tableSAS_ListadoAmonestacionesIncumplimientosById;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo {
+            get {
+                return this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo;
             }
         }
         
@@ -227,6 +242,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
                 if ((ds.Tables["SAS_ListadoAmonestacionesIncumplimientosById"] != null)) {
                     base.Tables.Add(new SAS_ListadoAmonestacionesIncumplimientosByIdDataTable(ds.Tables["SAS_ListadoAmonestacionesIncumplimientosById"]));
                 }
+                if ((ds.Tables["SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo"] != null)) {
+                    base.Tables.Add(new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable(ds.Tables["SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +308,12 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
                     this.tableSAS_ListadoAmonestacionesIncumplimientosById.InitVars();
                 }
             }
+            this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo = ((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable)(base.Tables["SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo"]));
+            if ((initTable == true)) {
+                if ((this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo != null)) {
+                    this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +334,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
             base.Tables.Add(this.tableSAS_ListadoAmonestacionesIncumplimientosByDates);
             this.tableSAS_ListadoAmonestacionesIncumplimientosById = new SAS_ListadoAmonestacionesIncumplimientosByIdDataTable();
             base.Tables.Add(this.tableSAS_ListadoAmonestacionesIncumplimientosById);
+            this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo = new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable();
+            base.Tables.Add(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +365,12 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeSAS_ListadoAmonestacionesIncumplimientosById() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo() {
             return false;
         }
         
@@ -411,6 +443,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void SAS_ListadoAmonestacionesIncumplimientosByIdRowChangeEventHandler(object sender, SAS_ListadoAmonestacionesIncumplimientosByIdRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEventHandler(object sender, SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4173,6 +4208,541 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SAS_ListadoAmonestacionesIncumplimientosByIdDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable : global::System.Data.TypedTableBase<SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow> {
+            
+            private global::System.Data.DataColumn columnRegistroId;
+            
+            private global::System.Data.DataColumn columnperiodo;
+            
+            private global::System.Data.DataColumn columnSemana;
+            
+            private global::System.Data.DataColumn columnSedeId;
+            
+            private global::System.Data.DataColumn columnSede;
+            
+            private global::System.Data.DataColumn columnEvaluador;
+            
+            private global::System.Data.DataColumn columnResponsable;
+            
+            private global::System.Data.DataColumn columnfirmaReponsable;
+            
+            private global::System.Data.DataColumn columnItem;
+            
+            private global::System.Data.DataColumn columnCriterioDeCumplimiento;
+            
+            private global::System.Data.DataColumn columnObservacion;
+            
+            private global::System.Data.DataColumn columnLunes;
+            
+            private global::System.Data.DataColumn columnMartes;
+            
+            private global::System.Data.DataColumn columnMiércoles;
+            
+            private global::System.Data.DataColumn columnJueves;
+            
+            private global::System.Data.DataColumn columnViernes;
+            
+            private global::System.Data.DataColumn columnSábado;
+            
+            private global::System.Data.DataColumn columnDomingo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable() {
+                this.TableName = "SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RegistroIdColumn {
+                get {
+                    return this.columnRegistroId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn periodoColumn {
+                get {
+                    return this.columnperiodo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SemanaColumn {
+                get {
+                    return this.columnSemana;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SedeIdColumn {
+                get {
+                    return this.columnSedeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SedeColumn {
+                get {
+                    return this.columnSede;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EvaluadorColumn {
+                get {
+                    return this.columnEvaluador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ResponsableColumn {
+                get {
+                    return this.columnResponsable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn firmaReponsableColumn {
+                get {
+                    return this.columnfirmaReponsable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ItemColumn {
+                get {
+                    return this.columnItem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CriterioDeCumplimientoColumn {
+                get {
+                    return this.columnCriterioDeCumplimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ObservacionColumn {
+                get {
+                    return this.columnObservacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LunesColumn {
+                get {
+                    return this.columnLunes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MartesColumn {
+                get {
+                    return this.columnMartes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MiércolesColumn {
+                get {
+                    return this.columnMiércoles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JuevesColumn {
+                get {
+                    return this.columnJueves;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ViernesColumn {
+                get {
+                    return this.columnViernes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SábadoColumn {
+                get {
+                    return this.columnSábado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DomingoColumn {
+                get {
+                    return this.columnDomingo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow this[int index] {
+                get {
+                    return ((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEventHandler SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEventHandler SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEventHandler SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEventHandler SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow(SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow AddSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow(
+                        int RegistroId, 
+                        string periodo, 
+                        string Semana, 
+                        string SedeId, 
+                        string Sede, 
+                        string Evaluador, 
+                        string Responsable, 
+                        string firmaReponsable, 
+                        int Item, 
+                        string CriterioDeCumplimiento, 
+                        string Observacion, 
+                        string Lunes, 
+                        string Martes, 
+                        string Miércoles, 
+                        string Jueves, 
+                        string Viernes, 
+                        string Sábado, 
+                        string Domingo) {
+                SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow rowSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow = ((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        RegistroId,
+                        periodo,
+                        Semana,
+                        SedeId,
+                        Sede,
+                        Evaluador,
+                        Responsable,
+                        firmaReponsable,
+                        Item,
+                        CriterioDeCumplimiento,
+                        Observacion,
+                        Lunes,
+                        Martes,
+                        Miércoles,
+                        Jueves,
+                        Viernes,
+                        Sábado,
+                        Domingo};
+                rowSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow);
+                return rowSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable cln = ((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnRegistroId = base.Columns["RegistroId"];
+                this.columnperiodo = base.Columns["periodo"];
+                this.columnSemana = base.Columns["Semana"];
+                this.columnSedeId = base.Columns["SedeId"];
+                this.columnSede = base.Columns["Sede"];
+                this.columnEvaluador = base.Columns["Evaluador"];
+                this.columnResponsable = base.Columns["Responsable"];
+                this.columnfirmaReponsable = base.Columns["firmaReponsable"];
+                this.columnItem = base.Columns["Item"];
+                this.columnCriterioDeCumplimiento = base.Columns["CriterioDeCumplimiento"];
+                this.columnObservacion = base.Columns["Observacion"];
+                this.columnLunes = base.Columns["Lunes"];
+                this.columnMartes = base.Columns["Martes"];
+                this.columnMiércoles = base.Columns["Miércoles"];
+                this.columnJueves = base.Columns["Jueves"];
+                this.columnViernes = base.Columns["Viernes"];
+                this.columnSábado = base.Columns["Sábado"];
+                this.columnDomingo = base.Columns["Domingo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnRegistroId = new global::System.Data.DataColumn("RegistroId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegistroId);
+                this.columnperiodo = new global::System.Data.DataColumn("periodo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnperiodo);
+                this.columnSemana = new global::System.Data.DataColumn("Semana", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSemana);
+                this.columnSedeId = new global::System.Data.DataColumn("SedeId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSedeId);
+                this.columnSede = new global::System.Data.DataColumn("Sede", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSede);
+                this.columnEvaluador = new global::System.Data.DataColumn("Evaluador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEvaluador);
+                this.columnResponsable = new global::System.Data.DataColumn("Responsable", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnResponsable);
+                this.columnfirmaReponsable = new global::System.Data.DataColumn("firmaReponsable", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirmaReponsable);
+                this.columnItem = new global::System.Data.DataColumn("Item", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnItem.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Item");
+                this.columnItem.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "ItemColumn");
+                this.columnItem.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnItem");
+                this.columnItem.ExtendedProperties.Add("Generator_UserColumnName", "Item");
+                base.Columns.Add(this.columnItem);
+                this.columnCriterioDeCumplimiento = new global::System.Data.DataColumn("CriterioDeCumplimiento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCriterioDeCumplimiento);
+                this.columnObservacion = new global::System.Data.DataColumn("Observacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacion);
+                this.columnLunes = new global::System.Data.DataColumn("Lunes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLunes);
+                this.columnMartes = new global::System.Data.DataColumn("Martes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMartes);
+                this.columnMiércoles = new global::System.Data.DataColumn("Miércoles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMiércoles);
+                this.columnJueves = new global::System.Data.DataColumn("Jueves", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJueves);
+                this.columnViernes = new global::System.Data.DataColumn("Viernes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnViernes);
+                this.columnSábado = new global::System.Data.DataColumn("Sábado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSábado);
+                this.columnDomingo = new global::System.Data.DataColumn("Domingo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDomingo);
+                this.columnRegistroId.AllowDBNull = false;
+                this.columnperiodo.MaxLength = 6;
+                this.columnSemana.AllowDBNull = false;
+                this.columnSemana.MaxLength = 2;
+                this.columnSedeId.AllowDBNull = false;
+                this.columnSedeId.MaxLength = 3;
+                this.columnSede.MaxLength = 200;
+                this.columnEvaluador.MaxLength = 150;
+                this.columnResponsable.MaxLength = 160;
+                this.columnfirmaReponsable.AllowDBNull = false;
+                this.columnfirmaReponsable.MaxLength = 250;
+                this.columnItem.AllowDBNull = false;
+                this.columnCriterioDeCumplimiento.MaxLength = 2147483647;
+                this.columnObservacion.MaxLength = 250;
+                this.columnLunes.ReadOnly = true;
+                this.columnLunes.MaxLength = 1;
+                this.columnMartes.ReadOnly = true;
+                this.columnMartes.MaxLength = 1;
+                this.columnMiércoles.ReadOnly = true;
+                this.columnMiércoles.MaxLength = 1;
+                this.columnJueves.ReadOnly = true;
+                this.columnJueves.MaxLength = 1;
+                this.columnViernes.ReadOnly = true;
+                this.columnViernes.MaxLength = 1;
+                this.columnSábado.ReadOnly = true;
+                this.columnSábado.MaxLength = 1;
+                this.columnDomingo.ReadOnly = true;
+                this.columnDomingo.MaxLength = 1;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow NewSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow() {
+                return ((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChanged != null)) {
+                    this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChanged(this, new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent(((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChanging != null)) {
+                    this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChanging(this, new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent(((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowDeleted != null)) {
+                    this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowDeleted(this, new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent(((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowDeleting != null)) {
+                    this.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowDeleting(this, new SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent(((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow(SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                RegistroDeIngresoSalidaGasificadoDS ds = new RegistroDeIngresoSalidaGasificadoDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -8400,6 +8970,453 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow : global::System.Data.DataRow {
+            
+            private SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo = ((SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int RegistroId {
+                get {
+                    return ((int)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.RegistroIdColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.RegistroIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string periodo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.periodoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'periodo\' in table \'SAS_ListadoCheckListBuenasPracticasManuf" +
+                                "acturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.periodoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Semana {
+                get {
+                    return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SemanaColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SemanaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SedeId {
+                get {
+                    return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SedeIdColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SedeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Sede {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SedeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sede\' in table \'SAS_ListadoCheckListBuenasPracticasManufact" +
+                                "uraAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SedeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Evaluador {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.EvaluadorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Evaluador\' in table \'SAS_ListadoCheckListBuenasPracticasMan" +
+                                "ufacturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.EvaluadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Responsable {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ResponsableColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Responsable\' in table \'SAS_ListadoCheckListBuenasPracticasM" +
+                                "anufacturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ResponsableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string firmaReponsable {
+                get {
+                    return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.firmaReponsableColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.firmaReponsableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Item {
+                get {
+                    return ((int)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ItemColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ItemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CriterioDeCumplimiento {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.CriterioDeCumplimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CriterioDeCumplimiento\' in table \'SAS_ListadoCheckListBuena" +
+                                "sPracticasManufacturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.CriterioDeCumplimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Observacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ObservacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Observacion\' in table \'SAS_ListadoCheckListBuenasPracticasM" +
+                                "anufacturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ObservacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Lunes {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.LunesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Lunes\' in table \'SAS_ListadoCheckListBuenasPracticasManufac" +
+                                "turaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.LunesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Martes {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MartesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Martes\' in table \'SAS_ListadoCheckListBuenasPracticasManufa" +
+                                "cturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MartesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Miércoles {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MiércolesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Miércoles\' in table \'SAS_ListadoCheckListBuenasPracticasMan" +
+                                "ufacturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MiércolesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Jueves {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.JuevesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Jueves\' in table \'SAS_ListadoCheckListBuenasPracticasManufa" +
+                                "cturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.JuevesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Viernes {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ViernesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Viernes\' in table \'SAS_ListadoCheckListBuenasPracticasManuf" +
+                                "acturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ViernesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Sábado {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SábadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sábado\' in table \'SAS_ListadoCheckListBuenasPracticasManufa" +
+                                "cturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SábadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Domingo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.DomingoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Domingo\' in table \'SAS_ListadoCheckListBuenasPracticasManuf" +
+                                "acturaAllByWeekPeriodo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.DomingoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsperiodoNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.periodoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetperiodoNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.periodoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSedeNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SedeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSedeNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SedeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEvaluadorNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.EvaluadorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEvaluadorNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.EvaluadorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsResponsableNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ResponsableColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetResponsableNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ResponsableColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCriterioDeCumplimientoNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.CriterioDeCumplimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCriterioDeCumplimientoNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.CriterioDeCumplimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObservacionNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ObservacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObservacionNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ObservacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLunesNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.LunesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLunesNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.LunesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMartesNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MartesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMartesNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MartesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMiércolesNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MiércolesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMiércolesNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.MiércolesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJuevesNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.JuevesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJuevesNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.JuevesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsViernesNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ViernesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetViernesNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.ViernesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSábadoNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SábadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSábadoNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.SábadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDomingoNull() {
+                return this.IsNull(this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.DomingoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDomingoNull() {
+                this[this.tableSAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo.DomingoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -8555,6 +9572,40 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SAS_ListadoAmonestacionesIncumplimientosByIdRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent : global::System.EventArgs {
+            
+            private SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRowChangeEvent(SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -9681,6 +10732,217 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.RegistroDeIngresoSalidaGasific
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             RegistroDeIngresoSalidaGasificadoDS.SAS_ListadoAmonestacionesIncumplimientosByIdDataTable dataTable = new RegistroDeIngresoSalidaGasificadoDS.SAS_ListadoAmonestacionesIncumplimientosByIdDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo";
+            tableMapping.ColumnMappings.Add("RegistroId", "RegistroId");
+            tableMapping.ColumnMappings.Add("periodo", "periodo");
+            tableMapping.ColumnMappings.Add("Semana", "Semana");
+            tableMapping.ColumnMappings.Add("SedeId", "SedeId");
+            tableMapping.ColumnMappings.Add("Sede", "Sede");
+            tableMapping.ColumnMappings.Add("Evaluador", "Evaluador");
+            tableMapping.ColumnMappings.Add("Responsable", "Responsable");
+            tableMapping.ColumnMappings.Add("firmaReponsable", "firmaReponsable");
+            tableMapping.ColumnMappings.Add("Item", "Item");
+            tableMapping.ColumnMappings.Add("CriterioDeCumplimiento", "CriterioDeCumplimiento");
+            tableMapping.ColumnMappings.Add("Observacion", "Observacion");
+            tableMapping.ColumnMappings.Add("Lunes", "Lunes");
+            tableMapping.ColumnMappings.Add("Martes", "Martes");
+            tableMapping.ColumnMappings.Add("Miércoles", "Miércoles");
+            tableMapping.ColumnMappings.Add("Jueves", "Jueves");
+            tableMapping.ColumnMappings.Add("Viernes", "Viernes");
+            tableMapping.ColumnMappings.Add("Sábado", "Sábado");
+            tableMapping.ColumnMappings.Add("Domingo", "Domingo");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ComparativoHorasVisualSATNISIRA.Properties.Settings.Default.SATURNOConnectionString3;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Periodo", global::System.Data.SqlDbType.VarChar, 6, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Semana", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(RegistroDeIngresoSalidaGasificadoDS.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable dataTable, string Periodo, string Semana) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Periodo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Periodo));
+            }
+            if ((Semana == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Semana));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual RegistroDeIngresoSalidaGasificadoDS.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable GetData(string Periodo, string Semana) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Periodo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Periodo));
+            }
+            if ((Semana == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Semana));
+            }
+            RegistroDeIngresoSalidaGasificadoDS.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable dataTable = new RegistroDeIngresoSalidaGasificadoDS.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

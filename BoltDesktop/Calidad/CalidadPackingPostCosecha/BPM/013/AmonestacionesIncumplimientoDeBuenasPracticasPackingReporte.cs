@@ -95,6 +95,196 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
         }
 
 
+
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            Registar();
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            Atras();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            Anular();
+        }
+
+        private void btnEliminarRegistro_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            Historial();
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            Exportar();
+        }
+
+        private void btnAdjuntar_Click(object sender, EventArgs e)
+        {
+            Adjuntar();
+        }
+
+        private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
+        {
+            CambiarEstadoDispositivo();
+        }
+
+        private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
+        {
+            GenerarPDF();
+        }
+
+        private void btnElegirColumna_Click(object sender, EventArgs e)
+        {
+            ElegirColumna();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            Consultar();
+        }
+
+        private void txtPeriodo_ValueChanged(object sender, EventArgs e)
+        {
+            if (cboMes.SelectedIndex >= 0)
+            {
+                globalHelper = new GlobalesHelper();
+                globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
+            }
+        }
+
+        private void cboMes_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            if (cboMes.SelectedIndex >= 0)
+            {
+                globalHelper = new GlobalesHelper();
+                globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
+            }
+        }
+
+        private void chkResumido_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkVisualizacionPorDia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkVisualizacionPorDia.Checked == true)
+            {
+                this.txtFechaDesde.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                this.txtFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                if (cboMes.SelectedIndex >= 0)
+                {
+                    globalHelper = new GlobalesHelper();
+                    globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
+                }
+            }
+        }
+
+        private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
+        {
+            EjecutarConsultaAsincrona();
+        }
+
+        private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            PresentarResultados();
+        }
+
+        private void vistaPreviaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VistaPrevia(selectedItem);
+        }
+
+        private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
+        {
+            #region Seleccion al cambiar cursor() 
+            selectedItem = new SAS_ListadoAmonestacionesIncumplimientosByDatesResult();
+            selectedItem.CabeceraId = 0;
+
+            try
+            {
+                #region Selecionar registro()                                                                
+                if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
+                {
+                    if (dgvRegistro.CurrentRow != null)
+                    {
+                        if (dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value != null)
+                        {
+                            if (dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value.ToString() != string.Empty)
+                            {
+                                string id = (dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value != null ? dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value.ToString() : string.Empty);
+                                var resultado = resultList.Where(x => x.CabeceraId.ToString() == id).ToList();
+                                if (resultado.ToList().Count > 0)
+                                {
+                                    selectedItem = resultado.ElementAt(0);
+
+                                    if (selectedItem.EstadoId == '1')
+                                    {
+                                        btnEditar.Enabled = true;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
+                return;
+            }
+            #endregion
+        }
+
         #region Métodos() 
 
         private void VistaPrevia(SAS_ListadoAmonestacionesIncumplimientosByDatesResult selectedItem)
@@ -313,192 +503,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
 
         #endregion
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Nuevo();
-        }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Editar();
-        }
-
-        private void btnGrabar_Click(object sender, EventArgs e)
-        {
-            Registar();
-        }
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            Atras();
-        }
-
-        private void btnAnular_Click(object sender, EventArgs e)
-        {
-            Anular();
-        }
-
-        private void btnEliminarRegistro_Click(object sender, EventArgs e)
-        {
-            Eliminar();
-        }
-
-        private void btnHistorial_Click(object sender, EventArgs e)
-        {
-            Historial();
-        }
-
-        private void btnExportToExcel_Click(object sender, EventArgs e)
-        {
-            Exportar();
-        }
-
-        private void btnAdjuntar_Click(object sender, EventArgs e)
-        {
-            Adjuntar();
-        }
-
-        private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
-        {
-            CambiarEstadoDispositivo();
-        }
-
-        private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
-        {
-            GenerarPDF();
-        }
-
-        private void btnElegirColumna_Click(object sender, EventArgs e)
-        {
-            ElegirColumna();
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            if (this.bgwHilo.IsBusy == true)
-            {
-                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
-                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                this.Close();
-            }
-        }
-
-        private void AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (this.bgwHilo.IsBusy == true)
-            {
-                e.Cancel = true;
-                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
-                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            Consultar();
-        }
-
-        private void txtPeriodo_ValueChanged(object sender, EventArgs e)
-        {
-            if (cboMes.SelectedIndex >= 0)
-            {
-                globalHelper = new GlobalesHelper();
-                globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
-            }
-        }
-
-        private void cboMes_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            if (cboMes.SelectedIndex >= 0)
-            {
-                globalHelper = new GlobalesHelper();
-                globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
-            }
-        }
-
-        private void chkResumido_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkVisualizacionPorDia_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkVisualizacionPorDia.Checked == true)
-            {
-                this.txtFechaDesde.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                this.txtFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            }
-            else
-            {
-                if (cboMes.SelectedIndex >= 0)
-                {
-                    globalHelper = new GlobalesHelper();
-                    globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
-                }
-            }
-        }
-
-        private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
-        {
-            EjecutarConsultaAsincrona();
-        }
-
-        private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            PresentarResultados();
-        }
-
-        private void vistaPreviaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            VistaPrevia(selectedItem);
-        }
-
-        private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
-        {
-            #region Seleccion al cambiar cursor() 
-            selectedItem = new SAS_ListadoAmonestacionesIncumplimientosByDatesResult();
-            selectedItem.CabeceraId = 0;
-
-            try
-            {
-                #region Selecionar registro()                                                                
-                if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
-                {
-                    if (dgvRegistro.CurrentRow != null)
-                    {
-                        if (dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value != null)
-                        {
-                            if (dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value.ToString() != string.Empty)
-                            {
-                                string id = (dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value != null ? dgvRegistro.CurrentRow.Cells["chCabeceraId"].Value.ToString() : string.Empty);
-                                var resultado = resultList.Where(x => x.CabeceraId.ToString() == id).ToList();
-                                if (resultado.ToList().Count > 0)
-                                {
-                                    selectedItem = resultado.ElementAt(0);
-
-                                    if (selectedItem.EstadoId == '1')
-                                    {
-                                        btnEditar.Enabled = true;
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-                }
-                #endregion
-            }
-            catch (Exception Ex)
-            {
-
-                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
-                return;
-            }
-            #endregion
-        }
     }
 }
