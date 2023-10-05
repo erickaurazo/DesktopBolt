@@ -485,5 +485,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
 
         #endregion
 
+        private void CheckListBuenasPractivasManufacturaReporte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

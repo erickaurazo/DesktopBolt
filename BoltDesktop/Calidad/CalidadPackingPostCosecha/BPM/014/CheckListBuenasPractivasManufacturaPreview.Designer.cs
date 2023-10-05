@@ -53,6 +53,7 @@
             this.Name = "CheckListBuenasPractivasManufacturaPreview";
             this.Text = "GG-SA-ACP-R-014 | Check List Buenas Practicas De Manufactura | Vista Previa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CheckListBuenasPractivasManufacturaPreview_Load);
             this.ResumeLayout(false);
 
         }

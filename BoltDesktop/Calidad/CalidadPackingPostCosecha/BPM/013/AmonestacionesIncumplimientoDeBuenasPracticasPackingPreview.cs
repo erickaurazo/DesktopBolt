@@ -51,8 +51,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
                     return;
                 }
                 oRpt = new ReportDocument();
-                //oRpt.Load(@"C:\SOLUTION\CumplimientoDiarioDeLavadoDeManosRPT.rpt");
-                oRpt.Load(@"C:\Users\LENOVO\OneDrive\Documentos\Visual Studio 2015\Projects\BoltDesktop\BoltDesktop\Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt");
+                oRpt.Load(@"C:\SOLUTION\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt");
+                //oRpt.Load(@"C:\Users\LENOVO\OneDrive\Documentos\Visual Studio 2015\Projects\BoltDesktop\BoltDesktop\Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt");
                 dta = dsReporte.SAS_ListadoAmonestacionesIncumplimientosById;
                 oRpt.SetDataSource(dta);
                 crystalReportViewer1.ReportSource = oRpt;

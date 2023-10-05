@@ -74,6 +74,7 @@
             this.btnIrARegistroDeAcopioCampo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEliminarRegistroDeGasificado = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEliminarTicket = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAgregarAUnRegistroDeGasificado = new System.Windows.Forms.ToolStripMenuItem();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
             this.txtTotalDeLotes = new System.Windows.Forms.TextBox();
             this.lblTotalLotes = new System.Windows.Forms.Label();
@@ -437,6 +438,7 @@
             this.dgvRegistro.TabIndex = 3;
             this.dgvRegistro.Text = "GrillaTransportistas";
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
+            this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
             // 
             // subMenu
             // 
@@ -445,15 +447,16 @@
             this.btnIrARegistroDeGasificadoExonerado,
             this.btnIrARegistroDeAcopioCampo,
             this.btnEliminarRegistroDeGasificado,
-            this.btnEliminarTicket});
+            this.btnEliminarTicket,
+            this.btnAgregarAUnRegistroDeGasificado});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(234, 114);
+            this.subMenu.Size = new System.Drawing.Size(259, 136);
             // 
             // btnIrARegistroDeGasificado
             // 
             this.btnIrARegistroDeGasificado.Enabled = false;
             this.btnIrARegistroDeGasificado.Name = "btnIrARegistroDeGasificado";
-            this.btnIrARegistroDeGasificado.Size = new System.Drawing.Size(233, 22);
+            this.btnIrARegistroDeGasificado.Size = new System.Drawing.Size(258, 22);
             this.btnIrARegistroDeGasificado.Text = "Ir a registro de gasificado";
             this.btnIrARegistroDeGasificado.Click += new System.EventHandler(this.btnIrARegistroDeGasificado_Click);
             // 
@@ -461,7 +464,7 @@
             // 
             this.btnIrARegistroDeGasificadoExonerado.Enabled = false;
             this.btnIrARegistroDeGasificadoExonerado.Name = "btnIrARegistroDeGasificadoExonerado";
-            this.btnIrARegistroDeGasificadoExonerado.Size = new System.Drawing.Size(233, 22);
+            this.btnIrARegistroDeGasificadoExonerado.Size = new System.Drawing.Size(258, 22);
             this.btnIrARegistroDeGasificadoExonerado.Text = "Ir a registro de exonerado";
             this.btnIrARegistroDeGasificadoExonerado.Click += new System.EventHandler(this.btnIrARegistroDeGasificadoExonerado_Click);
             // 
@@ -469,7 +472,7 @@
             // 
             this.btnIrARegistroDeAcopioCampo.Enabled = false;
             this.btnIrARegistroDeAcopioCampo.Name = "btnIrARegistroDeAcopioCampo";
-            this.btnIrARegistroDeAcopioCampo.Size = new System.Drawing.Size(233, 22);
+            this.btnIrARegistroDeAcopioCampo.Size = new System.Drawing.Size(258, 22);
             this.btnIrARegistroDeAcopioCampo.Text = "Ir a registro de acopio";
             this.btnIrARegistroDeAcopioCampo.Click += new System.EventHandler(this.btnIrARegistroDeAcopioCampo_Click);
             // 
@@ -477,15 +480,22 @@
             // 
             this.btnEliminarRegistroDeGasificado.Enabled = false;
             this.btnEliminarRegistroDeGasificado.Name = "btnEliminarRegistroDeGasificado";
-            this.btnEliminarRegistroDeGasificado.Size = new System.Drawing.Size(233, 22);
+            this.btnEliminarRegistroDeGasificado.Size = new System.Drawing.Size(258, 22);
             this.btnEliminarRegistroDeGasificado.Text = "Eliminar registro de gasificado";
             // 
             // btnEliminarTicket
             // 
             this.btnEliminarTicket.Enabled = false;
             this.btnEliminarTicket.Name = "btnEliminarTicket";
-            this.btnEliminarTicket.Size = new System.Drawing.Size(233, 22);
+            this.btnEliminarTicket.Size = new System.Drawing.Size(258, 22);
             this.btnEliminarTicket.Text = "Eliminar ticket ";
+            // 
+            // btnAgregarAUnRegistroDeGasificado
+            // 
+            this.btnAgregarAUnRegistroDeGasificado.Enabled = false;
+            this.btnAgregarAUnRegistroDeGasificado.Name = "btnAgregarAUnRegistroDeGasificado";
+            this.btnAgregarAUnRegistroDeGasificado.Size = new System.Drawing.Size(258, 22);
+            this.btnAgregarAUnRegistroDeGasificado.Text = "Agregar a un registro de gasificado";
             // 
             // gbCabecera
             // 
@@ -1283,5 +1293,6 @@
         private Telerik.WinControls.UI.CommandBarButton btnCerrar;
         private Telerik.WinControls.UI.CommandBarButton btnVistaPrevia;
         private Telerik.WinControls.UI.CommandBarButton btnElegirColumnas;
+        private System.Windows.Forms.ToolStripMenuItem btnAgregarAUnRegistroDeGasificado;
     }
 }

@@ -327,7 +327,6 @@
     <Compile Include="Administracion del sistema\GoSistemaCatalogoModulosBoltWeb.Designer.cs">
       <DependentUpon>GoSistemaCatalogoModulosBoltWeb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsersBoltDesktop1.cs" />
     <Compile Include="Administracion del sistema\GoSistemaCatalogoUsersBoltDesktopCopiarPrivilegios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -904,11 +903,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPacking.Designer.cs">
       <DependentUpon>VerificacionLimpiezaDesinfeccionPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerificacionLimpiezaDesinfeccionPackingDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -926,11 +920,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDuros.Designer.cs">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDuros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosEdicion.cs">
       <SubType>Form</SubType>
@@ -986,11 +975,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPacking.Designer.cs">
       <DependentUpon>MonitoreoDetencionPlagasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MonitoreoDetencionPlagasPackingDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1008,11 +992,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPacking.Designer.cs">
       <DependentUpon>MonitoreoTrampasRoedoresPacking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MonitoreoTrampasRoedoresPackingDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingEdicion.cs">
       <SubType>Form</SubType>
@@ -1032,11 +1011,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPacking.Designer.cs">
       <DependentUpon>VerificacionCalibracionDiarioBalanzasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1054,11 +1028,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPacking.Designer.cs">
       <DependentUpon>CalibracionInstrumentosCalidadPacking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CalibracionInstrumentosCalidadPackingDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingEdicion.cs">
       <SubType>Form</SubType>
@@ -1078,11 +1047,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltro.Designer.cs">
       <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1100,11 +1064,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPacking.Designer.cs">
       <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPacking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingEdicion.cs">
       <SubType>Form</SubType>
@@ -1124,11 +1083,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFruta.Designer.cs">
       <DependentUpon>VerificacionInocuidadRecepcionFruta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerificacionInocuidadRecepcionFrutaDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1146,11 +1100,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccion.Designer.cs">
       <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionEdicion.cs">
       <SubType>Form</SubType>
@@ -1170,11 +1119,6 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2.Designer.cs">
       <DependentUpon>CheckListProcesoAplicacionSO2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2DS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckListProcesoAplicacionSO2DS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Edicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1192,11 +1136,6 @@
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPacking.Designer.cs">
       <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPacking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingEdicion.cs">
       <SubType>Form</SubType>
@@ -3351,138 +3290,6 @@
     </None>
     <None Include="Calidad\RegistroDeIngresoSalidaGasificadoDS.xss">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingDS.xsc">
-      <DependentUpon>VerificacionLimpiezaDesinfeccionPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VerificacionLimpiezaDesinfeccionPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingDS.xss">
-      <DependentUpon>VerificacionLimpiezaDesinfeccionPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosDS.xsc">
-      <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VerificacionLuminariasVidriosPlasticosDurosDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosDS.xss">
-      <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingDS.xsc">
-      <DependentUpon>MonitoreoDetencionPlagasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MonitoreoDetencionPlagasPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingDS.xss">
-      <DependentUpon>MonitoreoDetencionPlagasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingDS.xsc">
-      <DependentUpon>MonitoreoTrampasRoedoresPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MonitoreoTrampasRoedoresPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingDS.xss">
-      <DependentUpon>MonitoreoTrampasRoedoresPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingDS.xsc">
-      <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VerificacionCalibracionDiarioBalanzasPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingDS.xss">
-      <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingDS.xsc">
-      <DependentUpon>CalibracionInstrumentosCalidadPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CalibracionInstrumentosCalidadPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingDS.xss">
-      <DependentUpon>CalibracionInstrumentosCalidadPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroDS.xsc">
-      <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VerificacionVidriosPlasticosDurosEnFiltroDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroDS.xss">
-      <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingDS.xsc">
-      <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CumplimientoDiarioDesinfeccionHerramientasPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingDS.xss">
-      <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaDS.xsc">
-      <DependentUpon>VerificacionInocuidadRecepcionFrutaDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VerificacionInocuidadRecepcionFrutaDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaDS.xss">
-      <DependentUpon>VerificacionInocuidadRecepcionFrutaDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionDS.xsc">
-      <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ValidacionLimpiezaLiberacionLineasProduccionDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionDS.xss">
-      <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2DS.xsc">
-      <DependentUpon>CheckListProcesoAplicacionSO2DS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2DS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CheckListProcesoAplicacionSO2DS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2DS.xss">
-      <DependentUpon>CheckListProcesoAplicacionSO2DS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.xsc">
-      <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.xsd</DependentUpon>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.xss">
-      <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingDS.xsd</DependentUpon>
     </None>
     <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsc">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsd</DependentUpon>

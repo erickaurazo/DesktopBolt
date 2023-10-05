@@ -563,9 +563,7 @@ namespace Asistencia
             {
                 users = new List<ASJ_USUARIOS>();
                 usersSystem = new List<SAS_ListadoDeUsuariosDelSistema>();
-
-                Modelo = new UsersController();
-                //users = Modelo.GetListAllUser(_conection, _companyId).ToList();
+                Modelo = new UsersController();                
                 usersSystem = Modelo.GetListAllUserSystem(conection, companyId).ToList();
             }
             catch (Exception Ex)
@@ -626,7 +624,7 @@ namespace Asistencia
             {
                 if (ValidateForm() == true)
                 {
-                    GoSistemaCatalogoUsersPrivileges ofrm = new GoSistemaCatalogoUsersPrivileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim(), conection, userToRegister, companyId);
+                    GoSistemaCatalogoUsersPrivileges ofrm = new GoSistemaCatalogoUsersPrivileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim(), "SAS", userToRegister, companyId);
                     ofrm.MdiParent = GoSistemaCatalogoUsers.ActiveForm;
                     ofrm.WindowState = FormWindowState.Maximized;
                     ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;

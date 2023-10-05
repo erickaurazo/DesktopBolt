@@ -1,4 +1,5 @@
 ﻿using Asistencia.Datos;
+using MyControlsDataBinding.Busquedas;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,7 +10,8 @@ namespace Asistencia.Negocios
 {
     public class SAS_RegistroGasificadoController
     {
-
+        SAS_RegistroGasificadoController controller;
+        
         public List<SAS_RegistroGasificadoAll> GetListRegistroGasificadoAll(string conection, string desde, string hasta)
         {
             List<SAS_RegistroGasificadoAll> resultado = new List<SAS_RegistroGasificadoAll>();
@@ -359,8 +361,8 @@ namespace Asistencia.Negocios
             List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesResult> resultado = new List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
-            {        
-                resultado = Modelo.SAS_RegistroIngresoSalidaACamaraGasificadoByDates(desde,hasta ).ToList();
+            {
+                resultado = Modelo.SAS_RegistroIngresoSalidaACamaraGasificadoByDates(desde, hasta).ToList();
             }
             return resultado;
         }
@@ -600,8 +602,8 @@ namespace Asistencia.Negocios
                         result.horaGasificado = oRegistroGasificado.horaGasificado != null ? oRegistroGasificado.horaGasificado.Value : (DateTime?)null;
                         result.horaVentilacion = oRegistroGasificado.horaVentilacion != null ? oRegistroGasificado.horaVentilacion.Value : (DateTime?)null;
                         result.fechaSalida = oRegistroGasificado.fechaSalida != null ? oRegistroGasificado.fechaSalida.Value : (DateTime?)null;
-                        result.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado :  string.Empty;
-                        result.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value :  0;
+                        result.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        result.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value : 0;
                         result.tempAgua = oRegistroGasificado.tempAgua != null ? oRegistroGasificado.tempAgua.Value : 0;
                         result.lecturaPpm = oRegistroGasificado.lecturaPpm != null ? oRegistroGasificado.lecturaPpm.Value : 0;
                         Modelo.SubmitChanges();
@@ -611,6 +613,167 @@ namespace Asistencia.Negocios
                 }
             }
 
+            return resultQuery;
+        }
+
+        public int ToRegister(string conection, SAS_RegistroGasificado oRegistroGasificado, List<IngresoSalidaGasificado> detalleARegistrar, List<IngresoSalidaGasificado> detalleAEliminar)
+        {
+            List<SAS_RegistroGasificado> listResult = new List<SAS_RegistroGasificado>();
+            SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+            List<IngresoSalidaGasificado> itemDetalleEliminar = new List<IngresoSalidaGasificado>();
+            List<IngresoSalidaGasificado> itemDetalleRegistrar = new List<IngresoSalidaGasificado>();
+            List<IngresoSalidaGasificado> itemDetalleResult = new List<IngresoSalidaGasificado>();
+            int resultQuery = 0;
+            SAS_RegistroGasificadoController model = new SAS_RegistroGasificadoController();
+
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                listResult = Modelo.SAS_RegistroGasificado.Where(x => x.idGasificado == oRegistroGasificado.idGasificado).ToList();
+                if (listResult != null)
+                {
+                    if (listResult.ToList().Count == 0)
+                    {
+                        #region Nuevo()
+                        item = new SAS_RegistroGasificado();
+                        item.horaInyeccion = oRegistroGasificado.horaInyeccion != null ? oRegistroGasificado.horaInyeccion.Value : (DateTime?)null;
+                        item.horaGasificado = oRegistroGasificado.horaGasificado != null ? oRegistroGasificado.horaGasificado.Value : (DateTime?)null;
+                        item.horaVentilacion = oRegistroGasificado.horaVentilacion != null ? oRegistroGasificado.horaVentilacion.Value : (DateTime?)null;
+                        item.fechaSalida = oRegistroGasificado.fechaSalida != null ? oRegistroGasificado.fechaSalida.Value : (DateTime?)null;
+                        item.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        item.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value : 0;
+                        item.tempAgua = oRegistroGasificado.tempAgua != null ? oRegistroGasificado.tempAgua.Value : 0;
+                        item.lecturaPpm = oRegistroGasificado.lecturaPpm != null ? oRegistroGasificado.lecturaPpm.Value : 0;
+                        Modelo.SAS_RegistroGasificado.InsertOnSubmit(item);
+                        Modelo.SubmitChanges();
+                        resultQuery = item.idGasificado;
+
+                        #region Detalle de item a eliminar()
+                        if (detalleAEliminar != null && detalleAEliminar.ToList().Count > 0)
+                        {
+                            model.EliminarItemDetalle(conection, item, detalleAEliminar);
+                        }
+                        #endregion
+
+
+                        #region Detalle de items a registrar()
+                        if (detalleARegistrar != null && detalleARegistrar.ToList().Count > 0)
+                        {
+                            model.RegistrarItemDetalle(conection, item, detalleARegistrar);
+                        }
+                        #endregion
+
+
+                        #endregion
+
+                    }
+                    else
+                    {
+                        #region Editar()
+                        item = new SAS_RegistroGasificado();
+                        item = listResult.ElementAt(0);
+                        item.horaInyeccion = oRegistroGasificado.horaInyeccion != null ? oRegistroGasificado.horaInyeccion.Value : (DateTime?)null;
+                        item.horaGasificado = oRegistroGasificado.horaGasificado != null ? oRegistroGasificado.horaGasificado.Value : (DateTime?)null;
+                        item.horaVentilacion = oRegistroGasificado.horaVentilacion != null ? oRegistroGasificado.horaVentilacion.Value : (DateTime?)null;
+                        item.fechaSalida = oRegistroGasificado.fechaSalida != null ? oRegistroGasificado.fechaSalida.Value : (DateTime?)null;
+                        item.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        item.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value : 0;
+                        item.tempAgua = oRegistroGasificado.tempAgua != null ? oRegistroGasificado.tempAgua.Value : 0;
+                        item.lecturaPpm = oRegistroGasificado.lecturaPpm != null ? oRegistroGasificado.lecturaPpm.Value : 0;
+                        Modelo.SubmitChanges();
+                        resultQuery = item.idGasificado;
+
+
+                        #region Detalle de item a eliminar()
+                        if (detalleAEliminar != null && detalleAEliminar.ToList().Count > 0)
+                        {
+                            model.EliminarItemDetalle(conection, item, detalleAEliminar);
+                        }
+                        #endregion
+
+
+                        #region Detalle de items a registrar()
+                        if (detalleARegistrar != null && detalleARegistrar.ToList().Count > 0)
+                        {
+                            model.RegistrarItemDetalle(conection, item, detalleARegistrar);
+                        }
+                        #endregion
+
+
+                        #endregion
+                    }
+                }
+            }
+
+            return resultQuery;
+        }
+
+
+        public int RegistrarItemDetalle(string conection, SAS_RegistroGasificado oRegistroGasificado, List<IngresoSalidaGasificado> detalleARegistrar)
+        {
+            int resultQuery = 0;
+            List<IngresoSalidaGasificado> itemDetalleResult = new List<IngresoSalidaGasificado>();
+            IngresoSalidaGasificado itemDetalle = new IngresoSalidaGasificado();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                foreach (var item in detalleARegistrar)
+                {
+                    itemDetalleResult = Modelo.IngresoSalidaGasificado.Where(x => x.idIngresoSalidaGasificado == item.idIngresoSalidaGasificado).ToList();
+                    if (itemDetalleResult != null && itemDetalleResult.ToList().Count == 0)
+                    {                        
+                        itemDetalle = new IngresoSalidaGasificado();
+                       // itemDetalle.idIngresoSalidaGasificado = item.idIngresoSalidaGasificado;
+                        itemDetalle.idCamara = item.idCamara != null ? item.idCamara.Trim() : string.Empty;
+                        itemDetalle.itemDetalle = item.itemDetalle;
+                        itemDetalle.fecha = item.fecha != null ? oRegistroGasificado.fechaIngreso.Value : DateTime.Now;
+                        itemDetalle.tipoRegistro = item.tipoRegistro != (char?)null ? item.tipoRegistro : (char?)null;
+                        itemDetalle.estado = item.estado != (byte?)null ? item.estado : (byte?)null;
+                        itemDetalle.tipo = item.tipo != (char?)null ? item.tipo : (char?)null;
+                        itemDetalle.idGasificado = oRegistroGasificado.idGasificado != (int?)null ? oRegistroGasificado.idGasificado : (int?)null;
+                        Modelo.IngresoSalidaGasificado.InsertOnSubmit(itemDetalle);
+                        Modelo.SubmitChanges();
+                    }
+                    else if (itemDetalleResult != null && itemDetalleResult.ToList().Count == 1)
+                    {
+                        itemDetalle = new IngresoSalidaGasificado();
+                        itemDetalle = itemDetalleResult.ElementAt(0);
+                        //itemDetalle.idIngresoSalidaGasificado = item.idIngresoSalidaGasificado;
+                        itemDetalle.idCamara = item.idCamara != null ? item.idCamara.Trim() : string.Empty;                        
+                        itemDetalle.fecha = item.fecha != null ? oRegistroGasificado.fechaIngreso.Value : DateTime.Now;                                                                        
+                        itemDetalle.idGasificado = oRegistroGasificado.idGasificado != (int?)null ? oRegistroGasificado.idGasificado : (int?)null;                        
+                        Modelo.SubmitChanges();
+                    }
+                }
+            }
+            return resultQuery;
+        }
+
+        public int EliminarItemDetalle(string conection, SAS_RegistroGasificado oRegistroGasificado, List<IngresoSalidaGasificado> detalleAEliminar)
+        {
+            int resultQuery = 0;
+            List<IngresoSalidaGasificado> itemDetalleResult = new List<IngresoSalidaGasificado>();
+            IngresoSalidaGasificado itemDetalle = new IngresoSalidaGasificado();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                if (detalleAEliminar != null && detalleAEliminar.ToList().Count > 0)
+                {
+
+                    Modelo.IngresoSalidaGasificado.DeleteAllOnSubmit(detalleAEliminar);
+                    //foreach (var item in detalleAEliminar)
+                    //{
+                    //    itemDetalleResult = Modelo.IngresoSalidaGasificado.Where(x => x.idIngresoSalidaGasificado == item.idIngresoSalidaGasificado).ToList();
+                    //    if (itemDetalleResult != null && itemDetalleResult.ToList().Count == 1)
+                    //    {
+                    //        itemDetalle = new IngresoSalidaGasificado();
+                    //        itemDetalle = itemDetalleResult.ElementAt(0);
+                    //        Modelo.IngresoSalidaGasificado.DeleteOnSubmit(itemDetalle);
+                    //        Modelo.SubmitChanges();
+                    //    }
+                    //}
+                }
+            }
             return resultQuery;
         }
 
@@ -835,6 +998,59 @@ namespace Asistencia.Negocios
             return listado;
 
         }
+
+
+        //GetListOfRecordPendingReading
+        public List<DFormatoSimple> GetListOfRecordPendingReading(string conection, DateTime dateQuery, DateTime dateQueryFinal)
+        {
+            controller = new SAS_RegistroGasificadoController();
+            List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosResult> listadoTicketNoLeidos = new List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosResult>();
+            List<DFormatoSimple> listado = new List<DFormatoSimple>();
+            List<SAS_SegmentoRed> typeOfInterfaces = new List<SAS_SegmentoRed>();            
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                listadoTicketNoLeidos = controller.ObtenerListadoTicketsPendientesDeRegistroByFecha(conection, dateQuery).ToList();
+                if (listadoTicketNoLeidos != null && listadoTicketNoLeidos.ToList().Count > 0)
+                {
+                    listado = (from item in listadoTicketNoLeidos
+                              // where item.fechaRegistro <= dateQueryFinal
+                               group item by new { item.idDetalle } into j
+                               select new DFormatoSimple {
+                                   Codigo = j.Key.idDetalle.ToString(),
+                                   Descripcion = (j.FirstOrDefault().fechaRegistro != null ? j.FirstOrDefault().fechaRegistro.Value.ToString()  : string.Empty) + 
+                                   " | Ticket : " + j.FirstOrDefault().itemDetalle != null ? j.FirstOrDefault().itemDetalle.Value.ToString() : string.Empty + 
+                                   " | Cantidad " + j.FirstOrDefault().cantidadRegistrada != null ? j.FirstOrDefault().cantidadRegistrada.Value.ToString() : string.Empty
+                               }
+                               ).ToList();
+                }
+            }
+            return listado;
+        }
+
+        public List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosResult> ObtenerListadoTicketsPendientesDeRegistroByFecha(string conection, DateTime dateQuery)
+        {
+            List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosResult> listado = new List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosResult>();            
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                listado = Modelo.SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidos(dateQuery.ToShortDateString(), dateQuery.ToShortDateString()).ToList();
+            }
+            return listado;
+        }
+
+
+        public SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult ObtenerListadoTicketsPendientesDeRegistroByTicket(string conection, int itemDetalle)
+        {
+            SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult item = new SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                item = Modelo.SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicket(itemDetalle).ToList().ElementAt(0);
+            }
+            return item;
+        }
+
 
     }
 }

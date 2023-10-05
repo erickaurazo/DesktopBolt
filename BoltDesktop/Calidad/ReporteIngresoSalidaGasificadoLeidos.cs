@@ -35,6 +35,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private bool exportVisualSettings = true;
         private GlobalesHelper globalHelper;
         private int incluirTicketsLeidos;
+        private SAS_RegistroGasificadoAllByIDResult selectItemById;
 
         public MesController MesesNeg { get; private set; }
 
@@ -495,7 +496,25 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void btnIrARegistroDeGasificado_Click(object sender, EventArgs e)
         {
+            Editar();
+        }
 
+
+        private void Editar()
+        {
+            if (selectedItem != null)
+            {
+                if (selectedItem.idgasificado > 0)
+                {
+                    //RegistroDeIngresoSalidaGasificadoEdicion ofrm = new RegistroDeIngresoSalidaGasificadoEdicion(conection, user, companyId, privilege, selectedItem);
+                    RegistroDeIngresoSalidaGasificadoEdicion ofrm = new RegistroDeIngresoSalidaGasificadoEdicion(conection, user, companyId, privilege, selectItemById);
+                    //ofrm.Show();
+                    // ofrm.MdiParent = RegistroDeIngresoSalidaGasificado.ActiveForm;
+                    ofrm.WindowState = FormWindowState.Maximized;
+                    ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                    ofrm.Show();
+                }
+            }
         }
 
         private void btnIrARegistroDeGasificadoExonerado_Click(object sender, EventArgs e)
@@ -531,6 +550,49 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private void btnElegirColumnas_Click(object sender, EventArgs e)
         {
             this.dgvRegistro.ShowColumnChooser();
+        }
+
+        private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
+        {
+            btnIrARegistroDeGasificado.Enabled = !true;
+            try
+            {
+                #region Selecionar registro()
+                selectedItem = new SAS_RegistroIngresoSalidaACamaraGasificadoByDatesResult();
+                selectItemById = new SAS_RegistroGasificadoAllByIDResult();
+                selectedItem.idgasificado = 0;
+                selectItemById.idGasificado = 0;
+
+                if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
+                {
+                    if (dgvRegistro.CurrentRow != null)
+                    {
+                        if (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null)
+                        {
+                            if (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value.ToString() != string.Empty)
+                            {
+                                string id = (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null ? dgvRegistro.CurrentRow.Cells["chidgasificado"].Value.ToString() : string.Empty);
+
+                                var resultado = result.Where(x => x.idgasificado.ToString() == id).ToList();
+                                if (resultado.ToList().Count > 0)
+                                {
+                                    selectedItem = resultado.ElementAt(0);
+                                    selectItemById.idGasificado = selectedItem.idgasificado;
+                                    btnIrARegistroDeGasificado.Enabled = true;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
+                return;
+            }
         }
 
         private void RunExportToExcelML(string fileName, ref bool openExportFile, RadGridView grilla1)

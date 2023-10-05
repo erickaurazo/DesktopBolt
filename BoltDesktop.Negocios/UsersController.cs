@@ -29,9 +29,9 @@ namespace Asistencia.Negocios
 
         public List<SAS_ListadoDeUsuariosDelSistema> GetListAllUserSystem(string conection, string companyId)
         {
-            var result = new List<SAS_ListadoDeUsuariosDelSistema>();
+            List<SAS_ListadoDeUsuariosDelSistema> result = new List<SAS_ListadoDeUsuariosDelSistema>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings[conection];
+            cnx = ConfigurationManager.AppSettings["SAS"];
             using (BoltCoorpADDataContext Modelo = new BoltCoorpADDataContext(cnx))
             {
                 result = Modelo.SAS_ListadoDeUsuariosDelSistema.ToList();

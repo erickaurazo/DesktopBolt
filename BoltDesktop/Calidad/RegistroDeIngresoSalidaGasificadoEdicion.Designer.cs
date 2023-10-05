@@ -32,10 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroDeIngresoSalidaGasificadoEdicion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
             this.txtValidar = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -113,18 +126,6 @@
             this.btnDetalleQuitar = new Telerik.WinControls.UI.RadButton();
             this.btnDetalleAgregar = new Telerik.WinControls.UI.RadButton();
             this.dgvDetalle = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
-            this.chidGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chfechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chidIngresoSalidaGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chitemDetalleEnRegistroGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDOCUMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chvariedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chIDCONSUMIDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chconsumidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chcantidadEnTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chNROENVIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chguiaDeRemision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -153,6 +154,22 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.btnImportarPorViaje = new Telerik.WinControls.UI.RadButton();
+            this.bgwAgregarItemDetalle = new System.ComponentModel.BackgroundWorker();
+            this.chidGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chfechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chidIngresoSalidaGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chitemDetalleEnRegistroGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDOCUMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chvariedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chIDCONSUMIDOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chconsumidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chcantidadEnTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chNROENVIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chguiaDeRemision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chfechaRegistroDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chestadoItemDetalleGasificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.BarraPrincipal.SuspendLayout();
             this.gbDocumento.SuspendLayout();
@@ -166,6 +183,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.stsBarraEstado.SuspendLayout();
             this.subMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImportarPorViaje)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraPrincipal
@@ -1227,13 +1245,14 @@
             this.gbDetallePallet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDetallePallet.Controls.Add(this.btnImportarPorViaje);
             this.gbDetallePallet.Controls.Add(this.btnDetalleCambiarEstado);
             this.gbDetallePallet.Controls.Add(this.btnDetalleQuitar);
             this.gbDetallePallet.Controls.Add(this.btnDetalleAgregar);
             this.gbDetallePallet.Controls.Add(this.dgvDetalle);
             this.gbDetallePallet.Location = new System.Drawing.Point(12, 284);
             this.gbDetallePallet.Name = "gbDetallePallet";
-            this.gbDetallePallet.Size = new System.Drawing.Size(1164, 162);
+            this.gbDetallePallet.Size = new System.Drawing.Size(1164, 258);
             this.gbDetallePallet.TabIndex = 227;
             this.gbDetallePallet.TabStop = false;
             this.gbDetallePallet.Text = "Detalle de pallet leidos";
@@ -1248,6 +1267,7 @@
             this.btnDetalleCambiarEstado.Size = new System.Drawing.Size(25, 26);
             this.btnDetalleCambiarEstado.TabIndex = 186;
             this.btnDetalleCambiarEstado.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleCambiarEstado.Click += new System.EventHandler(this.btnDetalleCambiarEstado_Click);
             // 
             // btnDetalleQuitar
             // 
@@ -1259,6 +1279,7 @@
             this.btnDetalleQuitar.Size = new System.Drawing.Size(25, 26);
             this.btnDetalleQuitar.TabIndex = 185;
             this.btnDetalleQuitar.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleQuitar.Click += new System.EventHandler(this.btnDetalleQuitar_Click);
             // 
             // btnDetalleAgregar
             // 
@@ -1270,13 +1291,14 @@
             this.btnDetalleAgregar.Size = new System.Drawing.Size(25, 26);
             this.btnDetalleAgregar.TabIndex = 184;
             this.btnDetalleAgregar.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleAgregar.Click += new System.EventHandler(this.btnDetalleAgregar_Click);
             // 
             // dgvDetalle
             // 
             this.dgvDetalle.AllowUserToAddRows = false;
             this.dgvDetalle.AllowUserToDeleteRows = false;
-            this.dgvDetalle.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvDetalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -1307,15 +1329,17 @@
             this.chDESCRIPCION,
             this.chcantidadEnTicket,
             this.chNROENVIO,
-            this.chguiaDeRemision});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalle.DefaultCellStyle = dataGridViewCellStyle4;
+            this.chguiaDeRemision,
+            this.chfechaRegistroDetalle,
+            this.chestadoItemDetalleGasificado});
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalle.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgvDetalle.GridColor = System.Drawing.SystemColors.Control;
             this.dgvDetalle.Location = new System.Drawing.Point(1, 40);
             this.dgvDetalle.Name = "dgvDetalle";
@@ -1325,109 +1349,28 @@
             this.dgvDetalle.P_NombreColCorrelativa = null;
             this.dgvDetalle.P_NombreTabla = null;
             this.dgvDetalle.P_NumeroDigitos = 0;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDetalle.ReadOnly = true;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvDetalle.RowHeadersWidth = 10;
             this.dgvDetalle.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalle.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalle.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDetalle.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalle.Size = new System.Drawing.Size(1161, 112);
+            this.dgvDetalle.Size = new System.Drawing.Size(1161, 208);
             this.dgvDetalle.TabIndex = 183;
-            // 
-            // chidGasificado
-            // 
-            this.chidGasificado.DataPropertyName = "idGasificado";
-            this.chidGasificado.Frozen = true;
-            this.chidGasificado.HeaderText = "idGasificado";
-            this.chidGasificado.Name = "chidGasificado";
-            this.chidGasificado.Visible = false;
-            // 
-            // chfechaIngreso
-            // 
-            this.chfechaIngreso.DataPropertyName = "fechaIngreso";
-            dataGridViewCellStyle3.Format = "g";
-            dataGridViewCellStyle3.NullValue = null;
-            this.chfechaIngreso.DefaultCellStyle = dataGridViewCellStyle3;
-            this.chfechaIngreso.HeaderText = "Registro";
-            this.chfechaIngreso.Name = "chfechaIngreso";
-            // 
-            // chidIngresoSalidaGasificado
-            // 
-            this.chidIngresoSalidaGasificado.DataPropertyName = "idIngresoSalidaGasificado";
-            this.chidIngresoSalidaGasificado.HeaderText = "idIngresoSalidaGasificado";
-            this.chidIngresoSalidaGasificado.Name = "chidIngresoSalidaGasificado";
-            this.chidIngresoSalidaGasificado.Visible = false;
-            // 
-            // chitemDetalleEnRegistroGasificado
-            // 
-            this.chitemDetalleEnRegistroGasificado.DataPropertyName = "itemDetalleEnRegistroGasificado";
-            this.chitemDetalleEnRegistroGasificado.HeaderText = "Ticket";
-            this.chitemDetalleEnRegistroGasificado.Name = "chitemDetalleEnRegistroGasificado";
-            // 
-            // chDOCUMENTO
-            // 
-            this.chDOCUMENTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chDOCUMENTO.DataPropertyName = "DOCUMENTO";
-            this.chDOCUMENTO.HeaderText = "Doc. Acopio";
-            this.chDOCUMENTO.Name = "chDOCUMENTO";
-            // 
-            // chvariedad
-            // 
-            this.chvariedad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chvariedad.DataPropertyName = "variedad";
-            this.chvariedad.HeaderText = "Variedad";
-            this.chvariedad.Name = "chvariedad";
-            // 
-            // chIDCONSUMIDOR
-            // 
-            this.chIDCONSUMIDOR.DataPropertyName = "IDCONSUMIDOR";
-            this.chIDCONSUMIDOR.HeaderText = "Cod. Lote";
-            this.chIDCONSUMIDOR.Name = "chIDCONSUMIDOR";
-            // 
-            // chconsumidor
-            // 
-            this.chconsumidor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chconsumidor.DataPropertyName = "consumidor";
-            this.chconsumidor.HeaderText = "Lote";
-            this.chconsumidor.Name = "chconsumidor";
-            // 
-            // chDESCRIPCION
-            // 
-            this.chDESCRIPCION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chDESCRIPCION.DataPropertyName = "DESCRIPCION";
-            this.chDESCRIPCION.HeaderText = "Producto";
-            this.chDESCRIPCION.Name = "chDESCRIPCION";
-            // 
-            // chcantidadEnTicket
-            // 
-            this.chcantidadEnTicket.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chcantidadEnTicket.DataPropertyName = "cantidadEnTicket";
-            this.chcantidadEnTicket.HeaderText = "Cantidad Jabas";
-            this.chcantidadEnTicket.Name = "chcantidadEnTicket";
-            // 
-            // chNROENVIO
-            // 
-            this.chNROENVIO.DataPropertyName = "NROENVIO";
-            this.chNROENVIO.HeaderText = "# Envio";
-            this.chNROENVIO.Name = "chNROENVIO";
-            // 
-            // chguiaDeRemision
-            // 
-            this.chguiaDeRemision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chguiaDeRemision.DataPropertyName = "guiaDeRemision";
-            this.chguiaDeRemision.HeaderText = "Guía. Remisión";
-            this.chguiaDeRemision.Name = "chguiaDeRemision";
+            this.dgvDetalle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetalle_KeyUp);
             // 
             // stsBarraEstado
             // 
@@ -1437,7 +1380,7 @@
             this.lblUser,
             this.lblFullName,
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 449);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 545);
             this.stsBarraEstado.Name = "stsBarraEstado";
             this.stsBarraEstado.Size = new System.Drawing.Size(1188, 22);
             this.stsBarraEstado.TabIndex = 229;
@@ -1614,10 +1557,179 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
+            // btnImportarPorViaje
+            // 
+            this.btnImportarPorViaje.Image = ((System.Drawing.Image)(resources.GetObject("btnImportarPorViaje.Image")));
+            this.btnImportarPorViaje.Location = new System.Drawing.Point(9, 11);
+            this.btnImportarPorViaje.Name = "btnImportarPorViaje";
+            this.btnImportarPorViaje.Size = new System.Drawing.Size(240, 26);
+            this.btnImportarPorViaje.TabIndex = 263;
+            this.btnImportarPorViaje.Text = "Importar por documento de control";
+            this.btnImportarPorViaje.ThemeName = "VisualStudio2012Light";
+            // 
+            // bgwAgregarItemDetalle
+            // 
+            this.bgwAgregarItemDetalle.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwAgregarItemDetalle_DoWork);
+            this.bgwAgregarItemDetalle.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwAgregarItemDetalle_RunWorkerCompleted);
+            // 
+            // chidGasificado
+            // 
+            this.chidGasificado.DataPropertyName = "idGasificado";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chidGasificado.DefaultCellStyle = dataGridViewCellStyle3;
+            this.chidGasificado.Frozen = true;
+            this.chidGasificado.HeaderText = "idGasificado";
+            this.chidGasificado.Name = "chidGasificado";
+            this.chidGasificado.ReadOnly = true;
+            this.chidGasificado.Visible = false;
+            // 
+            // chfechaIngreso
+            // 
+            this.chfechaIngreso.DataPropertyName = "fechaIngreso";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle4.Format = "g";
+            dataGridViewCellStyle4.NullValue = null;
+            this.chfechaIngreso.DefaultCellStyle = dataGridViewCellStyle4;
+            this.chfechaIngreso.HeaderText = "Registro";
+            this.chfechaIngreso.Name = "chfechaIngreso";
+            this.chfechaIngreso.ReadOnly = true;
+            // 
+            // chidIngresoSalidaGasificado
+            // 
+            this.chidIngresoSalidaGasificado.DataPropertyName = "idIngresoSalidaGasificado";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chidIngresoSalidaGasificado.DefaultCellStyle = dataGridViewCellStyle5;
+            this.chidIngresoSalidaGasificado.HeaderText = "idIngresoSalidaGasificado";
+            this.chidIngresoSalidaGasificado.Name = "chidIngresoSalidaGasificado";
+            this.chidIngresoSalidaGasificado.ReadOnly = true;
+            this.chidIngresoSalidaGasificado.Visible = false;
+            // 
+            // chitemDetalleEnRegistroGasificado
+            // 
+            this.chitemDetalleEnRegistroGasificado.DataPropertyName = "itemDetalleEnRegistroGasificado";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chitemDetalleEnRegistroGasificado.DefaultCellStyle = dataGridViewCellStyle6;
+            this.chitemDetalleEnRegistroGasificado.HeaderText = "Ticket";
+            this.chitemDetalleEnRegistroGasificado.Name = "chitemDetalleEnRegistroGasificado";
+            this.chitemDetalleEnRegistroGasificado.ReadOnly = true;
+            // 
+            // chDOCUMENTO
+            // 
+            this.chDOCUMENTO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chDOCUMENTO.DataPropertyName = "DOCUMENTO";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chDOCUMENTO.DefaultCellStyle = dataGridViewCellStyle7;
+            this.chDOCUMENTO.HeaderText = "Doc. Acopio";
+            this.chDOCUMENTO.Name = "chDOCUMENTO";
+            this.chDOCUMENTO.ReadOnly = true;
+            // 
+            // chvariedad
+            // 
+            this.chvariedad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chvariedad.DataPropertyName = "variedad";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chvariedad.DefaultCellStyle = dataGridViewCellStyle8;
+            this.chvariedad.HeaderText = "Variedad";
+            this.chvariedad.Name = "chvariedad";
+            this.chvariedad.ReadOnly = true;
+            // 
+            // chIDCONSUMIDOR
+            // 
+            this.chIDCONSUMIDOR.DataPropertyName = "IDCONSUMIDOR";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chIDCONSUMIDOR.DefaultCellStyle = dataGridViewCellStyle9;
+            this.chIDCONSUMIDOR.HeaderText = "Cod. Lote";
+            this.chIDCONSUMIDOR.Name = "chIDCONSUMIDOR";
+            this.chIDCONSUMIDOR.ReadOnly = true;
+            // 
+            // chconsumidor
+            // 
+            this.chconsumidor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chconsumidor.DataPropertyName = "consumidor";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chconsumidor.DefaultCellStyle = dataGridViewCellStyle10;
+            this.chconsumidor.HeaderText = "Lote";
+            this.chconsumidor.Name = "chconsumidor";
+            this.chconsumidor.ReadOnly = true;
+            // 
+            // chDESCRIPCION
+            // 
+            this.chDESCRIPCION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chDESCRIPCION.DataPropertyName = "DESCRIPCION";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chDESCRIPCION.DefaultCellStyle = dataGridViewCellStyle11;
+            this.chDESCRIPCION.HeaderText = "Producto";
+            this.chDESCRIPCION.Name = "chDESCRIPCION";
+            this.chDESCRIPCION.ReadOnly = true;
+            // 
+            // chcantidadEnTicket
+            // 
+            this.chcantidadEnTicket.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chcantidadEnTicket.DataPropertyName = "cantidadEnTicket";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chcantidadEnTicket.DefaultCellStyle = dataGridViewCellStyle12;
+            this.chcantidadEnTicket.HeaderText = "Cantidad Jabas";
+            this.chcantidadEnTicket.Name = "chcantidadEnTicket";
+            this.chcantidadEnTicket.ReadOnly = true;
+            // 
+            // chNROENVIO
+            // 
+            this.chNROENVIO.DataPropertyName = "NROENVIO";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chNROENVIO.DefaultCellStyle = dataGridViewCellStyle13;
+            this.chNROENVIO.HeaderText = "# Envio";
+            this.chNROENVIO.Name = "chNROENVIO";
+            this.chNROENVIO.ReadOnly = true;
+            // 
+            // chguiaDeRemision
+            // 
+            this.chguiaDeRemision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chguiaDeRemision.DataPropertyName = "guiaDeRemision";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chguiaDeRemision.DefaultCellStyle = dataGridViewCellStyle14;
+            this.chguiaDeRemision.HeaderText = "Guía. Remisión";
+            this.chguiaDeRemision.Name = "chguiaDeRemision";
+            this.chguiaDeRemision.ReadOnly = true;
+            // 
+            // chfechaRegistroDetalle
+            // 
+            this.chfechaRegistroDetalle.DataPropertyName = "fechaRegistroDetalle";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle15.Format = "{0:d}";
+            this.chfechaRegistroDetalle.DefaultCellStyle = dataGridViewCellStyle15;
+            this.chfechaRegistroDetalle.HeaderText = "fechaRegistroDetalle";
+            this.chfechaRegistroDetalle.Name = "chfechaRegistroDetalle";
+            this.chfechaRegistroDetalle.ReadOnly = true;
+            this.chfechaRegistroDetalle.Visible = false;
+            // 
+            // chestadoItemDetalleGasificado
+            // 
+            this.chestadoItemDetalleGasificado.DataPropertyName = "estadoItemDetalleGasificado";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.chestadoItemDetalleGasificado.DefaultCellStyle = dataGridViewCellStyle16;
+            this.chestadoItemDetalleGasificado.HeaderText = "Estado";
+            this.chestadoItemDetalleGasificado.Name = "chestadoItemDetalleGasificado";
+            this.chestadoItemDetalleGasificado.ReadOnly = true;
+            this.chestadoItemDetalleGasificado.Visible = false;
+            // 
             // RegistroDeIngresoSalidaGasificadoEdicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1188, 471);
+            this.ClientSize = new System.Drawing.Size(1188, 567);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.gbDetallePallet);
             this.Controls.Add(this.gbDatosDelProceso);
@@ -1648,6 +1760,7 @@
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();
             this.subMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnImportarPorViaje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1758,6 +1871,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtCapacidadAlmacenamiento;
         private System.Windows.Forms.Label lblCapacidad;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtCajaFechaValidad;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtHoraInicioGasificado;
+        private Telerik.WinControls.UI.RadButton btnImportarPorViaje;
+        private System.ComponentModel.BackgroundWorker bgwAgregarItemDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn chidGasificado;
         private System.Windows.Forms.DataGridViewTextBoxColumn chfechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn chidIngresoSalidaGasificado;
@@ -1770,7 +1887,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chcantidadEnTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn chNROENVIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn chguiaDeRemision;
-        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtCajaFechaValidad;
-        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtHoraInicioGasificado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chfechaRegistroDetalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chestadoItemDetalleGasificado;
     }
 }

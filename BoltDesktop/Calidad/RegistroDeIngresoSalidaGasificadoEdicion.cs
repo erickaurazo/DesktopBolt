@@ -17,36 +17,36 @@ using Asistencia.Helper;
 using MyDataGridViewColumns;
 using System.Drawing;
 using MyControlsDataBinding.Controles;
+using System.Collections;
+using MyControlsDataBinding.Busquedas;
 
 namespace ComparativoHorasVisualSATNISIRA.Calidad
 {
     public partial class RegistroDeIngresoSalidaGasificadoEdicion : Form
     {
-
+        #region Variables()
         private string conection;
         private SAS_USUARIOS user2;
         private string companyId;
         private PrivilegesByUser privilege;
-        SAS_ListadoDeRegistrosExoneradosByDatesResult document;
-        List<SAS_RegistroGasificadoAll> documents;
-
-
-        SAS_RegistroGasificadoAllByIDResult documentDate;        
-        List<SAS_RegistroGasificadoAllByIDResult> documentsDate;        
-
-        SAS_RegistroGasificadoController model;
+        private SAS_ListadoDeRegistrosExoneradosByDatesResult document;
+        private List<SAS_RegistroGasificadoAll> documents;
+        private List<IngresoSalidaGasificado> listadoDetalle = new List<IngresoSalidaGasificado>();
+        private List<IngresoSalidaGasificado> listadoDetalleEliminado = new List<IngresoSalidaGasificado>();
+        private SAS_RegistroGasificadoAllByIDResult documentDate;
+        private List<SAS_RegistroGasificadoAllByIDResult> documentsDate;
+        private SAS_RegistroGasificadoController model;
         private string fileName = "DEFAULT";
         private bool exportVisualSettings = true;
         private GlobalesHelper globalHelper;
-        private SAS_RegistroGasificado cabecera = new SAS_RegistroGasificado();
-        //List<IngresoSalidaGasificado> listadoDetalle = new List<IngresoSalidaGasificado>();
-        List<IngresoSalidaGasificado> listadoDetalleEliminado = new List<IngresoSalidaGasificado>();
-        List<SAS_RegistroGasificadoAll> listadoDetalleFull = new List<SAS_RegistroGasificadoAll>();
-        List<SAS_RegistroGasificadoAllByIDResult> listadoDetalleFullDate = new List<SAS_RegistroGasificadoAllByIDResult>();
-
-
+        private SAS_RegistroGasificado cabecera = new SAS_RegistroGasificado();        //List<IngresoSalidaGasificado> listadoDetalle = new List<IngresoSalidaGasificado>();
+        private List<SAS_RegistroGasificadoAll> listadoDetalleFull = new List<SAS_RegistroGasificadoAll>();
+        private List<SAS_RegistroGasificadoAllByIDResult> listadoDetalleFullDate = new List<SAS_RegistroGasificadoAllByIDResult>();
         private string observacionesPorValidad = string.Empty;
         private string modo;
+        private SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult itemAdd;
+        private int numeroDeTicket;
+        #endregion
 
         public RegistroDeIngresoSalidaGasificadoEdicion()
         {
@@ -290,7 +290,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 {
                     if (user2.IdUsuario.Trim() != string.Empty)
                     {
-                        if (user2.IdUsuario.Trim().ToUpper() == "EAURAZO" || user2.IdUsuario.Trim().ToUpper() == "ABURGA" || user2.IdUsuario.Trim().ToUpper() == "JCHERO" || user2.IdUsuario.Trim().ToUpper() == "dvaldiviezo".ToUpper() || user2.IdUsuario.Trim().ToUpper() == "HVALENCIA")
+                        if (user2.IdUsuario.Trim().ToUpper() == "EAURAZO" || user2.IdUsuario.Trim().ToUpper() == "ABURGA" || user2.IdUsuario.Trim().ToUpper() == "YGARAY" || user2.IdUsuario.Trim().ToUpper() == "dvaldiviezo".ToUpper() || user2.IdUsuario.Trim().ToUpper() == "FCERNA")
                         {
                             btnGenerarSecuencia.Visible = true;
                         }
@@ -300,6 +300,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         }
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
+        {
+            EjecutarConsulta();
+        }
+
+        private void EjecutarConsulta()
         {
             try
             {
@@ -564,8 +569,49 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                     oRegistroGasificado.tempAgua = txtTemperaturaDelAgua.Text != string.Empty ? Convert.ToDecimal(txtTemperaturaDelAgua.Text) : 0;
                     oRegistroGasificado.lecturaPpm = txtLecturasEnPPM.Text != string.Empty ? Convert.ToDecimal(txtLecturasEnPPM.Text) : 0;
 
+                    #region Detalle()
+
+                    listadoDetalle = new List<IngresoSalidaGasificado>();
+                    if (this.dgvDetalle != null)
+                    {
+                        if (this.dgvDetalle.Rows.Count > 0)
+                        {
+                            foreach (DataGridViewRow fila in this.dgvDetalle.Rows)
+                            {
+                                if (fila.Cells["chidIngresoSalidaGasificado"].Value.ToString().Trim() != String.Empty)
+                                {
+                                    try
+                                    {
+                                        #region Obtener detalle por linea detalle() 
+                                        IngresoSalidaGasificado itemDetalle = new IngresoSalidaGasificado();
+                                        itemDetalle.idIngresoSalidaGasificado = fila.Cells["chidIngresoSalidaGasificado"].Value != null ? Convert.ToInt32(fila.Cells["chidIngresoSalidaGasificado"].Value.ToString().Trim()) : 0;
+                                        itemDetalle.idCamara = cboCamaraGasificado.SelectedValue.ToString();
+                                        itemDetalle.itemDetalle = fila.Cells["chitemDetalleEnRegistroGasificado"].Value != null ? Convert.ToInt32(fila.Cells["chitemDetalleEnRegistroGasificado"].Value.ToString().Trim()) : Convert.ToInt32(0);
+                                        itemDetalle.tipoRegistro = 'M';
+                                        itemDetalle.estado = Convert.ToByte("1");
+                                        itemDetalle.tipo = Convert.ToChar("l");
+                                        itemDetalle.idGasificado = Convert.ToInt32(txtCodigo.Text.Trim());
+                                        itemDetalle.fecha = DateTime.Now;
+                                        #endregion
+                                        listadoDetalle.Add(itemDetalle);
+                                    }
+                                    catch (Exception Ex)
+                                    {
+                                        MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                                        return;
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+
+
+                    #endregion
+
                     model = new SAS_RegistroGasificadoController();
-                    int Registrar = model.ToRegister(conection, oRegistroGasificado);
+                    int Registrar = model.ToRegister(conection, oRegistroGasificado, listadoDetalle,listadoDetalleEliminado);
                     documentDate = new SAS_RegistroGasificadoAllByIDResult();
                     documentDate.idGasificado = oRegistroGasificado.idGasificado;
 
@@ -601,7 +647,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 else
                 {
                     MessageBox.Show(observacionesPorValidad, "MENSAJE DEL SISTEMA");
-                    
+
                 }
 
                 #endregion
@@ -837,5 +883,244 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 }
             }
         }
+
+        private void btnDetalleAgregar_Click(object sender, EventArgs e)
+        {
+            AddItem();
+        }
+
+        private void AddItem()
+        {
+            try
+            {
+                if (dgvDetalle != null)
+                {
+                    ArrayList array = new ArrayList();
+                    array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chidGasificado                                      
+                    array.Add(this.txtFecha.Text.Trim()); // chfechaIngreso
+                    array.Add("0"); // chidIngresoSalidaGasificado
+                    array.Add(string.Empty); // chitemDetalleEnRegistroGasificado
+                    array.Add(string.Empty); // chDOCUMENTO
+                    array.Add(string.Empty); // chvariedad
+                    array.Add(string.Empty); // chIDCONSUMIDOR
+                    array.Add(string.Empty); // chconsumidor
+                    array.Add(string.Empty); // chDESCRIPCION
+                    array.Add(string.Empty); // chcantidadEnTicket
+                    array.Add(string.Empty); // chNROENVIO
+                    array.Add(string.Empty); // chguiaDeRemision
+                    array.Add(string.Empty); // chfechaRegistroDetalle
+                    array.Add(1); // chestadoItemDetalleGasificado                    
+                    dgvDetalle.AgregarFila(array);
+                }
+                else
+                {
+                    Formateador.MostrarMensajeAdvertencia(this, "Haga click en la Grilla a Modificar", "Validacion Ingreso de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                Formateador.ControlExcepcion(this, this.Name, ex);
+            }
+        }
+
+
+
+
+        private void btnDetalleQuitar_Click(object sender, EventArgs e)
+        {
+            DeleteItem();
+        }
+
+        private void DeleteItem()
+        {
+            if (this.dgvDetalle != null)
+            {
+                #region
+                if (dgvDetalle.CurrentRow != null && dgvDetalle.CurrentRow.Cells["chidIngresoSalidaGasificado"].Value != null)
+                {
+                    try
+                    {
+                        Int32 dispositivoCodigo = (dgvDetalle.CurrentRow.Cells["chidIngresoSalidaGasificado"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetalle.CurrentRow.Cells["chidIngresoSalidaGasificado"].Value) : 0);
+                        if (dispositivoCodigo != 0)
+                        {
+                            if (dispositivoCodigo != 0)
+                            {
+                                listadoDetalleEliminado.Add(new IngresoSalidaGasificado
+                                {
+                                    idIngresoSalidaGasificado = dispositivoCodigo
+                                });
+                            }
+                        }
+                        dgvDetalle.Rows.Remove(dgvDetalle.CurrentRow);
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                        return;
+                    }
+                }
+                #endregion
+            }
+        }
+
+
+
+        private void btnDetalleCambiarEstado_Click(object sender, EventArgs e)
+        {
+            ChangeStateDetail();
+        }
+
+        private void ChangeStateDetail()
+        {
+            try
+            {
+
+                if (dgvDetalle.CurrentRow.Cells["chestadoItemDetalleGasificado"].Value.ToString() == "1")
+                {
+                    dgvDetalle.CurrentRow.Cells["chestadoItemDetalleGasificado"].Value = "0";
+                    //dgvDetalle.CurrentRow.Cells["chEstadoIP"].Value = "INACTIVO";
+                }
+                else
+                {
+                    dgvDetalle.CurrentRow.Cells["chestadoItemDetalleGasificado"].Value = "1";
+                    //dgvDetalle.CurrentRow.Cells["chEstadoIP"].Value = "ACTIVO";
+                }
+            }
+
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void dgvDetalle_KeyUp(object sender, KeyEventArgs e)
+        {
+            numeroDeTicket = 0;
+            model = new SAS_RegistroGasificadoController();
+            if (((DataGridView)sender).RowCount > 0)
+            {
+                #region Tipo de interface() 
+                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chidGasificado" ||
+                    ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chDOCUMENTO" ||
+                    ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chguiaDeRemision" ||
+                    ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chitemDetalleEnRegistroGasificado" ||
+                    ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chconsumidor"
+                    )
+                {
+                    if (e.KeyCode == Keys.F3)
+                    {
+                        // get List of records pending reading
+                        frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
+                        DateTime dateQuery = Convert.ToDateTime(this.txtFecha.Text);
+                        DateTime dateQueryFinal = Convert.ToDateTime(this.txtHoraFinProceso.Text);
+
+                        search.ListaGeneralResultado = model.GetListOfRecordPendingReading(conection, dateQuery, dateQueryFinal);
+                        search.Text = "Buscar registros pendientes de lectura";
+                        search.txtTextoFiltro.Text = "";
+                        if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            //idRetorno = busquedas.ObjetoRetorno.Codigo;
+                           
+                            
+                            numeroDeTicket = Convert.ToInt32( search.ObjetoRetorno.Codigo);
+                            EjecutarConsultaAgregarItemDetalle();
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chitemDetalleEnRegistroGasificado"].Value = search.ObjetoRetorno.Codigo;
+                            //AgregarItemDetalleDesdeNumeroTicket(conection, search.ObjetoRetorno.Codigo);
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chidGasificado"].Value = (Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0"));
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chfechaIngreso"].Value = itemAdd.fechaRegistro.Value;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chidIngresoSalidaGasificado"].Value = 0;
+                            //this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chitemDetalleEnRegistroGasificado"].Value = itemAdd.itemDetalle;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chDOCUMENTO"].Value = itemAdd.documento;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chvariedad"].Value = itemAdd.variedad;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chIDCONSUMIDOR"].Value = itemAdd.idconsumidor;
+
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chconsumidor"].Value = itemAdd.consumidor;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chDESCRIPCION"].Value = itemAdd.PRODUCTO;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chcantidadEnTicket"].Value = itemAdd.cantidadRegistrada.Value;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chNROENVIO"].Value = itemAdd.NROENVIO.Trim();
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chguiaDeRemision"].Value = itemAdd.guiaDeRemision;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chfechaRegistroDetalle"].Value = itemAdd.fechaRegistro.Value;
+                            this.dgvDetalle.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chestadoItemDetalleGasificado"].Value = 1;
+
+                            numeroDeTicket = 0;
+                            itemAdd = new SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult();
+
+                            //gbDatosDelProceso.Enabled = false;
+                            //gbDetallePallet.Enabled = false;
+                            //gbDocumento.Enabled = false;
+                            //gbProcedimiento.Enabled = false;
+                            //BarraPrincipal.Enabled = false;
+                            //progressBar1.Visible = true;
+                            //bgwAgregarItemDetalle.RunWorkerAsync();
+                        }
+                    }
+                }
+                #endregion
+
+
+
+            }
+        }
+
+        private void AgregarItemDetalleDesdeNumeroTicket(string conection, SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult itemAddDetail)
+        {
+            ArrayList array = new ArrayList();
+            array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chidGasificado                                      
+            array.Add(itemAddDetail.fechaRegistro.Value.ToShortDateString()); // chfechaIngreso
+            array.Add("0"); // chidIngresoSalidaGasificado
+            array.Add(itemAddDetail.itemDetalle); // chitemDetalleEnRegistroGasificado
+            array.Add(itemAddDetail.documento); // chDOCUMENTO
+            array.Add(itemAddDetail.variedad); // chvariedad
+            array.Add(itemAddDetail.idconsumidor); // chIDCONSUMIDOR
+            array.Add(itemAddDetail.consumidor); // chconsumidor
+            array.Add(itemAddDetail.PRODUCTO); // chDESCRIPCION
+            array.Add(itemAddDetail.cantidadRegistrada); // chcantidadEnTicket
+            array.Add(itemAddDetail.NROENVIO); // chNROENVIO
+            array.Add(itemAddDetail.guiaDeRemision); // chguiaDeRemision
+            array.Add(itemAddDetail.fechaRegistro.Value.ToShortDateString()); // chfechaRegistroDetalle
+            array.Add(1); // chestadoItemDetalleGasificado                    
+            dgvDetalle.AgregarFila(array);
+        }
+
+        private void bgwAgregarItemDetalle_DoWork(object sender, DoWorkEventArgs e)
+        {
+            EjecutarConsultaAgregarItemDetalle();
+        }
+
+        private void bgwAgregarItemDetalle_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            AgregarItemDetalleDesdeNumeroTicket(conection, itemAdd);
+            gbDatosDelProceso.Enabled = !false;
+            gbDetallePallet.Enabled = !false;
+            gbDocumento.Enabled = !false;
+            gbProcedimiento.Enabled = !false;
+            BarraPrincipal.Enabled = !false;
+            progressBar1.Visible = !true;
+            numeroDeTicket = 0;
+            itemAdd = new SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult();
+        }
+
+
+        private void EjecutarConsultaAgregarItemDetalle()
+        {
+            try
+            {
+                #region Acción() 
+                model = new SAS_RegistroGasificadoController();
+                itemAdd = new SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult();
+
+                itemAdd = model.ObtenerListadoTicketsPendientesDeRegistroByTicket(conection, numeroDeTicket);
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
     }
 }

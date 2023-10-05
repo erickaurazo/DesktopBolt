@@ -5,6 +5,8 @@ using ComparativoHorasVisualSATNISIRA.Administracion_del_sistema;
 using ComparativoHorasVisualSATNISIRA.Almacen;
 using ComparativoHorasVisualSATNISIRA.Calidad;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._010;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._013;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._014;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maestros;
 using ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha;
 using ComparativoHorasVisualSATNISIRA.Cosecha;
@@ -4147,31 +4149,7 @@ namespace Asistencia
             ActivarModulo("GoPRESUPUESTOS", this, privilegesByUserByModule);
         }
 
-        private void GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene_Click(object sender, EventArgs e)
-        {
-            string form2 = GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene.Name.ToString().Trim().ToUpper();
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
 
-            if (privilege.consultar == 1)
-            {
-                IncumplimientoBuenasPracticasHigieneReporte frmHijo = new IncumplimientoBuenasPracticasHigieneReporte(_conection, _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
-        }
 
         private void GoSistemaCatalogoCuentasBoltWebRendimiento_Click(object sender, EventArgs e)
         {
@@ -4279,8 +4257,37 @@ namespace Asistencia
             }
         }
 
+        private void GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene_Click(object sender, EventArgs e)
+        {
+            /* FORMULARIO 008 */
+            string form2 = GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                IncumplimientoBuenasPracticasHigieneReporte frmHijo = new IncumplimientoBuenasPracticasHigieneReporte(_conection, _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+
         private void GoAsegCalCerReporteBPMCumplimientoDiarioDeLavadoDeManos_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 010 */
             string form2 = GoAsegCalCerReporteBPMCumplimientoDiarioDeLavadoDeManos.Name.ToString().Trim().ToUpper();
             var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
             PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
@@ -4307,96 +4314,162 @@ namespace Asistencia
 
         private void GoAsegCalCerReporteBPMVerificacionDeLimpiezaYDesinfeccionPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 011 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMVerificacionDeLuminariasVidriosYplasticosDurosPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 012 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMAmonestacionesIncumplimientosDeBuenasPracticasPacking_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+            /* FORMULARIO 013 - AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte*/
+            string form2 = GoAsegCalCerReporteBPMAmonestacionesIncumplimientosDeBuenasPracticasPacking.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte frmHijo = new AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
         }
 
         private void GoAsegCalCerReporteBPMCheckListBuenasPracticasDeManufactura_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+
+            /* FORMULARIO 014 */
+            string form2 = GoAsegCalCerReporteBPMCheckListBuenasPracticasDeManufactura.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                CheckListBuenasPractivasManufacturaReporte frmHijo = new CheckListBuenasPractivasManufacturaReporte("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
         }
 
         private void GoAsegCalCerReporteBPMMonitoreoYdetencionDePlagasPacking_Click(object sender, EventArgs e)
         {
+
+            /* FORMULARIO 017 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMMonitoreoDeTrampasDeRoedoresPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 018 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMVerificacionDeCalibracionDiariaDeBalanzasPacking_Click(object sender, EventArgs e)
         {
+
+            /* FORMULARIO 032 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMCalibracionDeInstrumentosDeCalidadPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 033 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMVerificacionDeVidriosYPlasticosDurosEnFiltroPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 038 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMCumplimientoDiarioDeDesinfeccionDeHerramientasPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 043 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMVerificacionDeInocuidadRecepcionDeFruta_Click(object sender, EventArgs e)
         {
+
+            /* FORMULARIO 089 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMValidacionDeLimpiezaParaLiberacionDeLineasDeProduccion_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 130 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMChecklistProcesoDeAplicacionDeSo2_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 146 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteBPMVerificacionDeLimpiezaEInocuidadDeMandilesEnFiltroPacking_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 151 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteFrioYDespachoVerificacionYCalibracionDeSensoresDeTunelesDeEnfriamiento_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 015 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 034 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteProductoTerminadoCosechaControlDeCalidadRecepcionUva_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 005 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUva_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 072 */
+
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 
         private void GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables_Click(object sender, EventArgs e)
         {
+            /* FORMULARIO 112 */
             MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
 

@@ -46,8 +46,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
                     return;
                 }
                 oRpt = new ReportDocument();
-                //oRpt.Load(@"C:\SOLUTION\CheckListBuenasPractivasManufacturaRPT.rpt");
-                oRpt.Load(@"C:\Users\LENOVO\OneDrive\Documentos\Visual Studio 2015\Projects\BoltDesktop\BoltDesktop\Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.rpt");
+                oRpt.Load(@"C:\SOLUTION\CheckListBuenasPractivasManufacturaRPT.rpt");
+                //oRpt.Load(@"C:\Users\LENOVO\OneDrive\Documentos\Visual Studio 2015\Projects\BoltDesktop\BoltDesktop\Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.rpt");
                 dta = dsReporte.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo;
                 oRpt.SetDataSource(dta);
                 crystalReportViewer1.ReportSource = oRpt;
@@ -61,6 +61,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
 
         }
 
+        private void CheckListBuenasPractivasManufacturaPreview_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
