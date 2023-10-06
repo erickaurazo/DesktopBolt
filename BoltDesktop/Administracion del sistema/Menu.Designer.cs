@@ -96,6 +96,12 @@
             this.GoAsegCalCerCatalogoMaestrosByFormActividadLavadoManos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoMaestrosByFormAmbientesLuminariasVidriosPlasticos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosDeManufactura = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccionListado = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccionGrupoInspeccion = new System.Windows.Forms.ToolStripMenuItem();
@@ -299,12 +305,6 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -881,6 +881,48 @@
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosDeManufactura.Size = new System.Drawing.Size(285, 22);
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosDeManufactura.Text = "Criterios Manufactura";
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosDeManufactura.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormCriteriosDeManufactura_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Name = "GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2";
+            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Size = new System.Drawing.Size(285, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Text = "SO2 Sub Proceso";
+            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormSO2Actividades
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Name = "GoAsegCalCerCatalogoMaestrosByFormSO2Actividades";
+            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Size = new System.Drawing.Size(285, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Text = "SO2 Actividades";
+            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Name = "GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems";
+            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Size = new System.Drawing.Size(285, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Text = "Limpieza desinfección Items";
+            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Name = "GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera";
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Size = new System.Drawing.Size(285, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Text = "Verificación Vidrios Item";
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Name = "GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle";
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Size = new System.Drawing.Size(285, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Text = "Verificacion Vidrios Items Detalle";
+            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Name = "GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad";
+            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Size = new System.Drawing.Size(285, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Text = "Criterios Inocuidad";
+            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad_Click);
             // 
             // GoAsegCalCerCatalogoFormatosInspeccion
             // 
@@ -2409,48 +2451,6 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2
-            // 
-            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Name = "GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2";
-            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Size = new System.Drawing.Size(285, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Text = "SO2 Sub Proceso";
-            this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormSubProcesoSO2_Click);
-            // 
-            // GoAsegCalCerCatalogoMaestrosByFormSO2Actividades
-            // 
-            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Name = "GoAsegCalCerCatalogoMaestrosByFormSO2Actividades";
-            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Size = new System.Drawing.Size(285, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Text = "SO2 Actividades";
-            this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormSO2Actividades_Click);
-            // 
-            // GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems
-            // 
-            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Name = "GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems";
-            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Size = new System.Drawing.Size(285, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Text = "Limpieza desinfección Items";
-            this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormLimpiezaDesinfeccionItems_Click);
-            // 
-            // GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera
-            // 
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Name = "GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera";
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Size = new System.Drawing.Size(285, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Text = "Verificación Vidrios Item";
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera_Click);
-            // 
-            // GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle
-            // 
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Name = "GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle";
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Size = new System.Drawing.Size(285, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Text = "Verificacion Vidrios Items Detalle";
-            this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle_Click);
-            // 
-            // GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad
-            // 
-            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Name = "GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad";
-            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Size = new System.Drawing.Size(285, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Text = "Criterios Inocuidad";
-            this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad_Click);
-            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2462,8 +2462,8 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "Bolt | Version. 1.4.4";
-            this.toolTip.SetToolTip(this, "Actualización 12/09/2023");
+            this.Text = "Bolt | Version. 1.4.5";
+            this.toolTip.SetToolTip(this, "Actualización 06/10/2023");
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);

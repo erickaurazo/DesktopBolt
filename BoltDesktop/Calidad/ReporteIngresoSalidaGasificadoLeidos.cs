@@ -36,8 +36,10 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private GlobalesHelper globalHelper;
         private int incluirTicketsLeidos;
         private SAS_RegistroGasificadoAllByIDResult selectItemById;
-
-        public MesController MesesNeg { get; private set; }
+        public MesController MesesNeg;
+        private int ticket = 0;
+        private int CodigoExoneracion = 0;
+        public int CodigoGasificado = 0;
 
         //chCantidad
 
@@ -157,7 +159,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
             //desde = this.txtFechaDesde.Text;
             //hasta = this.txtFechaHasta.Text;
-            gbList.Enabled = false;            
+            gbList.Enabled = false;
             progressBar1.Visible = true;
             btnBarraPrincipal.Enabled = false;
             bgwHilo.RunWorkerAsync();
@@ -379,7 +381,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                         txtJabasExoneradas.Text = totalJabasExoneradas.ToDecimalPresentation();
                         txtJabasExoneradasPorcentaje.Text = PorcentajetotalJabasExoneradas.ToDecimalPresentation();
 
-                        decimal SumaGuiasRemision = result.GroupBy(x=> x.guiaDeRemision).ToList().Count;
+                        decimal SumaGuiasRemision = result.GroupBy(x => x.guiaDeRemision).ToList().Count;
                         decimal SumaTotalViajes = result.GroupBy(x => x.NROENVIO).ToList().Count;
                         decimal SumaTotalLotes = result.GroupBy(x => x.idconsumidor).ToList().Count;
 
@@ -519,7 +521,15 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void btnIrARegistroDeGasificadoExonerado_Click(object sender, EventArgs e)
         {
+            if (selectItemById != null && selectItemById.idGasificado != null && selectItemById.idIngresoSalidaGasificado != null)
+            {
+                SAS_ListadoDeRegistrosExoneradosByDatesResult itemExonerado = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
+                itemExonerado.itemDetalle = selectItemById.itemDetalle;
+                ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection, user, companyId, privilege, ticket, CodigoExoneracion);
+                ofrm.ShowDialog();
+                
 
+            }
         }
 
         private void btnIrARegistroDeAcopioCampo_Click(object sender, EventArgs e)
@@ -554,7 +564,17 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
         {
-            btnIrARegistroDeGasificado.Enabled = !true;
+            btnIrARegistroDeGasificado.Enabled = false;
+            btnAgregarTicketAExonerar.Enabled = false;
+            btnEliminarRegistroDeGasificado.Enabled = false;
+            btnEliminarTicket.Enabled = false;
+            btnIrARegistroDeGasificadoExonerado.Enabled = false;
+            btnIrARegistroDeAcopioCampo.Enabled = false;
+            btnAgregarAUnRegistroDeGasificado.Enabled = false;
+
+            ticket = 0;
+            CodigoExoneracion = 0;
+            CodigoGasificado = 0;
             try
             {
                 #region Selecionar registro()
@@ -562,6 +582,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 selectItemById = new SAS_RegistroGasificadoAllByIDResult();
                 selectedItem.idgasificado = 0;
                 selectItemById.idGasificado = 0;
+
+
 
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
@@ -571,16 +593,54 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                         {
                             if (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value.ToString() != string.Empty)
                             {
-                                string id = (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null ? dgvRegistro.CurrentRow.Cells["chidgasificado"].Value.ToString() : string.Empty);
-
-                                var resultado = result.Where(x => x.idgasificado.ToString() == id).ToList();
+                                CodigoGasificado = (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null ?  Convert.ToInt32( dgvRegistro.CurrentRow.Cells["chidgasificado"].Value) : 0);
+                                ticket = (dgvRegistro.CurrentRow.Cells["chidDetalle"].Value != null ? Convert.ToInt32( dgvRegistro.CurrentRow.Cells["chidDetalle"].Value) : 0);
+                                CodigoExoneracion = (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value) : 0); 
+                                var resultado = result.Where(x => x.idgasificado == CodigoGasificado).ToList();
                                 if (resultado.ToList().Count > 0)
                                 {
                                     selectedItem = resultado.ElementAt(0);
-                                    selectItemById.idGasificado = selectedItem.idgasificado;
-                                    btnIrARegistroDeGasificado.Enabled = true;
-                                }
+                                    selectedItem.codigoExoneracion = CodigoExoneracion;
+                                    selectedItem.itemDetalle = ticket;
+                                    selectedItem.idgasificado = CodigoGasificado;
 
+                                    selectItemById.idGasificado = CodigoGasificado;
+                                    selectItemById.itemDetalle = ticket;
+                                    
+
+
+                                    if (selectedItem.lecturaDeTicket.ToUpper() == "No Leido".ToUpper())
+                                    {
+                                        btnAgregarTicketAExonerar.Enabled = true;
+                                        btnAgregarAUnRegistroDeGasificado.Enabled = true;
+                                        
+                                    }
+                                    else if (selectedItem.lecturaDeTicket.ToUpper() == "Exonerado".ToUpper())
+                                    {
+                                        btnEliminarRegistroDeGasificado.Enabled = true;
+                                        btnIrARegistroDeGasificadoExonerado.Enabled = true;
+                                    }
+                                    else if (selectedItem.lecturaDeTicket.ToUpper() == "Leido".ToUpper())
+                                    {
+                                        btnIrARegistroDeGasificado.Enabled = true;
+                                        btnEliminarRegistroDeGasificado.Enabled = true;
+
+                                    }
+
+
+                                    if (selectedItem.documento.Trim() == "ACA ELIMINADO")
+                                    {
+                                        btnEliminarTicket.Enabled = true;
+                                    }
+
+                                    if (selectedItem.IDINGRESOSALIDAACOPIOCAMPO != null)
+                                    {
+                                        btnIrARegistroDeAcopioCampo.Enabled = true;
+                                    }
+
+
+
+                                }
                             }
                         }
                     }
@@ -592,6 +652,62 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
                 MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
                 return;
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Consult();
+        }
+
+        private void btnEliminarRegistroDeGasificado_Click(object sender, EventArgs e)
+        {
+            LiberarTicketDeGasificado();
+        }
+
+        private void LiberarTicketDeGasificado()
+        {
+            if (selectItemById != null && selectItemById.idGasificado != null && selectItemById.idIngresoSalidaGasificado != null)
+            {
+                model = new SAS_RegistroGasificadoController();
+                IngresoSalidaGasificado ItemALiberar = new IngresoSalidaGasificado();
+                ItemALiberar.itemDetalle = selectItemById.itemDetalle;
+                int ResultadoAccion = model.LiberarTicketGasificado(conection, ItemALiberar);
+                MessageBox.Show("Se libero correctamente este ticket", "Confirmación de Operación");
+                Consult();
+
+            }
+        }
+
+        private void btnEliminarExoneración_Click(object sender, EventArgs e)
+        {
+            LiberarTicketExoneracion();
+        }
+
+        private void LiberarTicketExoneracion()
+        {
+            if (selectItemById != null && selectItemById.idGasificado != null && selectItemById.idIngresoSalidaGasificado != null)
+            {
+                model = new SAS_RegistroGasificadoController();
+                SAS_RegistroTicketCamaraGasificadoExonerados ItemALiberar = new SAS_RegistroTicketCamaraGasificadoExonerados();
+                ItemALiberar.itemDetalle = selectItemById.itemDetalle;
+                int ResultadoAccion = model.LiberarTicketExonerado(conection, ItemALiberar);
+                MessageBox.Show("Se libero correctamente este ticket", "Confirmación de Operación");
+                Consult();
+
+            }
+        }
+
+        private void btnAgregarTicketAExonerar_Click(object sender, EventArgs e)
+        {
+            if (selectItemById != null && selectItemById.idGasificado != null && selectItemById.idIngresoSalidaGasificado != null)
+            {
+                SAS_ListadoDeRegistrosExoneradosByDatesResult itemExonerado = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
+                itemExonerado.itemDetalle = selectItemById.itemDetalle;
+                ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection,user, companyId, privilege, ticket, CodigoExoneracion);
+                ofrm.ShowDialog();
+                Consult();
+
             }
         }
 

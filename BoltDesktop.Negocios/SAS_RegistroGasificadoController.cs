@@ -138,8 +138,99 @@ namespace Asistencia.Negocios
             return result;
         }
 
+        public int LiberarTicketGasificado(string conection, IngresoSalidaGasificado item)
+        {
+            List<IngresoSalidaGasificado> resultado = new List<IngresoSalidaGasificado>();
+            int result = 0;
 
-        
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                resultado = Modelo.IngresoSalidaGasificado.Where(x => x.itemDetalle == item.itemDetalle).ToList();
+
+                if (resultado != null && resultado.ToList().Count == 1)
+                {
+                    IngresoSalidaGasificado oItem = new IngresoSalidaGasificado();                 
+                    oItem = resultado.ElementAt(0);
+                    Modelo.IngresoSalidaGasificado.DeleteOnSubmit(oItem);
+                    Modelo.SubmitChanges();
+                }
+            }
+
+            return result;
+        }
+
+        public int LiberarTicketExonerado(string conection, SAS_RegistroTicketCamaraGasificadoExonerados item)
+        {
+            List<SAS_RegistroTicketCamaraGasificadoExonerados> resultado = new List<SAS_RegistroTicketCamaraGasificadoExonerados>();
+            int result = 0;
+
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                resultado = Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.Where(x => x.itemDetalle == item.itemDetalle).ToList();
+
+                if (resultado != null && resultado.ToList().Count == 1)
+                {
+                    SAS_RegistroTicketCamaraGasificadoExonerados oItem = new SAS_RegistroTicketCamaraGasificadoExonerados();
+                    oItem = resultado.ElementAt(0);
+                    Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.DeleteOnSubmit(oItem);
+                    Modelo.SubmitChanges();
+                }
+            }
+
+            return result;
+        }
+
+        public int RegistrarTicketExonerado(string conection, SAS_RegistroTicketCamaraGasificadoExonerados item)
+        {
+            List<SAS_RegistroTicketCamaraGasificadoExonerados> resultado = new List<SAS_RegistroTicketCamaraGasificadoExonerados>();
+            int result = 0;
+
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                resultado = Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.Where(x => x.itemDetalle == item.itemDetalle).ToList();
+
+                if (resultado != null && resultado.ToList().Count == 0)
+                {
+                    SAS_RegistroTicketCamaraGasificadoExonerados oItem = new SAS_RegistroTicketCamaraGasificadoExonerados();
+                    oItem.itemDDetalle = item.itemDDetalle != null ? item.itemDDetalle : 0;
+                    oItem.itemDetalle = item.itemDetalle != null ? item.itemDDetalle : 0;
+                    oItem.fechaRegistro = item.fechaRegistro != null ? item.fechaRegistro : DateTime.Now;
+                    oItem.cantidad = item.cantidad != null ? item.cantidad.Value : 0;
+                    oItem.hora = item.hora != null ? item.hora : DateTime.Now;
+                    oItem.idMovil = item.idMovil != null ? item.idMovil.Trim() : "01";
+                    oItem.idCamara = item.idCamara != null ? item.idCamara.Trim() : "999";
+                    oItem.idusuario = item.idusuario != null ? item.idusuario.Trim() : "418648";
+                    oItem.idmotivo = item.idmotivo != null ? item.idmotivo.Trim() : "003";
+                    oItem.glosa = item.glosa != null ? item.glosa.Trim() : string.Empty;
+                    oItem.idestado = item.idestado != null ? item.idestado : 0;
+                    Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.InsertOnSubmit(oItem);
+                    Modelo.SubmitChanges();
+                }                
+            }
+            return result;
+        }
+
+        public int CambiarMotivoDeTicketExonerado(string conection, SAS_RegistroTicketCamaraGasificadoExonerados item, string IdMotivo)
+        {
+            List<SAS_RegistroTicketCamaraGasificadoExonerados> resultado = new List<SAS_RegistroTicketCamaraGasificadoExonerados>();
+            int result = 0;
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                resultado = Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.Where(x => x.itemDetalle == item.itemDetalle).ToList();
+                if (resultado != null && resultado.ToList().Count == 1)
+                {
+                    SAS_RegistroTicketCamaraGasificadoExonerados oItem = new SAS_RegistroTicketCamaraGasificadoExonerados();
+                    oItem = resultado.ElementAt(0);
+                    oItem.idmotivo = item.idmotivo != null ? item.idmotivo.Trim() : "003";
+                    Modelo.SubmitChanges();
+                }
+            }
+            return result;
+        }
 
         public int FinalizarGasificado(string conection, SAS_RegistroGasificado item)
         {
@@ -1058,19 +1149,20 @@ namespace Asistencia.Negocios
 
         }
 
-        public List<SAS_RegistroGasificadoAllByIDResult> ResumirListadoByIdGasificado(List<SAS_RegistroGasificadoAllByIDResult> result)
+        public SAS_RegistroGasificadoAllByIDResult ResumirListadoByIdGasificado(List<SAS_RegistroGasificadoAllByIDResult> result)
         {
 
-            List<SAS_RegistroGasificadoAllByIDResult> listado = new List<SAS_RegistroGasificadoAllByIDResult>();
+            SAS_RegistroGasificadoAllByIDResult itemGasificado = new SAS_RegistroGasificadoAllByIDResult();
 
             if (result != null)
             {
                 if (result.ToList().Count > 0)
                 {
-                    listado = (from item in result
+                    itemGasificado = (from item in result
                                group item by new { item.idGasificado, item.documentoGasificado } into j
                                select new SAS_RegistroGasificadoAllByIDResult
                                {
+                                   sucursalRegistroGasificado = j.FirstOrDefault().sucursalRegistroGasificado,
                                    idGasificado = j.Key.idGasificado,
                                    fechaIngreso = j.FirstOrDefault().fechaIngreso,
                                    fechaSalida = j.FirstOrDefault().fechaSalida,
@@ -1151,21 +1243,19 @@ namespace Asistencia.Negocios
                                    guiaDeRemision = j.FirstOrDefault().guiaDeRemision,
                                    semana = j.FirstOrDefault().semana,
                                    anio = j.FirstOrDefault().anio,
-
                                    empresaCodigo = j.FirstOrDefault().empresaCodigo,
                                    empresa = j.FirstOrDefault().empresa,
-                                   sucursalCodigo = j.FirstOrDefault().sucursalCodigo,
-                                   sucursalRegistroGasificado = j.FirstOrDefault().sucursalRegistroGasificado,
+                                   sucursalCodigo = j.FirstOrDefault().sucursalCodigo,                                   
                                    registradoPorNombres = j.FirstOrDefault().registradoPorNombres,
                                    ValidadoPorNombres = j.FirstOrDefault().ValidadoPorNombres,
                                    AprobadoPorNombres = j.FirstOrDefault().AprobadoPorNombres
 
-                               }).ToList();
+                               }).ToList().ElementAt(0);
                 }
             }
 
 
-            return listado;
+            return itemGasificado;
 
         }
 

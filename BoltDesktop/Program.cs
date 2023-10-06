@@ -30,7 +30,7 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistroDeIngresoSalidaGasificado());
+            Application.Run(new ReporteIngresoSalidaGasificadoLeidos());
             //Application.Run(new Menu());
         }
     }

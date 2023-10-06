@@ -31,9 +31,9 @@ namespace Asistencia.Negocios
 
             result.Add(new Grupo
             {
-                Codigo = "2022",
-                Descripcion = "2022",
-                Valor = "2022"
+                Codigo = "2023",
+                Descripcion = "2023",
+                Valor = "2023"
             });
 
             return result;
@@ -76,25 +76,41 @@ namespace Asistencia.Negocios
 
 
 
-        public SAS_ListadoDeRegistrosExoneradosByIdResult GetListById(string conection, int codigo)
+        public SAS_ListadoDeRegistrosExoneradosByIdResult GetListById(string conection, int codigo, int ticket)
         {
             List<SAS_ListadoDeRegistrosExoneradosByIdResult> list = new List<SAS_ListadoDeRegistrosExoneradosByIdResult>();
             SAS_ListadoDeRegistrosExoneradosByIdResult result = new SAS_ListadoDeRegistrosExoneradosByIdResult();
             result.codigoExoneracion = 0;
+            int codigoExoneracion = 0;
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
             {
-                list = Modelo.SAS_ListadoDeRegistrosExoneradosById(codigo).ToList();
 
-                if (list != null)
+                if (codigo == 0 && ticket != 0)
                 {
-                    if (list.Count() == 1)
+                    var result01 = Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.Where(x => x.itemDetalle == ticket).ToList();
+                    if (result01 != null && result01.ToList().Count > 0)
                     {
-                        result = list.ElementAt(0);
+                        codigoExoneracion = result01.ElementAt(0).itemDetalle != null ? result01.ElementAt(0).itemDetalle : 0;
+                        codigo = codigoExoneracion;
+                    }                   
+                }
 
+                if (codigo != 0)
+                {
+                    list = Modelo.SAS_ListadoDeRegistrosExoneradosById(codigo).ToList();
+
+                    if (list != null)
+                    {
+                        if (list.Count() >0)
+                        {
+                            result = list.ElementAt(0);
+                        }
                     }
                 }
+
+                
             }
 
             return result;

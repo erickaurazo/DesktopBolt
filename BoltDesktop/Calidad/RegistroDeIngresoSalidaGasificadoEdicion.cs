@@ -61,6 +61,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             user2 = new SAS_USUARIOS();
             user2.IdUsuario = "EAURAZO";
             user2.NombreCompleto = "ERICK AURAZO CARHUATANTA";
+            user2.IdCodigoGeneral = "100369";
             companyId = "001";
             privilege = new PrivilegesByUser();
             privilege.nuevo = 1;
@@ -101,7 +102,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             companyId = _companyId;
             privilege = _privilege;
             document = _document;
-
+            documentDate = new SAS_RegistroGasificadoAllByIDResult();
+            documentDate.idGasificado = _document.idgasificado;
             if (user2 != null)
             {
                 if (user2.IdUsuario != null)
@@ -150,6 +152,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             companyId = _companyId;
             privilege = _privilege;
             documentDate = _documentDate;
+            documentDate.idGasificado = _documentDate.idGasificado;
 
             if (user2 != null)
             {
@@ -329,21 +332,22 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 #region Acción() 
                 model = new SAS_RegistroGasificadoController();
                 documentsDate = new List<SAS_RegistroGasificadoAllByIDResult>();
+                //documentDate = new SAS_RegistroGasificadoAllByIDResult();
                 documentsDate = model.GetListRegistroGasificadoByIdGasificado(conection, documentDate.idGasificado);
                 listadoDetalleFullDate = new List<SAS_RegistroGasificadoAllByIDResult>();
                 if (documentsDate != null)
                 {
                     if (documentsDate.ToList().Count > 0)
                     {
-                        documentsDate = model.ResumirListadoByIdGasificado(documentsDate);
-                        if (documentsDate != null)
+                        documentDate = model.ResumirListadoByIdGasificado(documentsDate);
+                        if (documentDate != null)
                         {
-                            if (documentsDate.ToList().Count > 0)
-                            {
-                                documentDate = documentsDate.ElementAt(0);
-                                //listadoDetalle = model.GetDetailList(conection, document.idGasificado);
-                                listadoDetalleFullDate = model.GetListRegistroGasificadoByIdGasificado(conection, documentDate.idGasificado);
-                            }
+                            //if (documentDate.ToList().Count > 0)
+                            //{
+                            documentDate = documentsDate.ElementAt(0);
+                            //listadoDetalle = model.GetDetailList(conection, document.idGasificado);
+                            listadoDetalleFullDate = model.GetListRegistroGasificadoByIdGasificado(conection, documentDate.idGasificado);
+                            //}
                         }
                     }
                 }
@@ -372,7 +376,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             #region Registro Nuevo()
                             txtEmpresaCodigo.Text = "001";
                             txtEmpresa.Text = "SOCIEDAD AGRÍCOLA SATURNO S.A";
-                            txtUsuarioAsignado.Text = user2.IdUsuario;
+                            txtUsuarioAsignado.Text = user2.IdCodigoGeneral;
                             txtEstado.Text = "GASIFICANDO";
                             txtSucursalCodigo.Text = "002";
                             txtSucursal.Text = "PLANTA - SATURNO";
@@ -402,10 +406,10 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             #region Edición de registro() 
                             txtEmpresaCodigo.Text = documentDate.empresaCodigo != null ? documentDate.empresaCodigo.Trim() : "001";
                             txtEmpresa.Text = documentDate.empresa != null ? documentDate.empresa.Trim() : "SOCIEDAD AGRÍCOLA SATURNO S.A";
-                            txtUsuarioAsignado.Text = documentDate.registradoPorNombres != null ? documentDate.registradoPorNombres.Trim() : string.Empty;
-                            txtEstado.Text = documentDate.estadoRegistroGasificado != null ? documentDate.estadoRegistroGasificado.Trim() : string.Empty;
-                            txtSucursalCodigo.Text = documentDate.sucursalCodigo != null ? documentDate.sucursalCodigo.Trim() : string.Empty;
-                            txtSucursal.Text = documentDate.sucursal != null ? documentDate.sucursal.Trim() : string.Empty;
+                            txtUsuarioAsignado.Text = documentDate.registradoPorNombres != null ? documentDate.registradoPorNombres.Trim() : user2.NombreCompleto.Trim();
+                            txtEstado.Text = documentDate.estadoRegistroGasificado != null ? documentDate.estadoRegistroGasificado.Trim() : "GASIFICANDO";
+                            txtSucursalCodigo.Text = documentDate.sucursalCodigo != null ? documentDate.sucursalCodigo.Trim() : "001";
+                            txtSucursal.Text = documentDate.sucursalRegistroGasificado != null ? documentDate.sucursalRegistroGasificado.Trim() : "PLANTA - SATURNO";
                             txtCodigo.Text = documentDate.idGasificado != null ? documentDate.idGasificado.ToString().Trim() : string.Empty;
                             cboDocumento.SelectedValue = "GAS";
                             cboSerie.SelectedValue = "0001";
@@ -416,7 +420,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             txtHoraInicioGasificado.Text = documentDate.horaGasificado != null ? documentDate.horaGasificado.Value.ToPresentationDateTime().Trim() : string.Empty;
                             txtHoraInicioVentilacion.Text = documentDate.horaVentilacion != null ? documentDate.horaVentilacion.Value.ToPresentationDateTime().Trim() : string.Empty;
                             txtHoraFinProceso.Text = documentDate.fechaSalida != null ? documentDate.fechaSalida.Value.ToPresentationDateTime().Trim() : string.Empty;
-                            txtProductoAplicadoCodigo.Text = documentDate.idProductoAplicado != null ? documentDate.idProductoAplicado.Trim() : string.Empty ;
+                            txtProductoAplicadoCodigo.Text = documentDate.idProductoAplicado != null ? documentDate.idProductoAplicado.Trim() : string.Empty;
                             txtProductoAplicado.Text = documentDate.productoAplicado != null ? documentDate.productoAplicado.Trim() : string.Empty;
                             txtDosisSO2.Text = documentDate.dosisSO2 != (decimal?)null ? documentDate.dosisSO2.Value.ToDecimalPresentation().Trim() : "0";
                             txtTemperaturaDelAgua.Text = documentDate.tempAgua != (decimal?)null ? documentDate.tempAgua.Value.ToDecimalPresentation().Trim() : "0";
@@ -437,7 +441,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                     decimal cantidadJabas = 0;
                                     decimal porcentajeOcupado = 0;
 
-                                    cantidadJabas = documentDate.cantidadEnTicket != null ? documentDate.cantidadEnTicket.Value : 0;
+                                    cantidadJabas = documentDate.cantidadEnTicket != null ? documentDate.cantidadEnTicket : 0;
                                     if (cantidadJabas > 0)
                                     {
                                         porcentajeOcupado = Math.Round(((cantidadJabas / capacidadTotal) * 100), 2);
@@ -446,7 +450,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                     }
 
                                     //dgvDetalle.CargarDatos(listadoDetalleFull.ToDataTable<SAS_RegistroGasificadoAll>());
-                                    dgvDetalle.CargarDatos(listadoDetalleFullDate.ToDataTable<SAS_RegistroGasificadoAllByIDResult>());
+                                    dgvDetalle.CargarDatos(listadoDetalleFullDate.Where(x=> x.itemDetalleEnRegistroGasificado > 0).ToList().ToDataTable<SAS_RegistroGasificadoAllByIDResult>());
                                     dgvDetalle.Refresh();
 
                                     if (modo == "1")
@@ -492,9 +496,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             btnEditar.Enabled = false;
                             if (this.txtNumeroDocumento.Text != "0000000")
                             {
-                                btnEditar.Enabled = true;                                
+                                btnEditar.Enabled = true;
                             }
-                           
+
 
 
                             #endregion
@@ -620,10 +624,10 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                     oRegistroGasificado.idProductoAplicado = txtProductoAplicadoCodigo.Text != string.Empty ? Convert.ToString(txtProductoAplicadoCodigo.Text) : string.Empty;
                     oRegistroGasificado.dosisSO2 = txtDosisSO2.Text != string.Empty ? Convert.ToDecimal(txtDosisSO2.Text) : 0;
                     oRegistroGasificado.tempAgua = txtTemperaturaDelAgua.Text != string.Empty ? Convert.ToDecimal(txtTemperaturaDelAgua.Text) : 0;
-                    oRegistroGasificado.lecturaPpm = txtLecturasEnPPM.Text != string.Empty ? Convert.ToDecimal(txtLecturasEnPPM.Text) : 0;                
+                    oRegistroGasificado.lecturaPpm = txtLecturasEnPPM.Text != string.Empty ? Convert.ToDecimal(txtLecturasEnPPM.Text) : 0;
                     oRegistroGasificado.idCamara = cboCamaraGasificado.SelectedValue.ToString().Trim();
                     oRegistroGasificado.fechaIngreso = txtFecha.Text != txtCajaFechaValidad.Text ? Convert.ToDateTime(txtFecha.Text.Trim()) : (DateTime?)null;
-                   // oRegistroGasificado.cantidadJabas = txtCantidadJabas.Text.Trim() != string.Empty ? Convert.ToInt32(txtCantidadJabas.Text.ToString().Trim()) : 0;
+                    // oRegistroGasificado.cantidadJabas = txtCantidadJabas.Text.Trim() != string.Empty ? Convert.ToInt32(txtCantidadJabas.Text.ToString().Trim()) : 0;
                     oRegistroGasificado.estado = this.txtEstado.Text == "ANULADO" ? Convert.ToByte("0") : (this.txtEstado.Text == "Gasificando".ToUpper() ? Convert.ToByte("1") : Convert.ToByte("2"));
                     oRegistroGasificado.productoAplicado = txtProductoAplicado.Text != string.Empty ? Convert.ToString(txtProductoAplicado.Text) : string.Empty;
                     oRegistroGasificado.registradoPor = user2.IdUsuario;

@@ -41,6 +41,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         List<SAS_ListadoDeRegistrosExoneradosByIdResult> listadoDetalleFullDate = new List<SAS_ListadoDeRegistrosExoneradosByIdResult>();
         private string mensajeRegistro;
         private SAS_RegistroTicketCamaraGasificadoExonerados oRegistro;
+        int ticket = 0;
+
+        public int CodigoExoneracion = 0;
 
         public ExonerarTicketACamaraDeGasificadoEdicion()
         {
@@ -58,6 +61,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             privilege = _privilege;
             CargarCombos();
             documentDate = _documentDate;
+            //documentDate.itemDDetalle = _CodigoExoneracion;
+            //documentDate.itemDetalle = _ticket;
+            ticket = _documentDate.itemDetalle.Value;
             gbDocumento.Enabled = false;
             gbDatosDeTicket.Enabled = false;
             btnBarraPrincipal.Enabled = false;
@@ -67,6 +73,52 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
 
         }
+
+
+        public ExonerarTicketACamaraDeGasificadoEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _ticket)
+        {
+            InitializeComponent();
+            Inicio();
+
+            conection = _conection;
+            user2 = _user2;
+            companyId = _companyId;
+            privilege = _privilege;
+            CargarCombos();
+            documentDate = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
+            documentDate.itemDetalle = _ticket;
+            ticket = _ticket;
+            gbDocumento.Enabled = false;
+            gbDatosDeTicket.Enabled = false;
+            btnBarraPrincipal.Enabled = false;
+            progressBar1.Visible = true;
+
+            ConsultarRegistro(documentDate);
+
+
+        }
+
+        public ExonerarTicketACamaraDeGasificadoEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _ticket, int _CodigoExoneracion)
+        {
+            InitializeComponent();
+            Inicio();
+            CodigoExoneracion = _CodigoExoneracion;
+            conection = _conection;
+            user2 = _user2;
+            companyId = _companyId;
+            privilege = _privilege;
+            CargarCombos();
+            documentDate = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
+            documentDate.itemDetalle = _ticket;
+            documentDate.itemDDetalle = _CodigoExoneracion;
+            ticket = _ticket;
+
+
+            ConsultarRegistro(documentDate);
+
+
+        }
+
 
         public void Inicio()
         {
@@ -104,7 +156,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 cboSerie.DisplayMember = "descripcion";
                 cboSerie.ValueMember = "valor";
                 cboSerie.DataSource = model.GetSeries(conection, "RegistroDeIngresoSalidaGasificadoEdicion").ToList();
-                cboSerie.SelectedValue = "2022";
+                cboSerie.SelectedValue = "2023";
 
 
                 model = new SAS_RegistroTicketCamaraGasificadoExoneradosController();
@@ -123,6 +175,12 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void ConsultarRegistro(SAS_ListadoDeRegistrosExoneradosByDatesResult documentDate)
         {
+
+            gbDocumento.Enabled = false;
+            gbDatosDeTicket.Enabled = false;
+            btnBarraPrincipal.Enabled = false;
+            progressBar1.Visible = true;
+
             if (documentDate != null)
             {
                 if (documentDate.codigoExoneracion != (int?)null)
@@ -139,7 +197,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             {
                 model = new SAS_RegistroTicketCamaraGasificadoExoneradosController();
                 document = new SAS_ListadoDeRegistrosExoneradosByIdResult();
-                document = model.GetListById(conection, documentDate.codigoExoneracion);
+                document = model.GetListById(conection, documentDate.codigoExoneracion, ticket);
             }
             catch (Exception Ex)
             {
@@ -165,11 +223,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             #region Nuevo() 
                             txtUsuarioAsignado.Text = user2.IdCodigoGeneral.Trim() + " " + user2.NombreCompleto;
                             cboDocumento.SelectedValue = "EXG";
-                            cboSerie.SelectedValue = "2022";
+                            cboSerie.SelectedValue = "2023";
                             txtNumeroDocumento.Text = "0".PadLeft(7, '0');
                             txtFecha.Text = DateTime.Now.ToShortDateString();
                             cboMotivo.SelectedValue = "000";
-                            txtTicket.Text = string.Empty;
+                            txtTicket.Text = ticket.ToString(); ;
                             txtTicketNumero.Text = string.Empty;
                             txtFechaRegistro.Text = DateTime.Now.ToShortDateString();
                             txtNota.Text = string.Empty;
@@ -179,7 +237,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             btnRegistrar.Enabled = true;
                             btnEliminarRegistro.Enabled = false;
                             btnAnular.Enabled = false;
-                            btnExportarAExcel.Enabled = false;
+                            
                             btnNuevo.Enabled = true;
                             gbDatosDeTicket.Enabled = true;
                             gbDocumento.Enabled = true;
@@ -220,7 +278,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             btnRegistrar.Enabled = false;
                             btnEliminarRegistro.Enabled = true;
                             btnAnular.Enabled = true;
-                            btnExportarAExcel.Enabled = true;
+                           
                             btnNuevo.Enabled = true;
                             this.txtFecha.ReadOnly = true;
                             #endregion
@@ -419,6 +477,16 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistema");
                 return;
             }
-}
+            }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
