@@ -69,7 +69,7 @@ namespace Asistencia.Datos
     #endregion
 		
 		public NSFAJASDataContext() : 
-				base(global::Asistencia.Datos.Properties.Settings.Default.NSFAJAConnectionString3, mappingSource)
+				base(global::Asistencia.Datos.Properties.Settings.Default.NSFAJAConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -420,6 +420,13 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemDetalle);
 			return ((ISingleResult<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesNoLeidosByTicketResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_IngresoSalidaGasificadoListadoByDates")]
+		public ISingleResult<SAS_IngresoSalidaGasificadoListadoByDatesResult> SAS_IngresoSalidaGasificadoListadoByDates([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string hasta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
+			return ((ISingleResult<SAS_IngresoSalidaGasificadoListadoByDatesResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -20881,6 +20888,428 @@ namespace Asistencia.Datos
 				if ((this._PRODUCTO != value))
 				{
 					this._PRODUCTO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_IngresoSalidaGasificadoListadoByDatesResult
+	{
+		
+		private string _documentoGasificado;
+		
+		private string _idCampana;
+		
+		private System.Nullable<System.DateTime> _FechaProceso;
+		
+		private int _idGasificado;
+		
+		private System.Nullable<System.DateTime> _fechaIngreso;
+		
+		private System.Nullable<System.DateTime> _fechaSalida;
+		
+		private string _idCamara;
+		
+		private System.Nullable<decimal> _dosisSO2;
+		
+		private System.Nullable<decimal> _tempAgua;
+		
+		private System.Nullable<decimal> _lecturaPpm;
+		
+		private System.Nullable<int> _cantidadJabas;
+		
+		private System.Nullable<System.DateTime> _horaInyeccion;
+		
+		private System.Nullable<System.DateTime> _horaGasificado;
+		
+		private System.Nullable<System.DateTime> _horaVentilacion;
+		
+		private System.Nullable<byte> _estado;
+		
+		private string _productoAplicado;
+		
+		private string _idProductoAplicado;
+		
+		private string _registradoPor;
+		
+		private string _ValidadoPor;
+		
+		private string _AprobadoPor;
+		
+		private int _CantidadRegistros;
+		
+		private string _estadoRegistroGasificado;
+		
+		private string _camara;
+		
+		public SAS_IngresoSalidaGasificadoListadoByDatesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_documentoGasificado", DbType="VarChar(16)")]
+		public string documentoGasificado
+		{
+			get
+			{
+				return this._documentoGasificado;
+			}
+			set
+			{
+				if ((this._documentoGasificado != value))
+				{
+					this._documentoGasificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCampana", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
+		public string idCampana
+		{
+			get
+			{
+				return this._idCampana;
+			}
+			set
+			{
+				if ((this._idCampana != value))
+				{
+					this._idCampana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaProceso", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FechaProceso
+		{
+			get
+			{
+				return this._FechaProceso;
+			}
+			set
+			{
+				if ((this._FechaProceso != value))
+				{
+					this._FechaProceso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGasificado", DbType="Int NOT NULL")]
+		public int idGasificado
+		{
+			get
+			{
+				return this._idGasificado;
+			}
+			set
+			{
+				if ((this._idGasificado != value))
+				{
+					this._idGasificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaIngreso", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> fechaIngreso
+		{
+			get
+			{
+				return this._fechaIngreso;
+			}
+			set
+			{
+				if ((this._fechaIngreso != value))
+				{
+					this._fechaIngreso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaSalida", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> fechaSalida
+		{
+			get
+			{
+				return this._fechaSalida;
+			}
+			set
+			{
+				if ((this._fechaSalida != value))
+				{
+					this._fechaSalida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCamara", DbType="Char(3)")]
+		public string idCamara
+		{
+			get
+			{
+				return this._idCamara;
+			}
+			set
+			{
+				if ((this._idCamara != value))
+				{
+					this._idCamara = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dosisSO2", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> dosisSO2
+		{
+			get
+			{
+				return this._dosisSO2;
+			}
+			set
+			{
+				if ((this._dosisSO2 != value))
+				{
+					this._dosisSO2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tempAgua", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> tempAgua
+		{
+			get
+			{
+				return this._tempAgua;
+			}
+			set
+			{
+				if ((this._tempAgua != value))
+				{
+					this._tempAgua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lecturaPpm", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> lecturaPpm
+		{
+			get
+			{
+				return this._lecturaPpm;
+			}
+			set
+			{
+				if ((this._lecturaPpm != value))
+				{
+					this._lecturaPpm = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidadJabas", DbType="Int")]
+		public System.Nullable<int> cantidadJabas
+		{
+			get
+			{
+				return this._cantidadJabas;
+			}
+			set
+			{
+				if ((this._cantidadJabas != value))
+				{
+					this._cantidadJabas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_horaInyeccion", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> horaInyeccion
+		{
+			get
+			{
+				return this._horaInyeccion;
+			}
+			set
+			{
+				if ((this._horaInyeccion != value))
+				{
+					this._horaInyeccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_horaGasificado", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> horaGasificado
+		{
+			get
+			{
+				return this._horaGasificado;
+			}
+			set
+			{
+				if ((this._horaGasificado != value))
+				{
+					this._horaGasificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_horaVentilacion", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> horaVentilacion
+		{
+			get
+			{
+				return this._horaVentilacion;
+			}
+			set
+			{
+				if ((this._horaVentilacion != value))
+				{
+					this._horaVentilacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="TinyInt")]
+		public System.Nullable<byte> estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productoAplicado", DbType="VarChar(100)")]
+		public string productoAplicado
+		{
+			get
+			{
+				return this._productoAplicado;
+			}
+			set
+			{
+				if ((this._productoAplicado != value))
+				{
+					this._productoAplicado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idProductoAplicado", DbType="VarChar(12)")]
+		public string idProductoAplicado
+		{
+			get
+			{
+				return this._idProductoAplicado;
+			}
+			set
+			{
+				if ((this._idProductoAplicado != value))
+				{
+					this._idProductoAplicado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_registradoPor", DbType="VarChar(20)")]
+		public string registradoPor
+		{
+			get
+			{
+				return this._registradoPor;
+			}
+			set
+			{
+				if ((this._registradoPor != value))
+				{
+					this._registradoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidadoPor", DbType="VarChar(20)")]
+		public string ValidadoPor
+		{
+			get
+			{
+				return this._ValidadoPor;
+			}
+			set
+			{
+				if ((this._ValidadoPor != value))
+				{
+					this._ValidadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AprobadoPor", DbType="VarChar(20)")]
+		public string AprobadoPor
+		{
+			get
+			{
+				return this._AprobadoPor;
+			}
+			set
+			{
+				if ((this._AprobadoPor != value))
+				{
+					this._AprobadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadRegistros", DbType="Int NOT NULL")]
+		public int CantidadRegistros
+		{
+			get
+			{
+				return this._CantidadRegistros;
+			}
+			set
+			{
+				if ((this._CantidadRegistros != value))
+				{
+					this._CantidadRegistros = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estadoRegistroGasificado", DbType="VarChar(11)")]
+		public string estadoRegistroGasificado
+		{
+			get
+			{
+				return this._estadoRegistroGasificado;
+			}
+			set
+			{
+				if ((this._estadoRegistroGasificado != value))
+				{
+					this._estadoRegistroGasificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_camara", DbType="VarChar(27) NOT NULL", CanBeNull=false)]
+		public string camara
+		{
+			get
+			{
+				return this._camara;
+			}
+			set
+			{
+				if ((this._camara != value))
+				{
+					this._camara = value;
 				}
 			}
 		}

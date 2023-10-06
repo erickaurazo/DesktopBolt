@@ -28,8 +28,12 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private SAS_USUARIOS user;
         private string companyId, desde, hasta = string.Empty;
         private string conection;
-        private SAS_RegistroGasificadoByDatesResult selectedItem ;        
-        private List<SAS_RegistroGasificadoByDatesResult> result;
+       // private SAS_RegistroGasificadoByDatesResult selectedItem;
+        //private List<SAS_RegistroGasificadoByDatesResult> result;
+
+        private List<SAS_IngresoSalidaGasificadoListadoByDatesResult> ListadoRegistrosGasificados;
+        private SAS_IngresoSalidaGasificadoListadoByDatesResult itemRegistroGasificado;
+
         SAS_RegistroGasificadoController model;
         private string fileName = "DEFAULT";
         private bool exportVisualSettings = true;
@@ -77,8 +81,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         public RegistroDeIngresoSalidaGasificado(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
-            selectedItem = new SAS_RegistroGasificadoByDatesResult();
-            selectedItem.idGasificado = 0;
+            itemRegistroGasificado = new SAS_IngresoSalidaGasificadoListadoByDatesResult();
+            itemRegistroGasificado.idGasificado = 0;
 
             CargarMeses();
             ObtenerFechasIniciales();
@@ -131,14 +135,14 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             this.dgvRegistro.GroupDescriptors.Add(new GridGroupByExpression("CustomerID Group By CustomerID"));
             GridViewSummaryRowItem items1 = new GridViewSummaryRowItem();
             items1.Add(new GridViewSummaryItem("chdocumentoGasificado", "COUNT : {0:N2}; ", GridAggregateFunction.Count));
-            items1.Add(new GridViewSummaryItem("chNroJabasAGasificar", "Sum : {0:N2}; ", GridAggregateFunction.Sum));            
+            //items1.Add(new GridViewSummaryItem("chNroJabasAGasificar", "Sum : {0:N2}; ", GridAggregateFunction.Sum));
             this.dgvRegistro.MasterTemplate.SummaryRowsTop.Add(items1);
 
         }
 
         private void Consult()
         {
-            if (chkVisualizacionPorDia.Checked ==  true)
+            if (chkVisualizacionPorDia.Checked == true)
             {
                 desde = DateTime.Now.ToPresentationDate();
                 hasta = DateTime.Now.ToPresentationDate();
@@ -150,7 +154,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             }
 
 
-           
+
             gbList.Enabled = false;
             gbCabecera.Enabled = false;
             BarraPrincipal.Enabled = false;
@@ -310,21 +314,26 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            result = new List<SAS_RegistroGasificadoByDatesResult>();
+            EjecutarConsultar();
+        }
+
+        private void EjecutarConsultar()
+        {
+            //result = new List<SAS_RegistroGasificadoByDatesResult>();
+            ListadoRegistrosGasificados = new List<SAS_IngresoSalidaGasificadoListadoByDatesResult>();
             model = new SAS_RegistroGasificadoController();
 
             try
             {
-                result = model.GetListRegistroGasificadoByDates(conection, desde, hasta);
-                if (result != null)
-                {
-                    if (result.ToList().Count > 0)
-                    {
-                        result = model.ResumirListado(result);
-                    }
-                }
-                
-
+                //result = model.GetListRegistroGasificadoByDates(conection, desde, hasta);
+                ListadoRegistrosGasificados = model.GetListRegistroGasificadoByDate(conection, desde, hasta);
+                //if (result != null)
+                //{
+                //    if (result.ToList().Count > 0)
+                //    {
+                //        result = model.ResumirListado(result);
+                //    }
+                //}
             }
             catch (Exception Ex)
             {
@@ -337,17 +346,18 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         {
             try
             {
-                dgvRegistro.DataSource = result.ToDataTable<SAS_RegistroGasificadoByDatesResult>();
-                dgvRegistro.Refresh();                
+                //                dgvRegistro.DataSource = result.ToDataTable<SAS_RegistroGasificadoByDatesResult>();
+                dgvRegistro.DataSource = ListadoRegistrosGasificados.ToDataTable<SAS_IngresoSalidaGasificadoListadoByDatesResult>();
+                dgvRegistro.Refresh();
                 BarraPrincipal.Enabled = !false;
                 progressBar1.Visible = !true;
-                gbCabecera.Enabled = true;                
+                gbCabecera.Enabled = true;
                 gbList.Enabled = true;
 
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");                
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 BarraPrincipal.Enabled = !false;
                 progressBar1.Visible = !true;
                 gbCabecera.Enabled = true;
@@ -363,31 +373,87 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
         {
+            btnAnularSM.Enabled = false;
+            btnGasificar.Enabled = false;
+            btnEliminarSM.Enabled = false;
+            btnFinalizar.Enabled = false;
+            btnVistaPreviaSM.Enabled = false;
+            btnDuplicar.Enabled = false;
+            btnEditarSM.Enabled = false;
+
+            btnEditar.Enabled = false;
+            btnEliminarRegistro.Enabled = false;
+            btnAnular.Enabled = false;            
+
             try
             {
                 #region Selecionar registro()
-                selectedItem = new SAS_RegistroGasificadoByDatesResult();
+                itemRegistroGasificado = new SAS_IngresoSalidaGasificadoListadoByDatesResult();
+                itemRegistroGasificado.idGasificado = 0;
                 selectItemById = new SAS_RegistroGasificadoAllByIDResult();
-                selectedItem.idGasificado = 0;
                 selectItemById.idGasificado = 0;
 
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
                     if (dgvRegistro.CurrentRow != null)
                     {
-                        if (dgvRegistro.CurrentRow.Cells["chidGasificado"].Value != null)
+                        if (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null)
                         {
-                            if (dgvRegistro.CurrentRow.Cells["chidGasificado"].Value.ToString() != string.Empty)
+                            if (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value.ToString() != string.Empty)
                             {
-                                string id = (dgvRegistro.CurrentRow.Cells["chidGasificado"].Value != null ? dgvRegistro.CurrentRow.Cells["chidGasificado"].Value.ToString() : string.Empty);                                
+                                string id = (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null ? dgvRegistro.CurrentRow.Cells["chidgasificado"].Value.ToString() : string.Empty);
 
-                                var resultado = result.Where(x => x.idGasificado.ToString() == id).ToList();
+                                var resultado = ListadoRegistrosGasificados.Where(x => x.idGasificado.ToString() == id).ToList();
                                 if (resultado.ToList().Count > 0)
-                                { 
-                                    selectedItem = resultado.ElementAt(0);
-                                    selectItemById.idGasificado = selectedItem.idGasificado;
+                                {
+                                    itemRegistroGasificado = resultado.ElementAt(0);
+                                    selectItemById.idGasificado = itemRegistroGasificado.idGasificado;
+
+                                    if (itemRegistroGasificado.estado == 1)
+                                    {
+                                        btnAnularSM.Enabled = true;
+                                        btnGasificar.Enabled = false;
+                                        btnEliminarSM.Enabled = true;
+                                        btnFinalizar.Enabled = true;
+                                        btnVistaPreviaSM.Enabled = false;
+                                        btnDuplicar.Enabled = true;
+                                        btnEditarSM.Enabled = true;
+
+                                        btnEditar.Enabled = true;
+                                        btnEliminarRegistro.Enabled = true;
+                                        btnAnular.Enabled = true;                                        
+                                    }
+                                    else if (itemRegistroGasificado.estado == 2)
+                                    {
+                                        btnAnularSM.Enabled = true;
+                                        btnGasificar.Enabled = true;
+                                        btnEliminarSM.Enabled = true;
+                                        btnFinalizar.Enabled = false;
+                                        btnVistaPreviaSM.Enabled = false;
+                                        btnDuplicar.Enabled = true;
+                                        btnEditarSM.Enabled = true;
+
+                                        btnEditar.Enabled = true;
+                                        btnEliminarRegistro.Enabled = true;
+                                        btnAnular.Enabled = true;
+                                    }
+                                    else if (itemRegistroGasificado.estado == 0)
+                                    {
+                                        btnAnularSM.Enabled = true;
+                                        btnGasificar.Enabled = false;
+                                        btnEliminarSM.Enabled = false;
+                                        btnFinalizar.Enabled = false;
+                                        btnVistaPreviaSM.Enabled = false;
+                                        btnDuplicar.Enabled = false;
+                                        btnEditarSM.Enabled = false;
+
+                                        btnEditar.Enabled = false;
+                                        btnEliminarRegistro.Enabled = false;
+                                        btnAnular.Enabled = false;
+                                    }
+
                                 }
-                                
+
                             }
                         }
                     }
@@ -397,7 +463,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             catch (Exception Ex)
             {
 
-                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario" , "Mensaje del sistems");
+                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
                 return;
             }
         }
@@ -409,16 +475,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void Editar()
         {
-            if (selectedItem != null)
+            if (itemRegistroGasificado != null)
             {
-                if (selectedItem.idGasificado > 0)
+                if (itemRegistroGasificado.idGasificado > 0)
                 {
-
-
-                    //RegistroDeIngresoSalidaGasificadoEdicion ofrm = new RegistroDeIngresoSalidaGasificadoEdicion(conection, user, companyId, privilege, selectedItem);
                     RegistroDeIngresoSalidaGasificadoEdicion ofrm = new RegistroDeIngresoSalidaGasificadoEdicion(conection, user, companyId, privilege, selectItemById);
-                    //ofrm.Show();
-                    // ofrm.MdiParent = RegistroDeIngresoSalidaGasificado.ActiveForm;
                     ofrm.WindowState = FormWindowState.Maximized;
                     ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
                     ofrm.Show();
@@ -443,7 +504,22 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void ChangeState()
         {
-            
+            if (itemRegistroGasificado != null)
+            {
+                if (itemRegistroGasificado.idGasificado > 0)
+                {
+                    if (itemRegistroGasificado.estado == 1 || itemRegistroGasificado.estado == 0)
+                    {
+                        model = new SAS_RegistroGasificadoController();
+                        SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+                        item.idGasificado = itemRegistroGasificado.idGasificado;
+                        int resultadoOperacion = model.ChangeStatus(conection, item);
+                        MessageBox.Show("Operación generada correctamente", "MENSAJE DEL SISTEMA");
+                        Consult();
+                    }
+                    
+                }
+            }
         }
 
         private void btnEliminarRegistro_Click(object sender, EventArgs e)
@@ -453,7 +529,22 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void DeleteRecord()
         {
-            
+            if (itemRegistroGasificado != null)
+            {
+                if (itemRegistroGasificado.idGasificado > 0)
+                {
+                    if (itemRegistroGasificado.estado == 1)
+                    {
+                        model = new SAS_RegistroGasificadoController();
+                        SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+                        item.idGasificado = itemRegistroGasificado.idGasificado;
+                        int resultadoOperacion = model.Eliminar(conection, item);
+                        MessageBox.Show("Operación generada correctamente", "MENSAJE DEL SISTEMA");
+                        Consult();
+                    }
+
+                }
+            }
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
@@ -463,7 +554,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void ViewLog()
         {
-            
+
         }
 
         private void btnFlujoAprobacion_Click(object sender, EventArgs e)
@@ -475,7 +566,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void ApprovalFlow()
         {
-            
+
         }
 
         private void btnAdjuntar_Click(object sender, EventArgs e)
@@ -488,19 +579,19 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void ToAttach()
         {
-            
+
         }
 
         private void btnNotificar_Click(object sender, EventArgs e)
         {
             // Enviar notificación
             SendNotification();
-            
+
         }
 
         private void SendNotification()
         {
-            
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -572,12 +663,140 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                     Exportar(dgvRegistro);
                 }
             }
-            
+
         }
 
         private void btnElegirColumnas_Click(object sender, EventArgs e)
         {
             this.dgvRegistro.ShowColumnChooser();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        private void Nuevo()
+        {
+            itemRegistroGasificado = new SAS_IngresoSalidaGasificadoListadoByDatesResult();
+            itemRegistroGasificado.idGasificado = 0;
+            itemRegistroGasificado.FechaProceso = DateTime.Now;
+            selectItemById = new SAS_RegistroGasificadoAllByIDResult();
+            selectItemById.idGasificado = 0;
+            selectItemById.FECHA = DateTime.Now;
+
+            if (itemRegistroGasificado != null)
+            {
+                RegistroDeIngresoSalidaGasificadoEdicion ofrm = new RegistroDeIngresoSalidaGasificadoEdicion(conection, user, companyId, privilege, selectItemById);
+                ofrm.WindowState = FormWindowState.Maximized;
+                ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                ofrm.Show();
+            }
+        }
+
+        private void dgvRegistro_SelectionChanging(object sender, GridViewSelectionCancelEventArgs e)
+        {
+
+        }
+
+        private void btnEditarSM_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            Finalizar();
+        }
+
+        private void Finalizar()
+        {
+            if (itemRegistroGasificado != null)
+            {
+                if (itemRegistroGasificado.idGasificado > 0)
+                {
+                    if (itemRegistroGasificado.estado == 1)
+                    {
+                        model = new SAS_RegistroGasificadoController();
+                        SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+                        item.idGasificado = itemRegistroGasificado.idGasificado;
+                        int resultadoOperacion = model.FinalizarGasificado(conection, item);
+                        MessageBox.Show("Operación generada correctamente", "MENSAJE DEL SISTEMA");
+                        Consult();
+                    }
+
+                }
+            }
+        }
+
+        private void btnGasificar_Click(object sender, EventArgs e)
+        {
+            Gasificar();
+        }
+
+        private void Gasificar()
+        {
+            if (itemRegistroGasificado != null)
+            {
+                if (itemRegistroGasificado.idGasificado > 0)
+                {
+                    if (itemRegistroGasificado.estado == 2 )
+                    {
+                        model = new SAS_RegistroGasificadoController();
+                        SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+                        item.idGasificado = itemRegistroGasificado.idGasificado;
+                        int resultadoOperacion = model.Gasificar(conection, item);
+                        MessageBox.Show("Operación generada correctamente", "MENSAJE DEL SISTEMA");
+                        Consult();
+                    }
+
+                }
+            }
+        }
+
+        private void btnAnularSM_Click(object sender, EventArgs e)
+        {
+            ChangeState();
+        }
+
+        private void btnVistaPreviaSM_Click(object sender, EventArgs e)
+        {
+            Preview();
+        }
+
+        private void Preview()
+        {
+            
+        }
+
+        private void btnDuplicar_Click(object sender, EventArgs e)
+        {
+            Duplicar();
+        }
+
+        private void Duplicar()
+        {
+            if (itemRegistroGasificado != null)
+            {
+                if (itemRegistroGasificado.idGasificado > 0)
+                {
+                    if (itemRegistroGasificado.estado == 1 || itemRegistroGasificado.estado == 2)
+                    {
+                        model = new SAS_RegistroGasificadoController();
+                        SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+                        item.idGasificado = itemRegistroGasificado.idGasificado;
+                        int resultadoOperacion = model.Duplicar(conection, item);
+                        MessageBox.Show("Operación generada correctamente", "MENSAJE DEL SISTEMA");
+                        Consult();
+                    }
+
+                }
+            }
+        }
+
+        private void btnEliminarSM_Click(object sender, EventArgs e)
+        {
+            DeleteRecord();
         }
 
         private void RunExportToExcelML(string fileName, ref bool openExportFile, RadGridView grilla1)
