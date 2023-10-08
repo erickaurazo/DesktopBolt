@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.375, 9.125" name="NSFAJAS">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 9.125" name="NSFAJAS">
   <DataContextMoniker Name="/NSFAJASDataContext" />
   <nestedChildShapes>
     <classShape Id="2dbd8a28-dc94-4716-af84-b5c4f3425f76" isExpanded="false" absoluteBounds="0.625, 3.625, 3.5, 0.45">
@@ -140,6 +140,12 @@
       <DataClassMoniker Name="/NSFAJASDataContext/SAS_ListadoUsuarioBolt" />
       <nestedChildShapes>
         <elementListCompartment Id="54682280-29d3-4287-9837-835882a1bf99" absoluteBounds="0.88999999999999968, 8.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9f4f3be-49b8-4a42-8788-5b3b5a45d705" isExpanded="false" absoluteBounds="11.75, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/NSFAJASDataContext/SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0347223-839c-4ea6-a39a-c43bb469ad66" absoluteBounds="11.765, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

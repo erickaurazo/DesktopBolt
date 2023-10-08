@@ -43,7 +43,7 @@ namespace Asistencia.Negocios
 
         public List<SAS_IngresoSalidaGasificadoListadoByDatesResult> GetListRegistroGasificadoByDate(string conection, string desde, string hasta)
         {
-           List<SAS_IngresoSalidaGasificadoListadoByDatesResult> resultado = new List<SAS_IngresoSalidaGasificadoListadoByDatesResult>();
+            List<SAS_IngresoSalidaGasificadoListadoByDatesResult> resultado = new List<SAS_IngresoSalidaGasificadoListadoByDatesResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
@@ -103,7 +103,7 @@ namespace Asistencia.Negocios
                     {
                         oItem.estado = 1;
                     }
-                   
+
                     Modelo.SubmitChanges();
                 }
             }
@@ -150,7 +150,7 @@ namespace Asistencia.Negocios
 
                 if (resultado != null && resultado.ToList().Count == 1)
                 {
-                    IngresoSalidaGasificado oItem = new IngresoSalidaGasificado();                 
+                    IngresoSalidaGasificado oItem = new IngresoSalidaGasificado();
                     oItem = resultado.ElementAt(0);
                     Modelo.IngresoSalidaGasificado.DeleteOnSubmit(oItem);
                     Modelo.SubmitChanges();
@@ -208,7 +208,7 @@ namespace Asistencia.Negocios
                     oItem.idestado = item.idestado != null ? item.idestado : 0;
                     Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.InsertOnSubmit(oItem);
                     Modelo.SubmitChanges();
-                }                
+                }
             }
             return result;
         }
@@ -1159,98 +1159,98 @@ namespace Asistencia.Negocios
                 if (result.ToList().Count > 0)
                 {
                     itemGasificado = (from item in result
-                               group item by new { item.idGasificado, item.documentoGasificado } into j
-                               select new SAS_RegistroGasificadoAllByIDResult
-                               {
-                                   sucursalRegistroGasificado = j.FirstOrDefault().sucursalRegistroGasificado,
-                                   idGasificado = j.Key.idGasificado,
-                                   fechaIngreso = j.FirstOrDefault().fechaIngreso,
-                                   fechaSalida = j.FirstOrDefault().fechaSalida,
-                                   idCamara = j.FirstOrDefault().idCamara,
-                                   camara = j.FirstOrDefault().camara,
-                                   documentoGasificado = j.Key.documentoGasificado,
-                                   dosisSO2 = j.FirstOrDefault().dosisSO2,
-                                   tempAgua = j.FirstOrDefault().tempAgua,
-                                   lecturaPpm = j.FirstOrDefault().lecturaPpm,
-                                   cantidadJabasEnRegistroGasificado = j.FirstOrDefault().cantidadJabasEnRegistroGasificado, //
-                                   horaInyeccion = j.FirstOrDefault().horaInyeccion,
-                                   horaGasificado = j.FirstOrDefault().horaGasificado,
-                                   horaVentilacion = j.FirstOrDefault().horaVentilacion,
-                                   minutos = j.FirstOrDefault().minutos,
-                                   idestadoRegistroGasificado = j.FirstOrDefault().idestadoRegistroGasificado,
-                                   estadoRegistroGasificado = j.FirstOrDefault().estadoRegistroGasificado,
-                                   productoAplicado = j.FirstOrDefault().productoAplicado,
-                                   idProductoAplicado = j.FirstOrDefault().idProductoAplicado,
-                                   registradoPor = j.FirstOrDefault().registradoPor,
-                                   ValidadoPor = j.FirstOrDefault().ValidadoPor,
-                                   AprobadoPor = j.FirstOrDefault().AprobadoPor,
-                                   idIngresoSalidaGasificado = j.FirstOrDefault().idIngresoSalidaGasificado,
-                                   itemDetalleEnRegistroGasificado = j.FirstOrDefault().itemDetalleEnRegistroGasificado,
-                                   fechaRegistroDetalle = j.FirstOrDefault().fechaRegistroDetalle,
-                                   tipoRegistro = j.FirstOrDefault().tipoRegistro,
-                                   estadoItemDetalleGasificado = j.FirstOrDefault().estadoItemDetalleGasificado,
-                                   tipo = j.FirstOrDefault().tipo,
-                                   idCampana = j.FirstOrDefault().idCampana,
-                                   campaña = j.FirstOrDefault().campaña,
-                                   IDINGRESOSALIDAACOPIOCAMPO = j.FirstOrDefault().IDINGRESOSALIDAACOPIOCAMPO,
-                                   item = j.FirstOrDefault().item,
-                                   FECHA = j.FirstOrDefault().FECHA,
-                                   IDSUCURSAL = j.FirstOrDefault().IDSUCURSAL,
-                                   sucursal = j.FirstOrDefault().sucursal,
-                                   DOCUMENTO = j.FirstOrDefault().DOCUMENTO,
-                                   FECHA_RECEPCION = j.FirstOrDefault().FECHA_RECEPCION,
-                                   FECHACREACION = j.FirstOrDefault().FECHACREACION,
-                                   FechaCreacionitem = j.FirstOrDefault().FechaCreacionitem,
-                                   IDALMACEN = j.FirstOrDefault().IDALMACEN,
-                                   almacen = j.FirstOrDefault().almacen,
-                                   IDCONSUMIDOR = j.FirstOrDefault().IDCONSUMIDOR,
-                                   consumidor = j.FirstOrDefault().consumidor,
-                                   tipoProducto = j.FirstOrDefault().tipoProducto,
-                                   IDPRODUCTO = j.FirstOrDefault().IDPRODUCTO,
-                                   DESCRIPCION = j.FirstOrDefault().DESCRIPCION,
-                                   IDMEDIDA = j.FirstOrDefault().IDMEDIDA,
-                                   PESOBRUTO = j.FirstOrDefault().PESOBRUTO,
-                                   PESONETO = j.FirstOrDefault().PESONETO,
-                                   PESOPROMEDIO = j.FirstOrDefault().PESOPROMEDIO,
-                                   IDCULTIVO = j.FirstOrDefault().IDCULTIVO,
-                                   cultivo = j.FirstOrDefault().cultivo,
-                                   IDVARIEDAD = j.FirstOrDefault().IDVARIEDAD,
-                                   variedad = j.FirstOrDefault().variedad,
-                                   IDEMPAQUE = j.FirstOrDefault().IDEMPAQUE,
-                                   empaque = j.FirstOrDefault().empaque,
-                                   NROJABAS = j.FirstOrDefault().NROJABAS,
-                                   TARA1 = j.FirstOrDefault().TARA1,
-                                   TARA = j.FirstOrDefault().TARA,
-                                   TARA3 = j.FirstOrDefault().TARA3,
-                                   naturaleza = j.FirstOrDefault().IDEMPAQUE,
-                                   hora = j.FirstOrDefault().hora,
-                                   BALANZA = j.FirstOrDefault().BALANZA,
-                                   estado = j.FirstOrDefault().estado,
-                                   sector = j.FirstOrDefault().sector,
-                                   correlativo = j.FirstOrDefault().correlativo,
-                                   estadoImpresion = j.FirstOrDefault().estadoImpresion,
-                                   fechaRegistro = j.FirstOrDefault().fechaRegistro,
-                                   PorcentajeDeParticipacion = j.FirstOrDefault().PorcentajeDeParticipacion,
-                                   PesoBrutoDistribuido = j.FirstOrDefault().PesoBrutoDistribuido,
-                                   PesoNetoDistribuido = j.FirstOrDefault().PesoNetoDistribuido,
-                                   itemDetalle = 0,
-                                   cantidadEnTicket = j.Sum(x => x.cantidadEnTicket), //
-                                   glosa = j.FirstOrDefault().glosa,
-                                   chofer = j.FirstOrDefault().chofer,
-                                   PLACA = j.FirstOrDefault().PLACA,
-                                   NROENVIO = j.FirstOrDefault().NROENVIO,
-                                   HORAENVIO = j.FirstOrDefault().HORAENVIO,
-                                   guiaDeRemision = j.FirstOrDefault().guiaDeRemision,
-                                   semana = j.FirstOrDefault().semana,
-                                   anio = j.FirstOrDefault().anio,
-                                   empresaCodigo = j.FirstOrDefault().empresaCodigo,
-                                   empresa = j.FirstOrDefault().empresa,
-                                   sucursalCodigo = j.FirstOrDefault().sucursalCodigo,                                   
-                                   registradoPorNombres = j.FirstOrDefault().registradoPorNombres,
-                                   ValidadoPorNombres = j.FirstOrDefault().ValidadoPorNombres,
-                                   AprobadoPorNombres = j.FirstOrDefault().AprobadoPorNombres
+                                      group item by new { item.idGasificado, item.documentoGasificado } into j
+                                      select new SAS_RegistroGasificadoAllByIDResult
+                                      {
+                                          sucursalRegistroGasificado = j.FirstOrDefault().sucursalRegistroGasificado,
+                                          idGasificado = j.Key.idGasificado,
+                                          fechaIngreso = j.FirstOrDefault().fechaIngreso,
+                                          fechaSalida = j.FirstOrDefault().fechaSalida,
+                                          idCamara = j.FirstOrDefault().idCamara,
+                                          camara = j.FirstOrDefault().camara,
+                                          documentoGasificado = j.Key.documentoGasificado,
+                                          dosisSO2 = j.FirstOrDefault().dosisSO2,
+                                          tempAgua = j.FirstOrDefault().tempAgua,
+                                          lecturaPpm = j.FirstOrDefault().lecturaPpm,
+                                          cantidadJabasEnRegistroGasificado = j.FirstOrDefault().cantidadJabasEnRegistroGasificado, //
+                                          horaInyeccion = j.FirstOrDefault().horaInyeccion,
+                                          horaGasificado = j.FirstOrDefault().horaGasificado,
+                                          horaVentilacion = j.FirstOrDefault().horaVentilacion,
+                                          minutos = j.FirstOrDefault().minutos,
+                                          idestadoRegistroGasificado = j.FirstOrDefault().idestadoRegistroGasificado,
+                                          estadoRegistroGasificado = j.FirstOrDefault().estadoRegistroGasificado,
+                                          productoAplicado = j.FirstOrDefault().productoAplicado,
+                                          idProductoAplicado = j.FirstOrDefault().idProductoAplicado,
+                                          registradoPor = j.FirstOrDefault().registradoPor,
+                                          ValidadoPor = j.FirstOrDefault().ValidadoPor,
+                                          AprobadoPor = j.FirstOrDefault().AprobadoPor,
+                                          idIngresoSalidaGasificado = j.FirstOrDefault().idIngresoSalidaGasificado,
+                                          itemDetalleEnRegistroGasificado = j.FirstOrDefault().itemDetalleEnRegistroGasificado,
+                                          fechaRegistroDetalle = j.FirstOrDefault().fechaRegistroDetalle,
+                                          tipoRegistro = j.FirstOrDefault().tipoRegistro,
+                                          estadoItemDetalleGasificado = j.FirstOrDefault().estadoItemDetalleGasificado,
+                                          tipo = j.FirstOrDefault().tipo,
+                                          idCampana = j.FirstOrDefault().idCampana,
+                                          campaña = j.FirstOrDefault().campaña,
+                                          IDINGRESOSALIDAACOPIOCAMPO = j.FirstOrDefault().IDINGRESOSALIDAACOPIOCAMPO,
+                                          item = j.FirstOrDefault().item,
+                                          FECHA = j.FirstOrDefault().FECHA,
+                                          IDSUCURSAL = j.FirstOrDefault().IDSUCURSAL,
+                                          sucursal = j.FirstOrDefault().sucursal,
+                                          DOCUMENTO = j.FirstOrDefault().DOCUMENTO,
+                                          FECHA_RECEPCION = j.FirstOrDefault().FECHA_RECEPCION,
+                                          FECHACREACION = j.FirstOrDefault().FECHACREACION,
+                                          FechaCreacionitem = j.FirstOrDefault().FechaCreacionitem,
+                                          IDALMACEN = j.FirstOrDefault().IDALMACEN,
+                                          almacen = j.FirstOrDefault().almacen,
+                                          IDCONSUMIDOR = j.FirstOrDefault().IDCONSUMIDOR,
+                                          consumidor = j.FirstOrDefault().consumidor,
+                                          tipoProducto = j.FirstOrDefault().tipoProducto,
+                                          IDPRODUCTO = j.FirstOrDefault().IDPRODUCTO,
+                                          DESCRIPCION = j.FirstOrDefault().DESCRIPCION,
+                                          IDMEDIDA = j.FirstOrDefault().IDMEDIDA,
+                                          PESOBRUTO = j.FirstOrDefault().PESOBRUTO,
+                                          PESONETO = j.FirstOrDefault().PESONETO,
+                                          PESOPROMEDIO = j.FirstOrDefault().PESOPROMEDIO,
+                                          IDCULTIVO = j.FirstOrDefault().IDCULTIVO,
+                                          cultivo = j.FirstOrDefault().cultivo,
+                                          IDVARIEDAD = j.FirstOrDefault().IDVARIEDAD,
+                                          variedad = j.FirstOrDefault().variedad,
+                                          IDEMPAQUE = j.FirstOrDefault().IDEMPAQUE,
+                                          empaque = j.FirstOrDefault().empaque,
+                                          NROJABAS = j.FirstOrDefault().NROJABAS,
+                                          TARA1 = j.FirstOrDefault().TARA1,
+                                          TARA = j.FirstOrDefault().TARA,
+                                          TARA3 = j.FirstOrDefault().TARA3,
+                                          naturaleza = j.FirstOrDefault().IDEMPAQUE,
+                                          hora = j.FirstOrDefault().hora,
+                                          BALANZA = j.FirstOrDefault().BALANZA,
+                                          estado = j.FirstOrDefault().estado,
+                                          sector = j.FirstOrDefault().sector,
+                                          correlativo = j.FirstOrDefault().correlativo,
+                                          estadoImpresion = j.FirstOrDefault().estadoImpresion,
+                                          fechaRegistro = j.FirstOrDefault().fechaRegistro,
+                                          PorcentajeDeParticipacion = j.FirstOrDefault().PorcentajeDeParticipacion,
+                                          PesoBrutoDistribuido = j.FirstOrDefault().PesoBrutoDistribuido,
+                                          PesoNetoDistribuido = j.FirstOrDefault().PesoNetoDistribuido,
+                                          itemDetalle = 0,
+                                          cantidadEnTicket = j.Sum(x => x.cantidadEnTicket), //
+                                          glosa = j.FirstOrDefault().glosa,
+                                          chofer = j.FirstOrDefault().chofer,
+                                          PLACA = j.FirstOrDefault().PLACA,
+                                          NROENVIO = j.FirstOrDefault().NROENVIO,
+                                          HORAENVIO = j.FirstOrDefault().HORAENVIO,
+                                          guiaDeRemision = j.FirstOrDefault().guiaDeRemision,
+                                          semana = j.FirstOrDefault().semana,
+                                          anio = j.FirstOrDefault().anio,
+                                          empresaCodigo = j.FirstOrDefault().empresaCodigo,
+                                          empresa = j.FirstOrDefault().empresa,
+                                          sucursalCodigo = j.FirstOrDefault().sucursalCodigo,
+                                          registradoPorNombres = j.FirstOrDefault().registradoPorNombres,
+                                          ValidadoPorNombres = j.FirstOrDefault().ValidadoPorNombres,
+                                          AprobadoPorNombres = j.FirstOrDefault().AprobadoPorNombres
 
-                               }).ToList().ElementAt(0);
+                                      }).ToList().ElementAt(0);
                 }
             }
 
@@ -1259,6 +1259,23 @@ namespace Asistencia.Negocios
 
         }
 
+        public decimal ObtenerCantidadDeTicketGasificadosPorIdGasificado(string conection, int IdGasificado)
+        {
+            decimal CantidadDeTicketGasificadosPorIdGasificado = 0;
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                var resultQuery = Modelo.SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificado(IdGasificado).ToList();
+                if (resultQuery != null && resultQuery.ToList().Count > 0)
+                {
+
+                    CantidadDeTicketGasificadosPorIdGasificado = resultQuery.ElementAt(0).cantidad != null ? resultQuery.ElementAt(0).cantidad.Value : 0;
+                }
+                    
+            }
+
+            return CantidadDeTicketGasificadosPorIdGasificado;
+        }
 
         //GetListOfRecordPendingReading
         public List<DFormatoSimple> GetListOfRecordPendingReading(string conection, DateTime dateQuery, DateTime dateQueryFinal)

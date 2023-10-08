@@ -479,6 +479,14 @@
       <Column Name="firma" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado" Member="SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificados">
+    <Type Name="SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado">
+      <Column Name="idGasificado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CapacidadPorCamara" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PorcentajeAprovechadoEnCamaraGasificado" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.AbastecimientoGasificado" Method="AbastecimientoGasificado" IsComposable="true">
     <Return Type="object" />
   </Function>
@@ -1295,6 +1303,13 @@
       <Column Name="NROENVIO" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
       <Column Name="HORAENVIO" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
       <Column Name="guiaDeRemision" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificado" Method="SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificado">
+    <Parameter Name="IdGasificado" Parameter="idGasificado" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificadoResult">
+      <Column Name="idGasificado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

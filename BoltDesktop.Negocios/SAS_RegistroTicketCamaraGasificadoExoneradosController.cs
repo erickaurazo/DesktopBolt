@@ -76,11 +76,16 @@ namespace Asistencia.Negocios
 
 
 
-        public SAS_ListadoDeRegistrosExoneradosByIdResult GetListById(string conection, int codigo, int ticket)
+        public SAS_ListadoDeRegistrosExoneradosByIdResult GetListById(string conection, int codigo, int ticket, DateTime fechaRegistroTicket)
         {
             List<SAS_ListadoDeRegistrosExoneradosByIdResult> list = new List<SAS_ListadoDeRegistrosExoneradosByIdResult>();
             SAS_ListadoDeRegistrosExoneradosByIdResult result = new SAS_ListadoDeRegistrosExoneradosByIdResult();
             result.codigoExoneracion = 0;
+            result.fechaAcopio = fechaRegistroTicket;
+            result.fechaIngreso = fechaRegistroTicket;
+            result.fechaRegistro = fechaRegistroTicket;
+            result.fechaRegistroDocumentoExonerado = fechaRegistroTicket; 
+            result.fechaSalida = fechaRegistroTicket;
             int codigoExoneracion = 0;
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
@@ -94,6 +99,7 @@ namespace Asistencia.Negocios
                     {
                         codigoExoneracion = result01.ElementAt(0).itemDetalle != null ? result01.ElementAt(0).itemDetalle : 0;
                         codigo = codigoExoneracion;
+                        
                     }                   
                 }
 

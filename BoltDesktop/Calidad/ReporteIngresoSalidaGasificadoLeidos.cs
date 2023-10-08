@@ -40,6 +40,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private int ticket = 0;
         private int CodigoExoneracion = 0;
         public int CodigoGasificado = 0;
+        private string lecturaDeTicket;
+        private DateTime fechaRegistroTicket;
 
         //chCantidad
 
@@ -52,6 +54,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             user = new SAS_USUARIOS();
             user.IdUsuario = "eaurazo";
             user.NombreCompleto = "Erick Aurazo";
+            user.IdCodigoGeneral = "100369";
             companyId = "001";
             privilege = new PrivilegesByUser();
             privilege.nuevo = 1;
@@ -314,6 +317,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
+            EjecutarConsultaAsincrona();
+        }
+
+        private void EjecutarConsultaAsincrona()
+        {
             try
             {
                 model = new SAS_RegistroGasificadoController();
@@ -522,10 +530,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private void btnIrARegistroDeGasificadoExonerado_Click(object sender, EventArgs e)
         {
             if (selectItemById != null && selectItemById.idGasificado != null && selectItemById.idIngresoSalidaGasificado != null)
-            {
-                SAS_ListadoDeRegistrosExoneradosByDatesResult itemExonerado = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
-                itemExonerado.itemDetalle = selectItemById.itemDetalle;
-                ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection, user, companyId, privilege, ticket, CodigoExoneracion);
+            {                
+                ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection, user, companyId, privilege, ticket, CodigoExoneracion, fechaRegistroTicket);
                 ofrm.ShowDialog();
                 
 
@@ -575,6 +581,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             ticket = 0;
             CodigoExoneracion = 0;
             CodigoGasificado = 0;
+            lecturaDeTicket = string.Empty;
+            fechaRegistroTicket = DateTime.Now;
+
             try
             {
                 #region Selecionar registro()
@@ -582,9 +591,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 selectItemById = new SAS_RegistroGasificadoAllByIDResult();
                 selectedItem.idgasificado = 0;
                 selectItemById.idGasificado = 0;
-
-
-
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
                     if (dgvRegistro.CurrentRow != null)
@@ -595,7 +601,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             {
                                 CodigoGasificado = (dgvRegistro.CurrentRow.Cells["chidgasificado"].Value != null ?  Convert.ToInt32( dgvRegistro.CurrentRow.Cells["chidgasificado"].Value) : 0);
                                 ticket = (dgvRegistro.CurrentRow.Cells["chidDetalle"].Value != null ? Convert.ToInt32( dgvRegistro.CurrentRow.Cells["chidDetalle"].Value) : 0);
-                                CodigoExoneracion = (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value) : 0); 
+                                CodigoExoneracion = (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value) : 0);
+                                lecturaDeTicket = (dgvRegistro.CurrentRow.Cells["chlecturaDeTicket"].Value != null ? (dgvRegistro.CurrentRow.Cells["chlecturaDeTicket"].Value).ToString().Trim().ToUpper() : string.Empty);
+                                fechaRegistroTicket = (dgvRegistro.CurrentRow.Cells["chfechaRegistro"].Value != null ? Convert.ToDateTime (dgvRegistro.CurrentRow.Cells["chfechaRegistro"].Value) : DateTime.Now);
+                                
+
                                 var resultado = result.Where(x => x.idgasificado == CodigoGasificado).ToList();
                                 if (resultado.ToList().Count > 0)
                                 {
@@ -603,43 +613,32 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                     selectedItem.codigoExoneracion = CodigoExoneracion;
                                     selectedItem.itemDetalle = ticket;
                                     selectedItem.idgasificado = CodigoGasificado;
-
                                     selectItemById.idGasificado = CodigoGasificado;
-                                    selectItemById.itemDetalle = ticket;
-                                    
+                                    selectItemById.itemDetalle = ticket;                                    
 
-
-                                    if (selectedItem.lecturaDeTicket.ToUpper() == "No Leido".ToUpper())
+                                    if (lecturaDeTicket == "No Leido".ToUpper())
                                     {
                                         btnAgregarTicketAExonerar.Enabled = true;
-                                        btnAgregarAUnRegistroDeGasificado.Enabled = true;
-                                        
+                                        btnAgregarAUnRegistroDeGasificado.Enabled = true;                                        
                                     }
-                                    else if (selectedItem.lecturaDeTicket.ToUpper() == "Exonerado".ToUpper())
+                                    else if (lecturaDeTicket == "Exonerado".ToUpper())
                                     {
                                         btnEliminarRegistroDeGasificado.Enabled = true;
                                         btnIrARegistroDeGasificadoExonerado.Enabled = true;
                                     }
-                                    else if (selectedItem.lecturaDeTicket.ToUpper() == "Leido".ToUpper())
+                                    else if (lecturaDeTicket == "Leido".ToUpper())
                                     {
                                         btnIrARegistroDeGasificado.Enabled = true;
                                         btnEliminarRegistroDeGasificado.Enabled = true;
-
                                     }
-
-
                                     if (selectedItem.documento.Trim() == "ACA ELIMINADO")
                                     {
                                         btnEliminarTicket.Enabled = true;
                                     }
-
                                     if (selectedItem.IDINGRESOSALIDAACOPIOCAMPO != null)
                                     {
                                         btnIrARegistroDeAcopioCampo.Enabled = true;
                                     }
-
-
-
                                 }
                             }
                         }
@@ -649,7 +648,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             }
             catch (Exception Ex)
             {
-
                 MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
                 return;
             }
@@ -704,11 +702,16 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             {
                 SAS_ListadoDeRegistrosExoneradosByDatesResult itemExonerado = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
                 itemExonerado.itemDetalle = selectItemById.itemDetalle;
-                ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection,user, companyId, privilege, ticket, CodigoExoneracion);
+                ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection,user, companyId, privilege, ticket, CodigoExoneracion, fechaRegistroTicket);
                 ofrm.ShowDialog();
                 Consult();
 
             }
+        }
+
+        private void subMenu_Opening(object sender, CancelEventArgs e)
+        {
+
         }
 
         private void RunExportToExcelML(string fileName, ref bool openExportFile, RadGridView grilla1)

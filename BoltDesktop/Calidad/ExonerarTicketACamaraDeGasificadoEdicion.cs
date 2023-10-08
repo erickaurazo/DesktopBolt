@@ -42,8 +42,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private string mensajeRegistro;
         private SAS_RegistroTicketCamaraGasificadoExonerados oRegistro;
         int ticket = 0;
-
         public int CodigoExoneracion = 0;
+        private DateTime fechaRegistroTicket;
+        private int origenFormulario = 1; // Es 0 cuando viene de un formulario de reporte o despues de grabarse, la idea es deshabilitar el boton de buscar de ticket es 1 cuando viene del movimiento de exoneración
 
         public ExonerarTicketACamaraDeGasificadoEdicion()
         {
@@ -54,21 +55,18 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         {
             InitializeComponent();
             Inicio();
-
             conection = _conection;
             user2 = _user2;
             companyId = _companyId;
             privilege = _privilege;
             CargarCombos();
             documentDate = _documentDate;
-            //documentDate.itemDDetalle = _CodigoExoneracion;
-            //documentDate.itemDetalle = _ticket;
             ticket = _documentDate.itemDetalle.Value;
             gbDocumento.Enabled = false;
             gbDatosDeTicket.Enabled = false;
             btnBarraPrincipal.Enabled = false;
             progressBar1.Visible = true;
-
+            origenFormulario = 0;
             ConsultarRegistro(documentDate);
 
 
@@ -98,22 +96,33 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
 
         }
 
-        public ExonerarTicketACamaraDeGasificadoEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _ticket, int _CodigoExoneracion)
+        public ExonerarTicketACamaraDeGasificadoEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _ticket, int _CodigoExoneracion, DateTime _fechaRegistroTicket)
         {
             InitializeComponent();
+            
             Inicio();
             CodigoExoneracion = _CodigoExoneracion;
             conection = _conection;
             user2 = _user2;
             companyId = _companyId;
             privilege = _privilege;
-            CargarCombos();
+            CargarCombos();          
+            ticket = _ticket;
+            fechaRegistroTicket = _fechaRegistroTicket;
             documentDate = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
             documentDate.itemDetalle = _ticket;
             documentDate.itemDDetalle = _CodigoExoneracion;
-            ticket = _ticket;
+            documentDate.codigoExoneracion = CodigoExoneracion;
+            origenFormulario = 0;
 
-
+            if (_CodigoExoneracion == 0)
+            {
+                documentDate.fechaRegistro = _fechaRegistroTicket;
+                documentDate.fechaAcopio = _fechaRegistroTicket;
+                documentDate.fechaIngreso = _fechaRegistroTicket;
+                documentDate.fechaRegistroDocumentoExonerado = _fechaRegistroTicket;
+                documentDate.fechaSalida = _fechaRegistroTicket;
+            }
             ConsultarRegistro(documentDate);
 
 
@@ -197,7 +206,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             {
                 model = new SAS_RegistroTicketCamaraGasificadoExoneradosController();
                 document = new SAS_ListadoDeRegistrosExoneradosByIdResult();
-                document = model.GetListById(conection, documentDate.codigoExoneracion, ticket);
+                document = model.GetListById(conection, documentDate.codigoExoneracion, ticket, fechaRegistroTicket);
             }
             catch (Exception Ex)
             {
@@ -221,30 +230,47 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                         if (document.codigoExoneracion == 0)
                         {
                             #region Nuevo() 
-                            txtUsuarioAsignado.Text = user2.IdCodigoGeneral.Trim() + " " + user2.NombreCompleto;
+                            txtUsuarioAsignado.Text = user2.NombreCompleto;
                             cboDocumento.SelectedValue = "EXG";
                             cboSerie.SelectedValue = "2023";
-                            txtNumeroDocumento.Text = "0".PadLeft(7, '0');
-                            txtFecha.Text = DateTime.Now.ToShortDateString();
+                            txtNumeroDocumento.Text = document.codigoExoneracion.ToString().PadLeft(7, '0');
+                            txtFecha.Text = document.fechaRegistro.Value.ToString();
                             cboMotivo.SelectedValue = "000";
-                            txtTicket.Text = ticket.ToString(); ;
-                            txtTicketNumero.Text = string.Empty;
-                            txtFechaRegistro.Text = DateTime.Now.ToShortDateString();
-                            txtNota.Text = string.Empty;
-                            txtCodigo.Text = "0";
+                            txtTicket.Text = ticket.ToString(); 
+                            txtTicketNumero.Text = "Ticket numero : " + ticket.ToString();
+                            txtFechaRegistro.Text = document.fechaRegistro.Value.ToString();
+                            txtNota.Text = "Exonerado por el motivo de ";
+                            txtCodigo.Text = document.codigoExoneracion.ToString();
                             this.txtEstado.Text = "PENDIENTE";
                             btnEditar.Enabled = false;
                             btnRegistrar.Enabled = true;
                             btnEliminarRegistro.Enabled = false;
                             btnAnular.Enabled = false;
-                            
-                            btnNuevo.Enabled = true;
-                            gbDatosDeTicket.Enabled = true;
-                            gbDocumento.Enabled = true;
-                            this.txtFecha.Enabled = true;
-                            this.txtFechaRegistro.Text = DateTime.Now.ToString();
-                            this.txtFecha.ReadOnly = false;
                             #endregion
+                            btnNuevo.Enabled = true;                            
+                            gbDocumento.Enabled = true;
+                            if (origenFormulario == 1) //Viene de un formulario 
+                            {
+                                btnTicketBuscar.Enabled = false;
+                                txtTicket.ReadOnly = true;
+                                txtTicketNumero.ReadOnly = true;
+                                txtTicket.Enabled = false;
+                                txtTicketNumero.Enabled = false;
+                            }
+                            else
+                            {
+                                btnTicketBuscar.Enabled = true;
+                                txtTicket.ReadOnly = false;
+                                txtTicketNumero.ReadOnly = false;
+                                txtTicket.Enabled = true;
+                                txtTicketNumero.Enabled = true;
+                            }
+                            txtFecha.Enabled = true;
+                            txtFechaRegistro.Text = document.fechaRegistro != null ? document.fechaRegistro.Value.ToString() : DateTime.Now.ToString();
+                            txtFecha.ReadOnly = true;
+                            btnBarraPrincipal.Enabled = true;                            
+                            gbDatosDeTicket.Enabled = true;
+                            progressBar1.Visible = false;
                         }
                         else
                         {
@@ -272,23 +298,28 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             {
                                 this.txtEstado.Text = "APROBADO";
                             }
-                            gbDatosDeTicket.Enabled = false;
-                            gbDocumento.Enabled = false;
+
+                            #endregion
+                            
+                            
                             btnEditar.Enabled = true;
                             btnRegistrar.Enabled = false;
                             btnEliminarRegistro.Enabled = true;
                             btnAnular.Enabled = true;
-                           
                             btnNuevo.Enabled = true;
-                            this.txtFecha.ReadOnly = true;
-                            #endregion
+                            txtFecha.ReadOnly = true;
+                            btnTicketBuscar.Enabled = false;
+                            txtTicket.ReadOnly = true;
+                            txtTicketNumero.ReadOnly = true;
+                            btnBarraPrincipal.Enabled = true;
+                            gbDocumento.Enabled = false;
+                            gbDatosDeTicket.Enabled = false;
+                            progressBar1.Visible = false;
+
                         }
                     }
                 }
-                btnBarraPrincipal.Enabled = true;
-                gbDocumento.Enabled = !false;
-                gbDatosDeTicket.Enabled = !false;
-                progressBar1.Visible = !true;
+                
             }
             catch (Exception Ex)
             {
@@ -343,6 +374,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                     model = new SAS_RegistroTicketCamaraGasificadoExoneradosController();
                     int resultadoRegistro = model.ToRegister(conection, oRegistro);
                     MessageBox.Show("El documento ha sido registrado correctamente", "Mensaje del sistema");
+                    CodigoExoneracion = resultadoRegistro;
+                    origenFormulario = 0;
                     documentDate = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
                     documentDate.codigoExoneracion = resultadoRegistro;
                     ConsultarRegistro(documentDate);
@@ -372,7 +405,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             registro.hora = Convert.ToDateTime(this.txtFechaRegistro.Text);
             registro.idMovil = "01";
             registro.idCamara = "999";
-            registro.idusuario = user2.IdCodigoGeneral != null ? user2.IdCodigoGeneral : "soporte";
+            registro.idusuario = user2.IdCodigoGeneral != null ? user2.IdCodigoGeneral : "100369";
             registro.idmotivo = cboMotivo.SelectedValue.ToString().Trim();
             registro.glosa = this.txtNota.Text.Trim();
             registro.idestado = 1;
@@ -419,13 +452,40 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
-        {
+        {            
             btnEditar.Enabled = false;
             btnAtras.Enabled = true;
             btnRegistrar.Enabled = true;
             btnNuevo.Enabled = false;
             btnAnular.Enabled = false;
             btnEliminarRegistro.Enabled = false;
+            btnBarraPrincipal.Enabled = true;
+            gbDocumento.Enabled = true;
+            gbDatosDeTicket.Enabled = true;
+            progressBar1.Visible = false;
+            btnTicketBuscar.Enabled = true;
+
+            if (origenFormulario == 1)
+            {
+                btnTicketBuscar.Enabled = false;
+                txtTicket.ReadOnly = true;
+                txtTicketNumero.ReadOnly = true;
+                txtTicket.Enabled = false;
+                txtTicketNumero.Enabled = false;
+
+
+            }
+            else
+            {
+                btnTicketBuscar.Enabled = false;
+                txtTicket.ReadOnly = true;
+                txtTicketNumero.ReadOnly = true;
+                txtTicket.Enabled = true;
+                txtTicketNumero.Enabled = true;
+
+            }
+
+
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

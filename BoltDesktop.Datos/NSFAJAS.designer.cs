@@ -266,6 +266,14 @@ namespace Asistencia.Datos
 			}
 		}
 		
+		public System.Data.Linq.Table<SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado> SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificados
+		{
+			get
+			{
+				return this.GetTable<SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AbastecimientoGasificado", IsComposable=true)]
 		public object AbastecimientoGasificado()
 		{
@@ -427,6 +435,13 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoGasificado);
 			return ((ISingleResult<SAS_RegistroGasificadoAllByIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificado")]
+		public ISingleResult<SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificadoResult> SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificado([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdGasificado", DbType="Int")] System.Nullable<int> idGasificado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idGasificado);
+			return ((ISingleResult<SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificadoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -8792,6 +8807,87 @@ namespace Asistencia.Datos
 				if ((this._firma != value))
 				{
 					this._firma = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado")]
+	public partial class SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado
+	{
+		
+		private System.Nullable<int> _idGasificado;
+		
+		private System.Nullable<decimal> _cantidad;
+		
+		private int _CapacidadPorCamara;
+		
+		private System.Nullable<decimal> _PorcentajeAprovechadoEnCamaraGasificado;
+		
+		public SAS_ObtenerCantidadDeTicketGasificadosGroupByIdGasificado()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGasificado", DbType="Int")]
+		public System.Nullable<int> idGasificado
+		{
+			get
+			{
+				return this._idGasificado;
+			}
+			set
+			{
+				if ((this._idGasificado != value))
+				{
+					this._idGasificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				if ((this._cantidad != value))
+				{
+					this._cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacidadPorCamara", DbType="Int NOT NULL")]
+		public int CapacidadPorCamara
+		{
+			get
+			{
+				return this._CapacidadPorCamara;
+			}
+			set
+			{
+				if ((this._CapacidadPorCamara != value))
+				{
+					this._CapacidadPorCamara = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PorcentajeAprovechadoEnCamaraGasificado", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> PorcentajeAprovechadoEnCamaraGasificado
+		{
+			get
+			{
+				return this._PorcentajeAprovechadoEnCamaraGasificado;
+			}
+			set
+			{
+				if ((this._PorcentajeAprovechadoEnCamaraGasificado != value))
+				{
+					this._PorcentajeAprovechadoEnCamaraGasificado = value;
 				}
 			}
 		}
@@ -21328,6 +21424,50 @@ namespace Asistencia.Datos
 				if ((this._guiaDeRemision != value))
 				{
 					this._guiaDeRemision = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificadoResult
+	{
+		
+		private System.Nullable<int> _idGasificado;
+		
+		private System.Nullable<decimal> _cantidad;
+		
+		public SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificadoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGasificado", DbType="Int")]
+		public System.Nullable<int> idGasificado
+		{
+			get
+			{
+				return this._idGasificado;
+			}
+			set
+			{
+				if ((this._idGasificado != value))
+				{
+					this._idGasificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				if ((this._cantidad != value))
+				{
+					this._cantidad = value;
 				}
 			}
 		}

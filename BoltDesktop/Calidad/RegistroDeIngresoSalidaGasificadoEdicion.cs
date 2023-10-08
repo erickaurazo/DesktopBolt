@@ -50,6 +50,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private IngresoSalidaGasificado itemDetalle;
 
         public int CodigoDelRegistro = 0;
+        private decimal capacidadTotal = 600;
+        private decimal cantidadJabas = 0;
+        private decimal porcentajeOcupado = 0;
         #endregion
 
         public RegistroDeIngresoSalidaGasificadoEdicion()
@@ -334,6 +337,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 documentsDate = new List<SAS_RegistroGasificadoAllByIDResult>();
                 //documentDate = new SAS_RegistroGasificadoAllByIDResult();
                 documentsDate = model.GetListRegistroGasificadoByIdGasificado(conection, documentDate.idGasificado);
+                cantidadJabas = model.ObtenerCantidadDeTicketGasificadosPorIdGasificado(conection, documentDate.idGasificado);
+
                 listadoDetalleFullDate = new List<SAS_RegistroGasificadoAllByIDResult>();
                 if (documentsDate != null)
                 {
@@ -396,9 +401,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             txtTemperaturaDelAgua.Text = "0";
                             txtLecturasEnPPM.Text = "0";
                             txtMinutoEnGasificado.Text = "0 Minutos";
-                            txtCapacidadAlmacenamiento.Text = "600";
-                            txtCantidadJabas.Text = "0";
-                            txtPorcentajeOcupado.Text = "0";
+                            txtCapacidadAlmacenamiento.Text = capacidadTotal.ToString("N0");
+                            txtCantidadJabas.Text = cantidadJabas.ToString("N0");
+                            txtPorcentajeOcupado.Text = porcentajeOcupado.ToString("N2");
                             #endregion
                         }
                         else
@@ -427,32 +432,18 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             txtLecturasEnPPM.Text = documentDate.lecturaPpm != (decimal?)null ? documentDate.lecturaPpm.Value.ToDecimalPresentation().Trim() : "0";
                             txtMinutoEnGasificado.Text = (documentDate.minutos != null ? documentDate.minutos.Value.ToString().Trim() : "0") + " minutos";
 
-                            txtPorcentajeOcupado.Text = "0";
-                            txtCantidadJabas.Text = "0";
-                            txtCapacidadAlmacenamiento.Text = "600";
+                            porcentajeOcupado = Math.Round( ((cantidadJabas / capacidadTotal) * 100),2);
+                            txtPorcentajeOcupado.Text = porcentajeOcupado.ToDecimalPresentation().Trim();
+                            txtCantidadJabas.Text = cantidadJabas.ToDecimalPresentation().Trim();
+                            txtCapacidadAlmacenamiento.Text = capacidadTotal.ToString("N0");
 
 
                             if (listadoDetalleFullDate != null)
                             {
                                 if (listadoDetalleFullDate.ToList().Count > 0)
-                                {
-
-                                    decimal capacidadTotal = 600;
-                                    decimal cantidadJabas = 0;
-                                    decimal porcentajeOcupado = 0;
-
-                                    cantidadJabas = documentDate.cantidadEnTicket != null ? documentDate.cantidadEnTicket : 0;
-                                    if (cantidadJabas > 0)
-                                    {
-                                        porcentajeOcupado = Math.Round(((cantidadJabas / capacidadTotal) * 100), 2);
-                                        txtPorcentajeOcupado.Text = porcentajeOcupado.ToDecimalPresentation().Trim();
-                                        txtCantidadJabas.Text = cantidadJabas.ToDecimalPresentation().Trim();
-                                    }
-
-                                    //dgvDetalle.CargarDatos(listadoDetalleFull.ToDataTable<SAS_RegistroGasificadoAll>());
-                                    dgvDetalle.CargarDatos(listadoDetalleFullDate.Where(x=> x.itemDetalleEnRegistroGasificado > 0).ToList().ToDataTable<SAS_RegistroGasificadoAllByIDResult>());
+                                {                                    
+                                    dgvDetalle.CargarDatos(listadoDetalleFullDate.Where(x => x.itemDetalleEnRegistroGasificado > 0).ToList().ToDataTable<SAS_RegistroGasificadoAllByIDResult>());
                                     dgvDetalle.Refresh();
-
                                     if (modo == "1")
                                     {
                                         btnEditar.Enabled = true;
@@ -465,11 +456,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                         btnEliminarRegistro.Enabled = true;
                                         btnNuevo.Enabled = true;
                                         btnAtras.Enabled = false;
-
-                                        //gbDatosDelProceso.Enabled = !false;
-                                        //gbDetallePallet.Enabled = !false;
-                                        //gbDocumento.Enabled = !false;
-                                        //gbProcedimiento.Enabled = !false;
                                     }
                                     else
                                     {
@@ -483,14 +469,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                         btnEliminarRegistro.Enabled = true;
                                         btnNuevo.Enabled = true;
                                         btnAtras.Enabled = false;
-                                        //gbDatosDelProceso.Enabled = !false;
-                                        //gbDetallePallet.Enabled = !false;
-                                        //gbDocumento.Enabled = !false;
-                                        //gbProcedimiento.Enabled = !false;
                                     }
-
-
-
                                 }
                             }
                             btnEditar.Enabled = false;
@@ -498,9 +477,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             {
                                 btnEditar.Enabled = true;
                             }
-
-
-
                             #endregion
                         }
                     }

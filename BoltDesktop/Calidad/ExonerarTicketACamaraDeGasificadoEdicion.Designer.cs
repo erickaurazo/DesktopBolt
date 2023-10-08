@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExonerarTicketACamaraDeGasificadoEdicion));
             this.gbDatosDeTicket = new System.Windows.Forms.GroupBox();
+            this.txtValidar = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNota = new MyControlsDataBinding.Controles.MyTextBox(this.components);
             this.txtTicketNumero = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
@@ -46,7 +47,6 @@
             this.lblCodigoRegistro = new System.Windows.Forms.Label();
             this.txtCodigo = new MyControlsDataBinding.Controles.MyTextBox(this.components);
             this.txtUsuarioAsignado = new System.Windows.Forms.TextBox();
-            this.lblDocumento = new System.Windows.Forms.Label();
             this.txtSucursal = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.txtSucursalCodigo = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.btnSucursalBuscar = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
@@ -63,8 +63,8 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.txtFecha = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.lblUsuarioAsignando = new System.Windows.Forms.Label();
+            this.lblDocumento = new System.Windows.Forms.Label();
             this.btnBarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
-            this.txtValidar = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
             this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnCalidad = new Telerik.WinControls.UI.CommandBarButton();
@@ -119,6 +119,29 @@
             this.gbDatosDeTicket.TabIndex = 25;
             this.gbDatosDeTicket.TabStop = false;
             this.gbDatosDeTicket.Text = "Ticket";
+            // 
+            // txtValidar
+            // 
+            this.txtValidar.EditingControlDataGridView = null;
+            this.txtValidar.EditingControlFormattedValue = "  /  /";
+            this.txtValidar.EditingControlRowIndex = 0;
+            this.txtValidar.EditingControlValueChanged = true;
+            this.txtValidar.Enabled = false;
+            this.txtValidar.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.txtValidar.Location = new System.Drawing.Point(210, 83);
+            this.txtValidar.Mask = "00/00/0000";
+            this.txtValidar.Name = "txtValidar";
+            this.txtValidar.P_EsEditable = false;
+            this.txtValidar.P_EsModificable = false;
+            this.txtValidar.P_ExigeInformacion = false;
+            this.txtValidar.P_Hora = null;
+            this.txtValidar.P_NombreColumna = null;
+            this.txtValidar.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtValidar.Size = new System.Drawing.Size(75, 20);
+            this.txtValidar.TabIndex = 315;
+            this.txtValidar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtValidar.ValidatingType = typeof(System.DateTime);
+            this.txtValidar.Visible = false;
             // 
             // label4
             // 
@@ -202,7 +225,7 @@
             this.btnTicketBuscar.P_TablaConsulta = "SAS_TicketsPendientesDeLectura";
             this.btnTicketBuscar.P_TextBoxCodigo = this.txtTicket;
             this.btnTicketBuscar.P_TextBoxDescripcion = this.txtTicketNumero;
-            this.btnTicketBuscar.P_TituloFormulario = "... Buscar Sucursal";
+            this.btnTicketBuscar.P_TituloFormulario = "... Buscar Ticket a exonerar";
             this.btnTicketBuscar.Size = new System.Drawing.Size(24, 23);
             this.btnTicketBuscar.TabIndex = 241;
             this.btnTicketBuscar.UseVisualStyleBackColor = true;
@@ -356,15 +379,6 @@
             this.txtUsuarioAsignado.TabIndex = 8;
             this.txtUsuarioAsignado.Text = "EAURAZO";
             this.txtUsuarioAsignado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblDocumento
-            // 
-            this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(2, 73);
-            this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(68, 13);
-            this.lblDocumento.TabIndex = 17;
-            this.lblDocumento.Text = "Documento :";
             // 
             // txtSucursal
             // 
@@ -600,6 +614,15 @@
             this.lblUsuarioAsignando.TabIndex = 7;
             this.lblUsuarioAsignando.Text = "Registrado :";
             // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(2, 73);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(68, 13);
+            this.lblDocumento.TabIndex = 17;
+            this.lblDocumento.Text = "Documento :";
+            // 
             // btnBarraPrincipal
             // 
             this.btnBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
@@ -610,29 +633,6 @@
             this.btnBarraPrincipal.Size = new System.Drawing.Size(697, 37);
             this.btnBarraPrincipal.TabIndex = 227;
             this.btnBarraPrincipal.ThemeName = "VisualStudio2012Light";
-            // 
-            // txtValidar
-            // 
-            this.txtValidar.EditingControlDataGridView = null;
-            this.txtValidar.EditingControlFormattedValue = "  /  /";
-            this.txtValidar.EditingControlRowIndex = 0;
-            this.txtValidar.EditingControlValueChanged = true;
-            this.txtValidar.Enabled = false;
-            this.txtValidar.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtValidar.Location = new System.Drawing.Point(210, 83);
-            this.txtValidar.Mask = "00/00/0000";
-            this.txtValidar.Name = "txtValidar";
-            this.txtValidar.P_EsEditable = false;
-            this.txtValidar.P_EsModificable = false;
-            this.txtValidar.P_ExigeInformacion = false;
-            this.txtValidar.P_Hora = null;
-            this.txtValidar.P_NombreColumna = null;
-            this.txtValidar.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.txtValidar.Size = new System.Drawing.Size(75, 20);
-            this.txtValidar.TabIndex = 315;
-            this.txtValidar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtValidar.ValidatingType = typeof(System.DateTime);
-            this.txtValidar.Visible = false;
             // 
             // BarraSuperior
             // 

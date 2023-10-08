@@ -30,8 +30,8 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReporteIngresoSalidaGasificadoLeidos());
-            //Application.Run(new Menu());
+            //Application.Run(new ReporteIngresoSalidaGasificadoLeidos());
+            Application.Run(new Menu());
         }
     }
 }
