@@ -50,6 +50,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             user = new SAS_USUARIOS();
             user.IdUsuario = "EAURAZO";
             user.NombreCompleto = "Erick Aurazo Carhuatanta";
+            user.IdCodigoGeneral = "100369";
             companyId = "001";
             privilege = new PrivilegesByUser();
             privilege.nuevo = 1;

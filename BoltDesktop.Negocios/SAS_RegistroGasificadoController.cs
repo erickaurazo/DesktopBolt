@@ -114,7 +114,6 @@ namespace Asistencia.Negocios
         {
             List<SAS_RegistroGasificado> resultado = new List<SAS_RegistroGasificado>();
             int result = 0;
-
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
             {
@@ -122,19 +121,17 @@ namespace Asistencia.Negocios
 
                 if (resultado != null && resultado.ToList().Count == 1)
                 {
-                    SAS_RegistroGasificado oItem = new SAS_RegistroGasificado();
-                    SAS_RegistroGasificado oItemDuplicado = new SAS_RegistroGasificado();
+                    SAS_RegistroGasificado oItem = new SAS_RegistroGasificado(); // ORIGEN
+                    SAS_RegistroGasificado oItemDuplicado = new SAS_RegistroGasificado(); // DESTINO
                     oItem = resultado.ElementAt(0);
-                    oItemDuplicado = oItem;
+
+                    oItemDuplicado = resultado.ElementAt(0);                    
                     oItemDuplicado.idGasificado = 0;
                     oItemDuplicado.estado = 1;
                     controller = new SAS_RegistroGasificadoController();
-                    int ResultadoDelRegistroDuplicado = controller.ToRegister(conection, oItemDuplicado);
-
-                    Modelo.SubmitChanges();
+                    int ResultadoDelRegistroDuplicado = controller.ToRegister(conection, oItemDuplicado);                    
                 }
             }
-
             return result;
         }
 
@@ -823,8 +820,8 @@ namespace Asistencia.Negocios
         public int ToRegister(string conection, SAS_RegistroGasificado oRegistroGasificado)
         {
             List<SAS_RegistroGasificado> listResult = new List<SAS_RegistroGasificado>();
-            SAS_RegistroGasificado result = new SAS_RegistroGasificado();
-            int resultQuery = 0;
+            SAS_RegistroGasificado item = new SAS_RegistroGasificado();
+            int IdRegistro = 0;
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
@@ -835,34 +832,56 @@ namespace Asistencia.Negocios
                     if (listResult.ToList().Count == 0)
                     {
                         #region Nuevo()
-                        result = new SAS_RegistroGasificado();
-
-
-                        resultQuery = 1;
+                        item = new SAS_RegistroGasificado();
+                        item.horaInyeccion = oRegistroGasificado.horaInyeccion != null ? oRegistroGasificado.horaInyeccion.Value : (DateTime?)null;
+                        item.horaGasificado = oRegistroGasificado.horaGasificado != null ? oRegistroGasificado.horaGasificado.Value : (DateTime?)null;
+                        item.horaVentilacion = oRegistroGasificado.horaVentilacion != null ? oRegistroGasificado.horaVentilacion.Value : (DateTime?)null;
+                        item.fechaSalida = oRegistroGasificado.fechaSalida != null ? oRegistroGasificado.fechaSalida.Value : (DateTime?)null;
+                        item.fechaIngreso = oRegistroGasificado.fechaIngreso != null ? oRegistroGasificado.fechaIngreso.Value : (DateTime?)null;
+                        item.idCamara = oRegistroGasificado.idCamara != null ? oRegistroGasificado.idCamara : "001";
+                        item.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        item.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value : 0;
+                        item.cantidadJabas = oRegistroGasificado.cantidadJabas != (int?)null ? oRegistroGasificado.cantidadJabas.Value : 0;
+                        item.estado = Convert.ToByte("1");
+                        item.productoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        item.registradoPor = oRegistroGasificado.registradoPor != null ? oRegistroGasificado.registradoPor : string.Empty;
+                        //item.ValidadoPor = oRegistroGasificado.ValidadoPor != null ? oRegistroGasificado.ValidadoPor : string.Empty;
+                        //item.AprobadoPor = oRegistroGasificado.AprobadoPor != null ? oRegistroGasificado.AprobadoPor : string.Empty;
+                        item.tempAgua = oRegistroGasificado.tempAgua != null ? oRegistroGasificado.tempAgua.Value : 0;
+                        item.lecturaPpm = oRegistroGasificado.lecturaPpm != null ? oRegistroGasificado.lecturaPpm.Value : 0;
+                        Modelo.SAS_RegistroGasificado.InsertOnSubmit(item);
+                        Modelo.SubmitChanges();
+                        IdRegistro = item.idGasificado;
                         #endregion
 
                     }
                     else
                     {
                         #region Editar()
-                        result = new SAS_RegistroGasificado();
-                        result = listResult.ElementAt(0);
-                        result.horaInyeccion = oRegistroGasificado.horaInyeccion != null ? oRegistroGasificado.horaInyeccion.Value : (DateTime?)null;
-                        result.horaGasificado = oRegistroGasificado.horaGasificado != null ? oRegistroGasificado.horaGasificado.Value : (DateTime?)null;
-                        result.horaVentilacion = oRegistroGasificado.horaVentilacion != null ? oRegistroGasificado.horaVentilacion.Value : (DateTime?)null;
-                        result.fechaSalida = oRegistroGasificado.fechaSalida != null ? oRegistroGasificado.fechaSalida.Value : (DateTime?)null;
-                        result.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
-                        result.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value : 0;
-                        result.tempAgua = oRegistroGasificado.tempAgua != null ? oRegistroGasificado.tempAgua.Value : 0;
-                        result.lecturaPpm = oRegistroGasificado.lecturaPpm != null ? oRegistroGasificado.lecturaPpm.Value : 0;
+                        item = new SAS_RegistroGasificado();
+                        item = listResult.ElementAt(0);
+                        item.fechaIngreso = oRegistroGasificado.fechaIngreso != null ? oRegistroGasificado.fechaIngreso.Value : (DateTime?)null;
+                        item.horaInyeccion = oRegistroGasificado.horaInyeccion != null ? oRegistroGasificado.horaInyeccion.Value : (DateTime?)null;
+                        item.idCamara = oRegistroGasificado.idCamara != null ? oRegistroGasificado.idCamara : "001";
+                        item.horaGasificado = oRegistroGasificado.horaGasificado != null ? oRegistroGasificado.horaGasificado.Value : (DateTime?)null;
+                        item.horaVentilacion = oRegistroGasificado.horaVentilacion != null ? oRegistroGasificado.horaVentilacion.Value : (DateTime?)null;
+                        item.fechaSalida = oRegistroGasificado.fechaSalida != null ? oRegistroGasificado.fechaSalida.Value : (DateTime?)null;
+                        item.idProductoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        item.dosisSO2 = oRegistroGasificado.dosisSO2 != null ? oRegistroGasificado.dosisSO2.Value : 0;
+                        item.tempAgua = oRegistroGasificado.tempAgua != null ? oRegistroGasificado.tempAgua.Value : 0;
+                        item.lecturaPpm = oRegistroGasificado.lecturaPpm != null ? oRegistroGasificado.lecturaPpm.Value : 0;
+                        item.productoAplicado = oRegistroGasificado.idProductoAplicado != null ? oRegistroGasificado.idProductoAplicado : string.Empty;
+                        //item.registradoPor = oRegistroGasificado.registradoPor != null ? oRegistroGasificado.registradoPor : string.Empty;
+                        //item.ValidadoPor = oRegistroGasificado.ValidadoPor != null ? oRegistroGasificado.ValidadoPor : string.Empty;
+                        //item.AprobadoPor = oRegistroGasificado.AprobadoPor != null ? oRegistroGasificado.AprobadoPor : string.Empty;
                         Modelo.SubmitChanges();
-                        resultQuery = result.idGasificado;
+                        IdRegistro = item.idGasificado;
                         #endregion
                     }
                 }
             }
 
-            return resultQuery;
+            return IdRegistro;
         }
 
         public int ToRegister(string conection, SAS_RegistroGasificado oRegistroGasificado, List<IngresoSalidaGasificado> detalleARegistrar, List<IngresoSalidaGasificado> detalleAEliminar)

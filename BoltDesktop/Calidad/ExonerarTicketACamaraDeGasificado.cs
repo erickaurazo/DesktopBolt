@@ -39,6 +39,43 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         public ExonerarTicketACamaraDeGasificado()
         {
             InitializeComponent();
+            selectedItem = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
+            selectedItem.codigoExoneracion = 0;
+
+            CargarMeses();
+            ObtenerFechasIniciales();
+            conection = "NSFAJA";
+            user = new SAS_USUARIOS();
+            user.IdUsuario = "EAURAZO";
+            user.NombreCompleto = "Erick Aurazo Carhuatanta";
+            user.IdCodigoGeneral = "100369";
+            companyId = "001";
+            privilege = new PrivilegesByUser();
+            privilege.nuevo = 1;
+            Inicio();
+            lblCodeUser.Text = user.IdUsuario;
+            lblFullName.Text = user.NombreCompleto;
+
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            btnNuevo.Enabled = true;
+            btnActualizar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnRegistrar.Enabled = true;
+            btnAtras.Enabled = false;
+            btnAnular.Enabled = true;
+            btnEliminarRegistro.Enabled = true;
+            btnHistorial.Enabled = true;
+            //btnFlujoAprobacion.Enabled = false;
+            btnAdjuntar.Enabled = true;
+            btnNotificar.Enabled = true;
+            btnCerrar.Enabled = true;
+
+            gbCabecera.Enabled = false;
+            gbList.Enabled = false;
+            Consult();
         }
 
         public ExonerarTicketACamaraDeGasificado(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
@@ -322,6 +359,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                 selectItemById = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
                 selectedItem.codigoExoneracion = 0;
                 selectItemById.codigoExoneracion = 0;
+                selectItemById.itemDetalle = 0;
 
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
@@ -331,13 +369,14 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                         {
                             if (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value.ToString() != string.Empty)
                             {
-                                string id = (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value != null ? dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value.ToString() : string.Empty);
-
-                                var resultado = result.Where(x => x.codigoExoneracion.ToString() == id).ToList();
+                                int idTicketReservado = (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value) : 0);
+                                int ticket = (dgvRegistro.CurrentRow.Cells["chcodigoExoneracion"].Value != null ?  Convert.ToInt32( dgvRegistro.CurrentRow.Cells["chitemDetalle"].Value) :0); 
+                                var resultado = result.Where(x => x.codigoExoneracion == idTicketReservado).ToList();
                                 if (resultado.ToList().Count > 0)
                                 {
                                     selectedItem = resultado.ElementAt(0);
-                                    selectItemById.codigoExoneracion = selectedItem.codigoExoneracion;
+                                    selectItemById.codigoExoneracion = idTicketReservado;
+                                    selectItemById.itemDetalle = ticket;
                                 }
 
                             }
@@ -407,9 +446,13 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             {
                 selectItemById = new SAS_ListadoDeRegistrosExoneradosByDatesResult();
                 selectItemById.codigoExoneracion = 0;
+                selectItemById.fechaRegistro = DateTime.Now;
                 selectItemById.fechaAcopio = DateTime.Now;
+                selectItemById.itemDetalle = 0;
+                selectItemById.itemDDetalle = 0;
+
                 ExonerarTicketACamaraDeGasificadoEdicion ofrm = new ExonerarTicketACamaraDeGasificadoEdicion(conection, user, companyId, privilege, selectItemById);
-                ofrm.WindowState = FormWindowState.Maximized;
+                ofrm.WindowState = FormWindowState.Normal;
                 ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
                 ofrm.Show();
             }

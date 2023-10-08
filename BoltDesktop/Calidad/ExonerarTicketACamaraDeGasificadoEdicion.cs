@@ -61,7 +61,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             privilege = _privilege;
             CargarCombos();
             documentDate = _documentDate;
-            ticket = _documentDate.itemDetalle.Value;
+            ticket = _documentDate.itemDetalle != null ? _documentDate.itemDetalle.Value : 0;
             gbDocumento.Enabled = false;
             gbDatosDeTicket.Enabled = false;
             btnBarraPrincipal.Enabled = false;
@@ -230,7 +230,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                         if (document.codigoExoneracion == 0)
                         {
                             #region Nuevo() 
-                            txtUsuarioAsignado.Text = user2.NombreCompleto;
+                            txtUsuarioAsignado.Text = user2.IdCodigoGeneral.ToString() + " | " + user2.NombreCompleto;
                             cboDocumento.SelectedValue = "EXG";
                             cboSerie.SelectedValue = "2023";
                             txtNumeroDocumento.Text = document.codigoExoneracion.ToString().PadLeft(7, '0');
@@ -238,7 +238,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                             cboMotivo.SelectedValue = "000";
                             txtTicket.Text = ticket.ToString(); 
                             txtTicketNumero.Text = "Ticket numero : " + ticket.ToString();
-                            txtFechaRegistro.Text = document.fechaRegistro.Value.ToString();
+                            txtFechaRegistro.Text = document.fechaRegistro != null ? document.fechaRegistro.Value.ToString() : DateTime.Now.ToString();
                             txtNota.Text = "Exonerado por el motivo de ";
                             txtCodigo.Text = document.codigoExoneracion.ToString();
                             this.txtEstado.Text = "PENDIENTE";
@@ -256,6 +256,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                 txtTicketNumero.ReadOnly = true;
                                 txtTicket.Enabled = false;
                                 txtTicketNumero.Enabled = false;
+                                txtFecha.Enabled = false;
+                                txtFecha.ReadOnly = true;
                             }
                             else
                             {
@@ -264,10 +266,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                                 txtTicketNumero.ReadOnly = false;
                                 txtTicket.Enabled = true;
                                 txtTicketNumero.Enabled = true;
+                                txtFecha.Enabled = true;
+                                txtFecha.ReadOnly = false;
                             }
-                            txtFecha.Enabled = true;
-                            txtFechaRegistro.Text = document.fechaRegistro != null ? document.fechaRegistro.Value.ToString() : DateTime.Now.ToString();
-                            txtFecha.ReadOnly = true;
+                                                        
+                                                     
                             btnBarraPrincipal.Enabled = true;                            
                             gbDatosDeTicket.Enabled = true;
                             progressBar1.Visible = false;
@@ -275,7 +278,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
                         else
                         {
                             #region Editar() 
-                            txtUsuarioAsignado.Text = document.responsableRegistroExoneracion.Trim() + " " + document.responsableRegistroExoneracionNombres.Trim();
+                            txtUsuarioAsignado.Text = document.responsableRegistroExoneracion.Trim() + " | " + document.responsableRegistroExoneracionNombres.Trim();
                             cboDocumento.SelectedValue = document.iddocumento != null ? document.iddocumento.Trim() : "EXG";
                             cboSerie.SelectedValue = document.serie != null ? document.serie.Trim() : DateTime.Now.Year.ToString();
                             txtNumeroDocumento.Text = document.codigoExoneracion.ToString().PadLeft(7, '0');
