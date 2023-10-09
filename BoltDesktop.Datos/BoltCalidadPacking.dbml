@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="BoltCalidadPackingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString6" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SAS_CALIDAD_FORMULARIO" Member="SAS_CALIDAD_FORMULARIO">
     <Type Name="SAS_CALIDAD_FORMULARIO">
       <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -1797,6 +1797,45 @@
       <Column Name="FechaDetalleEvaluacion" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="Cumplimiento" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
       <Column Name="Observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_EvaluacionTrazabilidadFCLDespacho" Method="SAS_EvaluacionTrazabilidadFCLDespacho">
+    <Parameter Name="Desde" Parameter="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_EvaluacionTrazabilidadFCLDespachoResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdConformacionCarga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RegistroCalidadFormulario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConformidadCarga" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Booking" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PackingList" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(153)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="NumeroPackingList" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDistribucion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InspDg" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InspEc" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InspCp" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InspCc" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InspPr" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InspDt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InspCk" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EstadoIdFase01" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoIdFase02" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoIdFase03" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Distribuido" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Inspeccinado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

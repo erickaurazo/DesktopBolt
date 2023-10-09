@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="AreasController.cs" />
     <Compile Include="AsistenciaController.cs" />
+    <Compile Include="Calidad\EvaluacionTrazabilidadFCLDespachoController.cs" />
     <Compile Include="CentroDeCostosController.cs" />
     <Compile Include="CompaniesController.cs" />
     <Compile Include="IncumplimientoBuenasPracticasHigieneController.cs" />
@@ -164,6 +165,10 @@
   <ItemGroup>
     <Content Include="fire_icon_138608.ico" />
     <Content Include="logo4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Almacen\" />
+    <Folder Include="ITD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

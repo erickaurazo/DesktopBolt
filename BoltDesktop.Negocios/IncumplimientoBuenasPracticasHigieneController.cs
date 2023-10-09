@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Transactions;
+
 namespace Asistencia.Negocios
 {
     public class IncumplimientoBuenasPracticasHigieneController

@@ -85,7 +85,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
             InitializeComponent();
             selectedItem = new SAS_ReporteIncumplimientoPracticasHigieneByDateResult();
             selectedItem.idCabeceraRegistro = 0;
-
             CargarMeses();
             ObtenerFechasIniciales();
             conection = _conection;
@@ -95,28 +94,21 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
             Inicio();
             lblCodeUser.Text = user.IdUsuario;
             lblFullName.Text = user.NombreCompleto;
-
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            btnNuevo.Enabled = true;
-            //btnActualizar.Enabled = true;
-            btnEditar.Enabled = true;
-            //btnRegistrar.Enabled = true;
+            btnNuevo.Enabled = true;            
+            btnEditar.Enabled = true;            
             btnAtras.Enabled = false;
             btnAnular.Enabled = true;
             btnEliminarRegistro.Enabled = true;
-            btnHistorial.Enabled = true;
-            //btnFlujoAprobacion.Enabled = false;
-            btnAdjuntar.Enabled = true;
-            //btnNotificar.Enabled = true;
+            btnHistorial.Enabled = true;            
+            btnAdjuntar.Enabled = true;            
             btnCerrar.Enabled = true;
-
             gbCabecera.Enabled = false;
             gbList.Enabled = false;
             Consult();
-
         }
 
         private void Consult()
@@ -220,17 +212,18 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
 
         private void txtPeriodo_ValueChanged(object sender, EventArgs e)
         {
-            if (cboMes.SelectedIndex >= 0)
-            {
-                globalHelper = new GlobalesHelper();
-                globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
-            }
+            CambiarFechasComboBox();
         }
 
         private void cboMes_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
 
+            CambiarFechasComboBox();
+            
+        }
 
+        private void CambiarFechasComboBox()
+        {
             if (cboMes.SelectedIndex >= 0)
             {
                 globalHelper = new GlobalesHelper();
@@ -411,7 +404,13 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
                                 "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+      
+        private void IncumplimientoBuenasPracticasHigieneReporte_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        #region Métodos()
         public void Inicio()
         {
             try
@@ -432,10 +431,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
                 return;
             }
         }
-
-        private void IncumplimientoBuenasPracticasHigieneReporte_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
