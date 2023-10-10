@@ -2594,6 +2594,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.resx">
+      <DependentUpon>TrazabilidadDeContenedorDespachosPreView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.resx">
       <DependentUpon>TrazabilidadDeContenedorDespachosReporte.cs</DependentUpon>
     </EmbeddedResource>

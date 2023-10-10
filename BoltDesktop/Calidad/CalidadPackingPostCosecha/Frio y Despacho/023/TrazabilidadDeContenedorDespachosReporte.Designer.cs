@@ -183,6 +183,7 @@
             // dgvRegistros
             // 
             this.dgvRegistros.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvRegistros.ContextMenuStrip = this.subMenuComponentes;
             this.dgvRegistros.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvRegistros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistros.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -425,6 +426,7 @@
             this.dgvRegistros.TabIndex = 233;
             this.dgvRegistros.ThemeName = "Windows8";
             this.dgvRegistros.SelectionChanged += new System.EventHandler(this.dgvRegistros_SelectionChanged);
+            this.dgvRegistros.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvRegistros_Scroll);
             // 
             // subMenuComponentes
             // 
@@ -467,6 +469,7 @@
             this.vistaPreviaToolStripMenuItem.Name = "vistaPreviaToolStripMenuItem";
             this.vistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.vistaPreviaToolStripMenuItem.Text = "Vista previa";
+            this.vistaPreviaToolStripMenuItem.Click += new System.EventHandler(this.vistaPreviaToolStripMenuItem_Click);
             // 
             // btnImprimirSub
             // 

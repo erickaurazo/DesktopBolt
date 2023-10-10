@@ -37,6 +37,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         private SAS_ReporteIncumplimientoPracticasHigieneByDateResult selectItemById;
         public MesController MesesNeg;
         private ExportToExcelHelper modelExportToExcel;
+        private int IdEvaluacion = 0;
         #endregion
 
         public TrazabilidadDeContenedorDespachosReporte()
@@ -205,7 +206,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
         {
-
+            VistaPrevia(IdEvaluacion);
         }
 
         private void btnElegirColumna_Click(object sender, EventArgs e)
@@ -235,7 +236,44 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void dgvRegistros_SelectionChanged(object sender, EventArgs e)
         {
+            #region Seleccion al cambiar cursor() 
+            selectedItem = new SAS_EvaluacionTrazabilidadFCLDespachoResult();
+            selectedItem.Id = 0;
+            IdEvaluacion = 0;
 
+            try
+            {
+                #region Selecionar registro()                                                                
+                if (dgvRegistros != null && dgvRegistros.Rows.Count > 0)
+                {
+                    if (dgvRegistros.CurrentRow != null)
+                    {
+                        if (dgvRegistros.CurrentRow.Cells["chId"].Value != null)
+                        {
+                            if (dgvRegistros.CurrentRow.Cells["chId"].Value.ToString() != string.Empty)
+                            {
+                                IdEvaluacion = (dgvRegistros.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32(dgvRegistros.CurrentRow.Cells["chId"].Value.ToString()) : 0);
+                                var resultado = listAll.Where(x => x.Id == IdEvaluacion).ToList();
+                                if (resultado.ToList().Count > 0)
+                                {
+                                    selectedItem = resultado.ElementAt(0);
+
+
+                                }
+
+                            }
+                        }
+                    }
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
+                return;
+            }
+            #endregion
         }
 
 
@@ -274,6 +312,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void EjecutarConsulta()
         {
+
             listAll = new List<SAS_EvaluacionTrazabilidadFCLDespachoResult>();
             model = new EvaluacionTrazabilidadFCLDespachoController();
 
@@ -311,6 +350,24 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             }
         }
 
+        private void dgvRegistros_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void vistaPreviaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VistaPrevia(IdEvaluacion);
+        }
+
+        private void VistaPrevia(int Id)
+        {
+            if (Id != 0)
+            {
+                TrazabilidadDeContenedorDespachosPreView ofrm = new TrazabilidadDeContenedorDespachosPreView(conection, Id);
+                ofrm.Show();
+            }
+        }
 
         private void ObtenerFechasIniciales()
         {
