@@ -157,7 +157,16 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

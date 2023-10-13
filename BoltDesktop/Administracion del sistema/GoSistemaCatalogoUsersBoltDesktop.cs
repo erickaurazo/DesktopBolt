@@ -73,7 +73,7 @@ namespace Asistencia
         public GoSistemaCatalogoUsers(string _conection, SAS_USUARIOS _userLogin, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
-            conection = _conection;
+            conection = "SAS";
             userLogin = _userLogin;
             companyId = _companyId;
             privilege = _privilege;

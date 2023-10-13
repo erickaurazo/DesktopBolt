@@ -5,6 +5,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using Telerik.WinControls.UI;
 using Asistencia.Datos;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Gasificado;
 
 namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM._010
 {
@@ -18,7 +19,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
         public RadPdfViewer radPdfViewer12;
         private DataTable dta;
         private RegistroDeIngresoSalidaGasificadoDS dsReporte;
-        private RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoLavadoDeManoBySemanaPeriodoRPTTableAdapter adaptador;
+        private CalidadPackingPostCosecha.Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoLavadoDeManoBySemanaPeriodoRPTTableAdapter adaptador;
 
         public CumplimientoDiarioDeLavadoDeManosPreview()
         {
@@ -37,7 +38,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
             try
             {
                 dsReporte = new RegistroDeIngresoSalidaGasificadoDS();
-                adaptador = new RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoLavadoDeManoBySemanaPeriodoRPTTableAdapter();
+                adaptador = new CalidadPackingPostCosecha.Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoLavadoDeManoBySemanaPeriodoRPTTableAdapter();
                 dsReporte.EnforceConstraints = false;
                 adaptador.Fill(dsReporte.SAS_ListadoLavadoDeManoBySemanaPeriodoRPT,Convert.ToInt32(item.Semana),item.periodo, item.TurnoId);
                 dta = new DataTable();

@@ -305,6 +305,8 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -2227,7 +2229,9 @@
             // 
             this.GoAsegCalCerReporteFrioYDespacho.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GoAsegCalCerReporteFrioYDespachoVerificacionYCalibracionDeSensoresDeTunelesDeEnfriamiento,
-            this.GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras});
+            this.GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras,
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga,
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor});
             this.GoAsegCalCerReporteFrioYDespacho.Name = "GoAsegCalCerReporteFrioYDespacho";
             this.GoAsegCalCerReporteFrioYDespacho.Size = new System.Drawing.Size(386, 22);
             this.GoAsegCalCerReporteFrioYDespacho.Text = "Frio y despacho";
@@ -2450,6 +2454,20 @@
             // 
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
+            // 
+            // GoAsegCalCerReporteFrioYDespachoEvaluacionCarga
+            // 
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Name = "GoAsegCalCerReporteFrioYDespachoEvaluacionCarga";
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Size = new System.Drawing.Size(439, 22);
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Text = "023 - Evaluación de carga";
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga_Click);
+            // 
+            // GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor
+            // 
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Name = "GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor";
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Size = new System.Drawing.Size(439, 22);
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Text = "045 - CheckList de inspección";
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor_Click);
             // 
             // Menu
             // 
@@ -2753,5 +2771,7 @@
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteFrioYDespachoEvaluacionCarga;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor;
     }
 }

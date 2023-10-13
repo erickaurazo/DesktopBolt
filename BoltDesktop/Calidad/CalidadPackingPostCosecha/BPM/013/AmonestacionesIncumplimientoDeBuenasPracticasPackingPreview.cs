@@ -5,6 +5,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using Telerik.WinControls.UI;
 using Asistencia.Datos;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Gasificado;
 
 namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM._013
 {
@@ -17,7 +18,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
         public RadPdfViewer radPdfViewer12;
         private DataTable dta;
         private RegistroDeIngresoSalidaGasificadoDS dsReporte;
-        private RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoAmonestacionesIncumplimientosByIdTableAdapter adaptador;
+        private CalidadPackingPostCosecha.Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoAmonestacionesIncumplimientosByIdTableAdapter adaptador;
 
 
         public AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview()
@@ -41,7 +42,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
             try
             {
                 dsReporte = new RegistroDeIngresoSalidaGasificadoDS();
-                adaptador = new RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoAmonestacionesIncumplimientosByIdTableAdapter();
+                adaptador = new CalidadPackingPostCosecha.Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoAmonestacionesIncumplimientosByIdTableAdapter();
                 dsReporte.EnforceConstraints = false;
                 adaptador.Fill(dsReporte.SAS_ListadoAmonestacionesIncumplimientosById, Convert.ToInt32(item.CabeceraId));
                 dta = new DataTable();

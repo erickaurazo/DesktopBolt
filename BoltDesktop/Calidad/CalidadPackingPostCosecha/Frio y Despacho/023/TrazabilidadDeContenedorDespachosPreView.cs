@@ -5,7 +5,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using Telerik.WinControls.UI;
 using Asistencia.Datos;
-
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Gasificado;
 
 namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio_y_Despacho._023
 {
@@ -20,8 +20,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         private DataTable dta;
         private RegistroDeIngresoSalidaGasificadoDS dsReporte;
         //private RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter adaptador;
-        private RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaByIdTableAdapter adaptador;
-        
+        private Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaByIdTableAdapter adaptador;
+
         #endregion
 
         public TrazabilidadDeContenedorDespachosPreView()
@@ -39,9 +39,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             this.crystalReportViewer1.PrintReport();
             try
             {
-                dsReporte = new RegistroDeIngresoSalidaGasificadoDS();                
-                adaptador = new RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaByIdTableAdapter();
-                dsReporte.EnforceConstraints = false;                
+                dsReporte = new RegistroDeIngresoSalidaGasificadoDS();
+                adaptador = new Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaByIdTableAdapter();
+                dsReporte.EnforceConstraints = false;
                 adaptador.Fill(dsReporte.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaById, IdEvaluacion);
                 dta = new DataTable();
                 if (dsReporte.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaById.Rows.Count <= 0)
@@ -50,12 +50,12 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
                     return;
                 }
                 oRpt = new ReportDocument();
-                
-                //oRpt.Load(@"C:\SOLUTION\TrazabilidadDeContenedorDespachosRTP.rpt");
-                oRpt.Load(@"C:\Users\eaurazo.SAGSA\Source\Repos\erickaurazo\DesktopBolt\BoltDesktop\Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.rpt");
+
+                oRpt.Load(@"C:\SOLUTION\TrazabilidadDeContenedorDespachosRTP.rpt");
+                //oRpt.Load(@"C:\Users\eaurazo.SAGSA\Source\Repos\erickaurazo\DesktopBolt\BoltDesktop\Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.rpt");
                 oRpt.SetDatabaseLogon("sa", "usersql$$nisira");
                 dta = dsReporte.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaById;
-                oRpt.SetDataSource(dta);                
+                oRpt.SetDataSource(dta);
                 crystalReportViewer1.ReportSource = oRpt;
             }
             catch (Exception Ex)

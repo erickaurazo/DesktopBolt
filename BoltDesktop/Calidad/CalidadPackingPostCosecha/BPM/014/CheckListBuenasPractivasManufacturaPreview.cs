@@ -5,6 +5,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using Telerik.WinControls.UI;
 using Asistencia.Datos;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Gasificado;
 
 namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM._014
 {
@@ -18,7 +19,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
         public RadPdfViewer radPdfViewer12;
         private DataTable dta;
         private RegistroDeIngresoSalidaGasificadoDS dsReporte;
-        private RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter adaptador;
+        private CalidadPackingPostCosecha.Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter adaptador;
 
         public CheckListBuenasPractivasManufacturaPreview()
         {
@@ -36,7 +37,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha.BPM
             try
             {
                 dsReporte = new RegistroDeIngresoSalidaGasificadoDS();
-                adaptador = new RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter();
+                adaptador = new CalidadPackingPostCosecha.Gasificado.RegistroDeIngresoSalidaGasificadoDSTableAdapters.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodoTableAdapter();
                 dsReporte.EnforceConstraints = false;
                 adaptador.Fill(dsReporte.SAS_ListadoCheckListBuenasPracticasManufacturaAllByWeekPeriodo, item.periodo, item.Semana);
                 dta = new DataTable();

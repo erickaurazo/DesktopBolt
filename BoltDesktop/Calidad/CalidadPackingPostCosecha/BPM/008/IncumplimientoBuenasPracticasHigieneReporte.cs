@@ -21,7 +21,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
 {
     public partial class IncumplimientoBuenasPracticasHigieneReporte : Form
     {
-
+        #region Variables()
         private int periodo;
         private PrivilegesByUser privilege;
         private SAS_USUARIOS user;
@@ -36,6 +36,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
         private SAS_ReporteIncumplimientoPracticasHigieneByDateResult selectItemById;
         public MesController MesesNeg;
         private ExportToExcelHelper modelExportToExcel;
+        #endregion
 
         public IncumplimientoBuenasPracticasHigieneReporte()
         {
@@ -78,7 +79,6 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
             gbList.Enabled = false;
             Consult();
         }
-
 
         public IncumplimientoBuenasPracticasHigieneReporte(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
         {
@@ -265,7 +265,16 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)

@@ -536,6 +536,7 @@
             this.chkVisualizacionPorDia.TabIndex = 216;
             this.chkVisualizacionPorDia.Text = "Día actual";
             this.chkVisualizacionPorDia.UseVisualStyleBackColor = true;
+            this.chkVisualizacionPorDia.CheckedChanged += new System.EventHandler(this.chkVisualizacionPorDia_CheckedChanged);
             // 
             // txtFechaHasta
             // 

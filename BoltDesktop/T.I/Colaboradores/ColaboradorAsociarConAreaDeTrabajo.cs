@@ -25,7 +25,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private string _companyId;
         private PrivilegesByUser privilege;
         private SAS_ListadoColaboradoresByDispositivo odetalleSelecionado;
-        private SAS_ListadoDeLineasTelefonicas detalle;
+        private SAS_ListadoDeLineasTelefonica detalle;
         private SAS_CuentasCorreoListado odetalleSelecionadoByFormularioEmail;
         private SAS_DispositivoUsuariosController modelo;
         private SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult oItem;
@@ -73,7 +73,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             //bgwHilo.RunWorkerAsync();
         }
 
-        public ColaboradorAsociarConAreaDeTrabajo(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser privilege, SAS_ListadoDeLineasTelefonicas detalle)
+        public ColaboradorAsociarConAreaDeTrabajo(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser privilege, SAS_ListadoDeLineasTelefonica detalle)
         {
             InitializeComponent();
             Inicio();

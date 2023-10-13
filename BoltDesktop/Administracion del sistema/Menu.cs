@@ -7,6 +7,7 @@ using ComparativoHorasVisualSATNISIRA.Calidad;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._010;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._013;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._014;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio_y_Despacho._023;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maestros;
 using ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha;
 using ComparativoHorasVisualSATNISIRA.Cosecha;
@@ -5019,6 +5020,37 @@ namespace Asistencia
                 MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
                 return;
             }
+        }
+
+        private void GoAsegCalCerReporteFrioYDespachoEvaluacionCarga_Click(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                TrazabilidadDeContenedorDespachosReporte frmHijo = new TrazabilidadDeContenedorDespachosReporte("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
         }
     }
 }

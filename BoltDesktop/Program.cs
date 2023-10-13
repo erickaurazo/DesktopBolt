@@ -13,6 +13,7 @@ using ComparativoHorasVisualSATNISIRA.Costos;
 using ComparativoHorasVisualSATNISIRA.Exportaciones;
 using ComparativoHorasVisualSATNISIRA.Maquinaria;
 using ComparativoHorasVisualSATNISIRA.MRP;
+using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.RRHH;
 using ComparativoHorasVisualSATNISIRA.T.I;
 using ComparativoHorasVisualSATNISIRA.T.I.Partes_Diarios;
@@ -31,8 +32,8 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TrazabilidadDeContenedorDespachosReporte());
-            //Application.Run(new Menu());
+            //Application.Run(new ConformacionDeCargaReporte());
+            Application.Run(new Menu());
         }
     }
 }

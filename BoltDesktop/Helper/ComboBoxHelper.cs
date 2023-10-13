@@ -883,7 +883,7 @@ namespace Asistencia.Helper
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                resultado = Modelo.SAS_LineasCelularesCoporativasAll.Where(x => x.idCodigoGeneral.Trim() == codigoColaborador).ToList();
+                resultado = Modelo.SAS_LineasCelularesCoporativasAlls.Where(x => x.idCodigoGeneral.Trim() == codigoColaborador).ToList();
                 foreach (var item in resultado)
                 {
                     result.Add(new DFormatoSimple { Codigo = item.id.ToString().Trim(), Descripcion = item.lineaCelular.Trim() });

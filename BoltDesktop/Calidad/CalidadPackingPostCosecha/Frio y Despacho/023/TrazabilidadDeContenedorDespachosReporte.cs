@@ -156,47 +156,84 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            Nuevo();
+        }
 
+        private void Nuevo()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            Editar();
+        }
 
+        private void Editar()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            Grabar();
+        }
 
+        private void Grabar()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            Atras();
+        }
 
+        private void Atras()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
+            Anular();
+        }
 
+        private void Anular()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnEliminarRegistro_Click(object sender, EventArgs e)
         {
+            EliminarRegistro();
+        }
 
+        private void EliminarRegistro()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
+            Historial();
+        }
 
+        private void Historial()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-
+            Exportar();
         }
+
+   
 
         private void btnAdjuntar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
         }
 
         private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
@@ -211,12 +248,21 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void btnElegirColumna_Click(object sender, EventArgs e)
         {
-
+            ElegirColumna();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void cboMes_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
@@ -289,6 +335,27 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         #region Metodos()
 
+        private void ElegirColumna()
+        {
+            this.dgvRegistros.ShowColumnChooser();
+        }
+
+
+        private void Exportar()
+        {
+            try
+            {
+                modelExportToExcel = new ExportToExcelHelper();
+                modelExportToExcel.ExportarToExcel(dgvRegistros, saveFileDialog);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+
+        }
 
         private void CambiarFechasComboBox()
         {
@@ -366,6 +433,23 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             {
                 TrazabilidadDeContenedorDespachosPreView ofrm = new TrazabilidadDeContenedorDespachosPreView(conection, Id);
                 ofrm.Show();
+            }
+        }
+
+        private void chkVisualizacionPorDia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkVisualizacionPorDia.Checked == true)
+            {
+                this.txtFechaDesde.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                this.txtFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                if (cboMes.SelectedIndex >= 0)
+                {
+                    globalHelper = new GlobalesHelper();
+                    globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
+                }
             }
         }
 

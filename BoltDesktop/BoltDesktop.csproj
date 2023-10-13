@@ -394,10 +394,10 @@
     <Compile Include="Almacen\ProductosImpresionCodigoBarras.Designer.cs">
       <DependentUpon>ProductosImpresionCodigoBarras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\Calidades.cs">
+    <Compile Include="Calidad\Calidad Campo\Calidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\Calidades.Designer.cs">
+    <Compile Include="Calidad\Calidad Campo\Calidades.Designer.cs">
       <DependentUpon>Calidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.cs">
@@ -832,66 +832,66 @@
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\ExonerarTicketACamaraDeGasificado.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\ExonerarTicketACamaraDeGasificado.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificado.Designer.cs">
       <DependentUpon>ExonerarTicketACamaraDeGasificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\ExonerarTicketACamaraDeGasificadoEdicion.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\ExonerarTicketACamaraDeGasificadoEdicion.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.Designer.cs">
       <DependentUpon>ExonerarTicketACamaraDeGasificadoEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\MotivosDeExoneracionACamaraDeGasificados.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\MotivosDeExoneracionACamaraDeGasificados.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.Designer.cs">
       <DependentUpon>MotivosDeExoneracionACamaraDeGasificados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificado.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificado.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificado.Designer.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoDS.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoDS.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoEdicion.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoEdicion.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.Designer.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoRPT.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistroDeIngresoSalidaGasificadoRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoVistaPrevia.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\RegistroDeIngresoSalidaGasificadoVistaPrevia.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.Designer.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoVistaPrevia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\ReporteIngresoSalidaGasificado.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\ReporteIngresoSalidaGasificado.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificado.Designer.cs">
       <DependentUpon>ReporteIngresoSalidaGasificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\ReporteIngresoSalidaGasificadoLeidos.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\ReporteIngresoSalidaGasificadoLeidos.Designer.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.Designer.cs">
       <DependentUpon>ReporteIngresoSalidaGasificadoLeidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigiene.cs">
@@ -1552,10 +1552,22 @@
     <Compile Include="Presupuestos\AperturaCierrePresupuestos.Designer.cs">
       <DependentUpon>AperturaCierrePresupuestos.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\CuentaDeCorreosEdicionEstado.cs">
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\CuentaDeCorreosEdicionEstado.Designer.cs">
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.Designer.cs">
+      <DependentUpon>ConformacionDeCargaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaReporte.Designer.cs">
+      <DependentUpon>ConformacionDeCargaReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.Designer.cs">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncionalEdicionAgregarComentarios.cs">
@@ -1781,10 +1793,10 @@
     <Compile Include="RRHH\EntregaDeboletasDePago.Designer.cs">
       <DependentUpon>EntregaDeboletasDePago.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\AreaDeTrabajo.cs">
+    <Compile Include="T.I\Dispositivo\AreaDeTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\AreaDeTrabajo.Designer.cs">
+    <Compile Include="T.I\Dispositivo\AreaDeTrabajo.Designer.cs">
       <DependentUpon>AreaDeTrabajo.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncional.cs">
@@ -1805,10 +1817,10 @@
     <Compile Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncionalEdicionReasignarCaso.Designer.cs">
       <DependentUpon>AtencionesSoporteFuncionalEdicionReasignarCaso.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\CategoriaDeCuentasDeCorreosElectronicos.cs">
+    <Compile Include="T.I\Correos electronicos\CategoriaDeCuentasDeCorreosElectronicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\CategoriaDeCuentasDeCorreosElectronicos.Designer.cs">
+    <Compile Include="T.I\Correos electronicos\CategoriaDeCuentasDeCorreosElectronicos.Designer.cs">
       <DependentUpon>CategoriaDeCuentasDeCorreosElectronicos.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Colaboradores\Colaboradores.cs">
@@ -1824,10 +1836,10 @@
     <Compile Include="Contabilidad\DetalleRevisionDatosContableSAS.Designer.cs">
       <DependentUpon>DetalleRevisionDatosContableSAS.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\Colores.cs">
+    <Compile Include="T.I\Dispositivo\Colores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\Colores.Designer.cs">
+    <Compile Include="T.I\Dispositivo\Colores.Designer.cs">
       <DependentUpon>Colores.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Cotizacion para compra\CotizacionDeCompraDeEquiposCelularesConsolidar.cs">
@@ -1848,22 +1860,22 @@
     <Compile Include="T.I\Cotizacion para compra\CotizacionDeComprasDetalle.Designer.cs">
       <DependentUpon>CotizacionDeComprasDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\CuentaDeCorreos.cs">
+    <Compile Include="T.I\Correos electronicos\CuentaDeCorreos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\CuentaDeCorreos.Designer.cs">
+    <Compile Include="T.I\Correos electronicos\CuentaDeCorreos.Designer.cs">
       <DependentUpon>CuentaDeCorreos.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\CuentaDeDominio.cs">
+    <Compile Include="T.I\Dominio\CuentaDeDominio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\CuentaDeDominio.Designer.cs">
+    <Compile Include="T.I\Dominio\CuentaDeDominio.Designer.cs">
       <DependentUpon>CuentaDeDominio.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\CuentaVPN.cs">
+    <Compile Include="T.I\VPN\CuentaVPN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\CuentaVPN.Designer.cs">
+    <Compile Include="T.I\VPN\CuentaVPN.Designer.cs">
       <DependentUpon>CuentaVPN.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Dispositivo\DipositivosEdicionImportarHardware.cs">
@@ -2011,46 +2023,46 @@
     <Compile Include="T.I\Registro de compra de equipos\RegistroDeCompraEquiposCelularesEdicion.Designer.cs">
       <DependentUpon>RegistroDeCompraEquiposCelularesEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\Gerencias.cs">
+    <Compile Include="T.I\Dispositivo\Gerencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\Gerencias.Designer.cs">
+    <Compile Include="T.I\Dispositivo\Gerencias.Designer.cs">
       <DependentUpon>Gerencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\LineasCelulares.cs">
+    <Compile Include="T.I\Lineas celulares\LineasCelulares.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\LineasCelulares.Designer.cs">
+    <Compile Include="T.I\Lineas celulares\LineasCelulares.Designer.cs">
       <DependentUpon>LineasCelulares.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\MantenientosClasificacion.cs">
+    <Compile Include="T.I\Ordenes de soporte tecnico\MantenientosClasificacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\MantenientosClasificacion.Designer.cs">
+    <Compile Include="T.I\Ordenes de soporte tecnico\MantenientosClasificacion.Designer.cs">
       <DependentUpon>MantenientosClasificacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\Marca.cs">
+    <Compile Include="T.I\Dispositivo\Marca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\Marca.Designer.cs">
+    <Compile Include="T.I\Dispositivo\Marca.Designer.cs">
       <DependentUpon>Marca.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\Modelos.cs">
+    <Compile Include="T.I\Dispositivo\Modelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\Modelos.Designer.cs">
+    <Compile Include="T.I\Dispositivo\Modelos.Designer.cs">
       <DependentUpon>Modelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\NumeroIP.cs">
+    <Compile Include="T.I\Dispositivo\NumeroIP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\NumeroIP.Designer.cs">
+    <Compile Include="T.I\Dispositivo\NumeroIP.Designer.cs">
       <DependentUpon>NumeroIP.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\OperadorDeServiciosMoviles.cs">
+    <Compile Include="T.I\Lineas celulares\OperadorDeServiciosMoviles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\OperadorDeServiciosMoviles.Designer.cs">
+    <Compile Include="T.I\Lineas celulares\OperadorDeServiciosMoviles.Designer.cs">
       <DependentUpon>OperadorDeServiciosMoviles.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Ordenes de soporte tecnico\OrdenDeTrabajoIT.cs">
@@ -2065,10 +2077,10 @@
     <Compile Include="T.I\Ordenes de soporte tecnico\OrdenDeTrabajoITEdicion.Designer.cs">
       <DependentUpon>OrdenDeTrabajoITEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\PersonalExterno.cs">
+    <Compile Include="T.I\Colaboradores\PersonalExterno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\PersonalExterno.Designer.cs">
+    <Compile Include="T.I\Colaboradores\PersonalExterno.Designer.cs">
       <DependentUpon>PersonalExterno.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Plan de mantenimiento\PlanDeMantenimiento.cs">
@@ -2083,16 +2095,16 @@
     <Compile Include="T.I\Renovacion de celulares\PlanesDeLineasMoviles.Designer.cs">
       <DependentUpon>PlanesDeLineasMoviles.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\ReporteDeFormatosDeImpresion.cs">
+    <Compile Include="T.I\Dispositivo\ReporteDeFormatosDeImpresion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\ReporteDeFormatosDeImpresion.Designer.cs">
+    <Compile Include="T.I\Dispositivo\ReporteDeFormatosDeImpresion.Designer.cs">
       <DependentUpon>ReporteDeFormatosDeImpresion.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\ReporteDetalleReferenciasBySolicitud.cs">
+    <Compile Include="T.I\Ordenes de soporte funcional\ReporteDetalleReferenciasBySolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\ReporteDetalleReferenciasBySolicitud.Designer.cs">
+    <Compile Include="T.I\Ordenes de soporte funcional\ReporteDetalleReferenciasBySolicitud.Designer.cs">
       <DependentUpon>ReporteDetalleReferenciasBySolicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Dispositivo\ReporteListadoComponentesPorDispositivo.cs">
@@ -2107,10 +2119,10 @@
     <Compile Include="T.I\Dispositivo\ReporteDeInventantario.Designer.cs">
       <DependentUpon>ReporteDeInventantario.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\ReporteDeLineasCelulares.cs">
+    <Compile Include="T.I\Lineas celulares\ReporteDeLineasCelulares.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\ReporteDeLineasCelulares.Designer.cs">
+    <Compile Include="T.I\Lineas celulares\ReporteDeLineasCelulares.Designer.cs">
       <DependentUpon>ReporteDeLineasCelulares.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Dispositivo\ReportedeListadoDeNumeroIPyMAC.cs">
@@ -2143,10 +2155,10 @@
     <Compile Include="T.I\Dispositivo\ReportesListadoCuentasDeUsuariosEnDispositivos.Designer.cs">
       <DependentUpon>ReportesListadoCuentasDeUsuariosEnDispositivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\ReportesListadoDeSolicitudesDeAsignacion.cs">
+    <Compile Include="T.I\Equipamiento tecnologico\ReportesListadoDeSolicitudesDeAsignacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\ReportesListadoDeSolicitudesDeAsignacion.Designer.cs">
+    <Compile Include="T.I\Equipamiento tecnologico\ReportesListadoDeSolicitudesDeAsignacion.Designer.cs">
       <DependentUpon>ReportesListadoDeSolicitudesDeAsignacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\ReportesListadoSeguimientoPedidoCompra.cs">
@@ -2173,16 +2185,16 @@
     <Compile Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelular.Designer.cs">
       <DependentUpon>ReportesListadoSolicitudesRenovacionCelular.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\SegmentoDeRed.cs">
+    <Compile Include="T.I\Dispositivo\SegmentoDeRed.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\SegmentoDeRed.Designer.cs">
+    <Compile Include="T.I\Dispositivo\SegmentoDeRed.Designer.cs">
       <DependentUpon>SegmentoDeRed.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\ClasificacionSoftware.cs">
+    <Compile Include="T.I\Software\ClasificacionSoftware.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\ClasificacionSoftware.Designer.cs">
+    <Compile Include="T.I\Software\ClasificacionSoftware.Designer.cs">
       <DependentUpon>ClasificacionSoftware.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Equipamiento tecnologico\SolicitudDeEquipamientoTecnologico.cs">
@@ -2197,10 +2209,10 @@
     <Compile Include="T.I\Equipamiento tecnologico\SolicitudDeEquipamientoTecnologicoMantenimiento.Designer.cs">
       <DependentUpon>SolicitudDeEquipamientoTecnologicoMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\ClasificacionHardware.cs">
+    <Compile Include="T.I\Hardware\ClasificacionHardware.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\ClasificacionHardware.Designer.cs">
+    <Compile Include="T.I\Hardware\ClasificacionHardware.Designer.cs">
       <DependentUpon>ClasificacionHardware.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Renovacion de celulares\SolicitudDeRenovaciónDeEquipoCelular.cs">
@@ -2221,28 +2233,28 @@
     <Compile Include="Cosecha\TicketsReservados.Designer.cs">
       <DependentUpon>TicketsReservados.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\TipoSoftware.cs">
+    <Compile Include="T.I\Software\TipoSoftware.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\TipoSoftware.Designer.cs">
+    <Compile Include="T.I\Software\TipoSoftware.Designer.cs">
       <DependentUpon>TipoSoftware.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\TipoHardware.cs">
+    <Compile Include="T.I\Hardware\TipoHardware.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\TipoHardware.Designer.cs">
+    <Compile Include="T.I\Hardware\TipoHardware.Designer.cs">
       <DependentUpon>TipoHardware.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\TipoDeMantenimientos.cs">
+    <Compile Include="T.I\Plan de mantenimiento\TipoDeMantenimientos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\TipoDeMantenimientos.Designer.cs">
+    <Compile Include="T.I\Plan de mantenimiento\TipoDeMantenimientos.Designer.cs">
       <DependentUpon>TipoDeMantenimientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\TipoLicenciaCorreo.cs">
+    <Compile Include="T.I\Correos electronicos\TipoLicenciaCorreo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\TipoLicenciaCorreo.Designer.cs">
+    <Compile Include="T.I\Correos electronicos\TipoLicenciaCorreo.Designer.cs">
       <DependentUpon>TipoLicenciaCorreo.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Equipamiento tecnologico\TipoSolicitudEquipamientoTecnologico.cs">
@@ -2278,16 +2290,16 @@
     <Compile Include="Cosecha\ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.cs">
       <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibres.cs">
+    <Compile Include="Produccion\Registro de paletizaje\ReasignacionDeClientesEnPaletasLibres.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibres.Designer.cs">
+    <Compile Include="Produccion\Registro de paletizaje\ReasignacionDeClientesEnPaletasLibres.Designer.cs">
       <DependentUpon>ReasignacionDeClientesEnPaletasLibres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibresEdicion.cs">
+    <Compile Include="Produccion\Registro de paletizaje\ReasignacionDeClientesEnPaletasLibresEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibresEdicion.Designer.cs">
+    <Compile Include="Produccion\Registro de paletizaje\ReasignacionDeClientesEnPaletasLibresEdicion.Designer.cs">
       <DependentUpon>ReasignacionDeClientesEnPaletasLibresEdicion.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\GoVentasHabilitarSegundaLiquidación.cs">
@@ -2507,7 +2519,7 @@
     <EmbeddedResource Include="Almacen\ProductosImpresionCodigoBarras.resx">
       <DependentUpon>ProductosImpresionCodigoBarras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\Calidades.resx">
+    <EmbeddedResource Include="Calidad\Calidad Campo\Calidades.resx">
       <DependentUpon>Calidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.resx">
@@ -2682,32 +2694,32 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ControlCalidadDescarteUvaTrozosExportablesRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\ExonerarTicketACamaraDeGasificado.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificado.resx">
       <DependentUpon>ExonerarTicketACamaraDeGasificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\ExonerarTicketACamaraDeGasificadoEdicion.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.resx">
       <DependentUpon>ExonerarTicketACamaraDeGasificadoEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\MotivosDeExoneracionACamaraDeGasificados.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.resx">
       <DependentUpon>MotivosDeExoneracionACamaraDeGasificados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\RegistroDeIngresoSalidaGasificado.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificado.resx">
       <DependentUpon>RegistroDeIngresoSalidaGasificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\RegistroDeIngresoSalidaGasificadoEdicion.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.resx">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\RegistroDeIngresoSalidaGasificadoRPT.rpt">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegistroDeIngresoSalidaGasificadoRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\RegistroDeIngresoSalidaGasificadoVistaPrevia.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.resx">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoVistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\ReporteIngresoSalidaGasificado.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificado.resx">
       <DependentUpon>ReporteIngresoSalidaGasificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\ReporteIngresoSalidaGasificadoLeidos.resx">
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.resx">
       <DependentUpon>ReporteIngresoSalidaGasificadoLeidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.resx">
@@ -2841,7 +2853,13 @@
     <EmbeddedResource Include="Presupuestos\AperturaCierrePresupuestos.resx">
       <DependentUpon>AperturaCierrePresupuestos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\CuentaDeCorreosEdicionEstado.resx">
+    <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.resx">
+      <DependentUpon>ConformacionDeCargaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaReporte.resx">
+      <DependentUpon>ConformacionDeCargaReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.resx">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncionalEdicionAgregarComentarios.resx">
@@ -2965,7 +2983,7 @@
     <EmbeddedResource Include="RRHH\EntregaDeboletasDePago.resx">
       <DependentUpon>EntregaDeboletasDePago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\AreaDeTrabajo.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\AreaDeTrabajo.resx">
       <DependentUpon>AreaDeTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncional.resx">
@@ -2977,7 +2995,7 @@
     <EmbeddedResource Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncionalEdicionReasignarCaso.resx">
       <DependentUpon>AtencionesSoporteFuncionalEdicionReasignarCaso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\CategoriaDeCuentasDeCorreosElectronicos.resx">
+    <EmbeddedResource Include="T.I\Correos electronicos\CategoriaDeCuentasDeCorreosElectronicos.resx">
       <DependentUpon>CategoriaDeCuentasDeCorreosElectronicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Colaboradores\Colaboradores.resx">
@@ -2986,7 +3004,7 @@
     <EmbeddedResource Include="Contabilidad\DetalleRevisionDatosContableSAS.resx">
       <DependentUpon>DetalleRevisionDatosContableSAS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\Colores.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\Colores.resx">
       <DependentUpon>Colores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Cotizacion para compra\CotizacionDeCompraDeEquiposCelularesConsolidar.resx">
@@ -2998,13 +3016,13 @@
     <EmbeddedResource Include="T.I\Cotizacion para compra\CotizacionDeComprasDetalle.resx">
       <DependentUpon>CotizacionDeComprasDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\CuentaDeCorreos.resx">
+    <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreos.resx">
       <DependentUpon>CuentaDeCorreos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\CuentaDeDominio.resx">
+    <EmbeddedResource Include="T.I\Dominio\CuentaDeDominio.resx">
       <DependentUpon>CuentaDeDominio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\CuentaVPN.resx">
+    <EmbeddedResource Include="T.I\VPN\CuentaVPN.resx">
       <DependentUpon>CuentaVPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Dispositivo\DipositivosEdicionImportarHardware.resx">
@@ -3071,25 +3089,25 @@
     <EmbeddedResource Include="T.I\Registro de compra de equipos\RegistroDeCompraEquiposCelularesEdicion.resx">
       <DependentUpon>RegistroDeCompraEquiposCelularesEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\Gerencias.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\Gerencias.resx">
       <DependentUpon>Gerencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\LineasCelulares.resx">
+    <EmbeddedResource Include="T.I\Lineas celulares\LineasCelulares.resx">
       <DependentUpon>LineasCelulares.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\MantenientosClasificacion.resx">
+    <EmbeddedResource Include="T.I\Ordenes de soporte tecnico\MantenientosClasificacion.resx">
       <DependentUpon>MantenientosClasificacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\Marca.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\Marca.resx">
       <DependentUpon>Marca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\Modelos.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\Modelos.resx">
       <DependentUpon>Modelos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\NumeroIP.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\NumeroIP.resx">
       <DependentUpon>NumeroIP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\OperadorDeServiciosMoviles.resx">
+    <EmbeddedResource Include="T.I\Lineas celulares\OperadorDeServiciosMoviles.resx">
       <DependentUpon>OperadorDeServiciosMoviles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Ordenes de soporte tecnico\OrdenDeTrabajoIT.resx">
@@ -3098,16 +3116,16 @@
     <EmbeddedResource Include="T.I\Ordenes de soporte tecnico\OrdenDeTrabajoITEdicion.resx">
       <DependentUpon>OrdenDeTrabajoITEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\PersonalExterno.resx">
+    <EmbeddedResource Include="T.I\Colaboradores\PersonalExterno.resx">
       <DependentUpon>PersonalExterno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Renovacion de celulares\PlanesDeLineasMoviles.resx">
       <DependentUpon>PlanesDeLineasMoviles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\ReporteDeFormatosDeImpresion.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\ReporteDeFormatosDeImpresion.resx">
       <DependentUpon>ReporteDeFormatosDeImpresion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\ReporteDetalleReferenciasBySolicitud.resx">
+    <EmbeddedResource Include="T.I\Ordenes de soporte funcional\ReporteDetalleReferenciasBySolicitud.resx">
       <DependentUpon>ReporteDetalleReferenciasBySolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Dispositivo\ReporteListadoComponentesPorDispositivo.resx">
@@ -3116,7 +3134,7 @@
     <EmbeddedResource Include="T.I\Dispositivo\ReporteDeInventantario.resx">
       <DependentUpon>ReporteDeInventantario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\ReporteDeLineasCelulares.resx">
+    <EmbeddedResource Include="T.I\Lineas celulares\ReporteDeLineasCelulares.resx">
       <DependentUpon>ReporteDeLineasCelulares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Dispositivo\ReportedeListadoDeNumeroIPyMAC.resx">
@@ -3134,7 +3152,7 @@
     <EmbeddedResource Include="T.I\Dispositivo\ReportesListadoCuentasDeUsuariosEnDispositivos.resx">
       <DependentUpon>ReportesListadoCuentasDeUsuariosEnDispositivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\ReportesListadoDeSolicitudesDeAsignacion.resx">
+    <EmbeddedResource Include="T.I\Equipamiento tecnologico\ReportesListadoDeSolicitudesDeAsignacion.resx">
       <DependentUpon>ReportesListadoDeSolicitudesDeAsignacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\ReportesListadoSeguimientoPedidoCompra.resx">
@@ -3149,10 +3167,10 @@
     <EmbeddedResource Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelular.resx">
       <DependentUpon>ReportesListadoSolicitudesRenovacionCelular.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\SegmentoDeRed.resx">
+    <EmbeddedResource Include="T.I\Dispositivo\SegmentoDeRed.resx">
       <DependentUpon>SegmentoDeRed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\ClasificacionSoftware.resx">
+    <EmbeddedResource Include="T.I\Software\ClasificacionSoftware.resx">
       <DependentUpon>ClasificacionSoftware.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Equipamiento tecnologico\SolicitudDeEquipamientoTecnologico.resx">
@@ -3161,7 +3179,7 @@
     <EmbeddedResource Include="T.I\Equipamiento tecnologico\SolicitudDeEquipamientoTecnologicoMantenimiento.resx">
       <DependentUpon>SolicitudDeEquipamientoTecnologicoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\ClasificacionHardware.resx">
+    <EmbeddedResource Include="T.I\Hardware\ClasificacionHardware.resx">
       <DependentUpon>ClasificacionHardware.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Renovacion de celulares\SolicitudDeRenovaciónDeEquipoCelular.resx">
@@ -3173,16 +3191,16 @@
     <EmbeddedResource Include="Cosecha\TicketsReservados.resx">
       <DependentUpon>TicketsReservados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\TipoSoftware.resx">
+    <EmbeddedResource Include="T.I\Software\TipoSoftware.resx">
       <DependentUpon>TipoSoftware.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\TipoHardware.resx">
+    <EmbeddedResource Include="T.I\Hardware\TipoHardware.resx">
       <DependentUpon>TipoHardware.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\TipoDeMantenimientos.resx">
+    <EmbeddedResource Include="T.I\Plan de mantenimiento\TipoDeMantenimientos.resx">
       <DependentUpon>TipoDeMantenimientos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\TipoLicenciaCorreo.resx">
+    <EmbeddedResource Include="T.I\Correos electronicos\TipoLicenciaCorreo.resx">
       <DependentUpon>TipoLicenciaCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Equipamiento tecnologico\TipoSolicitudEquipamientoTecnologico.resx">
@@ -3200,10 +3218,10 @@
     <EmbeddedResource Include="Transportes\GoTransportesMovimientoAsistenciaBuses.resx">
       <DependentUpon>GoTransportesMovimientoAsistenciaBuses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produccion\ReasignacionDeClientesEnPaletasLibres.resx">
+    <EmbeddedResource Include="Produccion\Registro de paletizaje\ReasignacionDeClientesEnPaletasLibres.resx">
       <DependentUpon>ReasignacionDeClientesEnPaletasLibres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produccion\ReasignacionDeClientesEnPaletasLibresEdicion.resx">
+    <EmbeddedResource Include="Produccion\Registro de paletizaje\ReasignacionDeClientesEnPaletasLibresEdicion.resx">
       <DependentUpon>ReasignacionDeClientesEnPaletasLibresEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\GoVentasHabilitarSegundaLiquidación.resx">
@@ -3323,15 +3341,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Asistencia_ClaveTemporal.pfx" />
-    <None Include="Calidad\RegistroDeIngresoSalidaGasificadoDS.xsc">
+    <None Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xsc">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\RegistroDeIngresoSalidaGasificadoDS.xsd">
+    <None Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RegistroDeIngresoSalidaGasificadoDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\RegistroDeIngresoSalidaGasificadoDS.xss">
+    <None Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xss">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </None>
     <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsc">
