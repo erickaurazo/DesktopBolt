@@ -138,11 +138,21 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnActicarPresupuesto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAALhJREFUOE/dkUsOQUEQRXtkhsTInhARsSIRLMpnGWLoO3/MOacT8jT9jLnJGXRV
-        uj63wn+pD2u4wi2DuRX04EUz2MEQ6gYyMjeADUwMKDv7uRVf76rBHE5wBJu1YQ9diGPbOSc/pKsYG8ES
-        wgWqxrZzWuAMDSjgawHHTgscoAmxgK5qTE6fVpiCay8gnkRXq0y0iJOUTdxCB6I8ia5qjLvlZM7Ofh4b
-        KMuT6KqepCM/MOfYz84/rxDu6tVDqtJleu8AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAACYSURBVDhP3ZHBDYMwDEWzAV0BmKGoY0E5dIWOAKxR6Fp0
+        g/IfSqKSEoUzT3qHmNjYjjkfN9nIR0S+ceePi3zL70EnmUmPS55lb/3YWMxRrtASAZJzApZCpopU0rT2
+        0HEIGGSY9Otd+gK0HZIqwFI3I9C2o5SHRgC2SoAE/oqp5Jf08CRsde/iniRvntFBS8z1jFjLqzwPxiyQ
+        VWGreM4oggAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAprobarPresupuesto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAADCSURBVDhPzdE/DgFBFMfxEQUHoJZQKh1CJDpqBYlG6QJq
+        CRqV0h0UopJIhDtQ6ygokOD7NrPJWPNQ7i/5FO9fsbMmlimgpMhDTRN7PH/YoYG3DOFb/qaPIFX4Flwr
+        9DDF3fZEBWbhNHwmSCCMHD0gs7k0TrbQ5BDNFjI7SnGxhSaDaJaQ2VmKjS00Xbgp4gqZraXRtoVGHm2A
+        Mjo4IJy1YJKQx3CP/jGD3AZJYwz3F2luGCGFj2RRh3yWTw2yE5sY8wLGk3rk4IcHOQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <metadata name="stsBarraEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -317,8 +327,11 @@
         A5FgNIISUjSESR44BMQUJWVQZuoDYrINIAMwMAAAqa41LQomOgwAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="bgwNotify.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>535, 6</value>
+  <metadata name="bgwReAperturarPresupuesto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>384, 3</value>
+  </metadata>
+  <metadata name="bgwAprobarPresupuesto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>194, 14</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -30,23 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AperturaCierrePresupuestos));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn37 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn38 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn39 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn40 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn41 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn42 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn43 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn44 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn45 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn46 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn47 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn48 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
@@ -107,8 +107,10 @@
             this.btnVistaPrevia = new Telerik.WinControls.UI.CommandBarButton();
             this.btnEnviarCorreo = new Telerik.WinControls.UI.CommandBarButton();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
-            this.bgwNotify = new System.ComponentModel.BackgroundWorker();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.bgwReAperturarPresupuesto = new System.ComponentModel.BackgroundWorker();
+            this.btnAprobarPresupuesto = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgwAprobarPresupuesto = new System.ComponentModel.BackgroundWorker();
             this.subMenu.SuspendLayout();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
@@ -143,17 +145,18 @@
             // subMenu
             // 
             this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnActicarPresupuesto});
+            this.btnActicarPresupuesto,
+            this.btnAprobarPresupuesto});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(180, 26);
+            this.subMenu.Size = new System.Drawing.Size(198, 70);
             // 
             // btnActicarPresupuesto
             // 
             this.btnActicarPresupuesto.Enabled = false;
             this.btnActicarPresupuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnActicarPresupuesto.Image")));
             this.btnActicarPresupuesto.Name = "btnActicarPresupuesto";
-            this.btnActicarPresupuesto.Size = new System.Drawing.Size(179, 22);
-            this.btnActicarPresupuesto.Text = "Activar presupuesto";
+            this.btnActicarPresupuesto.Size = new System.Drawing.Size(197, 22);
+            this.btnActicarPresupuesto.Text = "Re-Activar presupuesto";
             this.btnActicarPresupuesto.Click += new System.EventHandler(this.btnActicarPresupuesto_Click);
             // 
             // stsBarraEstado
@@ -216,87 +219,87 @@
             this.dgvRegistro.MasterTemplate.AllowAddNewRow = false;
             this.dgvRegistro.MasterTemplate.AutoGenerateColumns = false;
             this.dgvRegistro.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn37.EnableExpressionEditor = false;
-            gridViewTextBoxColumn37.FieldName = "IDEMPRESA";
-            gridViewTextBoxColumn37.HeaderText = "IDEMPRESA";
-            gridViewTextBoxColumn37.IsVisible = false;
-            gridViewTextBoxColumn37.Name = "chIDEMPRESA";
-            gridViewTextBoxColumn37.Width = 251;
-            gridViewTextBoxColumn38.EnableExpressionEditor = false;
-            gridViewTextBoxColumn38.FieldName = "IDPRESUPUESTO";
-            gridViewTextBoxColumn38.HeaderText = "Cod.";
-            gridViewTextBoxColumn38.Name = "chIDPRESUPUESTO";
-            gridViewTextBoxColumn38.Width = 45;
-            gridViewTextBoxColumn39.EnableExpressionEditor = false;
-            gridViewTextBoxColumn39.FieldName = "DESCRIPCION";
-            gridViewTextBoxColumn39.HeaderText = "Descripción";
-            gridViewTextBoxColumn39.Name = "chDESCRIPCION";
-            gridViewTextBoxColumn39.Width = 356;
-            gridViewTextBoxColumn40.EnableExpressionEditor = false;
-            gridViewTextBoxColumn40.FieldName = "IDMONEDA";
-            gridViewTextBoxColumn40.HeaderText = "IDMONEDA";
-            gridViewTextBoxColumn40.IsVisible = false;
-            gridViewTextBoxColumn40.Name = "chIDMONEDA";
-            gridViewTextBoxColumn40.Width = 67;
-            gridViewTextBoxColumn41.EnableExpressionEditor = false;
-            gridViewTextBoxColumn41.FieldName = "IDESTADO";
-            gridViewTextBoxColumn41.HeaderText = "IDESTADO";
-            gridViewTextBoxColumn41.IsVisible = false;
-            gridViewTextBoxColumn41.Name = "chIDESTADO";
-            gridViewTextBoxColumn41.Width = 66;
-            gridViewTextBoxColumn42.EnableExpressionEditor = false;
-            gridViewTextBoxColumn42.FieldName = "SINCRONIZA";
-            gridViewTextBoxColumn42.HeaderText = "SINCRONIZA";
-            gridViewTextBoxColumn42.IsVisible = false;
-            gridViewTextBoxColumn42.Name = "chSINCRONIZA";
-            gridViewTextBoxColumn42.Width = 61;
-            gridViewTextBoxColumn43.EnableExpressionEditor = false;
-            gridViewTextBoxColumn43.FieldName = "FECHACREACION";
-            gridViewTextBoxColumn43.HeaderText = "FECHACREACION";
-            gridViewTextBoxColumn43.IsVisible = false;
-            gridViewTextBoxColumn43.Name = "chFECHACREACION";
-            gridViewTextBoxColumn43.Width = 71;
-            gridViewTextBoxColumn44.EnableExpressionEditor = false;
-            gridViewTextBoxColumn44.FieldName = "moneda";
-            gridViewTextBoxColumn44.HeaderText = "Moneda";
-            gridViewTextBoxColumn44.Name = "chmoneda";
-            gridViewTextBoxColumn44.Width = 149;
-            gridViewTextBoxColumn45.EnableExpressionEditor = false;
-            gridViewTextBoxColumn45.FieldName = "tcambio";
-            gridViewTextBoxColumn45.HeaderText = "T. Cambio";
-            gridViewTextBoxColumn45.IsVisible = false;
-            gridViewTextBoxColumn45.Name = "chtcambio";
-            gridViewTextBoxColumn45.Width = 212;
-            gridViewTextBoxColumn46.EnableExpressionEditor = false;
-            gridViewTextBoxColumn46.FieldName = "idconsumidor";
-            gridViewTextBoxColumn46.HeaderText = "idconsumidor";
-            gridViewTextBoxColumn46.IsVisible = false;
-            gridViewTextBoxColumn46.Name = "chidconsumidor";
-            gridViewTextBoxColumn46.Width = 107;
-            gridViewTextBoxColumn47.EnableExpressionEditor = false;
-            gridViewTextBoxColumn47.FieldName = "tipopresu";
-            gridViewTextBoxColumn47.HeaderText = "tipopresu";
-            gridViewTextBoxColumn47.IsVisible = false;
-            gridViewTextBoxColumn47.Name = "chtipopresu";
-            gridViewTextBoxColumn47.Width = 133;
-            gridViewTextBoxColumn48.EnableExpressionEditor = false;
-            gridViewTextBoxColumn48.FieldName = "estado";
-            gridViewTextBoxColumn48.HeaderText = "Estado";
-            gridViewTextBoxColumn48.Name = "chestado";
-            gridViewTextBoxColumn48.Width = 72;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "IDEMPRESA";
+            gridViewTextBoxColumn1.HeaderText = "IDEMPRESA";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "chIDEMPRESA";
+            gridViewTextBoxColumn1.Width = 251;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "IDPRESUPUESTO";
+            gridViewTextBoxColumn2.HeaderText = "Cod.";
+            gridViewTextBoxColumn2.Name = "chIDPRESUPUESTO";
+            gridViewTextBoxColumn2.Width = 45;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "DESCRIPCION";
+            gridViewTextBoxColumn3.HeaderText = "Descripción";
+            gridViewTextBoxColumn3.Name = "chDESCRIPCION";
+            gridViewTextBoxColumn3.Width = 356;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "IDMONEDA";
+            gridViewTextBoxColumn4.HeaderText = "IDMONEDA";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "chIDMONEDA";
+            gridViewTextBoxColumn4.Width = 67;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "IDESTADO";
+            gridViewTextBoxColumn5.HeaderText = "IDESTADO";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "chIDESTADO";
+            gridViewTextBoxColumn5.Width = 66;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "SINCRONIZA";
+            gridViewTextBoxColumn6.HeaderText = "SINCRONIZA";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "chSINCRONIZA";
+            gridViewTextBoxColumn6.Width = 61;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "FECHACREACION";
+            gridViewTextBoxColumn7.HeaderText = "FECHACREACION";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "chFECHACREACION";
+            gridViewTextBoxColumn7.Width = 71;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "moneda";
+            gridViewTextBoxColumn8.HeaderText = "Moneda";
+            gridViewTextBoxColumn8.Name = "chmoneda";
+            gridViewTextBoxColumn8.Width = 149;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "tcambio";
+            gridViewTextBoxColumn9.HeaderText = "T. Cambio";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "chtcambio";
+            gridViewTextBoxColumn9.Width = 212;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "idconsumidor";
+            gridViewTextBoxColumn10.HeaderText = "idconsumidor";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chidconsumidor";
+            gridViewTextBoxColumn10.Width = 107;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "tipopresu";
+            gridViewTextBoxColumn11.HeaderText = "tipopresu";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "chtipopresu";
+            gridViewTextBoxColumn11.Width = 133;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "estado";
+            gridViewTextBoxColumn12.HeaderText = "Estado";
+            gridViewTextBoxColumn12.Name = "chestado";
+            gridViewTextBoxColumn12.Width = 72;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn37,
-            gridViewTextBoxColumn38,
-            gridViewTextBoxColumn39,
-            gridViewTextBoxColumn40,
-            gridViewTextBoxColumn41,
-            gridViewTextBoxColumn42,
-            gridViewTextBoxColumn43,
-            gridViewTextBoxColumn44,
-            gridViewTextBoxColumn45,
-            gridViewTextBoxColumn46,
-            gridViewTextBoxColumn47,
-            gridViewTextBoxColumn48});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
@@ -391,20 +394,20 @@
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToDeleteRows = false;
             this.dgvDetail.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chIDEMPRESA,
@@ -420,14 +423,14 @@
             this.chnom_mes,
             this.chnom_mes3,
             this.chtrimestre});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.GridColor = System.Drawing.SystemColors.Control;
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
@@ -439,20 +442,20 @@
             this.dgvDetail.P_NombreTabla = null;
             this.dgvDetail.P_NumeroDigitos = 0;
             this.dgvDetail.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetail.RowHeadersWidth = 10;
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetail.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetail.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetail.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
@@ -714,7 +717,7 @@
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior,
             this.commandBarRowElement1});
-            this.btnMenu.Size = new System.Drawing.Size(1386, 67);
+            this.btnMenu.Size = new System.Drawing.Size(1386, 62);
             this.btnMenu.TabIndex = 213;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             // 
@@ -934,14 +937,28 @@
             this.btnSalir.ToolTipText = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // bgwNotify
-            // 
-            this.bgwNotify.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwNotify_DoWork);
-            this.bgwNotify.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwNotify_RunWorkerCompleted);
-            // 
             // commandBarRowElement1
             // 
             this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
+            // 
+            // bgwReAperturarPresupuesto
+            // 
+            this.bgwReAperturarPresupuesto.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwNotify_DoWork);
+            this.bgwReAperturarPresupuesto.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwNotify_RunWorkerCompleted);
+            // 
+            // btnAprobarPresupuesto
+            // 
+            this.btnAprobarPresupuesto.Enabled = false;
+            this.btnAprobarPresupuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnAprobarPresupuesto.Image")));
+            this.btnAprobarPresupuesto.Name = "btnAprobarPresupuesto";
+            this.btnAprobarPresupuesto.Size = new System.Drawing.Size(197, 22);
+            this.btnAprobarPresupuesto.Text = "Aprobar presupuesto";
+            this.btnAprobarPresupuesto.Click += new System.EventHandler(this.btnAprobarPresupuesto_Click);
+            // 
+            // bgwAprobarPresupuesto
+            // 
+            this.bgwAprobarPresupuesto.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwAprobarPresupuesto_DoWork);
+            this.bgwAprobarPresupuesto.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwAprobarPresupuesto_RunWorkerCompleted);
             // 
             // AperturaCierrePresupuestos
             // 
@@ -1052,7 +1069,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chnom_mes3;
         private System.Windows.Forms.DataGridViewTextBoxColumn chtrimestre;
         private System.Windows.Forms.ToolStripMenuItem btnActicarPresupuesto;
-        private System.ComponentModel.BackgroundWorker bgwNotify;
+        private System.ComponentModel.BackgroundWorker bgwReAperturarPresupuesto;
         private Telerik.WinControls.UI.CommandBarRowElement commandBarRowElement1;
+        private System.Windows.Forms.ToolStripMenuItem btnAprobarPresupuesto;
+        private System.ComponentModel.BackgroundWorker bgwAprobarPresupuesto;
     }
 }

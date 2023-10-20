@@ -628,6 +628,36 @@
       <DependentUpon>TemperaturaEnCamarasRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.Designer.cs">
+      <DependentUpon>ChecklistRevisionDelContenedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChecklistRevisionDelContenedorRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorEdicion.Designer.cs">
+      <DependentUpon>ChecklistRevisionDelContenedorEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.Designer.cs">
+      <DependentUpon>ChecklistRevisionDelContenedorPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.Designer.cs">
+      <DependentUpon>ChecklistRevisionDelContenedorReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2620,6 +2650,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TemperaturaEnCamarasRPT.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChecklistRevisionDelContenedorRPT.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.resx">
       <DependentUpon>AccionesCorrectivas.cs</DependentUpon>
     </EmbeddedResource>
@@ -3688,7 +3722,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\" />
     <Folder Include="Fito\" />
     <Folder Include="T.I\ReportesEntregaDevolucion\" />
   </ItemGroup>

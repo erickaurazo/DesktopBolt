@@ -214,7 +214,7 @@ namespace Asistencia.Negocios
                                     if (detalleAsistencia.Count == 0)
                                     {
                                         #region                                         
-                                        int codigoTicktReservadoAnterior =  0;
+                                        int codigoTicktReservadoAnterior = 0;
 
                                         RegistroAbastecimientoDetalle det = new RegistroAbastecimientoDetalle();
                                         //det.itemDetalle = item.itemDetalle;
@@ -384,5 +384,133 @@ namespace Asistencia.Negocios
             return listado;
         }
 
+        public int EliminarTicketGenerado(string conection, int idTicketCabecera)
+        {
+            int ResultadoAccion = 0;
+            List<RegistroAbastecimiento> ListadoTicket = new List<RegistroAbastecimiento>();
+            List<RegistroAbastecimientoDetalle> ListadoTicketsDetalle = new List<RegistroAbastecimientoDetalle>();
+            List<RegistroAbastecimientoDDetalle> ListadoTicketsDetalleLeidosPorPDA = new List<RegistroAbastecimientoDDetalle>();
+            List<IngresoSalidaGasificado> ListadoTicketsDetalleLeidosParaGasificado = new List<IngresoSalidaGasificado>();
+            List<SAS_RegistroTicketCamaraGasificadoExonerados> ListadoTicketsDetalleExoneradosParaGasificado = new List<SAS_RegistroTicketCamaraGasificadoExonerados>();
+
+
+            string cnx = ConfigurationManager.AppSettings["NSFAJA"].ToString();
+            using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
+            {
+                // CABECERA DE TIECKET
+                ListadoTicket = Modelo.RegistroAbastecimiento.Where(x => x.correlativo == idTicketCabecera).ToList();
+                if (ListadoTicket != null && ListadoTicket.ToList().Count > 0)
+                {
+                    foreach (var TicketCreado in ListadoTicket)
+                    {
+                        RegistroAbastecimiento TicketCabecera = new RegistroAbastecimiento();
+                        TicketCabecera = TicketCreado;
+
+                        // DETALLES DE TICKET
+                        ListadoTicketsDetalle = Modelo.RegistroAbastecimientoDetalle.Where(x => x.correlativo == TicketCabecera.correlativo).ToList();
+                        if (ListadoTicketsDetalle != null && ListadoTicketsDetalle.ToList().Count > 0)
+                        {
+                            foreach (var TicketDetalleCreado in ListadoTicketsDetalle)
+                            {
+                                RegistroAbastecimientoDetalle TicketDetalle = new RegistroAbastecimientoDetalle();
+                                TicketDetalle = TicketDetalleCreado;
+
+                                //Eliminar Tickets Leidos a lineas de proceso                                                               
+                                ListadoTicketsDetalleLeidosPorPDA = new List<RegistroAbastecimientoDDetalle>();
+                                ListadoTicketsDetalleLeidosPorPDA = Modelo.RegistroAbastecimientoDDetalle.Where(x => x.itemDetalle == TicketDetalleCreado.itemDetalle).ToList();
+                                if (ListadoTicketsDetalleLeidosPorPDA != null && ListadoTicketsDetalleLeidosPorPDA.ToList().Count > 0)
+                                {
+                                    #region Lineas() 
+                                    foreach (var TicketDetalleLeidoEnLineas in ListadoTicketsDetalleLeidosPorPDA)
+                                    {
+                                        RegistroAbastecimientoDDetalle TicketLeido = new RegistroAbastecimientoDDetalle();
+                                        TicketLeido = TicketDetalleLeidoEnLineas;
+
+                                        // Agregar a log de ticket eliminados
+                                        RegistroAbastecimientoDDetalleEliminado TicketAEliminar = new RegistroAbastecimientoDDetalleEliminado();
+                                        TicketAEliminar.itemDetalle = TicketLeido.itemDetalle;
+                                        TicketAEliminar.fechaRegistro = DateTime.Now;
+                                        TicketAEliminar.cantidad = TicketLeido.cantidad;
+                                        TicketAEliminar.hora = TicketLeido.hora;
+                                        TicketAEliminar.idMovil = TicketLeido.idMovil;
+                                        TicketAEliminar.idLinea = TicketLeido.idLinea;
+                                        TicketAEliminar.esOrganico = TicketLeido.esOrganico;
+                                        TicketAEliminar.usuario = Environment.UserName.Trim();
+                                        TicketAEliminar.host = TicketLeido.host;
+                                        Modelo.RegistroAbastecimientoDDetalleEliminado.InsertOnSubmit(TicketAEliminar);
+                                        Modelo.SubmitChanges();
+
+                                        Modelo.RegistroAbastecimientoDDetalle.DeleteOnSubmit(TicketLeido);
+                                        Modelo.SubmitChanges();
+                                    }
+                                    #endregion
+                                }
+
+                                // Tickets en Cámaras de gasificado
+                                ListadoTicketsDetalleLeidosParaGasificado = new List<IngresoSalidaGasificado>();
+                                ListadoTicketsDetalleLeidosParaGasificado = Modelo.IngresoSalidaGasificado.Where(x => x.itemDetalle == TicketDetalleCreado.itemDetalle).ToList();
+                                if (ListadoTicketsDetalleLeidosParaGasificado != null && ListadoTicketsDetalleLeidosParaGasificado.ToList().Count > 0)
+                                {
+                                    #region Gasificado()
+                                    foreach (var TicketLeidoEnGasificado in ListadoTicketsDetalleLeidosParaGasificado)
+                                    {
+                                        IngresoSalidaGasificado TicketGasificado = new IngresoSalidaGasificado();
+                                        TicketGasificado = TicketLeidoEnGasificado;
+
+                                        IngresoSalidaGasificadoEliminado TicketGasificadoAEliminar = new IngresoSalidaGasificadoEliminado();
+                                        //TicketGasificadoAEliminar.id = 0;
+                                        TicketGasificadoAEliminar.idIngresoSalidaGasificado = TicketLeidoEnGasificado.idGasificado.Value;
+                                        TicketGasificadoAEliminar.idCamara = TicketLeidoEnGasificado.idCamara;
+                                        TicketGasificadoAEliminar.itemDetalle = TicketLeidoEnGasificado.itemDetalle;
+                                        TicketGasificadoAEliminar.fecha = DateTime.Now;
+                                        TicketGasificadoAEliminar.tipoRegistro = TicketLeidoEnGasificado.tipoRegistro;
+                                        TicketGasificadoAEliminar.estado = TicketLeidoEnGasificado.estado;
+                                        TicketGasificadoAEliminar.tipo = TicketLeidoEnGasificado.tipo;
+                                        Modelo.IngresoSalidaGasificadoEliminado.InsertOnSubmit(TicketGasificadoAEliminar);
+                                        Modelo.SubmitChanges();
+
+
+                                        Modelo.IngresoSalidaGasificado.DeleteOnSubmit(TicketGasificado);
+                                        Modelo.SubmitChanges();
+
+                                    }
+                                    #endregion
+                                }
+
+                                // Ticket Exonerado
+                                ListadoTicketsDetalleExoneradosParaGasificado = new List<SAS_RegistroTicketCamaraGasificadoExonerados>();
+                                ListadoTicketsDetalleExoneradosParaGasificado = Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.Where(x => x.itemDetalle == TicketDetalleCreado.itemDetalle).ToList();
+                                if (ListadoTicketsDetalleExoneradosParaGasificado != null && ListadoTicketsDetalleExoneradosParaGasificado.ToList().Count > 0)
+                                {
+                                    #region Ticket Exonerado() 
+                                    foreach (SAS_RegistroTicketCamaraGasificadoExonerados ItemExonerado in ListadoTicketsDetalleExoneradosParaGasificado)
+                                    {
+                                        SAS_RegistroTicketCamaraGasificadoExonerados TicketExoneradoAEliminar = new SAS_RegistroTicketCamaraGasificadoExonerados();
+                                        TicketExoneradoAEliminar = ItemExonerado;
+                                        Modelo.SAS_RegistroTicketCamaraGasificadoExonerados.DeleteOnSubmit(TicketExoneradoAEliminar);
+                                        Modelo.SubmitChanges();
+
+                                    }
+                                    #endregion
+                                }
+
+
+                                Modelo.RegistroAbastecimientoDetalle.DeleteOnSubmit(TicketDetalle);
+                                Modelo.SubmitChanges();
+
+                            }
+                        }
+
+                        Modelo.RegistroAbastecimiento.DeleteOnSubmit(TicketCabecera);
+                        Modelo.SubmitChanges();
+
+                    }
+                }
+
+
+            }
+
+            return ResultadoAccion;
+        }
     }
 }

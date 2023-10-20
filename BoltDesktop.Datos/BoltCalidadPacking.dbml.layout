@@ -146,12 +146,6 @@
         <elementListCompartment Id="3a04b535-27e9-4d79-902a-b743b0918bcb" absoluteBounds="5.39, 3.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c7a93950-ba71-404c-811f-1dc5333611a5" isExpanded="false" absoluteBounds="5.375, 3.5, 4.75, 0.45">
-      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3ab85750-67fa-4a7b-8e2f-a3997e2c1068" absoluteBounds="5.3900000000000006, 3.9600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="2235f99a-0a91-4a1a-87b4-8ba846b04ba1" isExpanded="false" absoluteBounds="18.25, 4.625, 4.875, 0.45">
       <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE" />
       <nestedChildShapes>
@@ -384,6 +378,12 @@
       <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ListadoVerificacionVidriosDetalleAll" />
       <nestedChildShapes>
         <elementListCompartment Id="3052076e-d164-4b9a-951d-5b5b7b393221" absoluteBounds="4.5150000000000006, 15.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4eb67444-9598-4b41-8313-9389fa1c779f" isExpanded="false" absoluteBounds="5.375, 3.5, 4.75, 0.45">
+      <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho" />
+      <nestedChildShapes>
+        <elementListCompartment Id="936f7505-f9a4-4fa6-b69a-ed62432ced47" absoluteBounds="5.39, 3.96, 4.7200000000000006, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

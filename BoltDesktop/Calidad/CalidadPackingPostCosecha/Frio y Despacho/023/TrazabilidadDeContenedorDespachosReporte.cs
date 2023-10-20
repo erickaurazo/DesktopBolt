@@ -38,6 +38,11 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         public MesController MesesNeg;
         private ExportToExcelHelper modelExportToExcel;
         private int IdEvaluacion = 0;
+        private int Evaluado;
+        private int Distribuido;
+        private int Revisado;
+
+        public int ParImparFiltro { get; private set; }
         #endregion
 
         public TrazabilidadDeContenedorDespachosReporte()
@@ -229,7 +234,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             Exportar();
         }
 
-   
+
 
         private void btnAdjuntar_Click(object sender, EventArgs e)
         {
@@ -286,6 +291,13 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             selectedItem = new SAS_EvaluacionTrazabilidadFCLDespachoResult();
             selectedItem.Id = 0;
             IdEvaluacion = 0;
+            Evaluado = 0;
+            Distribuido = 0;
+            Revisado = 0;
+            btnAprobacionDistribucionSub.Enabled = false;
+            btnAprobacionEvaluacionSub.Enabled = false;
+            btnAprobacionRevisionSub.Enabled = false;
+
 
             try
             {
@@ -303,8 +315,12 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
                                 if (resultado.ToList().Count > 0)
                                 {
                                     selectedItem = resultado.ElementAt(0);
-
-
+                                    if (IdEvaluacion > 0)
+                                    {
+                                        btnAprobacionDistribucionSub.Enabled = true;
+                                        btnAprobacionEvaluacionSub.Enabled = true;
+                                        btnAprobacionRevisionSub.Enabled = true;
+                                    }
                                 }
 
                             }
@@ -452,6 +468,97 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
                 }
             }
         }
+
+        private void btnAprobacionEvaluacionSub_Click(object sender, EventArgs e)
+        {
+            CambiarEstadoDeEvaluacion();
+        }
+
+        private void CambiarEstadoDeEvaluacion()
+        {
+            if (IdEvaluacion > 0)
+            {
+                int resultado = model.CambiarEstadoDeEvaluacion(conection, IdEvaluacion);
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Se actualizo el estado de la Evaluacion del contenedor", "Confirmación del sistema");
+                    MakeInquiry();
+                }
+            }
+        }
+
+        private void btnAprobacionDistribucionSub_Click(object sender, EventArgs e)
+        {
+            CambiarEstadoDeDistribucion();
+        }
+
+        private void CambiarEstadoDeDistribucion()
+        {
+            if (IdEvaluacion > 0)
+            {
+                int resultado = model.CambiarEstadoDeDistribucion(conection, IdEvaluacion);
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Se actualizo el estado de la distribución del contenedor", "Confirmación del sistema");
+                    MakeInquiry();
+                }
+            }
+        }
+
+        private void btnAprobacionRevisionSub_Click(object sender, EventArgs e)
+        {
+            CambiarEstadoDeRevision();
+        }
+
+        private void CambiarEstadoDeRevision()
+        {
+            if (IdEvaluacion > 0)
+            {
+                int resultado = model.CambiarEstadoDeRevision(conection, IdEvaluacion);
+                if (resultado >0)
+                {
+                    MessageBox.Show("Se actualizo el estado de la revisión del contenedor", "Confirmación del sistema");
+                    MakeInquiry();
+                }
+            }
+        }
+
+        private void elminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void anularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnActivarFiltro_Click(object sender, EventArgs e)
+        {
+            ParImparFiltro += 1;
+            ActivarFiltro();
+        }
+
+
+
+        private void ActivarFiltro()
+        {
+            if ((ParImparFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistros.EnableFiltering = !true;
+                dgvRegistros.ShowHeaderCellButtons = !true;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistros.EnableFiltering = true;
+                dgvRegistros.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
 
         private void ObtenerFechasIniciales()
         {

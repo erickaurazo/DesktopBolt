@@ -670,59 +670,6 @@
       <Column Name="guiaDeRemision" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ListadoAcopioByTiktes" Method="ListadoAcopioByTiktes">
-    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="ListadoAcopioByTiktesResult">
-      <Column Name="IDINGRESOSALIDAACOPIOCAMPO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="item" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3)" CanBeNull="true" />
-      <Column Name="sucursal" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="DOCUMENTO" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
-      <Column Name="FECHA_RECEPCION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="turno" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="idlineaHomologada" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FechaCreacionitem" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDALMACEN" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IDCONSUMIDOR" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="tipoProducto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IDPRODUCTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IDMEDIDA" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="PESOBRUTO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
-      <Column Name="PESONETO" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
-      <Column Name="PESOPROMEDIO" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="IDCULTIVO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
-      <Column Name="cultivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IDVARIEDAD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="variedad" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="IDEMPAQUE" Type="System.String" DbType="Char(3)" CanBeNull="true" />
-      <Column Name="empaque" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NROJABAS" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="TARA1" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
-      <Column Name="TARA" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
-      <Column Name="TARA3" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
-      <Column Name="naturaleza" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
-      <Column Name="hora" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BALANZA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
-      <Column Name="sector" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="correlativo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="estadoImpresion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="mercado" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="Campaña" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="glosa" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="chofer" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="PLACA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NROENVIO" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Column Name="HORAENVIO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="guiaDeRemision" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SAS_RegistroGasificadoAllByDates" Method="SAS_RegistroGasificadoAllByDates">
     <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
@@ -1310,6 +1257,60 @@
     <ElementType Name="SAS_ObtenerCantidadDeTicketGasificadosPorIdGasificadoResult">
       <Column Name="idGasificado" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListadoAcopioByTiktes" Method="ListadoAcopioByTiktes">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="ListadoAcopioByTiktesResult">
+      <Column Name="IDINGRESOSALIDAACOPIOCAMPO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="sucursal" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DOCUMENTO" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="FECHA_RECEPCION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="turno" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="idlineaHomologada" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaCreacionitem" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDALMACEN" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCONSUMIDOR" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="tipoProducto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDPRODUCTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDMEDIDA" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="PESOBRUTO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="PESONETO" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PESOPROMEDIO" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IDCULTIVO" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="cultivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDVARIEDAD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="variedad" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="IDEMPAQUE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="empaque" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NROJABAS" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TARA1" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="TARA" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="TARA3" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="naturaleza" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="hora" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BALANZA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="sector" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="correlativo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estadoImpresion" Type="System.String" DbType="VarChar(22) NOT NULL" CanBeNull="false" />
+      <Column Name="mercado" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Campaña" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="glosa" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="chofer" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PLACA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NROENVIO" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="HORAENVIO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="guiaDeRemision" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="IDMOTIVO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

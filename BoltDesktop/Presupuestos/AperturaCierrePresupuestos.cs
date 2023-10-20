@@ -53,6 +53,19 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
         public AperturaCierrePresupuestos()
         {
             InitializeComponent();
+            oPresupuesto = new PRESUPUESTO();
+            oPresupuesto.IDPRESUPUESTO = string.Empty;
+            nombreformulario = "PRESUPUESTOS";
+            conection = "SAS";
+            user = new SAS_USUARIOS();
+            user.IdUsuario = "eaurazo";
+            user.NombreCompleto = "Erick Aurazo";
+            user.IdCodigoGeneral = "100369";
+            companyId = "001";
+            privilege = new PrivilegesByUser();
+            privilege.editar = 1;
+            privilege.nuevo = 1;
+            Consultar();
         }
 
 
@@ -203,6 +216,8 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
         private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
         {
             btnActicarPresupuesto.Enabled = false;
+            btnAprobarPresupuesto.Enabled = false;
+
             codigoPresupuesto = string.Empty;
             try
             {
@@ -218,23 +233,19 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
                             {
                                 codigoPresupuesto = (dgvRegistro.CurrentRow.Cells["chIDPRESUPUESTO"].Value != null ? (string)Convert.ChangeType(dgvRegistro.CurrentRow.Cells["chIDPRESUPUESTO"].Value.ToString().Trim(), typeof(string)) : string.Empty);
                                 var resultado = listadoConsulta.Where(x => x.IDPRESUPUESTO.Trim() == codigoPresupuesto).ToList();
-                                if (resultado.ToList().Count == 1)
+                                if (resultado.ToList().Count >= 1)
                                 {
                                     oDetalleSelecionado = resultado.Single();
                                     AsignarControlesAObjeto(oDetalleSelecionado);
-
                                     if (oDetalleSelecionado.IDESTADO.Trim() == "AP")
                                     {
                                         btnActicarPresupuesto.Enabled = true;
+                                        btnAprobarPresupuesto.Enabled = false;
                                     }
-                                }
-                                else if (resultado.ToList().Count > 1)
-                                {
-                                    oDetalleSelecionado = resultado.Single();
-                                    AsignarControlesAObjeto(oDetalleSelecionado);
-                                    if (oDetalleSelecionado.IDESTADO.Trim() == "AP")
+                                    if (oDetalleSelecionado.IDESTADO.Trim() == "PE")
                                     {
-                                        btnActicarPresupuesto.Enabled = true;
+                                        btnActicarPresupuesto.Enabled = false;
+                                        btnAprobarPresupuesto.Enabled = true;
                                     }
                                 }
                                 else
@@ -312,10 +323,10 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
 
         private void btnActicarPresupuesto_Click(object sender, EventArgs e)
         {
-            Notificar();
+            ReActivarPresupuesto();
         }
 
-        private void Notificar()
+        private void ReActivarPresupuesto()
         {
             oPresupuesto = new PRESUPUESTO();
             if (codigoPresupuesto != string.Empty)
@@ -325,7 +336,7 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
                 gbList.Enabled = false;
                 btnMenu.Enabled = false;
                 progressBar1.Visible = true;
-                bgwNotify.RunWorkerAsync();
+                bgwReAperturarPresupuesto.RunWorkerAsync();
             }
 
            
@@ -350,6 +361,11 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
 
         private void bgwNotify_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            MostrarResultadoDeConsulta();
+        }
+
+        private void MostrarResultadoDeConsulta()
+        {
             try
             {
                 #region Mostrar resultado de consulta()
@@ -364,7 +380,45 @@ namespace ComparativoHorasVisualSATNISIRA.Presupuestos
             }
         }
 
+        private void btnAprobarPresupuesto_Click(object sender, EventArgs e)
+        {
+            AprobarPresupuesto();
+        }
 
+        private void AprobarPresupuesto()
+        {
+            oPresupuesto = new PRESUPUESTO();
+            if (codigoPresupuesto != string.Empty)
+            {
+                oPresupuesto.IDPRESUPUESTO = codigoPresupuesto;
+                gbEdit.Enabled = false;
+                gbList.Enabled = false;
+                btnMenu.Enabled = false;
+                progressBar1.Visible = true;
+                bgwAprobarPresupuesto.RunWorkerAsync();
+            }
+        }
 
+        private void bgwAprobarPresupuesto_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                #region Ejecutar consulta()
+                int resultadoOperacion = 0;
+                Modelo = new PresupuestoController();
+                resultadoOperacion = Modelo.AprobarPresupuesto(conection, oPresupuesto, user);
+                EjecutarConsulta();
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+            }
+        }
+
+        private void bgwAprobarPresupuesto_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MostrarResultadoDeConsulta();
+        }
     }
 }

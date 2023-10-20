@@ -2469,6 +2469,13 @@ namespace Asistencia.Datos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
 			return ((ISingleResult<SAS_ConformacionDeCargaByDateResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_AprobarPresupuestoByIdPresupuesto")]
+		public int SAS_AprobarPresupuestoByIdPresupuesto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPresupuesto", DbType="Char(4)")] string idPresupuesto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idPresupuesto);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_StockProductos")]

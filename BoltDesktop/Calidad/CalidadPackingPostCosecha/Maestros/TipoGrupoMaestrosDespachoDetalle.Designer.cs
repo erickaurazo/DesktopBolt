@@ -726,7 +726,6 @@
             this.lblOrden.Size = new System.Drawing.Size(43, 18);
             this.lblOrden.TabIndex = 224;
             this.lblOrden.Text = "Orden :";
-            this.lblOrden.Visible = false;
             // 
             // txtOrden
             // 

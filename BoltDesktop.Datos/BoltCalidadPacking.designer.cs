@@ -102,9 +102,6 @@ namespace Asistencia.Datos
     partial void InsertSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura instance);
     partial void UpdateSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura instance);
     partial void DeleteSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura instance);
-    partial void InsertSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho instance);
-    partial void UpdateSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho instance);
-    partial void DeleteSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho instance);
     partial void InsertSAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE(SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE instance);
     partial void UpdateSAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE(SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE instance);
     partial void DeleteSAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE(SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE instance);
@@ -195,6 +192,9 @@ namespace Asistencia.Datos
     partial void InsertSAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle(SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle instance);
     partial void UpdateSAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle(SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle instance);
     partial void DeleteSAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle(SAS_CALIDAD_FORM_VERIFICACION_VIDRIOS_TipoItemDetalle instance);
+    partial void InsertSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho instance);
+    partial void UpdateSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho instance);
+    partial void DeleteSAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho(SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho instance);
     #endregion
 		
 		public BoltCalidadPackingDataContext() : 
@@ -416,14 +416,6 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleUbicacionTipoDispositivoTemperatura>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho> SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho
-		{
-			get
-			{
-				return this.GetTable<SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho>();
 			}
 		}
 		
@@ -736,6 +728,14 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<SAS_ListadoVerificacionVidriosDetalleAll>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho> SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachos
+		{
+			get
+			{
+				return this.GetTable<SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho>();
 			}
 		}
 		
@@ -6298,308 +6298,6 @@ namespace Asistencia.Datos
 					this._VisibleReporte = value;
 					this.SendPropertyChanged("VisibleReporte");
 					this.OnVisibleReporteChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho")]
-	public partial class SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _IdEmpresa;
-		
-		private System.Nullable<int> _Id;
-		
-		private System.Nullable<int> _RegistroCalidadFormulario;
-		
-		private System.Nullable<System.DateTime> _Fecha;
-		
-		private string _UserId;
-		
-		private System.Nullable<System.DateTime> _FechaRegistro;
-		
-		private string _Hostname;
-		
-		private string _ResponsableId;
-		
-		private string _EstadoId;
-		
-		private string _PackingListId;
-		
-		private string _Observacion;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdEmpresaChanging(string value);
-    partial void OnIdEmpresaChanged();
-    partial void OnIdChanging(System.Nullable<int> value);
-    partial void OnIdChanged();
-    partial void OnRegistroCalidadFormularioChanging(System.Nullable<int> value);
-    partial void OnRegistroCalidadFormularioChanged();
-    partial void OnFechaChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaChanged();
-    partial void OnUserIdChanging(string value);
-    partial void OnUserIdChanged();
-    partial void OnFechaRegistroChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaRegistroChanged();
-    partial void OnHostnameChanging(string value);
-    partial void OnHostnameChanged();
-    partial void OnResponsableIdChanging(string value);
-    partial void OnResponsableIdChanged();
-    partial void OnEstadoIdChanging(string value);
-    partial void OnEstadoIdChanged();
-    partial void OnPackingListIdChanging(string value);
-    partial void OnPackingListIdChanged();
-    partial void OnObservacionChanging(string value);
-    partial void OnObservacionChanged();
-    #endregion
-		
-		public SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEmpresa", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IdEmpresa
-		{
-			get
-			{
-				return this._IdEmpresa;
-			}
-			set
-			{
-				if ((this._IdEmpresa != value))
-				{
-					this.OnIdEmpresaChanging(value);
-					this.SendPropertyChanging();
-					this._IdEmpresa = value;
-					this.SendPropertyChanged("IdEmpresa");
-					this.OnIdEmpresaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int")]
-		public System.Nullable<int> Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegistroCalidadFormulario", DbType="Int")]
-		public System.Nullable<int> RegistroCalidadFormulario
-		{
-			get
-			{
-				return this._RegistroCalidadFormulario;
-			}
-			set
-			{
-				if ((this._RegistroCalidadFormulario != value))
-				{
-					this.OnRegistroCalidadFormularioChanging(value);
-					this.SendPropertyChanging();
-					this._RegistroCalidadFormulario = value;
-					this.SendPropertyChanged("RegistroCalidadFormulario");
-					this.OnRegistroCalidadFormularioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this.OnFechaChanging(value);
-					this.SendPropertyChanging();
-					this._Fecha = value;
-					this.SendPropertyChanged("Fecha");
-					this.OnFechaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="VarChar(20)")]
-		public string UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaRegistro
-		{
-			get
-			{
-				return this._FechaRegistro;
-			}
-			set
-			{
-				if ((this._FechaRegistro != value))
-				{
-					this.OnFechaRegistroChanging(value);
-					this.SendPropertyChanging();
-					this._FechaRegistro = value;
-					this.SendPropertyChanged("FechaRegistro");
-					this.OnFechaRegistroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hostname", DbType="VarChar(20)")]
-		public string Hostname
-		{
-			get
-			{
-				return this._Hostname;
-			}
-			set
-			{
-				if ((this._Hostname != value))
-				{
-					this.OnHostnameChanging(value);
-					this.SendPropertyChanging();
-					this._Hostname = value;
-					this.SendPropertyChanged("Hostname");
-					this.OnHostnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsableId", DbType="VarChar(6)")]
-		public string ResponsableId
-		{
-			get
-			{
-				return this._ResponsableId;
-			}
-			set
-			{
-				if ((this._ResponsableId != value))
-				{
-					this.OnResponsableIdChanging(value);
-					this.SendPropertyChanging();
-					this._ResponsableId = value;
-					this.SendPropertyChanged("ResponsableId");
-					this.OnResponsableIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoId", DbType="Char(2)")]
-		public string EstadoId
-		{
-			get
-			{
-				return this._EstadoId;
-			}
-			set
-			{
-				if ((this._EstadoId != value))
-				{
-					this.OnEstadoIdChanging(value);
-					this.SendPropertyChanging();
-					this._EstadoId = value;
-					this.SendPropertyChanged("EstadoId");
-					this.OnEstadoIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackingListId", DbType="VarChar(16)")]
-		public string PackingListId
-		{
-			get
-			{
-				return this._PackingListId;
-			}
-			set
-			{
-				if ((this._PackingListId != value))
-				{
-					this.OnPackingListIdChanging(value);
-					this.SendPropertyChanging();
-					this._PackingListId = value;
-					this.SendPropertyChanged("PackingListId");
-					this.OnPackingListIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(16)")]
-		public string Observacion
-		{
-			get
-			{
-				return this._Observacion;
-			}
-			set
-			{
-				if ((this._Observacion != value))
-				{
-					this.OnObservacionChanging(value);
-					this.SendPropertyChanging();
-					this._Observacion = value;
-					this.SendPropertyChanged("Observacion");
-					this.OnObservacionChanged();
 				}
 			}
 		}
@@ -13602,6 +13300,452 @@ namespace Asistencia.Datos
 				{
 					this._Estado = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho")]
+	public partial class SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _IdConformacionCarga;
+		
+		private string _IdEmpresa;
+		
+		private System.Nullable<int> _RegistroCalidadFormulario;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		private string _UserId;
+		
+		private System.Nullable<System.DateTime> _FechaRegistro;
+		
+		private string _Hostname;
+		
+		private string _ResponsableId;
+		
+		private string _EstadoId;
+		
+		private string _PackingListId;
+		
+		private string _Observacion;
+		
+		private System.Nullable<System.DateTime> _FechaDistribucion;
+		
+		private System.Nullable<byte> _EstadoIdFase01;
+		
+		private System.Nullable<byte> _EstadoIdFase02;
+		
+		private System.Nullable<byte> _EstadoIdFase03;
+		
+		private System.Nullable<System.DateTime> _FechaInspeccion;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnIdConformacionCargaChanging(System.Nullable<int> value);
+    partial void OnIdConformacionCargaChanged();
+    partial void OnIdEmpresaChanging(string value);
+    partial void OnIdEmpresaChanged();
+    partial void OnRegistroCalidadFormularioChanging(System.Nullable<int> value);
+    partial void OnRegistroCalidadFormularioChanged();
+    partial void OnFechaChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaChanged();
+    partial void OnUserIdChanging(string value);
+    partial void OnUserIdChanged();
+    partial void OnFechaRegistroChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaRegistroChanged();
+    partial void OnHostnameChanging(string value);
+    partial void OnHostnameChanged();
+    partial void OnResponsableIdChanging(string value);
+    partial void OnResponsableIdChanged();
+    partial void OnEstadoIdChanging(string value);
+    partial void OnEstadoIdChanged();
+    partial void OnPackingListIdChanging(string value);
+    partial void OnPackingListIdChanged();
+    partial void OnObservacionChanging(string value);
+    partial void OnObservacionChanged();
+    partial void OnFechaDistribucionChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaDistribucionChanged();
+    partial void OnEstadoIdFase01Changing(System.Nullable<byte> value);
+    partial void OnEstadoIdFase01Changed();
+    partial void OnEstadoIdFase02Changing(System.Nullable<byte> value);
+    partial void OnEstadoIdFase02Changed();
+    partial void OnEstadoIdFase03Changing(System.Nullable<byte> value);
+    partial void OnEstadoIdFase03Changed();
+    partial void OnFechaInspeccionChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaInspeccionChanged();
+    #endregion
+		
+		public SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdConformacionCarga", DbType="Int")]
+		public System.Nullable<int> IdConformacionCarga
+		{
+			get
+			{
+				return this._IdConformacionCarga;
+			}
+			set
+			{
+				if ((this._IdConformacionCarga != value))
+				{
+					this.OnIdConformacionCargaChanging(value);
+					this.SendPropertyChanging();
+					this._IdConformacionCarga = value;
+					this.SendPropertyChanged("IdConformacionCarga");
+					this.OnIdConformacionCargaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEmpresa", DbType="Char(3)")]
+		public string IdEmpresa
+		{
+			get
+			{
+				return this._IdEmpresa;
+			}
+			set
+			{
+				if ((this._IdEmpresa != value))
+				{
+					this.OnIdEmpresaChanging(value);
+					this.SendPropertyChanging();
+					this._IdEmpresa = value;
+					this.SendPropertyChanged("IdEmpresa");
+					this.OnIdEmpresaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegistroCalidadFormulario", DbType="Int")]
+		public System.Nullable<int> RegistroCalidadFormulario
+		{
+			get
+			{
+				return this._RegistroCalidadFormulario;
+			}
+			set
+			{
+				if ((this._RegistroCalidadFormulario != value))
+				{
+					this.OnRegistroCalidadFormularioChanging(value);
+					this.SendPropertyChanging();
+					this._RegistroCalidadFormulario = value;
+					this.SendPropertyChanged("RegistroCalidadFormulario");
+					this.OnRegistroCalidadFormularioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="VarChar(50)")]
+		public string UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this.OnFechaRegistroChanging(value);
+					this.SendPropertyChanging();
+					this._FechaRegistro = value;
+					this.SendPropertyChanged("FechaRegistro");
+					this.OnFechaRegistroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hostname", DbType="VarChar(20)")]
+		public string Hostname
+		{
+			get
+			{
+				return this._Hostname;
+			}
+			set
+			{
+				if ((this._Hostname != value))
+				{
+					this.OnHostnameChanging(value);
+					this.SendPropertyChanging();
+					this._Hostname = value;
+					this.SendPropertyChanged("Hostname");
+					this.OnHostnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsableId", DbType="VarChar(6)")]
+		public string ResponsableId
+		{
+			get
+			{
+				return this._ResponsableId;
+			}
+			set
+			{
+				if ((this._ResponsableId != value))
+				{
+					this.OnResponsableIdChanging(value);
+					this.SendPropertyChanging();
+					this._ResponsableId = value;
+					this.SendPropertyChanged("ResponsableId");
+					this.OnResponsableIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoId", DbType="Char(2)")]
+		public string EstadoId
+		{
+			get
+			{
+				return this._EstadoId;
+			}
+			set
+			{
+				if ((this._EstadoId != value))
+				{
+					this.OnEstadoIdChanging(value);
+					this.SendPropertyChanging();
+					this._EstadoId = value;
+					this.SendPropertyChanged("EstadoId");
+					this.OnEstadoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackingListId", DbType="VarChar(16)")]
+		public string PackingListId
+		{
+			get
+			{
+				return this._PackingListId;
+			}
+			set
+			{
+				if ((this._PackingListId != value))
+				{
+					this.OnPackingListIdChanging(value);
+					this.SendPropertyChanging();
+					this._PackingListId = value;
+					this.SendPropertyChanged("PackingListId");
+					this.OnPackingListIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(250)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this.OnObservacionChanging(value);
+					this.SendPropertyChanging();
+					this._Observacion = value;
+					this.SendPropertyChanged("Observacion");
+					this.OnObservacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaDistribucion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaDistribucion
+		{
+			get
+			{
+				return this._FechaDistribucion;
+			}
+			set
+			{
+				if ((this._FechaDistribucion != value))
+				{
+					this.OnFechaDistribucionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaDistribucion = value;
+					this.SendPropertyChanged("FechaDistribucion");
+					this.OnFechaDistribucionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoIdFase01", DbType="TinyInt")]
+		public System.Nullable<byte> EstadoIdFase01
+		{
+			get
+			{
+				return this._EstadoIdFase01;
+			}
+			set
+			{
+				if ((this._EstadoIdFase01 != value))
+				{
+					this.OnEstadoIdFase01Changing(value);
+					this.SendPropertyChanging();
+					this._EstadoIdFase01 = value;
+					this.SendPropertyChanged("EstadoIdFase01");
+					this.OnEstadoIdFase01Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoIdFase02", DbType="TinyInt")]
+		public System.Nullable<byte> EstadoIdFase02
+		{
+			get
+			{
+				return this._EstadoIdFase02;
+			}
+			set
+			{
+				if ((this._EstadoIdFase02 != value))
+				{
+					this.OnEstadoIdFase02Changing(value);
+					this.SendPropertyChanging();
+					this._EstadoIdFase02 = value;
+					this.SendPropertyChanged("EstadoIdFase02");
+					this.OnEstadoIdFase02Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoIdFase03", DbType="TinyInt")]
+		public System.Nullable<byte> EstadoIdFase03
+		{
+			get
+			{
+				return this._EstadoIdFase03;
+			}
+			set
+			{
+				if ((this._EstadoIdFase03 != value))
+				{
+					this.OnEstadoIdFase03Changing(value);
+					this.SendPropertyChanging();
+					this._EstadoIdFase03 = value;
+					this.SendPropertyChanged("EstadoIdFase03");
+					this.OnEstadoIdFase03Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaInspeccion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaInspeccion
+		{
+			get
+			{
+				return this._FechaInspeccion;
+			}
+			set
+			{
+				if ((this._FechaInspeccion != value))
+				{
+					this.OnFechaInspeccionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaInspeccion = value;
+					this.SendPropertyChanged("FechaInspeccion");
+					this.OnFechaInspeccionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

@@ -168,6 +168,7 @@ namespace Asistencia.Negocios
                     SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros oItem = new SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros();
                     //oItem.Id = item.Id;
                     oItem.IdEmpresa = item.IdEmpresa;
+                    oItem.Abreviatura = item.Abreviatura;
                     oItem.Descripcion = item.Descripcion;
                     oItem.IdTipo = item.IdTipo;
                     oItem.VisibleEnReportes = item.VisibleEnReportes;
@@ -184,6 +185,7 @@ namespace Asistencia.Negocios
                     SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros oItem = new SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestros();
                     //oItem.idAccion = item.idAccion;
                     oItem = listado.ElementAt(0);
+                    oItem.Abreviatura = item.Abreviatura;
                     oItem.IdEmpresa = item.IdEmpresa;
                     oItem.Descripcion = item.Descripcion;
                     oItem.IdTipo = item.IdTipo;

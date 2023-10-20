@@ -13,6 +13,7 @@ using ComparativoHorasVisualSATNISIRA.Costos;
 using ComparativoHorasVisualSATNISIRA.Exportaciones;
 using ComparativoHorasVisualSATNISIRA.Maquinaria;
 using ComparativoHorasVisualSATNISIRA.MRP;
+using ComparativoHorasVisualSATNISIRA.Presupuestos;
 using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.RRHH;
 using ComparativoHorasVisualSATNISIRA.T.I;
@@ -32,7 +33,7 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ConformacionDeCargaReporte());
+            //Application.Run(new AperturaCierrePresupuestos());
             Application.Run(new Menu());
         }
     }

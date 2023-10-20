@@ -540,7 +540,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistrarTicketALineaDeAbastecimiento";
-            this.Text = "Registrar ticket a línea de abastecimiento";
+            this.Text = "Registrar ticket a línea de abastecimiento | Asignación manuel de lectura de tick" +
+    "et";
             this.Load += new System.EventHandler(this.RegistrarTicketALineaDeAbastecimiento_Load);
             this.gbAcciones.ResumeLayout(false);
             this.gbDatosDelTicket.ResumeLayout(false);

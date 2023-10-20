@@ -280,21 +280,6 @@
       <Column Name="VisibleReporte" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho">
-    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespecho">
-      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RegistroCalidadFormulario" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="UserId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Hostname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
-      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-      <Column Name="Observacion" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE" Member="SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE">
     <Type Name="SAS_CALIDAD_FORM_INCUMPLIMIENTO_PRACTICAS_HIGIENE">
       <Column Name="idDetalleRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -706,6 +691,27 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="Abrevitura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho" Member="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachos">
+    <Type Name="SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespacho">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdConformacionCarga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="RegistroCalidadFormulario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FechaDistribucion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstadoIdFase01" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EstadoIdFase02" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EstadoIdFase03" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="FechaInspeccion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_APLICACION_SO2" Method="SAS_CALIDAD_VIEW_FORM_APLICACION_SO2">

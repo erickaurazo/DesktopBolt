@@ -155,7 +155,15 @@ namespace Asistencia.Negocios
             #endregion
         }
 
-
-
+        public int AprobarPresupuesto(string conection, PRESUPUESTO oPresupuesto, SAS_USUARIOS user)
+        {
+            int tipoResultadoOperacion = 1; // 1 es no hacer nada , 2 es volverlo a pendiente
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                var resultado = Modelo.SAS_AprobarPresupuestoByIdPresupuesto(oPresupuesto.IDPRESUPUESTO.Trim());
+            }
+            return tipoResultadoOperacion;
+        }
     }
 }

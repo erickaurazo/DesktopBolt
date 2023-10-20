@@ -16,7 +16,7 @@ using Asistencia.Datos;
 using Asistencia.Helper;
 using System.Globalization;
 using ComparativoHorasVisualSATNISIRA.Produccion;
-
+using System.Drawing;
 
 namespace ComparativoHorasVisualSATNISIRA
 {
@@ -43,6 +43,9 @@ namespace ComparativoHorasVisualSATNISIRA
         private int ocultarTicketsImpresos = 1;
         private int visualizarJabasExporables = 1;
         private int soloMostrarResultadosDelDia;
+        private int ClickResaltarResultados;
+        private int ClickFiltro;
+        private int IdTicketCabecera;
 
         public ImpresionTicketsAbastecimientoMateriaPrima()
         {
@@ -265,6 +268,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
+
             try
             {
                 modelo = new RegistroAbastecimientoController();
@@ -417,13 +421,15 @@ namespace ComparativoHorasVisualSATNISIRA
         private void dgvRegistros_SelectionChanged(object sender, EventArgs e)
         {
             #region selecionar registro()
+            IdTicketCabecera = 0;
+
             btnEditar.Enabled = false;
             btnEditarRegistro.Enabled = false;
             btnImprimirEtiquetaGrande.Enabled = false;
             btnImprimirEtiquetaPequena.Enabled = false;
             btnVistaPreviaEtiquetaGrande.Enabled = false;
             btnVistaPreviaEtiquetaPequena.Enabled = false;
-
+            btnEliminarTicket.Enabled = false;
 
             itemSelecionado = new ListadoAcopioByTiktesResult();
             if (dgvRegistros.Rows.Count > 0)
@@ -435,7 +441,7 @@ namespace ComparativoHorasVisualSATNISIRA
                         string codigo = dgvRegistros.CurrentRow.Cells["chIDINGRESOSALIDAACOPIOCAMPO"].Value != null ? dgvRegistros.CurrentRow.Cells["chIDINGRESOSALIDAACOPIOCAMPO"].Value.ToString() : string.Empty;
                         string item = dgvRegistros.CurrentRow.Cells["chItem"].Value != null ? dgvRegistros.CurrentRow.Cells["chItem"].Value.ToString() : string.Empty;
                         string estadoImpreso = dgvRegistros.CurrentRow.Cells["chestadoImpresion"].Value != null ? dgvRegistros.CurrentRow.Cells["chestadoImpresion"].Value.ToString() : "0";
-
+                        IdTicketCabecera = dgvRegistros.CurrentRow.Cells["chCorrelativo"].Value != null ? Convert.ToInt32 (dgvRegistros.CurrentRow.Cells["chCorrelativo"].Value.ToString()) : 0;
 
                         var result = listadoRegistroDeAcopio.Where(x => x.IDINGRESOSALIDAACOPIOCAMPO == codigo && x.item == item).ToList();
                         btnImprimirEtiquetaGrande.Enabled = false;
@@ -444,6 +450,11 @@ namespace ComparativoHorasVisualSATNISIRA
                         btnVistaPreviaEtiquetaPequena.Enabled = false;
                         btnEditar.Enabled = false;
                         btnEditarRegistro.Enabled = false;
+
+                        if (IdTicketCabecera > 0)
+                        {
+                            btnEliminarTicket.Enabled = true;
+                        }
 
                         if (result != null && result.ToList().Count > 0)
                         {
@@ -701,7 +712,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
                 if (chkSoloMostrarTicketsExportables.Checked == true)
                 {
-                    listadoRegistroDeAcopioFiltro = listadoRegistroDeAcopioFiltro.Where(x => x.mercado == "Exportacion").ToList();
+                    listadoRegistroDeAcopioFiltro = listadoRegistroDeAcopioFiltro.Where(x => x.mercado == "Exportacion" && x.IDMOTIVO =="IAC").ToList();
                 }
 
             }
@@ -710,7 +721,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
                 if (chkSoloMostrarTicketsExportables.Checked == true)
                 {
-                    listadoRegistroDeAcopioFiltro = listadoRegistroDeAcopioFiltro.Where(x => x.mercado == "Exportacion").ToList();
+                    listadoRegistroDeAcopioFiltro = listadoRegistroDeAcopioFiltro.Where(x => x.mercado == "Exportacion" && x.IDMOTIVO == "IAC").ToList();
                 }
             }
 
@@ -722,6 +733,95 @@ namespace ComparativoHorasVisualSATNISIRA
         private void btnElegirColumnas_Click(object sender, EventArgs e)
         {
             this.dgvRegistros.ShowColumnChooser();
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+        private void ActivateFilter()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistros.EnableFiltering = !true;
+                dgvRegistros.ShowHeaderCellButtons = !true;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistros.EnableFiltering = true;
+                dgvRegistros.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+        private void btnResaltar_Click(object sender, EventArgs e)
+        {
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
+        }
+
+        private void ResaltarResultados()
+        {
+
+            if ((ClickResaltarResultados % 2) == 0)
+            {
+                #region Par() | Acción pintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Impreso, applied to entire row", ConditionTypes.Contains, "IMPRESO", string.Empty, true);
+                c1.RowBackColor = Color.IndianRed;
+                c1.CellBackColor = Color.IndianRed;
+                dgvRegistros.Columns["estadoImpresion"].ConditionalFormattingObjectList.Add(c1);
+
+                
+
+
+                ConditionalFormattingObject c4 = new ConditionalFormattingObject("Impreso, applied to entire row", ConditionTypes.Contains, "IMPRESO", string.Empty, true);
+                c4.RowForeColor = Color.Black;
+                c4.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvRegistros.Columns["estadoImpresion"].ConditionalFormattingObjectList.Add(c4);
+                #endregion
+            }
+            else
+            {
+                #region Par() | Acción despintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Impreso, applied to entire row", ConditionTypes.Contains, "IMPRESO", string.Empty, true);
+                c1.RowBackColor = Color.White;
+                c1.CellBackColor = Color.White;
+                dgvRegistros.Columns["estadoImpresion"].ConditionalFormattingObjectList.Add(c1);
+
+
+
+                ConditionalFormattingObject c4 = new ConditionalFormattingObject("Impreso, applied to entire row", ConditionTypes.Contains, "IMPRESO", string.Empty, true);
+                c4.RowForeColor = Color.Black;
+                c4.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["estadoImpresion"].ConditionalFormattingObjectList.Add(c4);
+                #endregion
+            }
+        }
+
+        private void btnEliminarTicket_Click(object sender, EventArgs e)
+        {
+            EliminarTicket();
+        }
+
+        private void EliminarTicket()
+        {
+            if (IdTicketCabecera > 0)
+            {
+                modelo = new RegistroAbastecimientoController();
+                int ResultadoAccion = modelo.EliminarTicketGenerado(_conection, IdTicketCabecera);
+                Consult();
+            }
+        }
+
+        private void subMenu_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

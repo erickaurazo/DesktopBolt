@@ -6511,4 +6511,8 @@
       <Column Name="NumeroPackingList" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SAS_AprobarPresupuestoByIdPresupuesto" Method="SAS_AprobarPresupuestoByIdPresupuesto">
+    <Parameter Name="IdPresupuesto" Parameter="idPresupuesto" Type="System.String" DbType="Char(4)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

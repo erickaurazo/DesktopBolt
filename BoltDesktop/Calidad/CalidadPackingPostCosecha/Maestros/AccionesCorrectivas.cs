@@ -639,12 +639,14 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maes
             {
                 #region Par() | Activar Filtro()
                 dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = !true;
                 #endregion
             }
             else
             {
                 #region Par() | DesActivar Filtro()
                 dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
                 #endregion
             }
         }
