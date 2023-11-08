@@ -658,6 +658,12 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.Designer.cs">
       <DependentUpon>ChecklistRevisionDelContenedorReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ExpedientesFotograficoDespachoRTP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpedientesFotograficoDespachoRTP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2650,9 +2656,22 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TemperaturaEnCamarasRPT.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.resx">
+      <DependentUpon>ChecklistRevisionDelContenedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.resx">
+      <DependentUpon>ChecklistRevisionDelContenedorPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.resx">
+      <DependentUpon>ChecklistRevisionDelContenedorReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ChecklistRevisionDelContenedorRPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ExpedientesFotograficoDespachoRTP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExpedientesFotograficoDespachoRTP.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.resx">
       <DependentUpon>AccionesCorrectivas.cs</DependentUpon>

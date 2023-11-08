@@ -6,6 +6,7 @@ using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._010
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._013;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM._014;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio_y_Despacho._023;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio_y_Despacho._045;
 using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maestros;
 using ComparativoHorasVisualSATNISIRA.Calidad.ReportesCalidadPostCosecha;
 using ComparativoHorasVisualSATNISIRA.Cosecha;
@@ -33,7 +34,7 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new AperturaCierrePresupuestos());
+            //Application.Run(new ChecklistRevisionDelContenedorReporte());
             Application.Run(new Menu());
         }
     }

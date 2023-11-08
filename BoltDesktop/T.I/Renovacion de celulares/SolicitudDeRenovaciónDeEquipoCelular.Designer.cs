@@ -1031,7 +1031,7 @@
             this.toolStripSeparator9,
             this.btnDVerDocumentosAdjuntos});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(270, 526);
+            this.subMenu.Size = new System.Drawing.Size(270, 504);
             // 
             // btnActivarSolicitud
             // 
@@ -1293,7 +1293,7 @@
             this.Controls.Add(this.BarraPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SolicitudDeRenovaciónDeEquipoCelular";
-            this.Text = "Solicitudes de renovación de líneas y celulares | Listado de registros";
+            this.Text = "Solicitudes de renovación | Equipos Móviles | Listado";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SolicitudDeRenovaciónDeEquipoCelular_FormClosing);
             this.Load += new System.EventHandler(this.SolicitudDeRenovaciónDeEquipoCelular_Load);

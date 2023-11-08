@@ -54,7 +54,7 @@ namespace ComparativoHorasVisualSATNISIRA
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            conection = _conection;
+            conection = _conection.Trim () != string.Empty ? _conection.Trim() : "SAS";
             user2 = _user2;
             companyId = _companyId;
             privilege = _privilege;

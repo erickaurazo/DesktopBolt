@@ -292,11 +292,11 @@ namespace ComparativoHorasVisualSATNISIRA
         public DispositivosEdicion(string _oConexion, SAS_ListadoDeDispositivos _oDispositivoQuery, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
-            conection = _oConexion;
+            conection = _oConexion.Trim() != string.Empty ? _oConexion.Trim() : "SAS";
             user2 = _user2;
             companyId = _companyId;
             privilege = _privilege;
-            oConexion = _oConexion;
+            oConexion = _oConexion.Trim() != string.Empty ? _oConexion.Trim() : "SAS";
             DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
@@ -1786,7 +1786,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 //movimientoAlmacenPorDevice = new List<SAS_DispositivoWharehouseMovementsByDeviceIDResult>(); // Obtener listado de Mantenimientos() 
                 //movimientoAlmacenPorDevice = modelMovimientoAlmacen.GetListingByCode("SAS", oDispositivo);
                 //msgError += " MOVIMIENTO ALMACEN OK| ";
-                
+
                 #endregion
             }
             catch (Exception Ex)
@@ -3416,7 +3416,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 modelo = new SAS_DispostivoController();
                 resultadoAccion = modelo.Register("SAS", dispositivo, listadoNumeroIpEliminados, listadoNumeroIp, listadoColaboradoresEliminados, listadoColaboradores, listadoHardwareEliminados, listadoHardware, listadoSoftwareEliminados, listadoSoftware, listadoComponentesEliminados, listadoComponentes, listadoCuentasUsuariosEliminados, listadoCuentasUsuarios, listadoDocumentosEliminados, listadoDocumentos, listadoContadoresEliminados, listadoContadores, listadoMantenimientosEliminados, listadoMantenimientos, listadoMovimientoAlmacenEliminados, listadoMovimientoAlmacen);
                 idDispositivo = resultadoAccion;
-                string msgError = string.Empty;                
+                string msgError = string.Empty;
                 ObtenerListarOperativas();
             }
             catch (Exception Ex)
@@ -3428,7 +3428,7 @@ namespace ComparativoHorasVisualSATNISIRA
         }
 
         private void ObtenerListarOperativas()
-        {            
+        {
             modelHardware = new SAS_DispositivoHardwareController();
             modelSoftware = new SAS_DispositivoSoftwareController();
             modelComponente = new SAS_DispositivoComponentesController();
@@ -3549,7 +3549,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 {
                     if (this.txtCodigo.Text != "0")
                     {
-                      int  codigoSelecionado = Convert.ToInt32(this.txtCodigo.Text);
+                        int codigoSelecionado = Convert.ToInt32(this.txtCodigo.Text);
                         AdjuntarArchivos ofrm = new AdjuntarArchivos(conection, user2, companyId, privilege, codigoSelecionado.ToString(), nombreformulario);
                         ofrm.Show();
 
@@ -3739,7 +3739,14 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void cboTipoDispositivo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboTipoDispositivo.Text.ToUpper().Contains("CELULAR") || cboTipoDispositivo.Text.ToUpper().Contains("MODEM"))
+            if (cboTipoDispositivo.Text.ToUpper().Contains("CELULAR".ToUpper())
+                || cboTipoDispositivo.Text.ToUpper().Contains("MODEM".ToUpper())
+                || cboTipoDispositivo.Text.ToUpper().Contains("Tablet".ToUpper())
+                || cboTipoDispositivo.Text.ToUpper().Contains("Terminal Portatil".ToUpper())
+                || cboTipoDispositivo.Text.ToUpper().Contains("Sondas".ToUpper())
+                || cboTipoDispositivo.Text.ToUpper().Contains("PDA".ToUpper())
+                || cboTipoDispositivo.Text.ToUpper().Contains("Modem Inalámbrico".ToUpper())
+                )
             {
                 btnLineaCelularBusqueda.Enabled = true;
                 txtLineaCelularCodigo.ReadOnly = false;

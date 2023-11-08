@@ -959,8 +959,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 this.txtDNI.Text = infoPerson.nrodocumento.ToUpper();
                 this.txtCargo.Text = infoPerson.cargo.ToUpper();
                 btnLineaTelefonicaBuscar.P_TablaConsulta = "SAS_LineasCelularesCoporativas  where estado = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
-                btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo = '006' and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
-                btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo = '006' and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
+                btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo in ('006', '042', '005', '020','041') and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
+                btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo in ('006', '042', '005', '020','041') and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
 
                 //btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoColaboradoresByDispositivo where idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
                 //btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoColaboradoresByDispositivo where idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
@@ -1537,12 +1537,12 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 // filtrar sólo las líneas asociadas al colaborador
                 btnLineaTelefonicaBuscar.P_TablaConsulta = "SAS_LineasCelularesCoporativas  where estado = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
-                btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo = '006' and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
-                btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo = '006' and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
+                btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo in ('006', '042', '005', '020','041') and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
+                btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores where tipoDispositivoCodigo in ('006', '042', '005', '020','041') and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1 and  idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
 
                 //btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoColaboradoresByDispositivo where idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
                 //btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoColaboradoresByDispositivo where idcodigogeneral = '" + this.txtPersonalCodigo.Text.Trim() + " '";
-
+                //SAS_ListadoDeDispositivosAsociadosAColaboradores col where tipoDispositivoCodigo  in ('006', '042', '005', '020') and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1
             }
             catch (Exception Ex)
             {
@@ -1603,8 +1603,6 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         LimpiarControlesPorMotivoDeBajaLinea();
                     }
-
-
                 }
 
                 else if (cboTipoSolicitud.Text.ToUpper() == " Baja".ToUpper())
@@ -1635,9 +1633,26 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     }
                 }
 
+                else if (cboTipoSolicitud.Text.ToUpper() == "Prestamo".ToUpper())
+                {
+                    if (txtIdEstado.Text == "SO")
+                    {
+                        LimpiarControlesPorMotivoDeAsignacíon();
+                    }
+                }
 
 
                 else if (cboTipoSolicitud.Text.ToUpper() == " Suspención de línea".ToUpper())
+                {
+                    if (txtIdEstado.Text == "SO")
+                    {
+                        LimpiarControlesPorMotivoDeBajaLinea();
+                    }
+
+
+                }
+
+                else if (cboTipoSolicitud.Text.ToUpper() == " Suspencion de línea".ToUpper())
                 {
                     if (txtIdEstado.Text == "SO")
                     {
@@ -1654,11 +1669,27 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         LimpiarControlesPorMotivoDeBajaLinea();
                     }
-
-
                 }
 
+                else if (cboTipoSolicitud.Text.ToUpper() == " Suspención de equipo y linea".ToUpper())
+                {
+                    if (txtIdEstado.Text == "SO")
+                    {
+                        LimpiarControlesPorMotivoDeBajaLinea();
+                    }
+                }
+
+
                 else if (cboTipoSolicitud.Text.ToUpper() == "Nueva asignación".ToUpper())
+                {
+                    if (txtIdEstado.Text == "SO")
+                    {
+                        LimpiarControlesPorMotivoDeAsignacíon();
+                    }
+                }
+
+
+                else if (cboTipoSolicitud.Text.ToUpper() == "Nueva asignacion".ToUpper())
                 {
                     if (txtIdEstado.Text == "SO")
                     {
@@ -1691,7 +1722,24 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     }
                 }
 
+                else if (cboTipoSolicitud.Text.ToUpper() == "Devolucion".ToUpper())
+                {
+                    if (txtIdEstado.Text == "SO")
+                    {
+                        LimpiarControlesPorMotivoDeBajaLinea();
+                    }
+                }
+
                 else if (cboTipoSolicitud.Text.ToUpper() == "Prestamo | Equipo".ToUpper())
+                {
+                    if (txtIdEstado.Text == "SO")
+                    {
+                        LimpiarControlesPorPrestamoEquipo();
+
+                    }
+                }
+
+                else if (cboTipoSolicitud.Text.ToUpper() == "Préstamo | Equipo".ToUpper())
                 {
                     if (txtIdEstado.Text == "SO")
                     {

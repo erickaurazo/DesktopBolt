@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="BoltCalidadPackingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString6" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SAS_CALIDAD_FORMULARIO" Member="SAS_CALIDAD_FORMULARIO">
     <Type Name="SAS_CALIDAD_FORMULARIO">
       <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -1843,5 +1843,151 @@
       <Column Name="Distribuido" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
       <Column Name="Inspeccinado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteCheckListRevisionByIdEvaluacion" Method="SAS_ReporteCheckListRevisionByIdEvaluacion">
+    <Parameter Name="IdEvaluacion" Parameter="idEvaluacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ReporteCheckListRevisionByIdEvaluacionResult">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroCalidadFormularioId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="InicioProceso" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FinalProceso" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NumeroOrdenTrabajo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdLineaNaviera" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="LineaNaviera" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NumeroBooking" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NombreNave" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PesoMaximaCarga" Type="System.Decimal" DbType="Decimal(11,2)" CanBeNull="true" />
+      <Column Name="IdCondicionExteriorContenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionExteriorContenedorBuena" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CondicionExteriorContenedorMala" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IdCondicionInteriorContenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionInteriorContenedorBuena" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CondicionInteriorContenedorMala" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ObservacionCondicionInterior" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ObservacionCondicionExterior" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoDeDrenaje" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoDeDrenajeAbierto" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoDeDrenajeCerrado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CumpleEIR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CumpleEIRCumple" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CumpleEIRNoCumple" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="BuenaCondicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuenaCondicionBuena" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="BuenaCondicionMala" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DevolucionAfiliado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DevolucionAfiliadoSi" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DevolucionAfiliadoNo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecintoSENASA" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecintoADUANAS" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NombreChofer" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BreveteChofer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlacaVehiculo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlacaCarreta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdDestino" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Destino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Contenedor" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IdEvaluacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspDg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspEc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspCp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspCc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspPr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspDt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspCk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecintoOtros" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PrecintoLinea" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PrecintoPlanta" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="formulario" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FormularioCodigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FormularioVersion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ResponsableFirma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EvaluadorFirma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ReporteCheckListRevisionByIdDates" Method="SAS_ReporteCheckListRevisionByIdDates">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ReporteCheckListRevisionByIdDatesResult">
+      <Column Name="IdEmpresa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroCalidadFormularioId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ResponsableId" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="InicioProceso" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FinalProceso" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NumeroOrdenTrabajo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdLineaNaviera" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="LineaNaviera" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NumeroBooking" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NombreNave" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PesoMaximaCarga" Type="System.Decimal" DbType="Decimal(11,2)" CanBeNull="true" />
+      <Column Name="IdCondicionExteriorContenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionExteriorContenedorBuena" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CondicionExteriorContenedorMala" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IdCondicionInteriorContenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionInteriorContenedorBuena" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CondicionInteriorContenedorMala" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ObservacionCondicionInterior" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ObservacionCondicionExterior" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoDeDrenaje" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoDeDrenajeAbierto" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoDeDrenajeCerrado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CumpleEIR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CumpleEIRCumple" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CumpleEIRNoCumple" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="BuenaCondicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuenaCondicionBuena" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="BuenaCondicionMala" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DevolucionAfiliado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DevolucionAfiliadoSi" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DevolucionAfiliadoNo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecintoSENASA" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="PrecintoADUANAS" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NombreChofer" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BreveteChofer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlacaVehiculo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlacaCarreta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdDestino" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Destino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Contenedor" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IdEvaluacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspDg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspEc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspCp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspCc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspPr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspDt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InspCk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecintoOtros" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PrecintoLinea" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PrecintoPlanta" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="formulario" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FormularioCodigo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FormularioVersion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ResponsableFirma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Evaluador" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EvaluadorFirma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_AutoCompletarRegistroDeGasificado" Method="SAS_AutoCompletarRegistroDeGasificado">
+    <Return Type="System.Int32" />
   </Function>
 </Database>

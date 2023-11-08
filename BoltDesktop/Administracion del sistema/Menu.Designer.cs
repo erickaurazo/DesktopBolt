@@ -277,6 +277,8 @@
             this.GoAsegCalCerReporteFrioYDespacho = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteFrioYDespachoVerificacionYCalibracionDeSensoresDeTunelesDeEnfriamiento = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteProductoTerminado = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteProductoTerminadoCosechaControlDeCalidadRecepcionUva = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUva = new System.Windows.Forms.ToolStripMenuItem();
@@ -305,8 +307,6 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -2251,6 +2251,20 @@
             this.GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras.Text = "034 - Temperatura en cámaras";
             this.GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoTemperaturaEnCamaras_Click);
             // 
+            // GoAsegCalCerReporteFrioYDespachoEvaluacionCarga
+            // 
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Name = "GoAsegCalCerReporteFrioYDespachoEvaluacionCarga";
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Size = new System.Drawing.Size(439, 22);
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Text = "023 - Evaluación de carga";
+            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga_Click);
+            // 
+            // GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor
+            // 
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Name = "GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor";
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Size = new System.Drawing.Size(439, 22);
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Text = "045 - CheckList de inspección";
+            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor_Click);
+            // 
             // GoAsegCalCerReporteProductoTerminado
             // 
             this.GoAsegCalCerReporteProductoTerminado.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2455,20 +2469,6 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // GoAsegCalCerReporteFrioYDespachoEvaluacionCarga
-            // 
-            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Name = "GoAsegCalCerReporteFrioYDespachoEvaluacionCarga";
-            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Size = new System.Drawing.Size(439, 22);
-            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Text = "023 - Evaluación de carga";
-            this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga_Click);
-            // 
-            // GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor
-            // 
-            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Name = "GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor";
-            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Size = new System.Drawing.Size(439, 22);
-            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Text = "045 - CheckList de inspección";
-            this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Click += new System.EventHandler(this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor_Click);
-            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2480,8 +2480,8 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "Bolt | Version. 1.4.5";
-            this.toolTip.SetToolTip(this, "Actualización 06/10/2023");
+            this.Text = "Bolt | Version. 1.4.7";
+            this.toolTip.SetToolTip(this, "Actualización 08/12/2023");
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);

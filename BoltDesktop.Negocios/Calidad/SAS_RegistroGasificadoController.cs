@@ -606,10 +606,18 @@ namespace Asistencia.Negocios
         {
             List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesResult> resultado = new List<SAS_RegistroIngresoSalidaACamaraGasificadoByDatesResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            string cnx2 = ConfigurationManager.AppSettings["SAS"].ToString();                       
+            using (BoltCalidadPackingDataContext Modelo = new BoltCalidadPackingDataContext(cnx))
+            {
+                Modelo.SAS_AutoCompletarRegistroDeGasificado();
+            }
+
             using (NSFAJASDataContext Modelo = new NSFAJASDataContext(cnx))
             {
+
                 resultado = Modelo.SAS_RegistroIngresoSalidaACamaraGasificadoByDates(desde, hasta).ToList();
             }
+
             return resultado;
         }
 

@@ -91,7 +91,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_id {
+        public CrystalDecisions.Shared.IParameterField Parameter_IdEvaluacion {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }

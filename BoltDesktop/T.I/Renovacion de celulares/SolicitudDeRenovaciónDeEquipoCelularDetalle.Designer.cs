@@ -327,8 +327,9 @@
             this.btnDispositivoAltaBuscar.P_EsEditable = true;
             this.btnDispositivoAltaBuscar.P_EsModificable = true;
             this.btnDispositivoAltaBuscar.P_FilterByTextBox = null;
-            this.btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoColaboradoresByDispositivo col where tipoDispositivoCodigo = \'006\' and" +
-    " estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1";
+            this.btnDispositivoAltaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores col where tipoDispositivoCodigo " +
+    "in ( \'006\', \'042\', \'005\', \'020\') and estadoItem = 1 and funcionamiento = 1 and e" +
+    "stadoDedispositivo = 1";
             this.btnDispositivoAltaBuscar.P_TextBoxCodigo = this.txtDispositivoAltaCodigo;
             this.btnDispositivoAltaBuscar.P_TextBoxDescripcion = this.txtDispositivoAlta;
             this.btnDispositivoAltaBuscar.P_TituloFormulario = "... Buscar dispositivo";
@@ -410,7 +411,8 @@
             this.btnDispositivoBajaBuscar.P_EsModificable = true;
             this.btnDispositivoBajaBuscar.P_FilterByTextBox = null;
             this.btnDispositivoBajaBuscar.P_TablaConsulta = "SAS_ListadoDeDispositivosAsociadosAColaboradores col where tipoDispositivoCodigo " +
-    "= \'006\' and estadoItem = 1 and funcionamiento = 1 and estadoDedispositivo = 1";
+    " in ( \'006\', \'042\', \'005\', \'020\') and estadoItem = 1 and funcionamiento = 1 and " +
+    "estadoDedispositivo = 1";
             this.btnDispositivoBajaBuscar.P_TextBoxCodigo = this.txtDispositivoBajaCodigo;
             this.btnDispositivoBajaBuscar.P_TextBoxDescripcion = this.txtDispositivoBaja;
             this.btnDispositivoBajaBuscar.P_TituloFormulario = "... Buscar dispositivo";
@@ -1588,7 +1590,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SolicitudDeRenovaciónDeEquipoCelularDetalle";
-            this.Text = "Solicitudes de renovación de equipo celulares | Mantenimiento";
+            this.Text = "Solicitudes de renovación | Equipos Móviles | Edición";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SolicitudDeRenovaciónDeEquipoCelularDetalle_FormClosing);
             this.Load += new System.EventHandler(this.SolicitudDeRenovaciónDeEquipoCelularDetalle_Load);

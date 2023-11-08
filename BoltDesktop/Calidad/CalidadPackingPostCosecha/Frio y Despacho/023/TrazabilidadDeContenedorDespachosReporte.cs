@@ -17,6 +17,7 @@ using Asistencia.Helper;
 using MyDataGridViewColumns;
 using System.Drawing;
 using Asistencia.Negocios.Calidad;
+using ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio_y_Despacho._045;
 
 namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio_y_Despacho._023
 {
@@ -139,95 +140,48 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             MakeInquiry();
         }
 
-        private void MakeInquiry()
-        {
-            if (chkVisualizacionPorDia.Checked == true)
-            {
-                desde = DateTime.Now.ToPresentationDate();
-                hasta = DateTime.Now.ToPresentationDate();
-            }
-            else
-            {
-                desde = this.txtFechaDesde.Text;
-                hasta = this.txtFechaHasta.Text;
-            }
-
-            gbList.Enabled = false;
-            gbCabecera.Enabled = false;
-            BarraPrincipal.Enabled = false;
-            progressBar1.Visible = true;
-            bgwHilo.RunWorkerAsync();
-        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Nuevo();
         }
 
-        private void Nuevo()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
         }
 
-        private void Editar()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             Grabar();
         }
 
-        private void Grabar()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             Atras();
         }
 
-        private void Atras()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
             Anular();
         }
 
-        private void Anular()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnEliminarRegistro_Click(object sender, EventArgs e)
         {
             EliminarRegistro();
         }
 
-        private void EliminarRegistro()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             Historial();
         }
 
-        private void Historial()
-        {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
-        }
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
@@ -238,11 +192,14 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void btnAdjuntar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+            Adjuntar();
         }
+
+
 
         private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
         {
+            CambiarEstadoDocumen();
 
         }
 
@@ -282,8 +239,14 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         private void TrazabilidadDeContenedorDespachosReporte_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         private void dgvRegistros_SelectionChanged(object sender, EventArgs e)
         {
@@ -350,6 +313,63 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         }
 
         #region Metodos()
+
+        private void Nuevo()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+        private void MakeInquiry()
+        {
+            if (chkVisualizacionPorDia.Checked == true)
+            {
+                desde = DateTime.Now.ToPresentationDate();
+                hasta = DateTime.Now.ToPresentationDate();
+            }
+            else
+            {
+                desde = this.txtFechaDesde.Text;
+                hasta = this.txtFechaHasta.Text;
+            }
+
+            gbList.Enabled = false;
+            gbCabecera.Enabled = false;
+            BarraPrincipal.Enabled = false;
+            progressBar1.Visible = true;
+            bgwHilo.RunWorkerAsync();
+        }
+
+        private void Editar()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+
+        private void Grabar()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+
+        private void EliminarRegistro()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+        private void Atras()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+        private void Anular()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+
+        private void Historial()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
 
         private void ElegirColumna()
         {
@@ -515,7 +535,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             if (IdEvaluacion > 0)
             {
                 int resultado = model.CambiarEstadoDeRevision(conection, IdEvaluacion);
-                if (resultado >0)
+                if (resultado > 0)
                 {
                     MessageBox.Show("Se actualizo el estado de la revisión del contenedor", "Confirmación del sistema");
                     MakeInquiry();
@@ -559,6 +579,15 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
             }
         }
 
+        private void Adjuntar()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+        private void CambiarEstadoDocumen()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
 
         private void ObtenerFechasIniciales()
         {

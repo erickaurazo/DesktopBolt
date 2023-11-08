@@ -229,8 +229,8 @@
             this.lblActualización.Name = "lblActualización";
             this.lblActualización.Size = new System.Drawing.Size(42, 12);
             this.lblActualización.TabIndex = 20;
-            this.lblActualización.Tag = "Actualización 06/10/2023";
-            this.lblActualización.Text = "V 1.4.5";
+            this.lblActualización.Tag = "Actualización 08/11/2023";
+            this.lblActualización.Text = "V 1.4.7";
             // 
             // Login
             // 
