@@ -60,9 +60,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maes
         public TipoGrupoMaestrosDespacho(string _connection, SAS_USUARIOS _userLogin, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
-            connection = _connection;
+            connection = _connection != string.Empty ? _connection : "SAS";
             userLogin = _userLogin;
-            companyId = _companyId;
+            companyId = _companyId != string.Empty ? _companyId : "001";
             privilege = _privilege;
             lblCodeUser.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario.Trim() : string.Empty;
             lblFullName.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto.Trim() : string.Empty;
@@ -234,7 +234,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maes
                     itemRegistar = new SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestrosTipo();
                     itemRegistar.Id = Convert.ToInt32(this.txtCodigo.Text);
                     itemRegistar.Descripcion = this.txtDescripcion.Text.Trim();
-                    itemRegistar.IdEmpresa = companyId;
+                    itemRegistar.IdEmpresa = companyId != null ? companyId : "001";
                     itemRegistar.Estado = this.txtEstado.Text.Trim() == "1" ? Convert.ToByte("1") : Convert.ToByte("0");
 
 

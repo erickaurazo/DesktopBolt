@@ -182,7 +182,7 @@
             this.gbList.Size = new System.Drawing.Size(1302, 488);
             this.gbList.TabIndex = 231;
             this.gbList.Text = "Listado";
-            this.gbList.ThemeName = "Windows8";
+            this.gbList.ThemeName = "VisualStudio2012Light";
             // 
             // dgvRegistros
             // 
@@ -428,7 +428,7 @@
             this.dgvRegistros.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvRegistros.Size = new System.Drawing.Size(1298, 468);
             this.dgvRegistros.TabIndex = 233;
-            this.dgvRegistros.ThemeName = "Windows8";
+            this.dgvRegistros.ThemeName = "VisualStudio2012Light";
             this.dgvRegistros.SelectionChanged += new System.EventHandler(this.dgvRegistros_SelectionChanged);
             this.dgvRegistros.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvRegistros_Scroll);
             // 
@@ -712,7 +712,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1302, 62);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1302, 37);
             this.BarraPrincipal.TabIndex = 229;
             this.BarraPrincipal.ThemeName = "Windows8";
             // 

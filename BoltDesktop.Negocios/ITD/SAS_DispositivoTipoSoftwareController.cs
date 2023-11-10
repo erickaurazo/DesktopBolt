@@ -11,13 +11,13 @@ namespace Asistencia.Negocios
     public class SAS_DispositivoTipoSoftwareController
     {
 
-        public List<SAS_DispositivoTipoSoftwareListado> GetTypeDevices(string conection)
+        public List<SAS_DispositivoTipoSoftwareListadoAllResult> GetTypeDevices(string conection)
         {
-            List<SAS_DispositivoTipoSoftwareListado> listado = new List<SAS_DispositivoTipoSoftwareListado>();
+            List<SAS_DispositivoTipoSoftwareListadoAllResult> listado = new List<SAS_DispositivoTipoSoftwareListadoAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                listado = Modelo.SAS_DispositivoTipoSoftwareListado.ToList();
+                listado = Modelo.SAS_DispositivoTipoSoftwareListadoAll().ToList();
             }
             return listado;
         }

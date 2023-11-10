@@ -688,11 +688,11 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItemDetalle.Designer.cs">
       <DependentUpon>VerificacionVidriosTipoItemDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form11.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoTermoRegistroByCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoTermoRegistroByCliente.Designer.cs">
+      <DependentUpon>TipoTermoRegistroByCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItem.cs">
       <SubType>Form</SubType>
@@ -706,11 +706,11 @@
     <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\InocuidadCriterios.Designer.cs">
       <DependentUpon>InocuidadCriterios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form4.cs">
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ParametroTemperaturaCultivoCampana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ParametroTemperaturaCultivoCampana.Designer.cs">
+      <DependentUpon>ParametroTemperaturaCultivoCampana.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form5.cs">
       <SubType>Form</SubType>
@@ -1399,17 +1399,17 @@
     <Compile Include="Evaluaciones agricolas\Lotes.Designer.cs">
       <DependentUpon>Lotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Exportaciones\ActualizarDistribucionDeCargaEnPackingList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Exportaciones\ActualizarDistribucionDeCargaEnPackingList.Designer.cs">
-      <DependentUpon>ActualizarDistribucionDeCargaEnPackingList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Exportaciones\DistribucionDeCargaEnPackingList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Exportaciones\DistribucionDeCargaEnPackingList.Designer.cs">
       <DependentUpon>DistribucionDeCargaEnPackingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exportaciones\DistribucionDeCargaEnPackingListDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exportaciones\DistribucionDeCargaEnPackingListDetalle.Designer.cs">
+      <DependentUpon>DistribucionDeCargaEnPackingListDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\LiberarOrdenesDeCompra.cs">
       <SubType>Form</SubType>
@@ -2703,8 +2703,14 @@
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\LimpiezaDesinfeccionItems.resx">
       <DependentUpon>LimpiezaDesinfeccionItems.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\ParametroTemperaturaCultivoCampana.resx">
+      <DependentUpon>ParametroTemperaturaCultivoCampana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\SubProcesoSo2.resx">
       <DependentUpon>SubProcesoSo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoTermoRegistroByCliente.resx">
+      <DependentUpon>TipoTermoRegistroByCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TurnosDeEvaluacion.resx">
       <DependentUpon>TurnosDeEvaluacion.cs</DependentUpon>
@@ -2816,11 +2822,11 @@
     <EmbeddedResource Include="Evaluaciones agricolas\Lotes.resx">
       <DependentUpon>Lotes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exportaciones\ActualizarDistribucionDeCargaEnPackingList.resx">
-      <DependentUpon>ActualizarDistribucionDeCargaEnPackingList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Exportaciones\DistribucionDeCargaEnPackingList.resx">
       <DependentUpon>DistribucionDeCargaEnPackingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exportaciones\DistribucionDeCargaEnPackingListDetalle.resx">
+      <DependentUpon>DistribucionDeCargaEnPackingListDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\LiberarOrdenesDeCompra.resx">
       <DependentUpon>LiberarOrdenesDeCompra.cs</DependentUpon>
@@ -3726,7 +3732,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

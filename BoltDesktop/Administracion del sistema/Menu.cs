@@ -3967,7 +3967,7 @@ namespace Asistencia
 
             if (privilege.consultar == 1)
             {
-                ActualizarDistribucionDeCargaEnPackingList frmHijo = new ActualizarDistribucionDeCargaEnPackingList(_conection, _user2, _companyId, privilege);
+                DistribucionDeCargaEnPackingList frmHijo = new DistribucionDeCargaEnPackingList(_conection, _user2, _companyId, privilege);
                 frmHijo.MdiParent = this;
                 frmHijo.Show();
                 frmHijo.WindowState = FormWindowState.Maximized;
@@ -5052,6 +5052,58 @@ namespace Asistencia
         private void GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor_Click(object sender, EventArgs e)
         {
             string form2 = GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                ChecklistRevisionDelContenedorReporte frmHijo = new ChecklistRevisionDelContenedorReporte("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente_Click(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                ParametroTemperaturaCultivoCampana frmHijo = new ParametroTemperaturaCultivoCampana("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña_Click(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Name.ToString().Trim().ToUpper();
             var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
             PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
             if (result != null && result.ToList().Count > 0)

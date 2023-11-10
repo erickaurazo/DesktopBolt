@@ -42,7 +42,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult> listadoHardwareEnBlanco;
         private List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSedesResult> listadoSedesEnBlanco;
         private List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult> listadoSoftwareEnBlanco;
-        private List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult> listadoLineaCelularEnBlanco;
+        private List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularEnBlanco;
 
         private List<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult> listadoHardwareById;
         private SAS_SolicitudDeEquipamientoTecnologicoListadoByIdResult solicitydById;
@@ -73,6 +73,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         public List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> SoftwareEnSolicitudRegistro;
         public List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> HardwareEnSolicitudRegistroEliminar;
         public List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> SoftwareEnSolicitudRegistroEliminar;
+        private int CodigoDispositivoHardware;
+        private int CodigoDispositivoSoftware;
+        private List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> ListadoLineasCelularesEnBlanco;
+        private int ultimoItemEnListaDetalleNumeroCelular;
+
+        public string lineaCelular { get; private set; }
+        public List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> ListadoLineasCelularesById { get; private set; }
         #endregion
 
         public SolicitudDeEquipamientoTecnologicoMantenimiento()
@@ -80,6 +87,17 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             InitializeComponent();
             Inicio();
             CargarCombos();
+            conection = "SAS";
+            user2 = new SAS_USUARIOS();
+            user2.IdUsuario = "ADMINISTRADOR";
+            companyId = "001";
+            privilege = new PrivilegesByUser();
+            privilege.nuevo = 1;
+            solicitud = new SAS_SolicitudDeEquipamientoTecnologico();
+            solicitud.id = 0;
+            //            CargarCombos();
+            CargarObjeto();
+            bgwHilo.RunWorkerAsync();
         }
 
         public SolicitudDeEquipamientoTecnologicoMantenimiento(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, SAS_SolicitudDeEquipamientoTecnologico _solicitud)
@@ -87,9 +105,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             InitializeComponent();
             Inicio();
             CargarCombos();
-            conection = _conection;
+            conection = (_conection != null || _conection != string.Empty) ? _conection : "SAS";
             user2 = _user2;
-            companyId = _companyId;
+            companyId = (_companyId != null || _companyId != string.Empty) ? _companyId : "001";
             privilege = _privilege;
             solicitud = _solicitud;
             //            CargarCombos();
@@ -102,15 +120,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             InitializeComponent();
             Inicio();
             CargarCombos();
-            conection = _conection;
+            conection = (_conection != null || _conection != string.Empty) ? _conection : "SAS";
             user2 = _user2;
-            companyId = _companyId;
+            companyId = (_companyId != null || _companyId != string.Empty) ? _companyId : "001";
             privilege = _privilege;
             //this.solicitud = solicitud;
-            idSolicitud = _idSolicitud;
+            idSolicitud = _idSolicitud != null ? _idSolicitud : 0;
             solicitud = new SAS_SolicitudDeEquipamientoTecnologico();
             modelo = new SAS_SolicitudDeEquipamientoTecnologicoController();
-            solicitud = modelo.GetRequestsById("SAS", _idSolicitud);
+            solicitud = modelo.GetRequestsById(conection, _idSolicitud);
             //            CargarCombos();
             CargarObjeto();
             bgwHilo.RunWorkerAsync();
@@ -277,6 +295,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             solicitydById = new SAS_SolicitudDeEquipamientoTecnologicoListadoByIdResult();
             listadoSedesById = new List<SAS_SolicitudDeEquipamientoTecnologicoSedesByIdResult>();
             listadoSoftwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult>();
+
+            ListadoLineasCelularesEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+            ListadoLineasCelularesById = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+
+            ultimoItemEnListaDetalleHardware = 0;
+            ultimoItemEnListaDetalleSofware = 0;
+            ultimoItemEnListaDetalleCelulares = 0;
+            ultimoItemEnListaDetalleNumeroCelular = 0;
 
             //2.- Limpiar formulario
             Limpiar(this, gbDatosPersonal);
@@ -890,8 +916,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     item.idLinea = fila.Cells["chIdLineaDetalleCelular"].Value != null ? (fila.Cells["chIdLineaDetalleCelular"].Value.ToString().Trim() != string.Empty ? Convert.ToInt32(fila.Cells["chIdLineaDetalleCelular"].Value.ToString().Trim()) : (int?)null) : (int?)null;
                                     item.desde = fila.Cells["chDesdeDetalleCelular"].Value != null ? (fila.Cells["chDesdeDetalleCelular"].Value.ToString() != string.Empty ? Convert.ToDateTime(fila.Cells["chDesdeDetalleCelular"].Value) : (DateTime?)null) : (DateTime?)null;
                                     item.hasta = fila.Cells["chHastaDetalleCelular"].Value != null ? (fila.Cells["chHastaDetalleCelular"].Value.ToString() != string.Empty ? Convert.ToDateTime(fila.Cells["chHastaDetalleCelular"].Value) : (DateTime?)null) : (DateTime?)null;
-                                    item.estado = fila.Cells["chEstadoDetalleCelular"].Value != null ? Convert.ToDecimal(fila.Cells["chEstadoDetalleCelular"].Value.ToString().Trim()) : 0;
-                                    item.valor = fila.Cells["chValorDetalleCelular"].Value != null ? (fila.Cells["chValorDetalleCelular"].Value.ToString().Trim() != string.Empty ? Convert.ToInt32(fila.Cells["chValorDetalleCelular"].Value.ToString().Trim()) : (int?)null) : (int?)null;
+                                    item.estado = fila.Cells["chEstadoDetalleCelular"].Value != null ? Convert.ToByte(fila.Cells["chEstadoDetalleCelular"].Value.ToString().Trim()) : Convert.ToByte("1");
+                                    item.valor = fila.Cells["chValorDetalleCelular"].Value != null ? (fila.Cells["chValorDetalleCelular"].Value.ToString().Trim() != string.Empty ? Convert.ToString(fila.Cells["chValorDetalleCelular"].Value.ToString().Trim()) : string.Empty) : string.Empty;
                                     item.glosa = fila.Cells["chGlosaDetalleCelular"].Value != null ? Convert.ToString(fila.Cells["chGlosaDetalleCelular"].Value.ToString().Trim()) : string.Empty;
                                     item.actualizado = fila.Cells["chActualizadoDetalleCelular"].Value != null ? Convert.ToInt32(fila.Cells["chActualizadoDetalleCelular"].Value.ToString().Trim()) : 0;
                                     item.elegido = fila.Cells["chElegidoDetalleCelular"].Value != null ? (fila.Cells["chElegidoDetalleCelular"].Value.ToString() != string.Empty ? Convert.ToInt32(fila.Cells["chElegidoDetalleCelular"].Value) : 0) : 0;
@@ -950,7 +976,6 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             search.txtTextoFiltro.Text = "";
                             if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                             {
-                                //idRetorno = busquedas.ObjetoRetorno.Codigo;
                                 this.dgvSoftware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPerfilDeAcceso"].Value = search.ObjetoRetorno.Codigo;
                                 this.dgvSoftware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPerfilAcceso"].Value = search.ObjetoRetorno.Descripcion;
                             }
@@ -967,11 +992,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             modelo = new SAS_SolicitudDeEquipamientoTecnologicoController();
                             frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
                             search.ListaGeneralResultado = modelo.ObtenerTipoDeSoftware("SAS");
-                            search.Text = "Buscar tipo de perfil de Acceso";
+                            search.Text = "Buscar Tipo de Software";
                             search.txtTextoFiltro.Text = "";
                             if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                             {
-                                //idRetorno = busquedas.ObjetoRetorno.Codigo;
                                 this.dgvSoftware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chidSoftware"].Value = search.ObjetoRetorno.Codigo;
                                 this.dgvSoftware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chSoftware"].Value = search.ObjetoRetorno.Descripcion;
                             }
@@ -1060,7 +1084,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 modelo = new SAS_SolicitudDeEquipamientoTecnologicoController();
-                result = modelo.ToRegister("SAS", solicitud, sedesEnSolicitudRegistro, listadoHardwareARegistrar, listadoSoftwareARegistrar, listadoLineaCelularARegistrar, listadoHardwareAEliminar, listadoSoftwareAEliminar);
+                result = modelo.ToRegister(conection, solicitud, sedesEnSolicitudRegistro, listadoHardwareARegistrar, listadoSoftwareARegistrar, listadoLineaCelularARegistrar, listadoHardwareAEliminar, listadoSoftwareAEliminar, listadoLineaCelularAEliminar);
+
 
                 this.solicitud = new SAS_SolicitudDeEquipamientoTecnologico();
                 solicitud = modelo.GetRequestsById("SAS", result);
@@ -1093,10 +1118,17 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         listadoHardwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult>();
                         listadoHardwareById = modelo.GetListOfHardwareDetailByRequestId("SAS", solicitud);
+
                         listadoSedesById = new List<SAS_SolicitudDeEquipamientoTecnologicoSedesByIdResult>();
                         listadoSedesById = modelo.GetDetailedListOfVenuesByRequestId("SAS", solicitud);
+
                         listadoSoftwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult>();
                         listadoSoftwareById = modelo.GetListOfSoftwareDetailByRequestId("SAS", solicitud);
+
+
+                        ListadoLineasCelularesEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        ListadoLineasCelularesEnBlanco = modelo.GetNumberLineDetailBlanklistingForRequest("SAS", solicitud);
+
                         infoPerson = new SAS_InfoPersonal();
                         infoPerson = modelInfoPersonal.GetInfoById("SAS", solicitydById.idCodigoGeneral.Trim());
                     }
@@ -1119,6 +1151,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             MostrarResultados();
             MessageBox.Show("Registro realizo correctamente", "Confirmación del sistema");
+
         }
 
         private void MostrarResultados()
@@ -1246,16 +1279,21 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     if (solicitud.id == 0)
                     {
                         #region Nuevo() 
-                        dgvHardware.CargarDatos(listadoHardwareEnBlanco.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult>());
-                        dgvHardware.Refresh();
+
                         listadoSoftwareAEliminar = new List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware>();
                         listadoHardwareAEliminar = new List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware>();
                         listadoLineaCelularAEliminar = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
 
+                        dgvHardware.CargarDatos(listadoHardwareEnBlanco.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult>());
+                        dgvHardware.Refresh();
+
                         dgvSoftware.CargarDatos(listadoSoftwareEnBlanco.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult>());
                         dgvSoftware.Refresh();
 
-                        chkColca01.Checked = false;
+                        dgvDetalleLineaCelular.CargarDatos(ListadoLineasCelularesEnBlanco.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>());
+                        dgvDetalleLineaCelular.Refresh();
+
+                        chkColca01.Checked = false; 
                         chkPacking.Checked = false;
                         chkColca03.Checked = false;
                         chkOficinasLima.Checked = false;
@@ -1337,11 +1375,17 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         listadoHardwareAEliminar = new List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware>();
                         listadoLineaCelularAEliminar = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
 
+
                         dgvHardware.CargarDatos(listadoHardwareById.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult>());
                         dgvHardware.Refresh();
 
                         dgvSoftware.CargarDatos(listadoSoftwareById.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult>());
                         dgvSoftware.Refresh();
+
+
+                        dgvDetalleLineaCelular.CargarDatos(ListadoLineasCelularesById.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>());
+                        dgvDetalleLineaCelular.Refresh();
+
                         #endregion
                     }
 
@@ -1358,6 +1402,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         btnEliminarRegistro.Enabled = true;
                         btnAtras.Enabled = true;
                         btnFlujoAprobacion.Enabled = true;
+
+                        ListadoLineasCelularesById = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        listadoHardwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult>();
+                        listadoSoftwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult>();
+                        listadoHardwareEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult>();
+                        listadoSoftwareEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult>();
+                        ListadoLineasCelularesEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        modelInfoPersonal = new SAS_InfoPersonalController();
+                        infoPerson = new SAS_InfoPersonal();
                         #endregion
                     }
                     else
@@ -1371,6 +1424,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         btnAtras.Enabled = true;
                         btnAnular.Enabled = false;
                         btnFlujoAprobacion.Enabled = true;
+
+                        ListadoLineasCelularesById = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        listadoHardwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult>();
+                        listadoSoftwareById = new List<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult>();
+                        listadoHardwareEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult>();
+                        listadoSoftwareEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult>();
+                        ListadoLineasCelularesEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        modelInfoPersonal = new SAS_InfoPersonalController();
+                        infoPerson = new SAS_InfoPersonal();
                         #endregion
                     }
                     #endregion
@@ -1512,7 +1574,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                #region 
+                #region EjecutarConsultar();
                 //solicitud = new SAS_SolicitudDeEquipamientoTecnologico();
                 sedesEnSolicitud = new List<SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo>();
                 HardwareEnSolicitud = new List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware>();
@@ -1527,7 +1589,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 {
                     if (solicitud.id == 0)
                     {
-                        listadoLineaCelularEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult>();
+                        listadoLineaCelularEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
                         listadoLineaCelularEnBlanco = modelo.ListDetailRequestByCelLineByIdRequestBlank("SAS", 0);
 
                         listadoHardwareEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult>();
@@ -1540,6 +1602,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         listadoSoftwareEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult>();
                         listadoSoftwareEnBlanco = modelo.GetSoftwareDetailBlanklistingForRequest("SAS", solicitud);
                         ultimoItemEnListaDetalleSofware = 1;
+
+                        ListadoLineasCelularesEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        ListadoLineasCelularesEnBlanco = modelo.GetNumberLineDetailBlanklistingForRequest("SAS", solicitud);
 
                         numeroCorrelativoDeCero = modelo.ObtenerNumeroCorrelativoDeCero("SAS", solicitud);
                         infoPerson = new SAS_InfoPersonal();
@@ -1580,6 +1645,16 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         if (listadoSoftwareById != null && listadoSoftwareById.ToList().Count > 0)
                         {
                             ultimoItemEnListaDetalleSofware = Convert.ToInt32(listadoSoftwareById.Max(x => x.item)) + 1;
+                        }
+
+
+                        ListadoLineasCelularesById = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                        ListadoLineasCelularesById = modelo.GetListONumberLineDetailByRequestId(conection, solicitud);
+
+
+                        if (ListadoLineasCelularesById != null && ListadoLineasCelularesById.ToList().Count > 0)
+                        {
+                            ultimoItemEnListaDetalleNumeroCelular = Convert.ToInt32(ListadoLineasCelularesById.Max(x => x.item)) + 1;
                         }
 
 
@@ -2135,10 +2210,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if (dgvDetalleLineaCelular.Rows.Count == 0)
             {
-                listadoLineaCelularEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult>();
-                listadoLineaCelularEnBlanco = modelo.ListDetailRequestByCelLineByIdRequestBlank("SAS", 0);
+                listadoLineaCelularEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+                listadoLineaCelularEnBlanco = modelo.ListDetailRequestByCelLineByIdRequestBlank(conection, 0);
 
-                dgvDetalleLineaCelular.CargarDatos(listadoLineaCelularEnBlanco.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult>());
+                dgvDetalleLineaCelular.CargarDatos(listadoLineaCelularEnBlanco.ToDataTable<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>());
                 dgvDetalleLineaCelular.Refresh();
 
             }
@@ -2414,7 +2489,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 {
                     ArrayList array = new ArrayList();
                     array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); //                 chIdDetalleCelular  
-                    array.Add((ObtenerFormatoParaAgregarItemDetalle(ultimoItemEnListaDetalleCelulares))); // chitemDetalleCelular
+                    array.Add((ObtenerFormatoParaAgregarItemDetalle(ultimoItemEnListaDetalleNumeroCelular))); // chitemDetalleCelular
                     array.Add(0); // chIdLineaDetalleCelular                                                           
                     array.Add(this.txtFecha.Text); // chDesdeDetalleCelular
                     array.Add(this.txtFecha.Text); //     chHastaDetalleCelular                                    
@@ -2427,6 +2502,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     array.Add(string.Empty); // chdocumentoReferenciaLineaCelular
                     dgvDetalleLineaCelular.AgregarFila(array);
                     ultimoItemEnListaDetalleCelulares += 1;
+                    ultimoItemEnListaDetalleNumeroCelular += 1;
                 }
                 else
                 {
@@ -2528,7 +2604,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             string itemIP = ((dgvDetalleLineaCelular.CurrentRow.Cells["chitemDetalleCelular"].Value != null | dgvDetalleLineaCelular.CurrentRow.Cells["chitemDetalleCelular"].Value.ToString().Trim() != string.Empty) ? (dgvDetalleLineaCelular.CurrentRow.Cells["chitemDetalleCelular"].Value.ToString()) : string.Empty);
                             if (dispositivoCodigo != 0 && itemIP != string.Empty)
                             {
-                                listadoLineaCelularAEliminar.Add( new SAS_SolicitudDeEquipamientoTecnologicoLineaCelular
+                                listadoLineaCelularAEliminar.Add(new SAS_SolicitudDeEquipamientoTecnologicoLineaCelular
                                 {
                                     idSolicitudEquipamientoTecnologico = dispositivoCodigo,
                                     item = itemIP,
@@ -2592,12 +2668,140 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void btnVerDispositivo_Click(object sender, EventArgs e)
         {
-
+            if (CodigoDispositivoHardware > 0)
+            {
+                DispositivosEdicion oFrm = new DispositivosEdicion(conection, CodigoDispositivoHardware, user2, companyId, privilege);
+                oFrm.Show();
+            }
         }
 
         private void btnVerDocumentoDeReferencia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvHardware_SelectionChanged(object sender, EventArgs e)
+        {
+            CodigoDispositivoHardware = 0;
+            if (dgvHardware != null && dgvHardware.Rows.Count > 0)
+            {
+                if (dgvHardware.CurrentRow != null)
+                {
+                    if (dgvHardware.CurrentRow.Cells["chCodigoERP"].Value != null)
+                    {
+                        if (dgvHardware.CurrentRow.Cells["chCodigoERP"].Value.ToString() != string.Empty)
+                        {
+                            CodigoDispositivoHardware = dgvHardware.CurrentRow.Cells["chCodigoERP"].Value != null ? Convert.ToInt32(dgvHardware.CurrentRow.Cells["chCodigoERP"].Value) : 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnVerLineaCelular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lineaCelular != string.Empty)
+                {
+                    VerLineaCelular();
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                return;
+            }
+        }
+
+        private void VerLineaCelular()
+        {
+            try
+            {
+                LineasCelulares ofrm = new LineasCelulares(conection, user2, companyId, privilege, lineaCelular);
+                ofrm.Show();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                return;
+            }
+        }
+
+        private void dgvSoftware_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CodigoDispositivoSoftware = 0;
+                if (dgvSoftware != null && dgvSoftware.Rows.Count > 0)
+                {
+                    if (dgvSoftware.CurrentRow != null)
+                    {
+                        if (dgvSoftware.CurrentRow.Cells["chidSoftware"].Value != null)
+                        {
+                            if (dgvSoftware.CurrentRow.Cells["chidSoftware"].Value.ToString() != string.Empty)
+                            {
+                                CodigoDispositivoSoftware = dgvSoftware.CurrentRow.Cells["chidSoftware"].Value != null ? Convert.ToInt32(dgvSoftware.CurrentRow.Cells["chidSoftware"].Value) : 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                return;
+            }
+        }
+
+        private void btnVerSoftWare_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CodigoDispositivoSoftware > 0)
+                {
+                    VerSoftware();
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                return;
+            }
+        }
+
+        private void VerSoftware()
+        {
+            try
+            {
+                TipoSoftware oFrm = new TipoSoftware(conection, user2, companyId, privilege, CodigoDispositivoSoftware);
+                oFrm.Show();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                return;
+            }
+        }
+
+        private void dgvDetalleLineaCelular_SelectionChanged(object sender, EventArgs e)
+        {
+            lineaCelular = string.Empty;
+            if (dgvDetalleLineaCelular != null && dgvDetalleLineaCelular.Rows.Count > 0)
+            {
+                if (dgvDetalleLineaCelular.CurrentRow != null)
+                {
+                    if (dgvDetalleLineaCelular.CurrentRow.Cells["chValorDetalleCelular"].Value != null)
+                    {
+                        if (dgvDetalleLineaCelular.CurrentRow.Cells["chValorDetalleCelular"].Value.ToString() != string.Empty)
+                        {
+                            lineaCelular = dgvDetalleLineaCelular.CurrentRow.Cells["chValorDetalleCelular"].Value != null ? Convert.ToString(dgvDetalleLineaCelular.CurrentRow.Cells["chValorDetalleCelular"].Value) : string.Empty;
+                        }
+                    }
+                }
+            }
         }
 
         private void btnDetalleAgregarLineaCelular_Click(object sender, EventArgs e)

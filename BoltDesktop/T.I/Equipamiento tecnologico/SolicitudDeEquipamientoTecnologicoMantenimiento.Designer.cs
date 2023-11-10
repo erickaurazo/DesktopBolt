@@ -30,39 +30,100 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolicitudDeEquipamientoTecnologicoMantenimiento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDetale = new System.Windows.Forms.GroupBox();
             this.tabControl = new Telerik.WinControls.UI.RadPageView();
             this.tabHardware = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDetalleCambiarEstadoHardware = new Telerik.WinControls.UI.RadButton();
+            this.btnDetalleQuitarHardware = new Telerik.WinControls.UI.RadButton();
             this.btnHardwareActualizarLista = new Telerik.WinControls.UI.RadButton();
+            this.btnDetalleAgregarHardware = new Telerik.WinControls.UI.RadButton();
             this.dgvHardware = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.chId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chIdHardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chCodigoERP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDispositivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chGlosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chActualizado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chElegido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chGeneraSolicitud = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chidReferenciaSoporteTecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chRequiereCapacitacion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.subMenuHardware = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnVerDispositivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVerDocumentoDeReferencia = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSoftware = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDetalleCambiarEstadoSoftware = new Telerik.WinControls.UI.RadButton();
+            this.btnDetalleQuitarSoftware = new Telerik.WinControls.UI.RadButton();
+            this.btnDetalleAgregarSoftware = new Telerik.WinControls.UI.RadButton();
             this.btnSoftwareActualizarListado = new Telerik.WinControls.UI.RadButton();
             this.dgvSoftware = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.chIdSolicitudSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chItemSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chidSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesdeSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHastaSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstadoSoftware = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chValorSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chGlosaSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chActualizadoSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chElegidoSoftware = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chPerfilDeAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPerfilAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chGeneraSolicitudSoft = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chidReferenciaSoporteFuncionalSoft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chRequiereCapacitacionSoft = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.subMenuSoftware = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnVerDocumentoReferenciaSoftware = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVerSoftWare = new System.Windows.Forms.ToolStripMenuItem();
             this.tabLineaCelular = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDetalleCambiarEstadoLineaCelular = new Telerik.WinControls.UI.RadButton();
             this.btnActualizarListaLineaCelular = new Telerik.WinControls.UI.RadButton();
+            this.btnDetalleQuitarLineaCelular = new Telerik.WinControls.UI.RadButton();
+            this.btnDetalleAgregarLineaCelular = new Telerik.WinControls.UI.RadButton();
             this.dgvDetalleLineaCelular = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
-            this.subMenuHardware = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chIdDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chitemDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chIdLineaDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesdeDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHastaDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstadoDetalleCelular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chValorDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chGlosaDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chActualizadoDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chElegidoDetalleCelular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chidreferenciaLineaCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chdocumentoReferenciaLineaCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subMenuCelular = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnVerDocumentoReferenciaCelular = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVerLineaCelular = new System.Windows.Forms.ToolStripMenuItem();
             this.gbDocumento = new System.Windows.Forms.GroupBox();
             this.txtValidar = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -156,96 +217,36 @@
             this.bgwRegistrar = new System.ComponentModel.BackgroundWorker();
             this.bgwFlujoAprobacion = new System.ComponentModel.BackgroundWorker();
             this.bgwNotify = new System.ComponentModel.BackgroundWorker();
-            this.btnDetalleCambiarEstadoHardware = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleQuitarHardware = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleAgregarHardware = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleCambiarEstadoSoftware = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleQuitarSoftware = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleAgregarSoftware = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleCambiarEstadoLineaCelular = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleQuitarLineaCelular = new Telerik.WinControls.UI.RadButton();
-            this.btnDetalleAgregarLineaCelular = new Telerik.WinControls.UI.RadButton();
-            this.chIdSolicitudSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chItemSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chidSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDesdeSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHastaSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstadoSoftware = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chValorSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chGlosaSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chActualizadoSoftware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chElegidoSoftware = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chPerfilDeAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chPerfilAcceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chGeneraSolicitudSoft = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chidReferenciaSoporteFuncionalSoft = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chRequiereCapacitacionSoft = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chIdHardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chCodigoERP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDispositivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chGlosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chActualizado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chElegido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chGeneraSolicitud = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chidReferenciaSoporteTecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chRequiereCapacitacion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnVerDispositivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVerDocumentoDeReferencia = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuSoftware = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnVerDocumentoReferenciaSoftware = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuCelular = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnVerDocumentoReferenciaCelular = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVerLineaCelular = new System.Windows.Forms.ToolStripMenuItem();
-            this.chIdDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chitemDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chIdLineaDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDesdeDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHastaDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstadoDetalleCelular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chValorDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chGlosaDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chActualizadoDetalleCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chElegidoDetalleCelular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chidreferenciaLineaCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chdocumentoReferenciaLineaCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDetale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabHardware.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoHardware)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarHardware)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHardwareActualizarLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarHardware)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHardware)).BeginInit();
+            this.subMenuHardware.SuspendLayout();
             this.tabSoftware.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoSoftware)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarSoftware)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarSoftware)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSoftwareActualizarListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoftware)).BeginInit();
+            this.subMenuSoftware.SuspendLayout();
             this.tabLineaCelular.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoLineaCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizarListaLineaCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarLineaCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarLineaCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleLineaCelular)).BeginInit();
-            this.subMenuHardware.SuspendLayout();
+            this.subMenuCelular.SuspendLayout();
             this.gbDocumento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.stsBarraEstado.SuspendLayout();
             this.gbDatosPersonal.SuspendLayout();
             this.gbUbicacion.SuspendLayout();
             this.gbJustificacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoHardware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarHardware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarHardware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoSoftware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarSoftware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarSoftware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoLineaCelular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarLineaCelular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarLineaCelular)).BeginInit();
-            this.subMenuSoftware.SuspendLayout();
-            this.subMenuCelular.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDetale
@@ -273,7 +274,7 @@
             this.tabControl.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.tabControl.Location = new System.Drawing.Point(15, 19);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedPage = this.tabSoftware;
+            this.tabControl.SelectedPage = this.tabLineaCelular;
             this.tabControl.Size = new System.Drawing.Size(1313, 291);
             this.tabControl.TabIndex = 1;
             this.tabControl.ThemeName = "Windows8";
@@ -296,6 +297,30 @@
             this.tabHardware.Size = new System.Drawing.Size(1303, 257);
             this.tabHardware.Text = "Hardware";
             // 
+            // btnDetalleCambiarEstadoHardware
+            // 
+            this.btnDetalleCambiarEstadoHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleCambiarEstadoHardware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstadoHardware.Image")));
+            this.btnDetalleCambiarEstadoHardware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleCambiarEstadoHardware.Location = new System.Drawing.Point(1209, 3);
+            this.btnDetalleCambiarEstadoHardware.Name = "btnDetalleCambiarEstadoHardware";
+            this.btnDetalleCambiarEstadoHardware.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleCambiarEstadoHardware.TabIndex = 205;
+            this.btnDetalleCambiarEstadoHardware.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleCambiarEstadoHardware.Click += new System.EventHandler(this.btnDetalleCambiarEstado_Click);
+            // 
+            // btnDetalleQuitarHardware
+            // 
+            this.btnDetalleQuitarHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleQuitarHardware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitarHardware.Image")));
+            this.btnDetalleQuitarHardware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleQuitarHardware.Location = new System.Drawing.Point(1271, 3);
+            this.btnDetalleQuitarHardware.Name = "btnDetalleQuitarHardware";
+            this.btnDetalleQuitarHardware.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleQuitarHardware.TabIndex = 204;
+            this.btnDetalleQuitarHardware.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleQuitarHardware.Click += new System.EventHandler(this.btnDetalleQuitar_Click);
+            // 
             // btnHardwareActualizarLista
             // 
             this.btnHardwareActualizarLista.Image = ((System.Drawing.Image)(resources.GetObject("btnHardwareActualizarLista.Image")));
@@ -308,28 +333,40 @@
             this.btnHardwareActualizarLista.ThemeName = "Windows8";
             this.btnHardwareActualizarLista.Click += new System.EventHandler(this.btnActualizarListadoHardware_Click);
             // 
+            // btnDetalleAgregarHardware
+            // 
+            this.btnDetalleAgregarHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleAgregarHardware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregarHardware.Image")));
+            this.btnDetalleAgregarHardware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleAgregarHardware.Location = new System.Drawing.Point(1240, 3);
+            this.btnDetalleAgregarHardware.Name = "btnDetalleAgregarHardware";
+            this.btnDetalleAgregarHardware.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleAgregarHardware.TabIndex = 203;
+            this.btnDetalleAgregarHardware.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleAgregarHardware.Click += new System.EventHandler(this.btnDetalleAgregar_Click);
+            // 
             // dgvHardware
             // 
             this.dgvHardware.AllowUserToAddRows = false;
             this.dgvHardware.AllowUserToDeleteRows = false;
             this.dgvHardware.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvHardware.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvHardware.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHardware.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvHardware.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHardware.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHardware.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHardware.ColumnHeadersHeight = 40;
             this.dgvHardware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvHardware.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -350,14 +387,14 @@
             this.chidReferenciaSoporteTecnico,
             this.chRequiereCapacitacion});
             this.dgvHardware.ContextMenuStrip = this.subMenuHardware;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHardware.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHardware.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvHardware.GridColor = System.Drawing.SystemColors.Control;
             this.dgvHardware.Location = new System.Drawing.Point(0, 32);
             this.dgvHardware.Name = "dgvHardware";
@@ -367,26 +404,174 @@
             this.dgvHardware.P_NombreColCorrelativa = null;
             this.dgvHardware.P_NombreTabla = null;
             this.dgvHardware.P_NumeroDigitos = 0;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHardware.RowHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHardware.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvHardware.RowHeadersWidth = 10;
             this.dgvHardware.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvHardware.RowsDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvHardware.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHardware.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvHardware.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvHardware.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvHardware.Size = new System.Drawing.Size(1299, 222);
             this.dgvHardware.TabIndex = 179;
+            this.dgvHardware.SelectionChanged += new System.EventHandler(this.dgvHardware_SelectionChanged);
             this.dgvHardware.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvHardware_KeyUp);
+            // 
+            // chId
+            // 
+            this.chId.DataPropertyName = "id";
+            this.chId.HeaderText = "id";
+            this.chId.Name = "chId";
+            this.chId.ReadOnly = true;
+            this.chId.Visible = false;
+            // 
+            // chItem
+            // 
+            this.chItem.DataPropertyName = "Item";
+            this.chItem.HeaderText = "Item";
+            this.chItem.Name = "chItem";
+            this.chItem.ReadOnly = true;
+            this.chItem.Width = 60;
+            // 
+            // chIdHardware
+            // 
+            this.chIdHardware.DataPropertyName = "idHardware";
+            this.chIdHardware.HeaderText = "IdHardware";
+            this.chIdHardware.Name = "chIdHardware";
+            this.chIdHardware.ReadOnly = true;
+            this.chIdHardware.Visible = false;
+            // 
+            // chHardware
+            // 
+            this.chHardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chHardware.DataPropertyName = "Hardware";
+            this.chHardware.HeaderText = "Hardware";
+            this.chHardware.Name = "chHardware";
+            this.chHardware.ReadOnly = true;
+            // 
+            // chCodigoERP
+            // 
+            this.chCodigoERP.DataPropertyName = "codigoERP";
+            this.chCodigoERP.HeaderText = "Cod. Erp";
+            this.chCodigoERP.Name = "chCodigoERP";
+            this.chCodigoERP.ReadOnly = true;
+            this.chCodigoERP.Width = 70;
+            // 
+            // chDispositivo
+            // 
+            this.chDispositivo.DataPropertyName = "Dispositivo";
+            this.chDispositivo.HeaderText = "Dispositivo";
+            this.chDispositivo.Name = "chDispositivo";
+            this.chDispositivo.ReadOnly = true;
+            this.chDispositivo.Width = 230;
+            // 
+            // chDesde
+            // 
+            this.chDesde.DataPropertyName = "Desde";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.chDesde.DefaultCellStyle = dataGridViewCellStyle3;
+            this.chDesde.HeaderText = "Desde";
+            this.chDesde.Name = "chDesde";
+            this.chDesde.Width = 70;
+            // 
+            // chHasta
+            // 
+            this.chHasta.DataPropertyName = "Hasta";
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.chHasta.DefaultCellStyle = dataGridViewCellStyle4;
+            this.chHasta.HeaderText = "Hasta";
+            this.chHasta.Name = "chHasta";
+            this.chHasta.Width = 70;
+            // 
+            // chEstado
+            // 
+            this.chEstado.DataPropertyName = "Estado";
+            this.chEstado.HeaderText = "Estado";
+            this.chEstado.Name = "chEstado";
+            this.chEstado.ReadOnly = true;
+            this.chEstado.Visible = false;
+            // 
+            // chValor
+            // 
+            this.chValor.DataPropertyName = "Valor";
+            this.chValor.HeaderText = "Valor";
+            this.chValor.Name = "chValor";
+            this.chValor.ReadOnly = true;
+            // 
+            // chGlosa
+            // 
+            this.chGlosa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chGlosa.DataPropertyName = "Glosa";
+            this.chGlosa.HeaderText = "Glosa";
+            this.chGlosa.Name = "chGlosa";
+            // 
+            // chActualizado
+            // 
+            this.chActualizado.DataPropertyName = "Actualizado";
+            this.chActualizado.HeaderText = "Actualizado";
+            this.chActualizado.Name = "chActualizado";
+            this.chActualizado.ReadOnly = true;
+            // 
+            // chElegido
+            // 
+            this.chElegido.DataPropertyName = "Elegido";
+            this.chElegido.HeaderText = "Elegido";
+            this.chElegido.Name = "chElegido";
+            this.chElegido.Width = 50;
+            // 
+            // chGeneraSolicitud
+            // 
+            this.chGeneraSolicitud.DataPropertyName = "GeneraSolicitud";
+            this.chGeneraSolicitud.HeaderText = "Genera Solicitud";
+            this.chGeneraSolicitud.Name = "chGeneraSolicitud";
+            // 
+            // chidReferenciaSoporteTecnico
+            // 
+            this.chidReferenciaSoporteTecnico.DataPropertyName = "idReferenciaSoporteTecnico";
+            this.chidReferenciaSoporteTecnico.HeaderText = "Cod. Ref";
+            this.chidReferenciaSoporteTecnico.Name = "chidReferenciaSoporteTecnico";
+            this.chidReferenciaSoporteTecnico.ReadOnly = true;
+            // 
+            // chRequiereCapacitacion
+            // 
+            this.chRequiereCapacitacion.DataPropertyName = "RequiereCapacitacion";
+            this.chRequiereCapacitacion.HeaderText = "Requiere Capacitación";
+            this.chRequiereCapacitacion.Name = "chRequiereCapacitacion";
+            // 
+            // subMenuHardware
+            // 
+            this.subMenuHardware.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnVerDispositivo,
+            this.btnVerDocumentoDeReferencia});
+            this.subMenuHardware.Name = "subMenu";
+            this.subMenuHardware.Size = new System.Drawing.Size(227, 48);
+            // 
+            // btnVerDispositivo
+            // 
+            this.btnVerDispositivo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDispositivo.Image")));
+            this.btnVerDispositivo.Name = "btnVerDispositivo";
+            this.btnVerDispositivo.Size = new System.Drawing.Size(226, 22);
+            this.btnVerDispositivo.Text = "Ver Dispositivo";
+            this.btnVerDispositivo.Click += new System.EventHandler(this.btnVerDispositivo_Click);
+            // 
+            // btnVerDocumentoDeReferencia
+            // 
+            this.btnVerDocumentoDeReferencia.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDocumentoDeReferencia.Image")));
+            this.btnVerDocumentoDeReferencia.Name = "btnVerDocumentoDeReferencia";
+            this.btnVerDocumentoDeReferencia.Size = new System.Drawing.Size(226, 22);
+            this.btnVerDocumentoDeReferencia.Text = "Ver documento de referencia";
+            this.btnVerDocumentoDeReferencia.Click += new System.EventHandler(this.btnVerDocumentoDeReferencia_Click);
             // 
             // tabSoftware
             // 
@@ -401,6 +586,42 @@
             this.tabSoftware.Size = new System.Drawing.Size(1303, 257);
             this.tabSoftware.Text = "Software";
             this.tabSoftware.Paint += new System.Windows.Forms.PaintEventHandler(this.tabSoftware_Paint);
+            // 
+            // btnDetalleCambiarEstadoSoftware
+            // 
+            this.btnDetalleCambiarEstadoSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleCambiarEstadoSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstadoSoftware.Image")));
+            this.btnDetalleCambiarEstadoSoftware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleCambiarEstadoSoftware.Location = new System.Drawing.Point(1211, 2);
+            this.btnDetalleCambiarEstadoSoftware.Name = "btnDetalleCambiarEstadoSoftware";
+            this.btnDetalleCambiarEstadoSoftware.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleCambiarEstadoSoftware.TabIndex = 185;
+            this.btnDetalleCambiarEstadoSoftware.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleCambiarEstadoSoftware.Click += new System.EventHandler(this.btnDetalleCambiarEstadoSoftware_Click);
+            // 
+            // btnDetalleQuitarSoftware
+            // 
+            this.btnDetalleQuitarSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleQuitarSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitarSoftware.Image")));
+            this.btnDetalleQuitarSoftware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleQuitarSoftware.Location = new System.Drawing.Point(1273, 2);
+            this.btnDetalleQuitarSoftware.Name = "btnDetalleQuitarSoftware";
+            this.btnDetalleQuitarSoftware.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleQuitarSoftware.TabIndex = 184;
+            this.btnDetalleQuitarSoftware.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleQuitarSoftware.Click += new System.EventHandler(this.btnDetalleQuitarSoftware_Click);
+            // 
+            // btnDetalleAgregarSoftware
+            // 
+            this.btnDetalleAgregarSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleAgregarSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregarSoftware.Image")));
+            this.btnDetalleAgregarSoftware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleAgregarSoftware.Location = new System.Drawing.Point(1242, 2);
+            this.btnDetalleAgregarSoftware.Name = "btnDetalleAgregarSoftware";
+            this.btnDetalleAgregarSoftware.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleAgregarSoftware.TabIndex = 183;
+            this.btnDetalleAgregarSoftware.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleAgregarSoftware.Click += new System.EventHandler(this.btnDetalleAgregarSoftware_Click);
             // 
             // btnSoftwareActualizarListado
             // 
@@ -419,23 +640,23 @@
             this.dgvSoftware.AllowUserToAddRows = false;
             this.dgvSoftware.AllowUserToDeleteRows = false;
             this.dgvSoftware.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSoftware.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSoftware.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSoftware.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSoftware.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSoftware.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSoftware.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSoftware.ColumnHeadersHeight = 40;
             this.dgvSoftware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSoftware.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -456,14 +677,14 @@
             this.chidReferenciaSoporteFuncionalSoft,
             this.chRequiereCapacitacionSoft});
             this.dgvSoftware.ContextMenuStrip = this.subMenuSoftware;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSoftware.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSoftware.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvSoftware.GridColor = System.Drawing.SystemColors.Control;
             this.dgvSoftware.Location = new System.Drawing.Point(0, 32);
             this.dgvSoftware.Name = "dgvSoftware";
@@ -473,20 +694,20 @@
             this.dgvSoftware.P_NombreColCorrelativa = null;
             this.dgvSoftware.P_NombreTabla = null;
             this.dgvSoftware.P_NumeroDigitos = 0;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSoftware.RowHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSoftware.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvSoftware.RowHeadersWidth = 10;
             this.dgvSoftware.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSoftware.RowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSoftware.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSoftware.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvSoftware.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvSoftware.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
@@ -497,9 +718,157 @@
             this.dgvSoftware.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoftware_CellEndEdit);
             this.dgvSoftware.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoftware_CellLeave);
             this.dgvSoftware.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoftware_CellValueChanged);
+            this.dgvSoftware.SelectionChanged += new System.EventHandler(this.dgvSoftware_SelectionChanged);
             this.dgvSoftware.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvSoftware_KeyDown);
             this.dgvSoftware.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvSoftware_KeyUp);
             this.dgvSoftware.Leave += new System.EventHandler(this.dgvSoftware_Leave);
+            // 
+            // chIdSolicitudSoftware
+            // 
+            this.chIdSolicitudSoftware.DataPropertyName = "id";
+            this.chIdSolicitudSoftware.HeaderText = "chId";
+            this.chIdSolicitudSoftware.Name = "chIdSolicitudSoftware";
+            this.chIdSolicitudSoftware.ReadOnly = true;
+            this.chIdSolicitudSoftware.Visible = false;
+            // 
+            // chItemSoftware
+            // 
+            this.chItemSoftware.DataPropertyName = "item";
+            this.chItemSoftware.HeaderText = "Item";
+            this.chItemSoftware.Name = "chItemSoftware";
+            this.chItemSoftware.ReadOnly = true;
+            // 
+            // chidSoftware
+            // 
+            this.chidSoftware.DataPropertyName = "idSoftware";
+            this.chidSoftware.HeaderText = "IdSoftware";
+            this.chidSoftware.Name = "chidSoftware";
+            this.chidSoftware.ReadOnly = true;
+            this.chidSoftware.Visible = false;
+            // 
+            // chSoftware
+            // 
+            this.chSoftware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chSoftware.DataPropertyName = "Software";
+            this.chSoftware.HeaderText = "Software";
+            this.chSoftware.Name = "chSoftware";
+            this.chSoftware.ReadOnly = true;
+            // 
+            // chDesdeSoftware
+            // 
+            this.chDesdeSoftware.DataPropertyName = "Desde";
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.chDesdeSoftware.DefaultCellStyle = dataGridViewCellStyle10;
+            this.chDesdeSoftware.HeaderText = "Desde";
+            this.chDesdeSoftware.Name = "chDesdeSoftware";
+            // 
+            // chHastaSoftware
+            // 
+            this.chHastaSoftware.DataPropertyName = "Hasta";
+            dataGridViewCellStyle11.Format = "d";
+            dataGridViewCellStyle11.NullValue = null;
+            this.chHastaSoftware.DefaultCellStyle = dataGridViewCellStyle11;
+            this.chHastaSoftware.HeaderText = "Hasta";
+            this.chHastaSoftware.Name = "chHastaSoftware";
+            // 
+            // chEstadoSoftware
+            // 
+            this.chEstadoSoftware.DataPropertyName = "Estado";
+            this.chEstadoSoftware.HeaderText = "Estado";
+            this.chEstadoSoftware.Name = "chEstadoSoftware";
+            this.chEstadoSoftware.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.chEstadoSoftware.Visible = false;
+            // 
+            // chValorSoftware
+            // 
+            this.chValorSoftware.DataPropertyName = "Valor";
+            this.chValorSoftware.HeaderText = "Valor";
+            this.chValorSoftware.Name = "chValorSoftware";
+            this.chValorSoftware.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.chValorSoftware.Visible = false;
+            // 
+            // chGlosaSoftware
+            // 
+            this.chGlosaSoftware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chGlosaSoftware.DataPropertyName = "Glosa";
+            this.chGlosaSoftware.HeaderText = "Glosa";
+            this.chGlosaSoftware.Name = "chGlosaSoftware";
+            // 
+            // chActualizadoSoftware
+            // 
+            this.chActualizadoSoftware.DataPropertyName = "Actualizado";
+            this.chActualizadoSoftware.HeaderText = "Actualizado";
+            this.chActualizadoSoftware.Name = "chActualizadoSoftware";
+            this.chActualizadoSoftware.ReadOnly = true;
+            this.chActualizadoSoftware.Visible = false;
+            // 
+            // chElegidoSoftware
+            // 
+            this.chElegidoSoftware.DataPropertyName = "Elegido";
+            this.chElegidoSoftware.HeaderText = "Elegido";
+            this.chElegidoSoftware.Name = "chElegidoSoftware";
+            // 
+            // chPerfilDeAcceso
+            // 
+            this.chPerfilDeAcceso.DataPropertyName = "PerfilDeAcceso";
+            this.chPerfilDeAcceso.HeaderText = "PerfilDeAcceso";
+            this.chPerfilDeAcceso.Name = "chPerfilDeAcceso";
+            this.chPerfilDeAcceso.ReadOnly = true;
+            this.chPerfilDeAcceso.Visible = false;
+            // 
+            // chPerfilAcceso
+            // 
+            this.chPerfilAcceso.DataPropertyName = "perfilAccesoDescripcion";
+            this.chPerfilAcceso.HeaderText = "Perfil";
+            this.chPerfilAcceso.Name = "chPerfilAcceso";
+            this.chPerfilAcceso.ReadOnly = true;
+            // 
+            // chGeneraSolicitudSoft
+            // 
+            this.chGeneraSolicitudSoft.DataPropertyName = "GeneraSolicitud";
+            this.chGeneraSolicitudSoft.HeaderText = "Genera Solicitud";
+            this.chGeneraSolicitudSoft.Name = "chGeneraSolicitudSoft";
+            this.chGeneraSolicitudSoft.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chGeneraSolicitudSoft.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // chidReferenciaSoporteFuncionalSoft
+            // 
+            this.chidReferenciaSoporteFuncionalSoft.DataPropertyName = "idReferenciaSoporteFuncional";
+            this.chidReferenciaSoporteFuncionalSoft.HeaderText = "Cod. Ref.";
+            this.chidReferenciaSoporteFuncionalSoft.Name = "chidReferenciaSoporteFuncionalSoft";
+            this.chidReferenciaSoporteFuncionalSoft.ReadOnly = true;
+            // 
+            // chRequiereCapacitacionSoft
+            // 
+            this.chRequiereCapacitacionSoft.DataPropertyName = "RequiereCapacitacion";
+            this.chRequiereCapacitacionSoft.HeaderText = "Req. Capacitación";
+            this.chRequiereCapacitacionSoft.Name = "chRequiereCapacitacionSoft";
+            this.chRequiereCapacitacionSoft.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chRequiereCapacitacionSoft.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // subMenuSoftware
+            // 
+            this.subMenuSoftware.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnVerDocumentoReferenciaSoftware,
+            this.btnVerSoftWare});
+            this.subMenuSoftware.Name = "subMenu";
+            this.subMenuSoftware.Size = new System.Drawing.Size(227, 48);
+            // 
+            // btnVerDocumentoReferenciaSoftware
+            // 
+            this.btnVerDocumentoReferenciaSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDocumentoReferenciaSoftware.Image")));
+            this.btnVerDocumentoReferenciaSoftware.Name = "btnVerDocumentoReferenciaSoftware";
+            this.btnVerDocumentoReferenciaSoftware.Size = new System.Drawing.Size(226, 22);
+            this.btnVerDocumentoReferenciaSoftware.Text = "Ver documento de referencia";
+            // 
+            // btnVerSoftWare
+            // 
+            this.btnVerSoftWare.Image = ((System.Drawing.Image)(resources.GetObject("btnVerSoftWare.Image")));
+            this.btnVerSoftWare.Name = "btnVerSoftWare";
+            this.btnVerSoftWare.Size = new System.Drawing.Size(226, 22);
+            this.btnVerSoftWare.Text = "Ver Software";
+            this.btnVerSoftWare.Click += new System.EventHandler(this.btnVerSoftWare_Click);
             // 
             // tabLineaCelular
             // 
@@ -514,6 +883,18 @@
             this.tabLineaCelular.Size = new System.Drawing.Size(1303, 257);
             this.tabLineaCelular.Text = "Línea celular";
             // 
+            // btnDetalleCambiarEstadoLineaCelular
+            // 
+            this.btnDetalleCambiarEstadoLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleCambiarEstadoLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstadoLineaCelular.Image")));
+            this.btnDetalleCambiarEstadoLineaCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleCambiarEstadoLineaCelular.Location = new System.Drawing.Point(1213, 0);
+            this.btnDetalleCambiarEstadoLineaCelular.Name = "btnDetalleCambiarEstadoLineaCelular";
+            this.btnDetalleCambiarEstadoLineaCelular.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleCambiarEstadoLineaCelular.TabIndex = 205;
+            this.btnDetalleCambiarEstadoLineaCelular.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleCambiarEstadoLineaCelular.Click += new System.EventHandler(this.btnDetalleCambiarEstadoLineaCelular_Click);
+            // 
             // btnActualizarListaLineaCelular
             // 
             this.btnActualizarListaLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarListaLineaCelular.Image")));
@@ -525,28 +906,52 @@
             this.btnActualizarListaLineaCelular.ThemeName = "Windows8";
             this.btnActualizarListaLineaCelular.Click += new System.EventHandler(this.btnActualizarListaLineaCelular_Click);
             // 
+            // btnDetalleQuitarLineaCelular
+            // 
+            this.btnDetalleQuitarLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleQuitarLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitarLineaCelular.Image")));
+            this.btnDetalleQuitarLineaCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleQuitarLineaCelular.Location = new System.Drawing.Point(1275, 0);
+            this.btnDetalleQuitarLineaCelular.Name = "btnDetalleQuitarLineaCelular";
+            this.btnDetalleQuitarLineaCelular.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleQuitarLineaCelular.TabIndex = 204;
+            this.btnDetalleQuitarLineaCelular.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleQuitarLineaCelular.Click += new System.EventHandler(this.btnDetalleQuitarLineaCelular_Click);
+            // 
+            // btnDetalleAgregarLineaCelular
+            // 
+            this.btnDetalleAgregarLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleAgregarLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregarLineaCelular.Image")));
+            this.btnDetalleAgregarLineaCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDetalleAgregarLineaCelular.Location = new System.Drawing.Point(1244, 0);
+            this.btnDetalleAgregarLineaCelular.Name = "btnDetalleAgregarLineaCelular";
+            this.btnDetalleAgregarLineaCelular.Size = new System.Drawing.Size(25, 26);
+            this.btnDetalleAgregarLineaCelular.TabIndex = 203;
+            this.btnDetalleAgregarLineaCelular.ThemeName = "VisualStudio2012Light";
+            this.btnDetalleAgregarLineaCelular.Click += new System.EventHandler(this.btnDetalleAgregarLineaCelular_Click);
+            // 
             // dgvDetalleLineaCelular
             // 
             this.dgvDetalleLineaCelular.AllowUserToAddRows = false;
             this.dgvDetalleLineaCelular.AllowUserToDeleteRows = false;
             this.dgvDetalleLineaCelular.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalleLineaCelular.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleLineaCelular.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvDetalleLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDetalleLineaCelular.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDetalleLineaCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleLineaCelular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleLineaCelular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvDetalleLineaCelular.ColumnHeadersHeight = 40;
             this.dgvDetalleLineaCelular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDetalleLineaCelular.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -562,14 +967,15 @@
             this.chElegidoDetalleCelular,
             this.chidreferenciaLineaCelular,
             this.chdocumentoReferenciaLineaCelular});
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleLineaCelular.DefaultCellStyle = dataGridViewCellStyle30;
+            this.dgvDetalleLineaCelular.ContextMenuStrip = this.subMenuCelular;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleLineaCelular.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDetalleLineaCelular.GridColor = System.Drawing.SystemColors.Control;
             this.dgvDetalleLineaCelular.Location = new System.Drawing.Point(2, 30);
             this.dgvDetalleLineaCelular.Name = "dgvDetalleLineaCelular";
@@ -579,34 +985,143 @@
             this.dgvDetalleLineaCelular.P_NombreColCorrelativa = null;
             this.dgvDetalleLineaCelular.P_NombreTabla = null;
             this.dgvDetalleLineaCelular.P_NumeroDigitos = 0;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleLineaCelular.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleLineaCelular.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvDetalleLineaCelular.RowHeadersWidth = 10;
             this.dgvDetalleLineaCelular.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalleLineaCelular.RowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleLineaCelular.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvDetalleLineaCelular.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetalleLineaCelular.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetalleLineaCelular.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvDetalleLineaCelular.Size = new System.Drawing.Size(1299, 226);
             this.dgvDetalleLineaCelular.TabIndex = 181;
+            this.dgvDetalleLineaCelular.SelectionChanged += new System.EventHandler(this.dgvDetalleLineaCelular_SelectionChanged);
             this.dgvDetalleLineaCelular.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetalleLineaCelular_KeyUp);
             // 
-            // subMenuHardware
+            // chIdDetalleCelular
             // 
-            this.subMenuHardware.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnVerDispositivo,
-            this.btnVerDocumentoDeReferencia});
-            this.subMenuHardware.Name = "subMenu";
-            this.subMenuHardware.Size = new System.Drawing.Size(227, 48);
+            this.chIdDetalleCelular.DataPropertyName = "idSolicitudEquipamientoTecnologico";
+            this.chIdDetalleCelular.HeaderText = "id";
+            this.chIdDetalleCelular.Name = "chIdDetalleCelular";
+            this.chIdDetalleCelular.ReadOnly = true;
+            this.chIdDetalleCelular.Visible = false;
+            // 
+            // chitemDetalleCelular
+            // 
+            this.chitemDetalleCelular.DataPropertyName = "item";
+            this.chitemDetalleCelular.HeaderText = "Item";
+            this.chitemDetalleCelular.Name = "chitemDetalleCelular";
+            this.chitemDetalleCelular.ReadOnly = true;
+            // 
+            // chIdLineaDetalleCelular
+            // 
+            this.chIdLineaDetalleCelular.DataPropertyName = "idLinea";
+            this.chIdLineaDetalleCelular.HeaderText = "IdLinea";
+            this.chIdLineaDetalleCelular.Name = "chIdLineaDetalleCelular";
+            this.chIdLineaDetalleCelular.ReadOnly = true;
+            this.chIdLineaDetalleCelular.Visible = false;
+            // 
+            // chDesdeDetalleCelular
+            // 
+            this.chDesdeDetalleCelular.DataPropertyName = "Desde";
+            dataGridViewCellStyle17.Format = "d";
+            dataGridViewCellStyle17.NullValue = null;
+            this.chDesdeDetalleCelular.DefaultCellStyle = dataGridViewCellStyle17;
+            this.chDesdeDetalleCelular.HeaderText = "Desde";
+            this.chDesdeDetalleCelular.Name = "chDesdeDetalleCelular";
+            // 
+            // chHastaDetalleCelular
+            // 
+            this.chHastaDetalleCelular.DataPropertyName = "Hasta";
+            dataGridViewCellStyle18.Format = "d";
+            dataGridViewCellStyle18.NullValue = null;
+            this.chHastaDetalleCelular.DefaultCellStyle = dataGridViewCellStyle18;
+            this.chHastaDetalleCelular.HeaderText = "Hasta";
+            this.chHastaDetalleCelular.Name = "chHastaDetalleCelular";
+            // 
+            // chEstadoDetalleCelular
+            // 
+            this.chEstadoDetalleCelular.DataPropertyName = "Estado";
+            this.chEstadoDetalleCelular.HeaderText = "Estado";
+            this.chEstadoDetalleCelular.Name = "chEstadoDetalleCelular";
+            this.chEstadoDetalleCelular.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.chEstadoDetalleCelular.Visible = false;
+            // 
+            // chValorDetalleCelular
+            // 
+            this.chValorDetalleCelular.DataPropertyName = "Valor";
+            this.chValorDetalleCelular.HeaderText = "Valor";
+            this.chValorDetalleCelular.MaxInputLength = 9;
+            this.chValorDetalleCelular.Name = "chValorDetalleCelular";
+            this.chValorDetalleCelular.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // chGlosaDetalleCelular
+            // 
+            this.chGlosaDetalleCelular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chGlosaDetalleCelular.DataPropertyName = "Glosa";
+            this.chGlosaDetalleCelular.HeaderText = "Glosa";
+            this.chGlosaDetalleCelular.Name = "chGlosaDetalleCelular";
+            // 
+            // chActualizadoDetalleCelular
+            // 
+            this.chActualizadoDetalleCelular.DataPropertyName = "Actualizado";
+            this.chActualizadoDetalleCelular.HeaderText = "Actualizado";
+            this.chActualizadoDetalleCelular.Name = "chActualizadoDetalleCelular";
+            this.chActualizadoDetalleCelular.ReadOnly = true;
+            this.chActualizadoDetalleCelular.Visible = false;
+            // 
+            // chElegidoDetalleCelular
+            // 
+            this.chElegidoDetalleCelular.DataPropertyName = "Elegido";
+            this.chElegidoDetalleCelular.HeaderText = "Elegido";
+            this.chElegidoDetalleCelular.Name = "chElegidoDetalleCelular";
+            // 
+            // chidreferenciaLineaCelular
+            // 
+            this.chidreferenciaLineaCelular.DataPropertyName = "idreferencia";
+            this.chidreferenciaLineaCelular.HeaderText = "idreferencia";
+            this.chidreferenciaLineaCelular.Name = "chidreferenciaLineaCelular";
+            this.chidreferenciaLineaCelular.ReadOnly = true;
+            this.chidreferenciaLineaCelular.Visible = false;
+            // 
+            // chdocumentoReferenciaLineaCelular
+            // 
+            this.chdocumentoReferenciaLineaCelular.DataPropertyName = "idreferencia";
+            this.chdocumentoReferenciaLineaCelular.HeaderText = "Referencia";
+            this.chdocumentoReferenciaLineaCelular.Name = "chdocumentoReferenciaLineaCelular";
+            this.chdocumentoReferenciaLineaCelular.ReadOnly = true;
+            // 
+            // subMenuCelular
+            // 
+            this.subMenuCelular.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnVerDocumentoReferenciaCelular,
+            this.btnVerLineaCelular});
+            this.subMenuCelular.Name = "subMenu";
+            this.subMenuCelular.Size = new System.Drawing.Size(227, 48);
+            // 
+            // btnVerDocumentoReferenciaCelular
+            // 
+            this.btnVerDocumentoReferenciaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDocumentoReferenciaCelular.Image")));
+            this.btnVerDocumentoReferenciaCelular.Name = "btnVerDocumentoReferenciaCelular";
+            this.btnVerDocumentoReferenciaCelular.Size = new System.Drawing.Size(226, 22);
+            this.btnVerDocumentoReferenciaCelular.Text = "Ver documento de referencia";
+            // 
+            // btnVerLineaCelular
+            // 
+            this.btnVerLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnVerLineaCelular.Image")));
+            this.btnVerLineaCelular.Name = "btnVerLineaCelular";
+            this.btnVerLineaCelular.Size = new System.Drawing.Size(226, 22);
+            this.btnVerLineaCelular.Text = "Ver linea celular";
+            this.btnVerLineaCelular.Click += new System.EventHandler(this.btnVerLineaCelular_Click);
             // 
             // gbDocumento
             // 
@@ -1792,504 +2307,6 @@
             this.bgwNotify.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwNotify_DoWork);
             this.bgwNotify.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwNotify_RunWorkerCompleted);
             // 
-            // btnDetalleCambiarEstadoHardware
-            // 
-            this.btnDetalleCambiarEstadoHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleCambiarEstadoHardware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstadoHardware.Image")));
-            this.btnDetalleCambiarEstadoHardware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleCambiarEstadoHardware.Location = new System.Drawing.Point(1209, 3);
-            this.btnDetalleCambiarEstadoHardware.Name = "btnDetalleCambiarEstadoHardware";
-            this.btnDetalleCambiarEstadoHardware.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleCambiarEstadoHardware.TabIndex = 205;
-            this.btnDetalleCambiarEstadoHardware.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleCambiarEstadoHardware.Click += new System.EventHandler(this.btnDetalleCambiarEstado_Click);
-            // 
-            // btnDetalleQuitarHardware
-            // 
-            this.btnDetalleQuitarHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleQuitarHardware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitarHardware.Image")));
-            this.btnDetalleQuitarHardware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleQuitarHardware.Location = new System.Drawing.Point(1271, 3);
-            this.btnDetalleQuitarHardware.Name = "btnDetalleQuitarHardware";
-            this.btnDetalleQuitarHardware.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleQuitarHardware.TabIndex = 204;
-            this.btnDetalleQuitarHardware.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleQuitarHardware.Click += new System.EventHandler(this.btnDetalleQuitar_Click);
-            // 
-            // btnDetalleAgregarHardware
-            // 
-            this.btnDetalleAgregarHardware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleAgregarHardware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregarHardware.Image")));
-            this.btnDetalleAgregarHardware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleAgregarHardware.Location = new System.Drawing.Point(1240, 3);
-            this.btnDetalleAgregarHardware.Name = "btnDetalleAgregarHardware";
-            this.btnDetalleAgregarHardware.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleAgregarHardware.TabIndex = 203;
-            this.btnDetalleAgregarHardware.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleAgregarHardware.Click += new System.EventHandler(this.btnDetalleAgregar_Click);
-            // 
-            // btnDetalleCambiarEstadoSoftware
-            // 
-            this.btnDetalleCambiarEstadoSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleCambiarEstadoSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstadoSoftware.Image")));
-            this.btnDetalleCambiarEstadoSoftware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleCambiarEstadoSoftware.Location = new System.Drawing.Point(1211, 2);
-            this.btnDetalleCambiarEstadoSoftware.Name = "btnDetalleCambiarEstadoSoftware";
-            this.btnDetalleCambiarEstadoSoftware.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleCambiarEstadoSoftware.TabIndex = 185;
-            this.btnDetalleCambiarEstadoSoftware.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleCambiarEstadoSoftware.Click += new System.EventHandler(this.btnDetalleCambiarEstadoSoftware_Click);
-            // 
-            // btnDetalleQuitarSoftware
-            // 
-            this.btnDetalleQuitarSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleQuitarSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitarSoftware.Image")));
-            this.btnDetalleQuitarSoftware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleQuitarSoftware.Location = new System.Drawing.Point(1273, 2);
-            this.btnDetalleQuitarSoftware.Name = "btnDetalleQuitarSoftware";
-            this.btnDetalleQuitarSoftware.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleQuitarSoftware.TabIndex = 184;
-            this.btnDetalleQuitarSoftware.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleQuitarSoftware.Click += new System.EventHandler(this.btnDetalleQuitarSoftware_Click);
-            // 
-            // btnDetalleAgregarSoftware
-            // 
-            this.btnDetalleAgregarSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleAgregarSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregarSoftware.Image")));
-            this.btnDetalleAgregarSoftware.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleAgregarSoftware.Location = new System.Drawing.Point(1242, 2);
-            this.btnDetalleAgregarSoftware.Name = "btnDetalleAgregarSoftware";
-            this.btnDetalleAgregarSoftware.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleAgregarSoftware.TabIndex = 183;
-            this.btnDetalleAgregarSoftware.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleAgregarSoftware.Click += new System.EventHandler(this.btnDetalleAgregarSoftware_Click);
-            // 
-            // btnDetalleCambiarEstadoLineaCelular
-            // 
-            this.btnDetalleCambiarEstadoLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleCambiarEstadoLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstadoLineaCelular.Image")));
-            this.btnDetalleCambiarEstadoLineaCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleCambiarEstadoLineaCelular.Location = new System.Drawing.Point(1213, 0);
-            this.btnDetalleCambiarEstadoLineaCelular.Name = "btnDetalleCambiarEstadoLineaCelular";
-            this.btnDetalleCambiarEstadoLineaCelular.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleCambiarEstadoLineaCelular.TabIndex = 205;
-            this.btnDetalleCambiarEstadoLineaCelular.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleCambiarEstadoLineaCelular.Click += new System.EventHandler(this.btnDetalleCambiarEstadoLineaCelular_Click);
-            // 
-            // btnDetalleQuitarLineaCelular
-            // 
-            this.btnDetalleQuitarLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleQuitarLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitarLineaCelular.Image")));
-            this.btnDetalleQuitarLineaCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleQuitarLineaCelular.Location = new System.Drawing.Point(1275, 0);
-            this.btnDetalleQuitarLineaCelular.Name = "btnDetalleQuitarLineaCelular";
-            this.btnDetalleQuitarLineaCelular.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleQuitarLineaCelular.TabIndex = 204;
-            this.btnDetalleQuitarLineaCelular.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleQuitarLineaCelular.Click += new System.EventHandler(this.btnDetalleQuitarLineaCelular_Click);
-            // 
-            // btnDetalleAgregarLineaCelular
-            // 
-            this.btnDetalleAgregarLineaCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleAgregarLineaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregarLineaCelular.Image")));
-            this.btnDetalleAgregarLineaCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleAgregarLineaCelular.Location = new System.Drawing.Point(1244, 0);
-            this.btnDetalleAgregarLineaCelular.Name = "btnDetalleAgregarLineaCelular";
-            this.btnDetalleAgregarLineaCelular.Size = new System.Drawing.Size(25, 26);
-            this.btnDetalleAgregarLineaCelular.TabIndex = 203;
-            this.btnDetalleAgregarLineaCelular.ThemeName = "VisualStudio2012Light";
-            this.btnDetalleAgregarLineaCelular.Click += new System.EventHandler(this.btnDetalleAgregarLineaCelular_Click);
-            // 
-            // chIdSolicitudSoftware
-            // 
-            this.chIdSolicitudSoftware.DataPropertyName = "id";
-            this.chIdSolicitudSoftware.HeaderText = "chId";
-            this.chIdSolicitudSoftware.Name = "chIdSolicitudSoftware";
-            this.chIdSolicitudSoftware.ReadOnly = true;
-            this.chIdSolicitudSoftware.Visible = false;
-            // 
-            // chItemSoftware
-            // 
-            this.chItemSoftware.DataPropertyName = "item";
-            this.chItemSoftware.HeaderText = "Item";
-            this.chItemSoftware.Name = "chItemSoftware";
-            this.chItemSoftware.ReadOnly = true;
-            // 
-            // chidSoftware
-            // 
-            this.chidSoftware.DataPropertyName = "idSoftware";
-            this.chidSoftware.HeaderText = "IdSoftware";
-            this.chidSoftware.Name = "chidSoftware";
-            this.chidSoftware.ReadOnly = true;
-            this.chidSoftware.Visible = false;
-            // 
-            // chSoftware
-            // 
-            this.chSoftware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chSoftware.DataPropertyName = "Software";
-            this.chSoftware.HeaderText = "Software";
-            this.chSoftware.Name = "chSoftware";
-            this.chSoftware.ReadOnly = true;
-            // 
-            // chDesdeSoftware
-            // 
-            this.chDesdeSoftware.DataPropertyName = "Desde";
-            dataGridViewCellStyle26.Format = "d";
-            dataGridViewCellStyle26.NullValue = null;
-            this.chDesdeSoftware.DefaultCellStyle = dataGridViewCellStyle26;
-            this.chDesdeSoftware.HeaderText = "Desde";
-            this.chDesdeSoftware.Name = "chDesdeSoftware";
-            // 
-            // chHastaSoftware
-            // 
-            this.chHastaSoftware.DataPropertyName = "Hasta";
-            dataGridViewCellStyle27.Format = "d";
-            dataGridViewCellStyle27.NullValue = null;
-            this.chHastaSoftware.DefaultCellStyle = dataGridViewCellStyle27;
-            this.chHastaSoftware.HeaderText = "Hasta";
-            this.chHastaSoftware.Name = "chHastaSoftware";
-            // 
-            // chEstadoSoftware
-            // 
-            this.chEstadoSoftware.DataPropertyName = "Estado";
-            this.chEstadoSoftware.HeaderText = "Estado";
-            this.chEstadoSoftware.Name = "chEstadoSoftware";
-            this.chEstadoSoftware.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.chEstadoSoftware.Visible = false;
-            // 
-            // chValorSoftware
-            // 
-            this.chValorSoftware.DataPropertyName = "Valor";
-            this.chValorSoftware.HeaderText = "Valor";
-            this.chValorSoftware.Name = "chValorSoftware";
-            this.chValorSoftware.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.chValorSoftware.Visible = false;
-            // 
-            // chGlosaSoftware
-            // 
-            this.chGlosaSoftware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chGlosaSoftware.DataPropertyName = "Glosa";
-            this.chGlosaSoftware.HeaderText = "Glosa";
-            this.chGlosaSoftware.Name = "chGlosaSoftware";
-            // 
-            // chActualizadoSoftware
-            // 
-            this.chActualizadoSoftware.DataPropertyName = "Actualizado";
-            this.chActualizadoSoftware.HeaderText = "Actualizado";
-            this.chActualizadoSoftware.Name = "chActualizadoSoftware";
-            this.chActualizadoSoftware.ReadOnly = true;
-            this.chActualizadoSoftware.Visible = false;
-            // 
-            // chElegidoSoftware
-            // 
-            this.chElegidoSoftware.DataPropertyName = "Elegido";
-            this.chElegidoSoftware.HeaderText = "Elegido";
-            this.chElegidoSoftware.Name = "chElegidoSoftware";
-            // 
-            // chPerfilDeAcceso
-            // 
-            this.chPerfilDeAcceso.DataPropertyName = "PerfilDeAcceso";
-            this.chPerfilDeAcceso.HeaderText = "PerfilDeAcceso";
-            this.chPerfilDeAcceso.Name = "chPerfilDeAcceso";
-            this.chPerfilDeAcceso.ReadOnly = true;
-            this.chPerfilDeAcceso.Visible = false;
-            // 
-            // chPerfilAcceso
-            // 
-            this.chPerfilAcceso.DataPropertyName = "perfilAccesoDescripcion";
-            this.chPerfilAcceso.HeaderText = "Perfil";
-            this.chPerfilAcceso.Name = "chPerfilAcceso";
-            this.chPerfilAcceso.ReadOnly = true;
-            // 
-            // chGeneraSolicitudSoft
-            // 
-            this.chGeneraSolicitudSoft.DataPropertyName = "GeneraSolicitud";
-            this.chGeneraSolicitudSoft.HeaderText = "Genera Solicitud";
-            this.chGeneraSolicitudSoft.Name = "chGeneraSolicitudSoft";
-            this.chGeneraSolicitudSoft.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chGeneraSolicitudSoft.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // chidReferenciaSoporteFuncionalSoft
-            // 
-            this.chidReferenciaSoporteFuncionalSoft.DataPropertyName = "idReferenciaSoporteFuncional";
-            this.chidReferenciaSoporteFuncionalSoft.HeaderText = "Cod. Ref.";
-            this.chidReferenciaSoporteFuncionalSoft.Name = "chidReferenciaSoporteFuncionalSoft";
-            this.chidReferenciaSoporteFuncionalSoft.ReadOnly = true;
-            // 
-            // chRequiereCapacitacionSoft
-            // 
-            this.chRequiereCapacitacionSoft.DataPropertyName = "RequiereCapacitacion";
-            this.chRequiereCapacitacionSoft.HeaderText = "Req. Capacitación";
-            this.chRequiereCapacitacionSoft.Name = "chRequiereCapacitacionSoft";
-            this.chRequiereCapacitacionSoft.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chRequiereCapacitacionSoft.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // chId
-            // 
-            this.chId.DataPropertyName = "id";
-            this.chId.HeaderText = "id";
-            this.chId.Name = "chId";
-            this.chId.ReadOnly = true;
-            this.chId.Visible = false;
-            // 
-            // chItem
-            // 
-            this.chItem.DataPropertyName = "Item";
-            this.chItem.HeaderText = "Item";
-            this.chItem.Name = "chItem";
-            this.chItem.ReadOnly = true;
-            this.chItem.Width = 60;
-            // 
-            // chIdHardware
-            // 
-            this.chIdHardware.DataPropertyName = "idHardware";
-            this.chIdHardware.HeaderText = "IdHardware";
-            this.chIdHardware.Name = "chIdHardware";
-            this.chIdHardware.ReadOnly = true;
-            this.chIdHardware.Visible = false;
-            // 
-            // chHardware
-            // 
-            this.chHardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chHardware.DataPropertyName = "Hardware";
-            this.chHardware.HeaderText = "Hardware";
-            this.chHardware.Name = "chHardware";
-            this.chHardware.ReadOnly = true;
-            // 
-            // chCodigoERP
-            // 
-            this.chCodigoERP.DataPropertyName = "codigoERP";
-            this.chCodigoERP.HeaderText = "Cod. Erp";
-            this.chCodigoERP.Name = "chCodigoERP";
-            this.chCodigoERP.ReadOnly = true;
-            this.chCodigoERP.Width = 70;
-            // 
-            // chDispositivo
-            // 
-            this.chDispositivo.DataPropertyName = "Dispositivo";
-            this.chDispositivo.HeaderText = "Dispositivo";
-            this.chDispositivo.Name = "chDispositivo";
-            this.chDispositivo.ReadOnly = true;
-            this.chDispositivo.Width = 230;
-            // 
-            // chDesde
-            // 
-            this.chDesde.DataPropertyName = "Desde";
-            dataGridViewCellStyle35.Format = "d";
-            dataGridViewCellStyle35.NullValue = null;
-            this.chDesde.DefaultCellStyle = dataGridViewCellStyle35;
-            this.chDesde.HeaderText = "Desde";
-            this.chDesde.Name = "chDesde";
-            this.chDesde.Width = 70;
-            // 
-            // chHasta
-            // 
-            this.chHasta.DataPropertyName = "Hasta";
-            dataGridViewCellStyle36.Format = "d";
-            dataGridViewCellStyle36.NullValue = null;
-            this.chHasta.DefaultCellStyle = dataGridViewCellStyle36;
-            this.chHasta.HeaderText = "Hasta";
-            this.chHasta.Name = "chHasta";
-            this.chHasta.Width = 70;
-            // 
-            // chEstado
-            // 
-            this.chEstado.DataPropertyName = "Estado";
-            this.chEstado.HeaderText = "Estado";
-            this.chEstado.Name = "chEstado";
-            this.chEstado.ReadOnly = true;
-            this.chEstado.Visible = false;
-            // 
-            // chValor
-            // 
-            this.chValor.DataPropertyName = "Valor";
-            this.chValor.HeaderText = "Valor";
-            this.chValor.Name = "chValor";
-            this.chValor.ReadOnly = true;
-            // 
-            // chGlosa
-            // 
-            this.chGlosa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chGlosa.DataPropertyName = "Glosa";
-            this.chGlosa.HeaderText = "Glosa";
-            this.chGlosa.Name = "chGlosa";
-            // 
-            // chActualizado
-            // 
-            this.chActualizado.DataPropertyName = "Actualizado";
-            this.chActualizado.HeaderText = "Actualizado";
-            this.chActualizado.Name = "chActualizado";
-            this.chActualizado.ReadOnly = true;
-            // 
-            // chElegido
-            // 
-            this.chElegido.DataPropertyName = "Elegido";
-            this.chElegido.HeaderText = "Elegido";
-            this.chElegido.Name = "chElegido";
-            this.chElegido.Width = 50;
-            // 
-            // chGeneraSolicitud
-            // 
-            this.chGeneraSolicitud.DataPropertyName = "GeneraSolicitud";
-            this.chGeneraSolicitud.HeaderText = "Genera Solicitud";
-            this.chGeneraSolicitud.Name = "chGeneraSolicitud";
-            // 
-            // chidReferenciaSoporteTecnico
-            // 
-            this.chidReferenciaSoporteTecnico.DataPropertyName = "idReferenciaSoporteTecnico";
-            this.chidReferenciaSoporteTecnico.HeaderText = "Cod. Ref";
-            this.chidReferenciaSoporteTecnico.Name = "chidReferenciaSoporteTecnico";
-            this.chidReferenciaSoporteTecnico.ReadOnly = true;
-            // 
-            // chRequiereCapacitacion
-            // 
-            this.chRequiereCapacitacion.DataPropertyName = "RequiereCapacitacion";
-            this.chRequiereCapacitacion.HeaderText = "Requiere Capacitación";
-            this.chRequiereCapacitacion.Name = "chRequiereCapacitacion";
-            // 
-            // btnVerDispositivo
-            // 
-            this.btnVerDispositivo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDispositivo.Image")));
-            this.btnVerDispositivo.Name = "btnVerDispositivo";
-            this.btnVerDispositivo.Size = new System.Drawing.Size(226, 22);
-            this.btnVerDispositivo.Text = "Ver Dispositivo";
-            this.btnVerDispositivo.Click += new System.EventHandler(this.btnVerDispositivo_Click);
-            // 
-            // btnVerDocumentoDeReferencia
-            // 
-            this.btnVerDocumentoDeReferencia.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDocumentoDeReferencia.Image")));
-            this.btnVerDocumentoDeReferencia.Name = "btnVerDocumentoDeReferencia";
-            this.btnVerDocumentoDeReferencia.Size = new System.Drawing.Size(226, 22);
-            this.btnVerDocumentoDeReferencia.Text = "Ver documento de referencia";
-            this.btnVerDocumentoDeReferencia.Click += new System.EventHandler(this.btnVerDocumentoDeReferencia_Click);
-            // 
-            // subMenuSoftware
-            // 
-            this.subMenuSoftware.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnVerDocumentoReferenciaSoftware});
-            this.subMenuSoftware.Name = "subMenu";
-            this.subMenuSoftware.Size = new System.Drawing.Size(227, 26);
-            // 
-            // btnVerDocumentoReferenciaSoftware
-            // 
-            this.btnVerDocumentoReferenciaSoftware.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDocumentoReferenciaSoftware.Image")));
-            this.btnVerDocumentoReferenciaSoftware.Name = "btnVerDocumentoReferenciaSoftware";
-            this.btnVerDocumentoReferenciaSoftware.Size = new System.Drawing.Size(226, 22);
-            this.btnVerDocumentoReferenciaSoftware.Text = "Ver documento de referencia";
-            // 
-            // subMenuCelular
-            // 
-            this.subMenuCelular.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnVerDocumentoReferenciaCelular,
-            this.btnVerLineaCelular});
-            this.subMenuCelular.Name = "subMenu";
-            this.subMenuCelular.Size = new System.Drawing.Size(227, 48);
-            // 
-            // btnVerDocumentoReferenciaCelular
-            // 
-            this.btnVerDocumentoReferenciaCelular.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDocumentoReferenciaCelular.Image")));
-            this.btnVerDocumentoReferenciaCelular.Name = "btnVerDocumentoReferenciaCelular";
-            this.btnVerDocumentoReferenciaCelular.Size = new System.Drawing.Size(226, 22);
-            this.btnVerDocumentoReferenciaCelular.Text = "Ver documento de referencia";
-            // 
-            // btnVerLineaCelular
-            // 
-            this.btnVerLineaCelular.Name = "btnVerLineaCelular";
-            this.btnVerLineaCelular.Size = new System.Drawing.Size(226, 22);
-            this.btnVerLineaCelular.Text = "Ver linea celular";
-            // 
-            // chIdDetalleCelular
-            // 
-            this.chIdDetalleCelular.DataPropertyName = "id";
-            this.chIdDetalleCelular.HeaderText = "id";
-            this.chIdDetalleCelular.Name = "chIdDetalleCelular";
-            this.chIdDetalleCelular.ReadOnly = true;
-            this.chIdDetalleCelular.Visible = false;
-            // 
-            // chitemDetalleCelular
-            // 
-            this.chitemDetalleCelular.DataPropertyName = "item";
-            this.chitemDetalleCelular.HeaderText = "Item";
-            this.chitemDetalleCelular.Name = "chitemDetalleCelular";
-            this.chitemDetalleCelular.ReadOnly = true;
-            // 
-            // chIdLineaDetalleCelular
-            // 
-            this.chIdLineaDetalleCelular.DataPropertyName = "idLinea";
-            this.chIdLineaDetalleCelular.HeaderText = "IdLinea";
-            this.chIdLineaDetalleCelular.Name = "chIdLineaDetalleCelular";
-            this.chIdLineaDetalleCelular.ReadOnly = true;
-            this.chIdLineaDetalleCelular.Visible = false;
-            // 
-            // chDesdeDetalleCelular
-            // 
-            this.chDesdeDetalleCelular.DataPropertyName = "Desde";
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.chDesdeDetalleCelular.DefaultCellStyle = dataGridViewCellStyle7;
-            this.chDesdeDetalleCelular.HeaderText = "Desde";
-            this.chDesdeDetalleCelular.Name = "chDesdeDetalleCelular";
-            // 
-            // chHastaDetalleCelular
-            // 
-            this.chHastaDetalleCelular.DataPropertyName = "Hasta";
-            dataGridViewCellStyle29.Format = "d";
-            dataGridViewCellStyle29.NullValue = null;
-            this.chHastaDetalleCelular.DefaultCellStyle = dataGridViewCellStyle29;
-            this.chHastaDetalleCelular.HeaderText = "Hasta";
-            this.chHastaDetalleCelular.Name = "chHastaDetalleCelular";
-            // 
-            // chEstadoDetalleCelular
-            // 
-            this.chEstadoDetalleCelular.DataPropertyName = "Estado";
-            this.chEstadoDetalleCelular.HeaderText = "Estado";
-            this.chEstadoDetalleCelular.Name = "chEstadoDetalleCelular";
-            this.chEstadoDetalleCelular.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.chEstadoDetalleCelular.Visible = false;
-            // 
-            // chValorDetalleCelular
-            // 
-            this.chValorDetalleCelular.DataPropertyName = "Valor";
-            this.chValorDetalleCelular.HeaderText = "Valor";
-            this.chValorDetalleCelular.Name = "chValorDetalleCelular";
-            this.chValorDetalleCelular.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // chGlosaDetalleCelular
-            // 
-            this.chGlosaDetalleCelular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chGlosaDetalleCelular.DataPropertyName = "Glosa";
-            this.chGlosaDetalleCelular.HeaderText = "Glosa";
-            this.chGlosaDetalleCelular.Name = "chGlosaDetalleCelular";
-            // 
-            // chActualizadoDetalleCelular
-            // 
-            this.chActualizadoDetalleCelular.DataPropertyName = "Actualizado";
-            this.chActualizadoDetalleCelular.HeaderText = "Actualizado";
-            this.chActualizadoDetalleCelular.Name = "chActualizadoDetalleCelular";
-            this.chActualizadoDetalleCelular.ReadOnly = true;
-            this.chActualizadoDetalleCelular.Visible = false;
-            // 
-            // chElegidoDetalleCelular
-            // 
-            this.chElegidoDetalleCelular.DataPropertyName = "Elegido";
-            this.chElegidoDetalleCelular.HeaderText = "Elegido";
-            this.chElegidoDetalleCelular.Name = "chElegidoDetalleCelular";
-            // 
-            // chidreferenciaLineaCelular
-            // 
-            this.chidreferenciaLineaCelular.DataPropertyName = "idreferencia";
-            this.chidreferenciaLineaCelular.HeaderText = "idreferencia";
-            this.chidreferenciaLineaCelular.Name = "chidreferenciaLineaCelular";
-            this.chidreferenciaLineaCelular.ReadOnly = true;
-            this.chidreferenciaLineaCelular.Visible = false;
-            // 
-            // chdocumentoReferenciaLineaCelular
-            // 
-            this.chdocumentoReferenciaLineaCelular.DataPropertyName = "documentoReferencia";
-            this.chdocumentoReferenciaLineaCelular.HeaderText = "Referencia";
-            this.chdocumentoReferenciaLineaCelular.Name = "chdocumentoReferenciaLineaCelular";
-            this.chdocumentoReferenciaLineaCelular.ReadOnly = true;
-            // 
             // SolicitudDeEquipamientoTecnologicoMantenimiento
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2310,15 +2327,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabHardware.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoHardware)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarHardware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHardwareActualizarLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarHardware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHardware)).EndInit();
+            this.subMenuHardware.ResumeLayout(false);
             this.tabSoftware.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoSoftware)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarSoftware)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarSoftware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSoftwareActualizarListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoftware)).EndInit();
+            this.subMenuSoftware.ResumeLayout(false);
             this.tabLineaCelular.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoLineaCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizarListaLineaCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarLineaCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarLineaCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleLineaCelular)).EndInit();
-            this.subMenuHardware.ResumeLayout(false);
+            this.subMenuCelular.ResumeLayout(false);
             this.gbDocumento.ResumeLayout(false);
             this.gbDocumento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).EndInit();
@@ -2330,17 +2358,6 @@
             this.gbUbicacion.PerformLayout();
             this.gbJustificacion.ResumeLayout(false);
             this.gbJustificacion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoHardware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarHardware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarHardware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoSoftware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarSoftware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarSoftware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleCambiarEstadoLineaCelular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleQuitarLineaCelular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDetalleAgregarLineaCelular)).EndInit();
-            this.subMenuSoftware.ResumeLayout(false);
-            this.subMenuCelular.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2501,6 +2518,7 @@
         private System.Windows.Forms.ContextMenuStrip subMenuCelular;
         private System.Windows.Forms.ToolStripMenuItem btnVerDocumentoReferenciaCelular;
         private System.Windows.Forms.ToolStripMenuItem btnVerLineaCelular;
+        private System.Windows.Forms.ToolStripMenuItem btnVerSoftWare;
         private System.Windows.Forms.DataGridViewTextBoxColumn chIdDetalleCelular;
         private System.Windows.Forms.DataGridViewTextBoxColumn chitemDetalleCelular;
         private System.Windows.Forms.DataGridViewTextBoxColumn chIdLineaDetalleCelular;

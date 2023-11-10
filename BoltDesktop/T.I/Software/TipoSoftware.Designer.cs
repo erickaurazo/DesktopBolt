@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoSoftware));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn5 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn6 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -102,9 +102,9 @@
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 408);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 659);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(963, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1200, 22);
             this.stsBarraEstado.TabIndex = 197;
             // 
             // progressBar1
@@ -124,7 +124,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.btnMenu.Size = new System.Drawing.Size(963, 37);
+            this.btnMenu.Size = new System.Drawing.Size(1200, 37);
             this.btnMenu.TabIndex = 196;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             // 
@@ -299,7 +299,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(12, 32);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(473, 373);
+            this.gbList.Size = new System.Drawing.Size(710, 624);
             this.gbList.TabIndex = 195;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "VisualStudio2012Light";
@@ -319,63 +319,63 @@
             this.dgvRegistro.MasterTemplate.AllowAddNewRow = false;
             this.dgvRegistro.MasterTemplate.AutoGenerateColumns = false;
             this.dgvRegistro.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "id";
-            gridViewTextBoxColumn13.HeaderText = "Código";
-            gridViewTextBoxColumn13.Name = "chId";
-            gridViewTextBoxColumn13.ReadOnly = true;
-            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn13.Width = 40;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "descripcion";
-            gridViewTextBoxColumn14.HeaderText = "Descripción";
-            gridViewTextBoxColumn14.Name = "chdescripcion";
-            gridViewTextBoxColumn14.ReadOnly = true;
-            gridViewTextBoxColumn14.Width = 184;
-            gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "nombreCorto";
-            gridViewTextBoxColumn15.HeaderText = "Abrev.";
-            gridViewTextBoxColumn15.Name = "chNombreCorto";
-            gridViewTextBoxColumn15.Width = 40;
-            gridViewTextBoxColumn16.EnableExpressionEditor = false;
-            gridViewTextBoxColumn16.FieldName = "estadoDescripcion";
-            gridViewTextBoxColumn16.HeaderText = "Est. Descripcion";
-            gridViewTextBoxColumn16.IsVisible = false;
-            gridViewTextBoxColumn16.Name = "chEstadoDescripcion";
-            gridViewTextBoxColumn16.Width = 47;
-            gridViewCheckBoxColumn5.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn5.FieldName = "EnFormatoSolicitud";
-            gridViewCheckBoxColumn5.HeaderText = "Visible en formatos";
-            gridViewCheckBoxColumn5.MinWidth = 20;
-            gridViewCheckBoxColumn5.Name = "chEnFormatoSolicitud";
-            gridViewCheckBoxColumn5.Width = 89;
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "tipoSoftware";
-            gridViewTextBoxColumn17.HeaderText = "tipoSoftware";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "chtipoSoftware";
-            gridViewTextBoxColumn17.Width = 46;
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "tipoSoftwareDescripcion";
-            gridViewTextBoxColumn18.HeaderText = "Clasificación";
-            gridViewTextBoxColumn18.Name = "chtipoSoftwareDescripcion";
-            gridViewTextBoxColumn18.Width = 61;
-            gridViewCheckBoxColumn6.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn6.FieldName = "estado";
-            gridViewCheckBoxColumn6.HeaderText = "Estado";
-            gridViewCheckBoxColumn6.MinWidth = 20;
-            gridViewCheckBoxColumn6.Name = "chEstado";
-            gridViewCheckBoxColumn6.ReadOnly = true;
-            gridViewCheckBoxColumn6.Width = 42;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "codigoRegistro";
+            gridViewTextBoxColumn1.HeaderText = "Código";
+            gridViewTextBoxColumn1.Name = "chId";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn1.Width = 61;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "descripcion";
+            gridViewTextBoxColumn2.HeaderText = "Descripción";
+            gridViewTextBoxColumn2.Name = "chdescripcion";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 280;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "nombreCorto";
+            gridViewTextBoxColumn3.HeaderText = "Abrev.";
+            gridViewTextBoxColumn3.Name = "chNombreCorto";
+            gridViewTextBoxColumn3.Width = 61;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "estadoDescripcion";
+            gridViewTextBoxColumn4.HeaderText = "Est. Descripcion";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "chEstadoDescripcion";
+            gridViewTextBoxColumn4.Width = 47;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.FieldName = "EnFormatoSolicitud";
+            gridViewCheckBoxColumn1.HeaderText = "Visible en formatos";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "chEnFormatoSolicitud";
+            gridViewCheckBoxColumn1.Width = 135;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "tipoSoftware";
+            gridViewTextBoxColumn5.HeaderText = "tipoSoftware";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "chtipoSoftware";
+            gridViewTextBoxColumn5.Width = 46;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "tipoSoftwareDescripcion";
+            gridViewTextBoxColumn6.HeaderText = "Clasificación";
+            gridViewTextBoxColumn6.Name = "chtipoSoftwareDescripcion";
+            gridViewTextBoxColumn6.Width = 92;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.FieldName = "estado";
+            gridViewCheckBoxColumn2.HeaderText = "Estado";
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "chEstado";
+            gridViewCheckBoxColumn2.ReadOnly = true;
+            gridViewCheckBoxColumn2.Width = 64;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewCheckBoxColumn5,
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18,
-            gridViewCheckBoxColumn6});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewCheckBoxColumn1,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewCheckBoxColumn2});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
@@ -386,7 +386,7 @@
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvRegistro.ShowHeaderCellButtons = true;
-            this.dgvRegistro.Size = new System.Drawing.Size(469, 353);
+            this.dgvRegistro.Size = new System.Drawing.Size(706, 604);
             this.dgvRegistro.TabIndex = 163;
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
@@ -416,10 +416,10 @@
             this.gbEdit.Enabled = false;
             this.gbEdit.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbEdit.HeaderText = " Mantenimiento";
-            this.gbEdit.Location = new System.Drawing.Point(491, 41);
+            this.gbEdit.Location = new System.Drawing.Point(728, 41);
             this.gbEdit.Name = "gbEdit";
             this.gbEdit.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbEdit.Size = new System.Drawing.Size(460, 362);
+            this.gbEdit.Size = new System.Drawing.Size(460, 613);
             this.gbEdit.TabIndex = 194;
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
@@ -466,9 +466,9 @@
             // 
             // chkPresenteEnSolicitud
             // 
-            this.chkPresenteEnSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkPresenteEnSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPresenteEnSolicitud.AutoSize = true;
-            this.chkPresenteEnSolicitud.Location = new System.Drawing.Point(172, 305);
+            this.chkPresenteEnSolicitud.Location = new System.Drawing.Point(172, 547);
             this.chkPresenteEnSolicitud.Name = "chkPresenteEnSolicitud";
             this.chkPresenteEnSolicitud.Size = new System.Drawing.Size(283, 17);
             this.chkPresenteEnSolicitud.TabIndex = 245;
@@ -536,7 +536,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.Location = new System.Drawing.Point(262, 333);
+            this.btnGrabar.Location = new System.Drawing.Point(262, 584);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(102, 24);
             this.btnGrabar.TabIndex = 25;
@@ -548,7 +548,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(154, 333);
+            this.btnCancelar.Location = new System.Drawing.Point(154, 584);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 24;
@@ -610,7 +610,7 @@
             // TipoSoftware
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(963, 430);
+            this.ClientSize = new System.Drawing.Size(1200, 681);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.gbList);

@@ -66,117 +66,117 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=74.208.128.178;Initial Catalog=saturno;Persist Security Info=True;User ID=vsatsaturno;Password=saturno#111</Value>
     </Setting>
+    <Setting Name="BDOConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=BDO;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=BDO;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS</Value>
+    </Setting>
     <Setting Name="SATURNOConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
-    </Setting>
-    <Setting Name="SATURNOConnectionString2" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
     </Setting>
     <Setting Name="NSFAJAConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=sa;Password=usersql$$nisira&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=sa;Password=usersql$$nisira&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=sa;Password=usersql$$nisira</Value>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=sa;Password=usersql$$nisira</Value>
     </Setting>
-    <Setting Name="NSFAJAConnectionString2" Type="(Connection string)" Scope="Application">
+    <Setting Name="SATURNOConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=NSFAJA;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=NSFAJA;User ID=sa</Value>
-    </Setting>
-    <Setting Name="BDOConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=BDO;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=BDO;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS</Value>
-    </Setting>
-    <Setting Name="BoltCoorpConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=BoltCoorp;Persist Security Info=True;User ID=eaurao;Password=J^G|T1jS&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=BoltCoorp;Persist Security Info=True;User ID=eaurao;Password=J^G|T1jS</Value>
-    </Setting>
-    <Setting Name="FENOLOGIASConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=FENOLOGIAS;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=FENOLOGIAS;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
-    </Setting>
-    <Setting Name="SATURNOConnectionString3" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
-    </Setting>
-    <Setting Name="SATURNOConnectionString4" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
-    </Setting>
-    <Setting Name="SATURNOConnectionString5" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=SATURNO;User ID=sa&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=SATURNO;User ID=sa</Value>
-    </Setting>
-    <Setting Name="SATURNOConnectionString6" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa</Value>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
     </Setting>
     <Setting Name="NSFAJAConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=NSFAJA;User ID=eaurazo;Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=NSFAJA;User ID=eaurazo;Password=J^G|T1jS&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=NSFAJA;User ID=eaurazo;Password=J^G|T1jS</Value>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=NSFAJA;User ID=eaurazo;Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="NSFAJAConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=NSFAJA;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=NSFAJA;User ID=eaurazo; Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="BoltCoorpConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=BoltCoorp;Persist Security Info=True;User ID=eaurao;Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=BoltCoorp;Persist Security Info=True;User ID=eaurao;Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="FENOLOGIASConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=FENOLOGIAS;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=FENOLOGIAS;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="SATURNOConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="SATURNOConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="SATURNOConnectionString5" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=SATURNO;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=SATURNO;User ID=eaurazo; Password=J^G|T1jS</Value>
+    </Setting>
+    <Setting Name="SATURNOConnectionString6" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
     </Setting>
     <Setting Name="NSFAJAConnectionString3" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo</Value>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo; Password=J^G|T1jS</Value>
     </Setting>
     <Setting Name="NSFAJAConnectionString4" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.140.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS</Value>
+      <Value Profile="(Default)">Data Source=192.168.140.7;Initial Catalog=NSFAJA;Persist Security Info=True;User ID=eaurazo;Password=J^G|T1jS</Value>
     </Setting>
   </Settings>
 </SettingsFile>

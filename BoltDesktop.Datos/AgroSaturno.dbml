@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="AgroSaturnoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.140.7;Initial Catalog=SATURNO;User ID=eaurazo" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SAS_StockProductos" Member="SAS_StockProductos">
     <Type Name="SAS_StockProductos" Id="ID1">
       <Column Name="idSucursal" Type="System.String" DbType="Char(3)" CanBeNull="true" />
@@ -3931,21 +3931,6 @@
       <Column Name="RequiereCapacitacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular" Member="SAS_SolicitudDeEquipamientoTecnologicoLineaCelular">
-    <Type Name="SAS_SolicitudDeEquipamientoTecnologicoLineaCelular">
-      <Column Name="idSolicitudEquipamientoTecnologico" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idLinea" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="valor" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
-      <Column Name="glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
-      <Column Name="actualizado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="elegido" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="idReferencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SAS_CuentasCorreoListado" Member="SAS_CuentasCorreoListado">
     <Type Name="SAS_CuentasCorreoListado">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -4272,6 +4257,21 @@
       <Column Name="idArea" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="EstadoId" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
       <Column Name="EstadoLinea" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular" Member="SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars">
+    <Type Name="SAS_SolicitudDeEquipamientoTecnologicoLineaCelular">
+      <Column Name="idSolicitudEquipamientoTecnologico" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idLinea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="actualizado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="elegido" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="idReferencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SAS_ReporteStockPorAlmacen" Method="SAS_ReporteStockPorAlmacen">
@@ -6395,23 +6395,6 @@
       <Column Name="RequiereCapacitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelularById" Method="SAS_SolicitudDeEquipamientoTecnologicoLineaCelularById">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="idLinea" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="valor" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
-      <Column Name="actualizado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="elegido" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="idreferencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="documentoReferencia" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SAS_ListadoPresupuestos" Method="SAS_ListadoPresupuestos">
     <ElementType Name="SAS_ListadoPresupuestosResult">
       <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
@@ -6514,5 +6497,128 @@
   <Function Name="dbo.SAS_AprobarPresupuestoByIdPresupuesto" Method="SAS_AprobarPresupuestoByIdPresupuesto">
     <Parameter Name="IdPresupuesto" Parameter="idPresupuesto" Type="System.String" DbType="Char(4)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_ListadoDePackingListAll" Method="SAS_ListadoDePackingListAll">
+    <ElementType Name="SAS_ListadoDePackingListAllResult">
+      <Column Name="codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sucursalCodigo" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="almacenCodigo" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="documentoCodigo" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="clienteCodigo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="estadoCodigo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="target" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="targetCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cultivo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="sucursal" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cliente" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="productor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="exportador" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="numeroDePackingList" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="contenedor" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="guiaDeRemision" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="unidadDeNegocio" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CantidadPalletDistribuidos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidadPalletRegistradosEnContenedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="termoregistros" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Booking" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoConformidadCargaByBooking" Method="SAS_ListadoConformidadCargaByBooking">
+    <Parameter Name="Booking" Parameter="booking" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SAS_ListadoConformidadCargaByBookingResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdConformacionCarga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConformidadCarga" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Booking" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PackingListId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="NumeroPackingList" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IdRegistroPalletaDistribuido" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="UbicacionDelPalletEnContenedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fila" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Columna" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Termoregistro" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NumeroPaleta" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NumeroManual" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_LineasCelularesCoporativasListadoAll" Method="SAS_LineasCelularesCoporativasListadoAll">
+    <ElementType Name="SAS_LineasCelularesCoporativasListadoAllResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoRegistro" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="idOperador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreOperador" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="operador" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineaCelular" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FechaDeAlta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="estadoDescripcion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="idProducto" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="producto" Type="System.String" DbType="VarChar(240)" CanBeNull="true" />
+      <Column Name="equipo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="idPlanDeTelefoniaMovil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="planDeTelefoniaMovil" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="planMovil" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="costoFijo" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="valorPlan" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="permanenciaFalta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="penalidad" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="idCCostoFijo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="CCostoFijo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idCCostoVariable" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="CCostoVariable" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="glosa" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="nota" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="creadoPor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="codigoErp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dispositivo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="cargo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idGerencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gerencia" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idarea" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="estadoPlanilla" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EstadoId" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoLinea" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_DispositivoTipoSoftwareListadoAll" Method="SAS_DispositivoTipoSoftwareListadoAll">
+    <ElementType Name="SAS_DispositivoTipoSoftwareListadoAllResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="nombreCorto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="observación" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="enFormatoSolicitud" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="tipoSoftware" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="tipoSoftwareDescripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codigoRegistro" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelularById" Method="SAS_SolicitudDeEquipamientoTecnologicoLineaCelularById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idLinea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="actualizado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="elegido" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="idreferencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="documentoReferencia" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

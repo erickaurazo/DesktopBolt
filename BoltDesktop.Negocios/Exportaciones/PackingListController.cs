@@ -9,13 +9,13 @@ namespace Asistencia.Negocios
     public class PackingListController
     {
 
-        public List<SAS_ListadoDePackingList> GetListPackingList01(string conection)
+        public List<SAS_ListadoDePackingListAllResult> GetListPackingList01(string conection)
         {
-            List<SAS_ListadoDePackingList> result = new List<SAS_ListadoDePackingList>();
+            List<SAS_ListadoDePackingListAllResult> result = new List<SAS_ListadoDePackingListAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                result = Modelo.SAS_ListadoDePackingList.OrderByDescending(x => x.fecha).ToList();
+                result = Modelo.SAS_ListadoDePackingListAll().ToList().OrderBy(x => x.fecha).ToList();
             }
             return result;
         }
@@ -23,7 +23,7 @@ namespace Asistencia.Negocios
 
         public int GenerarDistribucionEnBlancoDePalletasEnContenedor(string conection, string packingListCodigo)
         {
-            List<SAS_ListadoDePackingList> result = new List<SAS_ListadoDePackingList>();
+            List<SAS_ListadoDePackingListAllResult> result = new List<SAS_ListadoDePackingListAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
@@ -178,7 +178,7 @@ namespace Asistencia.Negocios
                             {
                                 foreach (var itemDetail in result)
                                 {
-                                    var result02 = Modelo.DDPACKINGLIST.Where(x => x.IDPACKINGLIST.Trim() == itemDetail.IDPACKINGLIST.Trim() && x.ITEM.Trim() == itemDetail.ITEM && x.NUMPALETA.Trim() == itemDetail.NUMPALETA.Trim() && x.CANTIDAD == itemDetail.CANTIDAD).ToList();                                    
+                                    var result02 = Modelo.DDPACKINGLIST.Where(x => x.IDPACKINGLIST.Trim() == itemDetail.IDPACKINGLIST.Trim() && x.ITEM.Trim() == itemDetail.ITEM && x.NUMPALETA.Trim() == itemDetail.NUMPALETA.Trim() && x.CANTIDAD == itemDetail.CANTIDAD).ToList();
                                     if (result02.ToList().Count == 1)
                                     {
                                         DDPACKINGLIST oRegistro = new DDPACKINGLIST();
@@ -305,6 +305,53 @@ namespace Asistencia.Negocios
             }
 
             #endregion
+        }
+
+        public List<SAS_ListadoConformidadCargaByBookingResult> listadDeDistribucionDeCargaBolt(string conection, string booking)
+        {
+            List<SAS_ListadoConformidadCargaByBookingResult> result = new List<SAS_ListadoConformidadCargaByBookingResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                result = Modelo.SAS_ListadoConformidadCargaByBooking(booking).OrderBy(x => x.UbicacionDelPalletEnContenedor).ToList();
+            }
+            return result;
+        }
+
+        public List<SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult> GenerarListadoConformidadDesdeDistribucionDeCarga(List<SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult> listado, List<SAS_ListadoConformidadCargaByBookingResult> listadoDeDistribucionDeCarga)
+        {
+            List<SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult> result = new List<SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult>();
+            SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult palletDistribuido = new SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult();
+            foreach (var item in listado)
+            {
+                var Coincidencia = listadoDeDistribucionDeCarga.Where(x => x.PackingListId.Trim() == item.idpackinglist.Trim() && x.NumeroPaleta.Trim() == item.numpaleta.Trim()).ToList();
+
+                if (Coincidencia.ToList().Count > 0)
+                {
+                    palletDistribuido = new SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult();
+                    palletDistribuido.idpackinglist = item.idpackinglist;
+                    palletDistribuido.numpaleta = item.numpaleta;
+                    palletDistribuido.cantidad = item.cantidad;
+                    palletDistribuido.ubicacionTermoRegistro = Coincidencia.ElementAt(0).Termoregistro.Trim();
+                    palletDistribuido.IDPRODUCTO = item.IDPRODUCTO;
+                    palletDistribuido.posicion = Coincidencia.ElementAt(0).UbicacionDelPalletEnContenedor;
+                    palletDistribuido.fila = Coincidencia.ElementAt(0).Fila.Value.ToString();
+                    palletDistribuido.columna = Coincidencia.ElementAt(0).Columna.Value.ToString();
+                    palletDistribuido.numeroManual = Coincidencia.ElementAt(0).NumeroManual;
+                    result.Add(palletDistribuido);
+                }
+                else
+                {
+                    palletDistribuido = new SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult();
+                    palletDistribuido = item;
+                    result.Add(palletDistribuido);
+                }
+
+                
+            }
+            
+
+            return result;
         }
     }
 }

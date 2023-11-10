@@ -781,49 +781,49 @@
         <classShapeMoniker Id="422dc739-1619-47ad-829d-94d0c38aec37" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.3028451535103); (3.28125 : 1.8340951535103); (3.28125 : 4.65625000037253); (3.49999999962747 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 1.30284515384615); (3.28125 : 1.83409515384615); (3.28125 : 4.65625); (3.5 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_PEDIDO" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.31738361502469); (3.125 : 1.69238361502469); (3.125 : 2.5); (3.22232443490112 : 2.59732443490112 : JumpStart); (3.34017556509888 : 2.71517556509888 : JumpEnd); (3.5 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 1.31738361538461); (3.125 : 1.69238361538461); (3.125 : 2.5); (3.22232443490112 : 2.59732443490112 : JumpStart); (3.34017556509888 : 2.71517556509888 : JumpEnd); (3.5 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_PEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.05767007694142); (3.5 : 1.05767007694142)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 1.05767007692308); (3.5 : 1.05767007692308)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_ORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 3.325); (1.75 : 5.13125249981374); (2.19791916666667 : 5.13125249981374 : JumpStart); (2.36458583333333 : 5.13125249981374 : JumpEnd); (3.5 : 5.13125249981374)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.75 : 3.325); (1.75 : 5.1312525); (2.19791916666667 : 5.1312525 : JumpStart); (2.36458583333333 : 5.1312525 : JumpEnd); (3.5 : 5.1312525)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_PEDIDO" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.13125249981374); (3.19791666666667 : 3.13125249981374 : JumpStart); (3.36458333333333 : 3.13125249981374 : JumpEnd); (3.5 : 3.13125249981374)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 3.1312525); (3.19791666666667 : 3.1312525 : JumpStart); (3.36458333333333 : 3.1312525 : JumpEnd); (3.5 : 3.1312525)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_PEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.2812525 : 3.325); (2.2812525 : 6.6); (3.5 : 6.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.2812525 : 3.325); (2.2812525 : 6.6); (3.5 : 6.6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_ORDENCOMPRA" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="1ac304c8-cfd4-45bd-8b08-8d6478cd2b73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.8971528464897); (3.22232443490112 : 2.42482841158857 : JumpStart); (3.34017556509888 : 2.30697728139081 : JumpEnd); (3.40625 : 2.24090284648969); (3.40625 : 1.41875); (3.5 : 1.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.89715284615385); (3.22232443490112 : 2.42482841125272 : JumpStart); (3.34017556509888 : 2.30697728105497 : JumpEnd); (3.40625 : 2.24090284615385); (3.40625 : 1.41875); (3.5 : 1.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_ORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
@@ -1078,12 +1078,6 @@
         <elementListCompartment Id="cfbfdbfa-85c6-4b23-bb0f-80907d9f9a92" absoluteBounds="17.765, 38.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0af8cff1-108f-4d7e-8d0d-70fd46cdc2c0" isExpanded="false" absoluteBounds="22.75, 37.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoLineaCelular" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9972be54-0f78-460c-be63-2584184a692f" absoluteBounds="22.765, 38.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f18e073a-5f97-465b-a366-b8b5b04a7a69" isExpanded="false" absoluteBounds="27.75, 37.75, 4.5, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasCorreoListado" />
       <nestedChildShapes>
@@ -1173,6 +1167,12 @@
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeLineasTelefonica" />
       <nestedChildShapes>
         <elementListCompartment Id="d289de09-57e8-42dc-9aad-7ce61a4c31fa" absoluteBounds="0.64000000000000057, 41.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6b6d0a4-fdc0-4f9a-8a19-477a4d42965f" isExpanded="false" absoluteBounds="19.75, 39.5, 2, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoLineaCelular" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5527b60-2ce9-4868-9428-da0644dcd7a0" absoluteBounds="19.765, 39.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

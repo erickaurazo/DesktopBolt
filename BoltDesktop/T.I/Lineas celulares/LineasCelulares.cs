@@ -20,6 +20,7 @@ using System.Configuration;
 using Telerik.WinControls.UI.Localization;
 using System.Reflection;
 using ComparativoHorasVisualSATNISIRA.Administracion_del_sistema;
+using Telerik.WinControls.Data;
 
 namespace ComparativoHorasVisualSATNISIRA.T.I
 {
@@ -32,9 +33,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private SAS_USUARIOS user2;
         private string fileName;
         private bool exportVisualSettings;
-        private List<SAS_LineasCelularesCoporativasListado> listado;
+        private List<SAS_LineasCelularesCoporativasListadoAllResult> listado;
         private SAS_LineasCelularesCoporativa item;
-        private SAS_LineasCelularesCoporativasListado itemSelecionado;
+        private SAS_LineasCelularesCoporativasListadoAllResult itemSelecionado;
         private SAS_LineasCelularesCoporativasController modelo;
         public List<int> valores_permitidos = new List<int>() { 8, 13, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 46 };
         private string lineaCelular = string.Empty;
@@ -234,19 +235,20 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                listado = new List<SAS_LineasCelularesCoporativasListado>();
+                listado = new List<SAS_LineasCelularesCoporativasListadoAllResult>();
                 modelo = new SAS_LineasCelularesCoporativasController();
-                if (lineaCelular != null)
-                {
-                    if (lineaCelular != string.Empty)
-                    {
-                        listado = modelo.ListOfCellLines("SAS", lineaCelular);
-                    }
-                    else
-                    {
-                        listado = modelo.ListOfCellLines("SAS");
-                    }
-                }
+                listado = modelo.ListOfCellLines("SAS");
+                //if (lineaCelular != null)
+                //{
+                //    if (lineaCelular != string.Empty)
+                //    {
+                //        listado = modelo.ListOfCellLines("SAS", lineaCelular);
+                //    }
+                //    else
+                //    {
+                //        listado = modelo.ListOfCellLines("SAS");
+                //    }
+                //}
 
 
             }
@@ -261,11 +263,29 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                dgvRegistro.DataSource = listado.OrderBy(x => x.lineaCelular).ToList().ToDataTable<SAS_LineasCelularesCoporativasListado>();
-                dgvRegistro.Refresh();
+
+                if (lineaCelular != null)
+                {
+                    if (lineaCelular != string.Empty)
+                    {
+                       
+                        FilterDescriptor filter1 = new FilterDescriptor();
+                        filter1.Operator = FilterOperator.Contains;
+                        filter1.Value = lineaCelular;
+                        filter1.IsFilterEditor = true;
+                        this.dgvRegistro.Columns["chlineaCelular"].FilterDescriptor = filter1;
+                        dgvRegistro.DataSource = listado.OrderBy(x => x.lineaCelular).ToList().ToDataTable<SAS_LineasCelularesCoporativasListadoAllResult>();
+                        dgvRegistro.Refresh();
+                    }
+                    else
+                    {
+                        dgvRegistro.DataSource = listado.OrderBy(x => x.lineaCelular).ToList().ToDataTable<SAS_LineasCelularesCoporativasListadoAllResult>();
+                        dgvRegistro.Refresh();
+
+                    }
+                }                                
                 progressBar1.Visible = false;
                 btnActualizarLista.Enabled = true;
-
             }
             catch (Exception ex)
             {
@@ -638,7 +658,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 item.lineaCelular = string.Empty;
                 item.estado = 0;
 
-                itemSelecionado = new SAS_LineasCelularesCoporativasListado();
+                itemSelecionado = new SAS_LineasCelularesCoporativasListadoAllResult();
                 item.id = 0;
                 item.lineaCelular = string.Empty;
                 item.estado = 0;
@@ -687,7 +707,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 Limpiar();
                 #region 
-                itemSelecionado = new SAS_LineasCelularesCoporativasListado();
+                itemSelecionado = new SAS_LineasCelularesCoporativasListadoAllResult();
                 itemSelecionado.lineaCelular = string.Empty;
                 itemSelecionado.estado = 0;
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
@@ -732,7 +752,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
-        private void AsignarObjetoEnFormularioDeEdicion(SAS_LineasCelularesCoporativasListado itemSelecionado)
+        private void AsignarObjetoEnFormularioDeEdicion(SAS_LineasCelularesCoporativasListadoAllResult itemSelecionado)
         {
             try
             {
@@ -1207,14 +1227,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if ((ClickFiltro % 2) == 0)
             {
-                #region Par() | Activar Filtro()
-                dgvRegistro.EnableFiltering = !true;
+                #region Par() | DesActivar Filtro()
+                dgvRegistro.EnableFiltering = true;
                 #endregion
             }
             else
             {
-                #region Par() | DesActivar Filtro()
-                dgvRegistro.EnableFiltering = true;
+                
+                #region Par() | Activar Filtro()
+                dgvRegistro.EnableFiltering = !true;
                 #endregion
             }
         }

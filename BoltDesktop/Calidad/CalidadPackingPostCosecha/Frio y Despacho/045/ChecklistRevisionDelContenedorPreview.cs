@@ -52,7 +52,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
                 oRpt = new ReportDocument();
                 oRpt.Load(@"C:\SOLUTION\ChecklistRevisionDelContenedorRPT.rpt");
                 //oRpt.Load(@"C:\Users\eaurazo.SAGSA\Source\Repos\erickaurazo\DesktopBolt\BoltDesktop\Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.rpt");
-                oRpt.SetDatabaseLogon("sa", "usersql$$nisira");
+                oRpt.SetDatabaseLogon("eaurazo", "J^G|T1jS");
                 dta = dsReporte.SAS_ReporteCheckListRevisionByIdEvaluacion;
                 oRpt.SetDataSource(dta);
                 crystalReportViewer1.ReportSource = oRpt;
@@ -66,7 +66,9 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
         }
 
+        private void ChecklistRevisionDelContenedorPreview_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

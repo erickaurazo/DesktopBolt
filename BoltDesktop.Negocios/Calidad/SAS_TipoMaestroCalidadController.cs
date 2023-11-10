@@ -47,6 +47,7 @@ namespace Asistencia.Negocios
                     //oItem.Id = item.Id;
                     oItem.Descripcion = item.Descripcion;
                     oItem.Estado = Convert.ToByte(1);
+                    oItem.IdEmpresa = item.IdEmpresa;
                     Modelo.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleMaestrosTipo.InsertOnSubmit(oItem);
                     Modelo.SubmitChanges();
                     resultado = oItem.Id;

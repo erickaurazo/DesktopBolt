@@ -999,7 +999,7 @@ namespace Asistencia.Negocios
 
 
                             List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularARegistrar = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
-                            var resultadoLineasCelulares = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.Where(x => x.idSolicitudEquipamientoTecnologico == solicitud.id).ToList();
+                            var resultadoLineasCelulares = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == solicitud.id).ToList();
 
 
                             listadoLineaCelularARegistrar = (from item in resultadoLineasCelulares
@@ -1012,8 +1012,8 @@ namespace Asistencia.Negocios
                                                                  idLinea = j.FirstOrDefault().idLinea != (Int32?)null ? j.FirstOrDefault().idLinea : (Int32?)null,
                                                                  desde = DateTime.Now,
                                                                  hasta = DateTime.Now.AddDays(360),
-                                                                 estado = j.FirstOrDefault().estado != (decimal?)null ? j.FirstOrDefault().estado : (decimal?)null,
-                                                                 valor = j.FirstOrDefault().valor != (decimal?)null ? j.FirstOrDefault().valor : (decimal?)null,
+                                                                 estado = j.FirstOrDefault().estado != (byte?)null ? Convert.ToByte(j.FirstOrDefault().estado.Value) : Convert.ToByte("0"),
+                                                                 valor = j.FirstOrDefault().valor != null ? j.FirstOrDefault().valor : string.Empty,
                                                                  glosa = j.FirstOrDefault().glosa != null ? j.FirstOrDefault().glosa : string.Empty,
                                                                  actualizado = j.FirstOrDefault().actualizado != (decimal?)null ? j.FirstOrDefault().actualizado : (decimal?)null,
                                                                  elegido = j.FirstOrDefault().elegido != (decimal?)null ? j.FirstOrDefault().elegido : (decimal?)null
@@ -1118,6 +1118,29 @@ namespace Asistencia.Negocios
                 //    Scope.Complete();
                 //}
             }
+        }
+
+        public List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> GetListONumberLineDetailByRequestId(string conection, SAS_SolicitudDeEquipamientoTecnologico solicitud)
+        {
+            List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == solicitud.id).ToList();
+            }
+            return list.OrderBy(x => x.item).ToList();
+        }
+
+        public List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> GetNumberLineDetailBlanklistingForRequest(string conection, SAS_SolicitudDeEquipamientoTecnologico solicitud)
+        {
+            List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == 0).ToList(); ;
+
+            }
+            return list.OrderByDescending(x => x.item).ToList();
         }
 
         public void RegistarSolicitudDeEquipamientoTecnologico(string conection, SAS_SolicitudDeEquipamientoTecnologico item)
@@ -1337,20 +1360,17 @@ namespace Asistencia.Negocios
         }
 
 
-        public int ToRegister(string conection, SAS_SolicitudDeEquipamientoTecnologico item, List<SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo> listadoSedesEnSolicitudRegistro, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareAEliminar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareAEliminar)
+        public int ToRegister(string conection, SAS_SolicitudDeEquipamientoTecnologico item, List<SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo> listadoSedesEnSolicitudRegistro, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareAEliminar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareAEliminar,  List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularAEliminar)
         {
             //SAS_DispositivoTipoSoftware oregistro = new SAS_DispositivoTipoSoftware();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             int codigo = 0; // 1 es registro , 0 es nuevo
             SAS_SolicitudDeEquipamientoTecnologico oRegistro = new SAS_SolicitudDeEquipamientoTecnologico();
-
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
-
                     if (item.id == 0)
                     {
                         #region Nuevo() 
@@ -1482,19 +1502,18 @@ namespace Asistencia.Negocios
                                     oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                     oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                     oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                    oItem.estado = 1;
-                                    oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                    oItem.estado = Convert.ToByte("1");
+                                    oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                     oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                     oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                     oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
                                     oItem.idReferencia = itemCelular.idReferencia != (int?)null ? itemCelular.idReferencia.Value : (int?)null;
-                                    Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(oItem);
+                                    Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(oItem);
                                     Modelo.SubmitChanges();
                                 }
                             }
                         }
                         #endregion
-
                     }
                     else
                     {
@@ -1632,13 +1651,13 @@ namespace Asistencia.Negocios
                                             oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                             oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                             oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                            oItem.estado = 1;
-                                            oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                            oItem.estado = Convert.ToByte("1");
+                                            oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                             oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                             oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                             oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
                                             oItem.idReferencia = itemCelular.idReferencia != (int?)null ? itemCelular.idReferencia.Value : (int?)null;
-                                            Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(itemCelular);
+                                            Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(oItem);
                                             Modelo.SubmitChanges();
                                         }
                                     }
@@ -1684,6 +1703,27 @@ namespace Asistencia.Negocios
                                     Modelo.SubmitChanges();
                                     tipoResultadoOperacion = oRegistro.id; // registrar
                                     codigo = oRegistro.id;
+
+
+                                    #region Eliminar Listado Lineas celulares()
+                                    if (listadoLineaCelularAEliminar != null && listadoLineaCelularAEliminar.ToList().Count > 0)
+                                    {
+                                        foreach (var oDetalle in listadoLineaCelularAEliminar)
+                                        {
+                                            var resultadoCoincidencia = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == oDetalle.idSolicitudEquipamientoTecnologico && x.item == oDetalle.item).ToList();
+                                            if (resultadoCoincidencia != null)
+                                            {
+                                                if (resultadoCoincidencia.ToList().Count == 1)
+                                                {
+                                                    SAS_SolicitudDeEquipamientoTecnologicoLineaCelular oItem = new SAS_SolicitudDeEquipamientoTecnologicoLineaCelular();
+                                                    oItem = resultadoCoincidencia.Single();
+                                                    Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.DeleteOnSubmit(oItem);
+                                                    Modelo.SubmitChanges();
+                                                }
+                                            }
+                                        }
+                                    }
+                                    #endregion
 
                                     #region Registrar listado de sedes que aplica para la solicitud  
                                     if (listadoSedesEnSolicitudRegistro != null)
@@ -1784,13 +1824,13 @@ namespace Asistencia.Negocios
                                                 oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                                 oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                                 oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                                oItem.estado = 1;
-                                                oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                                oItem.estado = Convert.ToByte("1");
+                                                oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                                 oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                                 oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                                 oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
                                                 oItem.idReferencia = itemCelular.idReferencia != (int?)null ? itemCelular.idReferencia.Value : (int?)null;
-                                                Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(itemCelular);
+                                                Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(oItem);
                                                 Modelo.SubmitChanges();
                                             }
                                         }
@@ -1870,6 +1910,26 @@ namespace Asistencia.Negocios
                                         }
                                     }
 
+                                    #endregion
+
+                                    #region Eliminar Listado Lineas celulares()
+                                    if (listadoLineaCelularAEliminar != null && listadoLineaCelularAEliminar.ToList().Count > 0)
+                                    {
+                                        foreach (var oDetalle in listadoLineaCelularAEliminar)
+                                        {
+                                            var resultadoCoincidencia = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == oDetalle.idSolicitudEquipamientoTecnologico && x.item == oDetalle.item).ToList();
+                                            if (resultadoCoincidencia != null)
+                                            {
+                                                if (resultadoCoincidencia.ToList().Count == 1)
+                                                {
+                                                    SAS_SolicitudDeEquipamientoTecnologicoLineaCelular oItem = new SAS_SolicitudDeEquipamientoTecnologicoLineaCelular();
+                                                    oItem = resultadoCoincidencia.Single();
+                                                    Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.DeleteOnSubmit(oItem);
+                                                    Modelo.SubmitChanges();
+                                                }
+                                            }
+                                        }
+                                    }
                                     #endregion
 
                                     #region Registrar listado de sedes que aplica para la solicitud                                
@@ -2080,26 +2140,26 @@ namespace Asistencia.Negocios
                                             foreach (SAS_SolicitudDeEquipamientoTecnologicoLineaCelular itemCelular in listadoLineaCelularARegistrar.ToList())
                                             {
 
-                                                var resultadoCoincidencia = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.Where(x => x.idSolicitudEquipamientoTecnologico == itemCelular.idSolicitudEquipamientoTecnologico && x.item == itemCelular.item).ToList();
+                                                var resultadoCoincidencia = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == itemCelular.idSolicitudEquipamientoTecnologico && x.item == itemCelular.item).ToList();
 
                                                 if (resultadoCoincidencia != null)
                                                 {
                                                     if (resultadoCoincidencia.ToList().Count == 0)
                                                     {
-                                                        #region Nuevo detalle de la lista sedes ()
+                                                        #region Nuevo detalle lineas celulares ()
                                                         SAS_SolicitudDeEquipamientoTecnologicoLineaCelular oItem = new SAS_SolicitudDeEquipamientoTecnologicoLineaCelular();
                                                         oItem.idSolicitudEquipamientoTecnologico = codigo;
                                                         oItem.item = itemCelular.item != null ? itemCelular.item.Trim() : string.Empty;
                                                         oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                                         oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                                         oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                                        oItem.estado = 1;
-                                                        oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                                        oItem.estado = Convert.ToByte("1");
+                                                        oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                                         oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                                         oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                                         oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
                                                         oItem.idReferencia = itemCelular.idReferencia != (int?)null ? itemCelular.idReferencia.Value : (int?)null;
-                                                        Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(itemCelular);
+                                                        Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(oItem);
                                                         Modelo.SubmitChanges();
                                                         #endregion
                                                     }
@@ -2111,8 +2171,8 @@ namespace Asistencia.Negocios
                                                         oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                                         oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                                         oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                                        oItem.estado = 1;
-                                                        oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                                        oItem.estado = Convert.ToByte("1");
+                                                        oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                                         oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                                         oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                                         oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
@@ -2288,12 +2348,12 @@ namespace Asistencia.Negocios
                                 oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                 oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                 oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                oItem.estado = 1;
-                                oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                oItem.estado = Convert.ToByte("1");
+                                oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                 oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                 oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                 oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
-                                Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(oItem);
+                                Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(oItem);
                                 Modelo.SubmitChanges();
                             }
                         }
@@ -2444,12 +2504,12 @@ namespace Asistencia.Negocios
                                         oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                         oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                         oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                        oItem.estado = 1;
-                                        oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                        oItem.estado = Convert.ToByte("1");
+                                        oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                         oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                         oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                         oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
-                                        Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(itemCelular);
+                                        Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(itemCelular);
                                         Modelo.SubmitChanges();
                                     }
                                 }
@@ -2602,12 +2662,12 @@ namespace Asistencia.Negocios
                                             oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                             oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                             oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                            oItem.estado = 1;
-                                            oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                            oItem.estado = Convert.ToByte("1");
+                                            oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                             oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                             oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                             oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
-                                            Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(itemCelular);
+                                            Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(itemCelular);
                                             Modelo.SubmitChanges();
                                         }
                                     }
@@ -2846,7 +2906,7 @@ namespace Asistencia.Negocios
                                         foreach (SAS_SolicitudDeEquipamientoTecnologicoLineaCelular itemCelular in listadoLineaCelularARegistrar.ToList())
                                         {
 
-                                            var resultadoCoincidencia = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.Where(x => x.idSolicitudEquipamientoTecnologico == itemCelular.idSolicitudEquipamientoTecnologico && x.item == itemCelular.item).ToList();
+                                            var resultadoCoincidencia = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == itemCelular.idSolicitudEquipamientoTecnologico && x.item == itemCelular.item).ToList();
 
                                             if (resultadoCoincidencia != null)
                                             {
@@ -2859,12 +2919,12 @@ namespace Asistencia.Negocios
                                                     oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                                     oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                                     oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                                    oItem.estado = 1;
-                                                    oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                                    oItem.estado = Convert.ToByte("1");
+                                                    oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                                     oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                                     oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                                     oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
-                                                    Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelular.InsertOnSubmit(itemCelular);
+                                                    Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.InsertOnSubmit(itemCelular);
                                                     Modelo.SubmitChanges();
                                                     #endregion
                                                 }
@@ -2876,8 +2936,8 @@ namespace Asistencia.Negocios
                                                     oItem.idLinea = itemCelular.idLinea != null ? itemCelular.idLinea : 0;
                                                     oItem.desde = oRegistro.fecha != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
                                                     oItem.hasta = oRegistro.fechaDeVencimiento != (DateTime?)null ? oRegistro.fechaDeVencimiento.Value : (DateTime?)null;
-                                                    oItem.estado = 1;
-                                                    oItem.valor = itemCelular.valor != (decimal?)null ? itemCelular.valor.Value : (decimal?)null;
+                                                    oItem.estado = Convert.ToByte("1");
+                                                    oItem.valor = itemCelular.valor != null ? itemCelular.valor.ToString() : string.Empty;
                                                     oItem.glosa = itemCelular.glosa != null ? itemCelular.glosa.Trim() : string.Empty;
                                                     oItem.actualizado = itemCelular.actualizado != (decimal?)null ? itemCelular.actualizado.Value : 0;
                                                     oItem.elegido = itemCelular.elegido != (decimal?)null ? itemCelular.elegido.Value : 0;
@@ -5336,22 +5396,27 @@ namespace Asistencia.Negocios
         public List<DFormatoSimple> ObtenerTipoDeSoftware(string conection)
         {
             //1.- Si esta activado el check de elegido se puede elegir un perfil
-
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
-            List<SAS_SegmentoRed> typeOfInterfaces = new List<SAS_SegmentoRed>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "Usuario" });
-                listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Soporte" });
-                listado.Add(new DFormatoSimple { Codigo = "3", Descripcion = "Administrador" });
+                var resuklt = Modelo.SAS_DispositivoTipoSoftware.Where(x => x.enFormatoSolicitud == 1).ToList();
+
+                listado = (from items in resuklt.ToList()
+                           group items by new { items.id } into j
+                           select new DFormatoSimple
+                           {
+                               Codigo = j.Key.id.ToString(),
+                               Descripcion = j.FirstOrDefault().descripcion,
+                           }
+                           ).ToList();
             }
             return listado;
         }
 
 
-        
+
 
         public int ObtenerNumeroCorrelativoDeCero(string conection, SAS_SolicitudDeEquipamientoTecnologico solicitud)
         {
@@ -5414,24 +5479,24 @@ namespace Asistencia.Negocios
             return list;
         }
 
-        public List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult> ListDetailRequestByCelLineByIdRequestBlank(string conection, int id)
+        public List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> ListDetailRequestByCelLineByIdRequestBlank(string conection, int id)
         {
-            List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult>();
+            List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
 
-            SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult item = new SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult();
-            item.id = 0;
-            item.item = "001";
-            item.idLinea = 0;
-            item.desde = DateTime.Now;
-            item.hasta = DateTime.Now.AddYears(1);
-            item.estado = 1;
-            item.valor = string.Empty;
-            item.glosa = string.Empty;
-            item.actualizado = 1;
-            item.elegido = 0;
-            item.idreferencia = 0;
-            item.documentoReferencia = string.Empty;
-            list.Add(item);
+            //SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult item = new SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult();
+            //item.id = 0;
+            //item.item = "001";
+            //item.idLinea = 0;
+            //item.desde = DateTime.Now;
+            //item.hasta = DateTime.Now.AddYears(1);
+            //item.estado = Convert.ToByte((1));
+            //item.valor = string.Empty;
+            //item.glosa = string.Empty;
+            //item.actualizado = 1;
+            //item.elegido = 0;
+            //item.idreferencia = 0;
+            //item.documentoReferencia = string.Empty;
+            //list.Add(item);
             return list;
         }
 

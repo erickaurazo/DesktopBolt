@@ -53,6 +53,7 @@
             this.Name = "ChecklistRevisionDelContenedorPreview";
             this.Text = "GSIG-ACP-R-045-ACP-R-045 | Checklist Revisión del contenedor (Despacho)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ChecklistRevisionDelContenedorPreview_Load);
             this.ResumeLayout(false);
 
         }

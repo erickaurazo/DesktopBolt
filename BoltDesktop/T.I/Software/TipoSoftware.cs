@@ -17,24 +17,26 @@ using MyControlsDataBinding.Controles;
 using MyControlsDataBinding.Busquedas;
 using Asistencia.Helper;
 using Telerik.WinControls.UI.Localization;
+using Telerik.WinControls.Data;
 
 namespace ComparativoHorasVisualSATNISIRA.T.I
 {
     public partial class TipoSoftware : Form
     {
         private PrivilegesByUser privilege;
-        private string _companyId;
-        private string _conection;
-        private SAS_USUARIOS _user2;
+        private string companyId;
+        private string conection;
+        private SAS_USUARIOS user;
         private bool exportVisualSettings;
         private string fileName;
         private SAS_DispositivoTipoSoftwareController Modelo;
-        private List<SAS_DispositivoTipoSoftwareListado> listado;
+        private List<SAS_DispositivoTipoSoftwareListadoAllResult> listado;
         private SAS_DispositivoTipoSoftware otipo;
         private ComboBoxHelper comboHelper;
         private List<Grupo> clasificacionesSoftware;
-        private SAS_DispositivoTipoSoftwareListado oDetalle;
+        private SAS_DispositivoTipoSoftwareListadoAllResult oDetalle;
         private SAS_DispositivoTipoSoftware oDetalleTipoSoftware;
+        private int IdSoftware = 0;
 
         public TipoSoftware()
         {
@@ -45,7 +47,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             CargarCombos();
             Actualizar();
-
+            IdSoftware = 0;
 
         }
 
@@ -55,8 +57,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 comboHelper = new ComboBoxHelper();
                 clasificacionesSoftware = new List<Grupo>();
-
-                clasificacionesSoftware = comboHelper.GetComboBoxTypeOfSoftware("SAS");
+                clasificacionesSoftware = comboHelper.GetComboBoxTypeOfSoftware(conection != string.Empty ? conection : "SAS");
                 cboCategoria.DisplayMember = "Descripcion";
                 cboCategoria.ValueMember = "Codigo";
                 cboCategoria.DataSource = clasificacionesSoftware.ToList();
@@ -71,20 +72,39 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
-        public TipoSoftware(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser privilege)
+        public TipoSoftware(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            this._conection = _conection;
-            this._user2 = _user2;
-            this._companyId = _companyId;
-            this.privilege = privilege;
+            conection = _conection;
+            user = _user2;
+            companyId = _companyId;
+            privilege = _privilege;
+            CargarCombos();
+            IdSoftware = 0;
+            Actualizar();
+        }
+
+
+        public TipoSoftware(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _IdSoftware)
+        {
+            InitializeComponent();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            conection = (_conection != null || _conection != string.Empty) ? _conection : "SAS";
+            user = _user2;
+            companyId = (_companyId != null || _companyId != string.Empty) ? _companyId : "SAS";
+            privilege = _privilege;
+            IdSoftware = _IdSoftware != null ? _IdSoftware : 0;
             CargarCombos();
             Actualizar();
         }
+
 
         private void TipoCaracteristicasSoftware_Load(object sender, EventArgs e)
         {
@@ -338,12 +358,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 Modelo =new SAS_DispositivoTipoSoftwareController();
-                listado = new List<SAS_DispositivoTipoSoftwareListado>();
+                listado = new List<SAS_DispositivoTipoSoftwareListadoAllResult>();
                 listado = Modelo.GetTypeDevices("SAS");
             }
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
             }
         }
 
@@ -351,18 +372,27 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                dgvRegistro.DataSource = listado.OrderBy(x => x.descripcion).ToList().ToDataTable<SAS_DispositivoTipoSoftwareListado>();
-                dgvRegistro.Refresh();
-
-                //btnMenu.Enabled = true;
-                //gbEdit.Enabled = true;
-                //gbList.Enabled = true;
+                if (IdSoftware > 0)
+                {
+                    FilterDescriptor filter1 = new FilterDescriptor();
+                    filter1.Operator = FilterOperator.Contains;
+                    filter1.Value = IdSoftware;
+                    filter1.IsFilterEditor = true;
+                    dgvRegistro.Columns["chId"].FilterDescriptor = filter1;                 
+                    dgvRegistro.DataSource = listado.ToList().ToDataTable<SAS_DispositivoTipoSoftwareListadoAllResult>();
+                    dgvRegistro.Refresh();
+                }
+                else
+                {
+                    dgvRegistro.DataSource = listado.OrderBy(x => x.descripcion).ToList().ToDataTable<SAS_DispositivoTipoSoftwareListadoAllResult>();
+                    dgvRegistro.Refresh();
+                }      
                 progressBar1.Visible = false;
-
             }
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
             }
         }
 
@@ -433,7 +463,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 #region 
-                oDetalle = new SAS_DispositivoTipoSoftwareListado();
+                oDetalle = new SAS_DispositivoTipoSoftwareListadoAllResult();
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
                     if (dgvRegistro.CurrentRow != null)
@@ -474,7 +504,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
-        private void AsingarObjeto(SAS_DispositivoTipoSoftwareListado oDetalle)
+        private void AsingarObjeto(SAS_DispositivoTipoSoftwareListadoAllResult oDetalle)
         {
             try
             {
@@ -511,7 +541,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                oDetalle = new SAS_DispositivoTipoSoftwareListado();
+                oDetalle = new SAS_DispositivoTipoSoftwareListadoAllResult();
                 oDetalle.id = 0;
                 oDetalle.descripcion = string.Empty;
                 oDetalle.nombreCorto = string.Empty;

@@ -53,7 +53,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
 
                 oRpt.Load(@"C:\SOLUTION\TrazabilidadDeContenedorDespachosRTP.rpt");
                 //oRpt.Load(@"C:\Users\eaurazo.SAGSA\Source\Repos\erickaurazo\DesktopBolt\BoltDesktop\Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.rpt");
-                oRpt.SetDatabaseLogon("sa", "usersql$$nisira");
+                oRpt.SetDatabaseLogon("eaurazo", "J^G|T1jS");
                 dta = dsReporte.SAS_Calidad_Form_EvaluacionTrazabilidadFCLDespachoDetalleCargaById;
                 oRpt.SetDataSource(dta);
                 crystalReportViewer1.ReportSource = oRpt;

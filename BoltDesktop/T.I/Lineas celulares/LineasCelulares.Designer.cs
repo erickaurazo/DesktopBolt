@@ -104,14 +104,21 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVerDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLineaEnProcesoDeActivacion = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLineaActivar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLineaEnProcesoSuspención = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLineaSuspender = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLineaAveriada = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEnProcesoDeBaja = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLineaBaja = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnLineaEnProcesoSuspención = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLineaEnProcesoDeActivacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEnProcesoDeCesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCesionDeTitularidad = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLineaAveriada = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.gbEdit = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -163,13 +170,6 @@
             this.txtCodigo = new Telerik.WinControls.UI.RadTextBox();
             this.txtEstado = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.btnEnProcesoDeCesion = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCesionDeTitularidad = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEnProcesoDeBaja = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.btnMenu.SuspendLayout();
@@ -810,6 +810,7 @@
             gridViewTextBoxColumn36,
             gridViewCheckBoxColumn1});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
+            this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
             this.dgvRegistro.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvRegistro.MasterTemplate.ShowGroupedColumns = true;
@@ -852,7 +853,7 @@
             this.btnLineaAveriada,
             this.toolStripSeparator9});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(287, 410);
+            this.subMenu.Size = new System.Drawing.Size(287, 388);
             // 
             // btnVerDatosDelColaborador
             // 
@@ -905,12 +906,36 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(283, 6);
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(283, 6);
+            // 
+            // btnLineaEnProcesoDeActivacion
+            // 
+            this.btnLineaEnProcesoDeActivacion.Name = "btnLineaEnProcesoDeActivacion";
+            this.btnLineaEnProcesoDeActivacion.Size = new System.Drawing.Size(286, 22);
+            this.btnLineaEnProcesoDeActivacion.Text = "En proceso de activación";
+            this.btnLineaEnProcesoDeActivacion.Click += new System.EventHandler(this.btnLineaEnProcesoDeActivacion_Click);
+            // 
             // btnLineaActivar
             // 
             this.btnLineaActivar.Name = "btnLineaActivar";
             this.btnLineaActivar.Size = new System.Drawing.Size(286, 22);
             this.btnLineaActivar.Text = "Activar línea";
             this.btnLineaActivar.Click += new System.EventHandler(this.btnLineaActivar_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(283, 6);
+            // 
+            // btnLineaEnProcesoSuspención
+            // 
+            this.btnLineaEnProcesoSuspención.Name = "btnLineaEnProcesoSuspención";
+            this.btnLineaEnProcesoSuspención.Size = new System.Drawing.Size(286, 22);
+            this.btnLineaEnProcesoSuspención.Text = "En proceso de suspención";
+            this.btnLineaEnProcesoSuspención.Click += new System.EventHandler(this.btnLineaEnProcesoSuspención_Click);
             // 
             // btnLineaSuspender
             // 
@@ -919,12 +944,17 @@
             this.btnLineaSuspender.Text = "Suspender línea";
             this.btnLineaSuspender.Click += new System.EventHandler(this.btnLineaSuspender_Click);
             // 
-            // btnLineaAveriada
+            // toolStripSeparator7
             // 
-            this.btnLineaAveriada.Name = "btnLineaAveriada";
-            this.btnLineaAveriada.Size = new System.Drawing.Size(286, 22);
-            this.btnLineaAveriada.Text = "Línea Averiada";
-            this.btnLineaAveriada.Click += new System.EventHandler(this.btnLineaAveriada_Click);
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(283, 6);
+            // 
+            // btnEnProcesoDeBaja
+            // 
+            this.btnEnProcesoDeBaja.Name = "btnEnProcesoDeBaja";
+            this.btnEnProcesoDeBaja.Size = new System.Drawing.Size(286, 22);
+            this.btnEnProcesoDeBaja.Text = "En proceso de baja";
+            this.btnEnProcesoDeBaja.Click += new System.EventHandler(this.btnEnProcesoDeBaja_Click);
             // 
             // btnLineaBaja
             // 
@@ -938,24 +968,36 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(283, 6);
             // 
-            // btnLineaEnProcesoSuspención
+            // btnEnProcesoDeCesion
             // 
-            this.btnLineaEnProcesoSuspención.Name = "btnLineaEnProcesoSuspención";
-            this.btnLineaEnProcesoSuspención.Size = new System.Drawing.Size(286, 22);
-            this.btnLineaEnProcesoSuspención.Text = "En proceso de suspención";
-            this.btnLineaEnProcesoSuspención.Click += new System.EventHandler(this.btnLineaEnProcesoSuspención_Click);
+            this.btnEnProcesoDeCesion.Name = "btnEnProcesoDeCesion";
+            this.btnEnProcesoDeCesion.Size = new System.Drawing.Size(286, 22);
+            this.btnEnProcesoDeCesion.Text = "En proceso de cesión de titularidad";
+            this.btnEnProcesoDeCesion.Click += new System.EventHandler(this.btnEnProcesoDeCesion_Click);
             // 
-            // btnLineaEnProcesoDeActivacion
+            // btnCesionDeTitularidad
             // 
-            this.btnLineaEnProcesoDeActivacion.Name = "btnLineaEnProcesoDeActivacion";
-            this.btnLineaEnProcesoDeActivacion.Size = new System.Drawing.Size(286, 22);
-            this.btnLineaEnProcesoDeActivacion.Text = "En proceso de activación";
-            this.btnLineaEnProcesoDeActivacion.Click += new System.EventHandler(this.btnLineaEnProcesoDeActivacion_Click);
+            this.btnCesionDeTitularidad.Name = "btnCesionDeTitularidad";
+            this.btnCesionDeTitularidad.Size = new System.Drawing.Size(286, 22);
+            this.btnCesionDeTitularidad.Text = "Cesión de titularidad";
+            this.btnCesionDeTitularidad.Click += new System.EventHandler(this.btnCesionDeTitularidad_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(283, 6);
+            // 
+            // btnLineaAveriada
+            // 
+            this.btnLineaAveriada.Name = "btnLineaAveriada";
+            this.btnLineaAveriada.Size = new System.Drawing.Size(286, 22);
+            this.btnLineaAveriada.Text = "Línea Averiada";
+            this.btnLineaAveriada.Click += new System.EventHandler(this.btnLineaAveriada_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(283, 6);
             // 
             // gbEdit
             // 
@@ -1723,47 +1765,6 @@
             this.radLabel2.Size = new System.Drawing.Size(45, 18);
             this.radLabel2.TabIndex = 5;
             this.radLabel2.Text = "Estado :";
-            // 
-            // btnEnProcesoDeCesion
-            // 
-            this.btnEnProcesoDeCesion.Name = "btnEnProcesoDeCesion";
-            this.btnEnProcesoDeCesion.Size = new System.Drawing.Size(286, 22);
-            this.btnEnProcesoDeCesion.Text = "En proceso de cesión de titularidad";
-            this.btnEnProcesoDeCesion.Click += new System.EventHandler(this.btnEnProcesoDeCesion_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(283, 6);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(283, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(283, 6);
-            // 
-            // btnCesionDeTitularidad
-            // 
-            this.btnCesionDeTitularidad.Name = "btnCesionDeTitularidad";
-            this.btnCesionDeTitularidad.Size = new System.Drawing.Size(286, 22);
-            this.btnCesionDeTitularidad.Text = "Cesión de titularidad";
-            this.btnCesionDeTitularidad.Click += new System.EventHandler(this.btnCesionDeTitularidad_Click);
-            // 
-            // btnEnProcesoDeBaja
-            // 
-            this.btnEnProcesoDeBaja.Name = "btnEnProcesoDeBaja";
-            this.btnEnProcesoDeBaja.Size = new System.Drawing.Size(286, 22);
-            this.btnEnProcesoDeBaja.Text = "En proceso de baja";
-            this.btnEnProcesoDeBaja.Click += new System.EventHandler(this.btnEnProcesoDeBaja_Click);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(283, 6);
             // 
             // LineasCelulares
             // 

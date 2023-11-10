@@ -11,25 +11,25 @@ namespace Asistencia.Negocios
     public class SAS_LineasCelularesCoporativasController
     {
 
-        public List<SAS_LineasCelularesCoporativasListado> ListOfCellLines(string conection)
+        public List<SAS_LineasCelularesCoporativasListadoAllResult> ListOfCellLines(string conection)
         {
-            List<SAS_LineasCelularesCoporativasListado> list = new List<SAS_LineasCelularesCoporativasListado>();
+            List<SAS_LineasCelularesCoporativasListadoAllResult> list = new List<SAS_LineasCelularesCoporativasListadoAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                list = Modelo.SAS_LineasCelularesCoporativasListados.ToList();
+                list = Modelo.SAS_LineasCelularesCoporativasListadoAll().ToList();
             }
             return list.OrderBy(x => x.lineaCelular).ToList();
         }
 
 
-        public List<SAS_LineasCelularesCoporativasListado> ListOfCellLines(string conection, string numeroCelular)
+        public List<SAS_LineasCelularesCoporativasListadoAllResult> ListOfCellLines(string conection, string numeroCelular)
         {
-            List<SAS_LineasCelularesCoporativasListado> list = new List<SAS_LineasCelularesCoporativasListado>();
+            List<SAS_LineasCelularesCoporativasListadoAllResult> list = new List<SAS_LineasCelularesCoporativasListadoAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                list = Modelo.SAS_LineasCelularesCoporativasListados.Where(x=> x.lineaCelular == numeroCelular).ToList();
+                list = Modelo.SAS_LineasCelularesCoporativasListadoAll().Where(x=> x.lineaCelular == numeroCelular).ToList();
             }
             return list.OrderBy(x => x.lineaCelular).ToList();
         }
