@@ -62,10 +62,10 @@
             this.btnEliminarRegistro = new Telerik.WinControls.UI.CommandBarButton();
             this.btnExportToExcel = new Telerik.WinControls.UI.CommandBarButton();
             this.btnElegirColumnas = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnFiltro = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnResaltarResultados = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnDistribuir = new Telerik.WinControls.UI.CommandBarButton();
             this.btnCerrar = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton6 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton7 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton8 = new Telerik.WinControls.UI.CommandBarButton();
@@ -73,6 +73,7 @@
             this.commandBarButton10 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton11 = new Telerik.WinControls.UI.CommandBarButton();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
+            this.chkPendienteDistribucion = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.chkCultivoVid = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.chkTipoDeTarget = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -105,7 +106,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1271, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1271, 62);
             this.BarraPrincipal.TabIndex = 202;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -159,10 +160,10 @@
             this.btnEliminarRegistro,
             this.btnExportToExcel,
             this.btnElegirColumnas,
+            this.btnFiltro,
+            this.btnResaltarResultados,
+            this.btnDistribuir,
             this.btnCerrar,
-            this.commandBarButton3,
-            this.commandBarButton4,
-            this.commandBarButton6,
             this.commandBarButton5,
             this.commandBarButton7,
             this.commandBarButton8,
@@ -187,6 +188,7 @@
             this.btnNuevo.Text = "";
             this.btnNuevo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNuevo.ToolTipText = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnActualizarLista
             // 
@@ -201,6 +203,7 @@
             this.btnActualizarLista.Text = "";
             this.btnActualizarLista.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.ToolTipText = "Actualizar Lista";
+            this.btnActualizarLista.Click += new System.EventHandler(this.btnActualizarLista_Click);
             // 
             // btnEditar
             // 
@@ -215,6 +218,7 @@
             this.btnEditar.Text = "";
             this.btnEditar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEditar.ToolTipText = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAnular
             // 
@@ -229,6 +233,7 @@
             this.btnAnular.Text = "";
             this.btnAnular.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAnular.ToolTipText = "Anular";
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // btnEliminarRegistro
             // 
@@ -243,6 +248,7 @@
             this.btnEliminarRegistro.Text = "";
             this.btnEliminarRegistro.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminarRegistro.ToolTipText = "Eliminar Registro";
+            this.btnEliminarRegistro.Click += new System.EventHandler(this.btnEliminarRegistro_Click);
             // 
             // btnExportToExcel
             // 
@@ -274,6 +280,53 @@
             this.btnElegirColumnas.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnElegirColumnas.Click += new System.EventHandler(this.btnElegirColumnas_Click);
             // 
+            // btnFiltro
+            // 
+            this.btnFiltro.AccessibleDescription = "Filtro";
+            this.btnFiltro.AccessibleName = "Filtro";
+            this.btnFiltro.AutoSize = false;
+            this.btnFiltro.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnFiltro.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnFiltro.DisplayName = "Filtro";
+            this.btnFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.Image")));
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Tag = "Activar Filtro";
+            this.btnFiltro.Text = "";
+            this.btnFiltro.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnFiltro.VisibleInStrip = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
+            // btnResaltarResultados
+            // 
+            this.btnResaltarResultados.AccessibleDescription = "ResaltarResultados";
+            this.btnResaltarResultados.AccessibleName = "ResaltarResultados";
+            this.btnResaltarResultados.AutoSize = false;
+            this.btnResaltarResultados.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnResaltarResultados.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnResaltarResultados.DisplayName = "ResaltarResultados";
+            this.btnResaltarResultados.Image = ((System.Drawing.Image)(resources.GetObject("btnResaltarResultados.Image")));
+            this.btnResaltarResultados.Name = "btnResaltarResultados";
+            this.btnResaltarResultados.Tag = "Resaltar Resultados";
+            this.btnResaltarResultados.Text = "";
+            this.btnResaltarResultados.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnResaltarResultados.VisibleInStrip = true;
+            this.btnResaltarResultados.Click += new System.EventHandler(this.btnResaltarResultados_Click);
+            // 
+            // btnDistribuir
+            // 
+            this.btnDistribuir.AccessibleDescription = "Distribuir";
+            this.btnDistribuir.AccessibleName = "Distribuir";
+            this.btnDistribuir.AutoSize = false;
+            this.btnDistribuir.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnDistribuir.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnDistribuir.DisplayName = "Distribuir";
+            this.btnDistribuir.Image = ((System.Drawing.Image)(resources.GetObject("btnDistribuir.Image")));
+            this.btnDistribuir.Name = "btnDistribuir";
+            this.btnDistribuir.Text = "commandBarButton6";
+            this.btnDistribuir.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnDistribuir.VisibleInStrip = true;
+            this.btnDistribuir.Click += new System.EventHandler(this.btnDistribuir_Click);
+            // 
             // btnCerrar
             // 
             this.btnCerrar.AccessibleDescription = "Salir";
@@ -287,48 +340,6 @@
             this.btnCerrar.Text = "";
             this.btnCerrar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnCerrar.ToolTipText = "Salir";
-            // 
-            // commandBarButton3
-            // 
-            this.commandBarButton3.AccessibleDescription = "commandBarButton3";
-            this.commandBarButton3.AccessibleName = "commandBarButton3";
-            this.commandBarButton3.AutoSize = false;
-            this.commandBarButton3.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
-            this.commandBarButton3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton3.DisplayName = "commandBarButton3";
-            this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
-            this.commandBarButton3.Name = "commandBarButton3";
-            this.commandBarButton3.Text = "commandBarButton3";
-            this.commandBarButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton3.VisibleInStrip = false;
-            // 
-            // commandBarButton4
-            // 
-            this.commandBarButton4.AccessibleDescription = "commandBarButton4";
-            this.commandBarButton4.AccessibleName = "commandBarButton4";
-            this.commandBarButton4.AutoSize = false;
-            this.commandBarButton4.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
-            this.commandBarButton4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton4.DisplayName = "commandBarButton4";
-            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
-            this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "commandBarButton4";
-            this.commandBarButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton4.VisibleInStrip = false;
-            // 
-            // commandBarButton6
-            // 
-            this.commandBarButton6.AccessibleDescription = "commandBarButton6";
-            this.commandBarButton6.AccessibleName = "commandBarButton6";
-            this.commandBarButton6.AutoSize = false;
-            this.commandBarButton6.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
-            this.commandBarButton6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton6.DisplayName = "commandBarButton6";
-            this.commandBarButton6.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton6.Image")));
-            this.commandBarButton6.Name = "commandBarButton6";
-            this.commandBarButton6.Text = "commandBarButton6";
-            this.commandBarButton6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton6.VisibleInStrip = false;
             // 
             // commandBarButton5
             // 
@@ -418,6 +429,7 @@
             // 
             this.gbCabecera.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbCabecera.Controls.Add(this.chkPendienteDistribucion);
             this.gbCabecera.Controls.Add(this.chkCultivoVid);
             this.gbCabecera.Controls.Add(this.chkTipoDeTarget);
             this.gbCabecera.Controls.Add(this.btnConsultar);
@@ -427,6 +439,27 @@
             this.gbCabecera.TabIndex = 203;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Consulta";
+            // 
+            // chkPendienteDistribucion
+            // 
+            this.chkPendienteDistribucion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkPendienteDistribucion.AutoSize = true;
+            this.chkPendienteDistribucion.Checked = true;
+            this.chkPendienteDistribucion.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPendienteDistribucion.Location = new System.Drawing.Point(723, 18);
+            this.chkPendienteDistribucion.Name = "chkPendienteDistribucion";
+            this.chkPendienteDistribucion.P_EsEditable = false;
+            this.chkPendienteDistribucion.P_EsModificable = false;
+            this.chkPendienteDistribucion.P_ExigeInformacion = false;
+            this.chkPendienteDistribucion.P_NombreColumna = null;
+            this.chkPendienteDistribucion.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chkPendienteDistribucion.P_ValorFalse = null;
+            this.chkPendienteDistribucion.P_ValorTrue = null;
+            this.chkPendienteDistribucion.Size = new System.Drawing.Size(150, 17);
+            this.chkPendienteDistribucion.TabIndex = 221;
+            this.chkPendienteDistribucion.Text = "Pendientes de distribución";
+            this.chkPendienteDistribucion.UseVisualStyleBackColor = true;
+            this.chkPendienteDistribucion.CheckedChanged += new System.EventHandler(this.chkPendienteDistribucion_CheckedChanged);
             // 
             // chkCultivoVid
             // 
@@ -679,7 +712,7 @@
             this.btnGenerarBaseDeDistribucion,
             this.btnDistribuirPalletEnPackingList});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(273, 70);
+            this.subMenu.Size = new System.Drawing.Size(273, 48);
             // 
             // btnGenerarBaseDeDistribucion
             // 
@@ -726,7 +759,7 @@
             this.Controls.Add(this.BarraPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DistribucionDeCargaEnPackingList";
-            this.Text = "Actualizar distribucion de carga en packing List";
+            this.Text = "Packing List | Distribución de carga";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ActualizarDistribucionDeCargaEnPackingList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).EndInit();
@@ -758,9 +791,9 @@
         private Telerik.WinControls.UI.CommandBarButton btnExportToExcel;
         private Telerik.WinControls.UI.CommandBarButton btnElegirColumnas;
         private Telerik.WinControls.UI.CommandBarButton btnCerrar;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton3;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton6;
+        private Telerik.WinControls.UI.CommandBarButton btnFiltro;
+        private Telerik.WinControls.UI.CommandBarButton btnResaltarResultados;
+        private Telerik.WinControls.UI.CommandBarButton btnDistribuir;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton5;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton7;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton8;
@@ -783,5 +816,6 @@
         private MyControlsDataBinding.Controles.MyCheckBox chkTipoDeTarget;
         private System.Windows.Forms.ToolStripMenuItem btnGenerarBaseDeDistribucion;
         private System.Windows.Forms.ToolStripMenuItem btnDistribuirPalletEnPackingList;
+        private MyControlsDataBinding.Controles.MyCheckBox chkPendienteDistribucion;
     }
 }

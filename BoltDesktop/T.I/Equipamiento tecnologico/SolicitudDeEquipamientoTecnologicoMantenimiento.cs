@@ -1127,7 +1127,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
 
                         ListadoLineasCelularesEnBlanco = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
-                        ListadoLineasCelularesEnBlanco = modelo.GetNumberLineDetailBlanklistingForRequest("SAS", solicitud);
+                        ListadoLineasCelularesEnBlanco = modelo.GetListONumberLineDetailByRequestId("SAS", solicitud);
 
                         infoPerson = new SAS_InfoPersonal();
                         infoPerson = modelInfoPersonal.GetInfoById("SAS", solicitydById.idCodigoGeneral.Trim());
@@ -2252,7 +2252,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             catch (Exception Ex)
             {
 
-                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
         }

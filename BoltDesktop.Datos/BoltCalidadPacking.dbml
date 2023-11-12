@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="BoltCalidadPackingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=sa" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString6" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SAS_CALIDAD_FORMULARIO" Member="SAS_CALIDAD_FORMULARIO">
     <Type Name="SAS_CALIDAD_FORMULARIO">
       <Column Name="idRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -712,6 +712,50 @@
       <Column Name="EstadoIdFase02" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
       <Column Name="EstadoIdFase03" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
       <Column Name="FechaInspeccion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ParametrosDeTemperaturaCampana" Member="SAS_ParametrosDeTemperaturaCampanas">
+    <Type Name="SAS_ParametrosDeTemperaturaCampana">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IdCampana" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="ParametroInicial" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ParametroFinal" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="RegistradoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ParametrosDeTemperaturaCampanaDetalle" Member="SAS_ParametrosDeTemperaturaCampanaDetalles">
+    <Type Name="SAS_ParametrosDeTemperaturaCampanaDetalle">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdDetalle" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipoCultivoId" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="VariedadId" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ParametroInicial" Type="System.Decimal" DbType="Decimal(6,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ParametroFinal" Type="System.Decimal" DbType="Decimal(6,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Visible" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_TermoRegistroPorClienteCampana" Member="SAS_TermoRegistroPorClienteCampanas">
+    <Type Name="SAS_TermoRegistroPorClienteCampana">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="CampanaId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="ClienteId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TipoTermoRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisibleEnReportes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_APLICACION_SO2" Method="SAS_CALIDAD_VIEW_FORM_APLICACION_SO2">
@@ -1989,5 +2033,42 @@
   </Function>
   <Function Name="dbo.SAS_AutoCompletarRegistroDeGasificado" Method="SAS_AutoCompletarRegistroDeGasificado">
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SAS_ParametrosDeTemperaturaCampanaListAll" Method="SAS_ParametrosDeTemperaturaCampanaListAll">
+    <ElementType Name="SAS_ParametrosDeTemperaturaCampanaListAllResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IdCampana" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Campana" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ParametroInicial" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ParametroFinal" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="RegistradoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EstadoDocumento" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoTermoRegistroPorClienteCampanaAll" Method="SAS_ListadoTermoRegistroPorClienteCampanaAll">
+    <ElementType Name="SAS_ListadoTermoRegistroPorClienteCampanaAllResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CampanaId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Campana" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ClienteId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TipoTermoRegistroId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoTermoRegistro" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisibleEnReportes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

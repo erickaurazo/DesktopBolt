@@ -82,6 +82,11 @@
       <DependentUpon>FenologiasAD.dbml</DependentUpon>
     </Compile>
     <Compile Include="Garita.cs" />
+    <Compile Include="ITDContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITDContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="MRP\PlanCosechaAgrupado.cs" />
     <Compile Include="NSFAJAS.cs">
       <DependentUpon>NSFAJAS.dbml</DependentUpon>
@@ -151,6 +156,11 @@
       <LastGenOutput>FenologiasAD.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="ITDContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ITDContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="NSFAJAS.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>NSFAJAS.designer.cs</LastGenOutput>
@@ -205,6 +215,11 @@
   <ItemGroup>
     <None Include="BoltCalidadPacking.dbml.layout">
       <DependentUpon>BoltCalidadPacking.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ITDContext.dbml.layout">
+      <DependentUpon>ITDContext.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

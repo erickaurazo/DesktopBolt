@@ -795,35 +795,35 @@
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.05767007692308); (3.5 : 1.05767007692308)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.05767007692308); (3.5 : 1.05767007692308)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_ORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 3.325); (1.75 : 5.1312525); (2.19791916666667 : 5.1312525 : JumpStart); (2.36458583333333 : 5.1312525 : JumpEnd); (3.5 : 5.1312525)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 3.325); (1.75 : 5.1312525); (2.19791916666667 : 5.1312525 : JumpStart); (2.36458583333333 : 5.1312525 : JumpEnd); (3.5 : 5.1312525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_PEDIDO" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.1312525); (3.19791666666667 : 3.1312525 : JumpStart); (3.36458333333333 : 3.1312525 : JumpEnd); (3.5 : 3.1312525)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 3.1312525); (3.5 : 3.1312525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_PEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.2812525 : 3.325); (2.2812525 : 6.6); (3.5 : 6.6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.2812525 : 3.325); (2.2812525 : 6.6); (3.5 : 6.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_ORDENCOMPRA" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="1ac304c8-cfd4-45bd-8b08-8d6478cd2b73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.89715284615385); (3.22232443490112 : 2.42482841125272 : JumpStart); (3.34017556509888 : 2.30697728105497 : JumpEnd); (3.40625 : 2.24090284615385); (3.40625 : 1.41875); (3.5 : 1.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.89715284615385); (3.40625 : 2.24090284615385); (3.40625 : 1.41875); (3.5 : 1.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_ORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />

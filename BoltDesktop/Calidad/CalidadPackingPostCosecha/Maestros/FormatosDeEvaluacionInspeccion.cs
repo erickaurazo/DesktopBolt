@@ -567,7 +567,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maes
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Ex.Message.ToString(), "Error en el sistema");
+                RadMessageBox.SetThemeName(dgvRegistro.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
         }

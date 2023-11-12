@@ -102,6 +102,10 @@
             this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosCabecera = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoMaestrosByFormVerificacionVidriosDetalle = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosBySeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMaestrosBySeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.GoAsegCalCerCatalogoFormatosInspeccion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccionListado = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccionGrupoInspeccion = new System.Windows.Forms.ToolStripMenuItem();
@@ -307,10 +311,8 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMaestrosBySeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.GoAsegCalCerCatalogoMaestrosBySeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.GoProduccionMovimientoConformidadDeCarga = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoProduccionReporteConformacionDeCarga = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -934,6 +936,30 @@
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Text = "Criterios Inocuidad";
             this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormCriteriosInocuidad_Click);
             // 
+            // GoAsegCalCerCatalogoMaestrosBySeparator2
+            // 
+            this.GoAsegCalCerCatalogoMaestrosBySeparator2.Name = "GoAsegCalCerCatalogoMaestrosBySeparator2";
+            this.GoAsegCalCerCatalogoMaestrosBySeparator2.Size = new System.Drawing.Size(290, 6);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Name = "GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente";
+            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Text = "Termoregistro por Cliente";
+            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña
+            // 
+            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Name = "GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña";
+            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Text = "Parametros de temperatura por Campaña";
+            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña_Click);
+            // 
+            // GoAsegCalCerCatalogoMaestrosBySeparator1
+            // 
+            this.GoAsegCalCerCatalogoMaestrosBySeparator1.Name = "GoAsegCalCerCatalogoMaestrosBySeparator1";
+            this.GoAsegCalCerCatalogoMaestrosBySeparator1.Size = new System.Drawing.Size(290, 6);
+            // 
             // GoAsegCalCerCatalogoFormatosInspeccion
             // 
             this.GoAsegCalCerCatalogoFormatosInspeccion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1504,7 +1530,8 @@
             this.GoAsegCalCerMovimientoRegistroDeGasificado,
             this.GoAsegCalCerMovimientoRegistroDeGasificadoExonerado,
             this.GoExportacionesMovimientoDistribuirPaletasEnContenedor,
-            this.GoCCostosMovimientoActualizarFecha});
+            this.GoCCostosMovimientoActualizarFecha,
+            this.GoProduccionMovimientoConformidadDeCarga});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(84, 20);
             this.viewMenu.Text = "Movimiento";
@@ -1783,7 +1810,8 @@
             this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento,
             this.GoAsegCalCerReporteRegistroDeGasificado,
             this.GoAsegCalCerReporteFrioYDespacho,
-            this.GoAsegCalCerReporteProductoTerminado});
+            this.GoAsegCalCerReporteProductoTerminado,
+            this.GoProduccionReporteConformacionDeCarga});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(65, 20);
             this.toolsMenu.Text = "&Reportes";
@@ -2477,29 +2505,19 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente
+            // GoProduccionMovimientoConformidadDeCarga
             // 
-            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Name = "GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente";
-            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Text = "Termoregistro por Cliente";
-            this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente_Click);
+            this.GoProduccionMovimientoConformidadDeCarga.Name = "GoProduccionMovimientoConformidadDeCarga";
+            this.GoProduccionMovimientoConformidadDeCarga.Size = new System.Drawing.Size(354, 22);
+            this.GoProduccionMovimientoConformidadDeCarga.Text = "Conformidad de carga";
+            this.GoProduccionMovimientoConformidadDeCarga.Click += new System.EventHandler(this.GoProduccionMovimientoConformidadDeCarga_Click);
             // 
-            // GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña
+            // GoProduccionReporteConformacionDeCarga
             // 
-            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Name = "GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña";
-            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Text = "Parametros de temperatura por Campaña";
-            this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña_Click);
-            // 
-            // GoAsegCalCerCatalogoMaestrosBySeparator1
-            // 
-            this.GoAsegCalCerCatalogoMaestrosBySeparator1.Name = "GoAsegCalCerCatalogoMaestrosBySeparator1";
-            this.GoAsegCalCerCatalogoMaestrosBySeparator1.Size = new System.Drawing.Size(290, 6);
-            // 
-            // GoAsegCalCerCatalogoMaestrosBySeparator2
-            // 
-            this.GoAsegCalCerCatalogoMaestrosBySeparator2.Name = "GoAsegCalCerCatalogoMaestrosBySeparator2";
-            this.GoAsegCalCerCatalogoMaestrosBySeparator2.Size = new System.Drawing.Size(290, 6);
+            this.GoProduccionReporteConformacionDeCarga.Name = "GoProduccionReporteConformacionDeCarga";
+            this.GoProduccionReporteConformacionDeCarga.Size = new System.Drawing.Size(386, 22);
+            this.GoProduccionReporteConformacionDeCarga.Text = "Conformaciones de carga";
+            this.GoProduccionReporteConformacionDeCarga.Click += new System.EventHandler(this.GoProduccionReporteConformacionDeCarga_Click);
             // 
             // Menu
             // 
@@ -2809,5 +2827,7 @@
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña;
         private System.Windows.Forms.ToolStripSeparator GoAsegCalCerCatalogoMaestrosBySeparator2;
         private System.Windows.Forms.ToolStripSeparator GoAsegCalCerCatalogoMaestrosBySeparator1;
+        private System.Windows.Forms.ToolStripMenuItem GoProduccionMovimientoConformidadDeCarga;
+        private System.Windows.Forms.ToolStripMenuItem GoProduccionReporteConformacionDeCarga;
     }
 }

@@ -18,6 +18,7 @@ using ComparativoHorasVisualSATNISIRA.Exportaciones;
 using ComparativoHorasVisualSATNISIRA.Maquinaria;
 using ComparativoHorasVisualSATNISIRA.MRP;
 using ComparativoHorasVisualSATNISIRA.Presupuestos;
+using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.T.I;
 using ComparativoHorasVisualSATNISIRA.T.I.Partes_Diarios;
 using System;
@@ -5118,6 +5119,63 @@ namespace Asistencia
                 frmHijo.Show();
                 frmHijo.WindowState = FormWindowState.Maximized;
                 frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+               // frmHijo.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoProduccionReporteConformacionDeCarga_Click(object sender, EventArgs e)
+        {
+            //ConformacionDeCargaReporte
+            string form2 = GoProduccionReporteConformacionDeCarga.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                ConformacionDeCargaReporte frmHijo = new ConformacionDeCargaReporte("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                // frmHijo.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoProduccionMovimientoConformidadDeCarga_Click(object sender, EventArgs e)
+        {
+            //ConformacionDeCarga
+            string form2 = GoProduccionMovimientoConformidadDeCarga.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                ConformacionDeCarga frmHijo = new ConformacionDeCarga("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                // frmHijo.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
                 statusStrip.Visible = false;
             }
             else

@@ -16,7 +16,7 @@ using Asistencia.Datos;
 using Asistencia.Helper;
 using System.Globalization;
 using ComparativoHorasVisualSATNISIRA.Produccion;
-
+using System.Drawing;
 
 namespace ComparativoHorasVisualSATNISIRA.Exportaciones
 {
@@ -43,7 +43,9 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
         private SAS_ListadoDePackingListAllResult itemSelecionado;
         private int VerSoloCultivoVID = 0;
         private int VerSoloExportable = 0;
-
+        private int ParImparFiltro;
+        private int ClickResaltarResultados;
+        private int SoloVerPendientes;
 
         public DistribucionDeCargaEnPackingList()
         {
@@ -73,22 +75,23 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
 
         private void VerificarCheckBox()
         {
+            SoloVerPendientes = 0;
+            VerSoloExportable = 0;
+            VerSoloCultivoVID = 0;
             if (chkCultivoVid.Checked == true)
             {
                 VerSoloCultivoVID = 1;
             }
-            else
-            {
-                VerSoloCultivoVID = 0;
-            }
+            
 
             if (chkTipoDeTarget.Checked == true)
             {
                 VerSoloExportable = 1;
             }
-            else
+          
+            if (chkPendienteDistribucion.Checked == true)
             {
-                VerSoloExportable = 0;
+                SoloVerPendientes = 1;
             }
 
         }
@@ -153,7 +156,7 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
                 catch (Exception ex)
                 {
                     string message = String.Format("El archivo no pudo ser ejecutado por el sistema.\nError message: {0}", ex.Message);
-                    RadMessageBox.Show(message, "Abrir Archivo", MessageBoxButtons.OK, RadMessageIcon.Error);
+                    RadMessageBox.Show(message, "Error para abrir Archivo", MessageBoxButtons.OK, RadMessageIcon.Error);
                 }
             }
         }
@@ -182,7 +185,7 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
             catch (IOException ex)
             {
                 RadMessageBox.SetThemeName(grilla1.ThemeName);
-                RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
+                RadMessageBox.Show(this, ex.Message, "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
 
@@ -205,7 +208,8 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Ex.Message, "MENSAJE DEL SISTEMA");
+                RadMessageBox.SetThemeName(dgvListado.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
         }
@@ -232,11 +236,10 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
             GridViewSummaryRowItem items1 = new GridViewSummaryRowItem();
             items1.Add(new GridViewSummaryItem("chdocumento", "Count : {0:N0}; ", GridAggregateFunction.Count));
             dgvListado.MasterTemplate.SummaryRowsTop.Add(items1);
-
         }
 
 
-
+  
 
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -264,7 +267,8 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Ex.Message, "MENSAJE DEL SISTEA");
+                RadMessageBox.SetThemeName(dgvListado.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
 
@@ -281,10 +285,12 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
                 pbDetalle.Visible = !true;
                 BarraPrincipal.Enabled = true;
 
+                ResaltarResultados();
             }
             catch (Exception Ex)
             {
-                MessageBox.Show(Ex.Message, "MENSAJE DEL SISTEA");
+                RadMessageBox.SetThemeName(dgvListado.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
         }
@@ -322,8 +328,18 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
                 }
             }
 
-            dgvListado.DataSource = listadoFiltro.OrderByDescending(x => x.numeroDePackingList).ToList().ToDataTable<SAS_ListadoDePackingListAllResult>();
-            dgvListado.Refresh();
+            if (SoloVerPendientes == 1)
+            {
+                dgvListado.DataSource = listadoFiltro.Where(x=> x.CantidadPalletDistribuidos <20).OrderByDescending(x => x.numeroDePackingList).ToList().ToDataTable<SAS_ListadoDePackingListAllResult>();
+                dgvListado.Refresh();
+            }
+            else
+            {
+                dgvListado.DataSource = listadoFiltro.OrderByDescending(x => x.numeroDePackingList).ToList().ToDataTable<SAS_ListadoDePackingListAllResult>();
+                dgvListado.Refresh();
+            }
+
+            
         }
 
         private void chkCultivoVid_CheckedChanged(object sender, EventArgs e)
@@ -397,7 +413,8 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
                     }
                     catch (Exception Ex)
                     {
-                        MessageBox.Show(Ex.Message.ToString() + "", "MENSAJE DEL SISTEMA");
+                        RadMessageBox.SetThemeName(dgvListado.ThemeName);
+                        RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                         return;
                     }
                 }
@@ -409,8 +426,136 @@ namespace ComparativoHorasVisualSATNISIRA.Exportaciones
 
         private void btnDistribuirPalletEnPackingList_Click(object sender, EventArgs e)
         {
-            DistribucionDeCargaEnPackingListDetalle ofrm = new DistribucionDeCargaEnPackingListDetalle(conection,user2,companyId,privilege,itemSelecionado );
-            ofrm.ShowDialog();
+            RealizarDistribucion();
+        }
+
+        private void RealizarDistribucion()
+        {
+
+            try
+            {
+                DistribucionDeCargaEnPackingListDetalle ofrm = new DistribucionDeCargaEnPackingListDetalle(conection, user2, companyId, privilege, itemSelecionado);
+                ofrm.ShowDialog();
+            }
+            catch (Exception Ex)
+            {
+                RadMessageBox.SetThemeName(dgvListado.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+         
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ParImparFiltro += 1;
+            ActivarFiltro();
+        }
+
+        private void btnResaltarResultados_Click(object sender, EventArgs e)
+        {
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
+        }
+
+        private void ResaltarResultados()
+        {
+            
+            if ((ClickResaltarResultados % 2) == 0)
+            {
+                #region Par() | Acción pintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "0", "", true);
+                c1.RowBackColor = Color.LightPink;
+                c1.CellBackColor = Color.IndianRed;
+                dgvListado.Columns["chCantidadPalletDistribuidos"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
+            else
+            {
+                #region Par() | Acción despintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "0", "", true);
+                c1.RowBackColor = Color.White;
+                c1.CellBackColor = Color.White;
+                dgvListado.Columns["chCantidadPalletDistribuidos"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+
+              
+            }
+        }
+
+        private void ActivarFiltro()
+        {
+            if ((ParImparFiltro % 2) == 0)
+            {
+                #region Par() | DesActivar Filtro()
+                dgvListado.EnableFiltering = true;
+                dgvListado.ShowHeaderCellButtons = true;
+                #endregion
+            }
+            else
+            {
+                #region Par() | Activar Filtro()
+                dgvListado.EnableFiltering = !true;
+                dgvListado.ShowHeaderCellButtons = !true;
+                #endregion                
+            }
+        }
+
+
+        private void btnEliminarRegistro_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void Eliminar()
+        {
+            MessageBox.Show("No tiene acceso para realizar esta acción", "Advertencia del sistema");
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            Anular();
+        }
+
+        private void Anular()
+        {
+            MessageBox.Show("No tiene acceso para realizar esta acción", "Advertencia del sistema");
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void Editar()
+        {
+            MessageBox.Show("No tiene acceso para realizar esta acción", "Advertencia del sistema");
+        }
+
+        private void btnActualizarLista_Click(object sender, EventArgs e)
+        {
+            VerificarCheckBox(); 
+            Consult();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        private void Nuevo()
+        {
+            MessageBox.Show("No tiene acceso para realizar esta acción", "Advertencia del sistema");
+        }
+
+        private void btnDistribuir_Click(object sender, EventArgs e)
+        {
+            RealizarDistribucion();
+        }
+
+        private void chkPendienteDistribucion_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

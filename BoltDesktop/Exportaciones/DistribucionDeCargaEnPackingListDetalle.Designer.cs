@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.ConditionalFormattingObject conditionalFormattingObject3 = new Telerik.WinControls.UI.ConditionalFormattingObject();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.ConditionalFormattingObject conditionalFormattingObject1 = new Telerik.WinControls.UI.ConditionalFormattingObject();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DistribucionDeCargaEnPackingListDetalle));
             this.GbDatosGeneralesPCK = new System.Windows.Forms.GroupBox();
             this.txtBooking = new System.Windows.Forms.TextBox();
@@ -333,115 +333,115 @@
             this.dgvPalletADistribuir.MasterTemplate.AutoExpandGroups = true;
             this.dgvPalletADistribuir.MasterTemplate.AutoGenerateColumns = false;
             this.dgvPalletADistribuir.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn17.AllowSort = false;
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "idpackinglist";
-            gridViewTextBoxColumn17.HeaderText = "Codigo";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "chCodigo";
-            gridViewTextBoxColumn17.ReadOnly = true;
-            gridViewTextBoxColumn17.Width = 100;
-            gridViewTextBoxColumn18.AllowGroup = false;
-            gridViewTextBoxColumn18.AllowSort = false;
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "numeroManual";
-            gridViewTextBoxColumn18.HeaderText = "# Manual";
-            gridViewTextBoxColumn18.IsVisible = false;
-            gridViewTextBoxColumn18.Name = "chnumeroManual";
-            gridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn18.Width = 94;
-            gridViewTextBoxColumn19.AllowSort = false;
-            gridViewTextBoxColumn19.EnableExpressionEditor = false;
-            gridViewTextBoxColumn19.FieldName = "numpaleta";
-            gridViewTextBoxColumn19.HeaderText = "Paleta";
-            gridViewTextBoxColumn19.MaxLength = 2;
-            gridViewTextBoxColumn19.Name = "chnumpaleta";
-            gridViewTextBoxColumn19.ReadOnly = true;
-            gridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn19.Width = 243;
-            gridViewTextBoxColumn20.EnableExpressionEditor = false;
-            gridViewTextBoxColumn20.FieldName = "cantidad";
-            gridViewTextBoxColumn20.HeaderText = "Cantidad";
-            gridViewTextBoxColumn20.IsVisible = false;
-            gridViewTextBoxColumn20.Name = "chcantidad";
-            gridViewTextBoxColumn20.ReadOnly = true;
-            gridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn20.Width = 84;
-            gridViewTextBoxColumn21.EnableExpressionEditor = false;
-            gridViewTextBoxColumn21.FieldName = "IDPRODUCTO";
-            gridViewTextBoxColumn21.HeaderText = "Producto Cod.";
-            gridViewTextBoxColumn21.IsVisible = false;
-            gridViewTextBoxColumn21.Name = "chIDPRODUCTO";
-            gridViewTextBoxColumn21.ReadOnly = true;
-            gridViewTextBoxColumn21.Width = 85;
-            gridViewDecimalColumn3.AllowGroup = false;
-            gridViewDecimalColumn3.AllowResize = false;
-            gridViewDecimalColumn3.AllowSort = false;
-            gridViewDecimalColumn3.DecimalPlaces = 0;
-            gridViewDecimalColumn3.EnableExpressionEditor = true;
-            gridViewDecimalColumn3.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
-            gridViewDecimalColumn3.FieldName = "POSICION";
-            gridViewDecimalColumn3.HeaderText = "Posición";
-            gridViewDecimalColumn3.Maximum = new decimal(new int[] {
+            gridViewTextBoxColumn1.AllowSort = false;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "idpackinglist";
+            gridViewTextBoxColumn1.HeaderText = "Codigo";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "chCodigo";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 100;
+            gridViewTextBoxColumn2.AllowGroup = false;
+            gridViewTextBoxColumn2.AllowSort = false;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "numeroManual";
+            gridViewTextBoxColumn2.HeaderText = "# Manual";
+            gridViewTextBoxColumn2.IsVisible = false;
+            gridViewTextBoxColumn2.Name = "chnumeroManual";
+            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn2.Width = 94;
+            gridViewTextBoxColumn3.AllowSort = false;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "numpaleta";
+            gridViewTextBoxColumn3.HeaderText = "Paleta";
+            gridViewTextBoxColumn3.MaxLength = 2;
+            gridViewTextBoxColumn3.Name = "chnumpaleta";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn3.Width = 243;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "cantidad";
+            gridViewTextBoxColumn4.HeaderText = "Cantidad";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "chcantidad";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn4.Width = 84;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "IDPRODUCTO";
+            gridViewTextBoxColumn5.HeaderText = "Producto Cod.";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "chIDPRODUCTO";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 85;
+            gridViewDecimalColumn1.AllowGroup = false;
+            gridViewDecimalColumn1.AllowResize = false;
+            gridViewDecimalColumn1.AllowSort = false;
+            gridViewDecimalColumn1.DecimalPlaces = 0;
+            gridViewDecimalColumn1.EnableExpressionEditor = true;
+            gridViewDecimalColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
+            gridViewDecimalColumn1.FieldName = "POSICION";
+            gridViewDecimalColumn1.HeaderText = "Posición";
+            gridViewDecimalColumn1.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
-            gridViewDecimalColumn3.Minimum = new decimal(new int[] {
+            gridViewDecimalColumn1.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            gridViewDecimalColumn3.Name = "chPOSICION";
-            gridViewDecimalColumn3.ShowUpDownButtons = false;
-            gridViewDecimalColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn3.Width = 81;
-            gridViewTextBoxColumn22.AllowGroup = false;
-            gridViewTextBoxColumn22.AllowSort = false;
-            conditionalFormattingObject3.CellBackColor = System.Drawing.Color.Empty;
-            conditionalFormattingObject3.CellFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            conditionalFormattingObject3.CellForeColor = System.Drawing.Color.Empty;
-            conditionalFormattingObject3.Name = "NewCondition";
-            conditionalFormattingObject3.RowBackColor = System.Drawing.Color.Empty;
-            conditionalFormattingObject3.RowFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            conditionalFormattingObject3.RowForeColor = System.Drawing.Color.Empty;
-            gridViewTextBoxColumn22.ConditionalFormattingObjectList.Add(conditionalFormattingObject3);
-            gridViewTextBoxColumn22.EnableExpressionEditor = false;
-            gridViewTextBoxColumn22.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
-            gridViewTextBoxColumn22.FieldName = "FILA";
-            gridViewTextBoxColumn22.HeaderText = "Fila";
-            gridViewTextBoxColumn22.Name = "chFILA";
-            gridViewTextBoxColumn22.ReadOnly = true;
-            gridViewTextBoxColumn22.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn22.Width = 26;
-            gridViewTextBoxColumn23.AllowGroup = false;
-            gridViewTextBoxColumn23.AllowSort = false;
-            gridViewTextBoxColumn23.EnableExpressionEditor = false;
-            gridViewTextBoxColumn23.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
-            gridViewTextBoxColumn23.FieldName = "COLUMNA";
-            gridViewTextBoxColumn23.HeaderText = "Columna";
-            gridViewTextBoxColumn23.MaxLength = 2;
-            gridViewTextBoxColumn23.Name = "chCOLUMNA";
-            gridViewTextBoxColumn23.ReadOnly = true;
-            gridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn23.Width = 174;
-            gridViewTextBoxColumn24.AllowSort = false;
-            gridViewTextBoxColumn24.EnableExpressionEditor = false;
-            gridViewTextBoxColumn24.FieldName = "ubicacionTermoRegistro";
-            gridViewTextBoxColumn24.HeaderText = "TermoRegistro";
-            gridViewTextBoxColumn24.Name = "chubicacionTermoRegistro";
-            gridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn24.Width = 543;
+            gridViewDecimalColumn1.Name = "chPOSICION";
+            gridViewDecimalColumn1.ShowUpDownButtons = false;
+            gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn1.Width = 81;
+            gridViewTextBoxColumn6.AllowGroup = false;
+            gridViewTextBoxColumn6.AllowSort = false;
+            conditionalFormattingObject1.CellBackColor = System.Drawing.Color.Empty;
+            conditionalFormattingObject1.CellFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            conditionalFormattingObject1.CellForeColor = System.Drawing.Color.Empty;
+            conditionalFormattingObject1.Name = "NewCondition";
+            conditionalFormattingObject1.RowBackColor = System.Drawing.Color.Empty;
+            conditionalFormattingObject1.RowFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            conditionalFormattingObject1.RowForeColor = System.Drawing.Color.Empty;
+            gridViewTextBoxColumn6.ConditionalFormattingObjectList.Add(conditionalFormattingObject1);
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
+            gridViewTextBoxColumn6.FieldName = "FILA";
+            gridViewTextBoxColumn6.HeaderText = "Fila";
+            gridViewTextBoxColumn6.Name = "chFILA";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn6.Width = 26;
+            gridViewTextBoxColumn7.AllowGroup = false;
+            gridViewTextBoxColumn7.AllowSort = false;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
+            gridViewTextBoxColumn7.FieldName = "COLUMNA";
+            gridViewTextBoxColumn7.HeaderText = "Columna";
+            gridViewTextBoxColumn7.MaxLength = 2;
+            gridViewTextBoxColumn7.Name = "chCOLUMNA";
+            gridViewTextBoxColumn7.ReadOnly = true;
+            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn7.Width = 174;
+            gridViewTextBoxColumn8.AllowSort = false;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "ubicacionTermoRegistro";
+            gridViewTextBoxColumn8.HeaderText = "TermoRegistro";
+            gridViewTextBoxColumn8.Name = "chubicacionTermoRegistro";
+            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn8.Width = 543;
             this.dgvPalletADistribuir.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18,
-            gridViewTextBoxColumn19,
-            gridViewTextBoxColumn20,
-            gridViewTextBoxColumn21,
-            gridViewDecimalColumn3,
-            gridViewTextBoxColumn22,
-            gridViewTextBoxColumn23,
-            gridViewTextBoxColumn24});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
             this.dgvPalletADistribuir.MasterTemplate.EnableFiltering = true;
             this.dgvPalletADistribuir.MasterTemplate.MultiSelect = true;
             this.dgvPalletADistribuir.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
@@ -496,7 +496,7 @@
             this.Controls.Add(this.GbDatosGeneralesPCK);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DistribucionDeCargaEnPackingListDetalle";
-            this.Text = "Distribución de carga en packing List";
+            this.Text = "Packing List | Distribución de carga";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DistribucionDeCargaEnPackingList_Load);
             this.GbDatosGeneralesPCK.ResumeLayout(false);

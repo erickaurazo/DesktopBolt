@@ -1588,6 +1588,12 @@
     <Compile Include="Presupuestos\AperturaCierrePresupuestos.Designer.cs">
       <DependentUpon>AperturaCierrePresupuestos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCarga.Designer.cs">
+      <DependentUpon>ConformacionDeCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2911,6 +2917,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presupuestos\AperturaCierrePresupuestos.resx">
       <DependentUpon>AperturaCierrePresupuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCarga.resx">
+      <DependentUpon>ConformacionDeCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.resx">
       <DependentUpon>ConformacionDeCargaDetalle.cs</DependentUpon>

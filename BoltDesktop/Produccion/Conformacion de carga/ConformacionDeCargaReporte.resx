@@ -172,10 +172,10 @@
   </data>
   <data name="btnVerDetalle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAABXSURBVDhPYxgFCODi4mLi6ur6083N7T8+DFVjDNWGAB4e
-        Huzu7u7+QAWh+DBIDUgtVBsVAdALckAblgCdtwofhqqRhWpDAJAgRQZQDCgORIqjccQCBgYAnkhjyubA
-        F3cAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAFdJREFUOE9jGAUI4OLiYuLq6vrTzc3tPz4MVWMM1YYAHh4e7O7u7v5ABaH4MEgN
+        SC1UGxUB0AtyQBuWAJ23Ch+GqpGFakMAkCBFBlAMKA5EiqNxxAIGBgCeSGPK5sAXdwAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnConsultar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -1,6 +1,6 @@
 ﻿namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 {
-    partial class ConformacionDeCargaReporte
+    partial class ConformacionDeCarga
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConformacionDeCargaReporte));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConformacionDeCarga));
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -112,10 +112,10 @@
             this.lblUser,
             this.lblFullName,
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 599);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 628);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1188, 22);
-            this.stsBarraEstado.TabIndex = 236;
+            this.stsBarraEstado.Size = new System.Drawing.Size(1200, 22);
+            this.stsBarraEstado.TabIndex = 240;
             // 
             // lblUserNames
             // 
@@ -157,7 +157,7 @@
             this.gbList.Location = new System.Drawing.Point(12, 115);
             this.gbList.Name = "gbList";
             this.gbList.Size = new System.Drawing.Size(1164, 472);
-            this.gbList.TabIndex = 235;
+            this.gbList.TabIndex = 239;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
             // 
@@ -263,7 +263,6 @@
             this.dgvRegistros.Size = new System.Drawing.Size(1160, 452);
             this.dgvRegistros.TabIndex = 233;
             this.dgvRegistros.ThemeName = "Windows8";
-            this.dgvRegistros.SelectionChanged += new System.EventHandler(this.dgvRegistros_SelectionChanged);
             // 
             // subMenuComponentes
             // 
@@ -358,7 +357,7 @@
             this.gbCabecera.Location = new System.Drawing.Point(2, 41);
             this.gbCabecera.Name = "gbCabecera";
             this.gbCabecera.Size = new System.Drawing.Size(1186, 68);
-            this.gbCabecera.TabIndex = 234;
+            this.gbCabecera.TabIndex = 238;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Consulta";
             // 
@@ -380,7 +379,6 @@
             this.chkVisualizacionPorDia.TabIndex = 216;
             this.chkVisualizacionPorDia.Text = "Día actual";
             this.chkVisualizacionPorDia.UseVisualStyleBackColor = true;
-            this.chkVisualizacionPorDia.CheckedChanged += new System.EventHandler(this.chkVisualizacionPorDia_CheckedChanged);
             // 
             // txtFechaHasta
             // 
@@ -452,7 +450,6 @@
             0,
             0,
             0});
-            this.txtPeriodo.ValueChanged += new System.EventHandler(this.txtPeriodo_ValueChanged);
             // 
             // label1
             // 
@@ -492,7 +489,6 @@
             this.cboMes.Size = new System.Drawing.Size(198, 20);
             this.cboMes.TabIndex = 15;
             this.cboMes.ThemeName = "Windows8";
-            this.cboMes.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cboMes_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -516,7 +512,6 @@
             this.btnConsultar.Text = "&Consultar     ";
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // BarraPrincipal
             // 
@@ -525,8 +520,8 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1188, 62);
-            this.BarraPrincipal.TabIndex = 233;
+            this.BarraPrincipal.Size = new System.Drawing.Size(1200, 35);
+            this.BarraPrincipal.TabIndex = 237;
             this.BarraPrincipal.ThemeName = "Windows8";
             // 
             // BarraSuperior
@@ -603,7 +598,6 @@
             this.btnNuevo.Text = "";
             this.btnNuevo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNuevo.ToolTipText = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -618,7 +612,6 @@
             this.btnEditar.Text = "";
             this.btnEditar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEditar.ToolTipText = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGrabar
             // 
@@ -633,7 +626,6 @@
             this.btnGrabar.Text = "";
             this.btnGrabar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnGrabar.ToolTipText = "Actualizar Lista";
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnAtras
             // 
@@ -647,7 +639,6 @@
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Text = "";
             this.btnAtras.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnAnular
             // 
@@ -662,7 +653,6 @@
             this.btnAnular.Text = "";
             this.btnAnular.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAnular.ToolTipText = "Anular";
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // btnEliminarRegistro
             // 
@@ -677,7 +667,6 @@
             this.btnEliminarRegistro.Text = "";
             this.btnEliminarRegistro.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminarRegistro.ToolTipText = "Eliminar Registro";
-            this.btnEliminarRegistro.Click += new System.EventHandler(this.btnEliminarRegistro_Click);
             // 
             // btnHistorial
             // 
@@ -690,7 +679,6 @@
             this.btnHistorial.Text = "";
             this.btnHistorial.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnHistorial.ToolTipText = "Historial";
-            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // btnExportToExcel
             // 
@@ -705,7 +693,6 @@
             this.btnExportToExcel.Text = "";
             this.btnExportToExcel.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnExportToExcel.ToolTipText = "Exportar";
-            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // btnAdjuntar
             // 
@@ -721,7 +708,6 @@
             this.btnAdjuntar.Text = "";
             this.btnAdjuntar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAdjuntar.ToolTipText = "Adjuntar";
-            this.btnAdjuntar.Click += new System.EventHandler(this.btnAdjuntar_Click);
             // 
             // btnCambiarEstadoDispositivo
             // 
@@ -737,7 +723,6 @@
             this.btnCambiarEstadoDispositivo.Text = "";
             this.btnCambiarEstadoDispositivo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnCambiarEstadoDispositivo.ToolTipText = "Cambiar el estado del dispositivo";
-            this.btnCambiarEstadoDispositivo.Click += new System.EventHandler(this.btnCambiarEstadoDispositivo_Click);
             // 
             // btnGenerarFormatosPDF
             // 
@@ -753,7 +738,6 @@
             this.btnGenerarFormatosPDF.Text = "";
             this.btnGenerarFormatosPDF.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnGenerarFormatosPDF.ToolTipText = "GenerarFormatosPDF";
-            this.btnGenerarFormatosPDF.Click += new System.EventHandler(this.btnGenerarFormatosPDF_Click);
             // 
             // btnElegirColumna
             // 
@@ -767,7 +751,6 @@
             this.btnElegirColumna.Name = "btnElegirColumna";
             this.btnElegirColumna.Text = "";
             this.btnElegirColumna.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnElegirColumna.Click += new System.EventHandler(this.btnElegirColumna_Click);
             // 
             // btnCerrar
             // 
@@ -782,27 +765,20 @@
             this.btnCerrar.Text = "";
             this.btnCerrar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnCerrar.ToolTipText = "Salir";
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // bgwHilo
-            // 
-            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
-            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
-            // 
-            // ConformacionDeCargaReporte
+            // ConformacionDeCarga
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1188, 621);
+            this.ClientSize = new System.Drawing.Size(1200, 650);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.gbList);
             this.Controls.Add(this.gbCabecera);
             this.Controls.Add(this.BarraPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ConformacionDeCargaReporte";
-            this.Text = "Conformacion De Carga | Reporte";
+            this.Name = "ConformacionDeCarga";
+            this.Text = "Conformacion de carga | Listado";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConformacionDeCargaReporte_FormClosing);
-            this.Load += new System.EventHandler(this.ConformacionDeCargaReporte_Load);
+            this.Load += new System.EventHandler(this.ConformacionDeCarga_Load);
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).EndInit();
@@ -839,6 +815,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem btnAprobacionEvaluacionSub;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem btnVerDetalle;
         private System.Windows.Forms.GroupBox gbCabecera;
         private MyControlsDataBinding.Controles.MyCheckBox chkVisualizacionPorDia;
         private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtFechaHasta;
@@ -871,6 +848,5 @@
         private System.ComponentModel.BackgroundWorker bgwHilo;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
-        private System.Windows.Forms.ToolStripMenuItem btnVerDetalle;
     }
 }

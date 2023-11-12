@@ -57,7 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calidad\ParametrosDeTemperaturaCampanaController.cs" />
     <Compile Include="Calidad\SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoController.cs" />
+    <Compile Include="Calidad\TermoRegistroPorClienteCampanaController.cs" />
     <Compile Include="Logistica\AreasController.cs" />
     <Compile Include="ProduccionPacking\SAS_CondormidadDeCargaController.cs" />
     <Compile Include="RRHH\AsistenciaController.cs" />
