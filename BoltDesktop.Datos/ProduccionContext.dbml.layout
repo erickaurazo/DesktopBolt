@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="ProduccionContext">
+  <DataContextMoniker Name="/ProduccionContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a462ffd8-a80d-4e69-8839-176a4c362c33" isExpanded="false" absoluteBounds="2, 2.875, 2.375, 0.45">
+      <DataClassMoniker Name="/ProduccionContextDataContext/SAS_ConformacionDeCarga" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e59e8109-6a7a-46c6-8953-4ed147f855b6" absoluteBounds="2.015, 3.335, 2.3449999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41990e93-bd79-420c-a459-bdbede4fee2b" isExpanded="false" absoluteBounds="4.75, 2.875, 2.5, 0.45">
+      <DataClassMoniker Name="/ProduccionContextDataContext/SAS_ConformacionDeCargaDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="455cbc05-8b65-4b06-94d0-36cdc7e39be6" absoluteBounds="4.7650000000000006, 3.335, 2.4699999999999998, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fbf625f-37b3-481b-a025-246127c87adf" isExpanded="false" absoluteBounds="1, 6.125, 3.25, 0.45">
+      <DataClassMoniker Name="/ProduccionContextDataContext/SAS_ConformacionDeCargaDetalleByIdByPalleta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4332430-a4a3-4fdd-aed1-9cc1865ca0b1" absoluteBounds="1.0150000000000001, 6.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31cc4866-3e62-406e-8be3-15faa0739094" isExpanded="false" absoluteBounds="1.625, 8, 2.625, 0.45">
+      <DataClassMoniker Name="/ProduccionContextDataContext/SAS_ListadoConformacionDeCargaPBI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef3b5af8-60a1-46b9-a559-9820276e61ca" absoluteBounds="1.6400000000000001, 8.46, 1.9700000000000002, 8.3260498046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

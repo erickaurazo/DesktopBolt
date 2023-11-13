@@ -43,7 +43,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         private int Distribuido;
         private int Revisado;
 
-        public int ParImparFiltro { get; private set; }
+        public int ParImparFiltro = 0;
         #endregion
 
         public TrazabilidadDeContenedorDespachosReporte()
@@ -629,5 +629,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Frio
         }
 
         #endregion
+
+
     }
 }

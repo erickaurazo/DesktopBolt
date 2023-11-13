@@ -6,8 +6,6 @@ using System.Transactions;
 using MyControlsDataBinding.Busquedas;
 using Asistencia.Datos;
 
-
-
 namespace Asistencia.Negocios.Calidad
 {
   public  class TermoRegistroPorClienteCampanaController
@@ -52,6 +50,9 @@ namespace Asistencia.Negocios.Calidad
                     oItem.FechaCreacion = item.FechaCreacion;
                     oItem.HostName = item.HostName;
                     oItem.Usuario = item.Usuario;
+                    oItem.Desde = item.Desde;
+                    oItem.Hasta = item.Hasta;
+                    oItem.Glosa = item.Glosa;
                     Modelo.SAS_TermoRegistroPorClienteCampanas.InsertOnSubmit(oItem);
                     Modelo.SubmitChanges();
                     resultado = oItem.Id;
@@ -61,15 +62,19 @@ namespace Asistencia.Negocios.Calidad
                 {
                     #region Editar()
                     SAS_TermoRegistroPorClienteCampana oItem = new SAS_TermoRegistroPorClienteCampana();
+                    oItem = listado.ElementAt(0);
                     //oItem.EmpresaId = item.EmpresaId;
                     //oItem.CampanaId = item.CampanaId;
                     //oItem.ClienteId = item.ClienteId;
                     oItem.TipoTermoRegistro = item.TipoTermoRegistro;
-                    oItem.Estado = Convert.ToByte(1);
+                   // oItem.Estado = Convert.ToByte(1);
                     oItem.VisibleEnReportes = item.VisibleEnReportes;
                     oItem.FechaCreacion = item.FechaCreacion;
                     oItem.HostName = item.HostName;
                     oItem.Usuario = item.Usuario;
+                    oItem.Desde = item.Desde;
+                    oItem.Hasta = item.Hasta;
+                    oItem.Glosa = item.Glosa;
                     Modelo.SubmitChanges();
                     resultado = oItem.Id;
                     #endregion
@@ -78,7 +83,6 @@ namespace Asistencia.Negocios.Calidad
             }
             return resultado;
         }
-
 
         public int ToChangeStatus(string connection, SAS_TermoRegistroPorClienteCampana item)
         {
@@ -115,7 +119,6 @@ namespace Asistencia.Negocios.Calidad
             }
             return resultado;
         }
-
 
         public int ToDelete(string connection, SAS_TermoRegistroPorClienteCampana item)
         {

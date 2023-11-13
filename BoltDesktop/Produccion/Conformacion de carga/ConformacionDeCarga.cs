@@ -16,6 +16,7 @@ using Asistencia.Datos;
 using Asistencia.Helper;
 using MyDataGridViewColumns;
 using System.Drawing;
+using Asistencia.Negocios.Calidad;
 using Asistencia.Negocios.ProduccionPacking;
 
 
@@ -30,25 +31,277 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private SAS_USUARIOS user;
         private string companyId, desde, hasta = string.Empty;
         private string conection;
-        private SAS_ConformacionDeCargaByDateResult selectedItem;
-        private List<SAS_ConformacionDeCargaByDateResult> listAll;
+        private SAS_ListadoConformacionDeCargaByPeriodoResult selectedItem;
+        private List<SAS_ListadoConformacionDeCargaByPeriodoResult> listAll;
         SAS_CondormidadDeCargaController model;
         private string fileName = "DEFAULT";
         private bool exportVisualSettings = true;
         private GlobalesHelper globalHelper;
         public MesController MesesNeg;
         private ExportToExcelHelper modelExportToExcel;
+        public int ParImparFiltro = 0;
+        private int ClickFiltro;
+        private int Id;
+        private string EstadoId;
+
+        public int ClickResaltarResultados { get; private set; }
+
         #endregion
 
         public ConformacionDeCarga()
         {
             InitializeComponent();
+            selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
+            selectedItem.Id = 0;
+
+            CargarMeses();
+            ObtenerFechasIniciales();
+            conection = "SAS";
+            user = new SAS_USUARIOS();
+            user.IdUsuario = "EAURAZO";
+            user.NombreCompleto = "ERICK AURAZO CARHUATANTA";
+            user.IdCodigoGeneral = "100369";
+            companyId = "001";
+            privilege = new PrivilegesByUser();
+            privilege.nuevo = 1;
+            privilege.editar = 1;
+            Inicio();
+            lblCodeUser.Text = user.IdUsuario;
+            lblFullName.Text = user.NombreCompleto;
+
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            btnNuevo.Enabled = true;
+            //btnActualizar.Enabled = true;
+            btnEditar.Enabled = true;
+            //btnRegistrar.Enabled = true;
+            btnAtras.Enabled = false;
+            btnAnular.Enabled = true;
+            btnEliminarRegistro.Enabled = true;
+            btnHistorial.Enabled = true;
+            //btnFlujoAprobacion.Enabled = false;
+            btnResaltar.Enabled = true;
+            //btnNotificar.Enabled = true;
+            btnCerrar.Enabled = true;
+
+            gbCabecera.Enabled = false;
+            gbList.Enabled = false;
+            MakeInquiry();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            Grabar();
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            Atras();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            Anular();
+        }
+
+        private void btnEliminarRegistro_Click(object sender, EventArgs e)
+        {
+            EliminarRegistro();
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            Historial();
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            Exportar();
+        }
+
+        private void btnAdjuntar_Click(object sender, EventArgs e)
+        {
+            Resaltar();
+        }
+
+        private void Resaltar()
+        {
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
+        }
+
+
+        private void ResaltarResultados()
+        {
+
+            if ((ClickResaltarResultados % 2) == 0)
+            {
+                #region Par() | Acción pintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "AN", string.Empty, true);
+                c1.RowBackColor = Color.IndianRed;
+                c1.CellBackColor = Color.IndianRed;
+                c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvRegistros.Columns["EstadoId"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
+            else
+            {
+                #region Par() | Acción despintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "AN", string.Empty, true);
+                c1.RowBackColor = Color.White;
+                c1.CellBackColor = Color.White;
+                c1.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["EstadoId"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
+        }
+
+        private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+      
+
+        private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
+        {
+            NoImplementado();
+        }
+
+        private void btnElegirColumna_Click(object sender, EventArgs e)
+        {
+            this.dgvRegistros.ShowColumnChooser();
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            MakeInquiry();
+        }
+
+        private void txtPeriodo_ValueChanged(object sender, EventArgs e)
+        {
+            CambiarFechasComboBox();
+        }
+
+        private void cboMes_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            CambiarFechasComboBox();
+        }
+
+        private void chkVisualizacionPorDia_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvRegistros_SelectionChanged(object sender, EventArgs e)
+        {
+            #region Seleccion al cambiar cursor() 
+            selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
+            selectedItem.Id = 0;
+            Id = 0;        
+            btnPendiente.Enabled = false;
+            btnProceso.Enabled = false;
+            btnFinalizado.Enabled = false;
+
+
+            try
+            {
+                #region Selecionar registro()                                                                
+                if (dgvRegistros != null && dgvRegistros.Rows.Count > 0)
+                {
+                    if (dgvRegistros.CurrentRow != null)
+                    {
+                        if (dgvRegistros.CurrentRow.Cells["chId"].Value != null)
+                        {
+                            if (dgvRegistros.CurrentRow.Cells["chId"].Value.ToString() != string.Empty)
+                            {
+                                Id = (dgvRegistros.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32(dgvRegistros.CurrentRow.Cells["chId"].Value.ToString()) : 0);
+                                var resultado = listAll.Where(x => x.Id == Id).ToList();
+                                if (resultado.ToList().Count > 0)
+                                {
+                                    selectedItem = resultado.ElementAt(0);
+                                    if (selectedItem.EstadoId == "PE")
+                                    {
+                                        btnPendiente.Enabled = false;
+                                        btnProceso.Enabled = true;
+                                        btnFinalizado.Enabled = false;
+                                    }
+                                    else if (selectedItem.EstadoId == "EP")
+                                    {
+                                        btnPendiente.Enabled = true;
+                                        btnProceso.Enabled = false;
+                                        btnFinalizado.Enabled = true;
+                                    }
+                                    else if (selectedItem.EstadoId == "FN")
+                                    {
+                                        btnPendiente.Enabled = false;
+                                        btnProceso.Enabled = true;
+                                        btnFinalizado.Enabled = false;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString() + "\n Error al cargar los datos en el contenedor del formulario", "Mensaje del sistems");
+                return;
+            }
+            #endregion
+        }
+
+        private void ConformacionDeCarga_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
+        {
+            EjecutarConsulta();
+        }
+
+        private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MostrarResultados();
         }
 
         public ConformacionDeCarga(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
-            selectedItem = new SAS_ConformacionDeCargaByDateResult();
+            selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
             selectedItem.Id = 0;
            // CargarMeses();
             //ObtenerFechasIniciales();
@@ -72,12 +325,12 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             btnEliminarRegistro.Enabled = true;
             btnHistorial.Enabled = true;
             //btnFlujoAprobacion.Enabled = false;
-            btnAdjuntar.Enabled = true;
+            btnResaltar.Enabled = true;
             //btnNotificar.Enabled = true;
             btnCerrar.Enabled = true;
             gbCabecera.Enabled = false;
             gbList.Enabled = false;
-            //MakeInquiry();
+            MakeInquiry();
         }
 
 
@@ -85,5 +338,380 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         {
 
         }
+
+
+        #region Metodos()
+
+        private void Nuevo()
+        {
+            NoImplementado();
+        }
+
+        private void NoImplementado()
+        {
+            RadMessageBox.SetThemeName(dgvRegistros.ThemeName);
+            RadMessageBox.Show(this, "No tiene privilegios para esta acción", "Respuesta del sistema", MessageBoxButtons.OK, RadMessageIcon.Info);
+        }
+
+        private void MakeInquiry()
+        {
+            if (chkVisualizacionPorDia.Checked == true)
+            {
+                desde = DateTime.Now.ToPresentationDate();
+                hasta = DateTime.Now.ToPresentationDate();
+            }
+            else
+            {
+                desde = this.txtFechaDesde.Text;
+                hasta = this.txtFechaHasta.Text;
+            }
+
+            gbList.Enabled = false;
+            gbCabecera.Enabled = false;
+            BarraPrincipal.Enabled = false;
+            progressBar1.Visible = true;
+            bgwHilo.RunWorkerAsync();
+        }
+
+        private void Editar()
+        {
+            NoImplementado();
+        }
+
+
+        private void Grabar()
+        {
+            NoImplementado();
+        }
+
+
+        private void EliminarRegistro()
+        {
+            NoImplementado();
+        }
+
+        private void Atras()
+        {
+            NoImplementado();
+        }
+
+        private void Anular()
+        {
+            NoImplementado();
+        }
+
+
+        private void Historial()
+        {
+            NoImplementado();
+        }
+
+        private void ElegirColumna()
+        {
+            this.dgvRegistros.ShowColumnChooser();
+        }
+
+
+        private void Exportar()
+        {
+            try
+            {
+                modelExportToExcel = new ExportToExcelHelper();
+                modelExportToExcel.ExportarToExcel(dgvRegistros, saveFileDialog);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+
+        }
+
+        private void CambiarFechasComboBox()
+        {
+            if (cboMes.SelectedIndex >= 0)
+            {
+                globalHelper = new GlobalesHelper();
+                globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
+            }
+        }
+
+        private void CargarMeses()
+        {
+
+            MesesNeg = new MesController();
+            cboMes.DisplayMember = "descripcion";
+            cboMes.ValueMember = "valor";
+            //cboMes.DataSource = MesesNeg.ListarMeses().Where(x => x.Valor != "13" && x.Valor != "00").ToList();
+            cboMes.DataSource = MesesNeg.ListarMeses().ToList();
+            cboMes.SelectedValue = DateTime.Now.ToString("MM");
+        }
+
+        private void EjecutarConsulta()
+        {
+
+            listAll = new List<SAS_ListadoConformacionDeCargaByPeriodoResult>();
+            model = new SAS_CondormidadDeCargaController();
+
+            try
+            {
+                listAll = model.List(conection, desde, hasta);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void MostrarResultados()
+        {
+            try
+            {
+                dgvRegistros.DataSource = listAll.ToDataTable<SAS_ListadoConformacionDeCargaByPeriodoResult>();
+                dgvRegistros.Refresh();
+                BarraPrincipal.Enabled = !false;
+                progressBar1.Visible = !true;
+                gbCabecera.Enabled = true;
+                gbList.Enabled = true;
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                BarraPrincipal.Enabled = !false;
+                progressBar1.Visible = !true;
+                gbCabecera.Enabled = true;
+                gbList.Enabled = true;
+                return;
+            }
+        }
+
+        private void dgvRegistros_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void vistaPreviaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //VistaPrevia(IdEvaluacion);
+        }
+
+        private void VistaPrevia(int Id)
+        {
+            if (Id != 0)
+            {
+                //TrazabilidadDeContenedorDespachosPreView ofrm = new TrazabilidadDeContenedorDespachosPreView(conection, Id);
+                //ofrm.Show();
+            }
+        }
+
+        private void btnAprobacionEvaluacionSub_Click(object sender, EventArgs e)
+        {
+            NoImplementado();
+        }
+
+
+
+        private void btnAprobacionDistribucionSub_Click(object sender, EventArgs e)
+        {
+
+            NoImplementado();
+
+        }
+
+
+
+        private void btnAprobacionRevisionSub_Click(object sender, EventArgs e)
+        {
+            NoImplementado();
+        }
+
+
+
+        private void elminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarRegistro();
+        }
+
+        private void anularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Anular();
+        }
+
+        private void btnActivarFiltro_Click(object sender, EventArgs e)
+        {
+            ParImparFiltro += 1;
+            ActivarFiltro();
+        }
+
+
+
+        private void ActivarFiltro()
+        {
+            if ((ParImparFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistros.EnableFiltering = !true;
+                dgvRegistros.ShowHeaderCellButtons = !true;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistros.EnableFiltering = true;
+                dgvRegistros.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+        private void Adjuntar()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+        private void CambiarEstadoDocumen()
+        {
+            MessageBox.Show("No tiene permisos para realizar esta accion", "MENSAJE DEL SISTEMA");
+        }
+
+        private void chkVisualizacionPorDia_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkVisualizacionPorDia.Checked == true)
+            {
+                this.txtFechaDesde.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                this.txtFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                if (cboMes.SelectedIndex >= 0)
+                {
+                    globalHelper = new GlobalesHelper();
+                    globalHelper.ObtenerFechasMes(cboMes, txtFechaDesde, txtFechaHasta, txtPeriodo);
+                }
+            }
+        }
+
+        private void ObtenerFechasIniciales()
+        {
+            this.txtPeriodo.Value = Convert.ToDecimal(DateTime.Now.Year);
+
+            if (chkVisualizacionPorDia.Checked == true)
+            {
+                this.txtFechaDesde.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                this.txtFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                this.txtFechaDesde.Text = "01" + DateTime.Now.ToString("/MM/yyyy");
+                this.txtFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+
+
+            //this.txtPeriodo.Value = Convert.ToDecimal(DateTime.Now.Year);
+        }
+
+        private void pendienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            CambiarEstado("PE");
+        }
+
+        private void enProcesoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CambiarEstado("EP");
+        }
+
+        private void finalizadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CambiarEstado("FN");
+        }
+
+        private void bgwCambiarEstado_DoWork(object sender, DoWorkEventArgs e)
+        {
+            EjecutarActualizacion();
+        }
+
+        private void EjecutarActualizacion()
+        {
+            listAll = new List<SAS_ListadoConformacionDeCargaByPeriodoResult>();
+            model = new SAS_CondormidadDeCargaController();
+
+            try
+            {
+                int resultado = model.ActualizarEstado(conection, Id, EstadoId);
+                listAll = model.List(conection, desde, hasta);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void CambiarEstado(string _EstadoId)
+        {
+            EstadoId = _EstadoId;
+            if (Id > 0)
+            {
+                gbList.Enabled = false;
+                gbCabecera.Enabled = false;
+                BarraPrincipal.Enabled = false;
+                progressBar1.Visible = true;
+                bgwCambiarEstado.RunWorkerAsync();               
+            }
+
+            
+
+        }
+
+        private void bgwCambiarEstado_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MostrarResultados();
+        }
+
+        private void ActivateFilter()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistros.EnableFiltering = !true;
+                dgvRegistros.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistros.EnableFiltering = true;
+                dgvRegistros.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+        public void Inicio()
+        {
+            try
+            {
+                Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
+                Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings["SAS"].ToString();
+                Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
+                Globales.IdEmpresa = "001";
+                Globales.Empresa = "SOCIEDAD AGRICOLA SATURNO";
+                Globales.UsuarioSistema = "EAURAZO";
+                Globales.NombreUsuarioSistema = "ERICK AURAZO";
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        #endregion
+
+
     }
 }

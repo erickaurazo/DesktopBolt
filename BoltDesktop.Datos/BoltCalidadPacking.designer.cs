@@ -14438,7 +14438,9 @@ namespace Asistencia.Datos
 		
 		private System.Nullable<int> _TipoTermoRegistro;
 		
-		private System.Nullable<int> _Estado;
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private System.Nullable<System.DateTime> _Hasta;
 		
 		private System.Nullable<int> _VisibleEnReportes;
 		
@@ -14447,6 +14449,10 @@ namespace Asistencia.Datos
 		private string _HostName;
 		
 		private string _Usuario;
+		
+		private System.Nullable<int> _Estado;
+		
+		private string _Glosa;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -14462,8 +14468,10 @@ namespace Asistencia.Datos
     partial void OnClienteIdChanged();
     partial void OnTipoTermoRegistroChanging(System.Nullable<int> value);
     partial void OnTipoTermoRegistroChanged();
-    partial void OnEstadoChanging(System.Nullable<int> value);
-    partial void OnEstadoChanged();
+    partial void OnDesdeChanging(System.Nullable<System.DateTime> value);
+    partial void OnDesdeChanged();
+    partial void OnHastaChanging(System.Nullable<System.DateTime> value);
+    partial void OnHastaChanged();
     partial void OnVisibleEnReportesChanging(System.Nullable<int> value);
     partial void OnVisibleEnReportesChanged();
     partial void OnFechaCreacionChanging(System.Nullable<System.DateTime> value);
@@ -14472,6 +14480,10 @@ namespace Asistencia.Datos
     partial void OnHostNameChanged();
     partial void OnUsuarioChanging(string value);
     partial void OnUsuarioChanged();
+    partial void OnEstadoChanging(System.Nullable<int> value);
+    partial void OnEstadoChanged();
+    partial void OnGlosaChanging(string value);
+    partial void OnGlosaChanged();
     #endregion
 		
 		public SAS_TermoRegistroPorClienteCampana()
@@ -14579,22 +14591,42 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
-		public System.Nullable<int> Estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
 		{
 			get
 			{
-				return this._Estado;
+				return this._Desde;
 			}
 			set
 			{
-				if ((this._Estado != value))
+				if ((this._Desde != value))
 				{
-					this.OnEstadoChanging(value);
+					this.OnDesdeChanging(value);
 					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
+					this._Desde = value;
+					this.SendPropertyChanged("Desde");
+					this.OnDesdeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this.OnHastaChanging(value);
+					this.SendPropertyChanging();
+					this._Hasta = value;
+					this.SendPropertyChanged("Hasta");
+					this.OnHastaChanged();
 				}
 			}
 		}
@@ -14675,6 +14707,46 @@ namespace Asistencia.Datos
 					this._Usuario = value;
 					this.SendPropertyChanged("Usuario");
 					this.OnUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
+		public System.Nullable<int> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Glosa", DbType="VarChar(2500)")]
+		public string Glosa
+		{
+			get
+			{
+				return this._Glosa;
+			}
+			set
+			{
+				if ((this._Glosa != value))
+				{
+					this.OnGlosaChanging(value);
+					this.SendPropertyChanging();
+					this._Glosa = value;
+					this.SendPropertyChanged("Glosa");
+					this.OnGlosaChanged();
 				}
 			}
 		}
@@ -34469,6 +34541,12 @@ namespace Asistencia.Datos
 		
 		private string _Usuario;
 		
+		private System.Nullable<System.DateTime> _desde;
+		
+		private System.Nullable<System.DateTime> _hasta;
+		
+		private string _Glosa;
+		
 		public SAS_ListadoTermoRegistroPorClienteCampanaAllResult()
 		{
 		}
@@ -34693,6 +34771,54 @@ namespace Asistencia.Datos
 				if ((this._Usuario != value))
 				{
 					this._Usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> desde
+		{
+			get
+			{
+				return this._desde;
+			}
+			set
+			{
+				if ((this._desde != value))
+				{
+					this._desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> hasta
+		{
+			get
+			{
+				return this._hasta;
+			}
+			set
+			{
+				if ((this._hasta != value))
+				{
+					this._hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Glosa", DbType="VarChar(2500)")]
+		public string Glosa
+		{
+			get
+			{
+				return this._Glosa;
+			}
+			set
+			{
+				if ((this._Glosa != value))
+				{
+					this._Glosa = value;
 				}
 			}
 		}

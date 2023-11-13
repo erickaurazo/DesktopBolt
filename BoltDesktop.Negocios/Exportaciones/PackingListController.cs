@@ -311,7 +311,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoConformidadCargaByBookingResult> result = new List<SAS_ListadoConformidadCargaByBookingResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ProduccionContextDataContext Modelo = new ProduccionContextDataContext(cnx))
             {
                 result = Modelo.SAS_ListadoConformidadCargaByBooking(booking).OrderBy(x => x.UbicacionDelPalletEnContenedor).ToList();
             }

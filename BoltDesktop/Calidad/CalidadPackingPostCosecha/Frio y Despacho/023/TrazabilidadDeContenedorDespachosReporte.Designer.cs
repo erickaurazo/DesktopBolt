@@ -389,7 +389,7 @@
             gridViewTextBoxColumn32.FieldName = "Inspeccinado";
             gridViewTextBoxColumn32.HeaderText = "Inspeccinado";
             gridViewTextBoxColumn32.Name = "chInspeccinado";
-            gridViewTextBoxColumn32.Width = 153;
+            gridViewTextBoxColumn32.Width = 155;
             this.dgvRegistros.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,

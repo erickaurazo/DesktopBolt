@@ -386,22 +386,22 @@
         <elementListCompartment Id="936f7505-f9a4-4fa6-b69a-ed62432ced47" absoluteBounds="5.39, 3.96, 4.7200000000000006, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="42d9603a-b5b9-4340-9041-6d7c6794ec46" isExpanded="false" absoluteBounds="1.375, 17.25, 2, 0.45">
+    <classShape Id="42d9603a-b5b9-4340-9041-6d7c6794ec46" isExpanded="false" absoluteBounds="1.375, 17.25, 2.875, 0.45">
       <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ParametrosDeTemperaturaCampana" />
       <nestedChildShapes>
         <elementListCompartment Id="abcc82a1-f26b-4c69-9a22-7e740624a1ba" absoluteBounds="1.3900000000000001, 17.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5c03eaa5-594b-4e65-89a7-673fa790f8a3" isExpanded="false" absoluteBounds="1.5, 17.875, 2, 0.45">
+    <classShape Id="5c03eaa5-594b-4e65-89a7-673fa790f8a3" isExpanded="false" absoluteBounds="1.5, 17.875, 3.375, 0.45">
       <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_ParametrosDeTemperaturaCampanaDetalle" />
       <nestedChildShapes>
         <elementListCompartment Id="5f02919f-d43e-4e56-8591-259d895327d8" absoluteBounds="1.5150000000000001, 18.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a2389d68-56ce-408a-ac82-e61bcf824d6e" isExpanded="false" absoluteBounds="1.5, 18.75, 2, 0.45">
+    <classShape Id="76e49107-0aa8-4fd7-8873-4dc1f87ad143" isExpanded="false" absoluteBounds="1.5, 18.75, 2.75, 0.45">
       <DataClassMoniker Name="/BoltCalidadPackingDataContext/SAS_TermoRegistroPorClienteCampana" />
       <nestedChildShapes>
-        <elementListCompartment Id="168c241d-45bb-4b39-96df-60cd4695f02c" absoluteBounds="1.5149999999999997, 19.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9f116b51-a55a-48d5-a863-5f3a4e339e90" absoluteBounds="1.5150000000000006, 19.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

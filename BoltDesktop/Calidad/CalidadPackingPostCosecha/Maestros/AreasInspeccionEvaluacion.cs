@@ -95,6 +95,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maes
 
         private void btnActivarfiltro_Click(object sender, EventArgs e)
         {
+            ParImparFiltro += 1;
             ActivateFilter();
         }
 
@@ -639,12 +640,14 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.Maes
             {
                 #region Par() | Activar Filtro()
                 dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = !true;
                 #endregion
             }
             else
             {
                 #region Par() | DesActivar Filtro()
                 dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
                 #endregion
             }
         }

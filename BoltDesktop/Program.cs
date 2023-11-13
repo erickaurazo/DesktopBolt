@@ -34,8 +34,8 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ParametroTemperaturaCultivoCampana());
-            Application.Run(new Menu());
+            Application.Run(new ConformacionDeCarga());
+            //Application.Run(new Menu());
         }
     }
 }

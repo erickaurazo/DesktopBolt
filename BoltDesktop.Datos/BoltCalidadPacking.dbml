@@ -751,11 +751,14 @@
       <Column Name="CampanaId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
       <Column Name="ClienteId" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
       <Column Name="TipoTermoRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="VisibleEnReportes" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="HostName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SAS_CALIDAD_VIEW_FORM_APLICACION_SO2" Method="SAS_CALIDAD_VIEW_FORM_APLICACION_SO2">
@@ -2069,6 +2072,9 @@
       <Column Name="FechaCreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="HostName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Glosa" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
