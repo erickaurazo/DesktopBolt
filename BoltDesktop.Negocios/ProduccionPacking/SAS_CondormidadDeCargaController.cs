@@ -237,7 +237,7 @@ namespace Asistencia.Negocios.ProduccionPacking
                     //oItem.idAccion = item.idAccion;
                     oItem = listado.ElementAt(0);
 
-                    if (oItem.EstadoId == "PE" || oItem.EstadoId == "PR" || oItem.EstadoId == "FN")
+                    if (oItem.EstadoId == "PE" || oItem.EstadoId == "EP" || oItem.EstadoId == "FN")
                     {
                         oItem.EstadoId = estadoId;
                         Modelo.SubmitChanges();

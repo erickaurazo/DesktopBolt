@@ -60,6 +60,10 @@
             this.btnImprimirSub = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVerDetalle = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnPendiente = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnProceso = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFinalizado = new System.Windows.Forms.ToolStripMenuItem();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
             this.chkVisualizacionPorDia = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.txtFechaHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
@@ -93,11 +97,10 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnPendiente = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnProceso = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnFinalizado = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwCambiarEstado = new System.ComponentModel.BackgroundWorker();
+            this.btnCancelarReserva = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
@@ -297,57 +300,94 @@
             this.toolStripSeparator2,
             this.btnPendiente,
             this.btnProceso,
-            this.btnFinalizado});
+            this.btnFinalizado,
+            this.toolStripSeparator5,
+            this.btnCancelarReserva,
+            this.toolStripSeparator4});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(153, 220);
+            this.subMenu.Size = new System.Drawing.Size(161, 254);
             // 
             // anularToolStripMenuItem
             // 
             this.anularToolStripMenuItem.Enabled = false;
             this.anularToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("anularToolStripMenuItem.Image")));
             this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
-            this.anularToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.anularToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.anularToolStripMenuItem.Text = "Anular";
+            this.anularToolStripMenuItem.Click += new System.EventHandler(this.anularToolStripMenuItem_Click_1);
             // 
             // elminarToolStripMenuItem
             // 
             this.elminarToolStripMenuItem.Enabled = false;
             this.elminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("elminarToolStripMenuItem.Image")));
             this.elminarToolStripMenuItem.Name = "elminarToolStripMenuItem";
-            this.elminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.elminarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.elminarToolStripMenuItem.Text = "Elminar";
+            this.elminarToolStripMenuItem.Click += new System.EventHandler(this.elminarToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
             // vistaPreviaToolStripMenuItem
             // 
             this.vistaPreviaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreviaToolStripMenuItem.Image")));
             this.vistaPreviaToolStripMenuItem.Name = "vistaPreviaToolStripMenuItem";
-            this.vistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.vistaPreviaToolStripMenuItem.Text = "Vista previa";
+            this.vistaPreviaToolStripMenuItem.Click += new System.EventHandler(this.vistaPreviaToolStripMenuItem_Click_1);
             // 
             // btnImprimirSub
             // 
             this.btnImprimirSub.Enabled = false;
             this.btnImprimirSub.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirSub.Image")));
             this.btnImprimirSub.Name = "btnImprimirSub";
-            this.btnImprimirSub.Size = new System.Drawing.Size(152, 22);
+            this.btnImprimirSub.Size = new System.Drawing.Size(160, 22);
             this.btnImprimirSub.Text = "Imprimir";
+            this.btnImprimirSub.Click += new System.EventHandler(this.btnImprimirSub_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(157, 6);
             // 
             // btnVerDetalle
             // 
             this.btnVerDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDetalle.Image")));
             this.btnVerDetalle.Name = "btnVerDetalle";
-            this.btnVerDetalle.Size = new System.Drawing.Size(152, 22);
+            this.btnVerDetalle.Size = new System.Drawing.Size(160, 22);
             this.btnVerDetalle.Text = "Ver detalle";
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(157, 6);
+            // 
+            // btnPendiente
+            // 
+            this.btnPendiente.Image = ((System.Drawing.Image)(resources.GetObject("btnPendiente.Image")));
+            this.btnPendiente.Name = "btnPendiente";
+            this.btnPendiente.Size = new System.Drawing.Size(160, 22);
+            this.btnPendiente.Text = "Pendiente";
+            this.btnPendiente.Click += new System.EventHandler(this.pendienteToolStripMenuItem_Click);
+            // 
+            // btnProceso
+            // 
+            this.btnProceso.Image = ((System.Drawing.Image)(resources.GetObject("btnProceso.Image")));
+            this.btnProceso.Name = "btnProceso";
+            this.btnProceso.Size = new System.Drawing.Size(160, 22);
+            this.btnProceso.Text = "En proceso";
+            this.btnProceso.Click += new System.EventHandler(this.enProcesoToolStripMenuItem_Click);
+            // 
+            // btnFinalizado
+            // 
+            this.btnFinalizado.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizado.Image")));
+            this.btnFinalizado.Name = "btnFinalizado";
+            this.btnFinalizado.Size = new System.Drawing.Size(160, 22);
+            this.btnFinalizado.Text = "Finalizado";
+            this.btnFinalizado.Click += new System.EventHandler(this.finalizadoToolStripMenuItem_Click);
             // 
             // gbCabecera
             // 
@@ -797,39 +837,28 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // btnPendiente
-            // 
-            this.btnPendiente.Image = ((System.Drawing.Image)(resources.GetObject("btnPendiente.Image")));
-            this.btnPendiente.Name = "btnPendiente";
-            this.btnPendiente.Size = new System.Drawing.Size(152, 22);
-            this.btnPendiente.Text = "Pendiente";
-            this.btnPendiente.Click += new System.EventHandler(this.pendienteToolStripMenuItem_Click);
-            // 
-            // btnProceso
-            // 
-            this.btnProceso.Image = ((System.Drawing.Image)(resources.GetObject("btnProceso.Image")));
-            this.btnProceso.Name = "btnProceso";
-            this.btnProceso.Size = new System.Drawing.Size(152, 22);
-            this.btnProceso.Text = "En proceso";
-            this.btnProceso.Click += new System.EventHandler(this.enProcesoToolStripMenuItem_Click);
-            // 
-            // btnFinalizado
-            // 
-            this.btnFinalizado.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizado.Image")));
-            this.btnFinalizado.Name = "btnFinalizado";
-            this.btnFinalizado.Size = new System.Drawing.Size(152, 22);
-            this.btnFinalizado.Text = "Finalizado";
-            this.btnFinalizado.Click += new System.EventHandler(this.finalizadoToolStripMenuItem_Click);
-            // 
             // bgwCambiarEstado
             // 
             this.bgwCambiarEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCambiarEstado_DoWork);
             this.bgwCambiarEstado.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCambiarEstado_RunWorkerCompleted);
+            // 
+            // btnCancelarReserva
+            // 
+            this.btnCancelarReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarReserva.Image")));
+            this.btnCancelarReserva.Name = "btnCancelarReserva";
+            this.btnCancelarReserva.Size = new System.Drawing.Size(160, 22);
+            this.btnCancelarReserva.Text = "Cancelar reserva";
+            this.btnCancelarReserva.Click += new System.EventHandler(this.btnCancelarReserva_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(157, 6);
             // 
             // ConformacionDeCarga
             // 
@@ -918,5 +947,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnProceso;
         private System.Windows.Forms.ToolStripMenuItem btnFinalizado;
         private System.ComponentModel.BackgroundWorker bgwCambiarEstado;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem btnCancelarReserva;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

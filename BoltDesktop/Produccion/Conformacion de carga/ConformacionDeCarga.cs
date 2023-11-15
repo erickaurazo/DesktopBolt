@@ -174,7 +174,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             ActivateFilter();
         }
 
-      
+
 
         private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
         {
@@ -226,7 +226,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             #region Seleccion al cambiar cursor() 
             selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
             selectedItem.Id = 0;
-            Id = 0;        
+            Id = 0;
             btnPendiente.Enabled = false;
             btnProceso.Enabled = false;
             btnFinalizado.Enabled = false;
@@ -303,13 +303,13 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             InitializeComponent();
             selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
             selectedItem.Id = 0;
-           // CargarMeses();
+            // CargarMeses();
             //ObtenerFechasIniciales();
             conection = _conection;
             user = _user;
             companyId = _companyId;
             privilege = _privilege;
-           // Inicio();
+            // Inicio();
             lblCodeUser.Text = user.IdUsuario;
             lblFullName.Text = user.NombreCompleto;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
@@ -341,6 +341,30 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
 
         #region Metodos()
+
+
+        //
+
+        protected override void OnLoad(EventArgs e)
+        {
+            this.dgvRegistros.TableElement.BeginUpdate();
+            this.LoadFreightSummary();
+            this.dgvRegistros.TableElement.EndUpdate();
+
+            base.OnLoad(e);
+        }
+
+        private void LoadFreightSummary()
+        {
+            this.dgvRegistros.MasterTemplate.AutoExpandGroups = true;
+            this.dgvRegistros.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.dgvRegistros.GroupDescriptors.Clear();
+            this.dgvRegistros.GroupDescriptors.Add(new GridGroupByExpression("CustomerID Group By CustomerID"));
+            GridViewSummaryRowItem items1 = new GridViewSummaryRowItem();
+            items1.Add(new GridViewSummaryItem("chDescripcion", "Count : {0:N2}; ", GridAggregateFunction.Count));
+            this.dgvRegistros.MasterTemplate.SummaryRowsTop.Add(items1);
+        }
+
 
         private void Nuevo()
         {
@@ -614,7 +638,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void pendienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
             CambiarEstado("PE");
         }
 
@@ -659,16 +683,61 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                 gbCabecera.Enabled = false;
                 BarraPrincipal.Enabled = false;
                 progressBar1.Visible = true;
-                bgwCambiarEstado.RunWorkerAsync();               
+                bgwCambiarEstado.RunWorkerAsync();
             }
 
-            
+
 
         }
 
         private void bgwCambiarEstado_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MostrarResultados();
+        }
+
+        private void anularToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Anular();
+        }
+
+        private void elminarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EliminarRegistro();
+        }
+
+        private void vistaPreviaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            VistaPrevia(1);
+        }
+
+        private void btnImprimirSub_Click(object sender, EventArgs e)
+        {
+            Imprimir();
+        }
+
+        private void Imprimir()
+        {
+
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            VerDetalle();
+        }
+
+        private void VerDetalle()
+        {
+
+        }
+
+        private void btnCancelarReserva_Click(object sender, EventArgs e)
+        {
+            CancelarReserva();
+        }
+
+        private void CancelarReserva()
+        {
+
         }
 
         private void ActivateFilter()
