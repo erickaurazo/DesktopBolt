@@ -217,4 +217,42 @@
       <Column Name="Embalaje" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SAS_ListadoConformacionDeCargaDisponiblesByIdCliente" Method="SAS_ListadoConformacionDeCargaDisponiblesByIdCliente">
+    <Parameter Name="ClienteId" Parameter="clienteId" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SAS_ListadoConformacionDeCargaDisponiblesByIdClienteResult">
+      <Column Name="selecionado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdRegistroPaleta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NumeroPaleta" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoDePaletaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="TipoDePaleta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ClienteId" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="GrowerCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CultivoId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Cultivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VariedadId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Variedad" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="EnvaseId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Envase" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="CategoriaId" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CalibreId" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="Calibre" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ColorId" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EmbalajeId" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Embalaje" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PahiruelaId" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Pahiruela" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaProduccion" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="NumeroDeCajas" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="paletaOrigen" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="Trazabilidad" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="PeriodoSemana" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="PesoReferencial" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="IdCampania" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

@@ -802,5 +802,10 @@ namespace Asistencia
                 cboTipoTractor.Enabled = !false;
             }
         }
+
+        private void cboTipoTractor_ItemCheckedChanged(object sender, RadCheckedListDataItemEventArgs e)
+        {
+
+        }
     }
 }

@@ -254,7 +254,7 @@
             this.menuPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior,
             this.commandBarRowElement1});
-            this.menuPrincipal.Size = new System.Drawing.Size(1126, 67);
+            this.menuPrincipal.Size = new System.Drawing.Size(1126, 62);
             this.menuPrincipal.TabIndex = 196;
             this.menuPrincipal.Text = "Nuevo";
             this.menuPrincipal.ThemeName = "VisualStudio2012Light";
@@ -596,6 +596,7 @@
             this.cboTipoTractor.Size = new System.Drawing.Size(190, 24);
             this.cboTipoTractor.TabIndex = 14;
             this.cboTipoTractor.ThemeName = "VisualStudio2012Light";
+            this.cboTipoTractor.ItemCheckedChanged += new Telerik.WinControls.UI.RadCheckedListDataItemEventHandler(this.cboTipoTractor_ItemCheckedChanged);
             // 
             // label7
             // 
@@ -1030,7 +1031,7 @@
             this.dgvDBVisualSAT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvDBVisualSAT.Location = new System.Drawing.Point(0, 0);
             // 
-            // dgvDBVisualSAT
+            // 
             // 
             this.dgvDBVisualSAT.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.dgvDBVisualSAT.MasterTemplate.AllowAddNewRow = false;
@@ -1355,7 +1356,7 @@
             this.dgvBDParteMaquinaria.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvBDParteMaquinaria.Location = new System.Drawing.Point(0, 0);
             // 
-            // dgvBDParteMaquinaria
+            // 
             // 
             this.dgvBDParteMaquinaria.MasterTemplate.AllowAddNewRow = false;
             this.dgvBDParteMaquinaria.MasterTemplate.AutoGenerateColumns = false;
@@ -1614,7 +1615,7 @@
             this.dgvBDCombustible.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvBDCombustible.Location = new System.Drawing.Point(0, 0);
             // 
-            // dgvBDCombustible
+            // 
             // 
             this.dgvBDCombustible.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.dgvBDCombustible.MasterTemplate.AllowAddNewRow = false;

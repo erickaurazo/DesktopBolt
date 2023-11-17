@@ -80,6 +80,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             Id = _Id;
             connection = _connection;
             userLogin = _userLogin;
+            user = _userLogin;
             companyId = _companyId;
             privilege = _privilege;
             lblCodeUser.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario.Trim() : string.Empty;
@@ -916,7 +917,11 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         {
             if (this.txtCodigo.Text.Trim() != string.Empty && this.txtEstado.Text.Trim() != string.Empty && (this.txtIdEstado.Text.Trim() == "PE"))
             {
-
+                ConformacionDeCargaAgregarPallets oFrm = new ConformacionDeCargaAgregarPallets(connection, user, companyId, privilege, Id, this.txtProveedorCodigo.Text.Trim());                
+                if (oFrm.ShowDialog() == DialogResult.OK)
+                {
+                    Actualizar();
+                }
             }
             else
             {

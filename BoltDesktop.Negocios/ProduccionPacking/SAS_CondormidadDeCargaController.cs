@@ -325,8 +325,6 @@ namespace Asistencia.Negocios.ProduccionPacking
             return resultado;
         }
 
-
-
         public List<SAS_ListadoConformacionDeCargaPBIByIdResult> ListAllDetailById(string conection, int Id)
         {
             List<SAS_ListadoConformacionDeCargaPBIByIdResult> List = new List<SAS_ListadoConformacionDeCargaPBIByIdResult>();
@@ -414,5 +412,20 @@ namespace Asistencia.Negocios.ProduccionPacking
             }
             return resultado;
         }
+
+
+
+        public List<SAS_ListadoConformacionDeCargaDisponiblesByIdClienteResult> ListadoPalletasPendientesByClienteId(string conection, string ClienteId)
+        {
+            List<SAS_ListadoConformacionDeCargaDisponiblesByIdClienteResult> List = new List<SAS_ListadoConformacionDeCargaDisponiblesByIdClienteResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ProduccionContextDataContext Modelo = new ProduccionContextDataContext(cnx))
+            {
+                List = Modelo.SAS_ListadoConformacionDeCargaDisponiblesByIdCliente(ClienteId).ToList();
+            }
+            return List;
+        }
+
+
     }
 }
