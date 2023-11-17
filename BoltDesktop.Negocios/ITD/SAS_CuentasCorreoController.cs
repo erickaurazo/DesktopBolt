@@ -271,6 +271,49 @@ namespace Asistencia.Negocios
 
         }
 
+        public int Eliminar(string conection, int codigoRegistro)
+        {
+            int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                using (TransactionScope Scope = new TransactionScope())
+                {
+                    var resultado = Modelo.SAS_CuentasCorreo.Where(x => x.id == codigoRegistro).ToList();
+                    if (resultado != null)
+                    {
+                        #region REGISTRAR BAJA  
+                        if (resultado.ToList().Count == 1)
+                        {
+                            #region Actualizar()
+                            SAS_CuentasCorreo oregistro = new SAS_CuentasCorreo();
+                            oregistro = resultado.Single();
+
+                            if (oregistro.estado == 1)
+                            {
+                                List<SAS_CuentasCorreoDetalle> listaAEliminar = new List<SAS_CuentasCorreoDetalle>();
+                                var resultadoDetail = Modelo.SAS_CuentasCorreoDetalle.Where(x => x.id == codigoRegistro).ToList();
+                                if (resultadoDetail != null && resultadoDetail.ToList().Count > 0)
+                                {
+                                    Modelo.SAS_CuentasCorreoDetalle.DeleteAllOnSubmit(resultadoDetail);
+                                }
+
+                                Modelo.SAS_CuentasCorreo.DeleteOnSubmit(oregistro);
+                                tipoResultadoOperacion = 5;
+                            }
+
+                            Modelo.SubmitChanges();
+                            #endregion                            
+                        }
+                        #endregion
+                    }
+                    Scope.Complete();
+                }
+            }
+
+            return tipoResultadoOperacion;
+        }
 
         public int registerUnsubscribe(string conection, SAS_CuentasCorreo item)
         {

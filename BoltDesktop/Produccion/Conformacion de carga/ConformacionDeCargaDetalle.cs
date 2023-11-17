@@ -18,8 +18,7 @@ using MyDataGridViewColumns;
 using System.Drawing;
 using MyControlsDataBinding.Controles;
 using Asistencia.Negocios.Calidad;
-
-
+using Asistencia.Negocios.ProduccionPacking;
 
 namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 {
@@ -31,23 +30,29 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private SAS_USUARIOS user;
         private SAS_USUARIOS userLogin;
         private PrivilegesByUser privilege;
-        private SAS_ListadoTermoRegistroPorClienteCampanaAllResult selectedItem;
-        private List<SAS_ListadoTermoRegistroPorClienteCampanaAllResult> resultList;
-        TermoRegistroPorClienteCampanaController model;
-        SAS_TermoRegistroPorClienteCampana itemRegistar;
-        SAS_TermoRegistroPorClienteCampana itemDelete;
+        private SAS_ListadoConformacionDeCargaPBIByIdResult selectedItemDetail;
+        private List<SAS_ListadoConformacionDeCargaPBIByIdResult> resultListDetail = new List<SAS_ListadoConformacionDeCargaPBIByIdResult>();
+        SAS_CondormidadDeCargaController model;
+        SAS_ConformacionDeCarga itemRegistar;
+        SAS_ConformacionDeCarga itemDelete;
+        List<SAS_ConformacionDeCargaDetalle> itemsDetalleEliminado;
+        List<SAS_ConformacionDeCargaDetalle> detalleRegistro;
         private int ClickResaltarResultados = 0;
         private int ClickFiltro = 0;
         private string connection = "SAS";
         private string companyId = "001";
         private ExportToExcelHelper modelExportToExcel;
-        private int resultadoOperacion;
-        #endregion
+        private int resultadoOperacion = 0;
+        private int Id = 0;
 
+        private int ParImparFiltro;
+
+        #endregion
 
         public ConformacionDeCargaDetalle()
         {
             InitializeComponent();
+            resultadoOperacion = 0;
             RegistroSeleccionadoEnBlanco();
             connection = "SAS";
             user = new SAS_USUARIOS();
@@ -68,24 +73,33 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             Actualizar();
         }
 
-        public ConformacionDeCargaDetalle(string _connection, SAS_USUARIOS _userLogin, string _companyId, PrivilegesByUser _privilege)
+        public ConformacionDeCargaDetalle(string _connection, SAS_USUARIOS _userLogin, string _companyId, PrivilegesByUser _privilege, int _Id)
         {
             InitializeComponent();
+            resultadoOperacion = 0;
+            Id = _Id;
             connection = _connection;
             userLogin = _userLogin;
             companyId = _companyId;
             privilege = _privilege;
-            //lblCodeUser.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario.Trim() : string.Empty;
-            //lblFullName.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto.Trim() : string.Empty;
+            lblCodeUser.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario.Trim() : string.Empty;
+            lblFullName.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto.Trim() : string.Empty;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            //Inicio();
-            //Actualizar();
+            Inicio();
+            EjecutarConsultaBusquedaPorId(Id);
         }
 
+        private void EjecutarConsultaBusquedaPorId(int id)
+        {
+            gbCabecera.Enabled = false;
+            gbDetalle.Enabled = false;
+            BarraPrincipal.Enabled = false;
 
+            bgwHilo.RunWorkerAsync();
+        }
 
         private void btnAgregarDetalleIP_Click(object sender, EventArgs e)
         {
@@ -102,8 +116,6 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             IrAConsolidado();
         }
 
-       
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Nuevo();
@@ -119,7 +131,6 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             Grabar();
         }
 
-       
         private void btnAtras_Click(object sender, EventArgs e)
         {
             Atras();
@@ -152,17 +163,37 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-
+            ParImparFiltro += 1;
+            ActivarFiltro();
         }
+
+        private void ActivarFiltro()
+        {
+            if ((ParImparFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvResultados.EnableFiltering = !true;
+                dgvResultados.ShowHeaderCellButtons = !true;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvResultados.EnableFiltering = true;
+                dgvResultados.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
 
         private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
         {
-
+            NoImplementado();
         }
 
         private void btnElegirColumna_Click(object sender, EventArgs e)
         {
-
+            ElegirColumna();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -181,27 +212,32 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            EjecutarConsultaBusquedaAsincrona();
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
+            PresentarConsultaBusquedaAsincrona();
         }
 
         private void bgwRegistrar_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            EjecutarProcesoGuardado();
         }
 
         private void bgwRegistrar_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
+            PresentarConsultaBusquedaAsincrona();
         }
 
         private void btnVistaPrevia_Click(object sender, EventArgs e)
         {
+            VistaPrevia();
+        }
 
+        private void VistaPrevia()
+        {
+            NoImplementado();
         }
 
         private void ConformacionDeCargaDetalle_Load(object sender, EventArgs e)
@@ -213,6 +249,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         {
             ExonerarPallet();
         }
+
         private void ConformacionDeCargaDetalle_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.bgwHilo.IsBusy == true)
@@ -231,13 +268,30 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         #region Funciones()
 
-        private void AgregarDetalle() 
+        private void AgregarDetalle()
         {
-
+            NoImplementado();
         }
+
+        private void NoImplementado()
+        {
+            RadMessageBox.SetThemeName(dgvResultados.ThemeName);
+            RadMessageBox.Show(this, "No tiene privilegios para esta acción", "Respuesta del sistema", MessageBoxButtons.OK, RadMessageIcon.Info);
+        }
+
 
         private void QuitarDetalle()
         {
+            GridViewRowInfo[] selectedRows = new GridViewRowInfo[this.dgvResultados.SelectedRows.Count];
+            this.dgvResultados.SelectedRows.CopyTo(selectedRows, 0);
+            this.dgvResultados.TableElement.BeginUpdate();
+            for (int i = 0; i < selectedRows.Length; i++)
+            {
+                this.dgvResultados.Rows.Remove(selectedRows[i] as GridViewDataRowInfo);
+                itemsDetalleEliminado.Add(new SAS_ConformacionDeCargaDetalle { Id = (selectedRows[i].Cells["chid"].Value != null ? Convert.ToInt32(selectedRows[i].Cells["chid"].Value) : 0) });
+            }
+
+            this.dgvResultados.TableElement.EndUpdate();
 
         }
 
@@ -253,18 +307,49 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void RegistroSeleccionadoEnBlanco()
         {
-            selectedItem = new SAS_ListadoTermoRegistroPorClienteCampanaAllResult();
-            selectedItem.Id = 0;
-            selectedItem.TipoTermoRegistroId = 0;
-            selectedItem.TipoTermoRegistro = string.Empty;
-            selectedItem.desde = DateTime.Now;
-            selectedItem.hasta = DateTime.Now;
-            selectedItem.Empresa = string.Empty;
-            selectedItem.EmpresaId = string.Empty;
-            selectedItem.Campana = string.Empty;
-            selectedItem.CampanaId = string.Empty;
-            selectedItem.Glosa = string.Empty;
-            selectedItem.Estado = Convert.ToByte("1");
+            #region  RegistroSeleccionadoEnBlanco() 
+            selectedItemDetail = new SAS_ListadoConformacionDeCargaPBIByIdResult();
+            selectedItemDetail.Id = 0;
+            selectedItemDetail.Semana = 0;
+            selectedItemDetail.ConformacionCargaId = 0;
+            selectedItemDetail.ConformacionCarga = string.Empty;
+            selectedItemDetail.ConformacionCargaFecha = DateTime.Now;
+            selectedItemDetail.NumeroContenedor = string.Empty;
+            selectedItemDetail.Booking = string.Empty;
+            selectedItemDetail.NumeroPackingList = string.Empty;
+            selectedItemDetail.CampaniaId = string.Empty;
+            selectedItemDetail.EstadoId = string.Empty;
+            selectedItemDetail.IdRegistroPaleta = string.Empty;
+            selectedItemDetail.NumeroPaleta = string.Empty;
+            selectedItemDetail.TipoDePaletaId = string.Empty;
+            selectedItemDetail.TipoDePaleta = string.Empty;
+            selectedItemDetail.ClienteId = string.Empty;
+            selectedItemDetail.Cliente = string.Empty;
+            selectedItemDetail.GrowerCode = string.Empty;
+            selectedItemDetail.EstadoDetalle = Convert.ToByte("1");
+            selectedItemDetail.CultivoId = string.Empty;
+            selectedItemDetail.Cultivo = string.Empty;
+            selectedItemDetail.VariedadId = string.Empty;
+            selectedItemDetail.Variedad = string.Empty;
+            selectedItemDetail.EnvaseId = string.Empty;
+            selectedItemDetail.Envase = string.Empty;
+            selectedItemDetail.CategoriaId = string.Empty;
+            selectedItemDetail.Categoria = string.Empty;
+            selectedItemDetail.CalibreId = string.Empty;
+            selectedItemDetail.Calibre = string.Empty;
+            selectedItemDetail.ColorId = string.Empty;
+            selectedItemDetail.Color = string.Empty;
+            selectedItemDetail.PahiruelaId = string.Empty;
+            selectedItemDetail.Pahiruela = string.Empty;
+            selectedItemDetail.Pahiruela = string.Empty;
+            selectedItemDetail.FechaProduccion = string.Empty;
+            selectedItemDetail.CantidadCajas = 0;
+            selectedItemDetail.PaletaOrigen = string.Empty;
+            selectedItemDetail.traza = string.Empty;
+            selectedItemDetail.pesoReferencial = 0;
+            selectedItemDetail.EmbalajeId = string.Empty;
+            selectedItemDetail.Embalaje = string.Empty;
+            #endregion
         }
 
         private void EjecutarProcesoGuardado()
@@ -272,98 +357,130 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             try
             {
                 #region Consultar()
-
-                model = new TermoRegistroPorClienteCampanaController();
-                resultadoOperacion = model.ToRegister(connection, itemRegistar);
+                model = new SAS_CondormidadDeCargaController();
+                resultadoOperacion = model.ToRegister(connection, itemRegistar, detalleRegistro, itemsDetalleEliminado);
 
                 if (resultadoOperacion > 0)
                 {
-                    resultList = new List<SAS_ListadoTermoRegistroPorClienteCampanaAllResult>();
-                    model = new TermoRegistroPorClienteCampanaController();
-                    resultList = model.ListAll(connection).ToList();
+                    resultListDetail = new List<SAS_ListadoConformacionDeCargaPBIByIdResult>();
+                    model = new SAS_CondormidadDeCargaController();
+                    resultListDetail = model.ListAllDetailById(connection, Id).ToList();
                 }
-
                 #endregion
             }
             catch (Exception Ex)
             {
-                RadMessageBox.SetThemeName(dgvRegistro.ThemeName);
+                RadMessageBox.SetThemeName(dgvResultados.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+        }
+
+        private void EjecutarConsultaBusquedaAsincrona()
+        {
+            try
+            {
+                #region Consultar()
+
+                resultListDetail = new List<SAS_ListadoConformacionDeCargaPBIByIdResult>();
+                model = new SAS_CondormidadDeCargaController();
+                resultListDetail = model.ListAllDetailById(connection, Id).ToList();
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+                RadMessageBox.SetThemeName(dgvResultados.ThemeName);
                 RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
 
             }
         }
 
-        private void PresentarConsultaBusqueda()
+
+        private void PresentarConsultaBusquedaAsincrona()
         {
             try
             {
                 #region PresentarResultados()
+
+
+                if (resultListDetail != null)
+                {
+                    txtFecha.Text = resultListDetail.ElementAt(0).ConformacionCargaFecha != null ? resultListDetail.ElementAt(0).ConformacionCargaFecha.ToShortDateString() : string.Empty;
+                    txtEmpresaCodigoE.Text = resultListDetail.ElementAt(0).EmpresaID != null ? resultListDetail.ElementAt(0).EmpresaID.Trim() : string.Empty;
+                    txtCampañaCodigo.Text = resultListDetail.ElementAt(0).CampaniaId != null ? resultListDetail.ElementAt(0).CampaniaId.Trim() : string.Empty;
+                    txtProveedorCodigo.Text = resultListDetail.ElementAt(0).ClienteId != null ? resultListDetail.ElementAt(0).ClienteId.Trim() : string.Empty;
+                    txtContenedor.Text = resultListDetail.ElementAt(0).NumeroContenedor != null ? resultListDetail.ElementAt(0).NumeroContenedor.Trim() : string.Empty;
+                    txtBooking.Text = resultListDetail.ElementAt(0).Booking != null ? resultListDetail.ElementAt(0).Booking.Trim() : string.Empty;
+                    txtIdEstado.Text = resultListDetail.ElementAt(0).EstadoId != null ? resultListDetail.ElementAt(0).EstadoId.Trim() : string.Empty;
+                    txtDescripcion.Text = resultListDetail.ElementAt(0).ConformacionCarga != null ? resultListDetail.ElementAt(0).ConformacionCarga.Trim() : string.Empty;
+                    txtObservaciones.Text = resultListDetail.ElementAt(0).Observacion != null ? resultListDetail.ElementAt(0).Observacion.Trim() : string.Empty;
+
+
+                    txtCodigo.Text = resultListDetail.ElementAt(0).ConformacionCargaId != null ? resultListDetail.ElementAt(0).ConformacionCargaId.ToString().Trim() : "0";
+                    txtEmpresaDescripcionE.Text = resultListDetail.ElementAt(0).Empresa != null ? resultListDetail.ElementAt(0).Empresa.Trim() : string.Empty;
+                    txtCampañaDescripcion.Text = resultListDetail.ElementAt(0).Campania != null ? resultListDetail.ElementAt(0).Campania.Trim() : string.Empty;
+                    txtProveedorDescripcion.Text = resultListDetail.ElementAt(0).Cliente != null ? resultListDetail.ElementAt(0).Cliente.Trim() : string.Empty;
+                    txtEstado.Text = resultListDetail.ElementAt(0).EstadoConformidadCarga != null ? resultListDetail.ElementAt(0).EstadoConformidadCarga.Trim() : string.Empty;
+
+                }
+
+                #region Llenar Grilla detalle()                
+                dgvResultados.DataSource = resultListDetail.ToDataTable<SAS_ListadoConformacionDeCargaPBIByIdResult>();
+                dgvResultados.Refresh();
+
+                PintarResultadosEnGrilla();
+                #endregion
+
+                #region Limpiar Variables()                
+                selectedItemDetail = new SAS_ListadoConformacionDeCargaPBIByIdResult();
+                resultListDetail = new List<SAS_ListadoConformacionDeCargaPBIByIdResult>();
+                model = new SAS_CondormidadDeCargaController();
+                itemRegistar = new SAS_ConformacionDeCarga();
+                itemDelete = new SAS_ConformacionDeCarga();
+                detalleRegistro = new List<SAS_ConformacionDeCargaDetalle>();
+                itemsDetalleEliminado = new List<SAS_ConformacionDeCargaDetalle>();
+                #endregion
 
                 if (resultadoOperacion > 0)
                 {
                     RadMessageBox.Show(this, "Operacion realizada con éxito", "Confirmación del proceso", MessageBoxButtons.OK, RadMessageIcon.Info);
                 }
 
-                dgvRegistro.DataSource = resultList;
-                dgvRegistro.Refresh();
-
-
-                GbPeriodo.Enabled = !true;
-                gbTipoTermoRegistro.Enabled = !true;
-                PintarResultadosEnGrilla();
+                gbDetalle.Enabled = !true;
                 BarraPrincipal.Enabled = true;
-                gbEdit.Enabled = false;
-                gbList.Enabled = true;
+                gbCabecera.Enabled = false;
+                gbDetalle.Enabled = true;
                 btnNuevo.Enabled = true;
-                btnActualizar.Enabled = true;
+                btnAgregarDetalle.Enabled = true;
+                btnFiltro.Enabled = true;
+                btnResaltar.Enabled = true;
                 btnAnular.Enabled = true;
                 btnEditar.Enabled = true;
                 btnEliminarRegistro.Enabled = true;
-                btnRegistrar.Enabled = false;
+                btnGrabar.Enabled = false;
                 btnAtras.Enabled = false;
-                pgBar.Visible = false;
-
-
+                pbResultado.Visible = false;
                 #endregion
             }
             catch (Exception Ex)
             {
-                RadMessageBox.SetThemeName(dgvRegistro.ThemeName);
+                RadMessageBox.SetThemeName(dgvResultados.ThemeName);
                 RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
         }
-        private void EjecutarConsultaBusqueda()
-        {
-            try
-            {
-                #region Consultar()
 
-                resultList = new List<SAS_ListadoTermoRegistroPorClienteCampanaAllResult>();
-                model = new TermoRegistroPorClienteCampanaController();
-                resultList = model.ListAll(connection).ToList();
-                #endregion
-            }
-            catch (Exception Ex)
-            {
-                RadMessageBox.SetThemeName(dgvRegistro.ThemeName);
-                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
-                return;
-
-            }
-        }
 
         private void LimpiarFomularioEdicion()
         {
 
             modelExportToExcel = new ExportToExcelHelper();
-            modelExportToExcel.LimpiarControlesEnGrupoBox(this, gbEdit);
-            modelExportToExcel.LimpiarControlesEnGrupoBox(this, GbPeriodo);
-            modelExportToExcel.LimpiarControlesEnGrupoBox(this, gbTipoTermoRegistro);
+            modelExportToExcel.LimpiarControlesEnGrupoBox(this, gbCabecera);
+            modelExportToExcel.LimpiarControlesEnGrupoBox(this, gbDetalle);
             txtCodigo.Text = "0";
-            txtIdEstado.Text = "1";
-            txtEstado.Text = "ACTIVO";
+            txtIdEstado.Text = "PE";
+            txtEstado.Text = "PENDIENTE";
 
         }
 
@@ -392,48 +509,62 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void Actualizar()
         {
             BarraPrincipal.Enabled = false;
-            gbEdit.Enabled = false;
-            gbList.Enabled = false;
+            gbCabecera.Enabled = false;
+            gbDetalle.Enabled = false;
             btnNuevo.Enabled = true;
-            btnActualizar.Enabled = true;
+            btnFiltro.Enabled = true;
             btnAnular.Enabled = true;
             btnEliminarRegistro.Enabled = true;
-            btnRegistrar.Enabled = false;
+            btnGrabar.Enabled = false;
             btnAtras.Enabled = false;
-            pgBar.Visible = true;
+            pbResultado.Visible = true;
             bgwHilo.RunWorkerAsync();
         }
 
         private void ElegirColumna()
         {
-            this.dgvRegistro.ShowColumnChooser();
+            this.dgvResultados.ShowColumnChooser();
         }
 
         private void Grabar()
         {
             #region Registrar()  
-            if (this.txtCodigo.Text.Trim() != string.Empty && this.txtEstado.Text.Trim() != string.Empty && this.txtIdEstado.Text.Trim() != "0")
+            if (this.txtCodigo.Text.Trim() != string.Empty && this.txtEstado.Text.Trim() != string.Empty && (this.txtIdEstado.Text.Trim() == "PE"))
             {
                 if (ValidateForm() == true)
                 {
-                    itemRegistar = new SAS_TermoRegistroPorClienteCampana();
+                    itemRegistar = new SAS_ConformacionDeCarga();
                     itemRegistar.Id = Convert.ToInt32(this.txtCodigo.Text);
-                    itemRegistar.EmpresaId = this.txtEmpresaCodigoE.Text.Trim();
-                    itemRegistar.CampanaId = this.txtCampañaCodigo.Text.Trim();
-                    itemRegistar.ClienteId = (this.txtClienteId.Text.Trim());
-                    itemRegistar.TipoTermoRegistro = Convert.ToInt32(this.txtTipoTermoRegistroId.Text.Trim());
-                    itemRegistar.Desde = Convert.ToDateTime(this.txtDesde.Text.Trim());
-                    itemRegistar.Hasta = Convert.ToDateTime(this.txtHasta.Text.Trim());
-                    itemRegistar.Estado = Convert.ToByte(1);
-                    itemRegistar.VisibleEnReportes = chkVisibleEnReportes.Checked == true ? 1 : 0;
-                    itemRegistar.Usuario = user.IdUsuario;
-                    itemRegistar.FechaCreacion = DateTime.Now;
-                    itemRegistar.Glosa = this.txtGlosa.Text.Trim();
-                    itemRegistar.HostName = Environment.MachineName.ToString();
-                    gbEdit.Enabled = false;
-                    gbList.Enabled = false;
-                    GbPeriodo.Enabled = false;
-                    pgBar.Visible = true;
+                    itemRegistar.Fecha = Convert.ToDateTime(this.txtFecha.Text.Trim());
+                    itemRegistar.Descripcion = this.txtDescripcion.Text.Trim();
+                    itemRegistar.NumeroContenedor = (this.txtContenedor.Text.Trim());
+                    itemRegistar.Booking = (this.txtBooking.Text.Trim());
+                    itemRegistar.Observacion = (this.txtContenedor.Text.Trim());
+                    itemRegistar.NumeroContenedor = (this.txtObservaciones.Text.Trim());
+                    itemRegistar.FechaRegistro = DateTime.Now;
+                    itemRegistar.UserId = user.IdUsuario != null ? user.IdUsuario : Environment.UserName;
+                    itemRegistar.Hostname = Environment.MachineName.ToString();
+                    itemRegistar.EstadoId = (this.txtIdEstado.Text.Trim());
+                    itemRegistar.idCampania = this.txtCampañaCodigo.Text.Trim();
+                    itemRegistar.IdClieprov = this.txtProveedorCodigo.Text.Trim();
+
+
+                    detalleRegistro = new List<SAS_ConformacionDeCargaDetalle>();
+                    foreach (GridViewRowInfo rowInfo in dgvResultados.Rows)
+                    {
+                        SAS_ConformacionDeCargaDetalle detail = new SAS_ConformacionDeCargaDetalle();
+                        detail.IdConformacionCarga = itemRegistar.Id;
+                        detail.Id = rowInfo.Cells["chId"].Value != null ? Convert.ToInt32(rowInfo.Cells["chId"].Value.ToString().Trim()) : 0;
+                        detail.IdRegistroPaleta = rowInfo.Cells["chIdRegistroPaleta"].Value != null ? rowInfo.Cells["chIdRegistroPaleta"].Value.ToString().Trim() : string.Empty;
+                        detail.Estado = rowInfo.Cells["chEstadoDetalle"].Value != null ? Convert.ToByte(rowInfo.Cells["chEstadoDetalle"].Value.ToString().Trim()) : Convert.ToByte(1);
+                        detalleRegistro.Add(detail);
+                    }
+
+
+
+                    gbCabecera.Enabled = false;
+                    gbDetalle.Enabled = false;
+                    pbResultado.Visible = true;
                     bgwRegistrar.RunWorkerAsync();
                 }
                 else
@@ -444,8 +575,10 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             }
             else
             {
-                MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
+                RadMessageBox.SetThemeName(dgvResultados.ThemeName);
+                RadMessageBox.Show(this, "El documento no tiene el estado para edición", "Advertencia del sistema", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
+
             }
             #endregion
         }
@@ -486,44 +619,44 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             }
 
 
-            if (this.txtCampañaDescripcion.Text.Trim() == string.Empty)
-            {
-                status = false;
-            }
+            //if (this.txtCampañaDescripcion.Text.Trim() == string.Empty)
+            //{
+            //    status = false;
+            //}
 
-            if (this.txtClienteId.Text.Trim() == string.Empty)
-            {
-                status = false;
-            }
-
-
-            if (this.txtCliente.Text.Trim() == string.Empty)
-            {
-                status = false;
-            }
-
-            if (this.txtDesde.Text.ToString().Trim() == ASCD)
-            {
-                status = false;
-            }
+            //if (this.txtClienteId.Text.Trim() == string.Empty)
+            //{
+            //    status = false;
+            //}
 
 
-            if (this.txtHasta.Text.ToString().Trim() == ASCD)
-            {
-                status = false;
-            }
+            //if (this.txtCliente.Text.Trim() == string.Empty)
+            //{
+            //    status = false;
+            //}
+
+            //if (this.txtDesde.Text.ToString().Trim() == ASCD)
+            //{
+            //    status = false;
+            //}
 
 
-            if (this.txtTipoTermoRegistro.Text.ToString().Trim() == string.Empty)
-            {
-                status = false;
-            }
+            //if (this.txtHasta.Text.ToString().Trim() == ASCD)
+            //{
+            //    status = false;
+            //}
 
 
-            if (this.txtTipoTermoRegistroId.Text.ToString().Trim() == string.Empty)
-            {
-                status = false;
-            }
+            //if (this.txtTipoTermoRegistro.Text.ToString().Trim() == string.Empty)
+            //{
+            //    status = false;
+            //}
+
+
+            //if (this.txtTipoTermoRegistroId.Text.ToString().Trim() == string.Empty)
+            //{
+            //    status = false;
+            //}
 
 
             return status;
@@ -536,17 +669,16 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             {
                 if (ValidateForm() == true)
                 {
-                    itemRegistar = new SAS_TermoRegistroPorClienteCampana();
+                    itemRegistar = new SAS_ConformacionDeCarga();
                     itemRegistar.Id = Convert.ToInt32(this.txtCodigo.Text);
-                    model = new TermoRegistroPorClienteCampanaController();
+                    model = new SAS_CondormidadDeCargaController();
                     if (model.ToDelete(connection, itemRegistar) > 0)
                     {
                         MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                         bgwHilo.RunWorkerAsync();
-                        gbEdit.Enabled = false;
-                        gbList.Enabled = true;
+                        gbDetalle.Enabled = false;
+                        gbDetalle.Enabled = true;
                         btnNuevo.Enabled = true;
-                        btnActualizar.Enabled = true;
                         btnAnular.Enabled = true;
                         btnEliminarRegistro.Enabled = true;
                         btnGrabar.Enabled = true;
@@ -572,7 +704,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void Exportar()
         {
             modelExportToExcel = new ExportToExcelHelper();
-            modelExportToExcel.ExportarToExcel(dgvRegistro, saveFileDialog);
+            modelExportToExcel.ExportarToExcel(dgvResultados, saveFileDialog);
         }
 
         private void Anular()
@@ -582,17 +714,17 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             {
                 if (ValidateForm() == true)
                 {
-                    itemRegistar = new SAS_TermoRegistroPorClienteCampana();
+                    itemRegistar = new SAS_ConformacionDeCarga();
                     itemRegistar.Id = Convert.ToInt32(this.txtCodigo.Text);
-                    model = new TermoRegistroPorClienteCampanaController();
+                    model = new SAS_CondormidadDeCargaController();
                     if (model.ToChangeStatus(connection, itemRegistar) > 0)
                     {
                         MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                         bgwHilo.RunWorkerAsync();
-                        gbEdit.Enabled = false;
-                        gbList.Enabled = true;
+                        gbDetalle.Enabled = false;
+                        gbDetalle.Enabled = true;
                         btnNuevo.Enabled = true;
-                        btnActualizar.Enabled = true;
+                        btnFiltro.Enabled = true;
                         btnAnular.Enabled = true;
                         btnEliminarRegistro.Enabled = true;
                         btnGrabar.Enabled = true;
@@ -618,85 +750,37 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void Atras()
         {
             LimpiarFomularioEdicion();
-            gbEdit.Enabled = false;
-            gbList.Enabled = true;
+            gbDetalle.Enabled = false;
+            gbDetalle.Enabled = true;
             btnNuevo.Enabled = true;
-            btnActualizar.Enabled = true;
+            btnFiltro.Enabled = true;
             btnAnular.Enabled = true;
             btnEliminarRegistro.Enabled = true;
-            btnRegistrar.Enabled = false;
+            btnGrabar.Enabled = false;
             btnEditar.Enabled = true;
             btnAtras.Enabled = false;
         }
 
-        private void EjecuarConsultaAsincrona()
-        {
-
-            try
-            {
-                #region Consultar()
-
-                resultList = new List<SAS_ListadoTermoRegistroPorClienteCampanaAllResult>();
-                model = new TermoRegistroPorClienteCampanaController();
-                resultList = model.ListAll(connection).ToList();
-                #endregion
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message.ToString(), "Error en el sistema");
-                return;
-            }
-        }
-
         protected override void OnLoad(EventArgs e)
         {
-            this.dgvRegistro.TableElement.BeginUpdate();
+            this.dgvResultados.TableElement.BeginUpdate();
             this.LoadFreightSummary();
-            this.dgvRegistro.TableElement.EndUpdate();
+            this.dgvResultados.TableElement.EndUpdate();
 
             base.OnLoad(e);
         }
 
         private void LoadFreightSummary()
         {
-            this.dgvRegistros.MasterTemplate.AutoExpandGroups = true;
-            this.dgvRegistros.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.dgvRegistros.GroupDescriptors.Clear();
-            this.dgvRegistros.GroupDescriptors.Add(new GridGroupByExpression("CustomerID Group By CustomerID"));
+            this.dgvResultados.MasterTemplate.AutoExpandGroups = true;
+            this.dgvResultados.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.dgvResultados.GroupDescriptors.Clear();
+            this.dgvResultados.GroupDescriptors.Add(new GridGroupByExpression("CustomerID Group By CustomerID"));
             GridViewSummaryRowItem items1 = new GridViewSummaryRowItem();
-            items1.Add(new GridViewSummaryItem("chTipoTermoRegistro", "Count : {0:N2}; ", GridAggregateFunction.Count));
-            this.dgvRegistros.MasterTemplate.SummaryRowsTop.Add(items1);
-        }
-
-        private void PresentarResultados()
-        {
-            try
-            {
-                #region PresentarResultados()
-                dgvRegistros.DataSource = resultList;
-                dgvRegistros.Refresh();
-
-                PintarResultadosEnGrilla();
-                BarraPrincipal.Enabled = true;
-                gbEdit.Enabled = false;
-                gbList.Enabled = true;
-                btnNuevo.Enabled = true;
-                btnActualizar.Enabled = true;
-                btnAnular.Enabled = true;
-                btnEditar.Enabled = true;
-                btnEliminarRegistro.Enabled = true;
-                btnRegistrar.Enabled = false;
-                btnAtras.Enabled = false;
-                pgBar.Visible = true;
-
-
-                #endregion
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message.ToString(), "Error en el sistema");
-                return;
-            }
+            items1.Add(new GridViewSummaryItem("chNumeroPaleta", "# Reg. : {0:N2}; ", GridAggregateFunction.Count));
+            items1.Add(new GridViewSummaryItem("chpesoReferencial", "Sum. : {0:N2}; ", GridAggregateFunction.Sum));
+            items1.Add(new GridViewSummaryItem("chCantidadCajas", "Sum : {0:N2}; ", GridAggregateFunction.Sum));
+            this.dgvResultados.MasterTemplate.SummaryRowsTop.Add(items1);
         }
 
         private void ResaltarResultados()
@@ -710,21 +794,36 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             if ((ClickResaltarResultados % 2) == 0)
             {
                 #region Par() | Acción pintar()
-                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "0", string.Empty, true);
-                c1.RowBackColor = Color.IndianRed;
-                c1.CellBackColor = Color.IndianRed;
-                c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
-                dgvRegistro.Columns["chEstado"].ConditionalFormattingObjectList.Add(c1);
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "PALLET COMPLETO", string.Empty, true);
+                c1.RowBackColor = Color.MintCream;
+                c1.CellBackColor = Color.MintCream;
+                //c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvResultados.Columns["chTipoDePaleta"].ConditionalFormattingObjectList.Add(c1);
+
+                ConditionalFormattingObject c2 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "PALLET MIXTO REMONTE", string.Empty, true);
+                c2.RowBackColor = Color.OldLace;
+                c2.CellBackColor = Color.OldLace;
+                //c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvResultados.Columns["chTipoDePaleta"].ConditionalFormattingObjectList.Add(c2);
+
                 #endregion
             }
             else
             {
                 #region Par() | Acción despintar()
-                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "0", string.Empty, true);
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "PALLET COMPLETO", string.Empty, true);
                 c1.RowBackColor = Color.White;
                 c1.CellBackColor = Color.White;
-                c1.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
-                dgvRegistro.Columns["chEstado"].ConditionalFormattingObjectList.Add(c1);
+                // c1.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvResultados.Columns["chTipoDePaleta"].ConditionalFormattingObjectList.Add(c1);
+
+
+                ConditionalFormattingObject c2 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "PALLET MIXTO REMONTE", string.Empty, true);
+                c2.RowBackColor = Color.White;
+                c2.CellBackColor = Color.White;
+                //c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvResultados.Columns["chTipoDePaleta"].ConditionalFormattingObjectList.Add(c2);
+
                 #endregion
             }
         }
@@ -733,23 +832,25 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         {
             if (this.txtEstado.Text != null)
             {
-                if (this.txtEstado.Text != "ANULADO")
+                if ((this.txtIdEstado.Text != "AN") || (this.txtIdEstado.Text != "FN") || (this.txtIdEstado.Text != "C0") || (this.txtIdEstado.Text != "RE"))
                 {
-                    GbPeriodo.Enabled = true;
-                    gbTipoTermoRegistro.Enabled = true;
-                    gbEdit.Enabled = true;
-                    gbList.Enabled = false;
-                    btnNuevo.Enabled = false;
+                    btnAgregarDetalle.Enabled = true;
+                    btnQuitarDetalle.Enabled = true;
+                    btnIrAConsolidado.Enabled = true;
+                    gbCabecera.Enabled = true;
+                    gbDetalle.Enabled = true;
                     btnEditar.Enabled = false;
-                    btnActualizar.Enabled = false;
+                    btnNuevo.Enabled = false;
+                    btnFiltro.Enabled = true;
                     btnAnular.Enabled = false;
                     btnEliminarRegistro.Enabled = false;
-                    btnRegistrar.Enabled = true;
+                    btnGrabar.Enabled = true;
                     btnAtras.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("El documento no tiene el estado para la edición", "Confirmación del sistema");
+                    RadMessageBox.SetThemeName(dgvResultados.ThemeName);
+                    RadMessageBox.Show(this, "El documento no tiene el estado para edición", "Advertencia del sistema", MessageBoxButtons.OK, RadMessageIcon.Error);
                     return;
                 }
             }
@@ -758,17 +859,17 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void Nuevo()
         {
             LimpiarFomularioEdicion();
-            gbEdit.Enabled = true;
-            gbList.Enabled = false;
-            GbPeriodo.Enabled = true;
-            gbTipoTermoRegistro.Enabled = true;
-            btnNuevo.Enabled = false;
-            btnEditar.Enabled = false;
-            btnActualizar.Enabled = false;
-            btnAnular.Enabled = false;
-            btnEliminarRegistro.Enabled = false;
-            btnRegistrar.Enabled = true;
-            btnAtras.Enabled = true;
+            //gbEdit.Enabled = true;
+            //gbDetalle.Enabled = false;
+            //GbPeriodo.Enabled = true;
+            //gbTipoTermoRegistro.Enabled = true;
+            //btnNuevo.Enabled = false;
+            //btnEditar.Enabled = false;
+            //btnActualizar.Enabled = false;
+            //btnAnular.Enabled = false;
+            //btnEliminarRegistro.Enabled = false;
+            //btnRegistrar.Enabled = true;
+            //btnAtras.Enabled = true;
 
         }
 
@@ -778,15 +879,15 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             if ((ClickFiltro % 2) == 0)
             {
                 #region Par() | Activar Filtro()
-                dgvRegistro.EnableFiltering = !true;
-                dgvRegistro.ShowHeaderCellButtons = !true;
+                dgvResultados.EnableFiltering = !true;
+                dgvResultados.ShowHeaderCellButtons = !true;
                 #endregion
             }
             else
             {
                 #region Par() | DesActivar Filtro()
-                dgvRegistro.EnableFiltering = true;
-                dgvRegistro.ShowHeaderCellButtons = true;
+                dgvResultados.EnableFiltering = true;
+                dgvResultados.ShowHeaderCellButtons = true;
                 #endregion
             }
         }
@@ -813,14 +914,34 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void IrAConsolidado()
         {
+            if (this.txtCodigo.Text.Trim() != string.Empty && this.txtEstado.Text.Trim() != string.Empty && (this.txtIdEstado.Text.Trim() == "PE"))
+            {
 
+            }
+            else
+            {
+                RadMessageBox.SetThemeName(dgvResultados.ThemeName);
+                RadMessageBox.Show(this, "El documento no tiene el estado para agregar paletas al registro", "Advertencia del sistema", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
         }
-
-       
 
 
         #endregion
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Imprimir();
+        }
 
+        private void Imprimir()
+        {
+            NoImplementado();
+        }
+
+        private void dgvResultados_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

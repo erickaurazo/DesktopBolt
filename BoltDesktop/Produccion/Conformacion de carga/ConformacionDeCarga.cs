@@ -227,6 +227,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
             selectedItem.Id = 0;
             Id = 0;
+            EstadoId = string.Empty;
             btnPendiente.Enabled = false;
             btnProceso.Enabled = false;
             btnFinalizado.Enabled = false;
@@ -244,6 +245,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                             if (dgvRegistros.CurrentRow.Cells["chId"].Value.ToString() != string.Empty)
                             {
                                 Id = (dgvRegistros.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32(dgvRegistros.CurrentRow.Cells["chId"].Value.ToString()) : 0);
+                                EstadoId = (dgvRegistros.CurrentRow.Cells["chEstadoId"].Value != null ? Convert.ToString(dgvRegistros.CurrentRow.Cells["chEstadoId"].Value.ToString()) : string.Empty);
                                 var resultado = listAll.Where(x => x.Id == Id).ToList();
                                 if (resultado.ToList().Count > 0)
                                 {
@@ -368,7 +370,23 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void Nuevo()
         {
-            NoImplementado();
+
+            try
+            {
+                Id = 0;
+                ConformacionDeCargaDetalle oFron = new ConformacionDeCargaDetalle(conection, user, companyId, privilege, Id);
+                oFron.MdiParent = ConformacionDeCarga.ActiveForm;
+                oFron.WindowState = FormWindowState.Maximized;
+                oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                oFron.Show();
+            }
+            catch (Exception Ex)
+            {
+                RadMessageBox.SetThemeName(dgvRegistros.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+            
         }
 
         private void NoImplementado()
@@ -399,7 +417,21 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void Editar()
         {
-            NoImplementado();
+            if (selectedItem != null)
+            {
+                if (selectedItem.Id != null)
+                {
+                    if (selectedItem.Id != 0)
+                    {
+                        
+                        ConformacionDeCargaDetalle oFron = new ConformacionDeCargaDetalle(conection, user, companyId, privilege, Id);
+                        //oFron.MdiParent = ConformacionDeCarga.ActiveForm;
+                        //oFron.WindowState = FormWindowState.Maximized;
+                        //oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                        oFron.Show();
+                    }
+                }
+            }
         }
 
 
@@ -732,12 +764,39 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void btnCancelarReserva_Click(object sender, EventArgs e)
         {
-            CancelarReserva();
+           
+                    CancelarReserva();
+         
+
+            
         }
 
         private void CancelarReserva()
-        {
+        {            
+            if (EstadoId != string.Empty)
+            {
+                if (EstadoId != "PE")
+                {
+                    CambiarEstado("C0");
+                }
+            }
+        }
 
+        private void btnRechazarCarga_Click(object sender, EventArgs e)
+        {
+            RechazarCarga();
+        }
+
+        private void RechazarCarga()
+        {
+           
+            if (EstadoId != string.Empty)
+            {
+                if (EstadoId != "PE")
+                {
+                    CambiarEstado("RE");
+                }
+            }
         }
 
         private void ActivateFilter()

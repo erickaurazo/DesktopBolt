@@ -254,7 +254,7 @@
             this.menuPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior,
             this.commandBarRowElement1});
-            this.menuPrincipal.Size = new System.Drawing.Size(1126, 62);
+            this.menuPrincipal.Size = new System.Drawing.Size(1126, 67);
             this.menuPrincipal.TabIndex = 196;
             this.menuPrincipal.Text = "Nuevo";
             this.menuPrincipal.ThemeName = "VisualStudio2012Light";
@@ -652,9 +652,9 @@
             // 
             this.btnUnidades.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUnidades.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidades.Image")));
-            this.btnUnidades.Location = new System.Drawing.Point(1027, 31);
+            this.btnUnidades.Location = new System.Drawing.Point(1008, 31);
             this.btnUnidades.Name = "btnUnidades";
-            this.btnUnidades.Size = new System.Drawing.Size(94, 25);
+            this.btnUnidades.Size = new System.Drawing.Size(113, 25);
             this.btnUnidades.TabIndex = 25;
             this.btnUnidades.Text = "    Ver &Unidades";
             this.btnUnidades.ThemeName = "Windows8";
@@ -789,7 +789,7 @@
             this.txtPeriodo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPeriodo.ThemeName = "Windows8";
             this.txtPeriodo.Value = new decimal(new int[] {
-            2022,
+            2023,
             0,
             0,
             0});
@@ -799,9 +799,9 @@
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.Location = new System.Drawing.Point(1029, 58);
+            this.btnConsultar.Location = new System.Drawing.Point(1008, 58);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(88, 25);
+            this.btnConsultar.Size = new System.Drawing.Size(109, 25);
             this.btnConsultar.TabIndex = 26;
             this.btnConsultar.Text = "&Consultar ";
             this.btnConsultar.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -1016,7 +1016,7 @@
             this.tabDBVisualSAT.ItemSize = new System.Drawing.SizeF(272F, 24F);
             this.tabDBVisualSAT.Location = new System.Drawing.Point(5, 5);
             this.tabDBVisualSAT.Name = "tabDBVisualSAT";
-            this.tabDBVisualSAT.Size = new System.Drawing.Size(1015, 213);
+            this.tabDBVisualSAT.Size = new System.Drawing.Size(1101, 213);
             this.tabDBVisualSAT.Text = "BD. Visual SAT";
             // 
             // dgvDBVisualSAT
@@ -1030,7 +1030,7 @@
             this.dgvDBVisualSAT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvDBVisualSAT.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // dgvDBVisualSAT
             // 
             this.dgvDBVisualSAT.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.dgvDBVisualSAT.MasterTemplate.AllowAddNewRow = false;
@@ -1069,13 +1069,13 @@
             gridViewDecimalColumn7.HeaderText = "Semana";
             gridViewDecimalColumn7.Name = "chsemana";
             gridViewDecimalColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn7.Width = 32;
+            gridViewDecimalColumn7.Width = 35;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "NombreDiaSemana";
             gridViewTextBoxColumn8.HeaderText = "Dia";
             gridViewTextBoxColumn8.Name = "chNombreDiaSemana";
             gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn8.Width = 39;
+            gridViewTextBoxColumn8.Width = 42;
             gridViewDateTimeColumn2.EnableExpressionEditor = false;
             gridViewDateTimeColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewDateTimeColumn2.FieldName = "fecha";
@@ -1084,19 +1084,19 @@
             gridViewDateTimeColumn2.HeaderText = "Fecha";
             gridViewDateTimeColumn2.Name = "chfecha";
             gridViewDateTimeColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDateTimeColumn2.Width = 45;
+            gridViewDateTimeColumn2.Width = 49;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "tracto";
             gridViewTextBoxColumn9.HeaderText = "Cod. Maquinaria";
             gridViewTextBoxColumn9.Name = "chtracto";
             gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn9.Width = 54;
+            gridViewTextBoxColumn9.Width = 59;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "turnoTrabajo";
             gridViewTextBoxColumn10.HeaderText = "Turno";
             gridViewTextBoxColumn10.Name = "chturnoTrabajo";
             gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn10.Width = 41;
+            gridViewTextBoxColumn10.Width = 44;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
             gridViewTextBoxColumn11.FieldName = "disponibilidad";
             gridViewTextBoxColumn11.HeaderText = "disponibilidad";
@@ -1109,7 +1109,7 @@
             gridViewTextBoxColumn12.HeaderText = "Disponibilidad";
             gridViewTextBoxColumn12.Name = "chTieneDisponibilidad";
             gridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn12.Width = 59;
+            gridViewTextBoxColumn12.Width = 64;
             gridViewTextBoxColumn13.EnableExpressionEditor = false;
             gridViewTextBoxColumn13.FieldName = "siTieneProgramacionTrabajo";
             gridViewTextBoxColumn13.HeaderText = "siTieneProgramacionTrabajo";
@@ -1123,35 +1123,35 @@
             gridViewTextBoxColumn14.Name = "chProgramacionDeLabores";
             gridViewTextBoxColumn14.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
             gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn14.Width = 80;
+            gridViewTextBoxColumn14.Width = 87;
             gridViewDecimalColumn8.EnableExpressionEditor = false;
             gridViewDecimalColumn8.FieldName = "totalMinutos";
             gridViewDecimalColumn8.FormatString = "{0:N2}";
             gridViewDecimalColumn8.HeaderText = "Tot. Minutos trabajados";
             gridViewDecimalColumn8.Name = "chtotalMinutos";
             gridViewDecimalColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn8.Width = 68;
+            gridViewDecimalColumn8.Width = 74;
             gridViewDecimalColumn9.EnableExpressionEditor = false;
             gridViewDecimalColumn9.FieldName = "horasTrabajadas";
             gridViewDecimalColumn9.FormatString = "{0:N2}";
             gridViewDecimalColumn9.HeaderText = "Hrs. Trab (100)";
             gridViewDecimalColumn9.Name = "chhorasTrabajadas";
             gridViewDecimalColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn9.Width = 77;
+            gridViewDecimalColumn9.Width = 84;
             gridViewDecimalColumn10.EnableExpressionEditor = false;
             gridViewDecimalColumn10.FieldName = "hrsTrabTX2";
             gridViewDecimalColumn10.FormatString = "{0:N2}";
             gridViewDecimalColumn10.HeaderText = "Hrs. Trab (60)";
             gridViewDecimalColumn10.Name = "chhrsTrabTX2";
             gridViewDecimalColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn10.Width = 75;
+            gridViewDecimalColumn10.Width = 81;
             gridViewDecimalColumn11.EnableExpressionEditor = false;
             gridViewDecimalColumn11.FieldName = "minutosEnLote";
             gridViewDecimalColumn11.FormatString = "{0:N2}";
             gridViewDecimalColumn11.HeaderText = "Min. Lote";
             gridViewDecimalColumn11.Name = "chminutosEnLote";
             gridViewDecimalColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn11.Width = 63;
+            gridViewDecimalColumn11.Width = 68;
             gridViewTextBoxColumn15.EnableExpressionEditor = false;
             gridViewTextBoxColumn15.FieldName = "hrsTrabTX";
             gridViewTextBoxColumn15.HeaderText = "Hrs. Trab TX";
@@ -1172,35 +1172,35 @@
             gridViewDecimalColumn12.HeaderText = "Hrs. Trab. Lote (100)";
             gridViewDecimalColumn12.Name = "chhorasTrabajadasLote";
             gridViewDecimalColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn12.Width = 66;
+            gridViewDecimalColumn12.Width = 72;
             gridViewDecimalColumn13.EnableExpressionEditor = false;
             gridViewDecimalColumn13.FieldName = "hrsTrabEnLoteTX2";
             gridViewDecimalColumn13.FormatString = "{0:N2}";
             gridViewDecimalColumn13.HeaderText = "Hrs. Trab Lote (60)";
             gridViewDecimalColumn13.Name = "chhrsTrabEnLoteTX2";
             gridViewDecimalColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn13.Width = 70;
+            gridViewDecimalColumn13.Width = 76;
             gridViewDecimalColumn14.EnableExpressionEditor = false;
             gridViewDecimalColumn14.FieldName = "procentajeEnLote";
             gridViewDecimalColumn14.FormatString = "{0:N2}";
             gridViewDecimalColumn14.HeaderText = "% Lote.";
             gridViewDecimalColumn14.Name = "chprocentajeEnLote";
             gridViewDecimalColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn14.Width = 72;
+            gridViewDecimalColumn14.Width = 78;
             gridViewDecimalColumn15.EnableExpressionEditor = false;
             gridViewDecimalColumn15.FieldName = "kilometrosRecorridosTotal";
             gridViewDecimalColumn15.FormatString = "{0:N2}";
             gridViewDecimalColumn15.HeaderText = "KM. recorrido por turno";
             gridViewDecimalColumn15.Name = "chkilometrosRecorridosTotal";
             gridViewDecimalColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn15.Width = 43;
+            gridViewDecimalColumn15.Width = 47;
             gridViewTextBoxColumn17.EnableExpressionEditor = false;
             gridViewTextBoxColumn17.FieldName = "kilometrosRecorridosTotalEnLote";
             gridViewTextBoxColumn17.FormatString = "{0:N2}";
             gridViewTextBoxColumn17.HeaderText = "KM. Recorridos en lote";
             gridViewTextBoxColumn17.Name = "chkilometrosRecorridosTotalEnLote";
             gridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn17.Width = 48;
+            gridViewTextBoxColumn17.Width = 52;
             gridViewDecimalColumn16.EnableExpressionEditor = false;
             gridViewDecimalColumn16.FieldName = "Avance_KMxTurno";
             gridViewDecimalColumn16.FormatString = "{0:N2}";
@@ -1223,14 +1223,14 @@
             gridViewDecimalColumn18.HeaderText = "Hrs recorridas en lote";
             gridViewDecimalColumn18.Name = "chHorasRecorridosEnLote";
             gridViewDecimalColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn18.Width = 48;
+            gridViewDecimalColumn18.Width = 52;
             gridViewDecimalColumn19.EnableExpressionEditor = false;
             gridViewDecimalColumn19.FieldName = "totalParadas";
             gridViewDecimalColumn19.FormatString = "{0:N2}";
             gridViewDecimalColumn19.HeaderText = "Total de tiempo en para";
             gridViewDecimalColumn19.Name = "chtotalParadas";
             gridViewDecimalColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn19.Width = 34;
+            gridViewDecimalColumn19.Width = 36;
             gridViewDecimalColumn20.EnableExpressionEditor = false;
             gridViewDecimalColumn20.FieldName = "TotalMinParados";
             gridViewDecimalColumn20.FormatString = "{0:N2}";
@@ -1332,7 +1332,7 @@
             this.dgvDBVisualSAT.ReadOnly = true;
             this.dgvDBVisualSAT.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDBVisualSAT.ShowHeaderCellButtons = true;
-            this.dgvDBVisualSAT.Size = new System.Drawing.Size(1015, 213);
+            this.dgvDBVisualSAT.Size = new System.Drawing.Size(1101, 213);
             this.dgvDBVisualSAT.TabIndex = 29;
             this.dgvDBVisualSAT.ThemeName = "VisualStudio2012Light";
             // 
@@ -1342,7 +1342,7 @@
             this.tabBDPartesMaquinaria.ItemSize = new System.Drawing.SizeF(272F, 24F);
             this.tabBDPartesMaquinaria.Location = new System.Drawing.Point(5, 5);
             this.tabBDPartesMaquinaria.Name = "tabBDPartesMaquinaria";
-            this.tabBDPartesMaquinaria.Size = new System.Drawing.Size(1015, 213);
+            this.tabBDPartesMaquinaria.Size = new System.Drawing.Size(1101, 213);
             this.tabBDPartesMaquinaria.Text = "BD. Parte Maquinaria";
             // 
             // dgvBDParteMaquinaria
@@ -1355,7 +1355,7 @@
             this.dgvBDParteMaquinaria.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvBDParteMaquinaria.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // dgvBDParteMaquinaria
             // 
             this.dgvBDParteMaquinaria.MasterTemplate.AllowAddNewRow = false;
             this.dgvBDParteMaquinaria.MasterTemplate.AutoGenerateColumns = false;
@@ -1369,7 +1369,7 @@
             gridViewTextBoxColumn20.FieldName = "semana";
             gridViewTextBoxColumn20.HeaderText = "Semana";
             gridViewTextBoxColumn20.Name = "chsemana";
-            gridViewTextBoxColumn20.Width = 38;
+            gridViewTextBoxColumn20.Width = 41;
             gridViewTextBoxColumn21.EnableExpressionEditor = false;
             gridViewTextBoxColumn21.FieldName = "fecha";
             gridViewTextBoxColumn21.FormatString = "{0:d}";
@@ -1377,12 +1377,10 @@
             gridViewTextBoxColumn21.Name = "chfecha";
             gridViewTextBoxColumn21.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
             gridViewTextBoxColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn21.Width = 46;
             gridViewTextBoxColumn22.EnableExpressionEditor = false;
             gridViewTextBoxColumn22.FieldName = "NombreDiaSemana";
             gridViewTextBoxColumn22.HeaderText = "Día";
             gridViewTextBoxColumn22.Name = "chNombreDiaSemana";
-            gridViewTextBoxColumn22.Width = 46;
             gridViewTextBoxColumn23.EnableExpressionEditor = false;
             gridViewTextBoxColumn23.FieldName = "PERIODO";
             gridViewTextBoxColumn23.HeaderText = "Periodo";
@@ -1400,19 +1398,19 @@
             gridViewTextBoxColumn25.HeaderText = "Documento";
             gridViewTextBoxColumn25.Name = "chdocumento";
             gridViewTextBoxColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn25.Width = 75;
+            gridViewTextBoxColumn25.Width = 81;
             gridViewTextBoxColumn26.EnableExpressionEditor = false;
             gridViewTextBoxColumn26.FieldName = "idMaquinaria";
             gridViewTextBoxColumn26.HeaderText = "Cod. Maquinaria";
             gridViewTextBoxColumn26.Name = "chidMaquinaria";
             gridViewTextBoxColumn26.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn26.Width = 54;
+            gridViewTextBoxColumn26.Width = 59;
             gridViewTextBoxColumn27.EnableExpressionEditor = false;
             gridViewTextBoxColumn27.FieldName = "idImplemento";
             gridViewTextBoxColumn27.HeaderText = "Cod. Implemento";
             gridViewTextBoxColumn27.Name = "chidImplemento";
             gridViewTextBoxColumn27.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn27.Width = 57;
+            gridViewTextBoxColumn27.Width = 62;
             gridViewTextBoxColumn28.EnableExpressionEditor = false;
             gridViewTextBoxColumn28.FieldName = "ITEM";
             gridViewTextBoxColumn28.HeaderText = "ITEM";
@@ -1424,34 +1422,33 @@
             gridViewTextBoxColumn29.HeaderText = "Cod. Lote";
             gridViewTextBoxColumn29.Name = "chidConsumidor";
             gridViewTextBoxColumn29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn29.Width = 44;
+            gridViewTextBoxColumn29.Width = 48;
             gridViewTextBoxColumn30.EnableExpressionEditor = false;
             gridViewTextBoxColumn30.FieldName = "consumidor";
             gridViewTextBoxColumn30.HeaderText = "Lote";
             gridViewTextBoxColumn30.Name = "chconsumidor";
             gridViewTextBoxColumn30.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn30.Width = 74;
+            gridViewTextBoxColumn30.Width = 80;
             gridViewDecimalColumn27.EnableExpressionEditor = false;
             gridViewDecimalColumn27.FieldName = "HORAINICIO";
             gridViewDecimalColumn27.FormatString = "{0:N2}";
             gridViewDecimalColumn27.HeaderText = "Hora. Inicio";
             gridViewDecimalColumn27.Name = "chHORAINICIO";
             gridViewDecimalColumn27.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn27.Width = 46;
             gridViewDecimalColumn28.EnableExpressionEditor = false;
             gridViewDecimalColumn28.FieldName = "HORAFINAL";
             gridViewDecimalColumn28.FormatString = "{0:N2}";
             gridViewDecimalColumn28.HeaderText = "Hora término";
             gridViewDecimalColumn28.Name = "chHORAFINAL";
             gridViewDecimalColumn28.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn28.Width = 54;
+            gridViewDecimalColumn28.Width = 59;
             gridViewDecimalColumn29.EnableExpressionEditor = false;
             gridViewDecimalColumn29.FieldName = "HORAS_TRAB";
             gridViewDecimalColumn29.FormatString = "{0:N2}";
             gridViewDecimalColumn29.HeaderText = "Horas. Trab.";
             gridViewDecimalColumn29.Name = "chHORAS_TRAB";
             gridViewDecimalColumn29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn29.Width = 51;
+            gridViewDecimalColumn29.Width = 55;
             gridViewTextBoxColumn31.EnableExpressionEditor = false;
             gridViewTextBoxColumn31.FieldName = "idActividad";
             gridViewTextBoxColumn31.HeaderText = "idActividad";
@@ -1463,7 +1460,7 @@
             gridViewTextBoxColumn32.HeaderText = "Actividad";
             gridViewTextBoxColumn32.Name = "chactividad";
             gridViewTextBoxColumn32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn32.Width = 89;
+            gridViewTextBoxColumn32.Width = 97;
             gridViewTextBoxColumn33.EnableExpressionEditor = false;
             gridViewTextBoxColumn33.FieldName = "IDLABOR";
             gridViewTextBoxColumn33.HeaderText = "IDLABOR";
@@ -1475,7 +1472,7 @@
             gridViewTextBoxColumn34.HeaderText = "Labor";
             gridViewTextBoxColumn34.Name = "chlabor";
             gridViewTextBoxColumn34.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn34.Width = 121;
+            gridViewTextBoxColumn34.Width = 131;
             gridViewDecimalColumn30.EnableExpressionEditor = false;
             gridViewDecimalColumn30.ExcelExportFormatString = "{0:N2}";
             gridViewDecimalColumn30.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
@@ -1484,7 +1481,7 @@
             gridViewDecimalColumn30.HeaderText = "Horo. Final";
             gridViewDecimalColumn30.Name = "chHOROMETROFINAL";
             gridViewDecimalColumn30.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn30.Width = 72;
+            gridViewDecimalColumn30.Width = 78;
             gridViewDecimalColumn31.EnableExpressionEditor = false;
             gridViewDecimalColumn31.ExcelExportFormatString = "{0:N2}";
             gridViewDecimalColumn31.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
@@ -1493,7 +1490,7 @@
             gridViewDecimalColumn31.HeaderText = "Horo. Inicial";
             gridViewDecimalColumn31.Name = "chHOROMETROINICIAL";
             gridViewDecimalColumn31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn31.Width = 72;
+            gridViewDecimalColumn31.Width = 78;
             gridViewDecimalColumn32.EnableExpressionEditor = false;
             gridViewDecimalColumn32.ExcelExportFormatString = "{0:N2}";
             gridViewDecimalColumn32.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
@@ -1502,7 +1499,7 @@
             gridViewDecimalColumn32.HeaderText = "Dif. Horo.";
             gridViewDecimalColumn32.Name = "chdiferencia";
             gridViewDecimalColumn32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn32.Width = 73;
+            gridViewDecimalColumn32.Width = 79;
             gridViewTextBoxColumn35.EnableExpressionEditor = false;
             gridViewTextBoxColumn35.FieldName = "IDENTIFICADOr";
             gridViewTextBoxColumn35.HeaderText = "IDENTIFICADOr";
@@ -1594,7 +1591,7 @@
             this.dgvBDParteMaquinaria.ReadOnly = true;
             this.dgvBDParteMaquinaria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvBDParteMaquinaria.ShowHeaderCellButtons = true;
-            this.dgvBDParteMaquinaria.Size = new System.Drawing.Size(1015, 213);
+            this.dgvBDParteMaquinaria.Size = new System.Drawing.Size(1101, 213);
             this.dgvBDParteMaquinaria.TabIndex = 30;
             this.dgvBDParteMaquinaria.ThemeName = "VisualStudio2012Light";
             // 
@@ -1604,7 +1601,7 @@
             this.tabBDCombustible.ItemSize = new System.Drawing.SizeF(272F, 24F);
             this.tabBDCombustible.Location = new System.Drawing.Point(5, 5);
             this.tabBDCombustible.Name = "tabBDCombustible";
-            this.tabBDCombustible.Size = new System.Drawing.Size(1015, 213);
+            this.tabBDCombustible.Size = new System.Drawing.Size(1101, 213);
             this.tabBDCombustible.Text = "BD. Combustible";
             // 
             // dgvBDCombustible
@@ -1617,7 +1614,7 @@
             this.dgvBDCombustible.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvBDCombustible.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // dgvBDCombustible
             // 
             this.dgvBDCombustible.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.dgvBDCombustible.MasterTemplate.AllowAddNewRow = false;
@@ -1630,13 +1627,13 @@
             gridViewTextBoxColumn37.Name = "chperiodo";
             gridViewTextBoxColumn37.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
             gridViewTextBoxColumn37.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn37.Width = 69;
+            gridViewTextBoxColumn37.Width = 75;
             gridViewDecimalColumn39.EnableExpressionEditor = false;
             gridViewDecimalColumn39.FieldName = "semana";
             gridViewDecimalColumn39.HeaderText = "Semana";
             gridViewDecimalColumn39.Name = "chsemana";
             gridViewDecimalColumn39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn39.Width = 63;
+            gridViewDecimalColumn39.Width = 68;
             gridViewDateTimeColumn3.EnableExpressionEditor = false;
             gridViewDateTimeColumn3.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewDateTimeColumn3.FieldName = "fecha";
@@ -1645,48 +1642,48 @@
             gridViewDateTimeColumn3.HeaderText = "Fecha";
             gridViewDateTimeColumn3.Name = "chfecha";
             gridViewDateTimeColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDateTimeColumn3.Width = 74;
+            gridViewDateTimeColumn3.Width = 80;
             gridViewTextBoxColumn38.EnableExpressionEditor = false;
             gridViewTextBoxColumn38.FieldName = "NombreDiaSemana";
             gridViewTextBoxColumn38.HeaderText = "Día";
             gridViewTextBoxColumn38.Name = "chNombreDiaSemana";
             gridViewTextBoxColumn38.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn38.Width = 77;
+            gridViewTextBoxColumn38.Width = 84;
             gridViewTextBoxColumn39.EnableExpressionEditor = false;
             gridViewTextBoxColumn39.FieldName = "documento";
             gridViewTextBoxColumn39.HeaderText = "Documento";
             gridViewTextBoxColumn39.Name = "chdocumento";
             gridViewTextBoxColumn39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn39.Width = 99;
+            gridViewTextBoxColumn39.Width = 107;
             gridViewTextBoxColumn40.EnableExpressionEditor = false;
             gridViewTextBoxColumn40.FieldName = "idConsumidor";
             gridViewTextBoxColumn40.HeaderText = "Cod. Maquinaria";
             gridViewTextBoxColumn40.Name = "chidConsumidor";
             gridViewTextBoxColumn40.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn40.Width = 82;
+            gridViewTextBoxColumn40.Width = 89;
             gridViewTextBoxColumn41.EnableExpressionEditor = false;
             gridViewTextBoxColumn41.FieldName = "idproducto";
             gridViewTextBoxColumn41.HeaderText = "Cod. Producto";
             gridViewTextBoxColumn41.Name = "chidproducto";
             gridViewTextBoxColumn41.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn41.Width = 110;
+            gridViewTextBoxColumn41.Width = 119;
             gridViewTextBoxColumn42.EnableExpressionEditor = false;
             gridViewTextBoxColumn42.FieldName = "Producto";
             gridViewTextBoxColumn42.HeaderText = "Producto";
             gridViewTextBoxColumn42.Name = "chproducto";
             gridViewTextBoxColumn42.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn42.Width = 175;
+            gridViewTextBoxColumn42.Width = 190;
             gridViewTextBoxColumn43.EnableExpressionEditor = false;
             gridViewTextBoxColumn43.FieldName = "llevadoPor";
             gridViewTextBoxColumn43.HeaderText = "Llevado por";
             gridViewTextBoxColumn43.Name = "chllevadoPor";
-            gridViewTextBoxColumn43.Width = 148;
+            gridViewTextBoxColumn43.Width = 161;
             gridViewDecimalColumn40.EnableExpressionEditor = false;
             gridViewDecimalColumn40.FieldName = "cantidad";
             gridViewDecimalColumn40.FormatString = "{0:N2}";
             gridViewDecimalColumn40.HeaderText = "Cantidad";
             gridViewDecimalColumn40.Name = "chcantidad";
-            gridViewDecimalColumn40.Width = 109;
+            gridViewDecimalColumn40.Width = 119;
             gridViewDecimalColumn41.EnableExpressionEditor = false;
             gridViewDecimalColumn41.FieldName = "año";
             gridViewDecimalColumn41.HeaderText = "año";
@@ -1717,7 +1714,7 @@
             this.dgvBDCombustible.ReadOnly = true;
             this.dgvBDCombustible.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvBDCombustible.ShowHeaderCellButtons = true;
-            this.dgvBDCombustible.Size = new System.Drawing.Size(1015, 213);
+            this.dgvBDCombustible.Size = new System.Drawing.Size(1101, 213);
             this.dgvBDCombustible.TabIndex = 31;
             this.dgvBDCombustible.ThemeName = "VisualStudio2012Light";
             // 

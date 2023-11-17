@@ -1594,6 +1594,12 @@
     <Compile Include="Produccion\Conformacion de carga\ConformacionDeCarga.Designer.cs">
       <DependentUpon>ConformacionDeCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaAgregarPallets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaAgregarPallets.Designer.cs">
+      <DependentUpon>ConformacionDeCargaAgregarPallets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2920,6 +2926,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCarga.resx">
       <DependentUpon>ConformacionDeCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaAgregarPallets.resx">
+      <DependentUpon>ConformacionDeCargaAgregarPallets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaDetalle.resx">
       <DependentUpon>ConformacionDeCargaDetalle.cs</DependentUpon>

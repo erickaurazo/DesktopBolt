@@ -34,7 +34,9 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConformacionDeCarga());
+             Application.Run(new ConformacionDeCarga());
+            //Application.Run(new ReporteIngresoSalidaGasificadoLeidos());
+
             //Application.Run(new Menu());
         }
     }

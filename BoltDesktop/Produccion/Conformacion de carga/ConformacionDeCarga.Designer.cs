@@ -43,6 +43,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConformacionDeCarga));
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
@@ -64,6 +65,10 @@
             this.btnPendiente = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProceso = new System.Windows.Forms.ToolStripMenuItem();
             this.btnFinalizado = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCancelarReserva = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRechazarCarga = new System.Windows.Forms.ToolStripMenuItem();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
             this.chkVisualizacionPorDia = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.txtFechaHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
@@ -98,9 +103,6 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.bgwCambiarEstado = new System.ComponentModel.BackgroundWorker();
-            this.btnCancelarReserva = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
@@ -121,9 +123,9 @@
             this.lblUser,
             this.lblFullName,
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 623);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 337);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1105, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1114, 22);
             this.stsBarraEstado.TabIndex = 240;
             // 
             // lblUserNames
@@ -165,7 +167,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(12, 115);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(1093, 505);
+            this.gbList.Size = new System.Drawing.Size(1102, 219);
             this.gbList.TabIndex = 239;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -190,34 +192,35 @@
             gridViewTextBoxColumn1.FieldName = "Id";
             gridViewTextBoxColumn1.HeaderText = "Id";
             gridViewTextBoxColumn1.Name = "chId";
-            gridViewTextBoxColumn1.Width = 47;
+            gridViewTextBoxColumn1.Width = 46;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewTextBoxColumn2.FieldName = "Fecha";
             gridViewTextBoxColumn2.FormatString = "{0:d}";
             gridViewTextBoxColumn2.HeaderText = "Fecha";
             gridViewTextBoxColumn2.Name = "chFecha";
-            gridViewTextBoxColumn2.Width = 116;
+            gridViewTextBoxColumn2.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
+            gridViewTextBoxColumn2.Width = 118;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Descripcion";
             gridViewTextBoxColumn3.HeaderText = "Descripcion";
             gridViewTextBoxColumn3.Name = "chDescripcion";
-            gridViewTextBoxColumn3.Width = 511;
+            gridViewTextBoxColumn3.Width = 514;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "NumeroContenedor";
             gridViewTextBoxColumn4.HeaderText = "# Contenedor";
             gridViewTextBoxColumn4.Name = "chNumeroContenedor";
-            gridViewTextBoxColumn4.Width = 81;
+            gridViewTextBoxColumn4.Width = 82;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "Booking";
             gridViewTextBoxColumn5.HeaderText = "Booking";
             gridViewTextBoxColumn5.Name = "chBooking";
-            gridViewTextBoxColumn5.Width = 79;
+            gridViewTextBoxColumn5.Width = 80;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "Observacion";
             gridViewTextBoxColumn6.HeaderText = "Observación";
             gridViewTextBoxColumn6.Name = "chObservacion";
-            gridViewTextBoxColumn6.Width = 170;
+            gridViewTextBoxColumn6.Width = 171;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "FechaRegistro";
             gridViewTextBoxColumn7.HeaderText = "FechaRegistro";
@@ -245,7 +248,7 @@
             gridViewTextBoxColumn11.FieldName = "Estado";
             gridViewTextBoxColumn11.HeaderText = "Estado";
             gridViewTextBoxColumn11.Name = "chEstado";
-            gridViewTextBoxColumn11.Width = 73;
+            gridViewTextBoxColumn11.Width = 75;
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
             gridViewTextBoxColumn12.FieldName = "idCampania";
             gridViewTextBoxColumn12.HeaderText = "idCampania";
@@ -279,10 +282,14 @@
             gridViewTextBoxColumn12,
             gridViewTextBoxColumn13,
             gridViewTextBoxColumn14});
+            sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor1.PropertyName = "chFecha";
+            this.dgvRegistros.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor1});
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.ReadOnly = true;
             this.dgvRegistros.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvRegistros.Size = new System.Drawing.Size(1089, 485);
+            this.dgvRegistros.Size = new System.Drawing.Size(1098, 199);
             this.dgvRegistros.TabIndex = 233;
             this.dgvRegistros.ThemeName = "VisualStudio2012Light";
             this.dgvRegistros.SelectionChanged += new System.EventHandler(this.dgvRegistros_SelectionChanged);
@@ -303,7 +310,8 @@
             this.btnFinalizado,
             this.toolStripSeparator5,
             this.btnCancelarReserva,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.btnRechazarCarga});
             this.subMenu.Name = "subMenu";
             this.subMenu.Size = new System.Drawing.Size(161, 254);
             // 
@@ -389,6 +397,32 @@
             this.btnFinalizado.Text = "Finalizado";
             this.btnFinalizado.Click += new System.EventHandler(this.finalizadoToolStripMenuItem_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(157, 6);
+            // 
+            // btnCancelarReserva
+            // 
+            this.btnCancelarReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarReserva.Image")));
+            this.btnCancelarReserva.Name = "btnCancelarReserva";
+            this.btnCancelarReserva.Size = new System.Drawing.Size(160, 22);
+            this.btnCancelarReserva.Text = "Cancelar reserva";
+            this.btnCancelarReserva.Click += new System.EventHandler(this.btnCancelarReserva_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
+            // 
+            // btnRechazarCarga
+            // 
+            this.btnRechazarCarga.Image = ((System.Drawing.Image)(resources.GetObject("btnRechazarCarga.Image")));
+            this.btnRechazarCarga.Name = "btnRechazarCarga";
+            this.btnRechazarCarga.Size = new System.Drawing.Size(160, 22);
+            this.btnRechazarCarga.Text = "Rechazar carga";
+            this.btnRechazarCarga.Click += new System.EventHandler(this.btnRechazarCarga_Click);
+            // 
             // gbCabecera
             // 
             this.gbCabecera.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -405,7 +439,7 @@
             this.gbCabecera.Controls.Add(this.btnConsultar);
             this.gbCabecera.Location = new System.Drawing.Point(2, 41);
             this.gbCabecera.Name = "gbCabecera";
-            this.gbCabecera.Size = new System.Drawing.Size(1101, 68);
+            this.gbCabecera.Size = new System.Drawing.Size(1110, 68);
             this.gbCabecera.TabIndex = 238;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Consulta";
@@ -557,7 +591,7 @@
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(993, 33);
+            this.btnConsultar.Location = new System.Drawing.Point(1002, 33);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(102, 28);
             this.btnConsultar.TabIndex = 0;
@@ -573,7 +607,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1105, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1114, 37);
             this.BarraPrincipal.TabIndex = 237;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -842,28 +876,10 @@
             this.bgwCambiarEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCambiarEstado_DoWork);
             this.bgwCambiarEstado.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCambiarEstado_RunWorkerCompleted);
             // 
-            // btnCancelarReserva
-            // 
-            this.btnCancelarReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarReserva.Image")));
-            this.btnCancelarReserva.Name = "btnCancelarReserva";
-            this.btnCancelarReserva.Size = new System.Drawing.Size(160, 22);
-            this.btnCancelarReserva.Text = "Cancelar reserva";
-            this.btnCancelarReserva.Click += new System.EventHandler(this.btnCancelarReserva_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(157, 6);
-            // 
             // ConformacionDeCarga
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1105, 645);
+            this.ClientSize = new System.Drawing.Size(1114, 359);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.gbList);
             this.Controls.Add(this.gbCabecera);
@@ -950,5 +966,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem btnCancelarReserva;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem btnRechazarCarga;
     }
 }

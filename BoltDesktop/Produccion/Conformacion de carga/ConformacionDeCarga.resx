@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="stsBarraEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1387, 44</value>
+    <value>667, 21</value>
   </metadata>
   <metadata name="subMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1518, 44</value>
+    <value>798, 21</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="anularToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -193,13 +193,23 @@
   </data>
   <data name="btnCancelarReserva.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAERSURBVDhPrZOxSsRAEIa3srF3y2wS5CCFWguib5BCrrqD
-        g2uuE21tLMXeQn2EPIJvYi0W6bzjuO64+3YzCxvZBCUOfPw7mZk/u0ui/iXSNJ3ChaR/DztsjKmTJLkq
-        iuKA/BrGMegrsyw7ktEmKJxQ+EbX1gSdwxZ2MWwvnMq4UiTPQcOvTOBFxt0OKl/A7BPccci9yRfPHtAn
-        dGX7oJLxlsGGQSO52wkDM858TH5nIf9A4wYU3+FSGizeZMT653HiBnmenwdNlq476T4CcYPeon67MZOo
-        gbtE9B59BH9hMZOWwSv4xj5CkzcZV4qHZ7xtGTT24Uy01ocy3gQFjUmJRj9hDz0LqFkP+3dgIumQUGoP
-        /TG1p5vnFUcAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAARFJREFUOE+tk7FKxEAQhreysXfLbBLkIIVaC6JvkEKuuoODa64TbW0sxd5CfYQ8
+        gm9iLRbpvOO47rj7djMLG9kEJQ58/DuZmT+7S6L+JdI0ncKFpH8PO2yMqZMkuSqK4oD8GsYx6CuzLDuS
+        0SYonFD4RtfWBJ3DFnYxbC+cyrhSJM9Bw69M4EXG3Q4qX8DsE9xxyL3JF88e0Cd0ZfugkvGWwYZBI7nb
+        CQMzznxMfmch/0DjBhTf4VIaLN5kxPrnceIGeZ6fB02WrjvpPgJxg96ifrsxk6iBu0T0Hn0Ef2Exk5bB
+        K/jGPkKTNxlXiodnvG0ZNPbhTLTWhzLeBAWNSYlGP2EPPQuoWQ/7d2Ai6ZBQag/9MbWnm+cVRwAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="btnRechazarCarga.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAPRJREFUOE+V0z2KwkAYxvGsjSxbqXgCrf24g3dQ1NpCu0VY7CwEFfEAgoX3sPUQ
+        KpbbbCMINlbu/wlOGDJOog/8CJn4vjOZjAHJoIufFEOU4UTF9xcd4WQMPdxh5bHGFfqdE9Ngg55HH39I
+        bPAqJ6bBDWePC1IbDJDzyGKCGZykvcIUBbShz6nrF6IkNZijCn0+e/wXdYQxDTRTIyaPeLFxwCeiBids
+        Ld/Qck2BVrJ4XM1YC95X0IpG1r2KFV3NmJ5HDeInUbO/tYJnJ7EIbZgpsO0R7kHSn2mJGrRh9riKKwjz
+        gQ50SJ4pQTNpuToHzcc9CYJ/OOiULZEu/7wAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnConsultar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -345,19 +355,19 @@
 </value>
   </data>
   <metadata name="bgwHilo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1697, 44</value>
+    <value>977, 21</value>
   </metadata>
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 83</value>
+    <value>12, 24</value>
   </metadata>
   <metadata name="windows8Theme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>146, 83</value>
+    <value>141, 24</value>
   </metadata>
   <metadata name="visualStudio2012LightTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>295, 83</value>
+    <value>290, 24</value>
   </metadata>
   <metadata name="bgwCambiarEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>510, 83</value>
+    <value>505, 24</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>112</value>

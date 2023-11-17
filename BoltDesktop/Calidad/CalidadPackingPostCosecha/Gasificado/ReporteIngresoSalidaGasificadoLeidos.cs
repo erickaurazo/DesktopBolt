@@ -42,6 +42,8 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         public int CodigoGasificado = 0;
         private string lecturaDeTicket;
         private DateTime fechaRegistroTicket;
+        private int ClickFiltro;
+        private int ClickResaltarResultados;
 
         //chCantidad
 
@@ -713,6 +715,63 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
         private void subMenu_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+
+        private void ActivateFilter()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+
+        private void btnPintarResultados_Click(object sender, EventArgs e)
+        {
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
+        }
+        private void ResaltarResultados()
+        {
+
+            if ((ClickResaltarResultados % 2) == 0)
+            {
+                #region Par() | Acción pintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "Exonerado", string.Empty, true);
+                c1.RowBackColor = Color.Aquamarine;
+                c1.CellBackColor = Color.Aquamarine;
+                //c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvRegistro.Columns["chlecturaDeTicket"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
+            else
+            {
+                #region Par() | Acción despintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "Exonerado", string.Empty, true);
+                c1.RowBackColor = Color.White;
+                c1.CellBackColor = Color.White;
+               // c1.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistro.Columns["chlecturaDeTicket"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
         }
 
         private void RunExportToExcelML(string fileName, ref bool openExportFile, RadGridView grilla1)

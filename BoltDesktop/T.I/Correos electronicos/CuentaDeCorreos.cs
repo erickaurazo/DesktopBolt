@@ -46,6 +46,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_CuentasCorreoDetalle> detalleEliminados = new List<SAS_CuentasCorreoDetalle>();
         private List<SAS_CuentasCorreoDetalle> detalle = new List<SAS_CuentasCorreoDetalle>();
         object result;
+        private int CodigoRegistro;
 
         public CuentaDeCorreos()
         {
@@ -206,11 +207,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             Actualizar();
 
-            btnGrabar.Enabled = false;
-            gbEdit.Enabled = false;
-            gbList.Enabled = true;
-            btnEditar.Enabled = true;
-            btnCancelar.Enabled = true;
+
         }
 
 
@@ -218,10 +215,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                //btnMenu.Enabled = true;
-                //gbEdit.Enabled = true;
-                //gbList.Enabled = true;
-                progressBar1.Visible = false;
+                btnMenu.Enabled = false;
+                gbEdit.Enabled = false;
+                gbList.Enabled = false;
+                progressBar1.Visible = true;
                 bgwHilo.RunWorkerAsync();
 
             }
@@ -332,7 +329,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 #region Cambiar Estado
                 if (odetalle.cuenta != string.Empty)
                 {
-                    Modelo =new SAS_CuentasCorreoController();
+                    Modelo = new SAS_CuentasCorreoController();
                     int resultado = 0;
                     resultado = Modelo.ChangeState("SAS", odetalle);
                     if (resultado == 2)
@@ -369,8 +366,25 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opción no habilitada", "Advertencia del sistema");
-            return;
+            Eliminar();
+        }
+
+        private void Eliminar()
+        {
+            if (_user2 != null)
+            {
+                if (_user2.IdUsuario != null)
+                {
+                    if (_user2.IdUsuario != string.Empty)
+                    {
+                        if (_user2.IdUsuario.Trim().ToUpper() == "ADMINISTRADOR" || _user2.IdUsuario.Trim().ToUpper() == "EAURAZO")
+                        {
+                            int ResultadoProceso = Modelo.Eliminar(_conection, CodigoRegistro);
+                            Actualizar();
+                        }
+                    }
+                }
+            }
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -485,7 +499,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         //[STAThread]
         private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
         {
-
+            CodigoRegistro = 0;
             //Thread t = new Thread((ThreadStart)(() =>
             //{
             try
@@ -501,6 +515,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             if (dgvRegistro.CurrentRow.Cells["chId"].Value.ToString() != string.Empty)
                             {
                                 int codigo = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? (int)Convert.ChangeType(dgvRegistro.CurrentRow.Cells["chId"].Value, typeof(Int32)) : 0);
+                                CodigoRegistro = codigo;
                                 var resultado = listado.Where(x => x.id == codigo).ToList();
                                 if (resultado.ToList().Count == 1)
                                 {
@@ -636,7 +651,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 odetalle.clave = string.Empty;
                 odetalle.nombres = string.Empty;
                 Limpiar();
-                Editar();          
+                Editar();
             }
             catch (Exception Ex)
             {
@@ -723,7 +738,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         }
 
-       // [STAThread]
+        // [STAThread]
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
             //Thread t = new Thread((ThreadStart)(() =>
@@ -731,7 +746,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 listado = new List<SAS_CuentasCorreoListado>();
-                Modelo =new SAS_CuentasCorreoController();
+                Modelo = new SAS_CuentasCorreoController();
                 listado = Modelo.GetEmailAccounts("SAS");
 
 
@@ -756,6 +771,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 dgvRegistro.DataSource = listado.OrderBy(x => x.cuenta).ToList().ToDataTable<SAS_CuentasCorreoListado>();
                 dgvRegistro.Refresh();
+
+                btnMenu.Enabled = true;
+                gbEdit.Enabled = true;
+                gbList.Enabled = true;
                 progressBar1.Visible = false;
 
             }
@@ -777,7 +796,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 ObtenerObjeto();
-                Modelo =new SAS_CuentasCorreoController();
+                Modelo = new SAS_CuentasCorreoController();
                 int resultado = Modelo.Register("SAS", odetalle, detalleEliminados, detalle);
                 btnGrabar.Enabled = !false;
                 btnCancelar.Enabled = !false;
@@ -967,7 +986,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void dgvDetail_KeyUp(object sender, KeyEventArgs e)
         {
-            Modelo =new SAS_CuentasCorreoController();
+            Modelo = new SAS_CuentasCorreoController();
             if (((DataGridView)sender).RowCount > 0)
             {
                 #region Tipo de detalle() 
