@@ -70,6 +70,16 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRechazarCarga = new System.Windows.Forms.ToolStripMenuItem();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
+            this.lblFinalizado = new System.Windows.Forms.Label();
+            this.pnFinalizado = new System.Windows.Forms.Panel();
+            this.lblCargando = new System.Windows.Forms.Label();
+            this.pnCargando = new System.Windows.Forms.Panel();
+            this.lblCancelado = new System.Windows.Forms.Label();
+            this.pnCancelado = new System.Windows.Forms.Panel();
+            this.lblRechazado = new System.Windows.Forms.Label();
+            this.pnRechado = new System.Windows.Forms.Panel();
+            this.lblAnulado = new System.Windows.Forms.Label();
+            this.pnAnulado = new System.Windows.Forms.Panel();
             this.chkVisualizacionPorDia = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.txtFechaHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.txtFechaDesde = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
@@ -88,6 +98,7 @@
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.btnEditar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnGrabar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnGuadarYEditar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnAtras = new Telerik.WinControls.UI.CommandBarButton();
             this.btnAnular = new Telerik.WinControls.UI.CommandBarButton();
             this.btnEliminarRegistro = new Telerik.WinControls.UI.CommandBarButton();
@@ -293,6 +304,7 @@
             this.dgvRegistros.TabIndex = 233;
             this.dgvRegistros.ThemeName = "VisualStudio2012Light";
             this.dgvRegistros.SelectionChanged += new System.EventHandler(this.dgvRegistros_SelectionChanged);
+            this.dgvRegistros.DoubleClick += new System.EventHandler(this.dgvRegistros_DoubleClick);
             // 
             // subMenu
             // 
@@ -313,37 +325,35 @@
             this.toolStripSeparator4,
             this.btnRechazarCarga});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(161, 254);
+            this.subMenu.Size = new System.Drawing.Size(252, 276);
             // 
             // anularToolStripMenuItem
             // 
-            this.anularToolStripMenuItem.Enabled = false;
             this.anularToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("anularToolStripMenuItem.Image")));
             this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
-            this.anularToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.anularToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.anularToolStripMenuItem.Text = "Anular";
             this.anularToolStripMenuItem.Click += new System.EventHandler(this.anularToolStripMenuItem_Click_1);
             // 
             // elminarToolStripMenuItem
             // 
-            this.elminarToolStripMenuItem.Enabled = false;
             this.elminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("elminarToolStripMenuItem.Image")));
             this.elminarToolStripMenuItem.Name = "elminarToolStripMenuItem";
-            this.elminarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.elminarToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.elminarToolStripMenuItem.Text = "Elminar";
             this.elminarToolStripMenuItem.Click += new System.EventHandler(this.elminarToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
             // 
             // vistaPreviaToolStripMenuItem
             // 
             this.vistaPreviaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreviaToolStripMenuItem.Image")));
             this.vistaPreviaToolStripMenuItem.Name = "vistaPreviaToolStripMenuItem";
-            this.vistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.vistaPreviaToolStripMenuItem.Text = "Vista previa";
+            this.vistaPreviaToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.vistaPreviaToolStripMenuItem.Text = "Reporte de conformidad de carga";
             this.vistaPreviaToolStripMenuItem.Click += new System.EventHandler(this.vistaPreviaToolStripMenuItem_Click_1);
             // 
             // btnImprimirSub
@@ -351,33 +361,33 @@
             this.btnImprimirSub.Enabled = false;
             this.btnImprimirSub.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirSub.Image")));
             this.btnImprimirSub.Name = "btnImprimirSub";
-            this.btnImprimirSub.Size = new System.Drawing.Size(160, 22);
+            this.btnImprimirSub.Size = new System.Drawing.Size(251, 22);
             this.btnImprimirSub.Text = "Imprimir";
             this.btnImprimirSub.Click += new System.EventHandler(this.btnImprimirSub_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
             // 
             // btnVerDetalle
             // 
             this.btnVerDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDetalle.Image")));
             this.btnVerDetalle.Name = "btnVerDetalle";
-            this.btnVerDetalle.Size = new System.Drawing.Size(160, 22);
+            this.btnVerDetalle.Size = new System.Drawing.Size(251, 22);
             this.btnVerDetalle.Text = "Ver detalle";
             this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(248, 6);
             // 
             // btnPendiente
             // 
             this.btnPendiente.Image = ((System.Drawing.Image)(resources.GetObject("btnPendiente.Image")));
             this.btnPendiente.Name = "btnPendiente";
-            this.btnPendiente.Size = new System.Drawing.Size(160, 22);
+            this.btnPendiente.Size = new System.Drawing.Size(251, 22);
             this.btnPendiente.Text = "Pendiente";
             this.btnPendiente.Click += new System.EventHandler(this.pendienteToolStripMenuItem_Click);
             // 
@@ -385,7 +395,7 @@
             // 
             this.btnProceso.Image = ((System.Drawing.Image)(resources.GetObject("btnProceso.Image")));
             this.btnProceso.Name = "btnProceso";
-            this.btnProceso.Size = new System.Drawing.Size(160, 22);
+            this.btnProceso.Size = new System.Drawing.Size(251, 22);
             this.btnProceso.Text = "En proceso";
             this.btnProceso.Click += new System.EventHandler(this.enProcesoToolStripMenuItem_Click);
             // 
@@ -393,33 +403,33 @@
             // 
             this.btnFinalizado.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizado.Image")));
             this.btnFinalizado.Name = "btnFinalizado";
-            this.btnFinalizado.Size = new System.Drawing.Size(160, 22);
+            this.btnFinalizado.Size = new System.Drawing.Size(251, 22);
             this.btnFinalizado.Text = "Finalizado";
             this.btnFinalizado.Click += new System.EventHandler(this.finalizadoToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(248, 6);
             // 
             // btnCancelarReserva
             // 
             this.btnCancelarReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarReserva.Image")));
             this.btnCancelarReserva.Name = "btnCancelarReserva";
-            this.btnCancelarReserva.Size = new System.Drawing.Size(160, 22);
+            this.btnCancelarReserva.Size = new System.Drawing.Size(251, 22);
             this.btnCancelarReserva.Text = "Cancelar reserva";
             this.btnCancelarReserva.Click += new System.EventHandler(this.btnCancelarReserva_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(248, 6);
             // 
             // btnRechazarCarga
             // 
             this.btnRechazarCarga.Image = ((System.Drawing.Image)(resources.GetObject("btnRechazarCarga.Image")));
             this.btnRechazarCarga.Name = "btnRechazarCarga";
-            this.btnRechazarCarga.Size = new System.Drawing.Size(160, 22);
+            this.btnRechazarCarga.Size = new System.Drawing.Size(251, 22);
             this.btnRechazarCarga.Text = "Rechazar carga";
             this.btnRechazarCarga.Click += new System.EventHandler(this.btnRechazarCarga_Click);
             // 
@@ -427,6 +437,16 @@
             // 
             this.gbCabecera.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbCabecera.Controls.Add(this.lblFinalizado);
+            this.gbCabecera.Controls.Add(this.pnFinalizado);
+            this.gbCabecera.Controls.Add(this.lblCargando);
+            this.gbCabecera.Controls.Add(this.pnCargando);
+            this.gbCabecera.Controls.Add(this.lblCancelado);
+            this.gbCabecera.Controls.Add(this.pnCancelado);
+            this.gbCabecera.Controls.Add(this.lblRechazado);
+            this.gbCabecera.Controls.Add(this.pnRechado);
+            this.gbCabecera.Controls.Add(this.lblAnulado);
+            this.gbCabecera.Controls.Add(this.pnAnulado);
             this.gbCabecera.Controls.Add(this.chkVisualizacionPorDia);
             this.gbCabecera.Controls.Add(this.txtFechaHasta);
             this.gbCabecera.Controls.Add(this.txtFechaDesde);
@@ -443,6 +463,106 @@
             this.gbCabecera.TabIndex = 238;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Consulta";
+            // 
+            // lblFinalizado
+            // 
+            this.lblFinalizado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFinalizado.AutoSize = true;
+            this.lblFinalizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalizado.Location = new System.Drawing.Point(914, 37);
+            this.lblFinalizado.Name = "lblFinalizado";
+            this.lblFinalizado.Size = new System.Drawing.Size(54, 13);
+            this.lblFinalizado.TabIndex = 226;
+            this.lblFinalizado.Text = "Finalizado";
+            // 
+            // pnFinalizado
+            // 
+            this.pnFinalizado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnFinalizado.BackColor = System.Drawing.Color.MintCream;
+            this.pnFinalizado.Location = new System.Drawing.Point(889, 33);
+            this.pnFinalizado.Name = "pnFinalizado";
+            this.pnFinalizado.Size = new System.Drawing.Size(19, 20);
+            this.pnFinalizado.TabIndex = 225;
+            // 
+            // lblCargando
+            // 
+            this.lblCargando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCargando.AutoSize = true;
+            this.lblCargando.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargando.Location = new System.Drawing.Point(837, 37);
+            this.lblCargando.Name = "lblCargando";
+            this.lblCargando.Size = new System.Drawing.Size(53, 13);
+            this.lblCargando.TabIndex = 224;
+            this.lblCargando.Text = "Cargando";
+            // 
+            // pnCargando
+            // 
+            this.pnCargando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCargando.BackColor = System.Drawing.Color.OldLace;
+            this.pnCargando.Location = new System.Drawing.Point(812, 33);
+            this.pnCargando.Name = "pnCargando";
+            this.pnCargando.Size = new System.Drawing.Size(19, 20);
+            this.pnCargando.TabIndex = 223;
+            // 
+            // lblCancelado
+            // 
+            this.lblCancelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCancelado.AutoSize = true;
+            this.lblCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCancelado.Location = new System.Drawing.Point(573, 37);
+            this.lblCancelado.Name = "lblCancelado";
+            this.lblCancelado.Size = new System.Drawing.Size(58, 13);
+            this.lblCancelado.TabIndex = 222;
+            this.lblCancelado.Text = "Cancelado";
+            // 
+            // pnCancelado
+            // 
+            this.pnCancelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCancelado.BackColor = System.Drawing.Color.SandyBrown;
+            this.pnCancelado.Location = new System.Drawing.Point(551, 33);
+            this.pnCancelado.Name = "pnCancelado";
+            this.pnCancelado.Size = new System.Drawing.Size(19, 20);
+            this.pnCancelado.TabIndex = 221;
+            // 
+            // lblRechazado
+            // 
+            this.lblRechazado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRechazado.AutoSize = true;
+            this.lblRechazado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRechazado.Location = new System.Drawing.Point(667, 37);
+            this.lblRechazado.Name = "lblRechazado";
+            this.lblRechazado.Size = new System.Drawing.Size(62, 13);
+            this.lblRechazado.TabIndex = 220;
+            this.lblRechazado.Text = "Rechazado";
+            // 
+            // pnRechado
+            // 
+            this.pnRechado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnRechado.BackColor = System.Drawing.Color.LightYellow;
+            this.pnRechado.Location = new System.Drawing.Point(645, 33);
+            this.pnRechado.Name = "pnRechado";
+            this.pnRechado.Size = new System.Drawing.Size(19, 20);
+            this.pnRechado.TabIndex = 219;
+            // 
+            // lblAnulado
+            // 
+            this.lblAnulado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnulado.AutoSize = true;
+            this.lblAnulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnulado.Location = new System.Drawing.Point(760, 37);
+            this.lblAnulado.Name = "lblAnulado";
+            this.lblAnulado.Size = new System.Drawing.Size(46, 13);
+            this.lblAnulado.TabIndex = 218;
+            this.lblAnulado.Text = "Anulado";
+            // 
+            // pnAnulado
+            // 
+            this.pnAnulado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnAnulado.BackColor = System.Drawing.Color.Salmon;
+            this.pnAnulado.Location = new System.Drawing.Point(735, 33);
+            this.pnAnulado.Name = "pnAnulado";
+            this.pnAnulado.Size = new System.Drawing.Size(19, 20);
+            this.pnAnulado.TabIndex = 217;
             // 
             // chkVisualizacionPorDia
             // 
@@ -657,6 +777,7 @@
             this.btnNuevo,
             this.btnEditar,
             this.btnGrabar,
+            this.btnGuadarYEditar,
             this.btnAtras,
             this.btnAnular,
             this.btnEliminarRegistro,
@@ -716,6 +837,18 @@
             this.btnGrabar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnGrabar.ToolTipText = "Actualizar Lista";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnGuadarYEditar
+            // 
+            this.btnGuadarYEditar.AccessibleDescription = "GuadarYEditar";
+            this.btnGuadarYEditar.AccessibleName = "GuadarYEditar";
+            this.btnGuadarYEditar.AutoSize = false;
+            this.btnGuadarYEditar.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnGuadarYEditar.DisplayName = "GuadarYEditar";
+            this.btnGuadarYEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuadarYEditar.Image")));
+            this.btnGuadarYEditar.Name = "btnGuadarYEditar";
+            this.btnGuadarYEditar.Tag = "Guadar y Editar";
+            this.btnGuadarYEditar.Text = "";
             // 
             // btnAtras
             // 
@@ -967,5 +1100,16 @@
         private System.Windows.Forms.ToolStripMenuItem btnCancelarReserva;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem btnRechazarCarga;
+        private System.Windows.Forms.Label lblAnulado;
+        private System.Windows.Forms.Panel pnAnulado;
+        private System.Windows.Forms.Label lblFinalizado;
+        private System.Windows.Forms.Panel pnFinalizado;
+        private System.Windows.Forms.Label lblCargando;
+        private System.Windows.Forms.Panel pnCargando;
+        private System.Windows.Forms.Label lblCancelado;
+        private System.Windows.Forms.Panel pnCancelado;
+        private System.Windows.Forms.Label lblRechazado;
+        private System.Windows.Forms.Panel pnRechado;
+        private Telerik.WinControls.UI.CommandBarButton btnGuadarYEditar;
     }
 }

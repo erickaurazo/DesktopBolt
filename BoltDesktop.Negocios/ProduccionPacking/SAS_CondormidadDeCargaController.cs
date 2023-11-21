@@ -30,7 +30,7 @@ namespace Asistencia.Negocios.ProduccionPacking
             {
                 List = Modelo.SAS_ListadoConformacionDeCargaByPeriodo(desde, hasta).ToList();
             }
-            return List.OrderBy(x=> x.Fecha).ToList();
+            return List.OrderBy(x => x.Fecha).ToList();
         }
 
 
@@ -162,12 +162,12 @@ namespace Asistencia.Negocios.ProduccionPacking
                     #endregion
 
                     #region Eliminar detalle()   
-                    
+
                     if (detalleEliminar != null && detalleEliminar.ToList().Count > 0)
                     {
                         foreach (var oDetalle in detalleEliminar)
                         {
-                            var listadoDetalle = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.Id == item.Id).ToList();
+                            var listadoDetalle = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.Id == oDetalle.Id).ToList();
 
                             if (listadoDetalle != null && listadoDetalle.ToList().Count > 0)
                             {
@@ -178,7 +178,7 @@ namespace Asistencia.Negocios.ProduccionPacking
                                 Modelo.SubmitChanges();
                                 #endregion
                             }
-                           
+
                         }
                     }
                     #endregion
@@ -188,7 +188,7 @@ namespace Asistencia.Negocios.ProduccionPacking
                     {
                         foreach (var oDetalle in ListaDetalles)
                         {
-                            var listadoDetalle = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.Id == item.Id).ToList();
+                            var listadoDetalle = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.Id == oDetalle.Id).ToList();
 
                             if (listadoDetalle != null && listadoDetalle.ToList().Count > 0)
                             {
@@ -196,7 +196,7 @@ namespace Asistencia.Negocios.ProduccionPacking
                                 SAS_ConformacionDeCargaDetalle oDetail = new SAS_ConformacionDeCargaDetalle();
                                 oDetail = listadoDetalle.ElementAt(0);
                                 oDetail.IdRegistroPaleta = oDetalle.IdRegistroPaleta != null ? oDetalle.IdRegistroPaleta.Trim() : string.Empty;
-                                oDetail.Estado = oDetalle.Estado;                                
+                                oDetail.Estado = oDetalle.Estado;
                                 Modelo.SubmitChanges();
                                 #endregion
                             }
@@ -208,7 +208,7 @@ namespace Asistencia.Negocios.ProduccionPacking
                                 oDetail.Estado = oDetalle.Estado;
                                 Modelo.SAS_ConformacionDeCargaDetalles.InsertOnSubmit(oDetail);
                                 Modelo.SubmitChanges();
-                            }                           
+                            }
                         }
                     }
                     #endregion
@@ -279,6 +279,65 @@ namespace Asistencia.Negocios.ProduccionPacking
             return resultado;
         }
 
+        public int ToChangeStatus(string connection, int Id)
+        {
+            int resultado = 1;
+            List<SAS_ConformacionDeCarga> listado = new List<SAS_ConformacionDeCarga>();
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[(connection == "NSFAJAS" ? "SAS" : connection)].ToString();
+
+            using (ProduccionContextDataContext Modelo = new ProduccionContextDataContext(cnx))
+            {
+                listado = Modelo.SAS_ConformacionDeCargas.Where(x => x.Id == Id).ToList();
+
+                if (listado != null && listado.ToList().Count == 1)
+                {
+                    #region Editar()
+                    SAS_ConformacionDeCarga oItem = new SAS_ConformacionDeCarga();
+                    //oItem.idAccion = item.idAccion;
+                    oItem = listado.ElementAt(0);
+
+                    if (oItem.EstadoId == "PE")
+                    {
+                        oItem.EstadoId = "AN";
+
+                        List<SAS_ConformacionDeCargaDetalle> ListDetail = new List<SAS_ConformacionDeCargaDetalle>();
+                        ListDetail = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.IdConformacionCarga == oItem.Id).ToList();
+
+                        foreach (var detail in ListDetail)
+                        {
+                            SAS_ConformacionDeCargaDetalle oDetail = new SAS_ConformacionDeCargaDetalle();
+                            oDetail = detail;
+                            oDetail.Estado = 0;
+                            Modelo.SubmitChanges();
+                        }
+
+                    }
+                    else
+                    {
+                        oItem.EstadoId = "PE";
+
+                        List<SAS_ConformacionDeCargaDetalle> ListDetail = new List<SAS_ConformacionDeCargaDetalle>();
+                        ListDetail = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.IdConformacionCarga == oItem.Id).ToList();
+                        foreach (var detail in ListDetail)
+                        {
+                            SAS_ConformacionDeCargaDetalle oDetail = new SAS_ConformacionDeCargaDetalle();
+                            oDetail = detail;
+                            oDetail.Estado = 1;
+                            Modelo.SubmitChanges();
+                        }
+                    }
+
+                    Modelo.SubmitChanges();
+                    resultado = oItem.Id;
+                    #endregion
+                }
+
+            }
+            return resultado;
+        }
+
+
         public int ToDelete(string connection, SAS_ConformacionDeCarga item)
         {
             int resultado = 0;
@@ -324,6 +383,54 @@ namespace Asistencia.Negocios.ProduccionPacking
             }
             return resultado;
         }
+
+
+        public int ToDelete(string connection, int Id)
+        {
+            int resultado = 0;
+            List<SAS_ConformacionDeCarga> listado = new List<SAS_ConformacionDeCarga>();
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[(connection == "NSFAJAS" ? "SAS" : connection)].ToString();
+
+            using (ProduccionContextDataContext Modelo = new ProduccionContextDataContext(cnx))
+            {
+                listado = Modelo.SAS_ConformacionDeCargas.Where(x => x.Id == Id).ToList();
+
+                if (listado != null && listado.ToList().Count == 1)
+                {
+                    #region Editar()
+                    SAS_ConformacionDeCarga oItem = new SAS_ConformacionDeCarga();
+                    //oItem.idAccion = item.idAccion;
+                    oItem = listado.ElementAt(0);
+
+                    if (oItem.EstadoId == "PE")
+                    {
+                        oItem.EstadoId = "AN";
+
+                        List<SAS_ConformacionDeCargaDetalle> ListDetail = new List<SAS_ConformacionDeCargaDetalle>();
+                        ListDetail = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.IdConformacionCarga == oItem.Id).ToList();
+
+                        foreach (var detail in ListDetail)
+                        {
+                            SAS_ConformacionDeCargaDetalle oDetail = new SAS_ConformacionDeCargaDetalle();
+                            oDetail = detail;
+                            Modelo.SAS_ConformacionDeCargaDetalles.DeleteOnSubmit(oDetail);
+                            Modelo.SubmitChanges();
+                        }
+                        Modelo.SAS_ConformacionDeCargas.DeleteOnSubmit(oItem);
+                        Modelo.SubmitChanges();
+                        resultado = oItem.Id;
+                    }
+
+
+
+                    #endregion
+                }
+
+            }
+            return resultado;
+        }
+
 
         public List<SAS_ListadoConformacionDeCargaPBIByIdResult> ListAllDetailById(string conection, int Id)
         {
@@ -388,7 +495,7 @@ namespace Asistencia.Negocios.ProduccionPacking
                             oItem.EstadoId = estadoId;
                             Modelo.SubmitChanges();
                             resultado = oItem.Id;
-                        }                            
+                        }
                     }
                     else if (oItem.EstadoId == "C0" || oItem.EstadoId == "RE")
                     {
@@ -426,6 +533,51 @@ namespace Asistencia.Negocios.ProduccionPacking
             return List;
         }
 
+        public int ToRegisterListDetail(string connection, SAS_ConformacionDeCarga oItem, List<SAS_ConformacionDeCargaDetalle> ListaDetalles)
+        {
+            int Codigo = 1;
+            List<SAS_ConformacionDeCarga> listado = new List<SAS_ConformacionDeCarga>();
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[(connection == "NSFAJAS" ? "SAS" : connection)].ToString();
 
+            using (ProduccionContextDataContext Modelo = new ProduccionContextDataContext(cnx))
+            {
+                listado = Modelo.SAS_ConformacionDeCargas.Where(x => x.Id == oItem.Id).ToList();
+
+                if (listado != null && listado.ToList().Count >= 1)
+                {
+                    #region Editar() 
+
+                    #region Registro cabera() 
+                    SAS_ConformacionDeCarga item = new SAS_ConformacionDeCarga();
+                    item = listado.ElementAt(0);
+                    Codigo = item.Id;
+                    #endregion
+
+                    #region Registrar detalle()                     
+                    if (ListaDetalles != null && ListaDetalles.ToList().Count > 0)
+                    {
+                        foreach (var oDetalle in ListaDetalles)
+                        {
+                            var listadoDetalle = Modelo.SAS_ConformacionDeCargaDetalles.Where(x => x.Id == item.Id).ToList();
+                            if ((listadoDetalle != null && listadoDetalle.ToList().Count == 0))
+                            {
+                                SAS_ConformacionDeCargaDetalle oDetail = new SAS_ConformacionDeCargaDetalle();
+                                oDetail.IdConformacionCarga = Codigo;
+                                oDetail.IdRegistroPaleta = oDetalle.IdRegistroPaleta != null ? oDetalle.IdRegistroPaleta.Trim() : string.Empty;
+                                oDetail.Estado = oDetalle.Estado;
+                                Modelo.SAS_ConformacionDeCargaDetalles.InsertOnSubmit(oDetail);
+                                Modelo.SubmitChanges();
+                            }
+                        }
+                    }
+                    #endregion
+
+                    #endregion
+                }
+
+            }
+            return Codigo;
+        }
     }
 }

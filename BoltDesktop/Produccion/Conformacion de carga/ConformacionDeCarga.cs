@@ -91,6 +91,44 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             MakeInquiry();
         }
 
+
+        public ConformacionDeCarga(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
+        {
+            InitializeComponent();
+            selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
+            selectedItem.Id = 0;
+            CargarMeses();
+            ObtenerFechasIniciales();
+            conection = _conection;
+            user = _user;
+            companyId = _companyId;
+            privilege = _privilege;
+            Inicio();
+            lblCodeUser.Text = user.IdUsuario;
+            lblFullName.Text = user.NombreCompleto;
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            btnNuevo.Enabled = true;
+            //btnActualizar.Enabled = true;
+            btnEditar.Enabled = true;
+            //btnRegistrar.Enabled = true;
+            btnAtras.Enabled = false;
+            btnAnular.Enabled = true;
+            btnEliminarRegistro.Enabled = true;
+            btnHistorial.Enabled = true;
+            //btnFlujoAprobacion.Enabled = false;
+            btnResaltar.Enabled = true;
+            //btnNotificar.Enabled = true;
+            btnCerrar.Enabled = true;
+
+            gbCabecera.Enabled = false;
+            gbList.Enabled = false;
+            MakeInquiry();
+        }
+
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Nuevo();
@@ -150,10 +188,39 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             {
                 #region Par() | Acción pintar()
                 ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "AN", string.Empty, true);
-                c1.RowBackColor = Color.IndianRed;
-                c1.CellBackColor = Color.IndianRed;
+                c1.RowBackColor = Color.Salmon;
+                c1.CellBackColor = Color.Salmon;
                 c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
-                dgvRegistros.Columns["EstadoId"].ConditionalFormattingObjectList.Add(c1);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c1);
+
+
+                ConditionalFormattingObject c2 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "FN", string.Empty, true);
+                c2.RowBackColor = Color.MintCream;
+                c2.CellBackColor = Color.MintCream;
+                c2.RowFont = new Font("Segoe UI", 8, FontStyle.Bold);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c2);
+
+
+                ConditionalFormattingObject c3 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "C0", string.Empty, true);
+                c3.RowBackColor = Color.SandyBrown;
+                c3.CellBackColor = Color.SandyBrown;
+                c3.RowFont = new Font("Segoe UI", 8, FontStyle.Underline);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c3);
+
+
+                ConditionalFormattingObject c4 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "RE", string.Empty, true);
+                c4.RowBackColor = Color.LightYellow;
+                c4.CellBackColor = Color.LightYellow;
+                c4.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c4);
+
+
+                ConditionalFormattingObject c5 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "EP", string.Empty, true);
+                c5.RowBackColor = Color.OldLace;
+                c5.CellBackColor = Color.OldLace;
+                c5.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c5);
+
                 #endregion
             }
             else
@@ -163,7 +230,36 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                 c1.RowBackColor = Color.White;
                 c1.CellBackColor = Color.White;
                 c1.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
-                dgvRegistros.Columns["EstadoId"].ConditionalFormattingObjectList.Add(c1);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c1);
+
+                ConditionalFormattingObject c2 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "FN", string.Empty, true);
+                c2.RowBackColor = Color.White;
+                c2.CellBackColor = Color.White;
+                c2.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c2);
+
+
+                ConditionalFormattingObject c3 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "C0", string.Empty, true);
+                c3.RowBackColor = Color.White;
+                c3.CellBackColor = Color.White;
+                c3.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c3);
+
+
+                ConditionalFormattingObject c4 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "RE", string.Empty, true);
+                c4.RowBackColor = Color.White;
+                c4.CellBackColor = Color.White;
+                c4.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c4);
+
+
+                ConditionalFormattingObject c5 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "PR", string.Empty, true);
+                c5.RowBackColor = Color.White;
+                c5.CellBackColor = Color.White;
+                c5.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistros.Columns["chEstadoId"].ConditionalFormattingObjectList.Add(c5);
+
+
                 #endregion
             }
         }
@@ -298,43 +394,10 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MostrarResultados();
+            ResaltarResultados();
         }
 
-        public ConformacionDeCarga(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
-        {
-            InitializeComponent();
-            selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
-            selectedItem.Id = 0;
-            // CargarMeses();
-            //ObtenerFechasIniciales();
-            conection = _conection;
-            user = _user;
-            companyId = _companyId;
-            privilege = _privilege;
-            // Inicio();
-            lblCodeUser.Text = user.IdUsuario;
-            lblFullName.Text = user.NombreCompleto;
-            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            btnNuevo.Enabled = true;
-            //btnActualizar.Enabled = true;
-            btnEditar.Enabled = true;
-            //btnRegistrar.Enabled = true;
-            btnAtras.Enabled = false;
-            btnAnular.Enabled = true;
-            btnEliminarRegistro.Enabled = true;
-            btnHistorial.Enabled = true;
-            //btnFlujoAprobacion.Enabled = false;
-            btnResaltar.Enabled = true;
-            //btnNotificar.Enabled = true;
-            btnCerrar.Enabled = true;
-            gbCabecera.Enabled = false;
-            gbList.Enabled = false;
-            MakeInquiry();
-        }
-
+       
 
         private void ConformacionDeCarga_Load(object sender, EventArgs e)
         {
@@ -375,9 +438,9 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             {
                 Id = 0;
                 ConformacionDeCargaDetalle oFron = new ConformacionDeCargaDetalle(conection, user, companyId, privilege, Id);
-                oFron.MdiParent = ConformacionDeCarga.ActiveForm;
-                oFron.WindowState = FormWindowState.Maximized;
-                oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                //oFron.MdiParent = ConformacionDeCarga.ActiveForm;
+                //oFron.WindowState = FormWindowState.Maximized;
+                //oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
                 oFron.Show();
             }
             catch (Exception Ex)
@@ -386,7 +449,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                 RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
-            
+
         }
 
         private void NoImplementado()
@@ -423,7 +486,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                 {
                     if (selectedItem.Id != 0)
                     {
-                        
+
                         ConformacionDeCargaDetalle oFron = new ConformacionDeCargaDetalle(conection, user, companyId, privilege, Id);
                         //oFron.MdiParent = ConformacionDeCarga.ActiveForm;
                         //oFron.WindowState = FormWindowState.Maximized;
@@ -443,7 +506,17 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void EliminarRegistro()
         {
-            NoImplementado();
+            if (Id > 0 && EstadoId == "PE")
+            {
+                if (user.IdUsuario.Trim().ToUpper() == "ADMINISTRADOR" || user.IdUsuario.Trim().ToUpper() == "EAURAZO" )
+                {
+                    model = new SAS_CondormidadDeCargaController();
+                    int resultadoAccion = model.ToDelete(conection, Id);
+                    MakeInquiry();
+                }
+
+               
+            }
         }
 
         private void Atras()
@@ -453,7 +526,12 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void Anular()
         {
-            NoImplementado();
+            if (Id > 0 && (EstadoId == "PE" || EstadoId == "AN"))
+            {
+                model = new SAS_CondormidadDeCargaController();
+                int resultadoAccion = model.ToChangeStatus(conection, Id);
+                MakeInquiry();
+            }
         }
 
 
@@ -725,6 +803,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void bgwCambiarEstado_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MostrarResultados();
+            ResaltarResultados();
         }
 
         private void anularToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -764,15 +843,15 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void btnCancelarReserva_Click(object sender, EventArgs e)
         {
-           
-                    CancelarReserva();
-         
 
-            
+            CancelarReserva();
+
+
+
         }
 
         private void CancelarReserva()
-        {            
+        {
             if (EstadoId != string.Empty)
             {
                 if (EstadoId != "PE")
@@ -789,13 +868,21 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void RechazarCarga()
         {
-           
+
             if (EstadoId != string.Empty)
             {
                 if (EstadoId != "PE")
                 {
                     CambiarEstado("RE");
                 }
+            }
+        }
+
+        private void dgvRegistros_DoubleClick(object sender, EventArgs e)
+        {
+            if (Id > 0)
+            {
+                Editar();
             }
         }
 
