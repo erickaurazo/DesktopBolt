@@ -67,6 +67,8 @@
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.btnFiltrar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnElegirColumna = new Telerik.WinControls.UI.CommandBarButton();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
@@ -90,9 +92,9 @@
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 361);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 553);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1133, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1106, 22);
             this.stsBarraEstado.TabIndex = 217;
             // 
             // progressBar1
@@ -107,7 +109,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.btnMenu.Size = new System.Drawing.Size(1133, 37);
+            this.btnMenu.Size = new System.Drawing.Size(1106, 62);
             this.btnMenu.TabIndex = 216;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             // 
@@ -142,7 +144,7 @@
             this.btnTI.Image = ((System.Drawing.Image)(resources.GetObject("btnTI.Image")));
             this.btnTI.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTI.Name = "btnTI";
-            this.btnTI.Text = "Tecnologías de información ";
+            this.btnTI.Text = "    ITD   .";
             this.btnTI.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTI.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTI.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -154,11 +156,13 @@
             this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
             this.commandBarStripElement3.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.btnNuevo,
+            this.btnFiltrar,
             this.btnActualizarLista,
             this.btnEditar,
             this.btnAnular,
             this.btnEliminar,
             this.btnExportar,
+            this.btnElegirColumna,
             this.btnSalir});
             this.commandBarStripElement3.Name = "commandBarStripElement3";
             this.commandBarStripElement3.Text = "";
@@ -170,7 +174,7 @@
             this.btnNuevo.AccessibleDescription = "Nuevo";
             this.btnNuevo.AccessibleName = "Nuevo";
             this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnNuevo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNuevo.DisplayName = "Nuevo";
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
@@ -185,7 +189,7 @@
             this.btnActualizarLista.AccessibleDescription = "Actualizar Lista";
             this.btnActualizarLista.AccessibleName = "Actualizar Lista";
             this.btnActualizarLista.AutoSize = false;
-            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnActualizarLista.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.DisplayName = "Actualizar Lista";
             this.btnActualizarLista.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarLista.Image")));
@@ -200,7 +204,7 @@
             this.btnEditar.AccessibleDescription = "Editar";
             this.btnEditar.AccessibleName = "Editar";
             this.btnEditar.AutoSize = false;
-            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnEditar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEditar.DisplayName = "Editar";
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -215,7 +219,7 @@
             this.btnAnular.AccessibleDescription = "Anular";
             this.btnAnular.AccessibleName = "Anular";
             this.btnAnular.AutoSize = false;
-            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnAnular.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAnular.DisplayName = "Anular";
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
@@ -231,7 +235,7 @@
             this.btnEliminar.AccessibleDescription = "Eliminar";
             this.btnEliminar.AccessibleName = "Eliminar";
             this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnEliminar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminar.DisplayName = "Eliminar";
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -246,7 +250,7 @@
             this.btnExportar.AccessibleDescription = "Exportar";
             this.btnExportar.AccessibleName = "Exportar";
             this.btnExportar.AutoSize = false;
-            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnExportar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnExportar.DisplayName = "Exportar";
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
@@ -261,7 +265,7 @@
             this.btnSalir.AccessibleDescription = "Salir";
             this.btnSalir.AccessibleName = "Salir";
             this.btnSalir.AutoSize = false;
-            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
             this.btnSalir.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnSalir.DisplayName = "Salir";
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
@@ -281,7 +285,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(1, 32);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(643, 326);
+            this.gbList.Size = new System.Drawing.Size(616, 518);
             this.gbList.TabIndex = 215;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -307,32 +311,32 @@
             gridViewTextBoxColumn1.Name = "chIDMODELO";
             gridViewTextBoxColumn1.ReadOnly = true;
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 90;
+            gridViewTextBoxColumn1.Width = 86;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "DESCRIPCION";
             gridViewTextBoxColumn2.HeaderText = "Descripción";
             gridViewTextBoxColumn2.Name = "chdescripcion";
             gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 276;
+            gridViewTextBoxColumn2.Width = 264;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.FieldName = "ES_EQUIPOMOVIL";
             gridViewCheckBoxColumn1.HeaderText = "Es Equipo móvil";
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "chES_EQUIPOMOVIL";
-            gridViewCheckBoxColumn1.Width = 74;
+            gridViewCheckBoxColumn1.Width = 71;
             gridViewCheckBoxColumn2.EnableExpressionEditor = false;
             gridViewCheckBoxColumn2.FieldName = "ES_ACTIVO";
             gridViewCheckBoxColumn2.HeaderText = "Es activo";
             gridViewCheckBoxColumn2.MinWidth = 20;
             gridViewCheckBoxColumn2.Name = "chES_ACTIVO";
-            gridViewCheckBoxColumn2.Width = 80;
+            gridViewCheckBoxColumn2.Width = 77;
             gridViewCheckBoxColumn3.EnableExpressionEditor = false;
             gridViewCheckBoxColumn3.FieldName = "ESTADO";
             gridViewCheckBoxColumn3.HeaderText = "Estado";
             gridViewCheckBoxColumn3.MinWidth = 20;
             gridViewCheckBoxColumn3.Name = "chEstado";
             gridViewCheckBoxColumn3.ReadOnly = true;
-            gridViewCheckBoxColumn3.Width = 105;
+            gridViewCheckBoxColumn3.Width = 100;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -347,7 +351,7 @@
             this.dgvRegistro.Name = "dgvRegistro";
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvRegistro.Size = new System.Drawing.Size(639, 306);
+            this.dgvRegistro.Size = new System.Drawing.Size(612, 498);
             this.dgvRegistro.TabIndex = 164;
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
@@ -371,10 +375,10 @@
             this.gbEdit.Controls.Add(this.radLabel2);
             this.gbEdit.Enabled = false;
             this.gbEdit.HeaderText = " Mantenimiento";
-            this.gbEdit.Location = new System.Drawing.Point(650, 32);
+            this.gbEdit.Location = new System.Drawing.Point(623, 32);
             this.gbEdit.Name = "gbEdit";
             this.gbEdit.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbEdit.Size = new System.Drawing.Size(480, 324);
+            this.gbEdit.Size = new System.Drawing.Size(480, 516);
             this.gbEdit.TabIndex = 214;
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
@@ -445,7 +449,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.Location = new System.Drawing.Point(271, 295);
+            this.btnGrabar.Location = new System.Drawing.Point(271, 487);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(102, 24);
             this.btnGrabar.TabIndex = 25;
@@ -457,7 +461,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(163, 295);
+            this.btnCancelar.Location = new System.Drawing.Point(163, 487);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 24;
@@ -513,10 +517,34 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.AccessibleDescription = "Filtrar";
+            this.btnFiltrar.AccessibleName = "Filtrar";
+            this.btnFiltrar.AutoSize = false;
+            this.btnFiltrar.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnFiltrar.DisplayName = "Filtrar";
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Tag = "Filtrar";
+            this.btnFiltrar.Text = "";
+            // 
+            // btnElegirColumna
+            // 
+            this.btnElegirColumna.AccessibleDescription = "ElegirColumna";
+            this.btnElegirColumna.AccessibleName = "ElegirColumna";
+            this.btnElegirColumna.AutoSize = false;
+            this.btnElegirColumna.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnElegirColumna.DisplayName = "ElegirColumna";
+            this.btnElegirColumna.Image = ((System.Drawing.Image)(resources.GetObject("btnElegirColumna.Image")));
+            this.btnElegirColumna.Name = "btnElegirColumna";
+            this.btnElegirColumna.Tag = "ElegirColumna";
+            this.btnElegirColumna.Text = "";
+            // 
             // Modelos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1133, 383);
+            this.ClientSize = new System.Drawing.Size(1106, 575);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.gbList);
@@ -586,5 +614,7 @@
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.ToolStripProgressBar progressBar1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private Telerik.WinControls.UI.CommandBarButton btnFiltrar;
+        private Telerik.WinControls.UI.CommandBarButton btnElegirColumna;
     }
 }

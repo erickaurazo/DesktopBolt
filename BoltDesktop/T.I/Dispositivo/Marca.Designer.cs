@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Marca));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn7 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn8 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn9 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.btnMenu = new Telerik.WinControls.UI.RadCommandBar();
@@ -171,7 +171,7 @@
             this.btnNuevo.AccessibleDescription = "Nuevo";
             this.btnNuevo.AccessibleName = "Nuevo";
             this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnNuevo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNuevo.DisplayName = "Nuevo";
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
@@ -186,7 +186,7 @@
             this.btnActualizarLista.AccessibleDescription = "Actualizar Lista";
             this.btnActualizarLista.AccessibleName = "Actualizar Lista";
             this.btnActualizarLista.AutoSize = false;
-            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnActualizarLista.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.DisplayName = "Actualizar Lista";
             this.btnActualizarLista.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarLista.Image")));
@@ -201,7 +201,7 @@
             this.btnEditar.AccessibleDescription = "Editar";
             this.btnEditar.AccessibleName = "Editar";
             this.btnEditar.AutoSize = false;
-            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEditar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEditar.DisplayName = "Editar";
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -216,7 +216,7 @@
             this.btnAnular.AccessibleDescription = "Anular";
             this.btnAnular.AccessibleName = "Anular";
             this.btnAnular.AutoSize = false;
-            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnAnular.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAnular.DisplayName = "Anular";
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
@@ -232,7 +232,7 @@
             this.btnEliminar.AccessibleDescription = "Eliminar";
             this.btnEliminar.AccessibleName = "Eliminar";
             this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEliminar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminar.DisplayName = "Eliminar";
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -247,7 +247,7 @@
             this.btnExportar.AccessibleDescription = "Exportar";
             this.btnExportar.AccessibleName = "Exportar";
             this.btnExportar.AutoSize = false;
-            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnExportar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnExportar.DisplayName = "Exportar";
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
@@ -262,7 +262,7 @@
             this.btnSalir.AccessibleDescription = "Salir";
             this.btnSalir.AccessibleName = "Salir";
             this.btnSalir.AutoSize = false;
-            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnSalir.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnSalir.DisplayName = "Salir";
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
@@ -283,7 +283,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(12, 32);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(511, 500);
+            this.gbList.Size = new System.Drawing.Size(609, 500);
             this.gbList.TabIndex = 203;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -303,44 +303,44 @@
             this.dgvRegistro.MasterTemplate.AllowAddNewRow = false;
             this.dgvRegistro.MasterTemplate.AutoGenerateColumns = false;
             this.dgvRegistro.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "IDMARCA";
-            gridViewTextBoxColumn1.HeaderText = "Código";
-            gridViewTextBoxColumn1.Name = "chIDMARCA";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 71;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "DESCRIPCION";
-            gridViewTextBoxColumn2.HeaderText = "Descripción";
-            gridViewTextBoxColumn2.Name = "chdescripcion";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 218;
-            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.FieldName = "ES_EQUIPOMOVIL";
-            gridViewCheckBoxColumn1.HeaderText = "Es Equipo móvil";
-            gridViewCheckBoxColumn1.MinWidth = 20;
-            gridViewCheckBoxColumn1.Name = "chES_EQUIPOMOVIL";
-            gridViewCheckBoxColumn1.Width = 59;
-            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn2.FieldName = "ES_ACTIVO";
-            gridViewCheckBoxColumn2.HeaderText = "Es activo";
-            gridViewCheckBoxColumn2.MinWidth = 20;
-            gridViewCheckBoxColumn2.Name = "chES_ACTIVO";
-            gridViewCheckBoxColumn2.Width = 63;
-            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn3.FieldName = "ESTADO";
-            gridViewCheckBoxColumn3.HeaderText = "Estado";
-            gridViewCheckBoxColumn3.MinWidth = 20;
-            gridViewCheckBoxColumn3.Name = "chEstado";
-            gridViewCheckBoxColumn3.ReadOnly = true;
-            gridViewCheckBoxColumn3.Width = 82;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "IDMARCA";
+            gridViewTextBoxColumn5.HeaderText = "Código";
+            gridViewTextBoxColumn5.Name = "chIDMARCA";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn5.Width = 85;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "DESCRIPCION";
+            gridViewTextBoxColumn6.HeaderText = "Descripción";
+            gridViewTextBoxColumn6.Name = "chdescripcion";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 261;
+            gridViewCheckBoxColumn7.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn7.FieldName = "ES_EQUIPOMOVIL";
+            gridViewCheckBoxColumn7.HeaderText = "Es Equipo móvil";
+            gridViewCheckBoxColumn7.MinWidth = 20;
+            gridViewCheckBoxColumn7.Name = "chES_EQUIPOMOVIL";
+            gridViewCheckBoxColumn7.Width = 71;
+            gridViewCheckBoxColumn8.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn8.FieldName = "ES_ACTIVO";
+            gridViewCheckBoxColumn8.HeaderText = "Es activo";
+            gridViewCheckBoxColumn8.MinWidth = 20;
+            gridViewCheckBoxColumn8.Name = "chES_ACTIVO";
+            gridViewCheckBoxColumn8.Width = 76;
+            gridViewCheckBoxColumn9.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn9.FieldName = "ESTADO";
+            gridViewCheckBoxColumn9.HeaderText = "Estado";
+            gridViewCheckBoxColumn9.MinWidth = 20;
+            gridViewCheckBoxColumn9.Name = "chEstado";
+            gridViewCheckBoxColumn9.ReadOnly = true;
+            gridViewCheckBoxColumn9.Width = 98;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewCheckBoxColumn1,
-            gridViewCheckBoxColumn2,
-            gridViewCheckBoxColumn3});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewCheckBoxColumn7,
+            gridViewCheckBoxColumn8,
+            gridViewCheckBoxColumn9});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
@@ -349,7 +349,7 @@
             this.dgvRegistro.Name = "dgvRegistro";
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvRegistro.Size = new System.Drawing.Size(507, 480);
+            this.dgvRegistro.Size = new System.Drawing.Size(605, 480);
             this.dgvRegistro.TabIndex = 163;
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
@@ -374,10 +374,10 @@
             this.gbEdit.Enabled = false;
             this.gbEdit.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbEdit.HeaderText = " Mantenimiento";
-            this.gbEdit.Location = new System.Drawing.Point(529, 41);
+            this.gbEdit.Location = new System.Drawing.Point(627, 41);
             this.gbEdit.Name = "gbEdit";
             this.gbEdit.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbEdit.Size = new System.Drawing.Size(541, 491);
+            this.gbEdit.Size = new System.Drawing.Size(443, 491);
             this.gbEdit.TabIndex = 202;
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
@@ -387,7 +387,7 @@
             // 
             this.chkEsEquipoMovil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkEsEquipoMovil.AutoSize = true;
-            this.chkEsEquipoMovil.Location = new System.Drawing.Point(78, 165);
+            this.chkEsEquipoMovil.Location = new System.Drawing.Point(17, 154);
             this.chkEsEquipoMovil.Name = "chkEsEquipoMovil";
             this.chkEsEquipoMovil.Size = new System.Drawing.Size(107, 17);
             this.chkEsEquipoMovil.TabIndex = 256;
@@ -398,7 +398,7 @@
             // 
             this.chkEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkEsActivo.AutoSize = true;
-            this.chkEsActivo.Location = new System.Drawing.Point(78, 122);
+            this.chkEsActivo.Location = new System.Drawing.Point(17, 188);
             this.chkEsActivo.Name = "chkEsActivo";
             this.chkEsActivo.Size = new System.Drawing.Size(70, 17);
             this.chkEsActivo.TabIndex = 255;
@@ -408,16 +408,17 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescripcion.Location = new System.Drawing.Point(78, 80);
+            this.txtDescripcion.Location = new System.Drawing.Point(7, 80);
             this.txtDescripcion.MaxLength = 255;
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(446, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(431, 59);
             this.txtDescripcion.TabIndex = 28;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDescripcion.Location = new System.Drawing.Point(4, 80);
+            this.lblDescripcion.Location = new System.Drawing.Point(7, 57);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(70, 18);
             this.lblDescripcion.TabIndex = 26;
@@ -426,9 +427,9 @@
             // txtIdEstado
             // 
             this.txtIdEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdEstado.Location = new System.Drawing.Point(281, 27);
+            this.txtIdEstado.Location = new System.Drawing.Point(290, 55);
             this.txtIdEstado.Name = "txtIdEstado";
-            this.txtIdEstado.Size = new System.Drawing.Size(32, 20);
+            this.txtIdEstado.Size = new System.Drawing.Size(148, 20);
             this.txtIdEstado.TabIndex = 4;
             this.txtIdEstado.TabStop = false;
             this.txtIdEstado.ThemeName = "VisualStudio2012Light";
@@ -437,7 +438,7 @@
             // radLabel7
             // 
             this.radLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel7.Location = new System.Drawing.Point(229, 28);
+            this.radLabel7.Location = new System.Drawing.Point(232, 56);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(55, 18);
             this.radLabel7.TabIndex = 3;
@@ -448,7 +449,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.Location = new System.Drawing.Point(326, 462);
+            this.btnGrabar.Location = new System.Drawing.Point(221, 453);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(102, 24);
             this.btnGrabar.TabIndex = 25;
@@ -461,7 +462,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(218, 462);
+            this.btnCancelar.Location = new System.Drawing.Point(113, 453);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 24;
@@ -473,7 +474,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel1.Location = new System.Drawing.Point(24, 27);
+            this.radLabel1.Location = new System.Drawing.Point(7, 27);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(48, 18);
             this.radLabel1.TabIndex = 1;
@@ -484,7 +485,7 @@
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.Enabled = false;
             this.txtCodigo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCodigo.Location = new System.Drawing.Point(78, 27);
+            this.txtCodigo.Location = new System.Drawing.Point(61, 27);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(116, 20);
             this.txtCodigo.TabIndex = 2;
@@ -496,9 +497,9 @@
             this.txtEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(388, 27);
+            this.txtEstado.Location = new System.Drawing.Point(290, 27);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(136, 20);
+            this.txtEstado.Size = new System.Drawing.Size(148, 20);
             this.txtEstado.TabIndex = 6;
             this.txtEstado.TabStop = false;
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -507,7 +508,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radLabel2.Location = new System.Drawing.Point(340, 27);
+            this.radLabel2.Location = new System.Drawing.Point(242, 27);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(45, 18);
             this.radLabel2.TabIndex = 5;
