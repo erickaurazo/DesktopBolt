@@ -114,6 +114,12 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.bgwCambiarEstado = new System.ComponentModel.BackgroundWorker();
+            this.lblSuma = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblSumaResultado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRecuento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRecuentoNumero = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblPromedio = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblPromedioValor = new System.Windows.Forms.ToolStripStatusLabel();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
@@ -133,7 +139,13 @@
             this.lblCodeUser,
             this.lblUser,
             this.lblFullName,
-            this.progressBar1});
+            this.progressBar1,
+            this.lblSuma,
+            this.lblSumaResultado,
+            this.lblRecuento,
+            this.lblRecuentoNumero,
+            this.lblPromedio,
+            this.lblPromedioValor});
             this.stsBarraEstado.Location = new System.Drawing.Point(0, 337);
             this.stsBarraEstado.Name = "stsBarraEstado";
             this.stsBarraEstado.Size = new System.Drawing.Size(1114, 22);
@@ -293,6 +305,8 @@
             gridViewTextBoxColumn12,
             gridViewTextBoxColumn13,
             gridViewTextBoxColumn14});
+            this.dgvRegistros.MasterTemplate.MultiSelect = true;
+            this.dgvRegistros.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
             sortDescriptor1.PropertyName = "chFecha";
             this.dgvRegistros.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
@@ -325,7 +339,7 @@
             this.toolStripSeparator4,
             this.btnRechazarCarga});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(252, 276);
+            this.subMenu.Size = new System.Drawing.Size(252, 254);
             // 
             // anularToolStripMenuItem
             // 
@@ -1009,6 +1023,42 @@
             this.bgwCambiarEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCambiarEstado_DoWork);
             this.bgwCambiarEstado.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCambiarEstado_RunWorkerCompleted);
             // 
+            // lblSuma
+            // 
+            this.lblSuma.Name = "lblSuma";
+            this.lblSuma.Size = new System.Drawing.Size(34, 17);
+            this.lblSuma.Text = "Sum:";
+            // 
+            // lblSumaResultado
+            // 
+            this.lblSumaResultado.Name = "lblSumaResultado";
+            this.lblSumaResultado.Size = new System.Drawing.Size(22, 17);
+            this.lblSumaResultado.Text = "0.0";
+            // 
+            // lblRecuento
+            // 
+            this.lblRecuento.Name = "lblRecuento";
+            this.lblRecuento.Size = new System.Drawing.Size(60, 17);
+            this.lblRecuento.Text = "Recuento:";
+            // 
+            // lblRecuentoNumero
+            // 
+            this.lblRecuentoNumero.Name = "lblRecuentoNumero";
+            this.lblRecuentoNumero.Size = new System.Drawing.Size(22, 17);
+            this.lblRecuentoNumero.Text = "0.0";
+            // 
+            // lblPromedio
+            // 
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(65, 17);
+            this.lblPromedio.Text = "Promedio :";
+            // 
+            // lblPromedioValor
+            // 
+            this.lblPromedioValor.Name = "lblPromedioValor";
+            this.lblPromedioValor.Size = new System.Drawing.Size(22, 17);
+            this.lblPromedioValor.Text = "0.0";
+            // 
             // ConformacionDeCarga
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1111,5 +1161,11 @@
         private System.Windows.Forms.Label lblRechazado;
         private System.Windows.Forms.Panel pnRechado;
         private Telerik.WinControls.UI.CommandBarButton btnGuadarYEditar;
+        private System.Windows.Forms.ToolStripStatusLabel lblSuma;
+        private System.Windows.Forms.ToolStripStatusLabel lblSumaResultado;
+        private System.Windows.Forms.ToolStripStatusLabel lblRecuento;
+        private System.Windows.Forms.ToolStripStatusLabel lblRecuentoNumero;
+        private System.Windows.Forms.ToolStripStatusLabel lblPromedio;
+        private System.Windows.Forms.ToolStripStatusLabel lblPromedioValor;
     }
 }

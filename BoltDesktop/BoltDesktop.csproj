@@ -1624,6 +1624,9 @@
     <Compile Include="Produccion\Conformacion de carga\ConformacionDeCargaVistaPrevia.Designer.cs">
       <DependentUpon>ConformacionDeCargaVistaPrevia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\Conformacion de carga\ConformidadDeCargaDS.cs">
+      <DependentUpon>ConformidadDeCargaDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\Conformacion de carga\ConformidadDeCargaDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

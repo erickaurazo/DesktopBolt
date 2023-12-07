@@ -35,7 +35,7 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad
             desde = _desde;
             hasta = _hasta;
 
-            this.crystalReportViewer1.PrintReport();
+            crystalReportViewer1.PrintReport();
             try
             {
                 dsReporte = new RegistroDeIngresoSalidaGasificadoDS();

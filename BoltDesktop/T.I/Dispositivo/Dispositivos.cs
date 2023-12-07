@@ -33,6 +33,32 @@ namespace ComparativoHorasVisualSATNISIRA
         private int codigo = 0;
         private string fileName;
         private bool exportVisualSettings;
+        private List<Grupo> listadoTipoDispositivo;
+        private List<Grupo> listadoTipoPertenencia;
+        private List<Grupo> listadoMarcas;
+        private List<Grupo> listadoModelos;
+        private List<Grupo> listadoSede;
+        private List<Grupo> listadoFuncionamiento;
+        private List<Grupo> listadoProveedores;
+        private List<Grupo> listadoEstadosDispositivos;
+
+        private List<string> listadoTipoDispositivoElegir;
+        private List<string> listadoTipoPertenenciaElegir;
+        private List<string> listadoMarcasElegir;
+        private List<string> listadoModelosElegir;
+        private List<string> listadoSedeElegir;
+        private List<string> listadoFuncionamientoElegir;
+        private List<string> listadoProveedoresElegir;
+        private List<string> listadoEstadosDispositivosElegir;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro01;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro02;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro03;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro04;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro05;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro06;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro07;
+        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro08;
+
 
         public DispositivosListado()
         {
@@ -54,14 +80,17 @@ namespace ComparativoHorasVisualSATNISIRA
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            conection = _conection.Trim () != string.Empty ? _conection.Trim() : "SAS";
+            conection = _conection.Trim() != string.Empty ? _conection.Trim() : "SAS";
             user2 = _user2;
             companyId = _companyId;
             privilege = _privilege;
-            Consultar();
             Inicio();
             dispositivo = new SAS_Dispostivo();
             dispositivo.id = -1;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.UserName.ToString();
+            Consultar();
+
         }
 
         public void Inicio()
@@ -113,21 +142,368 @@ namespace ComparativoHorasVisualSATNISIRA
             modelo = new SAS_DispositivoIPController();
             listado = new List<SAS_ListadoDeDispositivos>();
 
+            listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro02 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro03 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro04 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro05 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro06 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro07 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
+
             listado = modelo.ListadoDeDispositivos("SAS").ToList();
+
+
+            if (listado != null && listado.ToList().Count > 0)
+            {
+                listadoTipoDispositivo = (from item in listado
+                                          group item by new { item.tipoDispositivoCodigo } into j
+                                          select new Grupo
+                                          {
+                                              Valor = j.Key.tipoDispositivoCodigo,
+                                              Descripcion = j.FirstOrDefault().tipoDispositivo
+                                          }).ToList();
+
+                listadoTipoPertenencia = (from item in listado
+                                          group item by new { item.EsPropio } into j
+                                          select new Grupo
+                                          {
+                                              Valor = j.Key.EsPropio.ToString(),
+                                              Descripcion = j.Key.EsPropio.ToString() != "0" ? (j.Key.EsPropio.ToString() != "1" ? "TERCERO" : "PROPIO") : "VISITA",
+                                          }).ToList();
+
+                listadoMarcas = (from item in listado
+                                 group item by new { item.idMarca } into j
+                                 select new Grupo
+                                 {
+                                     Valor = j.Key.idMarca,
+                                     Descripcion = j.FirstOrDefault().marca
+                                 }).ToList();
+
+                listadoModelos = (from item in listado
+                                  group item by new { item.idModelo } into j
+                                  select new Grupo
+                                  {
+                                      Valor = j.Key.idModelo,
+                                      Descripcion = j.FirstOrDefault().MODELO != null ? j.FirstOrDefault().MODELO.Trim() : string.Empty
+                                  }).ToList();
+
+                listadoSede = (from item in listado
+                               group item by new { item.sedeCodigo } into j
+                               select new Grupo
+                               {
+                                   Valor = j.Key.sedeCodigo,
+                                   Descripcion = j.FirstOrDefault().sedeDescripcion
+                               }).ToList();
+
+                listadoFuncionamiento = (from item in listado
+                                         group item by new { item.funcionamientoCodigo } into j
+                                         select new Grupo
+                                         {
+                                             Valor = j.Key.funcionamientoCodigo.ToString(),
+                                             Descripcion = j.FirstOrDefault().funcionamiento
+                                         }).ToList();
+
+                listadoProveedores = (from item in listado
+                                      group item by new { item.idClieprov } into j
+                                      select new Grupo
+                                      {
+                                          Valor = j.Key.idClieprov,
+                                          Descripcion = j.FirstOrDefault().razonSocial
+                                      }).ToList();
+
+                listadoEstadosDispositivos = (from item in listado
+                                              group item by new { item.idestado } into j
+                                              select new Grupo
+                                              {
+                                                  Valor = j.Key.idestado.Value.ToString(),
+                                                  Descripcion = j.FirstOrDefault().estado
+                                              }).ToList();
+
+            }
 
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            dgvDispositivo.DataSource = listado.ToDataTable<SAS_ListadoDeDispositivos>();
-            dgvDispositivo.Refresh();
-            dgvDispositivo.Enabled = true;
+
+            PresentaResultadoConsultaCB();
+            PresentarResultadosGrilla();
+        }
+
+        private void PresentaResultadoConsultaCB()
+        {
+            if (listado != null && listado.ToList().Count > 0)
+            {
+                //foreach (var item in listadoTipoDispositivo)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+
+                //}
+
+                List<RadCheckedListDataItem> oTipoPallets = new List<RadCheckedListDataItem>();
+                oTipoPallets = (from item in listadoTipoDispositivo
+                                group item by new { item.Valor } into j
+                                select new RadCheckedListDataItem
+                                {
+                                    Value = j.Key.Valor,
+                                    Text = j.FirstOrDefault().Descripcion,
+                                    Checked = true
+                                }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboTipoDispotivo.DisplayMember = "Descripcion";
+                cboTipoDispotivo.ValueMember = "Valor";
+                cboTipoDispotivo.Items.AddRange(oTipoPallets);
+
+
+
+
+
+
+                //foreach (var item in listadoTipoPertenencia)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cboPertenencia.Items.Add(oTipoPallet);
+                //}
+
+                List<RadCheckedListDataItem> lPertenencia = new List<RadCheckedListDataItem>();
+                lPertenencia = (from item in listadoTipoPertenencia
+                                group item by new { item.Valor } into j
+                                select new RadCheckedListDataItem
+                                {
+                                    Value = j.Key.Valor,
+                                    Text = j.FirstOrDefault().Descripcion,
+                                    Checked = true
+                                }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboPertenencia.DisplayMember = "Descripcion";
+                cboPertenencia.ValueMember = "Valor";
+                //cboPertenencia.DataSource = lPertenencia;
+                cboPertenencia.Items.AddRange(lPertenencia);
+
+
+
+                //foreach (var item in listadoMarcas)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cboMarca.Items.Add(oTipoPallet);
+                //}
+
+                List<RadCheckedListDataItem> lmarcas = new List<RadCheckedListDataItem>();
+                lmarcas = (from item in listadoMarcas
+                           group item by new { item.Valor } into j
+                           select new RadCheckedListDataItem
+                           {
+                               Value = j.Key.Valor,
+                               Text = j.FirstOrDefault().Descripcion,
+                               Checked = true
+                           }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboMarca.DisplayMember = "Descripcion";
+                cboMarca.ValueMember = "Valor";
+                //cboMarca.DataSource = lmarcas;
+                cboMarca.Items.AddRange(lmarcas);
+
+
+
+                //foreach (var item in listadoModelos)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cboModelo.Items.Add(oTipoPallet);
+                //}
+
+
+                List<RadCheckedListDataItem> lmodelo = new List<RadCheckedListDataItem>();
+                lmodelo = (from item in listadoModelos
+                           group item by new { item.Valor } into j
+                           select new RadCheckedListDataItem
+                           {
+                               Value = j.Key.Valor,
+                               Text = j.FirstOrDefault().Descripcion,
+                               Checked = true
+                           }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboModelo.DisplayMember = "Descripcion";
+                cboModelo.ValueMember = "Valor";
+                //cboModelo.DataSource = lmodelo;
+                cboModelo.Items.AddRange(lmodelo);
+
+
+                //
+                //foreach (var item in listadoSede)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cboSede.Items.Add(oTipoPallet);
+                //}
+
+
+                List<RadCheckedListDataItem> lsede = new List<RadCheckedListDataItem>();
+                lsede = (from item in listadoSede
+                         group item by new { item.Valor } into j
+                         select new RadCheckedListDataItem
+                         {
+                             Value = j.Key.Valor,
+                             Text = j.FirstOrDefault().Descripcion,
+                             Checked = true
+                         }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboSede.DisplayMember = "Descripcion";
+                cboSede.ValueMember = "Valor";
+                //cboSede.DataSource = lsede;
+                cboSede.Items.AddRange(lsede);
+
+
+                //foreach (var item in listadoFuncionamiento)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cbofuncionamiento.Items.Add(oTipoPallet);
+                //}
+
+
+                List<RadCheckedListDataItem> lfuncionamiento = new List<RadCheckedListDataItem>();
+                lfuncionamiento = (from item in listadoFuncionamiento
+                                   group item by new { item.Valor } into j
+                                   select new RadCheckedListDataItem
+                                   {
+                                       Value = j.Key.Valor,
+                                       Text = j.FirstOrDefault().Descripcion,
+                                       Checked = true
+                                   }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cbofuncionamiento.DisplayMember = "Descripcion";
+                cbofuncionamiento.ValueMember = "Valor";
+                //cbofuncionamiento.DataSource = lfuncionamiento;
+                cbofuncionamiento.Items.AddRange(lfuncionamiento);
+
+
+
+                //foreach (var item in listadoProveedores)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cboProveedor.Items.Add(oTipoPallet);
+                //}
+
+
+                List<RadCheckedListDataItem> lproveedores = new List<RadCheckedListDataItem>();
+                lproveedores = (from item in listadoProveedores
+                                group item by new { item.Valor } into j
+                                select new RadCheckedListDataItem
+                                {
+                                    Value = j.Key.Valor,
+                                    Text = j.FirstOrDefault().Descripcion,
+                                    Checked = true
+                                }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboProveedor.DisplayMember = "Descripcion";
+                cboProveedor.ValueMember = "Valor";
+                //cboProveedor.DataSource = lproveedores;
+                cboProveedor.Items.AddRange(lproveedores);
+
+
+
+                //foreach (var item in listadoEstadosDispositivos)
+                //{
+                //    RadCheckedListDataItem oTipoPallet = new Telerik.WinControls.UI.RadCheckedListDataItem();
+                //    oTipoPallet.Checked = true;
+                //    oTipoPallet.Text = item.Descripcion.Trim();
+                //    oTipoPallet.Value = item.Valor.Trim();
+                //    cboEstado.Items.Add(oTipoPallet);
+                //}
+
+                List<RadCheckedListDataItem> lEstados = new List<RadCheckedListDataItem>();
+                lEstados = (from item in listadoEstadosDispositivos
+                            group item by new { item.Valor } into j
+                            select new RadCheckedListDataItem
+                            {
+                                Value = j.Key.Valor,
+                                Text = j.FirstOrDefault().Descripcion,
+                                Checked = true
+                            }).ToList();
+
+                //cboTipoDispotivo.Items.Add(oTipoPallet);
+                cboEstado.DisplayMember = "Descripcion";
+                cboEstado.ValueMember = "Valor";
+                //cboEstado.DataSource = lEstados;
+                cboEstado.Items.AddRange(lEstados);
+
+            }
+
+
+        }
+
+        private void PresentarResultadosGrilla()
+        {
+            try
+            {
+                Filtrar();
+            }
+            catch (Exception Ex)
+            {
+                RadMessageBox.SetThemeName(dgvDispositivo.ThemeName);
+                RadMessageBox.Show(this, Ex.Message.ToString(), "Error en el proceso", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+
 
         }
 
         private void btnActualizarLista_Click(object sender, EventArgs e)
         {
-            Consultar();
+            if (listado != null && listado.ToList().Count > 0)
+            {
+                ActualizarLista();
+            }
+            else
+            {
+                Consultar();
+            }
+
+        }
+
+        private void ActualizarLista()
+        {
+            try
+            {
+                dgvDispositivo.Enabled = false;
+                BarraPrincipal.Enabled = !true;
+                gbCabecera.Enabled = false;
+                gbListado.Enabled = false;
+                pgbar.Visible = true;
+                bgwActualizarLista.RunWorkerAsync();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
         }
 
         private void Consultar()
@@ -135,6 +511,11 @@ namespace ComparativoHorasVisualSATNISIRA
             try
             {
                 dgvDispositivo.Enabled = false;
+                BarraPrincipal.Enabled = !true;
+                gbCabecera.Enabled = false;
+                gbListado.Enabled = false;
+                pgbar.Visible = true;
+
                 bgwHilo.RunWorkerAsync();
             }
             catch (Exception Ex)
@@ -295,7 +676,7 @@ namespace ComparativoHorasVisualSATNISIRA
                     SAS_Dispostivo oDevice = new SAS_Dispostivo();
                     int resultadoAccion = deviceModelo.Unregister("SAS", dispositivo);
                     MessageBox.Show("Se ejecutado exitosamente la acción para el registro " + resultadoAccion.ToString().PadLeft(7, '0'), "Mensaje del sistema");
-                    Consultar();
+                    ActualizarLista();
                     #endregion
                 }
                 else
@@ -326,7 +707,7 @@ namespace ComparativoHorasVisualSATNISIRA
                     SAS_Dispostivo oDevice = new SAS_Dispostivo();
                     resultadoAccion = deviceModelo.GetCountReferencias("SAS", dispositivo);
                     MessageBox.Show("Se ejecutado exitosamente la acción para el registro " + resultadoAccion.ToString().PadLeft(7, '0'), "Mensaje del sistema");
-                    Consultar();
+                    ActualizarLista();
                     #endregion
                 }
                 else
@@ -384,12 +765,145 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            Consultar();
+            Filtrar();
+        }
+
+        private void Filtrar()
+        {
+            listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro02 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro03 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro04 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro05 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro06 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro07 = new List<SAS_ListadoDeDispositivos>();
+            listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
+
+            // 01
+            #region  Tipo de dispositivo() 
+            listadoTipoDispositivoElegir = new List<string>();
+            foreach (var itemChecked in cboTipoDispotivo.CheckedItems)
+            {
+                listadoTipoDispositivoElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro01 = (from items in listado.ToList()
+                                                          where (listadoTipoDispositivoElegir.Contains(items.tipoDispositivoCodigo.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion 
+
+            //02
+            #region  Pertenencia() 
+            listadoTipoDispositivoElegir = new List<string>();
+            foreach (var itemChecked in cboPertenencia.CheckedItems)
+            {
+                listadoTipoDispositivoElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro02 = (from items in listadoPalletPendientesByClienteIdFiltro01.ToList()
+                                                          where (listadoTipoDispositivoElegir.Contains(items.EsPropio.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion 
+
+            //03
+            #region  Listado de marcas() 
+            listadoTipoPertenenciaElegir = new List<string>();
+            foreach (var itemChecked in cboMarca.CheckedItems)
+            {
+                listadoTipoPertenenciaElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro03 = (from items in listadoPalletPendientesByClienteIdFiltro02.ToList()
+                                                          where (listadoTipoPertenenciaElegir.Contains(items.idMarca.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion
+
+            //04
+            #region  Listado de modelo() 
+            listadoModelosElegir = new List<string>();
+            foreach (var itemChecked in cboModelo.CheckedItems)
+            {
+                listadoModelosElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro04 = (from items in listadoPalletPendientesByClienteIdFiltro03.ToList()
+                                                          where (listadoModelosElegir.Contains(items.idModelo.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion
+
+            //05
+            #region  Listado de Sede() 
+            listadoSedeElegir = new List<string>();
+            foreach (var itemChecked in cboSede.CheckedItems)
+            {
+                listadoSedeElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro05 = (from items in listadoPalletPendientesByClienteIdFiltro04.ToList()
+                                                          where (listadoSedeElegir.Contains(items.sedeCodigo.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion
+
+            //06
+            #region  Listado Funcionamiento() 
+            listadoFuncionamientoElegir = new List<string>();
+            foreach (var itemChecked in cbofuncionamiento.CheckedItems)
+            {
+                listadoFuncionamientoElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro06 = (from items in listadoPalletPendientesByClienteIdFiltro05.ToList()
+                                                          where (listadoFuncionamientoElegir.Contains(items.funcionamientoCodigo.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion
+
+            //07
+            #region  Listado Proveedores() 
+            listadoProveedoresElegir = new List<string>();
+            foreach (var itemChecked in cboProveedor.CheckedItems)
+            {
+                listadoProveedoresElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro07 = (from items in listadoPalletPendientesByClienteIdFiltro06.ToList()
+                                                          where (listadoProveedoresElegir.Contains(items.idClieprov.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion
+
+            //08
+            #region  Listado Estado Dispositivo() 
+            listadoEstadosDispositivosElegir = new List<string>();
+            foreach (var itemChecked in cboEstado.CheckedItems)
+            {
+                listadoEstadosDispositivosElegir.Add(itemChecked.Value.ToString());
+            }
+
+            listadoPalletPendientesByClienteIdFiltro08 = (from items in listadoPalletPendientesByClienteIdFiltro07.ToList()
+                                                          where (listadoEstadosDispositivosElegir.Contains(items.idestado.ToString().ToUpper().Trim()))
+                                                          select items).ToList();
+            #endregion
+
+            dgvDispositivo.DataSource = listadoPalletPendientesByClienteIdFiltro08.ToDataTable<SAS_ListadoDeDispositivos>();
+            dgvDispositivo.Refresh();
+            dgvDispositivo.Enabled = true;
+
+            dgvDispositivo.Enabled = !false;
+            gbCabecera.Enabled = !false;
+            gbListado.Enabled = !false;
+            BarraPrincipal.Enabled = true;
+            pgbar.Visible = !true;
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            Nuevo();
+        }
 
+        private void Nuevo()
+        {
+            MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+            return;
         }
 
         private void imprimirTicketsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -456,7 +970,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 SAS_Dispostivo oDevice = new SAS_Dispostivo();
                 int resultadoAccion = deviceModelo.DuplicarDispositivoDesdeId("SAS", dispositivo.id, dispositivo.lineaCelular);
                 MessageBox.Show("Se ejecutado exitosamente la acción para el registro " + resultadoAccion.ToString().PadLeft(7, '0'), "Mensaje del sistema");
-                Consultar();
+                ActualizarLista();
                 #endregion
             }
             catch (Exception Ex)
@@ -549,7 +1063,7 @@ namespace ComparativoHorasVisualSATNISIRA
                             oFron.ShowDialog();
                             if (oFron.DialogResult == DialogResult.OK)
                             {
-                                Consultar();
+                                ActualizarLista();
                             }
 
                         }
@@ -673,7 +1187,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 {
                     if (oDispositivo.id > 0)
                     {
-                        PartesDiariosDeEquipamientoByIdDevice oFron = new PartesDiariosDeEquipamientoByIdDevice(conection, user2, companyId, privilege, oDispositivo.id, oDispositivo.dispositivo.Trim());                                                
+                        PartesDiariosDeEquipamientoByIdDevice oFron = new PartesDiariosDeEquipamientoByIdDevice(conection, user2, companyId, privilege, oDispositivo.id, oDispositivo.dispositivo.Trim());
                         oFron.MdiParent = DispositivosListado.ActiveForm;
                         oFron.WindowState = FormWindowState.Maximized;
                         oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -689,6 +1203,38 @@ namespace ComparativoHorasVisualSATNISIRA
                 MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistema");
                 return;
             }
+        }
+
+        private void btnMostarAgrupado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bgwRegistrar_DoWork(object sender, DoWorkEventArgs e)
+        {
+            modelo = new SAS_DispositivoIPController();
+            listado = new List<SAS_ListadoDeDispositivos>();
+            listado = modelo.ListadoDeDispositivos("SAS").ToList();
+        }
+
+        private void bgwActualizarLista_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            PresentarResultadosGrilla();
+        }
+
+        private void btnGenerarExcelDinamico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimirQR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

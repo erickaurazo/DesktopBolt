@@ -177,7 +177,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-
+            Exportar();
         }
 
         private void btnResaltar_Click(object sender, EventArgs e)
@@ -262,7 +262,11 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void VistaPrevia()
         {
-            NoImplementado();
+            if (Id != 0)
+            {
+                ConformacionDeCargaVistaPrevia ofrm = new ConformacionDeCargaVistaPrevia(connection, Id);
+                ofrm.ShowDialog();
+            }
         }
 
         private void ConformacionDeCargaDetalle_Load(object sender, EventArgs e)
@@ -293,6 +297,8 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         #region Funciones()
 
+
+
         private void AgregarDetalle()
         {
             NoImplementado();
@@ -303,7 +309,6 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             RadMessageBox.SetThemeName(dgvResultados.ThemeName);
             RadMessageBox.Show(this, "No tiene privilegios para esta acción", "Respuesta del sistema", MessageBoxButtons.OK, RadMessageIcon.Info);
         }
-
 
         private void QuitarDetalle()
         {
@@ -617,7 +622,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                 return;
             }
         }
-        
+
 
         private void LimpiarVariables()
         {
@@ -1180,6 +1185,77 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         }
 
 
+        public void SumarElementosSeleccionadosGrilla(object senderGrilla)
+        {
+            try
+            {
+                if (((RadGridView)senderGrilla).CurrentRow != null && ((RadGridView)senderGrilla).CurrentCell != null)
+                {
+                    int fila = ((RadGridView)senderGrilla).CurrentRow.Index;
+                    int columna = ((RadGridView)senderGrilla).CurrentCell.ColumnIndex;
+
+                    decimal SumaSeleccionada = 0;
+                    decimal promedioSeleccionado = 0;
+                    int recuento = 0;
+
+                    //foreach (DataGridViewCell celda in ((DataGridView)senderGrilla).SelectedCells)
+                    foreach (GridViewCellInfo celda in ((RadGridView)senderGrilla).SelectedCells)
+                    {
+                        if (celda.Value != null)
+                        {
+                            string tipoDato = celda.Value.GetType().Name.ToString();
+                            if (tipoDato != null && tipoDato != string.Empty)
+                            {
+                                #region
+                                if (tipoDato == "Double" || tipoDato == "Decimal")
+                                {
+                                    SumaSeleccionada += Convert.ToDecimal(celda.Value != null ? celda.Value : 0);
+                                    if (Convert.ToDecimal(celda.Value != null ? celda.Value : 0) == 0)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        recuento++;
+                                    }
+
+                                    promedioSeleccionado = (SumaSeleccionada / recuento);
+                                }
+                                else
+                                {
+                                    SumaSeleccionada = 0;
+                                    recuento = 0;
+                                    promedioSeleccionado = 0;
+                                    break;
+                                }
+                                #endregion
+                            }
+                            else
+                            {
+                                #region
+                                SumaSeleccionada = 0;
+                                recuento = 0;
+                                promedioSeleccionado = 0;
+                                break;
+                                #endregion
+                            }
+                            this.lblSumaResultado.Text = SumaSeleccionada.ToDecimalPresentation();
+                            this.lblRecuentoNumero.Text = recuento.ToString();
+                            this.lblPromedioValor.Text = promedioSeleccionado.ToDecimalPresentation();
+                        }
+
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -1194,6 +1270,8 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void dgvResultados_SelectionChanged(object sender, EventArgs e)
         {
+            SumarElementosSeleccionadosGrilla(sender);
+
             #region Seleccion al cambiar cursor() 
 
             IdDetalle = 0;
@@ -1248,7 +1326,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void btnGrabarYEditar_Click(object sender, EventArgs e)
         {
             GrabarYEditar();
-            
+
         }
 
         private void bgwRegistrarYEditar_DoWork(object sender, DoWorkEventArgs e)
@@ -1259,7 +1337,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         private void bgwRegistrarYEditar_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             resultadoOperacion += 1;
-            PresentarConsultaBusquedaEditarGuardarAsincrona();                        
+            PresentarConsultaBusquedaEditarGuardarAsincrona();
         }
     }
 }

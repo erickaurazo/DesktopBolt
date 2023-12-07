@@ -319,6 +319,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void dgvRegistros_SelectionChanged(object sender, EventArgs e)
         {
+            SumarElementosSeleccionadosGrilla(sender);
             #region Seleccion al cambiar cursor() 
             selectedItem = new SAS_ListadoConformacionDeCargaByPeriodoResult();
             selectedItem.Id = 0;
@@ -381,6 +382,78 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             #endregion
         }
 
+
+        public void SumarElementosSeleccionadosGrilla(object senderGrilla)
+        {
+            try
+            {
+                if (((RadGridView)senderGrilla).CurrentRow != null && ((RadGridView)senderGrilla).CurrentCell != null)
+                {
+                    int fila = ((RadGridView)senderGrilla).CurrentRow.Index;
+                    int columna = ((RadGridView)senderGrilla).CurrentCell.ColumnIndex;
+
+                    decimal SumaSeleccionada = 0;
+                    decimal promedioSeleccionado = 0;
+                    int recuento = 0;
+
+                    //foreach (DataGridViewCell celda in ((DataGridView)senderGrilla).SelectedCells)
+                    foreach (GridViewCellInfo celda in ((RadGridView)senderGrilla).SelectedCells)
+                    {
+                        if (celda.Value != null)
+                        {
+                            string tipoDato = celda.Value.GetType().Name.ToString();
+                            if (tipoDato != null && tipoDato != string.Empty)
+                            {
+                                #region
+                                if (tipoDato == "Double" || tipoDato == "Decimal")
+                                {
+                                    SumaSeleccionada += Convert.ToDecimal(celda.Value != null ? celda.Value : 0);
+                                    if (Convert.ToDecimal(celda.Value != null ? celda.Value : 0) == 0)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        recuento++;
+                                    }
+
+                                    promedioSeleccionado = (SumaSeleccionada / recuento);
+                                }
+                                else
+                                {
+                                    SumaSeleccionada = 0;
+                                    recuento = 0;
+                                    promedioSeleccionado = 0;
+                                    break;
+                                }
+                                #endregion
+                            }
+                            else
+                            {
+                                #region
+                                SumaSeleccionada = 0;
+                                recuento = 0;
+                                promedioSeleccionado = 0;
+                                break;
+                                #endregion
+                            }
+                            this.lblSumaResultado.Text = SumaSeleccionada.ToDecimalPresentation();
+                            this.lblRecuentoNumero.Text = recuento.ToString();
+                            this.lblPromedioValor.Text = promedioSeleccionado.ToDecimalPresentation();
+                        }
+
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void ConformacionDeCarga_FormClosing(object sender, FormClosingEventArgs e)
         {
 
@@ -397,19 +470,13 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             ResaltarResultados();
         }
 
-       
+
 
         private void ConformacionDeCarga_Load(object sender, EventArgs e)
         {
 
         }
-
-
-        #region Metodos()
-
-
-        //
-
+        
         protected override void OnLoad(EventArgs e)
         {
             this.dgvRegistros.TableElement.BeginUpdate();
@@ -438,9 +505,9 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             {
                 Id = 0;
                 ConformacionDeCargaDetalle oFron = new ConformacionDeCargaDetalle(conection, user, companyId, privilege, Id);
-                //oFron.MdiParent = ConformacionDeCarga.ActiveForm;
-                //oFron.WindowState = FormWindowState.Maximized;
-                //oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                oFron.MdiParent = ConformacionDeCarga.ActiveForm;
+                oFron.WindowState = FormWindowState.Maximized;
+                oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
                 oFron.Show();
             }
             catch (Exception Ex)
@@ -488,16 +555,16 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
                     {
 
                         ConformacionDeCargaDetalle oFron = new ConformacionDeCargaDetalle(conection, user, companyId, privilege, Id);
-                        //oFron.MdiParent = ConformacionDeCarga.ActiveForm;
-                        //oFron.WindowState = FormWindowState.Maximized;
-                        //oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                        oFron.MdiParent = ConformacionDeCarga.ActiveForm;
+                        oFron.WindowState = FormWindowState.Maximized;
+                        oFron.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
                         oFron.Show();
                     }
                 }
             }
         }
 
-
+       
         private void Grabar()
         {
             NoImplementado();
@@ -508,14 +575,14 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         {
             if (Id > 0 && EstadoId == "PE")
             {
-                if (user.IdUsuario.Trim().ToUpper() == "ADMINISTRADOR" || user.IdUsuario.Trim().ToUpper() == "EAURAZO" )
+                if (user.IdUsuario.Trim().ToUpper() == "ADMINISTRADOR" || user.IdUsuario.Trim().ToUpper() == "EAURAZO")
                 {
                     model = new SAS_CondormidadDeCargaController();
                     int resultadoAccion = model.ToDelete(conection, Id);
                     MakeInquiry();
                 }
 
-               
+
             }
         }
 
@@ -636,8 +703,8 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
         {
             if (Id != 0)
             {
-                //TrazabilidadDeContenedorDespachosPreView ofrm = new TrazabilidadDeContenedorDespachosPreView(conection, Id);
-                //ofrm.Show();
+                ConformacionDeCargaVistaPrevia ofrm = new ConformacionDeCargaVistaPrevia(conection, Id);
+                ofrm.ShowDialog();
             }
         }
 
@@ -818,7 +885,10 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
 
         private void vistaPreviaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            VistaPrevia(1);
+            if (Id != 0)
+            {
+                VistaPrevia(Id);
+            }            
         }
 
         private void btnImprimirSub_Click(object sender, EventArgs e)
@@ -925,7 +995,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga
             }
         }
 
-        #endregion
+        
 
 
     }

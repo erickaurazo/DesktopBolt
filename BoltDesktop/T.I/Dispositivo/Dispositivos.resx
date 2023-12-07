@@ -223,12 +223,11 @@
   </data>
   <data name="btnVerProgramacionDiaria.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAADMSURBVDhPndItD0FhGMbxRxQFsvkENlUQNEWRJMEUTZdF
-        CmMjCIJN9A3YBMEYm80miTaixP/m9ng5jjmu7bdz3Tvn3nnZMW8JYYfgdXpkjNStvsaHGHI46zH5ZI8q
-        4vDDpg1Z+MUCNid8usiNzaeT39jIUIa8Txcb7WKAmfY0HIslyAdqYq1d9DDVnoBj0QsbGbIIoIK5dtHA
-        SHsYjsUCIqhhpV10MNEehWPRCxsZ/rrjEXVk0MdWuxhiqb2Il8U8Drg/ihv5w1rGGHMBdApyi05TQ+UA
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAMxJREFUOE+d0i0PQWEYxvFHFAWy+QQ2VRA0RZEkwRRNl0UKYyMIgk30DdgEwRib
+        zSaJNqLE/+b2eDmOOa7tt3PdO+feedkxbwlhh+B1emSM1K2+xocYcjjrMflkjyri8MOmDVn4xQI2J3y6
+        yI3Np5Pf2MhQhrxPFxvtYoCZ9jQciyXIB2pirV30MNWegGPRCxsZsgiggrl20cBIexiOxQIiqGGlXXQw
+        0R6FY9ELGxn+uuMRdWTQx1a7GGKpvYiXxTwOuD+KG/nDWsYYcwF0CnKLTlND5QAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="stsBarraEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -424,15 +423,13 @@
   <data name="btnConsultar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAANRJREFUOE+t0zsKwkAUheERwQ0oKO7ExsbCR61YWwuCOxC0EHwsxBXYKOIKbNyD
-        dipY63/CDAxk8ihy4IPMTeYwCcQUmTJWOATMkZkefikWSM0IoY2+NRKTp0ASS4bwHzxhZp3tzOkiFr9g
-        gxJalq63cPd12lhcwQMV7O1adnb2tOtggfsGx2hlzBuu4KUB0b3Mgnu0MuYKV3DRgNyQWSADNKDX0PHr
-        qOKLXAUfTNFEDROooAOVZBaE6Pgqa6OPWDQMbfSpRCcJRj/TEqGfyTdGUTHmD92DaV5zzBRtAAAAAElF
-        TkSuQmCC
+        EwAACxMBAJqcGAAAAHtJREFUOE9jGFQgFIj/E4lBajGAIRD/BWJsGpAxSA1ILVbQC8TYNCHjHiDGCdiB
+        +CoQY9MIwjeBmBOI8QJLIP4DxOiaQU63BWKiADav4HU6OkD3ClFORwdxQAwzAMQmGSCnC6zxTggMHgP2
+        A7EySIBUYATEDhAmzQADAwCqB0JUfLNkTAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="bgwRegistrar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1147, 12</value>
+  <metadata name="bgwActualizarLista.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1162, 16</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -91,7 +91,7 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_correlativo {
+        public CrystalDecisions.Shared.IParameterField Parameter_Id {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }

@@ -86,7 +86,13 @@
             this.btnVistaPreviaDeFichaDeDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVerLineaCelular = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVerProgramacionDiaria = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
+            this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFullName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pgbar = new System.Windows.Forms.ToolStripProgressBar();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -116,16 +122,39 @@
             this.dgvDispositivo = new Telerik.WinControls.UI.RadGridView();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
-            this.btnMostarAgrupado = new System.Windows.Forms.CheckBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.cboEstado = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lblFuncionamiento = new System.Windows.Forms.Label();
+            this.cbofuncionamiento = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lblPertenencia = new System.Windows.Forms.Label();
+            this.cboPertenencia = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.cboMarca = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lblProveedor = new System.Windows.Forms.Label();
+            this.cboProveedor = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lbSede = new System.Windows.Forms.Label();
+            this.cboSede = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lblModelo = new System.Windows.Forms.Label();
+            this.cboModelo = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lbTipoDispositivo = new System.Windows.Forms.Label();
+            this.cboTipoDispotivo = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.gbListado = new System.Windows.Forms.GroupBox();
-            this.bgwRegistrar = new System.ComponentModel.BackgroundWorker();
-            this.btnVerProgramacionDiaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgwActualizarLista = new System.ComponentModel.BackgroundWorker();
             this.subMenu.SuspendLayout();
+            this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispositivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispositivo.MasterTemplate)).BeginInit();
             this.gbCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEstado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbofuncionamiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPertenencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSede)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoDispotivo)).BeginInit();
             this.gbListado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +177,7 @@
             this.btnVerLineaCelular,
             this.btnVerProgramacionDiaria});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(225, 308);
+            this.subMenu.Size = new System.Drawing.Size(225, 286);
             // 
             // btnHabilitar
             // 
@@ -266,12 +295,57 @@
             this.btnVerLineaCelular.Text = "Ver línea Celular";
             this.btnVerLineaCelular.Click += new System.EventHandler(this.btnVerLineaCelular_Click);
             // 
+            // btnVerProgramacionDiaria
+            // 
+            this.btnVerProgramacionDiaria.Enabled = false;
+            this.btnVerProgramacionDiaria.Image = ((System.Drawing.Image)(resources.GetObject("btnVerProgramacionDiaria.Image")));
+            this.btnVerProgramacionDiaria.Name = "btnVerProgramacionDiaria";
+            this.btnVerProgramacionDiaria.Size = new System.Drawing.Size(224, 22);
+            this.btnVerProgramacionDiaria.Text = "Ver programacion diaria";
+            this.btnVerProgramacionDiaria.Click += new System.EventHandler(this.btnVerProgramacionDiaria_Click);
+            // 
             // stsBarraEstado
             // 
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 585);
+            this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUserNames,
+            this.lblCodeUser,
+            this.lblUser,
+            this.lblFullName,
+            this.pgbar});
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 647);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1301, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1533, 22);
             this.stsBarraEstado.TabIndex = 191;
+            // 
+            // lblUserNames
+            // 
+            this.lblUserNames.Name = "lblUserNames";
+            this.lblUserNames.Size = new System.Drawing.Size(33, 17);
+            this.lblUserNames.Text = "User:";
+            // 
+            // lblCodeUser
+            // 
+            this.lblCodeUser.Name = "lblCodeUser";
+            this.lblCodeUser.Size = new System.Drawing.Size(59, 17);
+            this.lblCodeUser.Text = "username";
+            // 
+            // lblUser
+            // 
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(65, 17);
+            this.lblUser.Text = "Nombres : ";
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(61, 17);
+            this.lblFullName.Text = "userName";
+            // 
+            // pgbar
+            // 
+            this.pgbar.Name = "pgbar";
+            this.pgbar.Size = new System.Drawing.Size(500, 16);
+            this.pgbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // bgwHilo
             // 
@@ -285,7 +359,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1301, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1533, 37);
             this.BarraPrincipal.TabIndex = 192;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -512,6 +586,7 @@
             this.btnCImprimir.Name = "btnCImprimir";
             this.btnCImprimir.Tag = "Imprimir";
             this.btnCImprimir.Text = "Imprimir";
+            this.btnCImprimir.Click += new System.EventHandler(this.btnCImprimir_Click);
             // 
             // btnImprimirQR
             // 
@@ -525,6 +600,7 @@
             this.btnImprimirQR.Tag = "Imprimir QR";
             this.btnImprimirQR.Text = "Imprimir QR";
             this.btnImprimirQR.ToolTipText = "Imprimir QR";
+            this.btnImprimirQR.Click += new System.EventHandler(this.btnImprimirQR_Click);
             // 
             // btnGenerarExcelDinamico
             // 
@@ -538,6 +614,7 @@
             this.btnGenerarExcelDinamico.Tag = "Excel dinamico";
             this.btnGenerarExcelDinamico.Text = "Excel dinamico";
             this.btnGenerarExcelDinamico.ToolTipText = "Excel dinamico";
+            this.btnGenerarExcelDinamico.Click += new System.EventHandler(this.btnGenerarExcelDinamico_Click);
             // 
             // commandBarButton8
             // 
@@ -625,7 +702,6 @@
             gridViewTextBoxColumn1.HeaderText = "Cod.";
             gridViewTextBoxColumn1.Name = "chid";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 42;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "sedeDescripcion";
             gridViewTextBoxColumn2.HeaderText = "Sede.";
@@ -644,14 +720,14 @@
             gridViewTextBoxColumn4.Multiline = true;
             gridViewTextBoxColumn4.Name = "chtipoDispositivo";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 142;
+            gridViewTextBoxColumn4.Width = 168;
             gridViewTextBoxColumn4.WrapText = true;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "dispositivo";
             gridViewTextBoxColumn5.HeaderText = "Dispositivo";
             gridViewTextBoxColumn5.Multiline = true;
             gridViewTextBoxColumn5.Name = "chdispositivo";
-            gridViewTextBoxColumn5.Width = 255;
+            gridViewTextBoxColumn5.Width = 302;
             gridViewTextBoxColumn5.WrapText = true;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "sedeCodigo";
@@ -664,26 +740,26 @@
             gridViewTextBoxColumn7.HeaderText = "Marca";
             gridViewTextBoxColumn7.Name = "chmarca";
             gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn7.Width = 148;
+            gridViewTextBoxColumn7.Width = 175;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "MODELO";
             gridViewTextBoxColumn8.HeaderText = "Modelo";
             gridViewTextBoxColumn8.Name = "chMODELO";
             gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn8.Width = 134;
+            gridViewTextBoxColumn8.Width = 159;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.FieldName = "EsPropio";
             gridViewCheckBoxColumn1.HeaderText = "Es propio";
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "chEsPropio";
             gridViewCheckBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewCheckBoxColumn1.Width = 90;
+            gridViewCheckBoxColumn1.Width = 107;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "numeroSerie";
             gridViewTextBoxColumn9.HeaderText = "S/N ";
             gridViewTextBoxColumn9.Multiline = true;
             gridViewTextBoxColumn9.Name = "chnumeroSerie";
-            gridViewTextBoxColumn9.Width = 128;
+            gridViewTextBoxColumn9.Width = 152;
             gridViewTextBoxColumn9.WrapText = true;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "numeroParte";
@@ -708,7 +784,7 @@
             gridViewTextBoxColumn13.HeaderText = "Asignado A";
             gridViewTextBoxColumn13.Multiline = true;
             gridViewTextBoxColumn13.Name = "chitem";
-            gridViewTextBoxColumn13.Width = 213;
+            gridViewTextBoxColumn13.Width = 252;
             gridViewTextBoxColumn13.WrapText = true;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "codigoSegmentoIP";
@@ -768,7 +844,7 @@
             gridViewTextBoxColumn23.FieldName = "Estado";
             gridViewTextBoxColumn23.HeaderText = "Estado";
             gridViewTextBoxColumn23.Name = "chestado";
-            gridViewTextBoxColumn23.Width = 119;
+            gridViewTextBoxColumn23.Width = 138;
             gridViewTextBoxColumn24.EnableExpressionEditor = false;
             gridViewTextBoxColumn24.FieldName = "idProducto";
             gridViewTextBoxColumn24.HeaderText = "idProducto";
@@ -920,7 +996,7 @@
             this.dgvDispositivo.ReadOnly = true;
             this.dgvDispositivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDispositivo.ShowHeaderCellButtons = true;
-            this.dgvDispositivo.Size = new System.Drawing.Size(1283, 470);
+            this.dgvDispositivo.Size = new System.Drawing.Size(1515, 504);
             this.dgvDispositivo.TabIndex = 193;
             this.dgvDispositivo.ThemeName = "VisualStudio2012Light";
             this.dgvDispositivo.SelectionChanged += new System.EventHandler(this.dgvDispositivo_SelectionChanged);
@@ -934,39 +1010,195 @@
             // 
             this.gbCabecera.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbCabecera.Controls.Add(this.btnMostarAgrupado);
+            this.gbCabecera.Controls.Add(this.lblEstado);
+            this.gbCabecera.Controls.Add(this.cboEstado);
+            this.gbCabecera.Controls.Add(this.lblFuncionamiento);
+            this.gbCabecera.Controls.Add(this.cbofuncionamiento);
+            this.gbCabecera.Controls.Add(this.lblPertenencia);
+            this.gbCabecera.Controls.Add(this.cboPertenencia);
+            this.gbCabecera.Controls.Add(this.lblMarca);
+            this.gbCabecera.Controls.Add(this.cboMarca);
+            this.gbCabecera.Controls.Add(this.lblProveedor);
+            this.gbCabecera.Controls.Add(this.cboProveedor);
+            this.gbCabecera.Controls.Add(this.lbSede);
+            this.gbCabecera.Controls.Add(this.cboSede);
+            this.gbCabecera.Controls.Add(this.lblModelo);
+            this.gbCabecera.Controls.Add(this.cboModelo);
+            this.gbCabecera.Controls.Add(this.lbTipoDispositivo);
+            this.gbCabecera.Controls.Add(this.cboTipoDispotivo);
             this.gbCabecera.Controls.Add(this.btnConsultar);
             this.gbCabecera.Location = new System.Drawing.Point(7, 43);
             this.gbCabecera.Name = "gbCabecera";
-            this.gbCabecera.Size = new System.Drawing.Size(1289, 44);
+            this.gbCabecera.Size = new System.Drawing.Size(1521, 72);
             this.gbCabecera.TabIndex = 194;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Consulta";
             // 
-            // btnMostarAgrupado
+            // lblEstado
             // 
-            this.btnMostarAgrupado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMostarAgrupado.AutoSize = true;
-            this.btnMostarAgrupado.Checked = true;
-            this.btnMostarAgrupado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.btnMostarAgrupado.Location = new System.Drawing.Point(994, 18);
-            this.btnMostarAgrupado.Name = "btnMostarAgrupado";
-            this.btnMostarAgrupado.Size = new System.Drawing.Size(165, 17);
-            this.btnMostarAgrupado.TabIndex = 1;
-            this.btnMostarAgrupado.Text = "Mostrar resultados agrupados";
-            this.btnMostarAgrupado.UseVisualStyleBackColor = true;
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(1081, 53);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(54, 13);
+            this.lblEstado.TabIndex = 46;
+            this.lblEstado.Text = "Estado :";
+            this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.DefaultItemsCountInDropDown = 20;
+            this.cboEstado.Location = new System.Drawing.Point(1137, 48);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(244, 24);
+            this.cboEstado.TabIndex = 45;
+            this.cboEstado.ThemeName = "VisualStudio2012Light";
+            // 
+            // lblFuncionamiento
+            // 
+            this.lblFuncionamiento.AutoSize = true;
+            this.lblFuncionamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuncionamiento.Location = new System.Drawing.Point(684, 52);
+            this.lblFuncionamiento.Name = "lblFuncionamiento";
+            this.lblFuncionamiento.Size = new System.Drawing.Size(104, 13);
+            this.lblFuncionamiento.TabIndex = 44;
+            this.lblFuncionamiento.Text = "Funcionamiento :";
+            this.lblFuncionamiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbofuncionamiento
+            // 
+            this.cbofuncionamiento.DefaultItemsCountInDropDown = 10;
+            this.cbofuncionamiento.Location = new System.Drawing.Point(789, 48);
+            this.cbofuncionamiento.Name = "cbofuncionamiento";
+            this.cbofuncionamiento.Size = new System.Drawing.Size(244, 24);
+            this.cbofuncionamiento.TabIndex = 43;
+            this.cbofuncionamiento.ThemeName = "VisualStudio2012Light";
+            // 
+            // lblPertenencia
+            // 
+            this.lblPertenencia.AutoSize = true;
+            this.lblPertenencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPertenencia.Location = new System.Drawing.Point(24, 52);
+            this.lblPertenencia.Name = "lblPertenencia";
+            this.lblPertenencia.Size = new System.Drawing.Size(83, 13);
+            this.lblPertenencia.TabIndex = 42;
+            this.lblPertenencia.Text = "Pertenencia :";
+            this.lblPertenencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboPertenencia
+            // 
+            this.cboPertenencia.Location = new System.Drawing.Point(109, 47);
+            this.cboPertenencia.Name = "cboPertenencia";
+            this.cboPertenencia.Size = new System.Drawing.Size(244, 24);
+            this.cboPertenencia.TabIndex = 41;
+            this.cboPertenencia.ThemeName = "VisualStudio2012Light";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(375, 20);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(50, 13);
+            this.lblMarca.TabIndex = 40;
+            this.lblMarca.Text = "Marca :";
+            this.lblMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.DefaultItemsCountInDropDown = 30;
+            this.cboMarca.Location = new System.Drawing.Point(426, 17);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(244, 24);
+            this.cboMarca.TabIndex = 39;
+            this.cboMarca.ThemeName = "VisualStudio2012Light";
+            // 
+            // lblProveedor
+            // 
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProveedor.Location = new System.Drawing.Point(1063, 21);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(73, 13);
+            this.lblProveedor.TabIndex = 38;
+            this.lblProveedor.Text = "Proveedor :";
+            // 
+            // cboProveedor
+            // 
+            this.cboProveedor.DefaultItemsCountInDropDown = 30;
+            this.cboProveedor.Location = new System.Drawing.Point(1136, 16);
+            this.cboProveedor.Name = "cboProveedor";
+            this.cboProveedor.Size = new System.Drawing.Size(244, 24);
+            this.cboProveedor.TabIndex = 37;
+            this.cboProveedor.ThemeName = "VisualStudio2012Light";
+            // 
+            // lbSede
+            // 
+            this.lbSede.AutoSize = true;
+            this.lbSede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSede.Location = new System.Drawing.Point(741, 20);
+            this.lbSede.Name = "lbSede";
+            this.lbSede.Size = new System.Drawing.Size(44, 13);
+            this.lbSede.TabIndex = 36;
+            this.lbSede.Text = "Sede :";
+            // 
+            // cboSede
+            // 
+            this.cboSede.DefaultItemsCountInDropDown = 15;
+            this.cboSede.Location = new System.Drawing.Point(789, 16);
+            this.cboSede.Name = "cboSede";
+            this.cboSede.Size = new System.Drawing.Size(244, 24);
+            this.cboSede.TabIndex = 35;
+            this.cboSede.ThemeName = "VisualStudio2012Light";
+            // 
+            // lblModelo
+            // 
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.Location = new System.Drawing.Point(368, 51);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(56, 13);
+            this.lblModelo.TabIndex = 34;
+            this.lblModelo.Text = "Modelo :";
+            // 
+            // cboModelo
+            // 
+            this.cboModelo.DefaultItemsCountInDropDown = 30;
+            this.cboModelo.Location = new System.Drawing.Point(426, 48);
+            this.cboModelo.Name = "cboModelo";
+            this.cboModelo.Size = new System.Drawing.Size(244, 24);
+            this.cboModelo.TabIndex = 33;
+            this.cboModelo.ThemeName = "VisualStudio2012Light";
+            // 
+            // lbTipoDispositivo
+            // 
+            this.lbTipoDispositivo.AutoSize = true;
+            this.lbTipoDispositivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTipoDispositivo.Location = new System.Drawing.Point(7, 18);
+            this.lbTipoDispositivo.Name = "lbTipoDispositivo";
+            this.lbTipoDispositivo.Size = new System.Drawing.Size(102, 13);
+            this.lbTipoDispositivo.TabIndex = 32;
+            this.lbTipoDispositivo.Text = "Tipo Dispositivo:";
+            // 
+            // cboTipoDispotivo
+            // 
+            this.cboTipoDispotivo.DefaultItemsCountInDropDown = 30;
+            this.cboTipoDispotivo.Location = new System.Drawing.Point(109, 16);
+            this.cboTipoDispotivo.Name = "cboTipoDispotivo";
+            this.cboTipoDispotivo.Size = new System.Drawing.Size(244, 24);
+            this.cboTipoDispotivo.TabIndex = 31;
+            this.cboTipoDispotivo.ThemeName = "VisualStudio2012Light";
             // 
             // btnConsultar
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(1178, 15);
+            this.btnConsultar.Location = new System.Drawing.Point(1413, 9);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(104, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(101, 59);
             this.btnConsultar.TabIndex = 0;
-            this.btnConsultar.Text = "&Consultar      ";
-            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsultar.Text = "&Filtro";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
@@ -976,26 +1208,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbListado.Controls.Add(this.dgvDispositivo);
-            this.gbListado.Location = new System.Drawing.Point(7, 93);
+            this.gbListado.Location = new System.Drawing.Point(7, 121);
             this.gbListado.Name = "gbListado";
-            this.gbListado.Size = new System.Drawing.Size(1289, 489);
+            this.gbListado.Size = new System.Drawing.Size(1521, 523);
             this.gbListado.TabIndex = 195;
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado";
             // 
-            // btnVerProgramacionDiaria
+            // bgwActualizarLista
             // 
-            this.btnVerProgramacionDiaria.Enabled = false;
-            this.btnVerProgramacionDiaria.Image = ((System.Drawing.Image)(resources.GetObject("btnVerProgramacionDiaria.Image")));
-            this.btnVerProgramacionDiaria.Name = "btnVerProgramacionDiaria";
-            this.btnVerProgramacionDiaria.Size = new System.Drawing.Size(224, 22);
-            this.btnVerProgramacionDiaria.Text = "Ver programacion diaria";
-            this.btnVerProgramacionDiaria.Click += new System.EventHandler(this.btnVerProgramacionDiaria_Click);
+            this.bgwActualizarLista.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwRegistrar_DoWork);
+            this.bgwActualizarLista.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwActualizarLista_RunWorkerCompleted);
             // 
             // DispositivosListado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1301, 607);
+            this.ClientSize = new System.Drawing.Size(1533, 669);
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.gbCabecera);
             this.Controls.Add(this.BarraPrincipal);
@@ -1007,11 +1235,21 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DispositivosListado_FormClosing);
             this.Load += new System.EventHandler(this.DispositivosListado_Load);
             this.subMenu.ResumeLayout(false);
+            this.stsBarraEstado.ResumeLayout(false);
+            this.stsBarraEstado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispositivo.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispositivo)).EndInit();
             this.gbCabecera.ResumeLayout(false);
             this.gbCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboEstado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbofuncionamiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPertenencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSede)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoDispotivo)).EndInit();
             this.gbListado.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1045,7 +1283,6 @@
         private System.Windows.Forms.GroupBox gbCabecera;
         private System.Windows.Forms.GroupBox gbListado;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.CheckBox btnMostarAgrupado;
         private System.Windows.Forms.ToolStripMenuItem btnVistaPreviaTicketQR;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -1068,7 +1305,28 @@
         private Telerik.WinControls.UI.CommandBarButton commandBarButton8;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton9;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton10;
-        private System.ComponentModel.BackgroundWorker bgwRegistrar;
+        private System.ComponentModel.BackgroundWorker bgwActualizarLista;
         private System.Windows.Forms.ToolStripMenuItem btnVerProgramacionDiaria;
+        private System.Windows.Forms.Label lblEstado;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboEstado;
+        private System.Windows.Forms.Label lblFuncionamiento;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cbofuncionamiento;
+        private System.Windows.Forms.Label lblPertenencia;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboPertenencia;
+        private System.Windows.Forms.Label lblMarca;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboMarca;
+        private System.Windows.Forms.Label lblProveedor;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboProveedor;
+        private System.Windows.Forms.Label lbSede;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboSede;
+        private System.Windows.Forms.Label lblModelo;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboModelo;
+        private System.Windows.Forms.Label lbTipoDispositivo;
+        private Telerik.WinControls.UI.RadCheckedDropDownList cboTipoDispotivo;
+        private System.Windows.Forms.ToolStripStatusLabel lblUserNames;
+        private System.Windows.Forms.ToolStripStatusLabel lblCodeUser;
+        private System.Windows.Forms.ToolStripStatusLabel lblUser;
+        private System.Windows.Forms.ToolStripStatusLabel lblFullName;
+        private System.Windows.Forms.ToolStripProgressBar pgbar;
     }
 }

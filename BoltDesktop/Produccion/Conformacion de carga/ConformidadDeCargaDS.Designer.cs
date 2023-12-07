@@ -24,6 +24,8 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class ConformidadDeCargaDS : global::System.Data.DataSet {
         
+        private SAS_ListadoConformacionDeCargaPBIByIdDataTable tableSAS_ListadoConformacionDeCargaPBIById;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -52,6 +54,9 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["SAS_ListadoConformacionDeCargaPBIById"] != null)) {
+                    base.Tables.Add(new SAS_ListadoConformacionDeCargaPBIByIdDataTable(ds.Tables["SAS_ListadoConformacionDeCargaPBIById"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -68,6 +73,16 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SAS_ListadoConformacionDeCargaPBIByIdDataTable SAS_ListadoConformacionDeCargaPBIById {
+            get {
+                return this.tableSAS_ListadoConformacionDeCargaPBIById;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -137,6 +152,9 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["SAS_ListadoConformacionDeCargaPBIById"] != null)) {
+                    base.Tables.Add(new SAS_ListadoConformacionDeCargaPBIByIdDataTable(ds.Tables["SAS_ListadoConformacionDeCargaPBIById"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -170,6 +188,12 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableSAS_ListadoConformacionDeCargaPBIById = ((SAS_ListadoConformacionDeCargaPBIByIdDataTable)(base.Tables["SAS_ListadoConformacionDeCargaPBIById"]));
+            if ((initTable == true)) {
+                if ((this.tableSAS_ListadoConformacionDeCargaPBIById != null)) {
+                    this.tableSAS_ListadoConformacionDeCargaPBIById.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -180,6 +204,14 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
             this.Namespace = "http://tempuri.org/ConformidadDeCargaDS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableSAS_ListadoConformacionDeCargaPBIById = new SAS_ListadoConformacionDeCargaPBIByIdDataTable();
+            base.Tables.Add(this.tableSAS_ListadoConformacionDeCargaPBIById);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeSAS_ListadoConformacionDeCargaPBIById() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -235,6 +267,2823 @@ namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga {
             }
             xs.Add(dsSchema);
             return type;
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void SAS_ListadoConformacionDeCargaPBIByIdRowChangeEventHandler(object sender, SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SAS_ListadoConformacionDeCargaPBIByIdDataTable : global::System.Data.TypedTableBase<SAS_ListadoConformacionDeCargaPBIByIdRow> {
+            
+            private global::System.Data.DataColumn columnEmpresaID;
+            
+            private global::System.Data.DataColumn columnEmpresa;
+            
+            private global::System.Data.DataColumn columnSemana;
+            
+            private global::System.Data.DataColumn columnConformacionCargaId;
+            
+            private global::System.Data.DataColumn columnConformacionCargaFecha;
+            
+            private global::System.Data.DataColumn columnConformacionCarga;
+            
+            private global::System.Data.DataColumn columnNumeroContenedor;
+            
+            private global::System.Data.DataColumn columnBooking;
+            
+            private global::System.Data.DataColumn columnNumeroPackingList;
+            
+            private global::System.Data.DataColumn columnObservacion;
+            
+            private global::System.Data.DataColumn columnCampaniaId;
+            
+            private global::System.Data.DataColumn columnEstadoId;
+            
+            private global::System.Data.DataColumn columnEstadoConformidadCarga;
+            
+            private global::System.Data.DataColumn columnCampania;
+            
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnIdRegistroPaleta;
+            
+            private global::System.Data.DataColumn columnNumeroPaleta;
+            
+            private global::System.Data.DataColumn columnTipoDePaletaId;
+            
+            private global::System.Data.DataColumn columnTipoDePaleta;
+            
+            private global::System.Data.DataColumn columnClienteId;
+            
+            private global::System.Data.DataColumn columnCliente;
+            
+            private global::System.Data.DataColumn columnGrowerCode;
+            
+            private global::System.Data.DataColumn columnEstadoDetalle;
+            
+            private global::System.Data.DataColumn columnCultivoId;
+            
+            private global::System.Data.DataColumn columnCultivo;
+            
+            private global::System.Data.DataColumn columnVariedadId;
+            
+            private global::System.Data.DataColumn columnVariedad;
+            
+            private global::System.Data.DataColumn columnEnvaseId;
+            
+            private global::System.Data.DataColumn columnEnvase;
+            
+            private global::System.Data.DataColumn columnCategoriaId;
+            
+            private global::System.Data.DataColumn columnCategoria;
+            
+            private global::System.Data.DataColumn columnCalibreId;
+            
+            private global::System.Data.DataColumn columnCalibre;
+            
+            private global::System.Data.DataColumn columnColorId;
+            
+            private global::System.Data.DataColumn columnColor;
+            
+            private global::System.Data.DataColumn columnPahiruelaId;
+            
+            private global::System.Data.DataColumn columnPahiruela;
+            
+            private global::System.Data.DataColumn columnFechaProduccion;
+            
+            private global::System.Data.DataColumn columnCantidadCajas;
+            
+            private global::System.Data.DataColumn columnPaletaOrigen;
+            
+            private global::System.Data.DataColumn columntraza;
+            
+            private global::System.Data.DataColumn columnpesoReferencial;
+            
+            private global::System.Data.DataColumn columnEmbalajeId;
+            
+            private global::System.Data.DataColumn columnEmbalaje;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoConformacionDeCargaPBIByIdDataTable() {
+                this.TableName = "SAS_ListadoConformacionDeCargaPBIById";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SAS_ListadoConformacionDeCargaPBIByIdDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected SAS_ListadoConformacionDeCargaPBIByIdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmpresaIDColumn {
+                get {
+                    return this.columnEmpresaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmpresaColumn {
+                get {
+                    return this.columnEmpresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SemanaColumn {
+                get {
+                    return this.columnSemana;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ConformacionCargaIdColumn {
+                get {
+                    return this.columnConformacionCargaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ConformacionCargaFechaColumn {
+                get {
+                    return this.columnConformacionCargaFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ConformacionCargaColumn {
+                get {
+                    return this.columnConformacionCarga;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroContenedorColumn {
+                get {
+                    return this.columnNumeroContenedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BookingColumn {
+                get {
+                    return this.columnBooking;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroPackingListColumn {
+                get {
+                    return this.columnNumeroPackingList;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ObservacionColumn {
+                get {
+                    return this.columnObservacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CampaniaIdColumn {
+                get {
+                    return this.columnCampaniaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoIdColumn {
+                get {
+                    return this.columnEstadoId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoConformidadCargaColumn {
+                get {
+                    return this.columnEstadoConformidadCarga;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CampaniaColumn {
+                get {
+                    return this.columnCampania;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdRegistroPaletaColumn {
+                get {
+                    return this.columnIdRegistroPaleta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroPaletaColumn {
+                get {
+                    return this.columnNumeroPaleta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoDePaletaIdColumn {
+                get {
+                    return this.columnTipoDePaletaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoDePaletaColumn {
+                get {
+                    return this.columnTipoDePaleta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClienteIdColumn {
+                get {
+                    return this.columnClienteId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClienteColumn {
+                get {
+                    return this.columnCliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GrowerCodeColumn {
+                get {
+                    return this.columnGrowerCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoDetalleColumn {
+                get {
+                    return this.columnEstadoDetalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CultivoIdColumn {
+                get {
+                    return this.columnCultivoId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CultivoColumn {
+                get {
+                    return this.columnCultivo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VariedadIdColumn {
+                get {
+                    return this.columnVariedadId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VariedadColumn {
+                get {
+                    return this.columnVariedad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EnvaseIdColumn {
+                get {
+                    return this.columnEnvaseId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EnvaseColumn {
+                get {
+                    return this.columnEnvase;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CategoriaIdColumn {
+                get {
+                    return this.columnCategoriaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CategoriaColumn {
+                get {
+                    return this.columnCategoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CalibreIdColumn {
+                get {
+                    return this.columnCalibreId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CalibreColumn {
+                get {
+                    return this.columnCalibre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ColorIdColumn {
+                get {
+                    return this.columnColorId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ColorColumn {
+                get {
+                    return this.columnColor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PahiruelaIdColumn {
+                get {
+                    return this.columnPahiruelaId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PahiruelaColumn {
+                get {
+                    return this.columnPahiruela;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaProduccionColumn {
+                get {
+                    return this.columnFechaProduccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CantidadCajasColumn {
+                get {
+                    return this.columnCantidadCajas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PaletaOrigenColumn {
+                get {
+                    return this.columnPaletaOrigen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn trazaColumn {
+                get {
+                    return this.columntraza;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pesoReferencialColumn {
+                get {
+                    return this.columnpesoReferencial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmbalajeIdColumn {
+                get {
+                    return this.columnEmbalajeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmbalajeColumn {
+                get {
+                    return this.columnEmbalaje;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoConformacionDeCargaPBIByIdRow this[int index] {
+                get {
+                    return ((SAS_ListadoConformacionDeCargaPBIByIdRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoConformacionDeCargaPBIByIdRowChangeEventHandler SAS_ListadoConformacionDeCargaPBIByIdRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoConformacionDeCargaPBIByIdRowChangeEventHandler SAS_ListadoConformacionDeCargaPBIByIdRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoConformacionDeCargaPBIByIdRowChangeEventHandler SAS_ListadoConformacionDeCargaPBIByIdRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SAS_ListadoConformacionDeCargaPBIByIdRowChangeEventHandler SAS_ListadoConformacionDeCargaPBIByIdRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddSAS_ListadoConformacionDeCargaPBIByIdRow(SAS_ListadoConformacionDeCargaPBIByIdRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoConformacionDeCargaPBIByIdRow AddSAS_ListadoConformacionDeCargaPBIByIdRow(
+                        string EmpresaID, 
+                        string Empresa, 
+                        int Semana, 
+                        int ConformacionCargaId, 
+                        System.DateTime ConformacionCargaFecha, 
+                        string ConformacionCarga, 
+                        string NumeroContenedor, 
+                        string Booking, 
+                        string NumeroPackingList, 
+                        string Observacion, 
+                        string CampaniaId, 
+                        string EstadoId, 
+                        string EstadoConformidadCarga, 
+                        string Campania, 
+                        int Id, 
+                        string IdRegistroPaleta, 
+                        string NumeroPaleta, 
+                        string TipoDePaletaId, 
+                        string TipoDePaleta, 
+                        string ClienteId, 
+                        string Cliente, 
+                        string GrowerCode, 
+                        byte EstadoDetalle, 
+                        string CultivoId, 
+                        string Cultivo, 
+                        string VariedadId, 
+                        string Variedad, 
+                        string EnvaseId, 
+                        string Envase, 
+                        string CategoriaId, 
+                        string Categoria, 
+                        string CalibreId, 
+                        string Calibre, 
+                        string ColorId, 
+                        string Color, 
+                        string PahiruelaId, 
+                        string Pahiruela, 
+                        string FechaProduccion, 
+                        decimal CantidadCajas, 
+                        string PaletaOrigen, 
+                        string traza, 
+                        decimal pesoReferencial, 
+                        string EmbalajeId, 
+                        string Embalaje) {
+                SAS_ListadoConformacionDeCargaPBIByIdRow rowSAS_ListadoConformacionDeCargaPBIByIdRow = ((SAS_ListadoConformacionDeCargaPBIByIdRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        EmpresaID,
+                        Empresa,
+                        Semana,
+                        ConformacionCargaId,
+                        ConformacionCargaFecha,
+                        ConformacionCarga,
+                        NumeroContenedor,
+                        Booking,
+                        NumeroPackingList,
+                        Observacion,
+                        CampaniaId,
+                        EstadoId,
+                        EstadoConformidadCarga,
+                        Campania,
+                        Id,
+                        IdRegistroPaleta,
+                        NumeroPaleta,
+                        TipoDePaletaId,
+                        TipoDePaleta,
+                        ClienteId,
+                        Cliente,
+                        GrowerCode,
+                        EstadoDetalle,
+                        CultivoId,
+                        Cultivo,
+                        VariedadId,
+                        Variedad,
+                        EnvaseId,
+                        Envase,
+                        CategoriaId,
+                        Categoria,
+                        CalibreId,
+                        Calibre,
+                        ColorId,
+                        Color,
+                        PahiruelaId,
+                        Pahiruela,
+                        FechaProduccion,
+                        CantidadCajas,
+                        PaletaOrigen,
+                        traza,
+                        pesoReferencial,
+                        EmbalajeId,
+                        Embalaje};
+                rowSAS_ListadoConformacionDeCargaPBIByIdRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSAS_ListadoConformacionDeCargaPBIByIdRow);
+                return rowSAS_ListadoConformacionDeCargaPBIByIdRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SAS_ListadoConformacionDeCargaPBIByIdDataTable cln = ((SAS_ListadoConformacionDeCargaPBIByIdDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SAS_ListadoConformacionDeCargaPBIByIdDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEmpresaID = base.Columns["EmpresaID"];
+                this.columnEmpresa = base.Columns["Empresa"];
+                this.columnSemana = base.Columns["Semana"];
+                this.columnConformacionCargaId = base.Columns["ConformacionCargaId"];
+                this.columnConformacionCargaFecha = base.Columns["ConformacionCargaFecha"];
+                this.columnConformacionCarga = base.Columns["ConformacionCarga"];
+                this.columnNumeroContenedor = base.Columns["NumeroContenedor"];
+                this.columnBooking = base.Columns["Booking"];
+                this.columnNumeroPackingList = base.Columns["NumeroPackingList"];
+                this.columnObservacion = base.Columns["Observacion"];
+                this.columnCampaniaId = base.Columns["CampaniaId"];
+                this.columnEstadoId = base.Columns["EstadoId"];
+                this.columnEstadoConformidadCarga = base.Columns["EstadoConformidadCarga"];
+                this.columnCampania = base.Columns["Campania"];
+                this.columnId = base.Columns["Id"];
+                this.columnIdRegistroPaleta = base.Columns["IdRegistroPaleta"];
+                this.columnNumeroPaleta = base.Columns["NumeroPaleta"];
+                this.columnTipoDePaletaId = base.Columns["TipoDePaletaId"];
+                this.columnTipoDePaleta = base.Columns["TipoDePaleta"];
+                this.columnClienteId = base.Columns["ClienteId"];
+                this.columnCliente = base.Columns["Cliente"];
+                this.columnGrowerCode = base.Columns["GrowerCode"];
+                this.columnEstadoDetalle = base.Columns["EstadoDetalle"];
+                this.columnCultivoId = base.Columns["CultivoId"];
+                this.columnCultivo = base.Columns["Cultivo"];
+                this.columnVariedadId = base.Columns["VariedadId"];
+                this.columnVariedad = base.Columns["Variedad"];
+                this.columnEnvaseId = base.Columns["EnvaseId"];
+                this.columnEnvase = base.Columns["Envase"];
+                this.columnCategoriaId = base.Columns["CategoriaId"];
+                this.columnCategoria = base.Columns["Categoria"];
+                this.columnCalibreId = base.Columns["CalibreId"];
+                this.columnCalibre = base.Columns["Calibre"];
+                this.columnColorId = base.Columns["ColorId"];
+                this.columnColor = base.Columns["Color"];
+                this.columnPahiruelaId = base.Columns["PahiruelaId"];
+                this.columnPahiruela = base.Columns["Pahiruela"];
+                this.columnFechaProduccion = base.Columns["FechaProduccion"];
+                this.columnCantidadCajas = base.Columns["CantidadCajas"];
+                this.columnPaletaOrigen = base.Columns["PaletaOrigen"];
+                this.columntraza = base.Columns["traza"];
+                this.columnpesoReferencial = base.Columns["pesoReferencial"];
+                this.columnEmbalajeId = base.Columns["EmbalajeId"];
+                this.columnEmbalaje = base.Columns["Embalaje"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEmpresaID = new global::System.Data.DataColumn("EmpresaID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpresaID);
+                this.columnEmpresa = new global::System.Data.DataColumn("Empresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpresa);
+                this.columnSemana = new global::System.Data.DataColumn("Semana", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSemana);
+                this.columnConformacionCargaId = new global::System.Data.DataColumn("ConformacionCargaId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConformacionCargaId);
+                this.columnConformacionCargaFecha = new global::System.Data.DataColumn("ConformacionCargaFecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConformacionCargaFecha);
+                this.columnConformacionCarga = new global::System.Data.DataColumn("ConformacionCarga", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConformacionCarga);
+                this.columnNumeroContenedor = new global::System.Data.DataColumn("NumeroContenedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroContenedor);
+                this.columnBooking = new global::System.Data.DataColumn("Booking", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBooking);
+                this.columnNumeroPackingList = new global::System.Data.DataColumn("NumeroPackingList", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroPackingList);
+                this.columnObservacion = new global::System.Data.DataColumn("Observacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacion);
+                this.columnCampaniaId = new global::System.Data.DataColumn("CampaniaId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCampaniaId);
+                this.columnEstadoId = new global::System.Data.DataColumn("EstadoId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoId);
+                this.columnEstadoConformidadCarga = new global::System.Data.DataColumn("EstadoConformidadCarga", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoConformidadCarga);
+                this.columnCampania = new global::System.Data.DataColumn("Campania", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCampania);
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnIdRegistroPaleta = new global::System.Data.DataColumn("IdRegistroPaleta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdRegistroPaleta);
+                this.columnNumeroPaleta = new global::System.Data.DataColumn("NumeroPaleta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroPaleta);
+                this.columnTipoDePaletaId = new global::System.Data.DataColumn("TipoDePaletaId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoDePaletaId);
+                this.columnTipoDePaleta = new global::System.Data.DataColumn("TipoDePaleta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoDePaleta);
+                this.columnClienteId = new global::System.Data.DataColumn("ClienteId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClienteId);
+                this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente);
+                this.columnGrowerCode = new global::System.Data.DataColumn("GrowerCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrowerCode);
+                this.columnEstadoDetalle = new global::System.Data.DataColumn("EstadoDetalle", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoDetalle);
+                this.columnCultivoId = new global::System.Data.DataColumn("CultivoId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCultivoId);
+                this.columnCultivo = new global::System.Data.DataColumn("Cultivo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCultivo);
+                this.columnVariedadId = new global::System.Data.DataColumn("VariedadId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVariedadId);
+                this.columnVariedad = new global::System.Data.DataColumn("Variedad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVariedad);
+                this.columnEnvaseId = new global::System.Data.DataColumn("EnvaseId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnvaseId);
+                this.columnEnvase = new global::System.Data.DataColumn("Envase", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnvase);
+                this.columnCategoriaId = new global::System.Data.DataColumn("CategoriaId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoriaId);
+                this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoria);
+                this.columnCalibreId = new global::System.Data.DataColumn("CalibreId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCalibreId);
+                this.columnCalibre = new global::System.Data.DataColumn("Calibre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCalibre);
+                this.columnColorId = new global::System.Data.DataColumn("ColorId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColorId);
+                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColor);
+                this.columnPahiruelaId = new global::System.Data.DataColumn("PahiruelaId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPahiruelaId);
+                this.columnPahiruela = new global::System.Data.DataColumn("Pahiruela", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPahiruela);
+                this.columnFechaProduccion = new global::System.Data.DataColumn("FechaProduccion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaProduccion);
+                this.columnCantidadCajas = new global::System.Data.DataColumn("CantidadCajas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadCajas);
+                this.columnPaletaOrigen = new global::System.Data.DataColumn("PaletaOrigen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaletaOrigen);
+                this.columntraza = new global::System.Data.DataColumn("traza", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntraza);
+                this.columnpesoReferencial = new global::System.Data.DataColumn("pesoReferencial", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpesoReferencial);
+                this.columnEmbalajeId = new global::System.Data.DataColumn("EmbalajeId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmbalajeId);
+                this.columnEmbalaje = new global::System.Data.DataColumn("Embalaje", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmbalaje);
+                this.columnEmpresaID.ReadOnly = true;
+                this.columnEmpresaID.MaxLength = 3;
+                this.columnEmpresa.ReadOnly = true;
+                this.columnEmpresa.MaxLength = 29;
+                this.columnSemana.ReadOnly = true;
+                this.columnConformacionCargaId.AllowDBNull = false;
+                this.columnConformacionCargaFecha.AllowDBNull = false;
+                this.columnConformacionCarga.ReadOnly = true;
+                this.columnConformacionCarga.MaxLength = 250;
+                this.columnNumeroContenedor.ReadOnly = true;
+                this.columnNumeroContenedor.MaxLength = 20;
+                this.columnBooking.AllowDBNull = false;
+                this.columnBooking.MaxLength = 20;
+                this.columnNumeroPackingList.MaxLength = 30;
+                this.columnObservacion.MaxLength = 500;
+                this.columnCampaniaId.MaxLength = 4;
+                this.columnEstadoId.MaxLength = 2;
+                this.columnEstadoConformidadCarga.ReadOnly = true;
+                this.columnEstadoConformidadCarga.MaxLength = 30;
+                this.columnCampania.MaxLength = 100;
+                this.columnIdRegistroPaleta.MaxLength = 19;
+                this.columnNumeroPaleta.ReadOnly = true;
+                this.columnNumeroPaleta.MaxLength = 20;
+                this.columnTipoDePaletaId.MaxLength = 3;
+                this.columnTipoDePaleta.ReadOnly = true;
+                this.columnTipoDePaleta.MaxLength = 50;
+                this.columnClienteId.ReadOnly = true;
+                this.columnClienteId.MaxLength = 14;
+                this.columnCliente.ReadOnly = true;
+                this.columnCliente.MaxLength = 200;
+                this.columnGrowerCode.ReadOnly = true;
+                this.columnGrowerCode.MaxLength = 8000;
+                this.columnCultivoId.MaxLength = 4;
+                this.columnCultivo.ReadOnly = true;
+                this.columnCultivo.MaxLength = 50;
+                this.columnVariedadId.MaxLength = 3;
+                this.columnVariedad.ReadOnly = true;
+                this.columnVariedad.MaxLength = 80;
+                this.columnEnvaseId.MaxLength = 3;
+                this.columnEnvase.ReadOnly = true;
+                this.columnEnvase.MaxLength = 12;
+                this.columnCategoriaId.MaxLength = 3;
+                this.columnCategoria.ReadOnly = true;
+                this.columnCategoria.MaxLength = 10;
+                this.columnCalibreId.MaxLength = 6;
+                this.columnCalibre.MaxLength = 10;
+                this.columnColorId.ReadOnly = true;
+                this.columnColorId.MaxLength = 3;
+                this.columnColor.MaxLength = 10;
+                this.columnPahiruelaId.ReadOnly = true;
+                this.columnPahiruelaId.MaxLength = 3;
+                this.columnPahiruela.ReadOnly = true;
+                this.columnPahiruela.MaxLength = 100;
+                this.columnFechaProduccion.ReadOnly = true;
+                this.columnFechaProduccion.MaxLength = 8000;
+                this.columnPaletaOrigen.ReadOnly = true;
+                this.columnPaletaOrigen.MaxLength = 8000;
+                this.columntraza.ReadOnly = true;
+                this.columntraza.MaxLength = 8000;
+                this.columnpesoReferencial.ReadOnly = true;
+                this.columnEmbalajeId.MaxLength = 10;
+                this.columnEmbalaje.MaxLength = 20;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoConformacionDeCargaPBIByIdRow NewSAS_ListadoConformacionDeCargaPBIByIdRow() {
+                return ((SAS_ListadoConformacionDeCargaPBIByIdRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SAS_ListadoConformacionDeCargaPBIByIdRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SAS_ListadoConformacionDeCargaPBIByIdRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SAS_ListadoConformacionDeCargaPBIByIdRowChanged != null)) {
+                    this.SAS_ListadoConformacionDeCargaPBIByIdRowChanged(this, new SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent(((SAS_ListadoConformacionDeCargaPBIByIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SAS_ListadoConformacionDeCargaPBIByIdRowChanging != null)) {
+                    this.SAS_ListadoConformacionDeCargaPBIByIdRowChanging(this, new SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent(((SAS_ListadoConformacionDeCargaPBIByIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SAS_ListadoConformacionDeCargaPBIByIdRowDeleted != null)) {
+                    this.SAS_ListadoConformacionDeCargaPBIByIdRowDeleted(this, new SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent(((SAS_ListadoConformacionDeCargaPBIByIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SAS_ListadoConformacionDeCargaPBIByIdRowDeleting != null)) {
+                    this.SAS_ListadoConformacionDeCargaPBIByIdRowDeleting(this, new SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent(((SAS_ListadoConformacionDeCargaPBIByIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveSAS_ListadoConformacionDeCargaPBIByIdRow(SAS_ListadoConformacionDeCargaPBIByIdRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ConformidadDeCargaDS ds = new ConformidadDeCargaDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SAS_ListadoConformacionDeCargaPBIByIdDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SAS_ListadoConformacionDeCargaPBIByIdRow : global::System.Data.DataRow {
+            
+            private SAS_ListadoConformacionDeCargaPBIByIdDataTable tableSAS_ListadoConformacionDeCargaPBIById;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SAS_ListadoConformacionDeCargaPBIByIdRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSAS_ListadoConformacionDeCargaPBIById = ((SAS_ListadoConformacionDeCargaPBIByIdDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EmpresaID {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmpresaID\' in table \'SAS_ListadoConformacionDeCargaPBIById\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Empresa {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Empresa\' in table \'SAS_ListadoConformacionDeCargaPBIById\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Semana {
+                get {
+                    try {
+                        return ((int)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.SemanaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Semana\' in table \'SAS_ListadoConformacionDeCargaPBIById\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.SemanaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ConformacionCargaId {
+                get {
+                    return ((int)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaIdColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ConformacionCargaFecha {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaFechaColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaFechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ConformacionCarga {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ConformacionCarga\' in table \'SAS_ListadoConformacionDeCarga" +
+                                "PBIById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroContenedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroContenedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroContenedor\' in table \'SAS_ListadoConformacionDeCargaP" +
+                                "BIById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroContenedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Booking {
+                get {
+                    return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.BookingColumn]));
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.BookingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroPackingList {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPackingListColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroPackingList\' in table \'SAS_ListadoConformacionDeCarga" +
+                                "PBIById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPackingListColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Observacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ObservacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Observacion\' in table \'SAS_ListadoConformacionDeCargaPBIByI" +
+                                "d\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ObservacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CampaniaId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CampaniaId\' in table \'SAS_ListadoConformacionDeCargaPBIById" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EstadoId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EstadoId\' in table \'SAS_ListadoConformacionDeCargaPBIById\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EstadoConformidadCarga {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoConformidadCargaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EstadoConformidadCarga\' in table \'SAS_ListadoConformacionDe" +
+                                "CargaPBIById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoConformidadCargaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Campania {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Campania\' in table \'SAS_ListadoConformacionDeCargaPBIById\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    try {
+                        return ((int)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id\' in table \'SAS_ListadoConformacionDeCargaPBIById\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IdRegistroPaleta {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.IdRegistroPaletaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdRegistroPaleta\' in table \'SAS_ListadoConformacionDeCargaP" +
+                                "BIById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.IdRegistroPaletaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroPaleta {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPaletaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroPaleta\' in table \'SAS_ListadoConformacionDeCargaPBIBy" +
+                                "Id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPaletaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoDePaletaId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoDePaletaId\' in table \'SAS_ListadoConformacionDeCargaPBI" +
+                                "ById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoDePaleta {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoDePaleta\' in table \'SAS_ListadoConformacionDeCargaPBIBy" +
+                                "Id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ClienteId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClienteId\' in table \'SAS_ListadoConformacionDeCargaPBIById\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Cliente {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Cliente\' in table \'SAS_ListadoConformacionDeCargaPBIById\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GrowerCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.GrowerCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrowerCode\' in table \'SAS_ListadoConformacionDeCargaPBIById" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.GrowerCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte EstadoDetalle {
+                get {
+                    try {
+                        return ((byte)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoDetalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EstadoDetalle\' in table \'SAS_ListadoConformacionDeCargaPBIB" +
+                                "yId\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoDetalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CultivoId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CultivoId\' in table \'SAS_ListadoConformacionDeCargaPBIById\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Cultivo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Cultivo\' in table \'SAS_ListadoConformacionDeCargaPBIById\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VariedadId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VariedadId\' in table \'SAS_ListadoConformacionDeCargaPBIById" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Variedad {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Variedad\' in table \'SAS_ListadoConformacionDeCargaPBIById\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EnvaseId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EnvaseId\' in table \'SAS_ListadoConformacionDeCargaPBIById\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Envase {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Envase\' in table \'SAS_ListadoConformacionDeCargaPBIById\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CategoriaId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CategoriaId\' in table \'SAS_ListadoConformacionDeCargaPBIByI" +
+                                "d\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Categoria {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Categoria\' in table \'SAS_ListadoConformacionDeCargaPBIById\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CalibreId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CalibreId\' in table \'SAS_ListadoConformacionDeCargaPBIById\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Calibre {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Calibre\' in table \'SAS_ListadoConformacionDeCargaPBIById\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ColorId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ColorIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ColorId\' in table \'SAS_ListadoConformacionDeCargaPBIById\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ColorIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Color {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.ColorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Color\' in table \'SAS_ListadoConformacionDeCargaPBIById\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.ColorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PahiruelaId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PahiruelaId\' in table \'SAS_ListadoConformacionDeCargaPBIByI" +
+                                "d\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Pahiruela {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pahiruela\' in table \'SAS_ListadoConformacionDeCargaPBIById\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FechaProduccion {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.FechaProduccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaProduccion\' in table \'SAS_ListadoConformacionDeCargaPB" +
+                                "IById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.FechaProduccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CantidadCajas {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.CantidadCajasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CantidadCajas\' in table \'SAS_ListadoConformacionDeCargaPBIB" +
+                                "yId\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.CantidadCajasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PaletaOrigen {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.PaletaOrigenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaletaOrigen\' in table \'SAS_ListadoConformacionDeCargaPBIBy" +
+                                "Id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.PaletaOrigenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string traza {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.trazaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'traza\' in table \'SAS_ListadoConformacionDeCargaPBIById\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.trazaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal pesoReferencial {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.pesoReferencialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pesoReferencial\' in table \'SAS_ListadoConformacionDeCargaPB" +
+                                "IById\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.pesoReferencialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EmbalajeId {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmbalajeId\' in table \'SAS_ListadoConformacionDeCargaPBIById" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Embalaje {
+                get {
+                    try {
+                        return ((string)(this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Embalaje\' in table \'SAS_ListadoConformacionDeCargaPBIById\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmpresaIDNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmpresaIDNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmpresaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmpresaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmpresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSemanaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.SemanaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSemanaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.SemanaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsConformacionCargaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetConformacionCargaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.ConformacionCargaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroContenedorNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroContenedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroContenedorNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroContenedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroPackingListNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPackingListColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroPackingListNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPackingListColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObservacionNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.ObservacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObservacionNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.ObservacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCampaniaIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCampaniaIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoConformidadCargaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoConformidadCargaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoConformidadCargaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoConformidadCargaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCampaniaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCampaniaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CampaniaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdRegistroPaletaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.IdRegistroPaletaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdRegistroPaletaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.IdRegistroPaletaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroPaletaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPaletaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroPaletaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.NumeroPaletaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoDePaletaIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoDePaletaIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoDePaletaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoDePaletaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.TipoDePaletaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClienteIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClienteIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClienteNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClienteNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.ClienteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGrowerCodeNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.GrowerCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGrowerCodeNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.GrowerCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoDetalleNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoDetalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoDetalleNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EstadoDetalleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCultivoIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCultivoIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCultivoNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCultivoNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CultivoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVariedadIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVariedadIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVariedadNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVariedadNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.VariedadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEnvaseIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEnvaseIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEnvaseNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEnvaseNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EnvaseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCategoriaIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCategoriaIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCategoriaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCategoriaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CategoriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCalibreIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCalibreIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCalibreNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCalibreNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CalibreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsColorIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.ColorIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetColorIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.ColorIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsColorNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.ColorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetColorNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.ColorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPahiruelaIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPahiruelaIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPahiruelaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPahiruelaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.PahiruelaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaProduccionNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.FechaProduccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaProduccionNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.FechaProduccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCantidadCajasNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.CantidadCajasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCantidadCajasNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.CantidadCajasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPaletaOrigenNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.PaletaOrigenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPaletaOrigenNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.PaletaOrigenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstrazaNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.trazaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettrazaNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.trazaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspesoReferencialNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.pesoReferencialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpesoReferencialNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.pesoReferencialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmbalajeIdNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmbalajeIdNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmbalajeNull() {
+                return this.IsNull(this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmbalajeNull() {
+                this[this.tableSAS_ListadoConformacionDeCargaPBIById.EmbalajeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent : global::System.EventArgs {
+            
+            private SAS_ListadoConformacionDeCargaPBIByIdRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoConformacionDeCargaPBIByIdRowChangeEvent(SAS_ListadoConformacionDeCargaPBIByIdRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SAS_ListadoConformacionDeCargaPBIByIdRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+    }
+}
+namespace ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga.ConformidadDeCargaDSTableAdapters {
+    
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SAS_ListadoConformacionDeCargaPBIByIdTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public SAS_ListadoConformacionDeCargaPBIByIdTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SAS_ListadoConformacionDeCargaPBIById";
+            tableMapping.ColumnMappings.Add("EmpresaID", "EmpresaID");
+            tableMapping.ColumnMappings.Add("Empresa", "Empresa");
+            tableMapping.ColumnMappings.Add("Semana", "Semana");
+            tableMapping.ColumnMappings.Add("ConformacionCargaId", "ConformacionCargaId");
+            tableMapping.ColumnMappings.Add("ConformacionCargaFecha", "ConformacionCargaFecha");
+            tableMapping.ColumnMappings.Add("ConformacionCarga", "ConformacionCarga");
+            tableMapping.ColumnMappings.Add("NumeroContenedor", "NumeroContenedor");
+            tableMapping.ColumnMappings.Add("Booking", "Booking");
+            tableMapping.ColumnMappings.Add("NumeroPackingList", "NumeroPackingList");
+            tableMapping.ColumnMappings.Add("Observacion", "Observacion");
+            tableMapping.ColumnMappings.Add("CampaniaId", "CampaniaId");
+            tableMapping.ColumnMappings.Add("EstadoId", "EstadoId");
+            tableMapping.ColumnMappings.Add("EstadoConformidadCarga", "EstadoConformidadCarga");
+            tableMapping.ColumnMappings.Add("Campania", "Campania");
+            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("IdRegistroPaleta", "IdRegistroPaleta");
+            tableMapping.ColumnMappings.Add("NumeroPaleta", "NumeroPaleta");
+            tableMapping.ColumnMappings.Add("TipoDePaletaId", "TipoDePaletaId");
+            tableMapping.ColumnMappings.Add("TipoDePaleta", "TipoDePaleta");
+            tableMapping.ColumnMappings.Add("ClienteId", "ClienteId");
+            tableMapping.ColumnMappings.Add("Cliente", "Cliente");
+            tableMapping.ColumnMappings.Add("GrowerCode", "GrowerCode");
+            tableMapping.ColumnMappings.Add("EstadoDetalle", "EstadoDetalle");
+            tableMapping.ColumnMappings.Add("CultivoId", "CultivoId");
+            tableMapping.ColumnMappings.Add("Cultivo", "Cultivo");
+            tableMapping.ColumnMappings.Add("VariedadId", "VariedadId");
+            tableMapping.ColumnMappings.Add("Variedad", "Variedad");
+            tableMapping.ColumnMappings.Add("EnvaseId", "EnvaseId");
+            tableMapping.ColumnMappings.Add("Envase", "Envase");
+            tableMapping.ColumnMappings.Add("CategoriaId", "CategoriaId");
+            tableMapping.ColumnMappings.Add("Categoria", "Categoria");
+            tableMapping.ColumnMappings.Add("CalibreId", "CalibreId");
+            tableMapping.ColumnMappings.Add("Calibre", "Calibre");
+            tableMapping.ColumnMappings.Add("ColorId", "ColorId");
+            tableMapping.ColumnMappings.Add("Color", "Color");
+            tableMapping.ColumnMappings.Add("PahiruelaId", "PahiruelaId");
+            tableMapping.ColumnMappings.Add("Pahiruela", "Pahiruela");
+            tableMapping.ColumnMappings.Add("FechaProduccion", "FechaProduccion");
+            tableMapping.ColumnMappings.Add("CantidadCajas", "CantidadCajas");
+            tableMapping.ColumnMappings.Add("PaletaOrigen", "PaletaOrigen");
+            tableMapping.ColumnMappings.Add("traza", "traza");
+            tableMapping.ColumnMappings.Add("pesoReferencial", "pesoReferencial");
+            tableMapping.ColumnMappings.Add("EmbalajeId", "EmbalajeId");
+            tableMapping.ColumnMappings.Add("Embalaje", "Embalaje");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ComparativoHorasVisualSATNISIRA.Properties.Settings.Default.SATURNOConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SAS_ListadoConformacionDeCargaPBIById";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ConformidadDeCargaDS.SAS_ListadoConformacionDeCargaPBIByIdDataTable dataTable, global::System.Nullable<int> Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ConformidadDeCargaDS.SAS_ListadoConformacionDeCargaPBIByIdDataTable GetData(global::System.Nullable<int> Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            ConformidadDeCargaDS.SAS_ListadoConformacionDeCargaPBIByIdDataTable dataTable = new ConformidadDeCargaDS.SAS_ListadoConformacionDeCargaPBIByIdDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD" +
+        "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")]
+    public partial class TableAdapterManager : global::System.ComponentModel.Component {
+        
+        private UpdateOrderOption _updateOrder;
+        
+        private bool _backupDataSetBeforeUpdate;
+        
+        private global::System.Data.IDbConnection _connection;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public UpdateOrderOption UpdateOrder {
+            get {
+                return this._updateOrder;
+            }
+            set {
+                this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool BackupDataSetBeforeUpdate {
+            get {
+                return this._backupDataSetBeforeUpdate;
+            }
+            set {
+                this._backupDataSetBeforeUpdate = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        public global::System.Data.IDbConnection Connection {
+            get {
+                if ((this._connection != null)) {
+                    return this._connection;
+                }
+                return null;
+            }
+            set {
+                this._connection = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        public int TableAdapterInstanceCount {
+            get {
+                int count = 0;
+                return count;
+            }
+        }
+        
+        /// <summary>
+        ///Update rows in top-down order.
+        ///</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private int UpdateUpdatedRows(ConformidadDeCargaDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+            int result = 0;
+            return result;
+        }
+        
+        /// <summary>
+        ///Insert rows in top-down order.
+        ///</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private int UpdateInsertedRows(ConformidadDeCargaDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+            int result = 0;
+            return result;
+        }
+        
+        /// <summary>
+        ///Delete rows in bottom-up order.
+        ///</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private int UpdateDeletedRows(ConformidadDeCargaDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+            int result = 0;
+            return result;
+        }
+        
+        /// <summary>
+        ///Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+        ///</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private global::System.Data.DataRow[] GetRealUpdatedRows(global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+            if (((updatedRows == null) 
+                        || (updatedRows.Length < 1))) {
+                return updatedRows;
+            }
+            if (((allAddedRows == null) 
+                        || (allAddedRows.Count < 1))) {
+                return updatedRows;
+            }
+            global::System.Collections.Generic.List<global::System.Data.DataRow> realUpdatedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
+            for (int i = 0; (i < updatedRows.Length); i = (i + 1)) {
+                global::System.Data.DataRow row = updatedRows[i];
+                if ((allAddedRows.Contains(row) == false)) {
+                    realUpdatedRows.Add(row);
+                }
+            }
+            return realUpdatedRows.ToArray();
+        }
+        
+        /// <summary>
+        ///Update all changes to the dataset.
+        ///</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public virtual int UpdateAll(ConformidadDeCargaDS dataSet) {
+            if ((dataSet == null)) {
+                throw new global::System.ArgumentNullException("dataSet");
+            }
+            if ((dataSet.HasChanges() == false)) {
+                return 0;
+            }
+            global::System.Data.IDbConnection workConnection = this.Connection;
+            if ((workConnection == null)) {
+                throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
+                        "ger TableAdapter property to a valid TableAdapter instance.");
+            }
+            bool workConnOpened = false;
+            if (((workConnection.State & global::System.Data.ConnectionState.Broken) 
+                        == global::System.Data.ConnectionState.Broken)) {
+                workConnection.Close();
+            }
+            if ((workConnection.State == global::System.Data.ConnectionState.Closed)) {
+                workConnection.Open();
+                workConnOpened = true;
+            }
+            global::System.Data.IDbTransaction workTransaction = workConnection.BeginTransaction();
+            if ((workTransaction == null)) {
+                throw new global::System.ApplicationException("The transaction cannot begin. The current data connection does not support transa" +
+                        "ctions or the current state is not allowing the transaction to begin.");
+            }
+            global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
+            global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
+            global::System.Collections.Generic.List<global::System.Data.Common.DataAdapter> adaptersWithAcceptChangesDuringUpdate = new global::System.Collections.Generic.List<global::System.Data.Common.DataAdapter>();
+            global::System.Collections.Generic.Dictionary<object, global::System.Data.IDbConnection> revertConnections = new global::System.Collections.Generic.Dictionary<object, global::System.Data.IDbConnection>();
+            int result = 0;
+            global::System.Data.DataSet backupDataSet = null;
+            if (this.BackupDataSetBeforeUpdate) {
+                backupDataSet = new global::System.Data.DataSet();
+                backupDataSet.Merge(dataSet);
+            }
+            try {
+                // ---- Prepare for update -----------
+                //
+                // 
+                //---- Perform updates -----------
+                //
+                if ((this.UpdateOrder == UpdateOrderOption.UpdateInsertDelete)) {
+                    result = (result + this.UpdateUpdatedRows(dataSet, allChangedRows, allAddedRows));
+                    result = (result + this.UpdateInsertedRows(dataSet, allAddedRows));
+                }
+                else {
+                    result = (result + this.UpdateInsertedRows(dataSet, allAddedRows));
+                    result = (result + this.UpdateUpdatedRows(dataSet, allChangedRows, allAddedRows));
+                }
+                result = (result + this.UpdateDeletedRows(dataSet, allChangedRows));
+                // 
+                //---- Commit updates -----------
+                //
+                workTransaction.Commit();
+                if ((0 < allAddedRows.Count)) {
+                    global::System.Data.DataRow[] rows = new System.Data.DataRow[allAddedRows.Count];
+                    allAddedRows.CopyTo(rows);
+                    for (int i = 0; (i < rows.Length); i = (i + 1)) {
+                        global::System.Data.DataRow row = rows[i];
+                        row.AcceptChanges();
+                    }
+                }
+                if ((0 < allChangedRows.Count)) {
+                    global::System.Data.DataRow[] rows = new System.Data.DataRow[allChangedRows.Count];
+                    allChangedRows.CopyTo(rows);
+                    for (int i = 0; (i < rows.Length); i = (i + 1)) {
+                        global::System.Data.DataRow row = rows[i];
+                        row.AcceptChanges();
+                    }
+                }
+            }
+            catch (global::System.Exception ex) {
+                workTransaction.Rollback();
+                // ---- Restore the dataset -----------
+                if (this.BackupDataSetBeforeUpdate) {
+                    global::System.Diagnostics.Debug.Assert((backupDataSet != null));
+                    dataSet.Clear();
+                    dataSet.Merge(backupDataSet);
+                }
+                else {
+                    if ((0 < allAddedRows.Count)) {
+                        global::System.Data.DataRow[] rows = new System.Data.DataRow[allAddedRows.Count];
+                        allAddedRows.CopyTo(rows);
+                        for (int i = 0; (i < rows.Length); i = (i + 1)) {
+                            global::System.Data.DataRow row = rows[i];
+                            row.AcceptChanges();
+                            row.SetAdded();
+                        }
+                    }
+                }
+                throw ex;
+            }
+            finally {
+                if (workConnOpened) {
+                    workConnection.Close();
+                }
+                if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
+                    global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
+                    adaptersWithAcceptChangesDuringUpdate.CopyTo(adapters);
+                    for (int i = 0; (i < adapters.Length); i = (i + 1)) {
+                        global::System.Data.Common.DataAdapter adapter = adapters[i];
+                        adapter.AcceptChangesDuringUpdate = true;
+                    }
+                }
+            }
+            return result;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected virtual void SortSelfReferenceRows(global::System.Data.DataRow[] rows, global::System.Data.DataRelation relation, bool childFirst) {
+            global::System.Array.Sort<global::System.Data.DataRow>(rows, new SelfReferenceComparer(relation, childFirst));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected virtual bool MatchTableAdapterConnection(global::System.Data.IDbConnection inputConnection) {
+            if ((this._connection != null)) {
+                return true;
+            }
+            if (((this.Connection == null) 
+                        || (inputConnection == null))) {
+                return true;
+            }
+            if (string.Equals(this.Connection.ConnectionString, inputConnection.ConnectionString, global::System.StringComparison.Ordinal)) {
+                return true;
+            }
+            return false;
+        }
+        
+        /// <summary>
+        ///Update Order Option
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public enum UpdateOrderOption {
+            
+            InsertUpdateDelete = 0,
+            
+            UpdateInsertDelete = 1,
+        }
+        
+        /// <summary>
+        ///Used to sort self-referenced table's rows
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private class SelfReferenceComparer : object, global::System.Collections.Generic.IComparer<global::System.Data.DataRow> {
+            
+            private global::System.Data.DataRelation _relation;
+            
+            private int _childFirst;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SelfReferenceComparer(global::System.Data.DataRelation relation, bool childFirst) {
+                this._relation = relation;
+                if (childFirst) {
+                    this._childFirst = -1;
+                }
+                else {
+                    this._childFirst = 1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private global::System.Data.DataRow GetRoot(global::System.Data.DataRow row, out int distance) {
+                global::System.Diagnostics.Debug.Assert((row != null));
+                global::System.Data.DataRow root = row;
+                distance = 0;
+
+                global::System.Collections.Generic.IDictionary<global::System.Data.DataRow, global::System.Data.DataRow> traversedRows = new global::System.Collections.Generic.Dictionary<global::System.Data.DataRow, global::System.Data.DataRow>();
+                traversedRows[row] = row;
+
+                global::System.Data.DataRow parent = row.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
+                for (
+                ; ((parent != null) 
+                            && (traversedRows.ContainsKey(parent) == false)); 
+                ) {
+                    distance = (distance + 1);
+                    root = parent;
+                    traversedRows[parent] = parent;
+                    parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
+                }
+
+                if ((distance == 0)) {
+                    traversedRows.Clear();
+                    traversedRows[row] = row;
+                    parent = row.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
+                    for (
+                    ; ((parent != null) 
+                                && (traversedRows.ContainsKey(parent) == false)); 
+                    ) {
+                        distance = (distance + 1);
+                        root = parent;
+                        traversedRows[parent] = parent;
+                        parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
+                    }
+                }
+
+                return root;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Compare(global::System.Data.DataRow row1, global::System.Data.DataRow row2) {
+                if (object.ReferenceEquals(row1, row2)) {
+                    return 0;
+                }
+                if ((row1 == null)) {
+                    return -1;
+                }
+                if ((row2 == null)) {
+                    return 1;
+                }
+
+                int distance1 = 0;
+                global::System.Data.DataRow root1 = this.GetRoot(row1, out distance1);
+
+                int distance2 = 0;
+                global::System.Data.DataRow root2 = this.GetRoot(row2, out distance2);
+
+                if (object.ReferenceEquals(root1, root2)) {
+                    return (this._childFirst * distance1.CompareTo(distance2));
+                }
+                else {
+                    global::System.Diagnostics.Debug.Assert(((root1.Table != null) 
+                                    && (root2.Table != null)));
+                    if ((root1.Table.Rows.IndexOf(root1) < root2.Table.Rows.IndexOf(root2))) {
+                        return -1;
+                    }
+                    else {
+                        return 1;
+                    }
+                }
+            }
         }
     }
 }
