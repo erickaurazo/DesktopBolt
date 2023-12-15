@@ -87,6 +87,11 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVerLineaCelular = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVerProgramacionDiaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnProgramarSoporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnProgramarDisponibilidad = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRegistrarInspeccion = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -114,7 +119,7 @@
             this.btnCImprimir = new Telerik.WinControls.UI.CommandBarButton();
             this.btnImprimirQR = new Telerik.WinControls.UI.CommandBarButton();
             this.btnGenerarExcelDinamico = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton8 = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnGenerarImagenesPendientes = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton9 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton10 = new Telerik.WinControls.UI.CommandBarButton();
             this.btnElegirColumnas = new Telerik.WinControls.UI.CommandBarButton();
@@ -175,9 +180,14 @@
             this.btnVistaPreviaDeFichaDeDispositivo,
             this.toolStripSeparator2,
             this.btnVerLineaCelular,
-            this.btnVerProgramacionDiaria});
+            this.btnVerProgramacionDiaria,
+            this.toolStripSeparator4,
+            this.toolStripSeparator5,
+            this.btnProgramarSoporte,
+            this.btnProgramarDisponibilidad,
+            this.btnRegistrarInspeccion});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(225, 286);
+            this.subMenu.Size = new System.Drawing.Size(225, 364);
             // 
             // btnHabilitar
             // 
@@ -304,6 +314,43 @@
             this.btnVerProgramacionDiaria.Text = "Ver programacion diaria";
             this.btnVerProgramacionDiaria.Click += new System.EventHandler(this.btnVerProgramacionDiaria_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(221, 6);
+            // 
+            // btnProgramarSoporte
+            // 
+            this.btnProgramarSoporte.Enabled = false;
+            this.btnProgramarSoporte.Image = ((System.Drawing.Image)(resources.GetObject("btnProgramarSoporte.Image")));
+            this.btnProgramarSoporte.Name = "btnProgramarSoporte";
+            this.btnProgramarSoporte.Size = new System.Drawing.Size(224, 22);
+            this.btnProgramarSoporte.Text = "Programar soporte";
+            this.btnProgramarSoporte.Click += new System.EventHandler(this.btnProgramarSoporte_Click);
+            // 
+            // btnProgramarDisponibilidad
+            // 
+            this.btnProgramarDisponibilidad.Enabled = false;
+            this.btnProgramarDisponibilidad.Image = ((System.Drawing.Image)(resources.GetObject("btnProgramarDisponibilidad.Image")));
+            this.btnProgramarDisponibilidad.Name = "btnProgramarDisponibilidad";
+            this.btnProgramarDisponibilidad.Size = new System.Drawing.Size(224, 22);
+            this.btnProgramarDisponibilidad.Text = "Programar disponibilidad";
+            this.btnProgramarDisponibilidad.Click += new System.EventHandler(this.btnProgramarDisponibilidad_Click);
+            // 
+            // btnRegistrarInspeccion
+            // 
+            this.btnRegistrarInspeccion.Enabled = false;
+            this.btnRegistrarInspeccion.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarInspeccion.Image")));
+            this.btnRegistrarInspeccion.Name = "btnRegistrarInspeccion";
+            this.btnRegistrarInspeccion.Size = new System.Drawing.Size(224, 22);
+            this.btnRegistrarInspeccion.Text = "Registrar Inpección";
+            this.btnRegistrarInspeccion.Click += new System.EventHandler(this.btnRegistrarInspeccion_Click);
+            // 
             // stsBarraEstado
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -314,7 +361,7 @@
             this.pgbar});
             this.stsBarraEstado.Location = new System.Drawing.Point(0, 647);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1533, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1370, 22);
             this.stsBarraEstado.TabIndex = 191;
             // 
             // lblUserNames
@@ -359,7 +406,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1533, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1370, 37);
             this.BarraPrincipal.TabIndex = 192;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -419,7 +466,7 @@
             this.btnCImprimir,
             this.btnImprimirQR,
             this.btnGenerarExcelDinamico,
-            this.commandBarButton8,
+            this.btnGenerarImagenesPendientes,
             this.commandBarButton9,
             this.commandBarButton10,
             this.btnElegirColumnas,
@@ -616,17 +663,17 @@
             this.btnGenerarExcelDinamico.ToolTipText = "Excel dinamico";
             this.btnGenerarExcelDinamico.Click += new System.EventHandler(this.btnGenerarExcelDinamico_Click);
             // 
-            // commandBarButton8
+            // btnGenerarImagenesPendientes
             // 
-            this.commandBarButton8.AccessibleDescription = "commandBarButton8";
-            this.commandBarButton8.AccessibleName = "commandBarButton8";
-            this.commandBarButton8.AutoSize = false;
-            this.commandBarButton8.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
-            this.commandBarButton8.DisplayName = "commandBarButton8";
-            this.commandBarButton8.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton8.Image")));
-            this.commandBarButton8.Name = "commandBarButton8";
-            this.commandBarButton8.Text = "commandBarButton8";
-            this.commandBarButton8.VisibleInStrip = false;
+            this.btnGenerarImagenesPendientes.AccessibleDescription = "GenerarImagenesPendientes";
+            this.btnGenerarImagenesPendientes.AccessibleName = "GenerarImagenesPendientes";
+            this.btnGenerarImagenesPendientes.AutoSize = false;
+            this.btnGenerarImagenesPendientes.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnGenerarImagenesPendientes.DisplayName = "GenerarImagenesPendientes";
+            this.btnGenerarImagenesPendientes.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarImagenesPendientes.Image")));
+            this.btnGenerarImagenesPendientes.Name = "btnGenerarImagenesPendientes";
+            this.btnGenerarImagenesPendientes.Text = "";
+            this.btnGenerarImagenesPendientes.Click += new System.EventHandler(this.btnGenerarImagenesPendientes_Click);
             // 
             // commandBarButton9
             // 
@@ -702,6 +749,7 @@
             gridViewTextBoxColumn1.HeaderText = "Cod.";
             gridViewTextBoxColumn1.Name = "chid";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn1.Width = 45;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "sedeDescripcion";
             gridViewTextBoxColumn2.HeaderText = "Sede.";
@@ -720,14 +768,14 @@
             gridViewTextBoxColumn4.Multiline = true;
             gridViewTextBoxColumn4.Name = "chtipoDispositivo";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 168;
+            gridViewTextBoxColumn4.Width = 150;
             gridViewTextBoxColumn4.WrapText = true;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "dispositivo";
             gridViewTextBoxColumn5.HeaderText = "Dispositivo";
             gridViewTextBoxColumn5.Multiline = true;
             gridViewTextBoxColumn5.Name = "chdispositivo";
-            gridViewTextBoxColumn5.Width = 302;
+            gridViewTextBoxColumn5.Width = 269;
             gridViewTextBoxColumn5.WrapText = true;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "sedeCodigo";
@@ -740,26 +788,26 @@
             gridViewTextBoxColumn7.HeaderText = "Marca";
             gridViewTextBoxColumn7.Name = "chmarca";
             gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn7.Width = 175;
+            gridViewTextBoxColumn7.Width = 156;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "MODELO";
             gridViewTextBoxColumn8.HeaderText = "Modelo";
             gridViewTextBoxColumn8.Name = "chMODELO";
             gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn8.Width = 159;
+            gridViewTextBoxColumn8.Width = 142;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.FieldName = "EsPropio";
             gridViewCheckBoxColumn1.HeaderText = "Es propio";
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "chEsPropio";
             gridViewCheckBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewCheckBoxColumn1.Width = 107;
+            gridViewCheckBoxColumn1.Width = 95;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "numeroSerie";
             gridViewTextBoxColumn9.HeaderText = "S/N ";
             gridViewTextBoxColumn9.Multiline = true;
             gridViewTextBoxColumn9.Name = "chnumeroSerie";
-            gridViewTextBoxColumn9.Width = 152;
+            gridViewTextBoxColumn9.Width = 136;
             gridViewTextBoxColumn9.WrapText = true;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "numeroParte";
@@ -784,7 +832,7 @@
             gridViewTextBoxColumn13.HeaderText = "Asignado A";
             gridViewTextBoxColumn13.Multiline = true;
             gridViewTextBoxColumn13.Name = "chitem";
-            gridViewTextBoxColumn13.Width = 252;
+            gridViewTextBoxColumn13.Width = 225;
             gridViewTextBoxColumn13.WrapText = true;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "codigoSegmentoIP";
@@ -844,7 +892,7 @@
             gridViewTextBoxColumn23.FieldName = "Estado";
             gridViewTextBoxColumn23.HeaderText = "Estado";
             gridViewTextBoxColumn23.Name = "chestado";
-            gridViewTextBoxColumn23.Width = 138;
+            gridViewTextBoxColumn23.Width = 122;
             gridViewTextBoxColumn24.EnableExpressionEditor = false;
             gridViewTextBoxColumn24.FieldName = "idProducto";
             gridViewTextBoxColumn24.HeaderText = "idProducto";
@@ -996,7 +1044,7 @@
             this.dgvDispositivo.ReadOnly = true;
             this.dgvDispositivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDispositivo.ShowHeaderCellButtons = true;
-            this.dgvDispositivo.Size = new System.Drawing.Size(1515, 504);
+            this.dgvDispositivo.Size = new System.Drawing.Size(1352, 504);
             this.dgvDispositivo.TabIndex = 193;
             this.dgvDispositivo.ThemeName = "VisualStudio2012Light";
             this.dgvDispositivo.SelectionChanged += new System.EventHandler(this.dgvDispositivo_SelectionChanged);
@@ -1012,33 +1060,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbCabecera.Controls.Add(this.lblEstado);
             this.gbCabecera.Controls.Add(this.cboEstado);
-            this.gbCabecera.Controls.Add(this.lblFuncionamiento);
-            this.gbCabecera.Controls.Add(this.cbofuncionamiento);
             this.gbCabecera.Controls.Add(this.lblPertenencia);
             this.gbCabecera.Controls.Add(this.cboPertenencia);
-            this.gbCabecera.Controls.Add(this.lblMarca);
-            this.gbCabecera.Controls.Add(this.cboMarca);
-            this.gbCabecera.Controls.Add(this.lblProveedor);
-            this.gbCabecera.Controls.Add(this.cboProveedor);
-            this.gbCabecera.Controls.Add(this.lbSede);
-            this.gbCabecera.Controls.Add(this.cboSede);
-            this.gbCabecera.Controls.Add(this.lblModelo);
-            this.gbCabecera.Controls.Add(this.cboModelo);
             this.gbCabecera.Controls.Add(this.lbTipoDispositivo);
             this.gbCabecera.Controls.Add(this.cboTipoDispotivo);
             this.gbCabecera.Controls.Add(this.btnConsultar);
             this.gbCabecera.Location = new System.Drawing.Point(7, 43);
             this.gbCabecera.Name = "gbCabecera";
-            this.gbCabecera.Size = new System.Drawing.Size(1521, 72);
+            this.gbCabecera.Size = new System.Drawing.Size(1358, 72);
             this.gbCabecera.TabIndex = 194;
             this.gbCabecera.TabStop = false;
-            this.gbCabecera.Text = "Consulta";
+            this.gbCabecera.Enter += new System.EventHandler(this.gbCabecera_Enter);
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(1081, 53);
+            this.lblEstado.Location = new System.Drawing.Point(552, 45);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(54, 13);
             this.lblEstado.TabIndex = 46;
@@ -1048,9 +1086,9 @@
             // cboEstado
             // 
             this.cboEstado.DefaultItemsCountInDropDown = 20;
-            this.cboEstado.Location = new System.Drawing.Point(1137, 48);
+            this.cboEstado.Location = new System.Drawing.Point(617, 40);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(244, 24);
+            this.cboEstado.Size = new System.Drawing.Size(625, 24);
             this.cboEstado.TabIndex = 45;
             this.cboEstado.ThemeName = "VisualStudio2012Light";
             // 
@@ -1058,27 +1096,29 @@
             // 
             this.lblFuncionamiento.AutoSize = true;
             this.lblFuncionamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionamiento.Location = new System.Drawing.Point(684, 52);
+            this.lblFuncionamiento.Location = new System.Drawing.Point(341, 210);
             this.lblFuncionamiento.Name = "lblFuncionamiento";
             this.lblFuncionamiento.Size = new System.Drawing.Size(104, 13);
             this.lblFuncionamiento.TabIndex = 44;
             this.lblFuncionamiento.Text = "Funcionamiento :";
             this.lblFuncionamiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFuncionamiento.Visible = false;
             // 
             // cbofuncionamiento
             // 
             this.cbofuncionamiento.DefaultItemsCountInDropDown = 10;
-            this.cbofuncionamiento.Location = new System.Drawing.Point(789, 48);
+            this.cbofuncionamiento.Location = new System.Drawing.Point(446, 206);
             this.cbofuncionamiento.Name = "cbofuncionamiento";
-            this.cbofuncionamiento.Size = new System.Drawing.Size(244, 24);
+            this.cbofuncionamiento.Size = new System.Drawing.Size(155, 24);
             this.cbofuncionamiento.TabIndex = 43;
             this.cbofuncionamiento.ThemeName = "VisualStudio2012Light";
+            this.cbofuncionamiento.Visible = false;
             // 
             // lblPertenencia
             // 
             this.lblPertenencia.AutoSize = true;
             this.lblPertenencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPertenencia.Location = new System.Drawing.Point(24, 52);
+            this.lblPertenencia.Location = new System.Drawing.Point(24, 45);
             this.lblPertenencia.Name = "lblPertenencia";
             this.lblPertenencia.Size = new System.Drawing.Size(83, 13);
             this.lblPertenencia.TabIndex = 42;
@@ -1087,9 +1127,9 @@
             // 
             // cboPertenencia
             // 
-            this.cboPertenencia.Location = new System.Drawing.Point(109, 47);
+            this.cboPertenencia.Location = new System.Drawing.Point(109, 40);
             this.cboPertenencia.Name = "cboPertenencia";
-            this.cboPertenencia.Size = new System.Drawing.Size(244, 24);
+            this.cboPertenencia.Size = new System.Drawing.Size(428, 24);
             this.cboPertenencia.TabIndex = 41;
             this.cboPertenencia.ThemeName = "VisualStudio2012Light";
             // 
@@ -1097,84 +1137,92 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(375, 20);
+            this.lblMarca.Location = new System.Drawing.Point(38, 174);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(50, 13);
             this.lblMarca.TabIndex = 40;
             this.lblMarca.Text = "Marca :";
             this.lblMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMarca.Visible = false;
             // 
             // cboMarca
             // 
             this.cboMarca.DefaultItemsCountInDropDown = 30;
-            this.cboMarca.Location = new System.Drawing.Point(426, 17);
+            this.cboMarca.Location = new System.Drawing.Point(89, 171);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(244, 24);
             this.cboMarca.TabIndex = 39;
             this.cboMarca.ThemeName = "VisualStudio2012Light";
+            this.cboMarca.Visible = false;
             // 
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
             this.lblProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedor.Location = new System.Drawing.Point(1063, 21);
+            this.lblProveedor.Location = new System.Drawing.Point(621, 179);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(73, 13);
             this.lblProveedor.TabIndex = 38;
             this.lblProveedor.Text = "Proveedor :";
+            this.lblProveedor.Visible = false;
             // 
             // cboProveedor
             // 
             this.cboProveedor.DefaultItemsCountInDropDown = 30;
-            this.cboProveedor.Location = new System.Drawing.Point(1136, 16);
+            this.cboProveedor.Location = new System.Drawing.Point(694, 174);
             this.cboProveedor.Name = "cboProveedor";
-            this.cboProveedor.Size = new System.Drawing.Size(244, 24);
+            this.cboProveedor.Size = new System.Drawing.Size(204, 24);
             this.cboProveedor.TabIndex = 37;
             this.cboProveedor.ThemeName = "VisualStudio2012Light";
+            this.cboProveedor.Visible = false;
             // 
             // lbSede
             // 
             this.lbSede.AutoSize = true;
             this.lbSede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSede.Location = new System.Drawing.Point(741, 20);
+            this.lbSede.Location = new System.Drawing.Point(398, 178);
             this.lbSede.Name = "lbSede";
             this.lbSede.Size = new System.Drawing.Size(44, 13);
             this.lbSede.TabIndex = 36;
             this.lbSede.Text = "Sede :";
+            this.lbSede.Visible = false;
             // 
             // cboSede
             // 
             this.cboSede.DefaultItemsCountInDropDown = 15;
-            this.cboSede.Location = new System.Drawing.Point(789, 16);
+            this.cboSede.Location = new System.Drawing.Point(446, 174);
             this.cboSede.Name = "cboSede";
-            this.cboSede.Size = new System.Drawing.Size(244, 24);
+            this.cboSede.Size = new System.Drawing.Size(155, 24);
             this.cboSede.TabIndex = 35;
             this.cboSede.ThemeName = "VisualStudio2012Light";
+            this.cboSede.Visible = false;
             // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelo.Location = new System.Drawing.Point(368, 51);
+            this.lblModelo.Location = new System.Drawing.Point(31, 205);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(56, 13);
             this.lblModelo.TabIndex = 34;
             this.lblModelo.Text = "Modelo :";
+            this.lblModelo.Visible = false;
             // 
             // cboModelo
             // 
             this.cboModelo.DefaultItemsCountInDropDown = 30;
-            this.cboModelo.Location = new System.Drawing.Point(426, 48);
+            this.cboModelo.Location = new System.Drawing.Point(89, 202);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(244, 24);
             this.cboModelo.TabIndex = 33;
             this.cboModelo.ThemeName = "VisualStudio2012Light";
+            this.cboModelo.Visible = false;
             // 
             // lbTipoDispositivo
             // 
             this.lbTipoDispositivo.AutoSize = true;
             this.lbTipoDispositivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTipoDispositivo.Location = new System.Drawing.Point(7, 18);
+            this.lbTipoDispositivo.Location = new System.Drawing.Point(7, 11);
             this.lbTipoDispositivo.Name = "lbTipoDispositivo";
             this.lbTipoDispositivo.Size = new System.Drawing.Size(102, 13);
             this.lbTipoDispositivo.TabIndex = 32;
@@ -1183,9 +1231,9 @@
             // cboTipoDispotivo
             // 
             this.cboTipoDispotivo.DefaultItemsCountInDropDown = 30;
-            this.cboTipoDispotivo.Location = new System.Drawing.Point(109, 16);
+            this.cboTipoDispotivo.Location = new System.Drawing.Point(109, 9);
             this.cboTipoDispotivo.Name = "cboTipoDispotivo";
-            this.cboTipoDispotivo.Size = new System.Drawing.Size(244, 24);
+            this.cboTipoDispotivo.Size = new System.Drawing.Size(1133, 24);
             this.cboTipoDispotivo.TabIndex = 31;
             this.cboTipoDispotivo.ThemeName = "VisualStudio2012Light";
             // 
@@ -1194,9 +1242,9 @@
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(1413, 9);
+            this.btnConsultar.Location = new System.Drawing.Point(1248, 9);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(101, 59);
+            this.btnConsultar.Size = new System.Drawing.Size(103, 59);
             this.btnConsultar.TabIndex = 0;
             this.btnConsultar.Text = "&Filtro";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -1210,7 +1258,7 @@
             this.gbListado.Controls.Add(this.dgvDispositivo);
             this.gbListado.Location = new System.Drawing.Point(7, 121);
             this.gbListado.Name = "gbListado";
-            this.gbListado.Size = new System.Drawing.Size(1521, 523);
+            this.gbListado.Size = new System.Drawing.Size(1358, 523);
             this.gbListado.TabIndex = 195;
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado";
@@ -1223,11 +1271,21 @@
             // DispositivosListado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1533, 669);
+            this.ClientSize = new System.Drawing.Size(1370, 669);
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.gbCabecera);
             this.Controls.Add(this.BarraPrincipal);
             this.Controls.Add(this.stsBarraEstado);
+            this.Controls.Add(this.lblFuncionamiento);
+            this.Controls.Add(this.cbofuncionamiento);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.lblProveedor);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.cboProveedor);
+            this.Controls.Add(this.cboModelo);
+            this.Controls.Add(this.lbSede);
+            this.Controls.Add(this.lblModelo);
+            this.Controls.Add(this.cboSede);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DispositivosListado";
             this.Text = "Dispositivos | Listado de registros ";
@@ -1302,7 +1360,7 @@
         private Telerik.WinControls.UI.CommandBarButton btnElegirColumnas;
         private Telerik.WinControls.UI.CommandBarButton btnImprimirQR;
         private Telerik.WinControls.UI.CommandBarButton btnGenerarExcelDinamico;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton8;
+        private Telerik.WinControls.UI.CommandBarButton btnGenerarImagenesPendientes;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton9;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton10;
         private System.ComponentModel.BackgroundWorker bgwActualizarLista;
@@ -1328,5 +1386,10 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUser;
         private System.Windows.Forms.ToolStripStatusLabel lblFullName;
         private System.Windows.Forms.ToolStripProgressBar pgbar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem btnProgramarSoporte;
+        private System.Windows.Forms.ToolStripMenuItem btnProgramarDisponibilidad;
+        private System.Windows.Forms.ToolStripMenuItem btnRegistrarInspeccion;
     }
 }

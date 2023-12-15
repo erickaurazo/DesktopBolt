@@ -268,5 +268,16 @@ namespace Asistencia.Datos.Properties {
                 return ((string)(this["SATURNOConnectionString7"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User" +
+            " ID=eaurazo")]
+        public string SATURNOConnectionString8 {
+            get {
+                return ((string)(this["SATURNOConnectionString8"]));
+            }
+        }
     }
 }

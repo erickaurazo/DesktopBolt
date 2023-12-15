@@ -1638,6 +1638,12 @@
     <Compile Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.Designer.cs">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
     </Compile>
+    <Compile Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.Designer.cs">
+      <DependentUpon>ImpresiponDeTicketPorRangos.cs</DependentUpon>
+    </Compile>
     <Compile Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncionalEdicionAgregarComentarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2965,6 +2971,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.resx">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.resx">
+      <DependentUpon>ImpresiponDeTicketPorRangos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Ordenes de soporte funcional\AtencionesSoporteFuncionalEdicionAgregarComentarios.resx">
       <DependentUpon>AtencionesSoporteFuncionalEdicionAgregarComentarios.cs</DependentUpon>

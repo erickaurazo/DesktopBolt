@@ -70,7 +70,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen> listadoSuministroEliminados = new List<SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen>();
         private SAS_DispositivoTipoMantenimientoController modelTipoMantenimiento;
         private List<SAS_DispositivosTipoMantenimientoDetalle> listadoDetalleByItem;
-
+        private int DeviceId = 0;
+        private string DeviceName;
 
         #endregion
 
@@ -87,7 +88,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             listadoDetalle = new List<SAS_DispositivoOrdenTrabajoDetalle>();
             listadoHerramientas = new List<SAS_DispositivoOrdenTrabajoDetalleHerramientas>();
             listadoSuministro = new List<SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen>();
-            //btnGenerarReprogramacion.Enabled = false;
+            DeviceId = 0;
+            DeviceName = string.Empty;
             conection = _conection;
             user2 = _user2;
             companyId = _companyId;
@@ -106,6 +108,35 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
 
         }
+
+        public OrdenDeTrabajoITEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _codigoSelecionado, int _DeviceId, string _DeviceName)
+        {
+            InitializeComponent();
+            listadoDetalleEliminado = new List<SAS_DispositivoOrdenTrabajoDetalle>();
+            listadoDetalle = new List<SAS_DispositivoOrdenTrabajoDetalle>();
+            listadoHerramientas = new List<SAS_DispositivoOrdenTrabajoDetalleHerramientas>();
+            listadoSuministro = new List<SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen>();
+            DeviceId = _DeviceId != null ? _DeviceId : 0;
+            DeviceName = _DeviceName;
+            conection = _conection;
+            user2 = _user2;
+            companyId = _companyId;
+            privilege = _privilege;
+            codigoSelecionado = _codigoSelecionado;
+            Inicio();
+            CargarCombos();
+
+            BarraPrincipal.Enabled = false;
+            gbDatosPersonal.Enabled = false;
+            gbDetale.Enabled = false;
+            gbDocumento.Enabled = false;
+            progressBar1.Visible = true;
+
+            bgwHilo.RunWorkerAsync();
+
+
+        }
+
 
         private void CargarCombos()
         {
@@ -780,8 +811,16 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             this.txtCodigo.Text = "0"; // cuando es 0 es nuevo
             this.txtCorrelativo.Text = ultimoRegistro.ToString().PadLeft(7, '0'); // traer el último registrado + 1, que solo se va a mostrar.
             this.txtCostoTotalDeMantenimiento.Text = "0.00";
+
             this.txtDispositivoCodigo.Text = string.Empty;
             this.txtDispositivoDescripcion.Text = string.Empty;
+            if (DeviceId > 0)
+            {
+                this.txtDispositivoCodigo.Text = DeviceId.ToString();
+                this.txtDispositivoDescripcion.Text = DeviceName != null ? DeviceName.Trim() : string.Empty;
+            }
+           
+            
 
             this.txtEmpresa.Text = "SOCIEDAD AGRICOLA SATURNO SA";
             this.txtEmpresaCodigo.Text = "001";

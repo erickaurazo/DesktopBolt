@@ -22,6 +22,7 @@ namespace Asistencia.Datos
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SATURNO")]
 	public partial class ITDContextDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,6 +31,12 @@ namespace Asistencia.Datos
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public ITDContextDataContext() : 
+				base(global::Asistencia.Datos.Properties.Settings.Default.SATURNOConnectionString8, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public ITDContextDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +60,414 @@ namespace Asistencia.Datos
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EsPropioCBO")]
+		public ISingleResult<SAS_EsPropioCBOResult> SAS_EsPropioCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_EsPropioCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EstadoDispositivoCBO")]
+		public ISingleResult<SAS_EstadoDispositivoCBOResult> SAS_EstadoDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_EstadoDispositivoCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_FuncionamientoDispositivoCBO")]
+		public ISingleResult<SAS_FuncionamientoDispositivoCBOResult> SAS_FuncionamientoDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_FuncionamientoDispositivoCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_MarcaDispositivoCBO")]
+		public ISingleResult<SAS_MarcaDispositivoCBOResult> SAS_MarcaDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_MarcaDispositivoCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ModeloDispositivoCBO")]
+		public ISingleResult<SAS_ModeloDispositivoCBOResult> SAS_ModeloDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_ModeloDispositivoCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ProveedorDispositivoCBO")]
+		public ISingleResult<SAS_ProveedorDispositivoCBOResult> SAS_ProveedorDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_ProveedorDispositivoCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_SedeDispositivoCBO")]
+		public ISingleResult<SAS_SedeDispositivoCBOResult> SAS_SedeDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_SedeDispositivoCBOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_TipoDispositivoCBO")]
+		public ISingleResult<SAS_TipoDispositivoCBOResult> SAS_TipoDispositivoCBO()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_TipoDispositivoCBOResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class SAS_EsPropioCBOResult
+	{
+		
+		private byte _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_EsPropioCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="TinyInt NOT NULL")]
+		public byte codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(7)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_EstadoDispositivoCBOResult
+	{
+		
+		private System.Nullable<byte> _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_EstadoDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="TinyInt")]
+		public System.Nullable<byte> codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(80)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_FuncionamientoDispositivoCBOResult
+	{
+		
+		private decimal _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_FuncionamientoDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="Decimal(1,0) NOT NULL")]
+		public decimal codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(12)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_MarcaDispositivoCBOResult
+	{
+		
+		private string _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_MarcaDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="Char(4) NOT NULL", CanBeNull=false)]
+		public string codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(50)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ModeloDispositivoCBOResult
+	{
+		
+		private string _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_ModeloDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="Char(4) NOT NULL", CanBeNull=false)]
+		public string codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(80)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ProveedorDispositivoCBOResult
+	{
+		
+		private string _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_ProveedorDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+		public string codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(200)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_SedeDispositivoCBOResult
+	{
+		
+		private string _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_SedeDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="VarChar(3)")]
+		public string codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(70)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_TipoDispositivoCBOResult
+	{
+		
+		private string _codigo;
+		
+		private string _descripcion;
+		
+		public SAS_TipoDispositivoCBOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(255)")]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
 		}
 	}
 }

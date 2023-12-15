@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,8 +47,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
@@ -97,6 +97,11 @@
             this.txtEstadoCodigo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gbDatosPersonal = new System.Windows.Forms.GroupBox();
+            this.cboTiempoEjecutado = new System.Windows.Forms.ComboBox();
+            this.cboTiempoProgramado = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboCanalDeAtencion = new System.Windows.Forms.ComboBox();
+            this.lblCanalDeAtención = new System.Windows.Forms.Label();
             this.btnGenerarReprogramacion = new Telerik.WinControls.UI.RadButton();
             this.chkEsAtencionReprogramada = new System.Windows.Forms.CheckBox();
             this.chkCerradoConPrimerContacto = new System.Windows.Forms.CheckBox();
@@ -139,6 +144,18 @@
             this.btnDetalleQuitar = new Telerik.WinControls.UI.RadButton();
             this.btnDetalleAgregar = new Telerik.WinControls.UI.RadButton();
             this.dgvDetalle = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.chOTCodigoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chItemDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chAccionDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHorasFormatoReloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHorasFormatoPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesdeDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chHastaDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstadoCodigoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstadoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chUsuarioDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chGlosaDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chValorUSDAccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabHerramientas = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnHerramientasCambiarEstado = new Telerik.WinControls.UI.RadButton();
             this.btnHerramientasQuitar = new Telerik.WinControls.UI.RadButton();
@@ -169,23 +186,6 @@
             this.chValorUSDSuministro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bgwRegistrar = new System.ComponentModel.BackgroundWorker();
             this.bgwNotify = new System.ComponentModel.BackgroundWorker();
-            this.cboCanalDeAtencion = new System.Windows.Forms.ComboBox();
-            this.lblCanalDeAtención = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cboTiempoProgramado = new System.Windows.Forms.ComboBox();
-            this.cboTiempoEjecutado = new System.Windows.Forms.ComboBox();
-            this.chOTCodigoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chItemDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chAccionDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHorasFormatoReloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHorasFormatoPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDesdeDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chHastaDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstadoCodigoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstadoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chUsuarioDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chGlosaDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chValorUSDAccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subMenu.SuspendLayout();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
@@ -239,7 +239,7 @@
             this.progressBar1});
             this.stsBarraEstado.Location = new System.Drawing.Point(0, 518);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1381, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1370, 22);
             this.stsBarraEstado.TabIndex = 197;
             // 
             // progressBar1
@@ -254,7 +254,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1381, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1370, 37);
             this.BarraPrincipal.TabIndex = 201;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -479,7 +479,7 @@
             this.gbDocumento.Controls.Add(this.lblUsuarioAsignando);
             this.gbDocumento.Location = new System.Drawing.Point(0, 31);
             this.gbDocumento.Name = "gbDocumento";
-            this.gbDocumento.Size = new System.Drawing.Size(1378, 71);
+            this.gbDocumento.Size = new System.Drawing.Size(1367, 71);
             this.gbDocumento.TabIndex = 202;
             this.gbDocumento.TabStop = false;
             // 
@@ -520,7 +520,7 @@
             // 
             this.lblDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(1000, 45);
+            this.lblDocumento.Location = new System.Drawing.Point(989, 45);
             this.lblDocumento.Name = "lblDocumento";
             this.lblDocumento.Size = new System.Drawing.Size(68, 13);
             this.lblDocumento.TabIndex = 253;
@@ -671,7 +671,7 @@
             this.cboDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDocumento.FormattingEnabled = true;
-            this.cboDocumento.Location = new System.Drawing.Point(1071, 40);
+            this.cboDocumento.Location = new System.Drawing.Point(1060, 40);
             this.cboDocumento.Name = "cboDocumento";
             this.cboDocumento.Size = new System.Drawing.Size(50, 21);
             this.cboDocumento.TabIndex = 244;
@@ -680,7 +680,7 @@
             // 
             this.txtCorrelativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCorrelativo.BackColor = System.Drawing.Color.White;
-            this.txtCorrelativo.Location = new System.Drawing.Point(1187, 40);
+            this.txtCorrelativo.Location = new System.Drawing.Point(1176, 40);
             this.txtCorrelativo.MaxLength = 7;
             this.txtCorrelativo.Name = "txtCorrelativo";
             this.txtCorrelativo.ReadOnly = true;
@@ -694,7 +694,7 @@
             this.cboSerie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSerie.FormattingEnabled = true;
-            this.cboSerie.Location = new System.Drawing.Point(1127, 40);
+            this.cboSerie.Location = new System.Drawing.Point(1116, 40);
             this.cboSerie.Name = "cboSerie";
             this.cboSerie.Size = new System.Drawing.Size(56, 21);
             this.cboSerie.TabIndex = 240;
@@ -703,7 +703,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1248, 43);
+            this.label1.Location = new System.Drawing.Point(1237, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 238;
@@ -713,7 +713,7 @@
             // 
             this.txtEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEstado.BackColor = System.Drawing.Color.White;
-            this.txtEstado.Location = new System.Drawing.Point(1071, 14);
+            this.txtEstado.Location = new System.Drawing.Point(1060, 14);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
             this.txtEstado.Size = new System.Drawing.Size(301, 20);
@@ -726,7 +726,7 @@
             // 
             this.lblEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(1021, 17);
+            this.lblEstado.Location = new System.Drawing.Point(1010, 17);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(46, 13);
             this.lblEstado.TabIndex = 236;
@@ -740,7 +740,7 @@
             this.txtFecha.EditingControlRowIndex = 0;
             this.txtFecha.EditingControlValueChanged = true;
             this.txtFecha.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtFecha.Location = new System.Drawing.Point(1300, 40);
+            this.txtFecha.Location = new System.Drawing.Point(1289, 40);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.P_EsEditable = false;
@@ -791,7 +791,7 @@
             // 
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.BackColor = System.Drawing.Color.White;
-            this.txtCodigo.Location = new System.Drawing.Point(529, 51);
+            this.txtCodigo.Location = new System.Drawing.Point(518, 51);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(34, 20);
@@ -804,7 +804,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(483, 53);
+            this.label9.Location = new System.Drawing.Point(472, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 256;
@@ -815,7 +815,7 @@
             // 
             this.txtEstadoCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEstadoCodigo.BackColor = System.Drawing.Color.White;
-            this.txtEstadoCodigo.Location = new System.Drawing.Point(704, 51);
+            this.txtEstadoCodigo.Location = new System.Drawing.Point(693, 51);
             this.txtEstadoCodigo.Name = "txtEstadoCodigo";
             this.txtEstadoCodigo.ReadOnly = true;
             this.txtEstadoCodigo.Size = new System.Drawing.Size(34, 20);
@@ -828,7 +828,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(652, 56);
+            this.label8.Location = new System.Drawing.Point(641, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 254;
@@ -884,9 +884,60 @@
             this.gbDatosPersonal.Controls.Add(this.lblMantenientoTipo);
             this.gbDatosPersonal.Location = new System.Drawing.Point(0, 102);
             this.gbDatosPersonal.Name = "gbDatosPersonal";
-            this.gbDatosPersonal.Size = new System.Drawing.Size(1381, 179);
+            this.gbDatosPersonal.Size = new System.Drawing.Size(1370, 179);
             this.gbDatosPersonal.TabIndex = 203;
             this.gbDatosPersonal.TabStop = false;
+            // 
+            // cboTiempoEjecutado
+            // 
+            this.cboTiempoEjecutado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTiempoEjecutado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTiempoEjecutado.FormattingEnabled = true;
+            this.cboTiempoEjecutado.Location = new System.Drawing.Point(1060, 9);
+            this.cboTiempoEjecutado.Name = "cboTiempoEjecutado";
+            this.cboTiempoEjecutado.Size = new System.Drawing.Size(155, 21);
+            this.cboTiempoEjecutado.TabIndex = 278;
+            // 
+            // cboTiempoProgramado
+            // 
+            this.cboTiempoProgramado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTiempoProgramado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTiempoProgramado.FormattingEnabled = true;
+            this.cboTiempoProgramado.Location = new System.Drawing.Point(759, 9);
+            this.cboTiempoProgramado.Name = "cboTiempoProgramado";
+            this.cboTiempoProgramado.Size = new System.Drawing.Size(186, 21);
+            this.cboTiempoProgramado.TabIndex = 277;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(641, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 13);
+            this.label7.TabIndex = 285;
+            this.label7.Text = "Programado : (Min)";
+            // 
+            // cboCanalDeAtencion
+            // 
+            this.cboCanalDeAtencion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCanalDeAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCanalDeAtencion.FormattingEnabled = true;
+            this.cboCanalDeAtencion.Location = new System.Drawing.Point(1023, 152);
+            this.cboCanalDeAtencion.Name = "cboCanalDeAtencion";
+            this.cboCanalDeAtencion.Size = new System.Drawing.Size(341, 21);
+            this.cboCanalDeAtencion.TabIndex = 276;
+            // 
+            // lblCanalDeAtención
+            // 
+            this.lblCanalDeAtención.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCanalDeAtención.AutoSize = true;
+            this.lblCanalDeAtención.Location = new System.Drawing.Point(917, 156);
+            this.lblCanalDeAtención.Name = "lblCanalDeAtención";
+            this.lblCanalDeAtención.Size = new System.Drawing.Size(100, 13);
+            this.lblCanalDeAtención.TabIndex = 277;
+            this.lblCanalDeAtención.Text = "Canal de Atención :";
             // 
             // btnGenerarReprogramacion
             // 
@@ -1033,7 +1084,7 @@
             // 
             this.txtCostoTotalDeMantenimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCostoTotalDeMantenimiento.BackColor = System.Drawing.Color.White;
-            this.txtCostoTotalDeMantenimiento.Location = new System.Drawing.Point(867, 152);
+            this.txtCostoTotalDeMantenimiento.Location = new System.Drawing.Point(856, 152);
             this.txtCostoTotalDeMantenimiento.MaxLength = 100;
             this.txtCostoTotalDeMantenimiento.Name = "txtCostoTotalDeMantenimiento";
             this.txtCostoTotalDeMantenimiento.Size = new System.Drawing.Size(55, 20);
@@ -1045,7 +1096,7 @@
             // 
             this.lblUSD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUSD.AutoSize = true;
-            this.lblUSD.Location = new System.Drawing.Point(825, 154);
+            this.lblUSD.Location = new System.Drawing.Point(814, 154);
             this.lblUSD.Name = "lblUSD";
             this.lblUSD.Size = new System.Drawing.Size(36, 13);
             this.lblUSD.TabIndex = 275;
@@ -1056,7 +1107,7 @@
             this.lblHorasEstimadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHorasEstimadas.AutoSize = true;
             this.lblHorasEstimadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorasEstimadas.Location = new System.Drawing.Point(962, 13);
+            this.lblHorasEstimadas.Location = new System.Drawing.Point(951, 13);
             this.lblHorasEstimadas.Name = "lblHorasEstimadas";
             this.lblHorasEstimadas.Size = new System.Drawing.Size(110, 13);
             this.lblHorasEstimadas.TabIndex = 240;
@@ -1079,7 +1130,7 @@
             this.txtFechaFinalizacion.EditingControlRowIndex = 0;
             this.txtFechaFinalizacion.EditingControlValueChanged = true;
             this.txtFechaFinalizacion.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtFechaFinalizacion.Location = new System.Drawing.Point(1303, 9);
+            this.txtFechaFinalizacion.Location = new System.Drawing.Point(1292, 9);
             this.txtFechaFinalizacion.Mask = "00/00/0000";
             this.txtFechaFinalizacion.Name = "txtFechaFinalizacion";
             this.txtFechaFinalizacion.P_EsEditable = false;
@@ -1099,7 +1150,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1232, 14);
+            this.label6.Location = new System.Drawing.Point(1221, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 239;
@@ -1252,14 +1303,14 @@
             this.txtObservaciones.Location = new System.Drawing.Point(887, 35);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(488, 109);
+            this.txtObservaciones.Size = new System.Drawing.Size(477, 109);
             this.txtObservaciones.TabIndex = 262;
             // 
             // lblObservacion
             // 
             this.lblObservacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblObservacion.AutoSize = true;
-            this.lblObservacion.Location = new System.Drawing.Point(953, 38);
+            this.lblObservacion.Location = new System.Drawing.Point(942, 38);
             this.lblObservacion.Name = "lblObservacion";
             this.lblObservacion.Size = new System.Drawing.Size(73, 13);
             this.lblObservacion.TabIndex = 261;
@@ -1366,7 +1417,7 @@
             this.gbDetale.Controls.Add(this.tabControl);
             this.gbDetale.Location = new System.Drawing.Point(10, 281);
             this.gbDetale.Name = "gbDetale";
-            this.gbDetale.Size = new System.Drawing.Size(1355, 232);
+            this.gbDetale.Size = new System.Drawing.Size(1344, 232);
             this.gbDetale.TabIndex = 204;
             this.gbDetale.TabStop = false;
             this.gbDetale.Text = "Listado";
@@ -1384,7 +1435,7 @@
             this.tabControl.Location = new System.Drawing.Point(15, 19);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedPage = this.tabDetalle;
-            this.tabControl.Size = new System.Drawing.Size(1325, 193);
+            this.tabControl.Size = new System.Drawing.Size(1314, 193);
             this.tabControl.TabIndex = 1;
             this.tabControl.ThemeName = "Windows8";
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.tabControl.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
@@ -1401,10 +1452,10 @@
             this.tabDetalle.Controls.Add(this.btnDetalleQuitar);
             this.tabDetalle.Controls.Add(this.btnDetalleAgregar);
             this.tabDetalle.Controls.Add(this.dgvDetalle);
-            this.tabDetalle.ItemSize = new System.Drawing.SizeF(441F, 26F);
+            this.tabDetalle.ItemSize = new System.Drawing.SizeF(437F, 26F);
             this.tabDetalle.Location = new System.Drawing.Point(5, 5);
             this.tabDetalle.Name = "tabDetalle";
-            this.tabDetalle.Size = new System.Drawing.Size(1315, 159);
+            this.tabDetalle.Size = new System.Drawing.Size(1304, 159);
             this.tabDetalle.Text = "Detalle";
             // 
             // btnImportarDesdeTicket
@@ -1433,7 +1484,7 @@
             this.btnDetalleCambiarEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalleCambiarEstado.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCambiarEstado.Image")));
             this.btnDetalleCambiarEstado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleCambiarEstado.Location = new System.Drawing.Point(1226, 2);
+            this.btnDetalleCambiarEstado.Location = new System.Drawing.Point(1215, 2);
             this.btnDetalleCambiarEstado.Name = "btnDetalleCambiarEstado";
             this.btnDetalleCambiarEstado.Size = new System.Drawing.Size(25, 26);
             this.btnDetalleCambiarEstado.TabIndex = 182;
@@ -1445,7 +1496,7 @@
             this.btnDetalleQuitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalleQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleQuitar.Image")));
             this.btnDetalleQuitar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleQuitar.Location = new System.Drawing.Point(1288, 2);
+            this.btnDetalleQuitar.Location = new System.Drawing.Point(1277, 2);
             this.btnDetalleQuitar.Name = "btnDetalleQuitar";
             this.btnDetalleQuitar.Size = new System.Drawing.Size(25, 26);
             this.btnDetalleQuitar.TabIndex = 181;
@@ -1457,7 +1508,7 @@
             this.btnDetalleAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalleAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleAgregar.Image")));
             this.btnDetalleAgregar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDetalleAgregar.Location = new System.Drawing.Point(1257, 2);
+            this.btnDetalleAgregar.Location = new System.Drawing.Point(1246, 2);
             this.btnDetalleAgregar.Name = "btnDetalleAgregar";
             this.btnDetalleAgregar.Size = new System.Drawing.Size(25, 26);
             this.btnDetalleAgregar.TabIndex = 180;
@@ -1535,9 +1586,110 @@
             this.dgvDetalle.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetalle.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalle.Size = new System.Drawing.Size(1308, 128);
+            this.dgvDetalle.Size = new System.Drawing.Size(1297, 128);
             this.dgvDetalle.TabIndex = 179;
             this.dgvDetalle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetalle_KeyUp);
+            // 
+            // chOTCodigoDetalle
+            // 
+            this.chOTCodigoDetalle.DataPropertyName = "Codigo";
+            this.chOTCodigoDetalle.HeaderText = "id";
+            this.chOTCodigoDetalle.Name = "chOTCodigoDetalle";
+            this.chOTCodigoDetalle.ReadOnly = true;
+            this.chOTCodigoDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chOTCodigoDetalle.Visible = false;
+            // 
+            // chItemDetalle
+            // 
+            this.chItemDetalle.DataPropertyName = "Item";
+            this.chItemDetalle.HeaderText = "Item";
+            this.chItemDetalle.Name = "chItemDetalle";
+            this.chItemDetalle.ReadOnly = true;
+            this.chItemDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chAccionDetalle
+            // 
+            this.chAccionDetalle.DataPropertyName = "accion";
+            this.chAccionDetalle.HeaderText = "Acción";
+            this.chAccionDetalle.Name = "chAccionDetalle";
+            this.chAccionDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chAccionDetalle.Width = 200;
+            // 
+            // chHorasFormatoReloj
+            // 
+            this.chHorasFormatoReloj.DataPropertyName = "HorasFormatoReloj";
+            this.chHorasFormatoReloj.HeaderText = "Hrs. Reloj";
+            this.chHorasFormatoReloj.Name = "chHorasFormatoReloj";
+            this.chHorasFormatoReloj.ReadOnly = true;
+            this.chHorasFormatoReloj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chHorasFormatoPlanilla
+            // 
+            this.chHorasFormatoPlanilla.DataPropertyName = "HorasFormatoPlanilla";
+            this.chHorasFormatoPlanilla.HeaderText = "Minutos Prog.";
+            this.chHorasFormatoPlanilla.Name = "chHorasFormatoPlanilla";
+            this.chHorasFormatoPlanilla.ReadOnly = true;
+            this.chHorasFormatoPlanilla.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chDesdeDetalle
+            // 
+            this.chDesdeDetalle.DataPropertyName = "Desde";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.chDesdeDetalle.DefaultCellStyle = dataGridViewCellStyle3;
+            this.chDesdeDetalle.HeaderText = "Desde";
+            this.chDesdeDetalle.Name = "chDesdeDetalle";
+            this.chDesdeDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chHastaDetalle
+            // 
+            this.chHastaDetalle.DataPropertyName = "Hasta";
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.chHastaDetalle.DefaultCellStyle = dataGridViewCellStyle4;
+            this.chHastaDetalle.HeaderText = "Hasta";
+            this.chHastaDetalle.Name = "chHastaDetalle";
+            this.chHastaDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chEstadoCodigoDetalle
+            // 
+            this.chEstadoCodigoDetalle.DataPropertyName = "estadoCodigo";
+            this.chEstadoCodigoDetalle.HeaderText = "Estado. Cod";
+            this.chEstadoCodigoDetalle.Name = "chEstadoCodigoDetalle";
+            this.chEstadoCodigoDetalle.ReadOnly = true;
+            this.chEstadoCodigoDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chEstadoCodigoDetalle.Visible = false;
+            // 
+            // chEstadoDetalle
+            // 
+            this.chEstadoDetalle.DataPropertyName = "estado";
+            this.chEstadoDetalle.HeaderText = "Estado";
+            this.chEstadoDetalle.Name = "chEstadoDetalle";
+            this.chEstadoDetalle.ReadOnly = true;
+            this.chEstadoDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chUsuarioDetalle
+            // 
+            this.chUsuarioDetalle.DataPropertyName = "usuario";
+            this.chUsuarioDetalle.HeaderText = "Asginado";
+            this.chUsuarioDetalle.Name = "chUsuarioDetalle";
+            this.chUsuarioDetalle.ReadOnly = true;
+            this.chUsuarioDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chGlosaDetalle
+            // 
+            this.chGlosaDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chGlosaDetalle.DataPropertyName = "Glosa";
+            this.chGlosaDetalle.HeaderText = "Glosa";
+            this.chGlosaDetalle.Name = "chGlosaDetalle";
+            this.chGlosaDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chValorUSDAccion
+            // 
+            this.chValorUSDAccion.DataPropertyName = "costoUSD";
+            this.chValorUSDAccion.HeaderText = "USD.";
+            this.chValorUSDAccion.Name = "chValorUSDAccion";
+            this.chValorUSDAccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tabHerramientas
             // 
@@ -1545,7 +1697,7 @@
             this.tabHerramientas.Controls.Add(this.btnHerramientasQuitar);
             this.tabHerramientas.Controls.Add(this.btnHerramientasAgregar);
             this.tabHerramientas.Controls.Add(this.dgvHerramientas);
-            this.tabHerramientas.ItemSize = new System.Drawing.SizeF(441F, 26F);
+            this.tabHerramientas.ItemSize = new System.Drawing.SizeF(437F, 26F);
             this.tabHerramientas.Location = new System.Drawing.Point(5, 5);
             this.tabHerramientas.Name = "tabHerramientas";
             this.tabHerramientas.Size = new System.Drawing.Size(1315, 159);
@@ -1761,7 +1913,7 @@
             this.tabSuministroAlmacen.Controls.Add(this.btnSuministrosQuitar);
             this.tabSuministroAlmacen.Controls.Add(this.btnSuministrosAgregar);
             this.tabSuministroAlmacen.Controls.Add(this.dgvSuministrosAlmacen);
-            this.tabSuministroAlmacen.ItemSize = new System.Drawing.SizeF(441F, 26F);
+            this.tabSuministroAlmacen.ItemSize = new System.Drawing.SizeF(437F, 26F);
             this.tabSuministroAlmacen.Location = new System.Drawing.Point(5, 5);
             this.tabSuministroAlmacen.Name = "tabSuministroAlmacen";
             this.tabSuministroAlmacen.Size = new System.Drawing.Size(1315, 159);
@@ -1926,162 +2078,10 @@
             this.bgwNotify.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwNotify_DoWork);
             this.bgwNotify.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwNotify_RunWorkerCompleted);
             // 
-            // cboCanalDeAtencion
-            // 
-            this.cboCanalDeAtencion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboCanalDeAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCanalDeAtencion.FormattingEnabled = true;
-            this.cboCanalDeAtencion.Location = new System.Drawing.Point(1034, 152);
-            this.cboCanalDeAtencion.Name = "cboCanalDeAtencion";
-            this.cboCanalDeAtencion.Size = new System.Drawing.Size(341, 21);
-            this.cboCanalDeAtencion.TabIndex = 276;
-            // 
-            // lblCanalDeAtención
-            // 
-            this.lblCanalDeAtención.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCanalDeAtención.AutoSize = true;
-            this.lblCanalDeAtención.Location = new System.Drawing.Point(928, 156);
-            this.lblCanalDeAtención.Name = "lblCanalDeAtención";
-            this.lblCanalDeAtención.Size = new System.Drawing.Size(100, 13);
-            this.lblCanalDeAtención.TabIndex = 277;
-            this.lblCanalDeAtención.Text = "Canal de Atención :";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(652, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 13);
-            this.label7.TabIndex = 285;
-            this.label7.Text = "Programado : (Min)";
-            // 
-            // cboTiempoProgramado
-            // 
-            this.cboTiempoProgramado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTiempoProgramado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTiempoProgramado.FormattingEnabled = true;
-            this.cboTiempoProgramado.Location = new System.Drawing.Point(770, 9);
-            this.cboTiempoProgramado.Name = "cboTiempoProgramado";
-            this.cboTiempoProgramado.Size = new System.Drawing.Size(186, 21);
-            this.cboTiempoProgramado.TabIndex = 277;
-            // 
-            // cboTiempoEjecutado
-            // 
-            this.cboTiempoEjecutado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTiempoEjecutado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTiempoEjecutado.FormattingEnabled = true;
-            this.cboTiempoEjecutado.Location = new System.Drawing.Point(1071, 9);
-            this.cboTiempoEjecutado.Name = "cboTiempoEjecutado";
-            this.cboTiempoEjecutado.Size = new System.Drawing.Size(155, 21);
-            this.cboTiempoEjecutado.TabIndex = 278;
-            // 
-            // chOTCodigoDetalle
-            // 
-            this.chOTCodigoDetalle.DataPropertyName = "Codigo";
-            this.chOTCodigoDetalle.HeaderText = "id";
-            this.chOTCodigoDetalle.Name = "chOTCodigoDetalle";
-            this.chOTCodigoDetalle.ReadOnly = true;
-            this.chOTCodigoDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chOTCodigoDetalle.Visible = false;
-            // 
-            // chItemDetalle
-            // 
-            this.chItemDetalle.DataPropertyName = "Item";
-            this.chItemDetalle.HeaderText = "Item";
-            this.chItemDetalle.Name = "chItemDetalle";
-            this.chItemDetalle.ReadOnly = true;
-            this.chItemDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chAccionDetalle
-            // 
-            this.chAccionDetalle.DataPropertyName = "accion";
-            this.chAccionDetalle.HeaderText = "Acción";
-            this.chAccionDetalle.Name = "chAccionDetalle";
-            this.chAccionDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chAccionDetalle.Width = 200;
-            // 
-            // chHorasFormatoReloj
-            // 
-            this.chHorasFormatoReloj.DataPropertyName = "HorasFormatoReloj";
-            this.chHorasFormatoReloj.HeaderText = "Hrs. Reloj";
-            this.chHorasFormatoReloj.Name = "chHorasFormatoReloj";
-            this.chHorasFormatoReloj.ReadOnly = true;
-            this.chHorasFormatoReloj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chHorasFormatoPlanilla
-            // 
-            this.chHorasFormatoPlanilla.DataPropertyName = "HorasFormatoPlanilla";
-            this.chHorasFormatoPlanilla.HeaderText = "Minutos Prog.";
-            this.chHorasFormatoPlanilla.Name = "chHorasFormatoPlanilla";
-            this.chHorasFormatoPlanilla.ReadOnly = true;
-            this.chHorasFormatoPlanilla.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chDesdeDetalle
-            // 
-            this.chDesdeDetalle.DataPropertyName = "Desde";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.chDesdeDetalle.DefaultCellStyle = dataGridViewCellStyle3;
-            this.chDesdeDetalle.HeaderText = "Desde";
-            this.chDesdeDetalle.Name = "chDesdeDetalle";
-            this.chDesdeDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chHastaDetalle
-            // 
-            this.chHastaDetalle.DataPropertyName = "Hasta";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.chHastaDetalle.DefaultCellStyle = dataGridViewCellStyle4;
-            this.chHastaDetalle.HeaderText = "Hasta";
-            this.chHastaDetalle.Name = "chHastaDetalle";
-            this.chHastaDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chEstadoCodigoDetalle
-            // 
-            this.chEstadoCodigoDetalle.DataPropertyName = "estadoCodigo";
-            this.chEstadoCodigoDetalle.HeaderText = "Estado. Cod";
-            this.chEstadoCodigoDetalle.Name = "chEstadoCodigoDetalle";
-            this.chEstadoCodigoDetalle.ReadOnly = true;
-            this.chEstadoCodigoDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chEstadoCodigoDetalle.Visible = false;
-            // 
-            // chEstadoDetalle
-            // 
-            this.chEstadoDetalle.DataPropertyName = "estado";
-            this.chEstadoDetalle.HeaderText = "Estado";
-            this.chEstadoDetalle.Name = "chEstadoDetalle";
-            this.chEstadoDetalle.ReadOnly = true;
-            this.chEstadoDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chUsuarioDetalle
-            // 
-            this.chUsuarioDetalle.DataPropertyName = "usuario";
-            this.chUsuarioDetalle.HeaderText = "Asginado";
-            this.chUsuarioDetalle.Name = "chUsuarioDetalle";
-            this.chUsuarioDetalle.ReadOnly = true;
-            this.chUsuarioDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chGlosaDetalle
-            // 
-            this.chGlosaDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chGlosaDetalle.DataPropertyName = "Glosa";
-            this.chGlosaDetalle.HeaderText = "Glosa";
-            this.chGlosaDetalle.Name = "chGlosaDetalle";
-            this.chGlosaDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chValorUSDAccion
-            // 
-            this.chValorUSDAccion.DataPropertyName = "costoUSD";
-            this.chValorUSDAccion.HeaderText = "USD.";
-            this.chValorUSDAccion.Name = "chValorUSDAccion";
-            this.chValorUSDAccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // OrdenDeTrabajoITEdicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1381, 540);
+            this.ClientSize = new System.Drawing.Size(1370, 540);
             this.Controls.Add(this.gbDetale);
             this.Controls.Add(this.gbDatosPersonal);
             this.Controls.Add(this.gbDocumento);

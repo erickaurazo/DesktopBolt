@@ -1,1 +1,51 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="ITDContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString8" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.SAS_EsPropioCBO" Method="SAS_EsPropioCBO">
+    <ElementType Name="SAS_EsPropioCBOResult">
+      <Column Name="codigo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_EstadoDispositivoCBO" Method="SAS_EstadoDispositivoCBO">
+    <ElementType Name="SAS_EstadoDispositivoCBOResult">
+      <Column Name="codigo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_FuncionamientoDispositivoCBO" Method="SAS_FuncionamientoDispositivoCBO">
+    <ElementType Name="SAS_FuncionamientoDispositivoCBOResult">
+      <Column Name="codigo" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_MarcaDispositivoCBO" Method="SAS_MarcaDispositivoCBO">
+    <ElementType Name="SAS_MarcaDispositivoCBOResult">
+      <Column Name="codigo" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ModeloDispositivoCBO" Method="SAS_ModeloDispositivoCBO">
+    <ElementType Name="SAS_ModeloDispositivoCBOResult">
+      <Column Name="codigo" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ProveedorDispositivoCBO" Method="SAS_ProveedorDispositivoCBO">
+    <ElementType Name="SAS_ProveedorDispositivoCBOResult">
+      <Column Name="codigo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_SedeDispositivoCBO" Method="SAS_SedeDispositivoCBO">
+    <ElementType Name="SAS_SedeDispositivoCBOResult">
+      <Column Name="codigo" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_TipoDispositivoCBO" Method="SAS_TipoDispositivoCBO">
+    <ElementType Name="SAS_TipoDispositivoCBOResult">
+      <Column Name="codigo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

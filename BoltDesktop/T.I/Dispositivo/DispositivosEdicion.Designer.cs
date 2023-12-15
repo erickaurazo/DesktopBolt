@@ -595,7 +595,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1318, 62);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1318, 37);
             this.BarraPrincipal.TabIndex = 193;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
