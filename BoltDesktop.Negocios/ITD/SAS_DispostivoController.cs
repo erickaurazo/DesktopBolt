@@ -1496,6 +1496,1083 @@ namespace Asistencia.Negocios
             }
             return codigo;
         }
+        
+        public SAS_Dispostivo ObtenerDispositivoFilterByID(string Connection, int idDispositivo)
+        {
+            SAS_Dispostivo item = new SAS_Dispostivo();
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[Connection].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                var result = Modelo.SAS_Dispostivo.Where(x => x.id == idDispositivo).ToList();
+                if (result != null)
+                {
+                    if (result.ToList().Count > 0)
+                    {
+                        item = result.ElementAt(0);
+                    }
+                }
+
+            }
+            return item;
+        }
+
+        public int Register(string Connection, SAS_Dispostivo device, List<SAS_DispositivoIP> listOfDeletedIPs, List<SAS_DispositivoIP> listOfIPs, List<SAS_DispositivoUsuarios> listadoColaboradoresEliminados, List<SAS_DispositivoUsuarios> listadoColaboradores, List<SAS_DispositivoHardware> listadoHardwareEliminados, List<SAS_DispositivoHardware> listadoHardware, List<SAS_DispositivoSoftware> listadoSoftwareEliminados, List<SAS_DispositivoSoftware> listadoSoftware, List<SAS_DispositivoComponentes> listadoComponentesEliminados, List<SAS_DispositivoComponentes> listadoComponentes, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuariosEliminados, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuarios, List<SAS_DispositivoDocumento> listadoDocumentosEliminados, List<SAS_DispositivoDocumento> listadoDocumentos)
+        {
+            int codigo = 0;
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[Connection].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                var resultado = Modelo.SAS_Dispostivo.Where(x => x.id == device.id).ToList();
+                using (TransactionScope Scope = new TransactionScope())
+                {
+                    if (resultado.ToList().Count == 0)
+                    {
+                        #region Registrar() 
+                        SAS_Dispostivo oDevice = new SAS_Dispostivo();
+                        oDevice.nombres = device.nombres != null ? device.nombres.Trim() : string.Empty;
+                        oDevice.descripcion = device.descripcion != null ? device.descripcion.Trim() : string.Empty;
+                        oDevice.sedeCodigo = device.sedeCodigo != null ? device.sedeCodigo.Trim() : string.Empty;
+                        oDevice.numeroSerie = device.numeroSerie != null ? device.numeroSerie.Trim() : string.Empty;
+                        oDevice.caracteristicas = device.caracteristicas != null ? device.caracteristicas.Trim() : string.Empty;
+                        oDevice.latitud = device.latitud != null ? device.latitud.Trim() : string.Empty;
+                        oDevice.longitud = device.longitud != null ? device.longitud.Trim() : string.Empty;
+                        oDevice.estado = 1;
+                        oDevice.fechacreacion = DateTime.Now;
+                        oDevice.creadoPor = Environment.MachineName.ToString() + " | " + Environment.UserName;
+                        oDevice.activoCodigoERP = device.activoCodigoERP != null ? device.activoCodigoERP.Trim() : string.Empty;
+                        oDevice.tipoDispositivoCodigo = device.tipoDispositivoCodigo != null ? device.tipoDispositivoCodigo.Trim() : string.Empty;
+                        oDevice.IdDispostivoColor = device.IdDispostivoColor != null ? device.IdDispostivoColor.Trim() : string.Empty;
+                        oDevice.idArea = device.idArea != null ? device.idArea.Trim() : "010";
+                        oDevice.imagen = device.imagen != null ? device.imagen : null;
+                        oDevice.idModelo = device.idModelo != null ? device.idModelo.Trim() : string.Empty;
+                        oDevice.idMarca = device.idMarca != null ? device.idMarca.Trim() : string.Empty;
+                        oDevice.numeroParte = device.numeroParte != null ? device.numeroParte.Trim() : string.Empty;
+                        oDevice.IdEstadoProducto = device.IdEstadoProducto != null ? Convert.ToChar(device.IdEstadoProducto.ToString().Trim()) : 'X';
+                        oDevice.EsPropio = device.EsPropio != null ? Convert.ToByte(device.EsPropio.Value) : Convert.ToByte(1);
+                        oDevice.idProducto = device.idProducto != null ? device.idProducto.Trim() : string.Empty;
+                        oDevice.rutaImagen = device.rutaImagen != null ? device.rutaImagen.Trim() : string.Empty;
+                        oDevice.funcionamiento = device.funcionamiento != null ? device.funcionamiento.Value : 0;
+                        oDevice.idClieprov = device.idClieprov != null ? device.idClieprov.Trim() : string.Empty;
+                        oDevice.coordenada = device.coordenada != null ? device.coordenada.Trim() : string.Empty;
+                        oDevice.fechaActivacion = device.fechaActivacion != null ? device.fechaActivacion.Value : (DateTime?)null;
+                        oDevice.idCobrarpagarDoc = device.idCobrarpagarDoc != null ? device.idCobrarpagarDoc.Trim() : string.Empty;
+                        oDevice.fechaBaja = device.fechaBaja != null ? device.fechaBaja.Value : (DateTime?)null;
+                        oDevice.fechaProduccion = device.fechaProduccion != null ? device.fechaProduccion.Value : (DateTime?)null;
+                        oDevice.esFinal = device.esFinal != null ? device.esFinal.Value : 0;
+
+                        oDevice.AnioParaDepreciar = device.AnioParaDepreciar;
+                        oDevice.ubicacion = device.ubicacion;
+                        oDevice.costoUSD = device.costoUSD;
+                        oDevice.lineaCelular = device.lineaCelular;
+
+                        Modelo.SAS_Dispostivo.InsertOnSubmit(oDevice);
+                        Modelo.SubmitChanges();
+                        codigo = oDevice.id;
+
+                        //registrar Número de IP
+                        if (listOfIPs != null)
+                        {
+                            if (listOfIPs.Count > 0)
+                            {
+                                #region Registrar listado detalle de IPs. 
+
+                                foreach (var detalle in listOfIPs)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoIP.Where(x => x.dispositivoCodigo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoIP oIp = new SAS_DispositivoIP();
+                                            oIp.dispositivoCodigo = codigo;
+                                            oIp.item = detalle.item;
+                                            oIp.estado = detalle.estado;
+                                            oIp.direcionMAC = detalle.direcionMAC;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            oIp.fechaCreacion = DateTime.Now;
+                                            oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            oIp.idIP = detalle.idIP;
+                                            Modelo.SAS_DispositivoIP.InsertOnSubmit(oIp);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoIP oIp = new SAS_DispositivoIP();
+                                            oIp = result1.Single();
+                                            oIp.estado = detalle.estado;
+                                            oIp.direcionMAC = detalle.direcionMAC;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            //oIp.fechaCreacion = DateTime.Now;
+                                            //oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            oIp.idIP = detalle.idIP;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar Colaboradores
+                        if (listadoColaboradores != null)
+                        {
+                            if (listadoColaboradores.Count > 0)
+                            {
+                                #region Registrar listado detalle de IPs. 
+
+                                foreach (var detalle in listadoColaboradores)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoUsuarios.Where(x => x.dispositivoCodigo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoUsuarios oIp = new SAS_DispositivoUsuarios();
+                                            oIp.dispositivoCodigo = codigo;
+                                            oIp.item = detalle.item;
+                                            oIp.estado = detalle.estado;
+                                            oIp.idcodigoGeneral = detalle.idcodigoGeneral;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            oIp.fechaCreacion = DateTime.Now;
+                                            oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            Modelo.SAS_DispositivoUsuarios.InsertOnSubmit(oIp);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoUsuarios oIp = new SAS_DispositivoUsuarios();
+                                            oIp = result1.Single();
+                                            oIp.estado = detalle.estado;
+                                            oIp.idcodigoGeneral = detalle.idcodigoGeneral;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            //oIp.fechaCreacion = DateTime.Now;
+                                            //oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+
+                        //registrar Hardware
+                        if (listadoHardware != null)
+                        {
+                            if (listadoHardware.Count > 0)
+                            {
+                                #region Registrar listado detalle Hardware()  
+
+                                foreach (var detalle in listadoHardware)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoHardware = detalle.codigoHardware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.capacidad = detalle.capacidad;
+                                            oDetalle.unidadMedidaCapacidad = detalle.unidadMedidaCapacidad;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            Modelo.SAS_DispositivoHardware.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoHardware = detalle.codigoHardware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.capacidad = detalle.capacidad;
+                                            oDetalle.unidadMedidaCapacidad = detalle.unidadMedidaCapacidad;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+
+                        //registrar Software
+                        if (listadoSoftware != null)
+                        {
+                            if (listadoSoftware.Count > 0)
+                            {
+                                #region Registrar listado detalle de Software() 
+
+                                foreach (var detalle in listadoSoftware)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoSoftware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoSoftware oDetalle = new SAS_DispositivoSoftware();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoSoftware = detalle.codigoSoftware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.version = detalle.version;
+                                            oDetalle.informacionAdicional = detalle.informacionAdicional;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            Modelo.SAS_DispositivoSoftware.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoSoftware oDetalle = new SAS_DispositivoSoftware();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoSoftware = detalle.codigoSoftware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.version = detalle.version;
+                                            oDetalle.informacionAdicional = detalle.informacionAdicional;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar Componentes
+                        if (listadoComponentes != null)
+                        {
+                            if (listadoComponentes.Count > 0)
+                            {
+                                #region Registrar listado detalle de listadoComponentes() 
+
+                                foreach (var detalle in listadoComponentes)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoComponentes.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoComponentes oDetalle = new SAS_DispositivoComponentes();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoDispositivoComponente = detalle.codigoDispositivoComponente;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            Modelo.SAS_DispositivoComponentes.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoComponentes oDetalle = new SAS_DispositivoComponentes();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoDispositivoComponente = detalle.codigoDispositivoComponente;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar cuentas de usuario
+                        if (listadoCuentasUsuarios != null)
+                        {
+                            if (listadoCuentasUsuarios.Count > 0)
+                            {
+                                #region Registrar listado detalle de cuentas de usuario() 
+
+                                foreach (var detalle in listadoCuentasUsuarios)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoCuentaUsuarios.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoCuentaUsuarios oDetalle = new SAS_DispositivoCuentaUsuarios();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoTipoCuenta = detalle.codigoTipoCuenta;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+
+
+                                            oDetalle.clave = detalle.clave;
+                                            oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
+                                            oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
+
+                                            Modelo.SAS_DispositivoCuentaUsuarios.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoCuentaUsuarios oDetalle = new SAS_DispositivoCuentaUsuarios();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoTipoCuenta = detalle.codigoTipoCuenta;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            oDetalle.clave = detalle.clave;
+                                            oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
+                                            oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
+
+
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar documentos
+                        if (listadoDocumentos != null)
+                        {
+                            if (listadoDocumentos.Count > 0)
+                            {
+                                #region Registrar listado detalle de documentos() 
+
+                                foreach (var detalle in listadoDocumentos)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoDocumento.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoDocumento oDetalle = new SAS_DispositivoDocumento();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoTipoDocumento = detalle.codigoTipoDocumento;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.link = detalle.link;
+
+                                            Modelo.SAS_DispositivoDocumento.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoDocumento oDetalle = new SAS_DispositivoDocumento();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoTipoDocumento = detalle.codigoTipoDocumento;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.link = detalle.link;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        #endregion
+                    }
+                    else if (resultado.ToList().Count == 1)
+                    {
+                        #region Editar() 
+                        SAS_Dispostivo oDevice = new SAS_Dispostivo();
+                        oDevice = resultado.Single();
+                        oDevice.nombres = device.nombres != null ? device.nombres.Trim() : string.Empty;
+                        oDevice.descripcion = device.descripcion != null ? device.descripcion.Trim() : string.Empty;
+
+                        oDevice.latitud = device.latitud != null ? device.latitud.Trim() : string.Empty;
+                        oDevice.longitud = device.longitud != null ? device.longitud.Trim() : string.Empty;
+
+                        oDevice.sedeCodigo = device.sedeCodigo != null ? device.sedeCodigo.Trim() : string.Empty;
+                        oDevice.numeroSerie = device.numeroSerie != null ? device.numeroSerie.Trim() : string.Empty;
+                        oDevice.caracteristicas = device.caracteristicas != null ? device.caracteristicas.Trim() : string.Empty;
+                        oDevice.activoCodigoERP = device.activoCodigoERP != null ? device.activoCodigoERP.Trim() : string.Empty;
+                        oDevice.tipoDispositivoCodigo = device.tipoDispositivoCodigo != null ? device.tipoDispositivoCodigo.Trim() : string.Empty;
+                        oDevice.IdDispostivoColor = device.IdDispostivoColor != null ? device.IdDispostivoColor.Trim() : string.Empty;
+                        oDevice.idModelo = device.idModelo != null ? device.idModelo.Trim() : string.Empty;
+                        oDevice.idMarca = device.idMarca != null ? device.idMarca.Trim() : string.Empty;
+                        oDevice.numeroParte = device.numeroParte != null ? device.numeroParte.Trim() : string.Empty;
+                        oDevice.IdEstadoProducto = device.IdEstadoProducto != null ? Convert.ToChar(device.IdEstadoProducto.ToString().Trim()) : Convert.ToChar('X');
+                        oDevice.EsPropio = device.EsPropio != null ? Convert.ToByte(device.EsPropio.Value) : Convert.ToByte(1);
+                        oDevice.idProducto = device.idProducto != null ? device.idProducto.Trim() : string.Empty;
+                        oDevice.rutaImagen = device.rutaImagen != null ? device.rutaImagen.Trim() : string.Empty;
+                        oDevice.funcionamiento = device.funcionamiento != null ? device.funcionamiento.Value : 0;
+                        oDevice.idClieprov = device.idClieprov != null ? device.idClieprov.Trim() : string.Empty;
+                        oDevice.coordenada = device.coordenada != null ? device.coordenada.Trim() : string.Empty;
+                        oDevice.fechaActivacion = device.fechaActivacion != null ? device.fechaActivacion.Value : (DateTime?)null;
+                        oDevice.idCobrarpagarDoc = device.idCobrarpagarDoc != null ? device.idCobrarpagarDoc.Trim() : string.Empty;
+                        oDevice.fechaBaja = device.fechaBaja != null ? device.fechaBaja.Value : (DateTime?)null;
+                        oDevice.fechaProduccion = device.fechaProduccion != null ? device.fechaProduccion.Value : (DateTime?)null;
+                        oDevice.esFinal = device.esFinal != null ? device.esFinal.Value : 0;
+                        oDevice.idArea = device.idArea != null ? device.idArea.Trim() : "010";
+                        oDevice.imagen = device.imagen != null ? device.imagen : null;
+
+                        oDevice.AnioParaDepreciar = device.AnioParaDepreciar;
+                        oDevice.ubicacion = device.ubicacion;
+                        oDevice.costoUSD = device.costoUSD;
+                        oDevice.lineaCelular = device.lineaCelular;
+
+                        Modelo.SubmitChanges();
+                        codigo = oDevice.id;
+
+                        // Eliminar lista de eliminados de los ips por device.
+                        if (listOfDeletedIPs != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listOfDeletedIPs.Count > 0)
+                            {
+                                foreach (var detalle in listOfDeletedIPs)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoIP.Where(x => x.dispositivoCodigo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoIP oIp = new SAS_DispositivoIP();
+                                            oIp = result1.Single();
+                                            Modelo.SAS_DispositivoIP.DeleteOnSubmit(oIp);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de USER  POR device.
+                        if (listadoColaboradoresEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoColaboradoresEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoColaboradoresEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoUsuarios.Where(x => x.dispositivoCodigo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoUsuarios oDetalle = new SAS_DispositivoUsuarios();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoUsuarios.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de hardware.
+                        if (listadoHardwareEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoHardwareEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoHardwareEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoHardware.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de software.
+                        if (listadoSoftwareEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoSoftwareEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoSoftwareEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoSoftware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoSoftware oDetalle = new SAS_DispositivoSoftware();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoSoftware.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de componentes.
+                        if (listadoComponentesEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoComponentesEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoComponentesEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoComponentes.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoComponentes oDetalle = new SAS_DispositivoComponentes();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoComponentes.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de cuentas de usuario.
+                        if (listadoCuentasUsuariosEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoCuentasUsuariosEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoCuentasUsuariosEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoCuentaUsuarios.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoCuentaUsuarios oDetalle = new SAS_DispositivoCuentaUsuarios();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoCuentaUsuarios.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de documentos.
+                        if (listadoDocumentosEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoDocumentosEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoDocumentosEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoDocumento.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoDocumento oDetalle = new SAS_DispositivoDocumento();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoDocumento.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Modificar y registrar listado de Ip
+                        if (listOfIPs != null)
+                        {
+                            #region Editar y registrar listado de IP                            
+                            if (listOfIPs.Count > 0)
+                            {
+                                #region Registrar listado detalle de IPs. 
+                                foreach (var detalle in listOfIPs)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoIP.Where(x => x.dispositivoCodigo == codigo && x.item.Trim() == detalle.item.Trim()).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoIP oIp = new SAS_DispositivoIP();
+                                            oIp.dispositivoCodigo = codigo;
+                                            oIp.item = detalle.item;
+                                            oIp.estado = detalle.estado;
+                                            oIp.direcionMAC = detalle.direcionMAC;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            oIp.fechaCreacion = DateTime.Now;
+                                            oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            oIp.idIP = detalle.idIP;
+                                            Modelo.SAS_DispositivoIP.InsertOnSubmit(oIp);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoIP oIp = new SAS_DispositivoIP();
+                                            oIp = result1.Single();
+                                            oIp.estado = detalle.estado;
+                                            oIp.direcionMAC = detalle.direcionMAC;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            //oIp.fechaCreacion = DateTime.Now;
+                                            //oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            oIp.idIP = detalle.idIP;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                }
+
+                                #endregion
+                            }
+                            #endregion
+                        }
+
+                        // Modificar y registrar listado de usuarios
+                        if (listadoColaboradores != null)
+                        {
+                            if (listadoColaboradores.Count > 0)
+                            {
+                                #region Registrar listado detalle de IPs. 
+
+                                foreach (var detalle in listadoColaboradores)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoUsuarios.Where(x => x.dispositivoCodigo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoUsuarios oIp = new SAS_DispositivoUsuarios();
+                                            oIp.dispositivoCodigo = codigo;
+                                            oIp.item = detalle.item;
+                                            oIp.estado = detalle.estado;
+                                            oIp.idcodigoGeneral = detalle.idcodigoGeneral;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            oIp.fechaCreacion = DateTime.Now;
+                                            oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            Modelo.SAS_DispositivoUsuarios.InsertOnSubmit(oIp);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoUsuarios oIp = new SAS_DispositivoUsuarios();
+                                            oIp = result1.Single();
+                                            oIp.estado = detalle.estado;
+                                            oIp.idcodigoGeneral = detalle.idcodigoGeneral;
+                                            oIp.hasta = detalle.hasta;
+                                            oIp.desde = detalle.desde;
+                                            oIp.observacion = detalle.observacion;
+                                            //oIp.fechaCreacion = DateTime.Now;
+                                            //oIp.registradoPor = Environment.UserName;
+                                            oIp.tipo = detalle.tipo;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+
+                        // Modificar y registrar Hardware
+                        if (listadoHardware != null)
+                        {
+                            if (listadoHardware.Count > 0)
+                            {
+                                #region Registrar listado detalle Hardware()  
+
+                                foreach (var detalle in listadoHardware)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoHardware = detalle.codigoHardware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.capacidad = detalle.capacidad;
+                                            oDetalle.unidadMedidaCapacidad = detalle.unidadMedidaCapacidad;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            Modelo.SAS_DispositivoHardware.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoHardware = detalle.codigoHardware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.capacidad = detalle.capacidad;
+                                            oDetalle.unidadMedidaCapacidad = detalle.unidadMedidaCapacidad;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+
+                        // Modificar y registrar Software
+                        if (listadoSoftware != null)
+                        {
+                            if (listadoSoftware.Count > 0)
+                            {
+                                #region Registrar listado detalle de Software() 
+
+                                foreach (var detalle in listadoSoftware)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoSoftware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoSoftware oDetalle = new SAS_DispositivoSoftware();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoSoftware = detalle.codigoSoftware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.version = detalle.version;
+                                            oDetalle.informacionAdicional = detalle.informacionAdicional;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            Modelo.SAS_DispositivoSoftware.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoSoftware oDetalle = new SAS_DispositivoSoftware();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoSoftware = detalle.codigoSoftware;
+                                            oDetalle.serie = detalle.serie;
+                                            oDetalle.version = detalle.version;
+                                            oDetalle.informacionAdicional = detalle.informacionAdicional;
+                                            oDetalle.numeroParte = detalle.numeroParte;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar Componentes
+                        if (listadoComponentes != null)
+                        {
+                            if (listadoComponentes.Count > 0)
+                            {
+                                #region Registrar listado detalle de listadoComponentes() 
+
+                                foreach (var detalle in listadoComponentes)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoComponentes.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoComponentes oDetalle = new SAS_DispositivoComponentes();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoDispositivoComponente = detalle.codigoDispositivoComponente;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            Modelo.SAS_DispositivoComponentes.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoComponentes oDetalle = new SAS_DispositivoComponentes();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoDispositivoComponente = detalle.codigoDispositivoComponente;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar cuentas de usuario
+                        if (listadoCuentasUsuarios != null)
+                        {
+                            if (listadoCuentasUsuarios.Count > 0)
+                            {
+                                #region Registrar listado detalle de cuentas de usuario() 
+
+                                foreach (var detalle in listadoCuentasUsuarios)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoCuentaUsuarios.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoCuentaUsuarios oDetalle = new SAS_DispositivoCuentaUsuarios();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoTipoCuenta = detalle.codigoTipoCuenta;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            oDetalle.clave = detalle.clave;
+                                            oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
+                                            oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
+
+                                            Modelo.SAS_DispositivoCuentaUsuarios.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoCuentaUsuarios oDetalle = new SAS_DispositivoCuentaUsuarios();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoTipoCuenta = detalle.codigoTipoCuenta;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
+                                            oDetalle.clave = detalle.clave;
+                                            oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
+                                            oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+                        //registrar documentos
+                        if (listadoDocumentos != null)
+                        {
+                            if (listadoDocumentos.Count > 0)
+                            {
+                                #region Registrar listado detalle de documentos() 
+
+                                foreach (var detalle in listadoDocumentos)
+                                {
+                                    #region 
+                                    var result1 = Modelo.SAS_DispositivoDocumento.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 0)
+                                        {
+                                            #region Nuevo()
+                                            SAS_DispositivoDocumento oDetalle = new SAS_DispositivoDocumento();
+                                            oDetalle.codigoDispositivo = codigo;
+                                            oDetalle.item = detalle.item;
+                                            oDetalle.codigoTipoDocumento = detalle.codigoTipoDocumento;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.link = detalle.link;
+
+                                            Modelo.SAS_DispositivoDocumento.InsertOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                        else if (result1.ToList().Count == 1)
+                                        {
+                                            #region Editar()
+                                            SAS_DispositivoDocumento oDetalle = new SAS_DispositivoDocumento();
+                                            oDetalle = result1.Single();
+                                            oDetalle.codigoTipoDocumento = detalle.codigoTipoDocumento;
+                                            oDetalle.observacion = detalle.observacion;
+                                            oDetalle.hasta = detalle.hasta;
+                                            oDetalle.desde = detalle.desde;
+                                            oDetalle.estado = detalle.estado;
+                                            oDetalle.link = detalle.link;
+                                            Modelo.SubmitChanges();
+                                            #endregion
+                                        }
+                                    }
+                                    #endregion
+                                }
+
+                                #endregion
+                            }
+                        }
+
+
+
+
+                        #endregion
+                    }
+                    Scope.Complete();
+                }
+            }
+            return codigo;
+        }
 
         // este es 20.04.2022
         public int Register(string Connection, SAS_Dispostivo device, List<SAS_DispositivoIP> listOfDeletedIPs, List<SAS_DispositivoIP> listOfIPs, List<SAS_DispositivoUsuarios> listadoColaboradoresEliminados, List<SAS_DispositivoUsuarios> listadoColaboradores, List<SAS_DispositivoHardware> listadoHardwareEliminados, List<SAS_DispositivoHardware> listadoHardware, List<SAS_DispositivoSoftware> listadoSoftwareEliminados, List<SAS_DispositivoSoftware> listadoSoftware, List<SAS_DispositivoComponentes> listadoComponentesEliminados, List<SAS_DispositivoComponentes> listadoComponentes, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuariosEliminados, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuarios, List<SAS_DispositivoDocumento> listadoDocumentosEliminados, List<SAS_DispositivoDocumento> listadoDocumentos, List<SAS_DispositivoContadores> listadoContadoresEliminados, List<SAS_DispositivoContadores> listadoContadores, List<SAS_DispositivoMovimientoMantenimientos> listadoMantenimientosEliminados, List<SAS_DispositivoMovimientoMantenimientos> listadoMantenimientos, List<SAS_DispositivoMovimientoAlmacen> listadoMovimientoAlmacenEliminados, List<SAS_DispositivoMovimientoAlmacen> listadoMovimientoAlmacen)
@@ -3075,27 +4152,8 @@ namespace Asistencia.Negocios
             return codigo;
         }
 
-        public SAS_Dispostivo ObtenerDispositivoFilterByID(string Connection, int idDispositivo)
-        {
-            SAS_Dispostivo item = new SAS_Dispostivo();
-            string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings[Connection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
-            {
-                var result = Modelo.SAS_Dispostivo.Where(x => x.id == idDispositivo).ToList();
-                if (result != null)
-                {
-                    if (result.ToList().Count > 0)
-                    {
-                        item = result.ElementAt(0);
-                    }
-                }
-
-            }
-            return item;
-        }
-
-        public int Register(string Connection, SAS_Dispostivo device, List<SAS_DispositivoIP> listOfDeletedIPs, List<SAS_DispositivoIP> listOfIPs, List<SAS_DispositivoUsuarios> listadoColaboradoresEliminados, List<SAS_DispositivoUsuarios> listadoColaboradores, List<SAS_DispositivoHardware> listadoHardwareEliminados, List<SAS_DispositivoHardware> listadoHardware, List<SAS_DispositivoSoftware> listadoSoftwareEliminados, List<SAS_DispositivoSoftware> listadoSoftware, List<SAS_DispositivoComponentes> listadoComponentesEliminados, List<SAS_DispositivoComponentes> listadoComponentes, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuariosEliminados, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuarios, List<SAS_DispositivoDocumento> listadoDocumentosEliminados, List<SAS_DispositivoDocumento> listadoDocumentos)
+        // este es 26.12.2023
+        public int Register(string Connection, SAS_Dispostivo device, List<SAS_DispositivoIP> listOfDeletedIPs, List<SAS_DispositivoIP> listOfIPs, List<SAS_DispositivoUsuarios> listadoColaboradoresEliminados, List<SAS_DispositivoUsuarios> listadoColaboradores, List<SAS_DispositivoHardware> listadoHardwareEliminados, List<SAS_DispositivoHardware> listadoHardware, List<SAS_DispositivoSoftware> listadoSoftwareEliminados, List<SAS_DispositivoSoftware> listadoSoftware, List<SAS_DispositivoComponentes> listadoComponentesEliminados, List<SAS_DispositivoComponentes> listadoComponentes, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuariosEliminados, List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuarios, List<SAS_DispositivoDocumento> listadoDocumentosEliminados, List<SAS_DispositivoDocumento> listadoDocumentos, List<SAS_DispositivoContadores> listadoContadoresEliminados, List<SAS_DispositivoContadores> listadoContadores, List<SAS_DispositivoMovimientoMantenimientos> listadoMantenimientosEliminados, List<SAS_DispositivoMovimientoMantenimientos> listadoMantenimientos, List<SAS_DispositivoMovimientoAlmacen> listadoMovimientoAlmacenEliminados, List<SAS_DispositivoMovimientoAlmacen> listadoMovimientoAlmacen, List<SAS_DispositivoImagene> ListadoImagenesEliminadas, List<SAS_DispositivoImagene> ListadoImagenesRegistro)
         {
             int codigo = 0;
             string cnx = string.Empty;
@@ -3108,6 +4166,7 @@ namespace Asistencia.Negocios
                     if (resultado.ToList().Count == 0)
                     {
                         #region Registrar() 
+                        #region Dispositivo()
                         SAS_Dispostivo oDevice = new SAS_Dispostivo();
                         oDevice.nombres = device.nombres != null ? device.nombres.Trim() : string.Empty;
                         oDevice.descripcion = device.descripcion != null ? device.descripcion.Trim() : string.Empty;
@@ -3145,8 +4204,16 @@ namespace Asistencia.Negocios
                         oDevice.costoUSD = device.costoUSD;
                         oDevice.lineaCelular = device.lineaCelular;
 
+                        oDevice.idSistemaDeImpresion = device.idSistemaDeImpresion;
+                        oDevice.costoMantenimientoAnualUSD = device.costoMantenimientoAnualUSD;
+                        oDevice.costoSuministroAnualUSD = device.costoSuministroAnualUSD;
+
+                        oDevice.kilovatioHora = device.kilovatioHora.Value;
+                        oDevice.tipoDeFacturacionDeConsumoEnergético = device.tipoDeFacturacionDeConsumoEnergético;
+
                         Modelo.SAS_Dispostivo.InsertOnSubmit(oDevice);
                         Modelo.SubmitChanges();
+                        #endregion
                         codigo = oDevice.id;
 
                         //registrar Número de IP
@@ -3457,7 +4524,7 @@ namespace Asistencia.Negocios
                                             oDetalle.clave = detalle.clave;
                                             oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
                                             oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
-
+                                            oDetalle.cuenta = detalle.cuenta;
                                             Modelo.SAS_DispositivoCuentaUsuarios.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -3475,6 +4542,7 @@ namespace Asistencia.Negocios
                                             oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
                                             oDetalle.clave = detalle.clave;
                                             oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
+                                            oDetalle.cuenta = detalle.cuenta;
                                             oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
 
 
@@ -3541,11 +4609,220 @@ namespace Asistencia.Negocios
                             }
                         }
 
+                        //registrar contadores
+                        if (listadoContadores != null)
+                        {
+                            if (listadoContadores.Count > 0)
+                            {
+                                #region Registrar listado detalle de documentos() 
+                                foreach (var item in listadoContadores)
+                                {
+                                    #region 
+                                    var resultadoConsulta = Modelo.SAS_DispositivoContadores.Where(x => x.codigoDispositivo == item.codigoDispositivo && x.item == item.item).ToList();
+                                    if (resultadoConsulta != null)
+                                    {
+                                        #region Registro | Actualizacion() 
+                                        if (resultado.ToList().Count == 0)
+                                        {
+                                            #region Nuevo();
+
+
+                                            SAS_DispositivoContadores recordObject = new SAS_DispositivoContadores();
+                                            recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            //recordObject.periodo = item.periodo != string.Empty ? item.periodo : string.Empty;
+                                            recordObject.periodo = item.desde != (DateTime?)null ? item.desde.Value.ToString("ddMMyyyy") : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad : 0;
+                                            recordObject.IdMedida = item.IdMedida != string.Empty ? item.IdMedida : string.Empty;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+
+                                            recordObject.contadorInicial = item.contadorInicial != (decimal?)null ? item.contadorInicial.Value : 0;
+                                            recordObject.contadorFinal = item.contadorFinal != (decimal?)null ? item.contadorFinal.Value : 0;
+                                            recordObject.itemContrato = item.itemContrato != string.Empty ? item.itemContrato : string.Empty;
+
+
+                                            Modelo.SAS_DispositivoContadores.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+
+                                            #endregion
+                                        }
+                                        else if (resultado.ToList().Count == 1)
+                                        {
+                                            #region Actualizar()
+                                            SAS_DispositivoContadores recordObject = new SAS_DispositivoContadores();
+                                            recordObject = resultadoConsulta.Single();
+                                            //recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            //recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            //recordObject.periodo = item.periodo != string.Empty ? item.periodo : string.Empty;
+                                            recordObject.periodo = item.desde != (DateTime?)null ? item.desde.Value.ToString("ddMMyyyy") : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad : 0;
+                                            recordObject.IdMedida = item.IdMedida != string.Empty ? item.IdMedida : string.Empty;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            recordObject.contadorInicial = item.contadorInicial != (decimal?)null ? item.contadorInicial.Value : 0;
+                                            recordObject.contadorFinal = item.contadorFinal != (decimal?)null ? item.contadorFinal.Value : 0;
+                                            recordObject.itemContrato = item.itemContrato != string.Empty ? item.itemContrato : string.Empty;
+
+                                            //Modelo.SAS_DispositivoContadores.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+
+                                        }
+                                        #endregion
+                                    }
+                                    #endregion
+                                }
+                                #endregion
+                            }
+                        }
+
+
+                        //registrar mantenimientos por dispositivo
+                        if (listadoMantenimientos != null)
+                        {
+                            if (listadoMantenimientos.Count > 0)
+                            {
+                                #region Registrar listado detalle mantenimiento () 
+                                foreach (var item in listadoMantenimientos)
+                                {
+                                    #region 
+                                    var resultadoConsulta = Modelo.SAS_DispositivoMovimientoMantenimientos.Where(x => x.codigoDispositivo == item.codigoDispositivo && x.item == item.item).ToList();
+                                    if (resultadoConsulta != null)
+                                    {
+                                        #region Registro | Actualizacion() 
+                                        if (resultado.ToList().Count == 0)
+                                        {
+                                            #region Nuevo();
+                                            SAS_DispositivoMovimientoMantenimientos recordObject = new SAS_DispositivoMovimientoMantenimientos();
+                                            //codigoDispositivo, item, codigoTipoManteniento, codigoColaborador, desde, hasta, observacion, estado, seVisualizaEnReportes, usuario, codigoOrdenTrabajo
+                                            recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.codigoTipoManteniento = item.codigoTipoManteniento != string.Empty ? item.codigoTipoManteniento : string.Empty;
+                                            recordObject.codigoColaborador = item.codigoColaborador != string.Empty ? item.codigoColaborador : string.Empty;
+                                            recordObject.codigoOrdenTrabajo = item.codigoOrdenTrabajo != (decimal?)null ? item.codigoOrdenTrabajo : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            Modelo.SAS_DispositivoMovimientoMantenimientos.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+
+                                            #endregion
+                                        }
+                                        else if (resultado.ToList().Count == 1)
+                                        {
+                                            #region Actualizar()
+                                            SAS_DispositivoMovimientoMantenimientos recordObject = new SAS_DispositivoMovimientoMantenimientos();
+                                            recordObject = resultadoConsulta.Single();
+                                            //recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            //recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.codigoTipoManteniento = item.codigoTipoManteniento != string.Empty ? item.codigoTipoManteniento : string.Empty;
+                                            recordObject.codigoColaborador = item.codigoColaborador != string.Empty ? item.codigoColaborador : string.Empty;
+                                            recordObject.codigoOrdenTrabajo = item.codigoOrdenTrabajo != (decimal?)null ? item.codigoOrdenTrabajo : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            //Modelo.SAS_DispositivoMovimientoMantenimientos.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+
+                                        }
+                                        #endregion
+                                    }
+                                    #endregion
+                                }
+                                #endregion
+                            }
+                        }
+
+                        //registrar movimiento almacen () 
+                        if (listadoMovimientoAlmacen != null)
+                        {
+                            if (listadoMovimientoAlmacen.Count > 0)
+                            {
+                                #region Registrar listado detalle movimiento almacen () 
+                                foreach (var item in listadoMovimientoAlmacen)
+                                {
+                                    #region 
+                                    var resultadoConsulta = Modelo.SAS_DispositivoMovimientoAlmacen.Where(x => x.codigoDispositivo == item.codigoDispositivo && x.item == item.item).ToList();
+                                    if (resultadoConsulta != null)
+                                    {
+                                        #region Registro | Actualizacion() 
+                                        if (resultado.ToList().Count == 0)
+                                        {
+                                            #region Nuevo();
+                                            SAS_DispositivoMovimientoAlmacen recordObject = new SAS_DispositivoMovimientoAlmacen();
+                                            // codigoDispositivo, item, idMovimientoAlmacen, itemDocAlmacen, idproducto, cantidad, desde, hasta, observacion, estado, seVisualizaEnReportes, usuario
+                                            recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.idMovimientoAlmacen = item.idMovimientoAlmacen != string.Empty ? item.idMovimientoAlmacen : string.Empty;
+                                            recordObject.itemDocAlmacen = item.itemDocAlmacen != string.Empty ? item.itemDocAlmacen : string.Empty;
+                                            recordObject.idproducto = item.idproducto != string.Empty ? item.idproducto : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad.Value : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            Modelo.SAS_DispositivoMovimientoAlmacen.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+
+                                            #endregion
+                                        }
+                                        else if (resultado.ToList().Count == 1)
+                                        {
+                                            #region Actualizar()
+                                            SAS_DispositivoMovimientoAlmacen recordObject = new SAS_DispositivoMovimientoAlmacen();
+                                            recordObject = resultadoConsulta.Single();
+                                            // codigoDispositivo, item, idMovimientoAlmacen, itemDocAlmacen, idproducto, cantidad, desde, hasta, observacion, estado, seVisualizaEnReportes, usuario
+                                            // recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            // recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.idMovimientoAlmacen = item.idMovimientoAlmacen != string.Empty ? item.idMovimientoAlmacen : string.Empty;
+                                            recordObject.itemDocAlmacen = item.itemDocAlmacen != string.Empty ? item.itemDocAlmacen : string.Empty;
+                                            recordObject.idproducto = item.idproducto != string.Empty ? item.idproducto : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad.Value : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            // Modelo.SAS_DispositivoMovimientoAlmacen.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+
+                                        }
+                                        #endregion
+                                    }
+                                    #endregion
+                                }
+                                #endregion
+                            }
+                        }
+
+
+
                         #endregion
                     }
                     else if (resultado.ToList().Count == 1)
                     {
                         #region Editar() 
+                        #region Dispositivo() 
                         SAS_Dispostivo oDevice = new SAS_Dispostivo();
                         oDevice = resultado.Single();
                         oDevice.nombres = device.nombres != null ? device.nombres.Trim() : string.Empty;
@@ -3583,7 +4860,16 @@ namespace Asistencia.Negocios
                         oDevice.costoUSD = device.costoUSD;
                         oDevice.lineaCelular = device.lineaCelular;
 
+                        oDevice.idSistemaDeImpresion = device.idSistemaDeImpresion;
+                        oDevice.costoMantenimientoAnualUSD = device.costoMantenimientoAnualUSD;
+                        oDevice.costoSuministroAnualUSD = device.costoSuministroAnualUSD;
+
+
+                        oDevice.kilovatioHora = device.kilovatioHora.Value;
+                        oDevice.tipoDeFacturacionDeConsumoEnergético = device.tipoDeFacturacionDeConsumoEnergético;
+
                         Modelo.SubmitChanges();
+                        #endregion
                         codigo = oDevice.id;
 
                         // Eliminar lista de eliminados de los ips por device.
@@ -3754,6 +5040,81 @@ namespace Asistencia.Negocios
                             #endregion
                         }
 
+                        // Add el 14.04.2022
+                        // Eliminar lista de eliminados de detalle contadores() 
+                        if (listadoContadoresEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoContadoresEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoContadoresEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoContadores.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoContadores oDetalle = new SAS_DispositivoContadores();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoContadores.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de detalle mantenimientos() 
+                        if (listadoMantenimientosEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoMantenimientosEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoMantenimientosEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoMovimientoMantenimientos.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoMovimientoMantenimientos oDetalle = new SAS_DispositivoMovimientoMantenimientos();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoMovimientoMantenimientos.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+                        // Eliminar lista de eliminados de detalle movimiento almacen() 
+                        if (listadoMovimientoAlmacenEliminados != null)
+                        {
+                            #region Eliminar lista de Ip para eliminar() 
+                            if (listadoMovimientoAlmacenEliminados.Count > 0)
+                            {
+                                foreach (var detalle in listadoMovimientoAlmacenEliminados)
+                                {
+                                    var result1 = Modelo.SAS_DispositivoMovimientoAlmacen.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                    if (result1 != null)
+                                    {
+                                        if (result1.ToList().Count == 1)
+                                        {
+                                            SAS_DispositivoMovimientoAlmacen oDetalle = new SAS_DispositivoMovimientoAlmacen();
+                                            oDetalle = result1.Single();
+                                            Modelo.SAS_DispositivoMovimientoAlmacen.DeleteOnSubmit(oDetalle);
+                                            Modelo.SubmitChanges();
+                                        }
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+
+
+
                         // Modificar y registrar listado de Ip
                         if (listOfIPs != null)
                         {
@@ -3894,6 +5255,7 @@ namespace Asistencia.Negocios
                                             oDetalle.hasta = detalle.hasta;
                                             oDetalle.desde = detalle.desde;
                                             oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
                                             Modelo.SAS_DispositivoHardware.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -3912,6 +5274,7 @@ namespace Asistencia.Negocios
                                             oDetalle.hasta = detalle.hasta;
                                             oDetalle.desde = detalle.desde;
                                             oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
                                             Modelo.SubmitChanges();
                                             #endregion
                                         }
@@ -3952,6 +5315,7 @@ namespace Asistencia.Negocios
                                             oDetalle.hasta = detalle.hasta;
                                             oDetalle.desde = detalle.desde;
                                             oDetalle.estado = detalle.estado;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
                                             Modelo.SAS_DispositivoSoftware.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -3969,6 +5333,7 @@ namespace Asistencia.Negocios
                                             oDetalle.observacion = detalle.observacion;
                                             oDetalle.hasta = detalle.hasta;
                                             oDetalle.desde = detalle.desde;
+                                            oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
                                             Modelo.SubmitChanges();
                                             #endregion
                                         }
@@ -4059,7 +5424,7 @@ namespace Asistencia.Negocios
                                             oDetalle.clave = detalle.clave;
                                             oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
                                             oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
-
+                                            oDetalle.cuenta = detalle.cuenta;
                                             Modelo.SAS_DispositivoCuentaUsuarios.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -4077,6 +5442,7 @@ namespace Asistencia.Negocios
                                             oDetalle.seVisualizaEnReportes = detalle.seVisualizaEnReportes;
                                             oDetalle.clave = detalle.clave;
                                             oDetalle.correoDeRecuperacion = detalle.correoDeRecuperacion;
+                                            oDetalle.cuenta = detalle.cuenta;
                                             oDetalle.NumeroTelefonoRecuperacion = detalle.NumeroTelefonoRecuperacion;
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -4114,7 +5480,12 @@ namespace Asistencia.Negocios
                                             oDetalle.desde = detalle.desde;
                                             oDetalle.estado = detalle.estado;
                                             oDetalle.link = detalle.link;
-
+                                            oDetalle.cargoFijo = detalle.cargoFijo;
+                                            oDetalle.cargoVariable = detalle.cargoVariable;
+                                            oDetalle.idMoneda = detalle.idMoneda;
+                                            oDetalle.idMedida = detalle.idMedida;
+                                            oDetalle.cantidadContratada = detalle.cantidadContratada;
+                                            oDetalle.frecuenciaDeFacturacion = detalle.frecuenciaDeFacturacion;
                                             Modelo.SAS_DispositivoDocumento.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -4130,6 +5501,13 @@ namespace Asistencia.Negocios
                                             oDetalle.desde = detalle.desde;
                                             oDetalle.estado = detalle.estado;
                                             oDetalle.link = detalle.link;
+                                            oDetalle.cargoFijo = detalle.cargoFijo;
+                                            oDetalle.cargoVariable = detalle.cargoVariable;
+                                            oDetalle.idMoneda = detalle.idMoneda;
+                                            oDetalle.idMedida = detalle.idMedida;
+                                            oDetalle.cantidadContratada = detalle.cantidadContratada;
+                                            oDetalle.frecuenciaDeFacturacion = detalle.frecuenciaDeFacturacion;
+
                                             Modelo.SubmitChanges();
                                             #endregion
                                         }
@@ -4141,6 +5519,206 @@ namespace Asistencia.Negocios
                             }
                         }
 
+
+                        //registrar contadores
+                        if (listadoContadores != null)
+                        {
+                            if (listadoContadores.Count > 0)
+                            {
+                                #region Registrar listado detalle de documentos() 
+                                foreach (var item in listadoContadores)
+                                {
+                                    #region 
+                                    var resultadoConsulta = Modelo.SAS_DispositivoContadores.Where(x => x.codigoDispositivo == item.codigoDispositivo && x.item == item.item).ToList();
+                                    if (resultadoConsulta != null)
+                                    {
+                                        #region Registro | Actualizacion() 
+                                        if (resultadoConsulta.ToList().Count == 0)
+                                        {
+                                            #region Nuevo();
+                                            SAS_DispositivoContadores recordObject = new SAS_DispositivoContadores();
+                                            recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.periodo = item.desde != (DateTime?)null ? item.desde.Value.ToString("ddMMyyyy") : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad : 0;
+                                            recordObject.IdMedida = item.IdMedida != string.Empty ? item.IdMedida : string.Empty;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            recordObject.contadorInicial = item.contadorInicial != (decimal?)null ? item.contadorInicial.Value : 0;
+                                            recordObject.contadorFinal = item.contadorFinal != (decimal?)null ? item.contadorFinal.Value : 0;
+                                            recordObject.itemContrato = item.itemContrato != string.Empty ? item.itemContrato : string.Empty;
+                                            Modelo.SAS_DispositivoContadores.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+
+                                            #endregion
+                                        }
+                                        else if (resultadoConsulta.ToList().Count == 1)
+                                        {
+                                            #region Actualizar()
+                                            SAS_DispositivoContadores recordObject = new SAS_DispositivoContadores();
+                                            recordObject = resultadoConsulta.Single();
+                                            //recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            //recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            //recordObject.periodo = item.periodo != string.Empty ? item.periodo : string.Empty;
+                                            recordObject.periodo = item.desde != (DateTime?)null ? item.desde.Value.ToString("ddMMyyyy") : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad : 0;
+                                            recordObject.IdMedida = item.IdMedida != string.Empty ? item.IdMedida : string.Empty;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            recordObject.contadorInicial = item.contadorInicial != (decimal?)null ? item.contadorInicial.Value : 0;
+                                            recordObject.contadorFinal = item.contadorFinal != (decimal?)null ? item.contadorFinal.Value : 0;
+                                            recordObject.itemContrato = item.itemContrato != string.Empty ? item.itemContrato : string.Empty;
+
+                                            //Modelo.SAS_DispositivoContadores.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+
+                                        }
+                                        #endregion
+                                    }
+                                    #endregion
+                                }
+                                #endregion
+                            }
+                        }
+
+
+                        //registrar mantenimientos por dispositivo
+                        if (listadoMantenimientos != null)
+                        {
+                            if (listadoMantenimientos.Count > 0)
+                            {
+                                #region Registrar listado detalle mantenimiento () 
+                                foreach (var item in listadoMantenimientos)
+                                {
+                                    #region 
+                                    var resultadoConsulta = Modelo.SAS_DispositivoMovimientoMantenimientos.Where(x => x.codigoDispositivo == item.codigoDispositivo && x.item == item.item).ToList();
+                                    if (resultadoConsulta != null)
+                                    {
+                                        #region Registro | Actualizacion() 
+                                        if (resultadoConsulta.ToList().Count == 0)
+                                        {
+                                            #region Nuevo();
+                                            SAS_DispositivoMovimientoMantenimientos recordObject = new SAS_DispositivoMovimientoMantenimientos();
+                                            //codigoDispositivo, item, codigoTipoManteniento, codigoColaborador, desde, hasta, observacion, estado, seVisualizaEnReportes, usuario, codigoOrdenTrabajo
+                                            recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.codigoTipoManteniento = item.codigoTipoManteniento != string.Empty ? item.codigoTipoManteniento : string.Empty;
+                                            recordObject.codigoColaborador = item.codigoColaborador != string.Empty ? item.codigoColaborador : string.Empty;
+                                            recordObject.codigoOrdenTrabajo = item.codigoOrdenTrabajo != (decimal?)null ? item.codigoOrdenTrabajo : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            Modelo.SAS_DispositivoMovimientoMantenimientos.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+
+                                            #endregion
+                                        }
+                                        else if (resultadoConsulta.ToList().Count == 1)
+                                        {
+                                            #region Actualizar()
+                                            SAS_DispositivoMovimientoMantenimientos recordObject = new SAS_DispositivoMovimientoMantenimientos();
+                                            recordObject = resultadoConsulta.Single();
+                                            //recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            //recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.codigoTipoManteniento = item.codigoTipoManteniento != string.Empty ? item.codigoTipoManteniento : string.Empty;
+                                            recordObject.codigoColaborador = item.codigoColaborador != string.Empty ? item.codigoColaborador : string.Empty;
+                                            recordObject.codigoOrdenTrabajo = item.codigoOrdenTrabajo != (decimal?)null ? item.codigoOrdenTrabajo : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            //Modelo.SAS_DispositivoMovimientoMantenimientos.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+
+                                        }
+                                        #endregion
+                                    }
+                                    #endregion
+                                }
+                                #endregion
+                            }
+                        }
+
+                        //registrar movimiento almacen () 
+                        if (listadoMovimientoAlmacen != null)
+                        {
+                            if (listadoMovimientoAlmacen.Count > 0)
+                            {
+                                #region Registrar listado detalle movimiento almacen () 
+                                foreach (var item in listadoMovimientoAlmacen)
+                                {
+                                    #region 
+                                    var resultadoConsulta = Modelo.SAS_DispositivoMovimientoAlmacen.Where(x => x.codigoDispositivo == item.codigoDispositivo && x.item == item.item).ToList();
+                                    if (resultadoConsulta != null)
+                                    {
+                                        #region Registro | Actualizacion() 
+                                        if (resultadoConsulta.ToList().Count == 0)
+                                        {
+                                            #region Nuevo();
+                                            SAS_DispositivoMovimientoAlmacen recordObject = new SAS_DispositivoMovimientoAlmacen();
+                                            // codigoDispositivo, item, idMovimientoAlmacen, itemDocAlmacen, idproducto, cantidad, desde, hasta, observacion, estado, seVisualizaEnReportes, usuario
+                                            recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.idMovimientoAlmacen = item.idMovimientoAlmacen != string.Empty ? item.idMovimientoAlmacen : string.Empty;
+                                            recordObject.itemDocAlmacen = item.itemDocAlmacen != string.Empty ? item.itemDocAlmacen : string.Empty;
+                                            recordObject.idproducto = item.idproducto != string.Empty ? item.idproducto : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad.Value : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            Modelo.SAS_DispositivoMovimientoAlmacen.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+
+                                            #endregion
+                                        }
+                                        else if (resultadoConsulta.ToList().Count == 1)
+                                        {
+                                            #region Actualizar()
+                                            SAS_DispositivoMovimientoAlmacen recordObject = new SAS_DispositivoMovimientoAlmacen();
+                                            recordObject = resultadoConsulta.Single();
+                                            // codigoDispositivo, item, idMovimientoAlmacen, itemDocAlmacen, idproducto, cantidad, desde, hasta, observacion, estado, seVisualizaEnReportes, usuario
+                                            // recordObject.codigoDispositivo = item.codigoDispositivo;
+                                            // recordObject.item = item.item != string.Empty ? item.item : string.Empty;
+                                            recordObject.idMovimientoAlmacen = item.idMovimientoAlmacen != string.Empty ? item.idMovimientoAlmacen : string.Empty;
+                                            recordObject.itemDocAlmacen = item.itemDocAlmacen != string.Empty ? item.itemDocAlmacen : string.Empty;
+                                            recordObject.idproducto = item.idproducto != string.Empty ? item.idproducto : string.Empty;
+                                            recordObject.cantidad = item.cantidad != (decimal?)null ? item.cantidad.Value : 0;
+                                            recordObject.observacion = item.observacion != string.Empty ? item.observacion : string.Empty;
+                                            recordObject.desde = item.desde != (DateTime?)null ? item.desde.Value : (DateTime?)null;
+                                            recordObject.hasta = item.hasta != (DateTime?)null ? item.hasta.Value : (DateTime?)null;
+                                            recordObject.estado = item.estado != (decimal?)null ? item.estado : 0;
+                                            recordObject.seVisualizaEnReportes = item.seVisualizaEnReportes != (decimal?)null ? item.seVisualizaEnReportes : 0;
+                                            recordObject.usuario = item.usuario != string.Empty ? item.usuario : string.Empty;
+                                            // Modelo.SAS_DispositivoMovimientoAlmacen.InsertOnSubmit(recordObject);
+                                            Modelo.SubmitChanges();
+                                            #endregion
+
+                                        }
+                                        #endregion
+                                    }
+                                    #endregion
+                                }
+                                #endregion
+                            }
+                        }
 
 
 
@@ -4206,8 +5784,6 @@ namespace Asistencia.Negocios
             return codigo;
         }
 
-
-
         public List<SAS_ListadoReferenciaDeDispositivosEnGestionTIResult> ObtainListOfReferenceDocumentsbyDeviceCode(string Connection, int idDispositivo)
         {
             string cnx = string.Empty;
@@ -4220,7 +5796,6 @@ namespace Asistencia.Negocios
             }
             return listado;
         }
-
 
         public Int32 DeleteDevice(string Connection, SAS_Dispostivo device)
         {
@@ -4851,8 +6426,29 @@ namespace Asistencia.Negocios
 
 
 
+        // 26/12/2023
+        public List<SAS_DispositivoImagene> ListadoTodasImagenesDeDispositivos(string conection)
+        {
+            List<SAS_DispositivoImagene> resultado = new List<SAS_DispositivoImagene>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                resultado = Modelo.SAS_DispositivoImagenes.ToList();
+            }
+            return resultado;
+        }
 
 
+        public List<SAS_DispositivoImagene> ListadoImagenesPorDispositivoID(string conection, int DispositivoID)
+        {
+            List<SAS_DispositivoImagene> resultado = new List<SAS_DispositivoImagene>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                resultado = Modelo.SAS_DispositivoImagenes.Where(x=> x.DispositivoId == DispositivoID).ToList();
+            }
+            return resultado;
+        }
 
     }
 }

@@ -24,7 +24,8 @@ namespace ComparativoHorasVisualSATNISIRA
 {
     public partial class DispositivosEdicion : Form
     {
-        #region Declaración de variables()        
+        #region Declaración de variables()     
+        string rutaDefault = @"C:\SOLUTION\not available.png";
         private string conection;
         private SAS_USUARIOS user2;
         private string companyId;
@@ -57,6 +58,7 @@ namespace ComparativoHorasVisualSATNISIRA
         private List<SAS_DispositivoContadores> listadoContadores, listadoContadoresEliminados = new List<SAS_DispositivoContadores>();
         private List<SAS_DispositivoMovimientoMantenimientos> listadoMantenimientos, listadoMantenimientosEliminados = new List<SAS_DispositivoMovimientoMantenimientos>();
         private List<SAS_DispositivoMovimientoAlmacen> listadoMovimientoAlmacen, listadoMovimientoAlmacenEliminados = new List<SAS_DispositivoMovimientoAlmacen>();
+        private List<SAS_DispositivoImagene> listadoImagenesPorDipositivo, listadoImagenesRegistro, listadoImagenesEliminar = new List<SAS_DispositivoImagene>();
         private List<SAS_DispositivoComponentes> listadoComponentesEliminados = new List<SAS_DispositivoComponentes>();
         private List<SAS_DispositivoCuentaUsuarios> listadoCuentasUsuariosEliminados = new List<SAS_DispositivoCuentaUsuarios>();
         private List<SAS_DispositivoDocumento> listadoDocumentosEliminados = new List<SAS_DispositivoDocumento>();
@@ -84,6 +86,8 @@ namespace ComparativoHorasVisualSATNISIRA
         private List<SAS_DispositivoWharehouseMovementsByDeviceIDResult> movimientoAlmacenPorDevice;
         private int resultadoAccion;
         private string nombreformulario = "DISPOSITIVO";
+        private SAS_DispositivoImagene oImagenMostrar;
+        private int ultimoItemImagenes;
         #endregion
 
         public DispositivosEdicion()
@@ -1514,6 +1518,51 @@ namespace ComparativoHorasVisualSATNISIRA
 
                 #endregion
 
+                #region Imagenes() 
+
+                //listadoImagenesRegistro, listadoImagenesEliminar
+                listadoImagenesRegistro = new List<SAS_DispositivoImagene>();
+                if (this.dgvImagenes != null)
+                {
+                    if (this.dgvImagenes.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow fila in this.dgvImagenes.Rows)
+                        {
+                            if (fila.Cells["chGrillaImagenDispositivoID"].Value.ToString().Trim() != String.Empty)
+                            {
+                                try
+                                {
+                                    #region Obtener detalle por linea detalle() 
+                                    SAS_DispositivoImagene recordObject = new SAS_DispositivoImagene();
+                                    recordObject.DispositivoId = fila.Cells["chGrillaImagenDispositivoID"].Value != null ? Convert.ToInt32(fila.Cells["chGrillaImagenDispositivoID"].Value.ToString().Trim()) : 0;
+                                    recordObject.Item = fila.Cells["chGrillaImagenItem"].Value != null ? Convert.ToInt32(fila.Cells["chGrillaImagenItem"].Value.ToString().Trim()) : 0;
+                                    recordObject.EsPrincipal = fila.Cells["chGrillaImagenEsPrincipal"].Value != null ? Convert.ToByte(fila.Cells["chGrillaImagenEsPrincipal"].Value.ToString().Trim()) : Convert.ToByte( 0);
+                                    recordObject.Ruta = fila.Cells["chGrillaImagenRuta"].Value != null ? fila.Cells["chGrillaImagenRuta"].Value.ToString().Trim() : string.Empty;
+                                    recordObject.Fecha = fila.Cells["chGrillaImagenFecha"].Value != null ? Convert.ToDateTime(fila.Cells["chGrillaImagenFecha"].Value.ToString().Trim()) : DateTime.Now;
+                                    recordObject.Latitud = fila.Cells["chGrillaImagenLatitud"].Value != null ? fila.Cells["chGrillaImagenLatitud"].Value.ToString().Trim() : string.Empty;
+                                    recordObject.Longitud = fila.Cells["chGrillaImagenLongitud"].Value != null ? fila.Cells["chGrillaImagenLongitud"].Value.ToString().Trim() : string.Empty;
+                                    recordObject.Nota = fila.Cells["chGrillaImagenNota"].Value != null ? fila.Cells["chGrillaImagenNota"].Value.ToString().Trim() : string.Empty;
+                                    recordObject.Estado = fila.Cells["chGrillaImagenEstado"].Value != null ? Convert.ToByte(fila.Cells["chGrillaImagenEstado"].Value.ToString().Trim()) : Convert.ToByte(0);                                    
+                                    #endregion
+                                    listadoImagenesRegistro.Add(recordObject);
+                                }
+                                catch (Exception Ex)
+                                {
+                                    MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                                    return;
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+
+
+                #endregion
+
+
+
                 //rutaImagen
                 //int resultadoAccion = modelo.Register("SAS", dispositivo);
                 //int resultadoAccion = modelo.Register("SAS", dispositivo, listadoNumeroIpEliminados, listadoNumeroIp, listadoColaboradoresEliminados, listadoColaboradores, listadoHardwareEliminados, listadoHardware, listadoSoftwareEliminados, listadoSoftware);
@@ -1872,6 +1921,36 @@ namespace ComparativoHorasVisualSATNISIRA
                 this.cboCondicion.SelectedValue = DispositivoEdicionByList.IdEstadoProducto != null ? DispositivoEdicionByList.IdEstadoProducto.ToString().Trim() : "X";
                 this.cboArea.SelectedValue = DispositivoEdicionByList.idarea != null ? DispositivoEdicionByList.idarea.ToString().Trim() : "010";
 
+
+                oImagenMostrar = new SAS_DispositivoImagene();
+
+                if (listadoImagenesPorDipositivo != null)
+                {
+                    if (listadoImagenesPorDipositivo.ToList().Count > 0)
+                    {
+                        var ImagenPrincipal = listadoImagenesPorDipositivo.Where(x => x.EsPrincipal == 1).ToList();
+                        if (ImagenPrincipal != null && ImagenPrincipal.ToList().Count > 0)
+                        {
+                            oImagenMostrar = ImagenPrincipal.ElementAt(0);
+                            if (File.Exists(oImagenMostrar.Ruta.Trim()))
+                            {
+                                pbImagenPrincipal.Image = System.Drawing.Image.FromFile((oImagenMostrar.Ruta.Trim()));
+                                pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                            }
+                            else
+                            {
+                                pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
+                                pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
+                        pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                }
+
                 #endregion
 
                 #region otros tab()
@@ -1885,6 +1964,8 @@ namespace ComparativoHorasVisualSATNISIRA
                 ultimoItemContador = 1;
                 ultimoMovimientoAlmacen = 1;
                 ultimoItemManteniento = 1;
+                ultimoItemImagenes = 1;
+
                 if (ipListByDevice != null)
                 {
                     if (ipListByDevice.Count > 0)
@@ -1964,6 +2045,16 @@ namespace ComparativoHorasVisualSATNISIRA
                     }
                 }
 
+                //ultimoItemImagenes = 1;
+                if (listadoImagenesPorDipositivo != null)
+                {
+                    if (listadoImagenesPorDipositivo.Count > 0)
+                    {
+                        ultimoItemImagenes = Convert.ToInt32(listadoImagenesPorDipositivo.Max(x=> x.Item));
+                    }
+                }
+
+
                 dgvDetalleIP.CargarDatos(ipListByDevice.ToDataTable<SAS_DetalleDeDispositivosPorIPByCodigoDispositivoResult>());
                 dgvDetalleIP.Refresh();
                 msgError += "IP OK GRILLA ";
@@ -2007,6 +2098,12 @@ namespace ComparativoHorasVisualSATNISIRA
                 dgvMovimientoAlmacen.Refresh();
                 msgError += "DOCUMENTOS OK Movimiento almacen ";
 
+
+
+                // llenar grilla de Imagenes | 26.12.2023
+                dgvImagenes.CargarDatos(listadoImagenesPorDipositivo.ToDataTable<SAS_DispositivoImagene>());
+                dgvImagenes.Refresh();
+                msgError += "DOCUMENTOS OK Imagenes ";
 
                 gbDispositivo.Enabled = !false;
                 gbDetalles.Enabled = !false;
@@ -2226,34 +2323,6 @@ namespace ComparativoHorasVisualSATNISIRA
                     //}
                 }
                 #endregion
-            }
-        }
-
-        private void dgvHardware_KeyUp(object sender, KeyEventArgs e)
-        {
-            modelo = new SAS_DispostivoController();
-            if (((DataGridView)sender).RowCount > 0)
-            {
-                #region Tipo de componente Interno() 
-                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chhardware")
-                {
-                    if (e.KeyCode == Keys.F3)
-                    {
-                        frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
-                        search.ListaGeneralResultado = modelo.GetHardwares("SAS");
-                        search.Text = "Buscar tipo componentes internos";
-                        search.txtTextoFiltro.Text = "";
-                        if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
-                        {
-                            //idRetorno = busquedas.ObjetoRetorno.Codigo; 
-                            this.dgvHardware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chcodigoHardware"].Value = search.ObjetoRetorno.Codigo;
-                            this.dgvHardware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chhardware"].Value = search.ObjetoRetorno.Descripcion;
-                        }
-                    }
-                }
-                #endregion 
-
-
             }
         }
 
@@ -3429,87 +3498,112 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void ObtenerListarOperativas()
         {
-            modelHardware = new SAS_DispositivoHardwareController();
-            modelSoftware = new SAS_DispositivoSoftwareController();
-            modelComponente = new SAS_DispositivoComponentesController();
-            modelCuentasUsuario = new SAS_DispositivoCuentaUsuariosController();
-            modelDocumentos = new SAS_DispositivoDocumentoController();
-            modelContadores = new SAS_DispositivoContadoresController();
-            modelMantenimiento = new SAS_DispositivoMovimientoMantenimientosController();
-            modelMovimientoAlmacen = new SAS_DispositivoMovimientoAlmacenController();
-            modelo = new SAS_DispostivoController();
-            DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
-            DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
-            oDispositivo = new SAS_Dispostivo();
-            dispositivo = new SAS_Dispostivo();
-            listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
-            listadoColaboradoresEliminados = new List<SAS_DispositivoUsuarios>();
-            listadoHardwareEliminados = new List<SAS_DispositivoHardware>();
-            listadoSoftwareEliminados = new List<SAS_DispositivoSoftware>();
-            listadoComponentesEliminados = new List<SAS_DispositivoComponentes>();
-            listadoCuentasUsuariosEliminados = new List<SAS_DispositivoCuentaUsuarios>();
-            listadoDocumentosEliminados = new List<SAS_DispositivoDocumento>();
-            listadoContadoresEliminados = new List<SAS_DispositivoContadores>();
-            listadoMantenimientosEliminados = new List<SAS_DispositivoMovimientoMantenimientos>();
-            listadoMovimientoAlmacenEliminados = new List<SAS_DispositivoMovimientoAlmacen>();
-            listadoNumeroIp = new List<SAS_DispositivoIP>();
-            listadoColaboradores = new List<SAS_DispositivoUsuarios>();
-            listadoHardware = new List<SAS_DispositivoHardware>();
-            listadoSoftware = new List<SAS_DispositivoSoftware>();
-            listadoComponentes = new List<SAS_DispositivoComponentes>();
-            listadoCuentasUsuarios = new List<SAS_DispositivoCuentaUsuarios>();
-            listadoDocumentos = new List<SAS_DispositivoDocumento>();
-            listadoContadores = new List<SAS_DispositivoContadores>();
-            listadoMantenimientos = new List<SAS_DispositivoMovimientoMantenimientos>();
-            listadoMovimientoAlmacen = new List<SAS_DispositivoMovimientoAlmacen>();
+            try
+            {
+                #region Listados()
+                modelHardware = new SAS_DispositivoHardwareController();
+                modelSoftware = new SAS_DispositivoSoftwareController();
+                modelComponente = new SAS_DispositivoComponentesController();
+                modelCuentasUsuario = new SAS_DispositivoCuentaUsuariosController();
+                modelDocumentos = new SAS_DispositivoDocumentoController();
+                modelContadores = new SAS_DispositivoContadoresController();
+                modelMantenimiento = new SAS_DispositivoMovimientoMantenimientosController();
+                modelMovimientoAlmacen = new SAS_DispositivoMovimientoAlmacenController();
 
-            DispositivoQuery = modelo.GetDeviceByIdDevice("SAS", idDispositivo);
-            DispositivoEdicionByList = modelo.ObtenerDatosDeDispositivo(oConexion, idDispositivo);
-            oDispositivo = modelo.ObtenerDispositivoFilterByID(oConexion, idDispositivo);
-            dispositivo = oDispositivo;
 
-            ipListByDevice = new List<SAS_DetalleDeDispositivosPorIPByCodigoDispositivoResult>();
-            ipListByDevice = modelo.DetalleDeDispositivosPorIPByCodigoDispositivo("SAS", oDispositivo); // Obtener listado de IP
-            msgError += "IP OK | ";
+                modelo = new SAS_DispostivoController();
+                DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
+                DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+                oDispositivo = new SAS_Dispostivo();
+                dispositivo = new SAS_Dispostivo();
+                listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
+                listadoColaboradoresEliminados = new List<SAS_DispositivoUsuarios>();
+                listadoHardwareEliminados = new List<SAS_DispositivoHardware>();
+                listadoSoftwareEliminados = new List<SAS_DispositivoSoftware>();
+                listadoComponentesEliminados = new List<SAS_DispositivoComponentes>();
+                listadoCuentasUsuariosEliminados = new List<SAS_DispositivoCuentaUsuarios>();
+                listadoDocumentosEliminados = new List<SAS_DispositivoDocumento>();
+                listadoContadoresEliminados = new List<SAS_DispositivoContadores>();
+                listadoMantenimientosEliminados = new List<SAS_DispositivoMovimientoMantenimientos>();
+                listadoMovimientoAlmacenEliminados = new List<SAS_DispositivoMovimientoAlmacen>();
 
-            colaboradoresPorDevice = new List<SAS_ListadoColaboradoresByDispositivoByCodigoResult>(); // Obtener listado de colaboradores() 
-            colaboradoresPorDevice = modelo.ListadoColaboradoresByDispositivoByCodigo("SAS", oDispositivo.id);
-            msgError += "COLABORADOR OK | ";
+                listadoImagenesPorDipositivo = new List<SAS_DispositivoImagene>();
+                listadoImagenesEliminar = new List<SAS_DispositivoImagene>();
+                listadoImagenesRegistro = new List<SAS_DispositivoImagene>();
 
-            hardwarePorDevice = new List<SAS_DispositivoHardwareByDeviceResult>(); // Obtener listado de colaboradores() 
-            hardwarePorDevice = modelHardware.GetDispositivoHardwareByDevice("SAS", oDispositivo);
-            msgError += " HW OK | ";
+                listadoNumeroIp = new List<SAS_DispositivoIP>();
+                listadoColaboradores = new List<SAS_DispositivoUsuarios>();
+                listadoHardware = new List<SAS_DispositivoHardware>();
+                listadoSoftware = new List<SAS_DispositivoSoftware>();
+                listadoComponentes = new List<SAS_DispositivoComponentes>();
+                listadoCuentasUsuarios = new List<SAS_DispositivoCuentaUsuarios>();
+                listadoDocumentos = new List<SAS_DispositivoDocumento>();
+                listadoContadores = new List<SAS_DispositivoContadores>();
+                listadoMantenimientos = new List<SAS_DispositivoMovimientoMantenimientos>();
+                listadoMovimientoAlmacen = new List<SAS_DispositivoMovimientoAlmacen>();
 
-            softwarePorDevice = new List<SAS_DispositivoSoftwareByDeviceResult>(); // Obtener listado de colaboradores() 
-            softwarePorDevice = modelSoftware.GetDispositivoSoftwareByDevice("SAS", oDispositivo);
-            msgError += " SF OK| ";
+                DispositivoQuery = modelo.GetDeviceByIdDevice("SAS", idDispositivo);
+                DispositivoEdicionByList = modelo.ObtenerDatosDeDispositivo(oConexion, idDispositivo);
+                oDispositivo = modelo.ObtenerDispositivoFilterByID(oConexion, idDispositivo);
+                dispositivo = oDispositivo;
 
-            componentesPorDevice = new List<SAS_DispositivoComponentesByDeviceResult>(); // Obtener listado de componentes hijos para un componente PAPÁ() 
-            componentesPorDevice = modelComponente.GetDispositivoCuentaUsuariosByDevice("SAS", oDispositivo);
-            msgError += " COMPO OK| ";
+                ipListByDevice = new List<SAS_DetalleDeDispositivosPorIPByCodigoDispositivoResult>();
+                ipListByDevice = modelo.DetalleDeDispositivosPorIPByCodigoDispositivo("SAS", oDispositivo); // Obtener listado de IP
+                msgError += "IP OK | ";
 
-            cuentasUsuariosPorDevice = new List<SAS_DispositivoCuentaUsuariosByDeviceResult>(); // Obtener listado de cuentas asociadas() 
-            cuentasUsuariosPorDevice = modelCuentasUsuario.GetDispositivoCuentaUsuariosByDevice("SAS", oDispositivo);
-            msgError += " USER ACCOUNT OK| ";
+                colaboradoresPorDevice = new List<SAS_ListadoColaboradoresByDispositivoByCodigoResult>(); // Obtener listado de colaboradores() 
+                colaboradoresPorDevice = modelo.ListadoColaboradoresByDispositivoByCodigo("SAS", oDispositivo.id);
+                msgError += "COLABORADOR OK | ";
 
-            documentoPorDevice = new List<SAS_DispositivoDocumentoByDeviceResult>(); // Obtener listado de documentos() 
-            documentoPorDevice = modelDocumentos.GetDispositivoDocumentoByDevice("SAS", oDispositivo);
-            msgError += " DOCUMENTO OK| ";
+                hardwarePorDevice = new List<SAS_DispositivoHardwareByDeviceResult>(); // Obtener listado de colaboradores() 
+                hardwarePorDevice = modelHardware.GetDispositivoHardwareByDevice("SAS", oDispositivo);
+                msgError += " HW OK | ";
 
-            // ADD 15.04.2022
-            contadoresPorDevice = new List<SAS_DispositivoaccountantsByDeviceIDResult>(); // Obtener listado de Contadores() 
-            contadoresPorDevice = modelContadores.GetListingByCode("SAS", oDispositivo);
-            msgError += " CONTADOR OK| ";
+                softwarePorDevice = new List<SAS_DispositivoSoftwareByDeviceResult>(); // Obtener listado de colaboradores() 
+                softwarePorDevice = modelSoftware.GetDispositivoSoftwareByDevice("SAS", oDispositivo);
+                msgError += " SF OK| ";
 
-            // ADD 15.04.2022
-            manteninientosPorDevice = new List<SAS_DispositivoMaintenanceByDeviceIDResult>(); // Obtener listado de Mantenimientos() 
-            manteninientosPorDevice = modelMantenimiento.GetListingByCode("SAS", oDispositivo);
-            msgError += " MANTENIMIENTO OK| ";
+                componentesPorDevice = new List<SAS_DispositivoComponentesByDeviceResult>(); // Obtener listado de componentes hijos para un componente PAPÁ() 
+                componentesPorDevice = modelComponente.GetDispositivoCuentaUsuariosByDevice("SAS", oDispositivo);
+                msgError += " COMPO OK| ";
 
-            // ADD 15.04.2022
-            movimientoAlmacenPorDevice = new List<SAS_DispositivoWharehouseMovementsByDeviceIDResult>(); // Obtener listado de Mantenimientos() 
-            movimientoAlmacenPorDevice = modelMovimientoAlmacen.GetListingByCode("SAS", oDispositivo);
-            msgError += " MOVIMIENTO ALMACEN OK| ";
+                cuentasUsuariosPorDevice = new List<SAS_DispositivoCuentaUsuariosByDeviceResult>(); // Obtener listado de cuentas asociadas() 
+                cuentasUsuariosPorDevice = modelCuentasUsuario.GetDispositivoCuentaUsuariosByDevice("SAS", oDispositivo);
+                msgError += " USER ACCOUNT OK| ";
+
+                documentoPorDevice = new List<SAS_DispositivoDocumentoByDeviceResult>(); // Obtener listado de documentos() 
+                documentoPorDevice = modelDocumentos.GetDispositivoDocumentoByDevice("SAS", oDispositivo);
+                msgError += " DOCUMENTO OK| ";
+
+                // ADD 15.04.2022
+                contadoresPorDevice = new List<SAS_DispositivoaccountantsByDeviceIDResult>(); // Obtener listado de Contadores() 
+                contadoresPorDevice = modelContadores.GetListingByCode("SAS", oDispositivo);
+                msgError += " CONTADOR OK| ";
+
+                // ADD 15.04.2022
+                manteninientosPorDevice = new List<SAS_DispositivoMaintenanceByDeviceIDResult>(); // Obtener listado de Mantenimientos() 
+                manteninientosPorDevice = modelMantenimiento.GetListingByCode("SAS", oDispositivo);
+                msgError += " MANTENIMIENTO OK| ";
+
+                // ADD 15.04.2022
+                movimientoAlmacenPorDevice = new List<SAS_DispositivoWharehouseMovementsByDeviceIDResult>(); // Obtener listado de Mantenimientos() 
+                movimientoAlmacenPorDevice = modelMovimientoAlmacen.GetListingByCode("SAS", oDispositivo);
+                msgError += " MOVIMIENTO ALMACEN OK| ";
+
+                // ADD 26.12.2023
+                listadoImagenesPorDipositivo = new List<SAS_DispositivoImagene>();
+                listadoImagenesPorDipositivo = modelo.ListadoImagenesPorDispositivoID("SAS", oDispositivo.id);
+                msgError += " Imagenes| ";
+
+                #endregion
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+           
 
 
         }
@@ -3617,6 +3711,55 @@ namespace ComparativoHorasVisualSATNISIRA
 
         }
 
+        private void btnGrillaImagenQuitar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGrillaImagenAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarItemAGrillaImagen(dgvImagenes);
+        }
+
+        private void AgregarItemAGrillaImagen(MyDataGridViewDetails Grilla)
+        {
+            try
+            {
+                if (Grilla != null)
+                {
+                    ArrayList array = new ArrayList();
+                    array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chGrillaImagenDispositivoID                 
+                    array.Add((ObtenerItemDetalleIP(ultimoItemImagenes))); // chGrillaImagenItem
+                    array.Add(0); // chGrillaImagenEsPrincipal
+                    array.Add(""); // chGrillaImagenRuta    
+                    array.Add(DateTime.Now.ToShortDateString()); // chGrillaImagenFecha                
+                    array.Add(string.Empty); // chGrillaImagenLatitud
+                    array.Add(string.Empty); // chGrillaImagenLongitud                    
+                    array.Add(string.Empty); // chGrillaImagenNota                    
+                    array.Add(1); // chGrillaImagenEstado                                          
+                    Grilla.AgregarFila(array);
+                    ultimoItemSoftware += 1;
+                }
+                else
+                {
+                    Formateador.MostrarMensajeAdvertencia(this, "Haga click en la Grilla a Modificar", "Validacion Ingreso de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                Formateador.ControlExcepcion(this, this.Name, ex);
+            }
+        }
+
+        private void btnGrillaImagenActivar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvHardware_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
 
         private void bgwCambiarEstado_DoWork(object sender, DoWorkEventArgs e)
         {

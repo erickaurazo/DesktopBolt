@@ -30,6 +30,9 @@ namespace Asistencia.Datos
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertSAS_DispositivoImagene(SAS_DispositivoImagene instance);
+    partial void UpdateSAS_DispositivoImagene(SAS_DispositivoImagene instance);
+    partial void DeleteSAS_DispositivoImagene(SAS_DispositivoImagene instance);
     #endregion
 		
 		public ITDContextDataContext() : 
@@ -60,6 +63,14 @@ namespace Asistencia.Datos
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<SAS_DispositivoImagene> SAS_DispositivoImagenes
+		{
+			get
+			{
+				return this.GetTable<SAS_DispositivoImagene>();
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EsPropioCBO")]
@@ -116,6 +127,260 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<SAS_TipoDispositivoCBOResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_DispositivoImagenes")]
+	public partial class SAS_DispositivoImagene : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DispositivoId;
+		
+		private int _Item;
+		
+		private byte _EsPrincipal;
+		
+		private string _Ruta;
+		
+		private System.DateTime _Fecha;
+		
+		private string _Latitud;
+		
+		private string _Longitud;
+		
+		private string _Nota;
+		
+		private byte _Estado;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDispositivoIdChanging(int value);
+    partial void OnDispositivoIdChanged();
+    partial void OnItemChanging(int value);
+    partial void OnItemChanged();
+    partial void OnEsPrincipalChanging(byte value);
+    partial void OnEsPrincipalChanged();
+    partial void OnRutaChanging(string value);
+    partial void OnRutaChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    partial void OnLatitudChanging(string value);
+    partial void OnLatitudChanged();
+    partial void OnLongitudChanging(string value);
+    partial void OnLongitudChanged();
+    partial void OnNotaChanging(string value);
+    partial void OnNotaChanged();
+    partial void OnEstadoChanging(byte value);
+    partial void OnEstadoChanged();
+    #endregion
+		
+		public SAS_DispositivoImagene()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DispositivoId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DispositivoId
+		{
+			get
+			{
+				return this._DispositivoId;
+			}
+			set
+			{
+				if ((this._DispositivoId != value))
+				{
+					this.OnDispositivoIdChanging(value);
+					this.SendPropertyChanging();
+					this._DispositivoId = value;
+					this.SendPropertyChanged("DispositivoId");
+					this.OnDispositivoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Item
+		{
+			get
+			{
+				return this._Item;
+			}
+			set
+			{
+				if ((this._Item != value))
+				{
+					this.OnItemChanging(value);
+					this.SendPropertyChanging();
+					this._Item = value;
+					this.SendPropertyChanged("Item");
+					this.OnItemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsPrincipal", DbType="TinyInt NOT NULL")]
+		public byte EsPrincipal
+		{
+			get
+			{
+				return this._EsPrincipal;
+			}
+			set
+			{
+				if ((this._EsPrincipal != value))
+				{
+					this.OnEsPrincipalChanging(value);
+					this.SendPropertyChanging();
+					this._EsPrincipal = value;
+					this.SendPropertyChanged("EsPrincipal");
+					this.OnEsPrincipalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ruta", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Ruta
+		{
+			get
+			{
+				return this._Ruta;
+			}
+			set
+			{
+				if ((this._Ruta != value))
+				{
+					this.OnRutaChanging(value);
+					this.SendPropertyChanging();
+					this._Ruta = value;
+					this.SendPropertyChanged("Ruta");
+					this.OnRutaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitud", DbType="VarChar(50)")]
+		public string Latitud
+		{
+			get
+			{
+				return this._Latitud;
+			}
+			set
+			{
+				if ((this._Latitud != value))
+				{
+					this.OnLatitudChanging(value);
+					this.SendPropertyChanging();
+					this._Latitud = value;
+					this.SendPropertyChanged("Latitud");
+					this.OnLatitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitud", DbType="VarChar(50)")]
+		public string Longitud
+		{
+			get
+			{
+				return this._Longitud;
+			}
+			set
+			{
+				if ((this._Longitud != value))
+				{
+					this.OnLongitudChanging(value);
+					this.SendPropertyChanging();
+					this._Longitud = value;
+					this.SendPropertyChanged("Longitud");
+					this.OnLongitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nota", DbType="VarChar(250)")]
+		public string Nota
+		{
+			get
+			{
+				return this._Nota;
+			}
+			set
+			{
+				if ((this._Nota != value))
+				{
+					this.OnNotaChanging(value);
+					this.SendPropertyChanging();
+					this._Nota = value;
+					this.SendPropertyChanged("Nota");
+					this.OnNotaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt NOT NULL")]
+		public byte Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

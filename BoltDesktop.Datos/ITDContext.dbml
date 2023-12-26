@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="ITDContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString8" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SAS_DispositivoImagenes" Member="SAS_DispositivoImagenes">
+    <Type Name="SAS_DispositivoImagene">
+      <Column Name="DispositivoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EsPrincipal" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Ruta" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Latitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Longitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.SAS_EsPropioCBO" Method="SAS_EsPropioCBO">
     <ElementType Name="SAS_EsPropioCBOResult">
       <Column Name="codigo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
