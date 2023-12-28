@@ -58,7 +58,7 @@ namespace Asistencia.Negocios
             {
                 try
                 {
-                   using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+                    using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
                     {
 
                         var companiesQuery = (from item2 in Modelo.EMPRESAS_SAS
@@ -68,22 +68,18 @@ namespace Asistencia.Negocios
                                               {
                                                   Codigo = j.Key.IDEMPRESA.Trim(),
                                                   Descripcion = j.FirstOrDefault().RAZON_SOCIAL != null ? j.FirstOrDefault().RAZON_SOCIAL.Trim().ToUpper() : string.Empty
-                                                  //
                                               }
                                        ).ToList();
                         companies.AddRange(companiesQuery);
                     }
                 }
                 catch (Exception Ex)
-                {                                                            
+                {
                     throw Ex;
-
                 }
 
             }
-
             return companies.OrderBy(x => x.Codigo).ToList();
-
         }
 
 
@@ -128,7 +124,7 @@ namespace Asistencia.Negocios
 
             if (conection != string.Empty)
             {
-               using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+                using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
                 {
 
                     companies = (

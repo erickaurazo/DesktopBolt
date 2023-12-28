@@ -37,32 +37,30 @@ namespace ComparativoHorasVisualSATNISIRA
         private int codigo = 0;
         private string fileName;
         private bool exportVisualSettings;
-        private List<Grupo> listadoTipoDispositivo;
-        private List<Grupo> listadoTipoPertenencia;
-        private List<Grupo> listadoMarcas;
-        private List<Grupo> listadoModelos;
-        private List<Grupo> listadoSede;
-        private List<Grupo> listadoFuncionamiento;
-        private List<Grupo> listadoProveedores;
-        private List<Grupo> listadoEstadosDispositivos;
-
-        private List<string> listadoTipoDispositivoElegir;
-        private List<string> listadoTipoPertenenciaElegir;
-        private List<string> listadoMarcasElegir;
-        private List<string> listadoModelosElegir;
-        private List<string> listadoSedeElegir;
-        private List<string> listadoFuncionamientoElegir;
-        private List<string> listadoProveedoresElegir;
-        private List<string> listadoEstadosDispositivosElegir;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro01;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro02;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro03;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro04;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro05;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro06;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro07;
-        private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro08;
-
+        //private List<Grupo> listadoTipoDispositivo;
+        //private List<Grupo> listadoTipoPertenencia;
+        //private List<Grupo> listadoMarcas;
+        //private List<Grupo> listadoModelos;
+        //private List<Grupo> listadoSede;
+        //private List<Grupo> listadoFuncionamiento;
+        //private List<Grupo> listadoProveedores;
+        //private List<Grupo> listadoEstadosDispositivos;
+        //private List<string> listadoTipoDispositivoElegir;
+        //private List<string> listadoTipoPertenenciaElegir;
+        //private List<string> listadoMarcasElegir;
+        //private List<string> listadoModelosElegir;
+        //private List<string> listadoSedeElegir;
+        //private List<string> listadoFuncionamientoElegir;
+        //private List<string> listadoProveedoresElegir;
+        //private List<string> listadoEstadosDispositivosElegir;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro01;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro02;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro03;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro04;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro05;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro06;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro07;
+        //private List<SAS_ListadoDeDispositivos> listadoPalletPendientesByClienteIdFiltro08;
         Byte[] pic;
         private SAS_Dispostivo oDevice;
         private SAS_DispostivoController mDevice;
@@ -76,14 +74,14 @@ namespace ComparativoHorasVisualSATNISIRA
         private List<SAS_MarcaDispositivoCBOResult> listadoCboMarcaDispositivos;
         private List<SAS_EsPropioCBOResult> listadoCboEsPropioDispositivos;
         private List<SAS_TipoDispositivoCBOResult> listadoCboTipoDispositivos;
-        private List<RadCheckedListDataItem> oTipoPallets;
-        private List<RadCheckedListDataItem> lPertenencia;
-        private List<RadCheckedListDataItem> lmarcas;
-        private List<RadCheckedListDataItem> lmodelo;
-        private List<RadCheckedListDataItem> lsede;
-        private List<RadCheckedListDataItem> lfuncionamiento;
-        private List<RadCheckedListDataItem> lproveedores;
-        private List<RadCheckedListDataItem> lEstados;
+        //private List<RadCheckedListDataItem> oTipoPallets;
+        //private List<RadCheckedListDataItem> lPertenencia;
+        //private List<RadCheckedListDataItem> lmarcas;
+        //private List<RadCheckedListDataItem> lmodelo;
+        //private List<RadCheckedListDataItem> lsede;
+        //private List<RadCheckedListDataItem> lfuncionamiento;
+        //private List<RadCheckedListDataItem> lproveedores;
+        //private List<RadCheckedListDataItem> lEstados;
 
         public DispositivosListado()
         {
@@ -92,6 +90,14 @@ namespace ComparativoHorasVisualSATNISIRA
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+
+            user2 = new SAS_USUARIOS();
+            user2.IdUsuario = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            user2.NombreCompleto = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             Consultar();
             Inicio();
             dispositivo = new SAS_Dispostivo();
@@ -107,13 +113,13 @@ namespace ComparativoHorasVisualSATNISIRA
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             conection = _conection.Trim() != string.Empty ? _conection.Trim() : "SAS";
             user2 = _user2;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
             companyId = _companyId;
             privilege = _privilege;
             Inicio();
             dispositivo = new SAS_Dispostivo();
-            dispositivo.id = -1;
-            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
-            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.UserName.ToString();
+            dispositivo.id = -1;            
             Consultar();
 
         }
@@ -161,7 +167,6 @@ namespace ComparativoHorasVisualSATNISIRA
             this.dgvDispositivo.MasterTemplate.SummaryRowsTop.Add(items1);
         }
 
-
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
             modelo = new SAS_DispositivoIPController();
@@ -175,24 +180,24 @@ namespace ComparativoHorasVisualSATNISIRA
             listadoCboEsPropioDispositivos = new List<SAS_EsPropioCBOResult>();
             listadoCboTipoDispositivos = new List<SAS_TipoDispositivoCBOResult>();
 
-            listadoCboEstadoDispositivos = modelo.ObtenerListadoCboEstadoDispositivos("SAS").ToList();
+            //listadoCboEstadoDispositivos = modelo.ObtenerListadoCboEstadoDispositivos("SAS").ToList();
             //listadoCboProveedorDispositivos = modelo.ObtenerListadoProveedorDispositivoCBO("SAS").ToList();
             //listadoCboFuncionamientoDispositivos = modelo.ObtenerListadoFuncionamientoDispositivoCBO("SAS").ToList();
             //listadoCboSedeDispositivos = modelo.ObtenerListadoSedeDispositivoCBO("SAS").ToList();
             //listadoCboModeloDispositivos = modelo.ObtenerListadoModeloDispositivoCBO("SAS").ToList();
             //listadoCboMarcaDispositivos = modelo.ObtenerListadoMarcaDispositivoCBO("SAS").ToList();
-            listadoCboEsPropioDispositivos = modelo.ObtenerListadoEsPropioCBO("SAS").ToList();
-            listadoCboTipoDispositivos = modelo.ObtenerListadoTipoDispositivoCBO("SAS").ToList();
+            //listadoCboEsPropioDispositivos = modelo.ObtenerListadoEsPropioCBO("SAS").ToList();
+            //listadoCboTipoDispositivos = modelo.ObtenerListadoTipoDispositivoCBO("SAS").ToList();
 
 
-            listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
+            //listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro02 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro03 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro04 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro05 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro06 = new List<SAS_ListadoDeDispositivos>();
-            listadoPalletPendientesByClienteIdFiltro07 = new List<SAS_ListadoDeDispositivos>();
-            listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
+            //listadoPalletPendientesByClienteIdFiltro07 = new List<SAS_ListadoDeDispositivos>();
+            //listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
 
             listado = modelo.ListadoDeDispositivos("SAS").ToList();
 
@@ -200,26 +205,26 @@ namespace ComparativoHorasVisualSATNISIRA
             if (listado != null && listado.ToList().Count > 0)
             {
 
-                oTipoPallets = new List<RadCheckedListDataItem>();
-                oTipoPallets = (from item in listadoCboTipoDispositivos
-                                group item by new { item.codigo } into j
-                                select new RadCheckedListDataItem
-                                {
-                                    Value = j.Key.codigo,
-                                    Text = j.FirstOrDefault().descripcion,
-                                    Checked = true
-                                }).ToList();
+                //oTipoPallets = new List<RadCheckedListDataItem>();
+                //oTipoPallets = (from item in listadoCboTipoDispositivos
+                //                group item by new { item.codigo } into j
+                //                select new RadCheckedListDataItem
+                //                {
+                //                    Value = j.Key.codigo,
+                //                    Text = j.FirstOrDefault().descripcion,
+                //                    Checked = true
+                //                }).ToList();
 
 
-                lPertenencia = new List<RadCheckedListDataItem>();
-                lPertenencia = (from item in listadoCboEsPropioDispositivos
-                                group item by new { item.codigo } into j
-                                select new RadCheckedListDataItem
-                                {
-                                    Value = j.Key.codigo,
-                                    Text = j.FirstOrDefault().descripcion,
-                                    Checked = true
-                                }).ToList();
+                //lPertenencia = new List<RadCheckedListDataItem>();
+                //lPertenencia = (from item in listadoCboEsPropioDispositivos
+                //                group item by new { item.codigo } into j
+                //                select new RadCheckedListDataItem
+                //                {
+                //                    Value = j.Key.codigo,
+                //                    Text = j.FirstOrDefault().descripcion,
+                //                    Checked = true
+                //                }).ToList();
 
 
                 //lmarcas = new List<RadCheckedListDataItem>();
@@ -273,15 +278,15 @@ namespace ComparativoHorasVisualSATNISIRA
                 //                    Checked = true
                 //                }).ToList();
 
-                lEstados = new List<RadCheckedListDataItem>();
-                lEstados = (from item in listadoCboEstadoDispositivos
-                            group item by new { item.codigo } into j
-                            select new RadCheckedListDataItem
-                            {
-                                Value = j.Key.codigo,
-                                Text = j.FirstOrDefault().descripcion,
-                                Checked = true
-                            }).ToList();
+                //lEstados = new List<RadCheckedListDataItem>();
+                //lEstados = (from item in listadoCboEstadoDispositivos
+                //            group item by new { item.codigo } into j
+                //            select new RadCheckedListDataItem
+                //            {
+                //                Value = j.Key.codigo,
+                //                Text = j.FirstOrDefault().descripcion,
+                //                Checked = true
+                //            }).ToList();
 
                 //listadoTipoDispositivo = (from item in listadoCboTipoDispositivos
                 //                          group item by new { item.codigo } into j
@@ -363,13 +368,13 @@ namespace ComparativoHorasVisualSATNISIRA
             if (listado != null && listado.ToList().Count > 0)
             {
                
-                cboTipoDispotivo.DisplayMember = "Descripcion";
-                cboTipoDispotivo.ValueMember = "Valor";
-                cboTipoDispotivo.Items.AddRange(oTipoPallets);
+                //cboTipoDispotivo.DisplayMember = "Descripcion";
+                //cboTipoDispotivo.ValueMember = "Valor";
+                //cboTipoDispotivo.Items.AddRange(oTipoPallets);
 
-                cboPertenencia.DisplayMember = "Descripcion";
-                cboPertenencia.ValueMember = "Valor";                
-                cboPertenencia.Items.AddRange(lPertenencia);              
+                //cboPertenencia.DisplayMember = "Descripcion";
+                //cboPertenencia.ValueMember = "Valor";                
+                //cboPertenencia.Items.AddRange(lPertenencia);              
 
                 //cboMarca.DisplayMember = "Descripcion";
                 //cboMarca.ValueMember = "Valor";                
@@ -391,9 +396,9 @@ namespace ComparativoHorasVisualSATNISIRA
                 //cboProveedor.ValueMember = "Valor";
                 //cboProveedor.Items.AddRange(lproveedores);
                                 
-                cboEstado.DisplayMember = "Descripcion";
-                cboEstado.ValueMember = "Valor";                
-                cboEstado.Items.AddRange(lEstados);
+                //cboEstado.DisplayMember = "Descripcion";
+                //cboEstado.ValueMember = "Valor";                
+                //cboEstado.Items.AddRange(lEstados);
 
             }
 
@@ -487,6 +492,11 @@ namespace ComparativoHorasVisualSATNISIRA
             btnVistaPreviaTicketQR.Enabled = false;
             btnVistaPreviaDeFichaDeDispositivo.Enabled = false;
             btnVerLineaCelular.Enabled = false;
+
+            btnProgramarSoporte.Enabled = false;
+            btnProgramarDisponibilidad.Enabled = false;
+            btnRegistrarInspeccion.Enabled = false;
+
             codigo = 0;
             string imgQr = string.Empty;
             oDispositivo = new SAS_ListadoDeDispositivos();
@@ -524,7 +534,11 @@ namespace ComparativoHorasVisualSATNISIRA
                                         btnVerLineaCelular.Enabled = false;
                                         btnVerProgramacionDiaria.Enabled = !false;
 
-                                        #region
+                                        btnProgramarSoporte.Enabled = true;
+                                        btnProgramarDisponibilidad.Enabled = true;
+                                        btnRegistrarInspeccion.Enabled = true;
+
+                                        #region Habilitar opciones a dispositivos()  
                                         oDispositivo = resultado.ElementAt(0);
                                         dispositivo.id = codigo;
                                         if (oDispositivo.imagen != null)
@@ -634,7 +648,6 @@ namespace ComparativoHorasVisualSATNISIRA
             }
         }
 
-
         private void Eliminar()
         {
             int resultadoAccion = 0;
@@ -714,39 +727,39 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void Filtrar()
         {
-            listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
-            listadoPalletPendientesByClienteIdFiltro02 = new List<SAS_ListadoDeDispositivos>();
+            //listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
+            //listadoPalletPendientesByClienteIdFiltro02 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro03 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro04 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro05 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro06 = new List<SAS_ListadoDeDispositivos>();
             //listadoPalletPendientesByClienteIdFiltro07 = new List<SAS_ListadoDeDispositivos>();
-            listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
+            //listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
 
             // 01
             #region  Tipo de dispositivo() 
-            listadoTipoDispositivoElegir = new List<string>();
-            foreach (var itemChecked in cboTipoDispotivo.CheckedItems)
-            {
-                listadoTipoDispositivoElegir.Add(itemChecked.Value.ToString());
-            }
+            //listadoTipoDispositivoElegir = new List<string>();
+            //foreach (var itemChecked in cboTipoDispotivo.CheckedItems)
+            //{
+            //    listadoTipoDispositivoElegir.Add(itemChecked.Value.ToString());
+            //}
 
-            listadoPalletPendientesByClienteIdFiltro01 = (from items in listado.ToList()
-                                                          where (listadoTipoDispositivoElegir.Contains(items.tipoDispositivoCodigo.ToString().ToUpper().Trim()))
-                                                          select items).ToList();
+            //listadoPalletPendientesByClienteIdFiltro01 = (from items in listado.ToList()
+            //                                              where (listadoTipoDispositivoElegir.Contains(items.tipoDispositivoCodigo.ToString().ToUpper().Trim()))
+            //                                              select items).ToList();
             #endregion 
 
             //02
             #region  Pertenencia() 
-            listadoTipoDispositivoElegir = new List<string>();
-            foreach (var itemChecked in cboPertenencia.CheckedItems)
-            {
-                listadoTipoDispositivoElegir.Add(itemChecked.Value.ToString());
-            }
+            //listadoTipoDispositivoElegir = new List<string>();
+            //foreach (var itemChecked in cboPertenencia.CheckedItems)
+            //{
+            //    listadoTipoDispositivoElegir.Add(itemChecked.Value.ToString());
+            //}
 
-            listadoPalletPendientesByClienteIdFiltro02 = (from items in listadoPalletPendientesByClienteIdFiltro01.ToList()
-                                                          where (listadoTipoDispositivoElegir.Contains(items.EsPropio.ToString().ToUpper().Trim()))
-                                                          select items).ToList();
+            //listadoPalletPendientesByClienteIdFiltro02 = (from items in listadoPalletPendientesByClienteIdFiltro01.ToList()
+            //                                              where (listadoTipoDispositivoElegir.Contains(items.EsPropio.ToString().ToUpper().Trim()))
+            //                                              select items).ToList();
             #endregion 
             /*
             //03
@@ -816,18 +829,18 @@ namespace ComparativoHorasVisualSATNISIRA
             */
             //08
             #region  Listado Estado Dispositivo() 
-            listadoEstadosDispositivosElegir = new List<string>();
-            foreach (var itemChecked in cboEstado.CheckedItems)
-            {
-                listadoEstadosDispositivosElegir.Add(itemChecked.Value.ToString());
-            }
+            //listadoEstadosDispositivosElegir = new List<string>();
+            //foreach (var itemChecked in cboEstado.CheckedItems)
+            //{
+            //    listadoEstadosDispositivosElegir.Add(itemChecked.Value.ToString());
+            //}
 
-            listadoPalletPendientesByClienteIdFiltro08 = (from items in listadoPalletPendientesByClienteIdFiltro02.ToList()
-                                                          where (listadoEstadosDispositivosElegir.Contains(items.idestado.ToString().ToUpper().Trim()))
-                                                          select items).ToList();
+            //listadoPalletPendientesByClienteIdFiltro08 = (from items in listadoPalletPendientesByClienteIdFiltro02.ToList()
+            //                                              where (listadoEstadosDispositivosElegir.Contains(items.idestado.ToString().ToUpper().Trim()))
+            //                                              select items).ToList();
             #endregion
 
-            dgvDispositivo.DataSource = listadoPalletPendientesByClienteIdFiltro08.ToDataTable<SAS_ListadoDeDispositivos>();
+            dgvDispositivo.DataSource = listado.ToDataTable<SAS_ListadoDeDispositivos>();
             dgvDispositivo.Refresh();
             dgvDispositivo.Enabled = true;
 
@@ -1052,7 +1065,6 @@ namespace ComparativoHorasVisualSATNISIRA
         {
             Exportar(dgvDispositivo);
         }
-
 
         private void Exportar(RadGridView radGridView)
         {

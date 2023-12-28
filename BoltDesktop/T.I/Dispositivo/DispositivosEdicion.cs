@@ -93,6 +93,13 @@ namespace ComparativoHorasVisualSATNISIRA
         public DispositivosEdicion()
         {
             InitializeComponent();
+            user2 = new SAS_USUARIOS();
+            user2.IdUsuario = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            user2.NombreCompleto = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
@@ -105,6 +112,13 @@ namespace ComparativoHorasVisualSATNISIRA
         public DispositivosEdicion(string _oConexion, SAS_ListadoDeDispositivos _oDispositivoQuery)
         {
             InitializeComponent();
+            user2 = new SAS_USUARIOS();
+            user2.IdUsuario = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            user2.NombreCompleto = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             oConexion = _oConexion;
             DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
@@ -132,6 +146,13 @@ namespace ComparativoHorasVisualSATNISIRA
             oDispositivo.id = _oDispositivoQuery.id;
             idDispositivo = _oDispositivoQuery.id;
             CargarCombos();
+            user2 = new SAS_USUARIOS();
+            user2.IdUsuario = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            user2.NombreCompleto = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             Inicio();
             #region
             //_Dispositivo = new SAS_ListadoDeDispositivos();
@@ -298,6 +319,9 @@ namespace ComparativoHorasVisualSATNISIRA
             InitializeComponent();
             conection = _oConexion.Trim() != string.Empty ? _oConexion.Trim() : "SAS";
             user2 = _user2;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             companyId = _companyId;
             privilege = _privilege;
             oConexion = _oConexion.Trim() != string.Empty ? _oConexion.Trim() : "SAS";
@@ -411,6 +435,9 @@ namespace ComparativoHorasVisualSATNISIRA
             InitializeComponent();
             conection = _oConexion;
             user2 = _user2;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             companyId = _companyId;
             privilege = _privilege;
             oConexion = _oConexion;
@@ -587,6 +614,9 @@ namespace ComparativoHorasVisualSATNISIRA
                 InitializeComponent();
                 conection = _oConexion;
                 user2 = _user2;
+                lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+                lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
                 idDispositivo = _idDispositivo;
                 companyId = _companyId;
                 privilege = _privilege;
@@ -1536,13 +1566,13 @@ namespace ComparativoHorasVisualSATNISIRA
                                     SAS_DispositivoImagene recordObject = new SAS_DispositivoImagene();
                                     recordObject.DispositivoId = fila.Cells["chGrillaImagenDispositivoID"].Value != null ? Convert.ToInt32(fila.Cells["chGrillaImagenDispositivoID"].Value.ToString().Trim()) : 0;
                                     recordObject.Item = fila.Cells["chGrillaImagenItem"].Value != null ? Convert.ToInt32(fila.Cells["chGrillaImagenItem"].Value.ToString().Trim()) : 0;
-                                    recordObject.EsPrincipal = fila.Cells["chGrillaImagenEsPrincipal"].Value != null ? Convert.ToByte(fila.Cells["chGrillaImagenEsPrincipal"].Value.ToString().Trim()) : Convert.ToByte( 0);
+                                    recordObject.EsPrincipal = fila.Cells["chGrillaImagenEsPrincipal"].Value != null ? Convert.ToByte(fila.Cells["chGrillaImagenEsPrincipal"].Value.ToString().Trim()) : Convert.ToByte(0);
                                     recordObject.Ruta = fila.Cells["chGrillaImagenRuta"].Value != null ? fila.Cells["chGrillaImagenRuta"].Value.ToString().Trim() : string.Empty;
                                     recordObject.Fecha = fila.Cells["chGrillaImagenFecha"].Value != null ? Convert.ToDateTime(fila.Cells["chGrillaImagenFecha"].Value.ToString().Trim()) : DateTime.Now;
                                     recordObject.Latitud = fila.Cells["chGrillaImagenLatitud"].Value != null ? fila.Cells["chGrillaImagenLatitud"].Value.ToString().Trim() : string.Empty;
                                     recordObject.Longitud = fila.Cells["chGrillaImagenLongitud"].Value != null ? fila.Cells["chGrillaImagenLongitud"].Value.ToString().Trim() : string.Empty;
                                     recordObject.Nota = fila.Cells["chGrillaImagenNota"].Value != null ? fila.Cells["chGrillaImagenNota"].Value.ToString().Trim() : string.Empty;
-                                    recordObject.Estado = fila.Cells["chGrillaImagenEstado"].Value != null ? Convert.ToByte(fila.Cells["chGrillaImagenEstado"].Value.ToString().Trim()) : Convert.ToByte(0);                                    
+                                    recordObject.Estado = fila.Cells["chGrillaImagenEstado"].Value != null ? Convert.ToByte(fila.Cells["chGrillaImagenEstado"].Value.ToString().Trim()) : Convert.ToByte(0);
                                     #endregion
                                     listadoImagenesRegistro.Add(recordObject);
                                 }
@@ -1669,6 +1699,13 @@ namespace ComparativoHorasVisualSATNISIRA
             #region
             numeroRegistros += 1;
             return numeroRegistros.ToString().PadLeft(3, '0');
+            #endregion
+        }
+
+        private int ObtenerItemDetalleImagen(int numeroRegistros)
+        {
+            #region
+            return numeroRegistros += 1;
             #endregion
         }
 
@@ -1924,32 +1961,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
                 oImagenMostrar = new SAS_DispositivoImagene();
 
-                if (listadoImagenesPorDipositivo != null)
-                {
-                    if (listadoImagenesPorDipositivo.ToList().Count > 0)
-                    {
-                        var ImagenPrincipal = listadoImagenesPorDipositivo.Where(x => x.EsPrincipal == 1).ToList();
-                        if (ImagenPrincipal != null && ImagenPrincipal.ToList().Count > 0)
-                        {
-                            oImagenMostrar = ImagenPrincipal.ElementAt(0);
-                            if (File.Exists(oImagenMostrar.Ruta.Trim()))
-                            {
-                                pbImagenPrincipal.Image = System.Drawing.Image.FromFile((oImagenMostrar.Ruta.Trim()));
-                                pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
-                            }
-                            else
-                            {
-                                pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
-                                pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
-                        pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
-                    }
-                }
+                MostrarImagenDeDispositivoInicio();
 
                 #endregion
 
@@ -2050,7 +2062,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 {
                     if (listadoImagenesPorDipositivo.Count > 0)
                     {
-                        ultimoItemImagenes = Convert.ToInt32(listadoImagenesPorDipositivo.Max(x=> x.Item));
+                        ultimoItemImagenes = Convert.ToInt32(listadoImagenesPorDipositivo.Max(x => x.Item));
                     }
                 }
 
@@ -2119,6 +2131,60 @@ namespace ComparativoHorasVisualSATNISIRA
                 return;
             }
         }
+
+        private void MostrarImagenDeDispositivoInicio()
+        {
+            if (listadoImagenesPorDipositivo != null)
+            {
+                #region Mostrar Imagen() 
+                if (listadoImagenesPorDipositivo.ToList().Count > 0)
+                {
+                    var ImagenPrincipal = listadoImagenesPorDipositivo.Where(x => x.EsPrincipal == 1).ToList();
+                    if (ImagenPrincipal != null && ImagenPrincipal.ToList().Count > 0)
+                    {
+                        oImagenMostrar = ImagenPrincipal.ElementAt(0);
+                        if (File.Exists(oImagenMostrar.Ruta.Trim()))
+                        {
+                            pbImagenPrincipal.Image = System.Drawing.Image.FromFile((oImagenMostrar.Ruta.Trim()));
+                            pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }
+                        else
+                        {
+                            pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
+                            pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }
+                    }
+                }
+                else
+                {
+                    pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
+                    pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                #endregion
+            }
+        }
+
+        private void MostrarImagenDeDispositivoPorItem(SAS_DispositivoImagene DetalleImagen)
+        {
+            oImagenMostrar = new SAS_DispositivoImagene();
+            if (DetalleImagen != null)
+            {
+                #region Mostrar Imagen() 
+                
+                if (File.Exists(DetalleImagen.Ruta.Trim()))
+                {
+                    pbImagenPrincipal.Image = System.Drawing.Image.FromFile((DetalleImagen.Ruta.Trim()));
+                    pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    pbImagenPrincipal.Image = System.Drawing.Image.FromFile((rutaDefault));
+                    pbImagenPrincipal.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                #endregion
+            }
+        }
+
 
         private void dgvDetalleIP_KeyUp(object sender, KeyEventArgs e)
         {
@@ -3483,7 +3549,8 @@ namespace ComparativoHorasVisualSATNISIRA
             try
             {
                 modelo = new SAS_DispostivoController();
-                resultadoAccion = modelo.Register("SAS", dispositivo, listadoNumeroIpEliminados, listadoNumeroIp, listadoColaboradoresEliminados, listadoColaboradores, listadoHardwareEliminados, listadoHardware, listadoSoftwareEliminados, listadoSoftware, listadoComponentesEliminados, listadoComponentes, listadoCuentasUsuariosEliminados, listadoCuentasUsuarios, listadoDocumentosEliminados, listadoDocumentos, listadoContadoresEliminados, listadoContadores, listadoMantenimientosEliminados, listadoMantenimientos, listadoMovimientoAlmacenEliminados, listadoMovimientoAlmacen);
+                //resultadoAccion = modelo.Register("SAS", dispositivo, listadoNumeroIpEliminados, listadoNumeroIp, listadoColaboradoresEliminados, listadoColaboradores, listadoHardwareEliminados, listadoHardware, listadoSoftwareEliminados, listadoSoftware, listadoComponentesEliminados, listadoComponentes, listadoCuentasUsuariosEliminados, listadoCuentasUsuarios, listadoDocumentosEliminados, listadoDocumentos, listadoContadoresEliminados, listadoContadores, listadoMantenimientosEliminados, listadoMantenimientos, listadoMovimientoAlmacenEliminados, listadoMovimientoAlmacen);
+                resultadoAccion = modelo.ToRegister("SAS", dispositivo, listadoNumeroIpEliminados, listadoNumeroIp, listadoColaboradoresEliminados, listadoColaboradores, listadoHardwareEliminados, listadoHardware, listadoSoftwareEliminados, listadoSoftware, listadoComponentesEliminados, listadoComponentes, listadoCuentasUsuariosEliminados, listadoCuentasUsuarios, listadoDocumentosEliminados, listadoDocumentos, listadoContadoresEliminados, listadoContadores, listadoMantenimientosEliminados, listadoMantenimientos, listadoMovimientoAlmacenEliminados, listadoMovimientoAlmacen, listadoImagenesEliminar, listadoImagenesRegistro);
                 idDispositivo = resultadoAccion;
                 string msgError = string.Empty;
                 ObtenerListarOperativas();
@@ -3603,7 +3670,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 throw;
             }
 
-           
+
 
 
         }
@@ -3713,7 +3780,47 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void btnGrillaImagenQuitar_Click(object sender, EventArgs e)
         {
+            QuitarItemImagen(dgvImagenes);
+        }
 
+        private void QuitarItemImagen(MyDataGridViewDetails Grilla)
+        {
+            if (this.dgvHardware != null)
+            {
+                #region delete item() 
+                if (Grilla.CurrentRow != null && Grilla.CurrentRow.Cells["chGrillaImagenDispositivoID"].Value != null)
+                {
+                    //if (MessageBox.Show(this, "¿Desea eliminar el elemento seleccionado?", "Confirmar Operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    //{
+                    try
+                    {
+
+                        Int32 dispositivoCodigo = (Grilla.CurrentRow.Cells["chGrillaImagenDispositivoID"].Value.ToString().Trim() != "" ? Convert.ToInt32(Grilla.CurrentRow.Cells["chGrillaImagenDispositivoID"].Value) : 0);
+                        if (dispositivoCodigo != 0)
+                        {
+                            int item = ((Grilla.CurrentRow.Cells["chGrillaImagenItem"].Value != null | Grilla.CurrentRow.Cells["chGrillaImagenItem"].Value.ToString().Trim() != string.Empty) ? Convert.ToInt32((Grilla.CurrentRow.Cells["chGrillaImagenItem"].Value.ToString())) : 0);
+                            if (dispositivoCodigo != 0)
+                            {
+
+                                listadoImagenesEliminar.Add(new SAS_DispositivoImagene
+                                {
+                                    DispositivoId = dispositivoCodigo,
+                                    Item = item,
+                                });
+                            }
+                        }
+
+                        Grilla.Rows.Remove(Grilla.CurrentRow);
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                        return;
+                    }
+                    //}
+                }
+                #endregion
+            }
         }
 
         private void btnGrillaImagenAgregar_Click(object sender, EventArgs e)
@@ -3729,7 +3836,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 {
                     ArrayList array = new ArrayList();
                     array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chGrillaImagenDispositivoID                 
-                    array.Add((ObtenerItemDetalleIP(ultimoItemImagenes))); // chGrillaImagenItem
+                    array.Add(0); // chGrillaImagenItem
                     array.Add(0); // chGrillaImagenEsPrincipal
                     array.Add(""); // chGrillaImagenRuta    
                     array.Add(DateTime.Now.ToShortDateString()); // chGrillaImagenFecha                
@@ -3753,6 +3860,29 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void btnGrillaImagenActivar_Click(object sender, EventArgs e)
         {
+            CambiarEstadoItemImagen(dgvImagenes);
+        }
+
+        private void CambiarEstadoItemImagen(MyDataGridViewDetails Grilla)
+        {
+            try
+            {
+
+                if (Grilla.CurrentRow.Cells["chGrillaImagenEstado"].Value.ToString() == "1")
+                {
+                    Grilla.CurrentRow.Cells["chGrillaImagenEstado"].Value = "0";
+                }
+                else
+                {
+                    Grilla.CurrentRow.Cells["chGrillaImagenEstado"].Value = "1";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
 
         }
 
@@ -3760,6 +3890,120 @@ namespace ComparativoHorasVisualSATNISIRA
         {
 
         }
+
+        private void btnGrillaImagenFavorito_Click(object sender, EventArgs e)
+        {
+            CambiarItemImagenPrincipal(dgvImagenes);
+        }
+
+
+        private void CambiarItemImagenPrincipal(MyDataGridViewDetails Grilla)
+        {
+            try
+            {
+
+                if (Grilla.CurrentRow.Cells["chGrillaImagenEsPrincipal"].Value.ToString() == "1")
+                {
+                    Grilla.CurrentRow.Cells["chGrillaImagenEsPrincipal"].Value = "0";
+                }
+                else
+                {
+                    Grilla.CurrentRow.Cells["chGrillaImagenEsPrincipal"].Value = "1";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void dgvImagenes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void dgvImagenes_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (((DataGridView)sender).RowCount > 0)
+                {
+                    #region Tipo de interface() 
+                    if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chGrillaImagenRuta")
+                    {
+                        if (e.KeyCode == Keys.F3)
+                        {
+                            #region Operación()
+                            OpenFileDialog ofdImagenes = new OpenFileDialog();
+                            ofdImagenes.Filter = "Imagenes | *.jpg; *.png";
+                            string Escritorio = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                            ofdImagenes.InitialDirectory = Escritorio;
+                            ofdImagenes.Title = "Selecionar Imagen";
+
+                            if (ofdImagenes.ShowDialog() == DialogResult.OK)
+                            {
+                                string rutaImagen = ofdImagenes.FileName;
+                                string CarpetaDestino = Path.Combine(@"X:\Bolt", "Imagenes");
+                                Directory.CreateDirectory(CarpetaDestino);
+                                string imagenDestino = Path.Combine(CarpetaDestino, Guid.NewGuid().ToString() + Path.GetExtension(rutaImagen));
+                                File.Copy(rutaImagen, imagenDestino);
+                                this.dgvImagenes.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chGrillaImagenRuta"].Value = imagenDestino;
+
+                            }
+                            #endregion
+                        }
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "Error en el proceso");
+                return;
+            }
+
+
+        }
+
+        private void dgvImagenes_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (tabControl.SelectedPage == TabImagenes)
+            {
+                SAS_DispositivoImagene oDetalle = new SAS_DispositivoImagene();
+                oDetalle.Ruta = rutaDefault;
+                try
+                {
+                    if (dgvImagenes != null && dgvImagenes.Rows.Count > 0)
+                    {
+                        if (dgvImagenes.CurrentRow != null)
+                        {
+                            if (dgvImagenes.CurrentRow.Cells["chGrillaImagenDispositivoID"].Value != null)
+                            {
+                                if (dgvImagenes.CurrentRow.Cells["chGrillaImagenDispositivoID"].Value.ToString() != string.Empty)
+                                {
+                                    if (dgvImagenes.CurrentRow.Cells["chGrillaImagenRuta"].Value.ToString() != string.Empty)
+                                    {
+                                        oDetalle.Ruta = dgvImagenes.CurrentRow.Cells["chGrillaImagenRuta"].Value.ToString();
+                                        MostrarImagenDeDispositivoPorItem(oDetalle);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception Ex)
+                {
+
+                    MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistems");
+                    return;
+                }
+            }
+           
+        }
+
 
         private void bgwCambiarEstado_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -4158,3 +4402,5 @@ namespace ComparativoHorasVisualSATNISIRA
         }
     }
 }
+
+#endregion

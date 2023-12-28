@@ -78,11 +78,20 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         public OrdenDeTrabajoITEdicion()
         {
             InitializeComponent();
+
+            user2 = new SAS_USUARIOS();
+            user2.IdUsuario = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            user2.NombreCompleto = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
+
             Inicio();
         }
 
         public OrdenDeTrabajoITEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _codigoSelecionado)
         {
+            #region Variables() 
             InitializeComponent();
             listadoDetalleEliminado = new List<SAS_DispositivoOrdenTrabajoDetalle>();
             listadoDetalle = new List<SAS_DispositivoOrdenTrabajoDetalle>();
@@ -92,21 +101,20 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             DeviceName = string.Empty;
             conection = _conection;
             user2 = _user2;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
             companyId = _companyId;
             privilege = _privilege;
             codigoSelecionado = _codigoSelecionado;
             Inicio();
             CargarCombos();
-
             BarraPrincipal.Enabled = false;
             gbDatosPersonal.Enabled = false;
             gbDetale.Enabled = false;
             gbDocumento.Enabled = false;
             progressBar1.Visible = true;
-
             bgwHilo.RunWorkerAsync();
-
-
+            #endregion
         }
 
         public OrdenDeTrabajoITEdicion(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, int _codigoSelecionado, int _DeviceId, string _DeviceName)
@@ -120,6 +128,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             DeviceName = _DeviceName;
             conection = _conection;
             user2 = _user2;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
             companyId = _companyId;
             privilege = _privilege;
             codigoSelecionado = _codigoSelecionado;

@@ -129,10 +129,13 @@
             this.gbCabecera = new System.Windows.Forms.GroupBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.cboEstado = new Telerik.WinControls.UI.RadCheckedDropDownList();
-            this.lblFuncionamiento = new System.Windows.Forms.Label();
-            this.cbofuncionamiento = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.lblPertenencia = new System.Windows.Forms.Label();
             this.cboPertenencia = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.lbTipoDispositivo = new System.Windows.Forms.Label();
+            this.cboTipoDispotivo = new Telerik.WinControls.UI.RadCheckedDropDownList();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.lblFuncionamiento = new System.Windows.Forms.Label();
+            this.cbofuncionamiento = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cboMarca = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.lblProveedor = new System.Windows.Forms.Label();
@@ -141,9 +144,6 @@
             this.cboSede = new Telerik.WinControls.UI.RadCheckedDropDownList();
             this.lblModelo = new System.Windows.Forms.Label();
             this.cboModelo = new Telerik.WinControls.UI.RadCheckedDropDownList();
-            this.lbTipoDispositivo = new System.Windows.Forms.Label();
-            this.cboTipoDispotivo = new Telerik.WinControls.UI.RadCheckedDropDownList();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.gbListado = new System.Windows.Forms.GroupBox();
             this.bgwActualizarLista = new System.ComponentModel.BackgroundWorker();
             this.subMenu.SuspendLayout();
@@ -153,13 +153,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispositivo.MasterTemplate)).BeginInit();
             this.gbCabecera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboEstado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbofuncionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPertenencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoDispotivo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbofuncionamiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMarca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSede)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboModelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTipoDispotivo)).BeginInit();
             this.gbListado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1044,7 +1044,7 @@
             this.dgvDispositivo.ReadOnly = true;
             this.dgvDispositivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDispositivo.ShowHeaderCellButtons = true;
-            this.dgvDispositivo.Size = new System.Drawing.Size(1352, 504);
+            this.dgvDispositivo.Size = new System.Drawing.Size(1352, 582);
             this.dgvDispositivo.TabIndex = 193;
             this.dgvDispositivo.ThemeName = "VisualStudio2012Light";
             this.dgvDispositivo.SelectionChanged += new System.EventHandler(this.dgvDispositivo_SelectionChanged);
@@ -1065,7 +1065,7 @@
             this.gbCabecera.Controls.Add(this.lbTipoDispositivo);
             this.gbCabecera.Controls.Add(this.cboTipoDispotivo);
             this.gbCabecera.Controls.Add(this.btnConsultar);
-            this.gbCabecera.Location = new System.Drawing.Point(7, 43);
+            this.gbCabecera.Location = new System.Drawing.Point(7, 236);
             this.gbCabecera.Name = "gbCabecera";
             this.gbCabecera.Size = new System.Drawing.Size(1358, 72);
             this.gbCabecera.TabIndex = 194;
@@ -1092,6 +1092,57 @@
             this.cboEstado.TabIndex = 45;
             this.cboEstado.ThemeName = "VisualStudio2012Light";
             // 
+            // lblPertenencia
+            // 
+            this.lblPertenencia.AutoSize = true;
+            this.lblPertenencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPertenencia.Location = new System.Drawing.Point(24, 45);
+            this.lblPertenencia.Name = "lblPertenencia";
+            this.lblPertenencia.Size = new System.Drawing.Size(83, 13);
+            this.lblPertenencia.TabIndex = 42;
+            this.lblPertenencia.Text = "Pertenencia :";
+            this.lblPertenencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboPertenencia
+            // 
+            this.cboPertenencia.Location = new System.Drawing.Point(109, 40);
+            this.cboPertenencia.Name = "cboPertenencia";
+            this.cboPertenencia.Size = new System.Drawing.Size(428, 24);
+            this.cboPertenencia.TabIndex = 41;
+            this.cboPertenencia.ThemeName = "VisualStudio2012Light";
+            // 
+            // lbTipoDispositivo
+            // 
+            this.lbTipoDispositivo.AutoSize = true;
+            this.lbTipoDispositivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTipoDispositivo.Location = new System.Drawing.Point(7, 11);
+            this.lbTipoDispositivo.Name = "lbTipoDispositivo";
+            this.lbTipoDispositivo.Size = new System.Drawing.Size(102, 13);
+            this.lbTipoDispositivo.TabIndex = 32;
+            this.lbTipoDispositivo.Text = "Tipo Dispositivo:";
+            // 
+            // cboTipoDispotivo
+            // 
+            this.cboTipoDispotivo.DefaultItemsCountInDropDown = 30;
+            this.cboTipoDispotivo.Location = new System.Drawing.Point(109, 9);
+            this.cboTipoDispotivo.Name = "cboTipoDispotivo";
+            this.cboTipoDispotivo.Size = new System.Drawing.Size(1133, 24);
+            this.cboTipoDispotivo.TabIndex = 31;
+            this.cboTipoDispotivo.ThemeName = "VisualStudio2012Light";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.Location = new System.Drawing.Point(1248, 9);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(103, 59);
+            this.btnConsultar.TabIndex = 0;
+            this.btnConsultar.Text = "&Filtro";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // lblFuncionamiento
             // 
             this.lblFuncionamiento.AutoSize = true;
@@ -1113,25 +1164,6 @@
             this.cbofuncionamiento.TabIndex = 43;
             this.cbofuncionamiento.ThemeName = "VisualStudio2012Light";
             this.cbofuncionamiento.Visible = false;
-            // 
-            // lblPertenencia
-            // 
-            this.lblPertenencia.AutoSize = true;
-            this.lblPertenencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPertenencia.Location = new System.Drawing.Point(24, 45);
-            this.lblPertenencia.Name = "lblPertenencia";
-            this.lblPertenencia.Size = new System.Drawing.Size(83, 13);
-            this.lblPertenencia.TabIndex = 42;
-            this.lblPertenencia.Text = "Pertenencia :";
-            this.lblPertenencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboPertenencia
-            // 
-            this.cboPertenencia.Location = new System.Drawing.Point(109, 40);
-            this.cboPertenencia.Name = "cboPertenencia";
-            this.cboPertenencia.Size = new System.Drawing.Size(428, 24);
-            this.cboPertenencia.TabIndex = 41;
-            this.cboPertenencia.ThemeName = "VisualStudio2012Light";
             // 
             // lblMarca
             // 
@@ -1218,47 +1250,15 @@
             this.cboModelo.ThemeName = "VisualStudio2012Light";
             this.cboModelo.Visible = false;
             // 
-            // lbTipoDispositivo
-            // 
-            this.lbTipoDispositivo.AutoSize = true;
-            this.lbTipoDispositivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTipoDispositivo.Location = new System.Drawing.Point(7, 11);
-            this.lbTipoDispositivo.Name = "lbTipoDispositivo";
-            this.lbTipoDispositivo.Size = new System.Drawing.Size(102, 13);
-            this.lbTipoDispositivo.TabIndex = 32;
-            this.lbTipoDispositivo.Text = "Tipo Dispositivo:";
-            // 
-            // cboTipoDispotivo
-            // 
-            this.cboTipoDispotivo.DefaultItemsCountInDropDown = 30;
-            this.cboTipoDispotivo.Location = new System.Drawing.Point(109, 9);
-            this.cboTipoDispotivo.Name = "cboTipoDispotivo";
-            this.cboTipoDispotivo.Size = new System.Drawing.Size(1133, 24);
-            this.cboTipoDispotivo.TabIndex = 31;
-            this.cboTipoDispotivo.ThemeName = "VisualStudio2012Light";
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(1248, 9);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(103, 59);
-            this.btnConsultar.TabIndex = 0;
-            this.btnConsultar.Text = "&Filtro";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
             // gbListado
             // 
             this.gbListado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbListado.Controls.Add(this.dgvDispositivo);
-            this.gbListado.Location = new System.Drawing.Point(7, 121);
+            this.gbListado.Location = new System.Drawing.Point(7, 43);
             this.gbListado.Name = "gbListado";
-            this.gbListado.Size = new System.Drawing.Size(1358, 523);
+            this.gbListado.Size = new System.Drawing.Size(1358, 601);
             this.gbListado.TabIndex = 195;
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado";
@@ -1301,13 +1301,13 @@
             this.gbCabecera.ResumeLayout(false);
             this.gbCabecera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboEstado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbofuncionamiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPertenencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoDispotivo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbofuncionamiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMarca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboProveedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSede)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboModelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTipoDispotivo)).EndInit();
             this.gbListado.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
