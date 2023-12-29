@@ -11,15 +11,15 @@ namespace Asistencia.Negocios
     public class SAS_DispositivoIPController
     {
 
-        public List<SAS_ListadoDeDispositivos> ListadoDeDispositivos(string conection)
+        public List<SAS_ListadoDeDispositivosAllResult> ListadoDeDispositivos(string conection)
         {
-            List<SAS_ListadoDeDispositivos> resultado = new List<SAS_ListadoDeDispositivos>();
-            List<SAS_ListadoDeDispositivos> resultado2 = new List<SAS_ListadoDeDispositivos>();
+            List<SAS_ListadoDeDispositivosAllResult> resultado = new List<SAS_ListadoDeDispositivosAllResult>();            
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            //using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx)) 28.12.2023
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                resultado = Modelo.SAS_ListadoDeDispositivos.OrderBy(x=> x.nombres).ToList();
+                resultado = Modelo.SAS_ListadoDeDispositivosAll().ToList();
 
             }
 

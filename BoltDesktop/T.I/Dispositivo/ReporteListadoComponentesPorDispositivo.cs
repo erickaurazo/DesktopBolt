@@ -348,7 +348,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if (codigoDispotivo > 0)
             {
-                SAS_ListadoDeDispositivos oDispositivo = new SAS_ListadoDeDispositivos();
+                SAS_ListadoDeDispositivosAllResult oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                 modeloUsuario = new SAS_DispositivoUsuariosController();
                 oDispositivo = modeloUsuario.ObtenerDispositivoById("SAS", codigoDispotivo);
 
@@ -371,7 +371,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if (codigoComponente > 0)
             {
-                SAS_ListadoDeDispositivos oDispositivoComponente = new SAS_ListadoDeDispositivos();
+                SAS_ListadoDeDispositivosAllResult oDispositivoComponente = new SAS_ListadoDeDispositivosAllResult();
                 modeloUsuario = new SAS_DispositivoUsuariosController();
                 oDispositivoComponente = modeloUsuario.ObtenerDispositivoById("SAS", codigoComponente);
 

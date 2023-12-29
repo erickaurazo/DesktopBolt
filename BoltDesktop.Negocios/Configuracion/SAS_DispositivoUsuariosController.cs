@@ -92,7 +92,7 @@ namespace Asistencia.Negocios
                                     userDispositivo.desde = result1.FirstOrDefault().desde != null ? result1.FirstOrDefault().desde : DateTime.Now;
                                     userDispositivo.hasta = result1.FirstOrDefault().hasta != null ? result1.FirstOrDefault().hasta : DateTime.Now;
                                     userDispositivo.observacion = NombreEquipos;
-                                    userDispositivo.fechaCreacion = result1.FirstOrDefault().fechaCreacion != null ? result1.FirstOrDefault().fechaCreacion : DateTime.Now; 
+                                    userDispositivo.fechaCreacion = result1.FirstOrDefault().fechaCreacion != null ? result1.FirstOrDefault().fechaCreacion : DateTime.Now;
                                     userDispositivo.registradoPor = result1.FirstOrDefault().registradoPor != null ? result1.FirstOrDefault().registradoPor : string.Empty;
                                     userDispositivo.tipo = result1.FirstOrDefault().tipo != null ? result1.FirstOrDefault().tipo : "X";
                                     resultado2.Add(userDispositivo);
@@ -117,16 +117,16 @@ namespace Asistencia.Negocios
 
         public List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult> ListadoDetalleDeDispositivosPorColaborador(string conection, string idCodigoGeneral)
         {
-            List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult> resultado = new List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult>();            
+            List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult> resultado = new List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                resultado = Modelo.SAS_ListadoColaboradoresByDispositivoByIdColaborador(idCodigoGeneral).ToList();               
+                resultado = Modelo.SAS_ListadoColaboradoresByDispositivoByIdColaborador(idCodigoGeneral).ToList();
             }
             return resultado;
         }
 
-        
+
 
 
         public List<SAS_ListadoColaboradoresByDispositivo> ListadoDeColaboradoresByDispositivo(string conection, int tipoPresentacion, string idCodigoTrabajador)
@@ -137,7 +137,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                resultado = Modelo.SAS_ListadoColaboradoresByDispositivo.Where(x=> x.idcodigogeneral == idCodigoTrabajador).ToList();
+                resultado = Modelo.SAS_ListadoColaboradoresByDispositivo.Where(x => x.idcodigogeneral == idCodigoTrabajador).ToList();
 
                 if (tipoPresentacion == 1) // si es uno es agrupado
                 {
@@ -452,7 +452,7 @@ namespace Asistencia.Negocios
             {
                 var resultQuery = Modelo.SAS_ColaboradorAreaTrabajo.Where(x => x.idCodigoGeneral.Trim().ToUpper() == item.idCodigoGeneral).ToList();
 
-                if (resultQuery != null )
+                if (resultQuery != null)
                 {
                     if (resultQuery.ToList().Count == 1)
                     {
@@ -488,13 +488,14 @@ namespace Asistencia.Negocios
             return oItem;
         }
 
-        public SAS_ListadoDeDispositivos ObtenerDispositivoById(string conection, int id)
+        public SAS_ListadoDeDispositivosAllResult ObtenerDispositivoById(string conection, int id)
         {
-            SAS_ListadoDeDispositivos resultado = new SAS_ListadoDeDispositivos();
+            SAS_ListadoDeDispositivosAllResult resultado = new SAS_ListadoDeDispositivosAllResult();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            //using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                var result = Modelo.SAS_ListadoDeDispositivos.Where(x=> x.id == id).ToList();
+                var result = Modelo.SAS_ListadoDeDispositivosAll().ToList().Where(x => x.id == id).ToList();
 
                 if (result != null)
                 {
@@ -514,7 +515,7 @@ namespace Asistencia.Negocios
         }
 
 
-        
+
 
     }
 }

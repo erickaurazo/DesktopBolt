@@ -36,7 +36,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         int focoFiltroEstadoDispositivo = 0;
         private List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult> listadoFiltroHistorico, listadoFiltroFuncionamiento, listadoFiltroEstadoDispostivo;
 
-        private SAS_ListadoDeDispositivos oDispositivo;
+        private SAS_ListadoDeDispositivosAllResult oDispositivo;
         private string fileName;
         private bool exportVisualSettings;
 
@@ -228,7 +228,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if (codigoDispotivo > 0)
             {
-                SAS_ListadoDeDispositivos oDispositivo = new SAS_ListadoDeDispositivos();
+                SAS_ListadoDeDispositivosAllResult oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                 modelo = new SAS_DispositivoUsuariosController();
                 oDispositivo = modelo.ObtenerDispositivoById("SAS", codigoDispotivo);
 
@@ -245,7 +245,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
             itemSelecionadoDispositivo = new SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult();
-            oDispositivo = new SAS_ListadoDeDispositivos();
+            oDispositivo = new SAS_ListadoDeDispositivosAllResult();
             oDispositivo.id = 0;
             oDispositivo.nombres = string.Empty;
             oDispositivo.estado = string.Empty;
@@ -271,7 +271,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 if (resultado.ToList().Count == 1)
                                 {
                                     itemSelecionadoDispositivo = resultado.Single();
-                                    oDispositivo = new SAS_ListadoDeDispositivos();
+                                    oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                                     oDispositivo.id = itemSelecionadoDispositivo.dispositivoCodigo;
                                     oDispositivo.nombres = itemSelecionadoDispositivo.dispositivo;
                                     oDispositivo.estado = itemSelecionadoDispositivo.nombreEstado;
@@ -282,7 +282,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 else if (resultado.ToList().Count > 1)
                                 {
                                     itemSelecionadoDispositivo = resultado.ElementAt(0);
-                                    oDispositivo = new SAS_ListadoDeDispositivos();
+                                    oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                                     oDispositivo.id = itemSelecionadoDispositivo.dispositivoCodigo;
                                     oDispositivo.nombres = itemSelecionadoDispositivo.dispositivo;
                                     oDispositivo.estado = itemSelecionadoDispositivo.nombreEstado;

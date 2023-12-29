@@ -446,7 +446,7 @@ namespace ComparativoHorasVisualSATNISIRA
         {
             if (codigoDispotivo > 0)
             {
-                SAS_ListadoDeDispositivos oDispositivo = new SAS_ListadoDeDispositivos();
+                SAS_ListadoDeDispositivosAllResult oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                 modelo = new SAS_DispositivoUsuariosController();
                 oDispositivo = modelo.ObtenerDispositivoById("SAS", codigoDispotivo);
 

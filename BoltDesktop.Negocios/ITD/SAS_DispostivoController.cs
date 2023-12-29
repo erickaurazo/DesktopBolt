@@ -105,16 +105,18 @@ namespace Asistencia.Negocios
             List<SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor> result = new List<SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
+            List<SAS_ListadoDeDispositivosAllResult> result2 = new List<SAS_ListadoDeDispositivosAllResult>();
+
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                 result2 = Modelo.SAS_ListadoDeDispositivosAll().ToList().Where(x => x.idClieprov.Trim() == proveedorCodigo && x.sedeCodigo.Trim() == sedeCodigo.Trim() && x.tipoDispositivoCodigo.Trim() == tipoDispositivoCodigo).ToList();
+            }
+
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                var result2 = Modelo.SAS_ListadoDeDispositivos.Where(x => x.idClieprov.Trim() == proveedorCodigo && x.sedeCodigo.Trim() == sedeCodigo.Trim() && x.tipoDispositivoCodigo.Trim() == tipoDispositivoCodigo).ToList();
 
                 var result3 = result2.Where(x => x.esFinal == 1 && x.idestado == Convert.ToByte(1) && x.funcionamientoCodigo == 1).ToList();
-
                 var result4 = result3.Where(x => x.estado.Trim().ToUpper() == "ACTIVO" || x.estado.Trim().ToUpper() == "En mantenimiento" || x.estado.Trim().ToUpper() == "Proximos a devolver a proveedor" || x.estado.Trim().ToUpper() == "n proceso de baja").ToList();
-
-
-
                 result = (from item in result4
                           group item by new { item.id } into j
                           select new SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor
@@ -233,14 +235,15 @@ namespace Asistencia.Negocios
 
         }
 
-        public SAS_ListadoDeDispositivos ObtenerDatosDeDispositivo(string conection, int codigoDispositivo)
+        public SAS_ListadoDeDispositivosAllResult ObtenerDatosDeDispositivo(string conection, int codigoDispositivo)
         {
-            SAS_ListadoDeDispositivos item = new SAS_ListadoDeDispositivos();
+            SAS_ListadoDeDispositivosAllResult item = new SAS_ListadoDeDispositivosAllResult();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            //  using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                var result = Modelo.SAS_ListadoDeDispositivos.Where(x => x.id == codigoDispositivo).ToList();
+                var result = Modelo.SAS_ListadoDeDispositivosAll().ToList().Where(x => x.id == codigoDispositivo).ToList();
 
                 if (result != null)
                 {
@@ -5863,7 +5866,7 @@ namespace Asistencia.Negocios
                                             //recordObject.Item = item.Item != (int?)null ? item.Item : 0;
                                             recordObject.EsPrincipal = item.EsPrincipal != (byte?)null ? item.EsPrincipal : Convert.ToByte(0);
                                             recordObject.Ruta = item.Ruta != string.Empty ? item.Ruta : string.Empty;
-                                           // recordObject.Fecha = item.Fecha != (DateTime?)null ? item.Fecha : DateTime.Now;
+                                            // recordObject.Fecha = item.Fecha != (DateTime?)null ? item.Fecha : DateTime.Now;
                                             recordObject.Latitud = item.Latitud != string.Empty ? item.Latitud : string.Empty;
                                             recordObject.Longitud = item.Longitud != string.Empty ? item.Longitud : string.Empty;
                                             recordObject.Nota = item.Nota != string.Empty ? item.Nota : string.Empty;

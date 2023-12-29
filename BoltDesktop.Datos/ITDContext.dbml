@@ -61,4 +61,72 @@
       <Column Name="descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SAS_ListadoDeDispositivosAll" Method="SAS_ListadoDeDispositivosAll">
+    <ElementType Name="SAS_ListadoDeDispositivosAllResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dispositivo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sedeCodigo" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="sedeDescripcion" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="numeroSerie" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="caracteristicas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idestado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="tipoDispositivoCodigo" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoDispositivo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="VarChar(2512) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoSegmentoIP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroIP" Type="System.String" DbType="VarChar(132) NOT NULL" CanBeNull="false" />
+      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fechacreacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="activoCodigoERP" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="activo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IdDispostivoColor" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="color" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idModelo" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="MODELO" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="idMarca" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="marca" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="numeroParte" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IdEstadoProducto" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoProducto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EsPropio" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="AlquiladoPropio" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="idProducto" Type="System.String" DbType="VarChar(22) NOT NULL" CanBeNull="false" />
+      <Column Name="producto" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="rutaImagen" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="funcionamientoCodigo" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="funcionamiento" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="idClieprov" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="razonSocial" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="coordenada" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaActivacion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="idCobrarpagarDoc" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="documentoCompra" Type="System.String" DbType="VarChar(54) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaBaja" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="fechaProduccion" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="esFinal" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="registro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistradoNoRegistrado" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="idarea" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="lineaCelular" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="planDeTelefonia" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="costoUSD" Type="System.Decimal" DbType="Decimal(12,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AniosParaDepreciar" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="idSistemaDeImpresion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sistemaDeImpresion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ContabilizacionDeRegistro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="costoMantenimientoAnualUSD" Type="System.Decimal" DbType="Decimal(12,3) NOT NULL" CanBeNull="false" />
+      <Column Name="costoSuministroAnualUSD" Type="System.Decimal" DbType="Decimal(12,3) NOT NULL" CanBeNull="false" />
+      <Column Name="kilovatioHora" Type="System.Decimal" DbType="Decimal(12,3) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoDeFacturacionDeConsumoEnergetico" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idcodigoGeneral" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="ColaboradorUnicoAsociado" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

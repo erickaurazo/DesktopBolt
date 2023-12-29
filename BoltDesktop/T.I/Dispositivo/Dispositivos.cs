@@ -25,10 +25,10 @@ namespace ComparativoHorasVisualSATNISIRA
 {
     public partial class DispositivosListado : Form
     {
-        private List<SAS_ListadoDeDispositivos> listado;
+        private List<SAS_ListadoDeDispositivosAllResult> listado;
         private SAS_DispositivoIPController modelo;
         private SAS_DispostivoController deviceModelo;
-        private SAS_ListadoDeDispositivos oDispositivo;
+        private SAS_ListadoDeDispositivosAllResult oDispositivo;
         private SAS_Dispostivo dispositivo;
         private string conection;
         private SAS_USUARIOS user2;
@@ -74,6 +74,9 @@ namespace ComparativoHorasVisualSATNISIRA
         private List<SAS_MarcaDispositivoCBOResult> listadoCboMarcaDispositivos;
         private List<SAS_EsPropioCBOResult> listadoCboEsPropioDispositivos;
         private List<SAS_TipoDispositivoCBOResult> listadoCboTipoDispositivos;
+        private string ColaboradorAsignadoCodigo;
+        private string ColaboradorAsignadoNombres;
+
         //private List<RadCheckedListDataItem> oTipoPallets;
         //private List<RadCheckedListDataItem> lPertenencia;
         //private List<RadCheckedListDataItem> lmarcas;
@@ -170,15 +173,15 @@ namespace ComparativoHorasVisualSATNISIRA
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
             modelo = new SAS_DispositivoIPController();
-            listado = new List<SAS_ListadoDeDispositivos>();
-            listadoCboEstadoDispositivos = new List<SAS_EstadoDispositivoCBOResult>();
-            listadoCboProveedorDispositivos = new List<SAS_ProveedorDispositivoCBOResult>();
-            listadoCboFuncionamientoDispositivos = new List<SAS_FuncionamientoDispositivoCBOResult>();
-            listadoCboSedeDispositivos = new List<SAS_SedeDispositivoCBOResult>();
-            listadoCboModeloDispositivos = new List<SAS_ModeloDispositivoCBOResult>();
-            listadoCboMarcaDispositivos = new List<SAS_MarcaDispositivoCBOResult>();
-            listadoCboEsPropioDispositivos = new List<SAS_EsPropioCBOResult>();
-            listadoCboTipoDispositivos = new List<SAS_TipoDispositivoCBOResult>();
+            listado = new List<SAS_ListadoDeDispositivosAllResult>();
+            //listadoCboEstadoDispositivos = new List<SAS_EstadoDispositivoCBOResult>();
+            //listadoCboProveedorDispositivos = new List<SAS_ProveedorDispositivoCBOResult>();
+            //listadoCboFuncionamientoDispositivos = new List<SAS_FuncionamientoDispositivoCBOResult>();
+            //listadoCboSedeDispositivos = new List<SAS_SedeDispositivoCBOResult>();
+            //listadoCboModeloDispositivos = new List<SAS_ModeloDispositivoCBOResult>();
+            //listadoCboMarcaDispositivos = new List<SAS_MarcaDispositivoCBOResult>();
+            //listadoCboEsPropioDispositivos = new List<SAS_EsPropioCBOResult>();
+            //listadoCboTipoDispositivos = new List<SAS_TipoDispositivoCBOResult>();
 
             //listadoCboEstadoDispositivos = modelo.ObtenerListadoCboEstadoDispositivos("SAS").ToList();
             //listadoCboProveedorDispositivos = modelo.ObtenerListadoProveedorDispositivoCBO("SAS").ToList();
@@ -480,6 +483,8 @@ namespace ComparativoHorasVisualSATNISIRA
         {
             DeviceId = 0;
             DeviceName = string.Empty;
+            ColaboradorAsignadoCodigo = string.Empty;
+            ColaboradorAsignadoNombres = string.Empty;
             btnVerProgramacionDiaria.Enabled = false;
             btnCambiarEstado.Enabled = false;
             btnHabilitar.Enabled = true;
@@ -496,10 +501,11 @@ namespace ComparativoHorasVisualSATNISIRA
             btnProgramarSoporte.Enabled = false;
             btnProgramarDisponibilidad.Enabled = false;
             btnRegistrarInspeccion.Enabled = false;
+            btnRegistrarInventario.Enabled = false;
 
             codigo = 0;
             string imgQr = string.Empty;
-            oDispositivo = new SAS_ListadoDeDispositivos();
+            oDispositivo = new SAS_ListadoDeDispositivosAllResult();
             dispositivo = new SAS_Dispostivo();
             dispositivo.id = 0;
             oDispositivo.nombres = string.Empty;
@@ -516,6 +522,10 @@ namespace ComparativoHorasVisualSATNISIRA
                             codigo = (dgvDispositivo.CurrentRow.Cells["chid"].Value != null ? Convert.ToInt32(dgvDispositivo.CurrentRow.Cells["chid"].Value) : 0);
                             DeviceName = (dgvDispositivo.CurrentRow.Cells["chdispositivo"].Value != null ? Convert.ToString(dgvDispositivo.CurrentRow.Cells["chdispositivo"].Value) : string.Empty);
                             DeviceId = codigo;
+
+                            ColaboradorAsignadoCodigo = (dgvDispositivo.CurrentRow.Cells["chidcodigoGeneral"].Value != null ? Convert.ToString(dgvDispositivo.CurrentRow.Cells["chidcodigoGeneral"].Value) : string.Empty);
+                            ColaboradorAsignadoNombres = (dgvDispositivo.CurrentRow.Cells["chColaboradorUnicoAsociado"].Value != null ? Convert.ToString(dgvDispositivo.CurrentRow.Cells["chColaboradorUnicoAsociado"].Value) : string.Empty);
+
                             if (codigo != (int?)null)
                             {
                                 if (codigo > 0)
@@ -537,6 +547,7 @@ namespace ComparativoHorasVisualSATNISIRA
                                         btnProgramarSoporte.Enabled = true;
                                         btnProgramarDisponibilidad.Enabled = true;
                                         btnRegistrarInspeccion.Enabled = true;
+                                        btnRegistrarInventario.Enabled = true;
 
                                         #region Habilitar opciones a dispositivos()  
                                         oDispositivo = resultado.ElementAt(0);
@@ -840,7 +851,7 @@ namespace ComparativoHorasVisualSATNISIRA
             //                                              select items).ToList();
             #endregion
 
-            dgvDispositivo.DataSource = listado.ToDataTable<SAS_ListadoDeDispositivos>();
+            dgvDispositivo.DataSource = listado.ToDataTable<SAS_ListadoDeDispositivosAllResult>();
             dgvDispositivo.Refresh();
             dgvDispositivo.Enabled = true;
 
@@ -1169,7 +1180,7 @@ namespace ComparativoHorasVisualSATNISIRA
         private void bgwRegistrar_DoWork(object sender, DoWorkEventArgs e)
         {
             modelo = new SAS_DispositivoIPController();
-            listado = new List<SAS_ListadoDeDispositivos>();
+            listado = new List<SAS_ListadoDeDispositivosAllResult>();
             listado = modelo.ListadoDeDispositivos("SAS").ToList();
         }
 
@@ -1261,7 +1272,7 @@ namespace ComparativoHorasVisualSATNISIRA
             {
                 if (DeviceName != string.Empty)
                 {
-                    OrdenDeTrabajoITEdicion oFromMto = new OrdenDeTrabajoITEdicion(conection, user2, companyId, privilege, 0, DeviceId, DeviceName);
+                    OrdenDeTrabajoITEdicion oFromMto = new OrdenDeTrabajoITEdicion(conection, user2, companyId, privilege, 0, DeviceId, DeviceName, ColaboradorAsignadoCodigo, ColaboradorAsignadoNombres);
                     oFromMto.Show();
                 }
             }
@@ -1290,6 +1301,16 @@ namespace ComparativoHorasVisualSATNISIRA
         private void gbCabecera_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegistrarInventario_Click(object sender, EventArgs e)
+        {
+            RegistrarInventario();
+        }
+
+        private void RegistrarInventario()
+        {
+            
         }
     }
 }

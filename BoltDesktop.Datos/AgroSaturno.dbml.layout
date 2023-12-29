@@ -458,12 +458,6 @@
         <elementListCompartment Id="a194e160-597a-4ad5-ad4f-483db597e2c9" absoluteBounds="23.765, 24.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="feeeda21-1e20-481a-b1a5-dd8b0ed6858f" isExpanded="false" absoluteBounds="24.75, 20.75, 3.75, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeDispositivos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ecba0d02-42d0-49fa-982e-ca868b96dda6" absoluteBounds="24.765, 21.21, 3.7199999999999998, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e2cd7227-4daf-4915-93d9-8c49214d7379" isExpanded="false" absoluteBounds="25.75, 2.75, 4.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_MotivoRenovacionCelular" />
       <nestedChildShapes>

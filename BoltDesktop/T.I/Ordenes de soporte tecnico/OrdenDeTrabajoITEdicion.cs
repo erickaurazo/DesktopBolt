@@ -72,6 +72,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_DispositivosTipoMantenimientoDetalle> listadoDetalleByItem;
         private int DeviceId = 0;
         private string DeviceName;
+        private string ColaboradorAsignadoCodigo;
+        private string ColaboradorAsignadoNombres;
 
         #endregion
 
@@ -146,6 +148,43 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             bgwHilo.RunWorkerAsync();
 
 
+        }
+
+        public OrdenDeTrabajoITEdicion(string _conection, 
+            SAS_USUARIOS _user2, 
+            string _companyId, 
+            PrivilegesByUser _privilege, 
+            int _codigoSelecionado, 
+            int _DeviceId, 
+            string _DeviceName, 
+            string _ColaboradorAsignadoCodigo, 
+            string _ColaboradorAsignadoNombres
+            )
+        {
+            InitializeComponent();
+            listadoDetalleEliminado = new List<SAS_DispositivoOrdenTrabajoDetalle>();
+            listadoDetalle = new List<SAS_DispositivoOrdenTrabajoDetalle>();
+            listadoHerramientas = new List<SAS_DispositivoOrdenTrabajoDetalleHerramientas>();
+            listadoSuministro = new List<SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen>();
+            DeviceId = _DeviceId != null ? _DeviceId : 0;
+            DeviceName = _DeviceName;
+            ColaboradorAsignadoCodigo = _ColaboradorAsignadoCodigo;
+            ColaboradorAsignadoNombres = _ColaboradorAsignadoNombres;
+            conection = _conection;
+            user2 = _user2;
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+            companyId = _companyId;
+            privilege = _privilege;
+            codigoSelecionado = _codigoSelecionado;
+            Inicio();
+            CargarCombos();
+            BarraPrincipal.Enabled = false;
+            gbDatosPersonal.Enabled = false;
+            gbDetale.Enabled = false;
+            gbDocumento.Enabled = false;
+            progressBar1.Visible = true;
+            bgwHilo.RunWorkerAsync();
         }
 
 
@@ -830,8 +869,12 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 this.txtDispositivoCodigo.Text = DeviceId.ToString();
                 this.txtDispositivoDescripcion.Text = DeviceName != null ? DeviceName.Trim() : string.Empty;
             }
-           
-            
+
+            if (ColaboradorAsignadoCodigo != string.Empty)
+            {
+                this.txtDispositivoCodigo.Text = DeviceId.ToString();
+                this.txtDispositivoDescripcion.Text = DeviceName != null ? DeviceName.Trim() : string.Empty;
+            }
 
             this.txtEmpresa.Text = "SOCIEDAD AGRICOLA SATURNO SA";
             this.txtEmpresaCodigo.Text = "001";
@@ -974,7 +1017,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         {
                             #region Asignar Objeto para edición() 
                             txtCodigo.Text = item.codigo.ToString();
-                            this.txtCorrelativo.Text = item.codigo.ToString().PadLeft(7, '0');
+                            txtCorrelativo.Text = item.codigo.ToString().PadLeft(7, '0');
                             txtPersonalCodigo.Text = item.codigoPersonal != null ? item.codigoPersonal.ToString() : string.Empty;
                             txtPersonal.Text = item.colaborador != null ? item.colaborador.Trim() : string.Empty;
                             cboSerie.SelectedValue = item.idSerie.ToString();
@@ -983,17 +1026,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             cboMantenimientoTipo.SelectedValue = item.idTipoMantenimiento.Trim();
                             txtObservaciones.Text = item.observacion.Trim();
                             txtEstadoCodigo.Text = item.idEstado.ToString().Trim();
-                            this.txtEstado.Text = item.estado != null ? item.estado.Trim() : string.Empty;
+                            txtEstado.Text = item.estado != null ? item.estado.Trim() : string.Empty;
                             txtDispositivoCodigo.Text = item.idDispositivo.ToString().Trim();
-                            this.txtDispositivoDescripcion.Text = item.dispositivo != null ? item.dispositivo.Trim().ToUpper() : string.Empty;
+                            txtDispositivoDescripcion.Text = item.dispositivo != null ? item.dispositivo.Trim().ToUpper() : string.Empty;
                             txtUsuarioAsignado.Text = item.usuario.Trim();
                             txtEmpresaCodigo.Text = item.idEmpresa.Trim();
                             txtEmpresa.Text = item.empresa != null ? item.empresa.Trim() : string.Empty;
                             txtSucursalCodigo.Text = item.idSucursal.Trim();
-                            this.txtSucursal.Text = item.sucursal != null ? item.sucursal.Trim() : string.Empty;
+                            txtSucursal.Text = item.sucursal != null ? item.sucursal.Trim() : string.Empty;
                             txtCostoTotalDeMantenimiento.Text = item.costoUSD.ToDecimalPresentation();
-
-
                             decimal tiempoEjecutadoNativo = Convert.ToDecimal((item.horasEstimadas != (decimal?)null ? item.horasEstimadas.Value : 0));
                             decimal tiempoEjecutadoParteEntera = Math.Truncate(tiempoEjecutadoNativo);
                             decimal tiempoEjecutadoDiferencia = tiempoEjecutadoNativo - tiempoEjecutadoParteEntera;
@@ -1005,9 +1046,6 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             {
                                 cboTiempoEjecutado.SelectedValue = Convert.ToDecimal(tiempoEjecutadoNativo).ToString();
                             }
-
-
-
                             decimal tiempoProgramadoNativo = Convert.ToDecimal((item.minutosProgramados != (decimal?)null ? item.minutosProgramados.Value : 0));
                             decimal tiempProgramadoParteEntera = Math.Truncate(tiempoProgramadoNativo);
                             decimal tiempoProgramadoDiferencia = tiempoProgramadoNativo - tiempProgramadoParteEntera;
@@ -1019,33 +1057,22 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             {
                                 cboTiempoProgramado.SelectedValue = Convert.ToDecimal(tiempoProgramadoNativo).ToString();
                             }
-
-
-
                             cboCanalDeAtencion.SelectedValue = item.CanalDeAtencionCodigo.ToString();
-
-
-
                             txtFechaFinalizacion.Text = item.fechaEstimadaFinalizacion.Value.ToShortDateString();
                             txtProveedorCodigo.Text = item.idclieprov.Trim();
-                            this.txtProveedor.Text = item.proveedor != null ? item.proveedor.Trim() : string.Empty;
+                            txtProveedor.Text = item.proveedor != null ? item.proveedor.Trim() : string.Empty;
                             txtNroTicket.Text = item.numeroDeTicketEmpresaExterna.Trim();
                             txtNroPedido.Text = item.numeroDePedido.Trim();
-
                             chkEjecutadoPorExterno.Checked = false;
                             if (item.EsejecutadoPorPersonalExterno.Value == 1)
                             {
                                 chkEjecutadoPorExterno.Checked = true;
                             }
-
-
                             chkConSupervisionSST.Checked = false;
                             if (item.requiereSupervisionSST.Value == 1)
                             {
                                 chkConSupervisionSST.Checked = true;
                             }
-
-
                             chkEsProgramado.Checked = false;
                             if (item.esUnTrabajoProgramado.Value == 1)
                             {
@@ -1053,11 +1080,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             }
                             #endregion
                         }
-
                         #region Listado detalle() 
-
                         ultimoItemEnListaDetalle = 1;
-
                         if (listDetalleByCodigoMantenimiento != null)
                         {
                             if (listDetalleByCodigoMantenimiento.Count > 0)
@@ -1074,10 +1098,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         btnNuevo.Enabled = true;
                         btnPersonalBuscar.Enabled = false;
                         btnDispositivoBuscar.Enabled = false;
-                        this.txtPersonal.ReadOnly = true;
-                        this.txtPersonalCodigo.ReadOnly = true;
-                        this.txtDispositivoCodigo.ReadOnly = true;
-                        this.txtDispositivoDescripcion.ReadOnly = true;
+                        txtPersonal.ReadOnly = true;
+                        txtPersonalCodigo.ReadOnly = true;
+                        txtDispositivoCodigo.ReadOnly = true;
+                        txtDispositivoDescripcion.ReadOnly = true;
                         BarraPrincipal.Enabled = true;
                         gbDatosPersonal.Enabled = true;
                         gbDetale.Enabled = true;
@@ -1338,7 +1362,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
             if (codigoDispositivo > 0)
             {
-                SAS_ListadoDeDispositivos oDispositivo = new SAS_ListadoDeDispositivos();
+                SAS_ListadoDeDispositivosAllResult oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                 modeloDispositivo = new SAS_DispositivoUsuariosController();
                 oDispositivo = modeloDispositivo.ObtenerDispositivoById("SAS", codigoDispositivo);
 

@@ -30,7 +30,7 @@ namespace ComparativoHorasVisualSATNISIRA
         private SAS_USUARIOS user2;
         private string companyId;
         private PrivilegesByUser privilege;
-        private SAS_ListadoDeDispositivos DispositivoEdicionByList;
+        private SAS_ListadoDeDispositivosAllResult DispositivoEdicionByList;
         private SAS_ListadoDeDispositivosByIdDeviceResult DispositivoQuery;
         private SAS_Dispostivo oDispositivo;
         private string oConexion = string.Empty;
@@ -100,7 +100,7 @@ namespace ComparativoHorasVisualSATNISIRA
             lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
             lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
 
-            DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+            DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
             oDispositivo = new SAS_Dispostivo();
@@ -109,7 +109,7 @@ namespace ComparativoHorasVisualSATNISIRA
             CargarObjeto();
         }
 
-        public DispositivosEdicion(string _oConexion, SAS_ListadoDeDispositivos _oDispositivoQuery)
+        public DispositivosEdicion(string _oConexion, SAS_ListadoDeDispositivosAllResult _oDispositivoQuery)
         {
             InitializeComponent();
             user2 = new SAS_USUARIOS();
@@ -120,7 +120,7 @@ namespace ComparativoHorasVisualSATNISIRA
             lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
 
             oConexion = _oConexion;
-            DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+            DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
             oDispositivo = new SAS_Dispostivo();
@@ -138,7 +138,7 @@ namespace ComparativoHorasVisualSATNISIRA
         {
             InitializeComponent();
             oConexion = _oConexion;
-            DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+            DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
             oDispositivo = new SAS_Dispostivo();
@@ -314,7 +314,7 @@ namespace ComparativoHorasVisualSATNISIRA
             }
         }
 
-        public DispositivosEdicion(string _oConexion, SAS_ListadoDeDispositivos _oDispositivoQuery, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
+        public DispositivosEdicion(string _oConexion, SAS_ListadoDeDispositivosAllResult _oDispositivoQuery, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
             conection = _oConexion.Trim() != string.Empty ? _oConexion.Trim() : "SAS";
@@ -325,7 +325,7 @@ namespace ComparativoHorasVisualSATNISIRA
             companyId = _companyId;
             privilege = _privilege;
             oConexion = _oConexion.Trim() != string.Empty ? _oConexion.Trim() : "SAS";
-            DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+            DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
             oDispositivo = new SAS_Dispostivo();
@@ -441,7 +441,7 @@ namespace ComparativoHorasVisualSATNISIRA
             companyId = _companyId;
             privilege = _privilege;
             oConexion = _oConexion;
-            DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+            DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
             listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
             DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
             oDispositivo = new SAS_Dispostivo();
@@ -621,7 +621,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 companyId = _companyId;
                 privilege = _privilege;
                 oConexion = _oConexion;
-                DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+                DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
                 listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
                 DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
                 oDispositivo = new SAS_Dispostivo();
@@ -3580,7 +3580,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
                 modelo = new SAS_DispostivoController();
                 DispositivoQuery = new SAS_ListadoDeDispositivosByIdDeviceResult();
-                DispositivoEdicionByList = new SAS_ListadoDeDispositivos();
+                DispositivoEdicionByList = new SAS_ListadoDeDispositivosAllResult();
                 oDispositivo = new SAS_Dispostivo();
                 dispositivo = new SAS_Dispostivo();
                 listadoNumeroIpEliminados = new List<SAS_DispositivoIP>();
@@ -4004,6 +4004,36 @@ namespace ComparativoHorasVisualSATNISIRA
            
         }
 
+        private void generarMantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerarMantenimiento();
+        }
+
+        private void GenerarMantenimiento()
+        {
+            
+        }
+
+        private void btnGenerarInspeccion_Click(object sender, EventArgs e)
+        {
+            GenerarInspeccion();
+        }
+
+
+        private void GenerarInspeccion()
+        {
+
+        }
+
+        private void btnRegistrarInventario_Click(object sender, EventArgs e)
+        {
+            RegistrarInventario();
+        }
+
+        private void RegistrarInventario()
+        {
+
+        }
 
         private void bgwCambiarEstado_DoWork(object sender, DoWorkEventArgs e)
         {

@@ -335,7 +335,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Partes_Diarios
             {
                 if (codigoDispositivo > 0)
                 {
-                    SAS_ListadoDeDispositivos oDispositivo = new SAS_ListadoDeDispositivos();
+                    SAS_ListadoDeDispositivosAllResult oDispositivo = new SAS_ListadoDeDispositivosAllResult();
                     oDispositivo.id = codigoDispositivo;
                     deviceModelo = new SAS_DispostivoController();
                     oDispositivo = deviceModelo.ObtenerDatosDeDispositivo(conection, codigoDispositivo);
