@@ -18,7 +18,7 @@ namespace Asistencia.Negocios
             List<SAS_DispositivoTipoDispositivoListadoResult> resultado = new List<SAS_DispositivoTipoDispositivoListadoResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 resultado = Modelo.SAS_DispositivoTipoDispositivoListado().ToList();
@@ -31,7 +31,7 @@ namespace Asistencia.Negocios
         {
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoTipoDispositivo.Where(x => x.id == oTipoDispositivo.id).ToList();
                 if (resultado != null)
@@ -77,7 +77,7 @@ namespace Asistencia.Negocios
         {
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoTipoDispositivo.Where(x => x.id == oTipoDispositivo.id).ToList();
                 if (resultado != null)

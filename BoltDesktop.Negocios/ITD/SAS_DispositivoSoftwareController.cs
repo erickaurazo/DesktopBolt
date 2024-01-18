@@ -16,7 +16,7 @@ namespace Asistencia.Negocios
             
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivoSoftwareByDevice(device.id).ToList();
 

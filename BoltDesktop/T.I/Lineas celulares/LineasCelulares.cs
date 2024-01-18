@@ -55,7 +55,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             user2 = new SAS_USUARIOS();
-           user2.IdUsuario = Environment.UserName.Trim();
+            user2.IdUsuario = Environment.UserName.Trim();
             Actualizar();
         }
 
@@ -268,7 +268,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 {
                     if (lineaCelular != string.Empty)
                     {
-                       
+
                         FilterDescriptor filter1 = new FilterDescriptor();
                         filter1.Operator = FilterOperator.Contains;
                         filter1.Value = lineaCelular;
@@ -283,7 +283,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         dgvRegistro.Refresh();
 
                     }
-                }                                
+                }
                 progressBar1.Visible = false;
                 btnActualizarLista.Enabled = true;
             }
@@ -531,7 +531,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            Registrar();
+            if (ValidarFormulario() == true)
+            {
+                Registrar();
+            }
         }
 
         private void Registrar()
@@ -539,33 +542,25 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
 
-                if (ValidarFormulario() == true)
+                ObtenerObjeto();
+                modelo = new SAS_LineasCelularesCoporativasController();
+                int resultado = modelo.ToRegister("SAS", item);
+                btnGrabar.Enabled = !false;
+                btnCancelar.Enabled = !false;
+                if (resultado == 0)
                 {
-                    ObtenerObjeto();
-                    modelo = new SAS_LineasCelularesCoporativasController();
-                    int resultado = modelo.ToRegister("SAS", item);
-                    btnGrabar.Enabled = !false;
-                    btnCancelar.Enabled = !false;
-                    if (resultado == 0)
-                    {
-                        MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se registró satisfactoriamente", "Confirmación del sistema");
-                    }
-                    else if (resultado == 1)
-                    {
-                        MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se actualizó satisfactoriamente", "Confirmación del sistema");
-                    }
-                    Actualizar();
-                    btnGrabar.Enabled = false;
-                    gbEdit.Enabled = false;
-                    gbList.Enabled = true;
-                    btnEditar.Enabled = true;
-                    btnCancelar.Enabled = true;
+                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se registró satisfactoriamente", "Confirmación del sistema");
                 }
-                else
+                else if (resultado == 1)
                 {
-                    MessageBox.Show(mensajeDeValidacion.ToString(), "Mensaje del sistema");
-                    return;
+                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se actualizó satisfactoriamente", "Confirmación del sistema");
                 }
+                Actualizar();
+                btnGrabar.Enabled = false;
+                gbEdit.Enabled = false;
+                gbList.Enabled = true;
+                btnEditar.Enabled = true;
+                btnCancelar.Enabled = true;
 
 
             }
@@ -719,7 +714,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             //if (dgvRegistro.CurrentRow.Cells["chLineaCelular"].Value.ToString() != string.Empty)
                             //{
                             string codigo = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? (dgvRegistro.CurrentRow.Cells["chId"].Value.ToString()) : "0");
-                            IdLineaCelular= (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32 (dgvRegistro.CurrentRow.Cells["chId"].Value.ToString()) : 0);
+                            IdLineaCelular = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chId"].Value.ToString()) : 0);
                             int codigoNumerico = Convert.ToInt32(codigo);
                             var resultado = listado.Where(x => x.id == codigoNumerico).ToList();
                             if (resultado.ToList().Count == 1)
@@ -986,7 +981,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void ActivarLinea()
         {
             try
-            {                
+            {
                 if (IdLineaCelular > 0)
                 {
                     modelo = new SAS_LineasCelularesCoporativasController();
@@ -1001,8 +996,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         MessageBox.Show("NO se cambio el estado correctamente", "Confirmación de Activacion de Línea");
                     }
-                    
-                    
+
+
                 }
                 else
                 {
@@ -1081,7 +1076,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         MessageBox.Show("No se cambio el estado correctamente", "Confirmación de Notificación de suspención de Línea celular");
                     }
 
-                   
+
                 }
                 else
                 {
@@ -1121,7 +1116,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         MessageBox.Show("o se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
                     }
 
-                   
+
                 }
                 else
                 {
@@ -1161,7 +1156,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         MessageBox.Show("No se cambio el estado correctamente", "Confirmación proceso de suspención de Línea celular");
                     }
 
-                  
+
                 }
                 else
                 {
@@ -1201,7 +1196,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         MessageBox.Show("No se cambio el estado correctamente", "Confirmación de Activación de Línea celular");
                     }
 
-                   
+
                 }
                 else
                 {
@@ -1233,7 +1228,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
             else
             {
-                
+
                 #region Par() | Activar Filtro()
                 dgvRegistro.EnableFiltering = !true;
                 #endregion
@@ -1320,7 +1315,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 {
                     if (this.txtCodigo.Text != "0")
                     {
-                        
+
                         AdjuntarArchivos ofrm = new AdjuntarArchivos(conection, user2, companyId, privilege, IdLineaCelular.ToString(), nombreformulario);
                         ofrm.Show();
 

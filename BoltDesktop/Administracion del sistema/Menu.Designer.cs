@@ -216,6 +216,7 @@
             this.GoCCostosMovimientoActualizarFecha = new System.Windows.Forms.ToolStripMenuItem();
             this.GoCCostosMovimientoActualizarFechaPodas = new System.Windows.Forms.ToolStripMenuItem();
             this.GoCCostosMovimientoActualizarFechaAplicacionCianamida = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoProduccionMovimientoConformidadDeCarga = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteBPM = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene = new System.Windows.Forms.ToolStripMenuItem();
@@ -287,6 +288,7 @@
             this.GoAsegCalCerReporteProductoTerminadoCosechaControlDeCalidadRecepcionUva = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUva = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoProduccionReporteConformacionDeCarga = new System.Windows.Forms.ToolStripMenuItem();
             this.procesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GoPlanillaProcesoActualizarListaSincronizacionATablets = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIProcesoGeneracionMasivaParteDiario = new System.Windows.Forms.ToolStripMenuItem();
@@ -311,8 +313,8 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoProduccionMovimientoConformidadDeCarga = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoProduccionReporteConformacionDeCarga = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricola = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -351,6 +353,7 @@
             this.GoCCostos,
             this.GoSeparador10,
             this.GoAcopio,
+            this.GoPlaneamientoAgricola,
             this.GoEvaluacionAgricola,
             this.GoHidraulicaYFertilizacion,
             this.GoMantenimiento,
@@ -1531,7 +1534,8 @@
             this.GoAsegCalCerMovimientoRegistroDeGasificadoExonerado,
             this.GoExportacionesMovimientoDistribuirPaletasEnContenedor,
             this.GoCCostosMovimientoActualizarFecha,
-            this.GoProduccionMovimientoConformidadDeCarga});
+            this.GoProduccionMovimientoConformidadDeCarga,
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(84, 20);
             this.viewMenu.Text = "Movimiento";
@@ -1775,6 +1779,13 @@
             this.GoCCostosMovimientoActualizarFechaAplicacionCianamida.Size = new System.Drawing.Size(222, 22);
             this.GoCCostosMovimientoActualizarFechaAplicacionCianamida.Text = "Fecha aplicacion Cianamida";
             this.GoCCostosMovimientoActualizarFechaAplicacionCianamida.Click += new System.EventHandler(this.GoCCostosMovimientoActualizarFechaAplicacionCianamida_Click);
+            // 
+            // GoProduccionMovimientoConformidadDeCarga
+            // 
+            this.GoProduccionMovimientoConformidadDeCarga.Name = "GoProduccionMovimientoConformidadDeCarga";
+            this.GoProduccionMovimientoConformidadDeCarga.Size = new System.Drawing.Size(354, 22);
+            this.GoProduccionMovimientoConformidadDeCarga.Text = "Conformidad de carga";
+            this.GoProduccionMovimientoConformidadDeCarga.Click += new System.EventHandler(this.GoProduccionMovimientoConformidadDeCarga_Click);
             // 
             // toolsMenu
             // 
@@ -2333,6 +2344,13 @@
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables.Text = "112 - Control de calidad en descarte - Uva - Trozos exportables";
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables.Click += new System.EventHandler(this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables_Click);
             // 
+            // GoProduccionReporteConformacionDeCarga
+            // 
+            this.GoProduccionReporteConformacionDeCarga.Name = "GoProduccionReporteConformacionDeCarga";
+            this.GoProduccionReporteConformacionDeCarga.Size = new System.Drawing.Size(386, 22);
+            this.GoProduccionReporteConformacionDeCarga.Text = "Conformaciones de carga";
+            this.GoProduccionReporteConformacionDeCarga.Click += new System.EventHandler(this.GoProduccionReporteConformacionDeCarga_Click);
+            // 
             // procesoToolStripMenuItem
             // 
             this.procesoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2505,19 +2523,20 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // GoProduccionMovimientoConformidadDeCarga
+            // GoPlaneamientoAgricola
             // 
-            this.GoProduccionMovimientoConformidadDeCarga.Name = "GoProduccionMovimientoConformidadDeCarga";
-            this.GoProduccionMovimientoConformidadDeCarga.Size = new System.Drawing.Size(354, 22);
-            this.GoProduccionMovimientoConformidadDeCarga.Text = "Conformidad de carga";
-            this.GoProduccionMovimientoConformidadDeCarga.Click += new System.EventHandler(this.GoProduccionMovimientoConformidadDeCarga_Click);
+            this.GoPlaneamientoAgricola.Image = ((System.Drawing.Image)(resources.GetObject("GoPlaneamientoAgricola.Image")));
+            this.GoPlaneamientoAgricola.Name = "GoPlaneamientoAgricola";
+            this.GoPlaneamientoAgricola.Size = new System.Drawing.Size(278, 22);
+            this.GoPlaneamientoAgricola.Text = "Planeamiento Agrícola";
+            this.GoPlaneamientoAgricola.Click += new System.EventHandler(this.GoPlaneamientoAgricola_Click);
             // 
-            // GoProduccionReporteConformacionDeCarga
+            // GoPlaneamientoAgricolaMovimientoProgramaSemanal
             // 
-            this.GoProduccionReporteConformacionDeCarga.Name = "GoProduccionReporteConformacionDeCarga";
-            this.GoProduccionReporteConformacionDeCarga.Size = new System.Drawing.Size(386, 22);
-            this.GoProduccionReporteConformacionDeCarga.Text = "Conformaciones de carga";
-            this.GoProduccionReporteConformacionDeCarga.Click += new System.EventHandler(this.GoProduccionReporteConformacionDeCarga_Click);
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Name = "GoPlaneamientoAgricolaMovimientoProgramaSemanal";
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Size = new System.Drawing.Size(354, 22);
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Text = "Programa semanal";
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Click += new System.EventHandler(this.programaSemanalToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -2829,5 +2848,7 @@
         private System.Windows.Forms.ToolStripSeparator GoAsegCalCerCatalogoMaestrosBySeparator1;
         private System.Windows.Forms.ToolStripMenuItem GoProduccionMovimientoConformidadDeCarga;
         private System.Windows.Forms.ToolStripMenuItem GoProduccionReporteConformacionDeCarga;
+        private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricola;
+        private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaMovimientoProgramaSemanal;
     }
 }

@@ -15,7 +15,7 @@ namespace Asistencia.Negocios
             List<SAS_DispositivoHardwareByDeviceResult> resultado = new List<SAS_DispositivoHardwareByDeviceResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivoHardwareByDevice(device.id).ToList();
 

@@ -20,7 +20,7 @@ namespace Asistencia.Negocios
 
             if (conection != string.Empty)
             {
-               using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+               using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
                 {
 
                     silks = (

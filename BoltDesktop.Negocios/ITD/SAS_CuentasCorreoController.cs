@@ -17,7 +17,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_CuentasCorreoListado> listado = new List<SAS_CuentasCorreoListado>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_CuentasCorreoListado.ToList();
             }
@@ -30,7 +30,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -98,7 +98,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -276,7 +276,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -321,7 +321,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -355,7 +355,7 @@ namespace Asistencia.Negocios
 
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_CuentasCorreo.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -390,7 +390,7 @@ namespace Asistencia.Negocios
 
             List<SAS_CuentasCorreoDetalleByIdResult> listado = new List<SAS_CuentasCorreoDetalleByIdResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_CuentasCorreoDetalleById(item.id).ToList();
             }

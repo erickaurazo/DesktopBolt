@@ -374,7 +374,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_PersonalExternoDetalleByIdResult> resultado = new List<SAS_PersonalExternoDetalleByIdResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_PersonalExternoDetalleById(codigo).ToList();
             }

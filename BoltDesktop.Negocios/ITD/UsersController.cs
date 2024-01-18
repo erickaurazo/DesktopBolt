@@ -12,9 +12,12 @@ namespace Asistencia.Negocios
     public class UsersController
     {
         // clase con los usuarios y privilegios
-        const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com"; 
-        //const string passwordCorreo = @"YF6TE-XWW79-A77WE-FLLM7-6N5A2";
-        const string passwordCorreo = @"iompqiiuhkjngkjr";
+        //const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
+        //const string passwordCorreo = @"iompqiiuhkjngkjr";
+
+        const string usuarioCorreo = "notify.bolt@gmail.com";
+        const string passwordCorreo = "wppi kiav vegf sesx";
+
         public List<SAS_USUARIOS> GetListAllUser(string conection, string companyId)
         {
             var result = new List<SAS_USUARIOS>();
@@ -181,10 +184,12 @@ namespace Asistencia.Negocios
                 mail.Subject = Asunto;
                 mail.Body = Mensaje.ToString();
 
-                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                //                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+
                 smtp.Port = 587;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.UseDefaultCredentials = true;
+                smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new System.Net.NetworkCredential(usuarioCorreo, passwordCorreo);
                 smtp.EnableSsl = true;
                 smtp.Send(mail);

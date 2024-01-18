@@ -19,7 +19,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoAll> list = new List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoAll>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoAll.ToList();
             }
@@ -32,7 +32,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelularListadoByIDResult item = new SAS_SolicitudDeRenovacionTelefoniaCelularListadoByIDResult();
             item.id = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByID(id).ToList();
 
@@ -52,7 +52,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByDateResult> list = new List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByDateResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByDate(fechaDesde, fechaHasta).ToList();
             }
@@ -69,7 +69,7 @@ namespace Asistencia.Negocios
             int IdDispositivoBajaGenerado = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -468,7 +468,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -505,7 +505,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -528,7 +528,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -566,7 +566,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -589,7 +589,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var scopeOptions = new TransactionOptions();
@@ -648,7 +648,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var scopeOptions = new TransactionOptions();
@@ -708,7 +708,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var scopeOptions = new TransactionOptions();
@@ -737,7 +737,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var scopeOptions = new TransactionOptions();
@@ -765,7 +765,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -791,7 +791,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == codigoSolicitud).ToList();
                 if (resultado != null)
@@ -819,7 +819,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -847,7 +847,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -874,7 +874,7 @@ namespace Asistencia.Negocios
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             int obtenerultimoregistro = 0;
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 if (tabla.ToUpper() == "SAS_SolicitudDeRenovacionTelefoniaCelular".ToUpper())
                 {
@@ -892,7 +892,7 @@ namespace Asistencia.Negocios
             
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listadoCabecera = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByID(codigoSolicitudSelecionada).ToList();                
             }

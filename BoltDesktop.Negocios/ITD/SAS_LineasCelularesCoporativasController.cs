@@ -15,7 +15,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_LineasCelularesCoporativasListadoAllResult> list = new List<SAS_LineasCelularesCoporativasListadoAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_LineasCelularesCoporativasListadoAll().ToList();
             }
@@ -27,7 +27,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_LineasCelularesCoporativasListadoAllResult> list = new List<SAS_LineasCelularesCoporativasListadoAllResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_LineasCelularesCoporativasListadoAll().Where(x=> x.lineaCelular == numeroCelular).ToList();
             }
@@ -40,7 +40,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -115,12 +115,14 @@ namespace Asistencia.Negocios
 
         }
 
+
+
         public int ChangeState(string conection, SAS_LineasCelularesCoporativa item)
         {
             SAS_LineasCelularesCoporativa oregistro = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -154,7 +156,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -183,7 +185,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -213,7 +215,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -243,7 +245,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -272,7 +274,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -302,7 +304,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -332,7 +334,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -361,7 +363,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -391,7 +393,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
                 if (resultado != null)
@@ -426,7 +428,7 @@ namespace Asistencia.Negocios
             SAS_LineasCelularesCoporativa oregistro = new SAS_LineasCelularesCoporativa();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -452,7 +454,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoDeLineasTelefonica> list = new List<SAS_ListadoDeLineasTelefonica>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_ListadoDeLineasTelefonicas.ToList();
             }

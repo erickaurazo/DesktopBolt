@@ -14,6 +14,7 @@ using ComparativoHorasVisualSATNISIRA.Costos;
 using ComparativoHorasVisualSATNISIRA.Exportaciones;
 using ComparativoHorasVisualSATNISIRA.Maquinaria;
 using ComparativoHorasVisualSATNISIRA.MRP;
+using ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola;
 using ComparativoHorasVisualSATNISIRA.Presupuestos;
 using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.RRHH;
@@ -35,7 +36,7 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new ConformacionDeCarga());
-            //Application.Run(new ReporteIngresoSalidaGasificadoLeidos());
+            //Application.Run(new ProgramaAgricola());
             Application.Run(new Menu());
         }
     }

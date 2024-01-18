@@ -13,8 +13,11 @@ namespace Asistencia.Negocios
 {
     public class SAS_DispositivoSoporteFuncionalController
     {
-        const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
-        const string passwordCorreo = @"iompqiiuhkjngkjr";
+        //const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
+        //const string passwordCorreo = @"iompqiiuhkjngkjr";
+
+        const string usuarioCorreo = "notify.bolt@gmail.com";
+        const string passwordCorreo = "wppi kiav vegf sesx";
 
         public SAS_ListadoDeAtencionesDeSoporteFuncionalByCodigoResult GetListById(string conection, int codigo)
         {
@@ -24,7 +27,7 @@ namespace Asistencia.Negocios
 
             if (codigo != 0)
             {
-                using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+                using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
                 {
                     item = Modelo.SAS_ListadoDeAtencionesDeSoporteFuncionalByCodigo(codigo).Single();
                 }
@@ -37,7 +40,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoDeAtencionesDeSoporteFuncionalByPeriodosResult> list = new List<SAS_ListadoDeAtencionesDeSoporteFuncionalByPeriodosResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_ListadoDeAtencionesDeSoporteFuncionalByPeriodos(fechaDesde, fechaHasta).ToList();
             }
@@ -50,7 +53,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             SAS_DispositivoSoporteFuncional oRegistro = new SAS_DispositivoSoporteFuncional();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -206,7 +209,7 @@ namespace Asistencia.Negocios
             SAS_DispositivoSoporteFuncionalController model = new SAS_DispositivoSoporteFuncionalController();
             SAS_DispositivoSoporteFuncional oRegistro = new SAS_DispositivoSoporteFuncional();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -637,7 +640,7 @@ namespace Asistencia.Negocios
         {
             int resultado = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 #region 
                 var result01 = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == selectedItem.codigo).ToList();
@@ -681,7 +684,7 @@ namespace Asistencia.Negocios
         {
             int resultado = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 #region 
                 var result01 = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == selectedItem.codigo).ToList();
@@ -728,7 +731,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             SAS_DispositivoSoporteFuncional item = new SAS_DispositivoSoporteFuncional();
             SAS_DispositivoSoporteFuncional itemNuevo = new SAS_DispositivoSoporteFuncional();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 #region 
                 itemNuevo = new SAS_DispositivoSoporteFuncional();
@@ -796,7 +799,7 @@ namespace Asistencia.Negocios
         {
             int resultado = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 #region 
                 var result01 = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == selectedItem.codigo).ToList();
@@ -840,7 +843,7 @@ namespace Asistencia.Negocios
         {
             int resultado = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 #region 
                 var result01 = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == selectedItem.codigo).ToList();
@@ -868,7 +871,7 @@ namespace Asistencia.Negocios
             SAS_DispositivoSoporteFuncional oRegistro = new SAS_DispositivoSoporteFuncional();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == item.codigo).ToList();
                 if (resultado != null)
@@ -894,7 +897,7 @@ namespace Asistencia.Negocios
             SAS_DispositivoSoporteFuncionalController model = new SAS_DispositivoSoporteFuncionalController();
             SAS_DispositivoSoporteFuncional oRegistro = new SAS_DispositivoSoporteFuncional();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -962,7 +965,7 @@ namespace Asistencia.Negocios
             int correlativo = 0;
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 correlativo = Modelo.SAS_DispositivoSoporteFuncional.ToList().Count > 0 ? Modelo.SAS_DispositivoSoporteFuncional.Max(x => x.codigo) : 0;
             }
@@ -975,7 +978,7 @@ namespace Asistencia.Negocios
             SAS_DispositivoSoporteFuncional oregistro = new SAS_DispositivoSoporteFuncional();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == item.codigo).ToList();
                 if (resultado != null)
@@ -1011,7 +1014,7 @@ namespace Asistencia.Negocios
             SAS_DispositivoSoporteFuncional oregistro = new SAS_DispositivoSoporteFuncional();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == item.codigo).ToList();
                 if (resultado != null)
@@ -1039,7 +1042,7 @@ namespace Asistencia.Negocios
             List<SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigoResult> listadoDetalle = new List<SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigoResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listadoCabecera = Modelo.SAS_ListadoDeAtencionesDeSoporteFuncionalByCodigo(codigoSolicitudSelecionada).ToList();
                 listadoDetalle = Modelo.SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigo(codigoSolicitudSelecionada).ToList();
@@ -1101,10 +1104,11 @@ namespace Asistencia.Negocios
                 mail.Subject = Asunto + " | " + listadoCabecera.ElementAt(0).documento;
                 mail.Body = Mensaje.ToString();
 
-                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                //SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                 smtp.Port = 587;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.UseDefaultCredentials = true;
+                smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new System.Net.NetworkCredential(usuarioCorreo, passwordCorreo);
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
@@ -1125,7 +1129,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigoResult> list = new List<SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigoResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigo(codigo).ToList();
             }
@@ -1137,7 +1141,7 @@ namespace Asistencia.Negocios
             int resultadoOperacion = 0;
             SAS_DispositivoSoporteFuncionalController model = new SAS_DispositivoSoporteFuncionalController();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var resultado = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == codigo).ToList();
@@ -1217,7 +1221,7 @@ namespace Asistencia.Negocios
             int resultadoOperacion = 0;
             SAS_DispositivoSoporteFuncionalController model = new SAS_DispositivoSoporteFuncionalController();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == codigo).ToList();
                 if (resultado != null)
@@ -1239,7 +1243,7 @@ namespace Asistencia.Negocios
             int resultadoOperacion = 0;
             SAS_DispositivoSoporteFuncionalController model = new SAS_DispositivoSoporteFuncionalController();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoSoporteFuncional.Where(x => x.codigo == codigo).ToList();
                 if (resultado != null)

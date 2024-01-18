@@ -105,6 +105,11 @@
     <Compile Include="PeriodoDia.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="MesesObj.cs" />
+    <Compile Include="PlaneamientoAgricolaDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlaneamientoAgricolaDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="PrivilegesByUser.cs" />
     <Compile Include="ProduccionContext.designer.cs">
       <AutoGen>True</AutoGen>
@@ -171,6 +176,11 @@
       <LastGenOutput>NSFAJAS.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="PlaneamientoAgricolaDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PlaneamientoAgricolaDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ProduccionContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>ProduccionContext.designer.cs</LastGenOutput>
@@ -235,6 +245,11 @@
   <ItemGroup>
     <None Include="ProduccionContext.dbml.layout">
       <DependentUpon>ProduccionContext.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PlaneamientoAgricolaDB.dbml.layout">
+      <DependentUpon>PlaneamientoAgricolaDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

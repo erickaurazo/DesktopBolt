@@ -1582,6 +1582,18 @@
     <Compile Include="Cosecha\RegistroTicketsAbastecimientoMateriaPrimaFormato02.Designer.cs">
       <DependentUpon>RegistroTicketsAbastecimientoMateriaPrimaFormato02.cs</DependentUpon>
     </Compile>
+    <Compile Include="Planeamiento Agricola\ProgramaAgricola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\ProgramaAgricola.Designer.cs">
+      <DependentUpon>ProgramaAgricola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\ProgramaAgricolaEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\ProgramaAgricolaEdicion.Designer.cs">
+      <DependentUpon>ProgramaAgricolaEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presupuestos\AperturaCierrePresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2946,6 +2958,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MRP\ProgramaDeCosechaEdicion.resx">
       <DependentUpon>ProgramaDeCosechaEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeamiento Agricola\ProgramaAgricola.resx">
+      <DependentUpon>ProgramaAgricola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeamiento Agricola\ProgramaAgricolaEdicion.resx">
+      <DependentUpon>ProgramaAgricolaEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presupuestos\AperturaCierrePresupuestos.resx">
       <DependentUpon>AperturaCierrePresupuestos.cs</DependentUpon>

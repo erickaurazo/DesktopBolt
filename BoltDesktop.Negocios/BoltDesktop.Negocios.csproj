@@ -61,6 +61,7 @@
     <Compile Include="Calidad\SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoController.cs" />
     <Compile Include="Calidad\TermoRegistroPorClienteCampanaController.cs" />
     <Compile Include="Logistica\AreasController.cs" />
+    <Compile Include="PlaneamientoAgricola\ProgramaSemanaController.cs" />
     <Compile Include="ProduccionPacking\SAS_CondormidadDeCargaController.cs" />
     <Compile Include="RRHH\AsistenciaController.cs" />
     <Compile Include="Calidad\EvaluacionTrazabilidadFCLDespachoController.cs" />

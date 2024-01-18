@@ -25,5 +25,10 @@ namespace ComparativoHorasVisualSATNISIRA.Calidad.CalidadPackingPostCosecha.BPM.
         {
 
         }
+
+        private void VerificacionLuminariasVidriosPlasticosDurosReporte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

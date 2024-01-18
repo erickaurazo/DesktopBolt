@@ -16,7 +16,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DispositivoWharehouseMovementsByDeviceIDResult> listado = new List<SAS_DispositivoWharehouseMovementsByDeviceIDResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_DispositivoWharehouseMovementsByDeviceID(codigo).ToList();
             }
@@ -28,7 +28,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DispositivoWharehouseMovementsByDeviceIDResult> listado = new List<SAS_DispositivoWharehouseMovementsByDeviceIDResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_DispositivoWharehouseMovementsByDeviceID(device.id).ToList();
             }

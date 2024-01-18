@@ -31,7 +31,7 @@ namespace Asistencia.Negocios
             List<SAS_ListadoDeDispositivosByIdDeviceResult> resultado = new List<SAS_ListadoDeDispositivosByIdDeviceResult>();
             SAS_ListadoDeDispositivosByIdDeviceResult resultado2 = new SAS_ListadoDeDispositivosByIdDeviceResult();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_ListadoDeDispositivosByIdDevice(idDispositivo).ToList();
                 if (resultado.ToList().Count() > 1)

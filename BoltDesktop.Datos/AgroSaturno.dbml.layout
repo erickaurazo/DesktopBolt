@@ -1,53 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 42.625, 41.75" name="AgroSaturno">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 32.875, 8.5" name="AgroSaturno">
   <DataContextMoniker Name="/AgroSaturnoDataContext" />
   <nestedChildShapes>
-    <classShape Id="e444da1b-1807-427d-9edd-e09e247658e5" isExpanded="false" absoluteBounds="8.75, 2.75, 2, 0.44999999999999929">
+    <classShape Id="e444da1b-1807-427d-9edd-e09e247658e5" isExpanded="false" absoluteBounds="8.75, 1.5, 2.625, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_StockProductos" />
       <nestedChildShapes>
-        <elementListCompartment Id="ce00d8a4-eb89-438a-9f80-11ef8e57951b" absoluteBounds="8.765, 3.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ce00d8a4-eb89-438a-9f80-11ef8e57951b" absoluteBounds="8.765, 1.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" isExpanded="false" absoluteBounds="3.5, 4.875, 2, 0.44999999999999929">
+    <classShape Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" isExpanded="false" absoluteBounds="3.375, 2.125, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/PEDIDO" />
       <nestedChildShapes>
-        <elementListCompartment Id="ed10d326-71e1-40b2-94cb-c1aaeafce9aa" absoluteBounds="3.5150000005960464, 5.33500000089407, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ed10d326-71e1-40b2-94cb-c1aaeafce9aa" absoluteBounds="3.3900000005960464, 2.5850000008940697, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8679b9e6-22a5-4692-a102-840cee225edd" isExpanded="false" absoluteBounds="0.75, 9.75, 2, 0.44999999999999929">
+    <classShape Id="8679b9e6-22a5-4692-a102-840cee225edd" isExpanded="false" absoluteBounds="0.5, 2.875, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/DPEDIDO" />
       <nestedChildShapes>
-        <elementListCompartment Id="a8ac4767-87b2-4d6e-a551-fc2f7996c3bc" absoluteBounds="0.76499999999999968, 10.21, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a8ac4767-87b2-4d6e-a551-fc2f7996c3bc" absoluteBounds="0.51499999999999968, 3.3350000000000009, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="da103245-3f9c-4bb4-8973-a6b3ebc2e771" isExpanded="false" absoluteBounds="3.75, 9.75, 2, 0.44999999999999929">
+    <classShape Id="da103245-3f9c-4bb4-8973-a6b3ebc2e771" isExpanded="false" absoluteBounds="0.5, 4, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_StockProductos1" />
       <nestedChildShapes>
-        <elementListCompartment Id="53bfd00f-8bad-4a4a-9979-939a88550cfd" absoluteBounds="3.7650000000000006, 10.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="53bfd00f-8bad-4a4a-9979-939a88550cfd" absoluteBounds="0.51500000000000057, 4.4600000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ca3635e0-65d1-40d9-a263-d6835cca588b" isExpanded="false" absoluteBounds="6.75, 9.75, 2.625, 0.44999999999999929">
+    <classShape Id="ca3635e0-65d1-40d9-a263-d6835cca588b" isExpanded="false" absoluteBounds="6.25, 3.625, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_RecepcionMateriaPrima" />
       <nestedChildShapes>
-        <elementListCompartment Id="813c3f7a-9bca-45a4-ad81-e9fb729b381c" absoluteBounds="6.7650000000000006, 10.21, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="813c3f7a-9bca-45a4-ad81-e9fb729b381c" absoluteBounds="6.2650000000000006, 4.0850000000000009, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" isExpanded="false" absoluteBounds="3.5, 2.875, 2, 0.44999999999999929">
+    <classShape Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" isExpanded="false" absoluteBounds="3.375, 1.5, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/PEDIDOSERVICIOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="729c4487-794c-4793-a096-3fa44cb7de9d" absoluteBounds="3.5150000000000006, 3.3350000000000009, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="729c4487-794c-4793-a096-3fa44cb7de9d" absoluteBounds="3.3900000000000006, 1.9600000000000009, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="749b86a0-0d97-4819-94ea-bc532e979b80" isExpanded="false" absoluteBounds="6.25, 2.875, 2, 0.44999999999999929">
+    <classShape Id="749b86a0-0d97-4819-94ea-bc532e979b80" isExpanded="false" absoluteBounds="6.25, 1.5, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/DPEDIDOSERVICIOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="e9286332-51b0-4ec9-b7fb-38d4031f605a" absoluteBounds="6.265, 3.3350000000000009, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e9286332-51b0-4ec9-b7fb-38d4031f605a" absoluteBounds="6.265, 1.9600000000000009, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1ac304c8-cfd4-45bd-8b08-8d6478cd2b73" isExpanded="false" absoluteBounds="3.5, 6.375, 2, 0.44999999999999929">
+    <classShape Id="1ac304c8-cfd4-45bd-8b08-8d6478cd2b73" isExpanded="false" absoluteBounds="3.375, 2.875, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/ORDENCOMPRA" />
       <nestedChildShapes>
-        <elementListCompartment Id="6ed35fae-f5f1-4923-a1b3-ad38e5ace6f8" absoluteBounds="3.5150000005960464, 6.83500000089407, 1.9700000000000002, 20.248738606770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6ed35fae-f5f1-4923-a1b3-ad38e5ace6f8" absoluteBounds="3.3900000005960464, 3.3350000008940697, 1.9700000000000002, 20.248738606770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" isExpanded="false" absoluteBounds="3.5, 0.875, 2, 0.44999999999999929">
@@ -56,10 +56,10 @@
         <elementListCompartment Id="00bd837c-4714-4425-bcc1-b58516543915" absoluteBounds="3.5150000000000006, 1.3350000000000009, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4758ed7f-0314-45c2-bbe8-0d8c316e99c9" isExpanded="false" absoluteBounds="6.25, 6.375, 2, 0.44999999999999929">
+    <classShape Id="4758ed7f-0314-45c2-bbe8-0d8c316e99c9" isExpanded="false" absoluteBounds="6.25, 2.25, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/DORDENCOMPRA" />
       <nestedChildShapes>
-        <elementListCompartment Id="dfa58d09-6c4d-4516-b6bb-2629d0d24b04" absoluteBounds="6.2650000005960464, 6.83500000089407, 1.9700000000000002, 13.5181884765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dfa58d09-6c4d-4516-b6bb-2629d0d24b04" absoluteBounds="6.2650000005960464, 2.7100000008940697, 1.9700000000000002, 13.5181884765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="e3d2c7d9-9109-46e2-ba0c-e005a6c23e0b" isExpanded="false" absoluteBounds="6.25, 0.875, 2, 0.44999999999999929">
@@ -68,520 +68,202 @@
         <elementListCompartment Id="55a8c163-20a4-46ec-ac61-4f11ac25b36e" absoluteBounds="6.2650000000000006, 1.3350000000000009, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d810697d-dfb1-4a24-a2e1-dba9e633e148" isExpanded="false" absoluteBounds="10.75, 9.75, 2.625, 0.44999999999999929">
+    <classShape Id="d810697d-dfb1-4a24-a2e1-dba9e633e148" isExpanded="false" absoluteBounds="15.375, 4.375, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SeguimientoPedidoCompras" />
       <nestedChildShapes>
-        <elementListCompartment Id="9252254c-2faf-4176-b2ed-4db4b8b5ea36" absoluteBounds="10.765, 10.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9252254c-2faf-4176-b2ed-4db4b8b5ea36" absoluteBounds="15.39, 4.8350000000000009, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b777da47-b202-4bcf-a26b-718ba0fdd352" isExpanded="false" absoluteBounds="0.75, 11.75, 2, 0.44999999999999929">
+    <classShape Id="b777da47-b202-4bcf-a26b-718ba0fdd352" isExpanded="false" absoluteBounds="0.5, 3.375, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/LIQVENTASEXTERIOR" />
       <nestedChildShapes>
-        <elementListCompartment Id="4731cfe1-d5c6-47cc-a772-523c1542e79a" absoluteBounds="0.76500000000000057, 12.21, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4731cfe1-d5c6-47cc-a772-523c1542e79a" absoluteBounds="0.51500000000000057, 3.8350000000000009, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="611a194a-65b5-476f-a423-fd86aa974521" isExpanded="false" absoluteBounds="11.75, 2.75, 3.375, 0.45000000000000018">
+    <classShape Id="611a194a-65b5-476f-a423-fd86aa974521" isExpanded="false" absoluteBounds="12.25, 1.125, 2.875, 0.45000000000000018">
       <DataClassMoniker Name="/AgroSaturnoDataContext/PaletasPendientesParaPackingList" />
       <nestedChildShapes>
-        <elementListCompartment Id="3827ee6d-3d36-446a-9351-930e1cb15385" absoluteBounds="11.765, 3.2100000000000009, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3827ee6d-3d36-446a-9351-930e1cb15385" absoluteBounds="12.265, 1.5850000000000009, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5f8a9877-de22-49ca-9a08-ecdef763bb92" isExpanded="false" absoluteBounds="3.75, 11.75, 2, 0.44999999999999929">
+    <classShape Id="5f8a9877-de22-49ca-9a08-ecdef763bb92" isExpanded="false" absoluteBounds="0.5, 4.625, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/MOVPALETAS" />
       <nestedChildShapes>
-        <elementListCompartment Id="9d809f0d-74db-4134-a5b8-c2480eb27474" absoluteBounds="3.7650000000000006, 12.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9d809f0d-74db-4134-a5b8-c2480eb27474" absoluteBounds="0.51500000000000057, 5.0850000000000009, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f11bbf8c-8d4a-4c50-b568-2307bf57b7c1" isExpanded="false" absoluteBounds="6.75, 11.75, 2, 0.44999999999999929">
+    <classShape Id="f11bbf8c-8d4a-4c50-b568-2307bf57b7c1" isExpanded="false" absoluteBounds="6.25, 4.25, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/REGISTROPALETA" />
       <nestedChildShapes>
-        <elementListCompartment Id="fde51a4d-474a-44e0-87cb-861adccd6e23" absoluteBounds="6.7650000000000006, 12.21, 1.9700000000000002, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fde51a4d-474a-44e0-87cb-861adccd6e23" absoluteBounds="6.2650000000000006, 4.7100000000000009, 1.9700000000000002, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ac319229-54d3-4a93-a4e2-8f170e043ed8" isExpanded="false" absoluteBounds="9.75, 11.75, 2, 0.44999999999999929">
+    <classShape Id="ac319229-54d3-4a93-a4e2-8f170e043ed8" isExpanded="false" absoluteBounds="12.25, 4.125, 2.875, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/CULTIVOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="0414f1e7-20eb-4b75-a6aa-04ccf7f40c0c" absoluteBounds="9.765, 12.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0414f1e7-20eb-4b75-a6aa-04ccf7f40c0c" absoluteBounds="12.265, 4.5850000000000009, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b3d7487a-c88f-481b-abd4-bcdba6d30be7" isExpanded="false" absoluteBounds="12.75, 11.75, 2, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispostivoColor" />
-      <nestedChildShapes>
-        <elementListCompartment Id="46563d0f-ef9b-4cba-b55b-6bf7734aaa6e" absoluteBounds="12.765, 12.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="dd0dc360-a93c-4cb1-ba58-372d36909360" isExpanded="false" absoluteBounds="0.75, 13.75, 2, 0.44999999999999929">
+    <classShape Id="dd0dc360-a93c-4cb1-ba58-372d36909360" isExpanded="false" absoluteBounds="6.25, 3, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/ESTADO_PRODUCTOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="098ecef8-44f6-4edf-b1a9-bcef3f69b3fa" absoluteBounds="0.76500000000000057, 14.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="098ecef8-44f6-4edf-b1a9-bcef3f69b3fa" absoluteBounds="6.2650000000000006, 3.4600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6962c711-598d-4edb-8a50-7f54933f6100" isExpanded="false" absoluteBounds="3.75, 13.75, 2, 0.44999999999999929">
+    <classShape Id="6962c711-598d-4edb-8a50-7f54933f6100" isExpanded="false" absoluteBounds="8.625, 3.625, 2.875, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/MODELOPRODUCTOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="9ef7f186-95cd-4409-b4e2-6c122d86d247" absoluteBounds="3.7650000000000006, 14.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9ef7f186-95cd-4409-b4e2-6c122d86d247" absoluteBounds="8.64, 4.0850000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="05664966-71a9-4b1e-826f-51d1aea75abc" isExpanded="false" absoluteBounds="13.75, 6.75, 2, 0.44999999999999929">
+    <classShape Id="05664966-71a9-4b1e-826f-51d1aea75abc" isExpanded="false" absoluteBounds="15.375, 2.375, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/MARCA_PRODUCTOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="905f0e5e-0939-446e-9d5c-76840383e87d" absoluteBounds="13.765, 7.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="905f0e5e-0939-446e-9d5c-76840383e87d" absoluteBounds="15.39, 2.8350000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a37bddba-e9cf-455d-a23c-5f39b3c10810" isExpanded="false" absoluteBounds="6.75, 13.75, 2, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoIP" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d0cdc956-769a-4632-84ca-ab9cb785d201" absoluteBounds="6.7650000000000006, 14.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d5d5d327-f733-4523-994e-b0e1436d52ff" isExpanded="false" absoluteBounds="9.75, 13.75, 2.75, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_NumeroIP" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7bed263d-bb74-443e-9859-9910f9a43e26" absoluteBounds="9.765, 14.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="268f7fde-02da-4edc-8329-4962ea381298" isExpanded="false" absoluteBounds="13.75, 13.75, 3.875, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoNumeroIPBySegmento" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9f0d4efb-d800-4ee0-b9b9-8ec13f13960f" absoluteBounds="13.765, 14.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9a83c66c-10e1-49d2-b4ee-0e791ba77b1b" isExpanded="false" absoluteBounds="14.75, 4.75, 2.75, 0.44999999999999929">
+    <classShape Id="9a83c66c-10e1-49d2-b4ee-0e791ba77b1b" isExpanded="false" absoluteBounds="15.375, 1, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/EMPRESAS_SAS" />
       <nestedChildShapes>
-        <elementListCompartment Id="550872f0-891d-4327-a18e-25560314ec8b" absoluteBounds="14.765, 5.2100000000000009, 1.9700000000000002, 13.710489908854166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="550872f0-891d-4327-a18e-25560314ec8b" absoluteBounds="15.39, 1.4600000000000009, 1.9700000000000002, 13.710489908854166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5fbda907-bee1-4643-9be6-e8e06a5401ab" isExpanded="false" absoluteBounds="14.75, 8.75, 2, 0.44999999999999929">
+    <classShape Id="5fbda907-bee1-4643-9be6-e8e06a5401ab" isExpanded="false" absoluteBounds="15.375, 3, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_USUARIOS" />
       <nestedChildShapes>
-        <elementListCompartment Id="bd65aab9-9779-48ae-86a8-ac3a43b5fa21" absoluteBounds="14.765, 9.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bd65aab9-9779-48ae-86a8-ac3a43b5fa21" absoluteBounds="15.39, 3.4600000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e44cf911-150c-489b-9a44-eb178a9d5df8" isExpanded="false" absoluteBounds="9.5, 4.875, 2, 0.44999999999999929">
+    <classShape Id="e44cf911-150c-489b-9a44-eb178a9d5df8" isExpanded="false" absoluteBounds="12.25, 2.625, 2.875, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_FormularioSistema" />
       <nestedChildShapes>
-        <elementListCompartment Id="fe01c447-8f99-46b8-a0b8-95146e712c8e" absoluteBounds="9.5150000005960464, 5.33500000089407, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fe01c447-8f99-46b8-a0b8-95146e712c8e" absoluteBounds="12.265000000596046, 3.0850000008940697, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="40837690-c581-400a-bb59-c085c1493b52" isExpanded="false" absoluteBounds="6.75, 4.875, 2, 0.44999999999999929">
+    <classShape Id="40837690-c581-400a-bb59-c085c1493b52" isExpanded="false" absoluteBounds="12.25, 3.375, 2.75, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ModuloSistema" />
       <nestedChildShapes>
-        <elementListCompartment Id="130ad0b4-57fc-48d3-b995-45c9e44cade2" absoluteBounds="6.7650000005960464, 5.33500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="130ad0b4-57fc-48d3-b995-45c9e44cade2" absoluteBounds="12.265000000596046, 3.8350000008940697, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="422dc739-1619-47ad-829d-94d0c38aec37" isExpanded="false" absoluteBounds="12.25, 4.875, 2, 0.44999999999999929">
+    <classShape Id="422dc739-1619-47ad-829d-94d0c38aec37" isExpanded="false" absoluteBounds="12.25, 1.875, 2.875, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PrivilegioFormulario" />
       <nestedChildShapes>
-        <elementListCompartment Id="418ae774-39f0-4312-8754-b755bba2bbc8" absoluteBounds="12.265000000596046, 5.33500000089407, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="418ae774-39f0-4312-8754-b755bba2bbc8" absoluteBounds="12.265000000596046, 2.3350000008940697, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="91f90c47-bdab-4e1f-8ae5-fd4eeaeb4d68" isExpanded="false" absoluteBounds="15.75, 0.75, 2, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoSoftware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7a14160a-2535-4b47-8252-3714413aab01" absoluteBounds="15.765, 1.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a0e28a8e-c314-4a67-b828-b98e7226a6fc" isExpanded="false" absoluteBounds="0.75, 15.75, 2.625, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoComponentes" />
-      <nestedChildShapes>
-        <elementListCompartment Id="afb05e18-c59b-4574-8492-46b0e11e287a" absoluteBounds="0.76500000000000057, 16.21, 2.5949999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d4e504ac-cae1-40fb-8607-ed310bc84eb7" isExpanded="false" absoluteBounds="15.75, 2.75, 3.75, 0.45000000000000018">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoCuentaUsuario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d44cf593-3d36-4907-a142-7865bd97ae66" absoluteBounds="15.765, 3.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="27c481ef-d915-430d-96c2-3b251480bdd0" isExpanded="false" absoluteBounds="4.75, 15.75, 3.75, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoDocumento" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d962f72f-833a-4917-945a-49e1a8806683" absoluteBounds="4.765, 16.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0e5e985a-beb2-4f02-bb56-ae34f7946fc3" isExpanded="false" absoluteBounds="9.75, 15.75, 2.75, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoClasificacionDeSoftware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="50addc40-7da5-4c14-857f-483d9423430a" absoluteBounds="9.765, 16.21, 2.7199999999999998, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="06fdffcc-4b7e-4ca9-9bf1-387aea724b42" isExpanded="false" absoluteBounds="15.75, 10.75, 2.75, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoSoftwareListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="57c90ba1-aa20-44ef-9229-d722bfeb94df" absoluteBounds="15.765, 11.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="30fec613-6aeb-41cc-958f-aed9156a5bcb" isExpanded="false" absoluteBounds="13.75, 15.75, 2.25, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoSoftware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ce80d8c1-33ed-40c5-be99-02699fd157bc" absoluteBounds="13.765, 16.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c449ce40-0c43-4009-a532-d58a2af6f1ee" isExpanded="false" absoluteBounds="16.75, 6.75, 4.5, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoHardware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="78d45e18-dc8e-4674-8197-8e9c01377598" absoluteBounds="16.765, 7.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="31e2ecb1-f65b-40c2-b4f9-659f6562e797" isExpanded="false" absoluteBounds="16.75, 15.75, 4.5, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoHardware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2e157910-6f3d-479d-8793-598fcc56e145" absoluteBounds="16.765, 16.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5b4086d7-1c2f-4a58-98e0-bbceb8b2a96b" isExpanded="false" absoluteBounds="0.75, 17.75, 3, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SegmentoRed" />
-      <nestedChildShapes>
-        <elementListCompartment Id="11a0c41a-7741-4e8f-a939-5dce56d0a08b" absoluteBounds="0.76500000000000057, 18.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b87a3d66-b0a1-425e-be79-674a9be52c9b" isExpanded="false" absoluteBounds="4.75, 17.75, 3.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasCorreo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2101f964-a415-4dc8-b6d4-2e2ebd176d59" absoluteBounds="4.7650000000000006, 18.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0c77ca39-3742-469f-a9f3-4f281f99299a" isExpanded="false" absoluteBounds="17.75, 8.75, 3.25, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_LicenciaCorreo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="54f08a66-217b-491b-8a5c-6d62acc6d765" absoluteBounds="17.765, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e5292a60-b0e3-4a95-9866-8b0cde31447b" isExpanded="false" absoluteBounds="9.75, 17.75, 3.25, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasCorreoDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5e146804-6e4b-40ae-9351-4476babf5825" absoluteBounds="9.765, 18.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5c9e1cab-10cb-479b-a709-00f2289c164c" isExpanded="false" absoluteBounds="13.75, 17.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasDominioDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="99988252-3037-49b1-afdc-956ebd8fbc10" absoluteBounds="13.765, 18.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9162bed4-9c1a-4cd4-b98a-bf1539f01b01" isExpanded="false" absoluteBounds="17.75, 17.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasDominioListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="04d97695-9adb-4180-9b0d-e31d72e1fb74" absoluteBounds="17.765, 18.21, 2.5949999999999998, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fe515b05-7bcc-479a-b698-c854a835eee6" isExpanded="false" absoluteBounds="0.75, 0.875, 2, 0.44999999999999929">
+    <classShape Id="fe515b05-7bcc-479a-b698-c854a835eee6" isExpanded="false" absoluteBounds="0.5, 0.875, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/AREAS" />
       <nestedChildShapes>
-        <elementListCompartment Id="77cdf787-d857-48be-95c8-9db33f3e276d" absoluteBounds="0.76500000059604645, 1.3350000008940697, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="77cdf787-d857-48be-95c8-9db33f3e276d" absoluteBounds="0.51500000059604645, 1.3350000008940697, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a3f7040d-870c-4303-9d7a-7522eca6bdb0" isExpanded="false" absoluteBounds="18.75, 0.75, 3.125, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasDominioTipoPerfil" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0f36a29a-cf4b-43b8-a998-b65ed1bd9150" absoluteBounds="18.765, 1.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="94e8ade6-455e-442d-a1af-42addc6b0ba0" isExpanded="false" absoluteBounds="18.75, 4.75, 4.5, 0.44999999999999929">
+    <classShape Id="94e8ade6-455e-442d-a1af-42addc6b0ba0" isExpanded="false" absoluteBounds="15.375, 1.625, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ColaboradorAreaTrabajo" />
       <nestedChildShapes>
-        <elementListCompartment Id="6dd475c6-d8af-414a-a0c4-7fb79438b6eb" absoluteBounds="18.765, 5.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6dd475c6-d8af-414a-a0c4-7fb79438b6eb" absoluteBounds="15.39, 2.0850000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2c0ee279-fdb2-4a5c-833f-b29994bf37cf" isExpanded="false" absoluteBounds="18.75, 12.75, 4.5, 0.44999999999999929">
+    <classShape Id="2c0ee279-fdb2-4a5c-833f-b29994bf37cf" isExpanded="false" absoluteBounds="19.625, 1.625, 3.25, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ColaboradorGerencia" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f2218ab-8881-4bb4-9084-fc0e740f066d" absoluteBounds="18.765, 13.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f2218ab-8881-4bb4-9084-fc0e740f066d" absoluteBounds="19.64, 2.0850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7c737d1f-90a7-4246-8449-c91b0a4f37b0" isExpanded="false" absoluteBounds="0.75, 19.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasDominio" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d566310e-0612-46a0-8dd1-5d607292ac28" absoluteBounds="0.76500000000000057, 20.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5fe84311-365b-4690-87e1-3290b89f4b7c" isExpanded="false" absoluteBounds="5.75, 19.75, 4.5, 0.45000000000000284">
+    <classShape Id="5fe84311-365b-4690-87e1-3290b89f4b7c" isExpanded="false" absoluteBounds="23.625, 6.375, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PersonalExternoDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="08c6f27b-c9d7-4b05-ba1b-39aebce4f7b9" absoluteBounds="5.7650000000000006, 20.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="08c6f27b-c9d7-4b05-ba1b-39aebce4f7b9" absoluteBounds="23.64, 6.8350000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="60bee416-0ecd-47c7-8515-fa4a67c2db1b" isExpanded="false" absoluteBounds="19.75, 10.75, 3.25, 0.45000000000000284">
+    <classShape Id="60bee416-0ecd-47c7-8515-fa4a67c2db1b" isExpanded="false" absoluteBounds="19.625, 1, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PersonalExternolistado" />
       <nestedChildShapes>
-        <elementListCompartment Id="1b6b3e02-a52e-4dfa-8adc-4840ea651709" absoluteBounds="19.765, 11.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1b6b3e02-a52e-4dfa-8adc-4840ea651709" absoluteBounds="19.64, 1.4600000000000009, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7b3f11dc-b588-47fa-9864-bc48449961e5" isExpanded="false" absoluteBounds="10.75, 19.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasVPN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="618734bd-291a-460a-8769-237105b8baff" absoluteBounds="10.765, 20.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0e109cbd-b5ea-456a-a73a-564c9dd15407" isExpanded="false" absoluteBounds="14.75, 19.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_OperadorTelefoniaMovil" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7879deed-ccd0-4ca1-91bb-776e80c9cdc4" absoluteBounds="14.765, 20.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="49159b62-823f-43ec-a153-7fce807c1f4f" isExpanded="false" absoluteBounds="18.75, 19.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PlanesDeTelefoniaMovil" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f402875e-588e-40ce-9573-d82706f42fcc" absoluteBounds="18.765, 20.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7a1fbda1-2eb6-4724-b47e-4847a20bf051" isExpanded="false" absoluteBounds="20.75, 2.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_OperadorTelefoniaMovilListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="df01d9da-a2d0-490d-ae3c-792bff47f0ca" absoluteBounds="20.765, 3.2100000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1d4d939b-3e24-4b96-ac61-bff15f462563" isExpanded="false" absoluteBounds="0.75, 21.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PlanesDeTelefoniaMovilListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="650db213-1032-453e-a526-de17c0c65c34" absoluteBounds="0.76500000000000057, 22.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a91cd8c6-7713-47ad-a72c-e7a67e060dd8" isExpanded="false" absoluteBounds="21.75, 6.75, 3.125, 0.44999999999999929">
+    <classShape Id="a91cd8c6-7713-47ad-a72c-e7a67e060dd8" isExpanded="false" absoluteBounds="15.375, 3.625, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PuertaDeIngreso" />
       <nestedChildShapes>
-        <elementListCompartment Id="08bd2465-b1b3-4823-8a47-09f5d2cc1c2a" absoluteBounds="21.765, 7.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="08bd2465-b1b3-4823-8a47-09f5d2cc1c2a" absoluteBounds="15.39, 4.0850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="95709056-79f1-4471-b2d5-f501d00d7952" isExpanded="false" absoluteBounds="0.75, 2.875, 2, 0.44999999999999929">
+    <classShape Id="95709056-79f1-4471-b2d5-f501d00d7952" isExpanded="false" absoluteBounds="0.5, 1.625, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SUCURSALES" />
       <nestedChildShapes>
-        <elementListCompartment Id="9fb0efa1-4104-4b7d-b6bb-1ce495a358c6" absoluteBounds="0.76500000059604645, 3.3350000008940697, 1.9700000000000002, 10.825968424479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9fb0efa1-4104-4b7d-b6bb-1ce495a358c6" absoluteBounds="0.51500000059604645, 2.0850000008940697, 1.9700000000000002, 10.825968424479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d992d24a-ffe6-4014-91e9-ae9113cc179e" isExpanded="false" absoluteBounds="21.75, 8.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ea312a3c-7078-4132-bb48-d8b2f8a3090e" absoluteBounds="21.765, 9.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0ce2d15c-376b-4539-a31b-398caf46275e" isExpanded="false" absoluteBounds="10.75, 21.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoPersonalEmpresaYExterno" />
-      <nestedChildShapes>
-        <elementListCompartment Id="34a091a5-b29f-47d0-b4a0-5e20f8ace7fa" absoluteBounds="10.765, 22.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="44ece9be-a0b6-4a1a-908c-832e9d454450" isExpanded="false" absoluteBounds="21.75, 14.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoMovimientoMantenimientos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d1ae7e97-0c95-4d3b-91da-d55ec13b643b" absoluteBounds="21.765, 15.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6c9de895-bbee-4a83-a4e1-2b543c0c62ec" isExpanded="false" absoluteBounds="15.75, 21.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoMovimientoAlmacen" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8f242b63-a8b0-41d1-a021-073009eeac11" absoluteBounds="15.765, 22.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="04e4cfd6-6177-46b7-88ec-a1f16b6379f7" isExpanded="false" absoluteBounds="6.75, 7.875, 3.125, 0.44999999999999929">
+    <classShape Id="04e4cfd6-6177-46b7-88ec-a1f16b6379f7" isExpanded="false" absoluteBounds="8.75, 2.25, 2.625, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/UNIMEDIDA" />
       <nestedChildShapes>
-        <elementListCompartment Id="591862f7-d2e3-4c55-8df1-dcf39f443602" absoluteBounds="6.7650000005960464, 8.33500000089407, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="591862f7-d2e3-4c55-8df1-dcf39f443602" absoluteBounds="8.7650000005960464, 2.7100000008940697, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e02b09cb-325a-44a3-aaeb-44914c61f47f" isExpanded="false" absoluteBounds="21.75, 16.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoDocumento" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c1e85560-0161-4942-b2bb-3cc0a0cd4d94" absoluteBounds="21.765, 17.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="53a37796-67a3-460f-a591-3d91f0932c4c" isExpanded="false" absoluteBounds="19.75, 21.75, 4.5, 0.45000000000000284">
+    <classShape Id="53a37796-67a3-460f-a591-3d91f0932c4c" isExpanded="false" absoluteBounds="28.625, 2.875, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/MONEDAS" />
       <nestedChildShapes>
-        <elementListCompartment Id="0f7d57d6-14ab-4df6-9363-d33b1229344a" absoluteBounds="19.765, 22.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0f7d57d6-14ab-4df6-9363-d33b1229344a" absoluteBounds="28.64, 3.3350000000000009, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a155f8a8-fa2c-4647-9df7-f68ad7fdc5fd" isExpanded="false" absoluteBounds="22.75, 0.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_TipoDeSistema" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fa84b749-1638-43c5-b2ed-bbebbc45ff5e" absoluteBounds="22.765, 1.2100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d3b28ac9-f9cd-4f58-bfb8-9cce60e39007" isExpanded="false" absoluteBounds="22.75, 18.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fe3f4f4c-0487-4b2f-a85d-eb04abd13f68" absoluteBounds="22.765, 19.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="24c0247f-df16-4223-aa54-01086a211326" isExpanded="false" absoluteBounds="0.75, 23.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajoDetalleHerramientas" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d13d509c-3c0d-4089-8b7f-1f8743fdf6ac" absoluteBounds="0.76500000000000057, 24.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e5410ecc-0b27-4f3d-9a22-6788962e94bb" isExpanded="false" absoluteBounds="23.75, 4.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoSoporteFuncionalDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="35e4e0b6-ea9d-4c87-a74f-fa9e33a0e1fa" absoluteBounds="23.765, 5.2100000000000009, 4.4700000000000006, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0e76ca71-1c27-46a6-bf4e-83607fc7df4e" isExpanded="false" absoluteBounds="5.75, 23.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajoDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4c8630ac-ecaa-456f-9dac-9224eb4c6e69" absoluteBounds="5.7650000000000006, 24.21, 3.0949999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="838a22e8-d6eb-4065-a216-06fa63cbe11c" isExpanded="false" absoluteBounds="23.75, 10.75, 3, 0.45000000000000284">
+    <classShape Id="838a22e8-d6eb-4065-a216-06fa63cbe11c" isExpanded="false" absoluteBounds="19.625, 2.375, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_InfoPersonal" />
       <nestedChildShapes>
-        <elementListCompartment Id="1dfc1522-a82d-4314-baca-8ec94617d2dd" absoluteBounds="23.765, 11.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1dfc1522-a82d-4314-baca-8ec94617d2dd" absoluteBounds="19.64, 2.8350000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4105b308-02bf-428f-9797-76bc68f01ece" isExpanded="false" absoluteBounds="10.75, 23.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoMacByIpByColaborador" />
-      <nestedChildShapes>
-        <elementListCompartment Id="18eb2317-9d7a-4164-8030-ed470d6a0819" absoluteBounds="10.765, 24.21, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2138689c-6015-40a5-8c40-3d30409a8f25" isExpanded="false" absoluteBounds="23.75, 12.75, 3.625, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoSoftwareByDevice" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b8456ef7-1745-46c2-a731-180206941aa0" absoluteBounds="23.765, 13.21, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6592bc40-b3ee-4c9b-8aeb-54e51d3b0ace" isExpanded="false" absoluteBounds="15.75, 23.75, 3.375, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoCuentaUsuarios" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6bc52c50-1629-4d16-8256-ae6fe01f9309" absoluteBounds="15.765, 24.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="460bfacd-834e-43e2-a0da-7f14dca2942b" isExpanded="false" absoluteBounds="19.75, 23.75, 3.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoHardwareByDevice" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cd6d6750-edb0-4f05-a8de-7d487a5d4978" absoluteBounds="19.765, 24.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3453ff95-e0ad-4bdb-b6b0-c1446e774c1b" isExpanded="false" absoluteBounds="23.75, 23.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoComponentesByDevice" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a194e160-597a-4ad5-ad4f-483db597e2c9" absoluteBounds="23.765, 24.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e2cd7227-4daf-4915-93d9-8c49214d7379" isExpanded="false" absoluteBounds="25.75, 2.75, 4.5, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_MotivoRenovacionCelular" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ebcacdbb-4977-40e6-bc77-71bb7eeb80f6" absoluteBounds="25.765, 3.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="26859b6c-1b8e-45c8-b3cb-f0bb9914660e" isExpanded="false" absoluteBounds="4.75, 25.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_MotivoEquipamientoTecnologico" />
-      <nestedChildShapes>
-        <elementListCompartment Id="346036aa-2c61-48e5-858b-f1c67daa964b" absoluteBounds="4.7650000000000006, 26.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e1248e0f-9f5d-41b1-867c-0421307b77e9" isExpanded="false" absoluteBounds="25.75, 6.75, 4, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeRenovacionTelefoniaCelularListadoAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e26e3e45-b5a8-4c51-b0f6-d2d2eb2de404" absoluteBounds="25.765, 7.2100000000000009, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f04364f6-de8b-4424-b7a2-0262d05f89f9" isExpanded="false" absoluteBounds="9.75, 25.75, 3.125, 0.45000000000000284">
+    <classShape Id="f04364f6-de8b-4424-b7a2-0262d05f89f9" isExpanded="false" absoluteBounds="28.625, 4.25, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoProductos" />
       <nestedChildShapes>
-        <elementListCompartment Id="4b1979d8-19cb-4685-ad85-a0129f28be92" absoluteBounds="9.765, 26.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4b1979d8-19cb-4685-ad85-a0129f28be92" absoluteBounds="28.64, 4.7100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="65726b91-9923-4eca-891a-197439a7b731" isExpanded="false" absoluteBounds="13.75, 25.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_MotivoEquipamientoTecnologicoALL" />
-      <nestedChildShapes>
-        <elementListCompartment Id="eec0e527-2a6e-4e72-be49-69dc4b899908" absoluteBounds="13.765, 26.21, 3.2199999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f3cfb973-8b18-4f75-b9ce-f883e6e541eb" isExpanded="false" absoluteBounds="18.75, 25.75, 3.25, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoEstado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ca0c1e3b-6649-4ac4-b28c-8990c220e31b" absoluteBounds="18.765, 26.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9d4f04f4-4c26-4e74-a42b-90db7c422688" isExpanded="false" absoluteBounds="22.75, 25.75, 4.25, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CotizacionDeCompraEquipoCelulares" />
-      <nestedChildShapes>
-        <elementListCompartment Id="36e9bfbb-16ad-42ed-9284-3f6a343e2aef" absoluteBounds="22.765, 26.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bc91d0fd-eb63-4827-b60c-dda31b19d747" isExpanded="false" absoluteBounds="26.75, 8.75, 3.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CotizacionDeCompraEquipoCelularesDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d573a40f-28da-4c3f-a7f7-6aa326b6a565" absoluteBounds="26.765, 9.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9adff289-1106-41e9-b1f3-715aa41b5bcc" isExpanded="false" absoluteBounds="26.75, 14.75, 3.25, 0.44999999999999929">
+    <classShape Id="9adff289-1106-41e9-b1f3-715aa41b5bcc" isExpanded="false" absoluteBounds="19.625, 3.625, 3.25, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_GuiaRemisionProveedor" />
       <nestedChildShapes>
-        <elementListCompartment Id="0e11702e-0098-49ac-b52a-285d8ff970ff" absoluteBounds="26.765, 15.21, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0e11702e-0098-49ac-b52a-285d8ff970ff" absoluteBounds="19.64, 4.0850000000000009, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2787c9bc-8048-497b-be2e-4b509c5a4efe" isExpanded="false" absoluteBounds="26.75, 16.75, 4.125, 0.45000000000000284">
+    <classShape Id="2787c9bc-8048-497b-be2e-4b509c5a4efe" isExpanded="false" absoluteBounds="19.625, 5.75, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_GuiaRemisionProveedorDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="1e9d43b7-e7b8-451b-a38f-0ef426c59a9d" absoluteBounds="26.765, 17.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1e9d43b7-e7b8-451b-a38f-0ef426c59a9d" absoluteBounds="19.64, 6.2100000000000009, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5fa8ced9-16b6-4a62-88d3-991babb1e386" isExpanded="false" absoluteBounds="27.75, 0.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_RegistroCompraEquipoCelulares" />
-      <nestedChildShapes>
-        <elementListCompartment Id="de9116fc-efd3-40fa-b856-cecb832e93a1" absoluteBounds="27.765, 1.2100000000000009, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d380660a-c80d-4e44-9b27-50e81ec673e2" isExpanded="false" absoluteBounds="0.75, 27.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_RegistroCompraEquipoCelularesDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6dcb2d04-9e40-45a4-a27a-0ff1d79a996e" absoluteBounds="0.76500000000000057, 28.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="70a9a012-2b65-4921-95fc-67aebcddfe35" isExpanded="false" absoluteBounds="27.75, 4.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CotizacionDeCompraEquipoCelularesAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9e647347-62aa-4536-be91-d7d1db21a71d" absoluteBounds="27.765, 5.2100000000000009, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="111e0f73-f405-4f2c-9d66-01bdffc01779" isExpanded="false" absoluteBounds="5.75, 27.75, 3.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_RegistroCompraEquipoCelularesAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="935864a0-87e0-4582-a8d7-77116c17c5d2" absoluteBounds="5.7650000000000006, 28.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d57d2803-34ca-451e-b0aa-ad2ced762ab9" isExpanded="false" absoluteBounds="27.75, 10.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_LineasGestionadasEnCotizacionDeCompras" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5e8b5094-bc5c-4d24-84fe-c0f4304929fd" absoluteBounds="27.765, 11.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="edc3d90c-e265-4fd1-851d-22f69437b241" isExpanded="false" absoluteBounds="10.75, 27.75, 4, 0.45000000000000284">
+    <classShape Id="edc3d90c-e265-4fd1-851d-22f69437b241" isExpanded="false" absoluteBounds="23.625, 5.625, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoConsumidoresPorCultivoVariedadTipoCultivoActivos" />
       <nestedChildShapes>
-        <elementListCompartment Id="27767e21-5076-4c7a-a657-bc3ea816b128" absoluteBounds="10.765, 28.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="27767e21-5076-4c7a-a657-bc3ea816b128" absoluteBounds="23.64, 6.0850000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="78a0babc-99a3-41e0-ad09-3efc134a3bbf" isExpanded="false" absoluteBounds="15.75, 27.75, 3.125, 0.45000000000000284">
+    <classShape Id="78a0babc-99a3-41e0-ad09-3efc134a3bbf" isExpanded="false" absoluteBounds="23.625, 2.25, 3.875, 0.45">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoCultivosVariedadTipoCultivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="83a4a662-9cbc-4a9e-85de-ba4f764dc822" absoluteBounds="15.765, 28.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="83a4a662-9cbc-4a9e-85de-ba4f764dc822" absoluteBounds="23.64, 2.71, 3.8449999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="631c2b70-1913-41c5-b308-d566edb694e1" isExpanded="false" absoluteBounds="19.75, 27.75, 4.375, 0.45000000000000284">
+    <classShape Id="631c2b70-1913-41c5-b308-d566edb694e1" isExpanded="false" absoluteBounds="19.625, 7, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PlanDeCosechaDetalleListadoFull" />
       <nestedChildShapes>
-        <elementListCompartment Id="36188722-4292-4696-be5a-c688dfaa4256" absoluteBounds="19.765, 28.21, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="36188722-4292-4696-be5a-c688dfaa4256" absoluteBounds="19.64, 7.4600000000000009, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3157112f-3206-4795-a194-0ba36c3e9438" isExpanded="false" absoluteBounds="24.75, 27.75, 3.25, 0.45000000000000284">
+    <classShape Id="3157112f-3206-4795-a194-0ba36c3e9438" isExpanded="false" absoluteBounds="15.375, 7.625, 3.5, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PlanDeCosechaListadoFull" />
       <nestedChildShapes>
-        <elementListCompartment Id="36a6c3b8-3583-4a29-8729-8b15f7c65826" absoluteBounds="24.765, 28.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="36a6c3b8-3583-4a29-8729-8b15f7c65826" absoluteBounds="15.39, 8.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1803a5ee-e117-4af0-831c-825129fb0053" isExpanded="false" absoluteBounds="27.75, 25.75, 3.25, 0.45000000000000284">
+    <classShape Id="1803a5ee-e117-4af0-831c-825129fb0053" isExpanded="false" absoluteBounds="23.625, 2.875, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PlanDeCosechaDetalleByJabasListadoFull" />
       <nestedChildShapes>
-        <elementListCompartment Id="29c2847a-b16b-4363-ac12-8ec56049b92a" absoluteBounds="27.765, 26.21, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="29c2847a-b16b-4363-ac12-8ec56049b92a" absoluteBounds="23.64, 3.3350000000000009, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7062adf1-575c-42dd-a3ba-e669d094ad75" isExpanded="false" absoluteBounds="28.75, 12.75, 3.25, 0.45000000000000284">
+    <classShape Id="7062adf1-575c-42dd-a3ba-e669d094ad75" isExpanded="false" absoluteBounds="19.625, 3, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoVersionPlanCosecha" />
       <nestedChildShapes>
-        <elementListCompartment Id="2c977dbd-da92-4b80-bb38-455dbcc436ed" absoluteBounds="28.765, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2c977dbd-da92-4b80-bb38-455dbcc436ed" absoluteBounds="19.64, 3.4600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="4e01896a-ea71-4e8c-b3d4-6037a95c3eb5" isExpanded="false" absoluteBounds="8.75, 0.875, 2.625, 0.45000000000000018">
@@ -590,565 +272,259 @@
         <elementListCompartment Id="ee10e81b-0e5f-48f6-a689-41f690a12bec" absoluteBounds="8.7650000005960464, 1.3350000008940697, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="50920e20-c7e9-4d37-984f-5ba509fe31fe" isExpanded="false" absoluteBounds="28.75, 18.75, 4.125, 0.45000000000000284">
+    <classShape Id="50920e20-c7e9-4d37-984f-5ba509fe31fe" isExpanded="false" absoluteBounds="19.625, 5, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ImplementoAProgramar" />
       <nestedChildShapes>
-        <elementListCompartment Id="54a0cd5a-ec55-4680-9aa2-a2679102db0f" absoluteBounds="28.765, 19.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="54a0cd5a-ec55-4680-9aa2-a2679102db0f" absoluteBounds="19.64, 5.4600000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="775e9889-cb46-4bd2-bc61-77cce5a73768" isExpanded="false" absoluteBounds="28.75, 22.75, 4.125, 0.45000000000000284">
+    <classShape Id="775e9889-cb46-4bd2-bc61-77cce5a73768" isExpanded="false" absoluteBounds="23.625, 3.625, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PeriodoMaquinaria" />
       <nestedChildShapes>
-        <elementListCompartment Id="b3079b89-dd34-4660-8561-b106d75a9cdf" absoluteBounds="28.765, 23.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b3079b89-dd34-4660-8561-b106d75a9cdf" absoluteBounds="23.64, 4.0850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bbc7f759-ee68-467c-afa8-7adab0e0d909" isExpanded="false" absoluteBounds="28.75, 27.75, 3.125, 0.45000000000000284">
+    <classShape Id="bbc7f759-ee68-467c-afa8-7adab0e0d909" isExpanded="false" absoluteBounds="23.625, 1.625, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SectorAProgramar" />
       <nestedChildShapes>
-        <elementListCompartment Id="e0702b10-f276-4fe6-9d5a-5b53977e1c04" absoluteBounds="28.765, 28.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e0702b10-f276-4fe6-9d5a-5b53977e1c04" absoluteBounds="23.64, 2.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8d047a18-059e-4622-8c4d-bb163f23731c" isExpanded="false" absoluteBounds="0.75, 29.75, 4.125, 0.45000000000000284">
+    <classShape Id="8d047a18-059e-4622-8c4d-bb163f23731c" isExpanded="false" absoluteBounds="19.625, 0.5, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_MaquinariaAProgramacion" />
       <nestedChildShapes>
-        <elementListCompartment Id="80e4fc50-c046-4183-9f32-227057be6002" absoluteBounds="0.76500000000000057, 30.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="80e4fc50-c046-4183-9f32-227057be6002" absoluteBounds="19.64, 0.96000000000000085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="33370f05-2371-4105-9626-8b6ce859eb62" isExpanded="false" absoluteBounds="5.75, 29.75, 4, 0.45000000000000284">
+    <classShape Id="33370f05-2371-4105-9626-8b6ce859eb62" isExpanded="false" absoluteBounds="28.625, 0.5, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionMaquinariaListAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="41d5640f-9f81-4666-af6c-618bbe5e0100" absoluteBounds="5.7650000000000006, 30.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="41d5640f-9f81-4666-af6c-618bbe5e0100" absoluteBounds="28.64, 0.96000000000000085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4e1ee27c-d9c7-40bf-87a0-65fa3899419c" isExpanded="false" absoluteBounds="10.75, 29.75, 4, 0.45000000000000284">
+    <classShape Id="4e1ee27c-d9c7-40bf-87a0-65fa3899419c" isExpanded="false" absoluteBounds="28.625, 1.625, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionMaquinariaListAllByTurn" />
       <nestedChildShapes>
-        <elementListCompartment Id="0c603c55-5b65-4b7d-99ef-4b592ab6eedf" absoluteBounds="10.765, 30.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0c603c55-5b65-4b7d-99ef-4b592ab6eedf" absoluteBounds="28.64, 2.0850000000000009, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1cb4caf6-ea24-47c9-a778-3baed73cf6db" isExpanded="false" absoluteBounds="15.75, 29.75, 4, 0.45000000000000284">
+    <classShape Id="1cb4caf6-ea24-47c9-a778-3baed73cf6db" isExpanded="false" absoluteBounds="28.625, 2.25, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionDetalleMaquinariaByTurnoList" />
       <nestedChildShapes>
-        <elementListCompartment Id="a9db2cc9-6c54-490c-a48c-0cc66e084ea2" absoluteBounds="15.765, 30.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a9db2cc9-6c54-490c-a48c-0cc66e084ea2" absoluteBounds="28.64, 2.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f6e611a7-e8ac-4ec2-b0e5-4e2d7704dd83" isExpanded="false" absoluteBounds="12.125, 0.875, 2.5, 0.45000000000000018">
+    <classShape Id="f6e611a7-e8ac-4ec2-b0e5-4e2d7704dd83" isExpanded="false" absoluteBounds="12.25, 0.5, 2.875, 0.45000000000000018">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionDetalleMaquinaria" />
       <nestedChildShapes>
-        <elementListCompartment Id="4b56cb3f-7801-42d9-9440-5e67d646b7e2" absoluteBounds="12.140000000596046, 1.3350000008940697, 2.4699999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4b56cb3f-7801-42d9-9440-5e67d646b7e2" absoluteBounds="12.265000000596046, 0.96000000089406967, 2.4699999999999998, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8a66e9c8-f4e9-45b1-a046-9acf5ff081b4" isExpanded="false" absoluteBounds="29.75, 20.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionDetalleMaquinariaListAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="eb48f933-4247-4b98-b9cd-fe814aaa376f" absoluteBounds="29.765, 21.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5cef1a09-5885-4707-ba35-40e570ccd15a" isExpanded="false" absoluteBounds="20.75, 29.75, 4.375, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DocumentosAdjuntosAlFormulario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="48c418d8-7a73-423e-b3b2-2515707b46e6" absoluteBounds="20.765, 30.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="66ca4ea8-5f1c-44c4-a950-fb89667a4a18" isExpanded="false" absoluteBounds="25.75, 29.75, 4.125, 0.45000000000000284">
+    <classShape Id="66ca4ea8-5f1c-44c4-a950-fb89667a4a18" isExpanded="false" absoluteBounds="23.625, 7, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CalidadFrutaVariedadListadoAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="0d50cda5-c5c0-4c78-aa40-02fcc8558fe7" absoluteBounds="25.765, 30.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0d50cda5-c5c0-4c78-aa40-02fcc8558fe7" absoluteBounds="23.64, 7.4600000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="302a82cc-0e43-45a7-aac5-01a94104dcd8" isExpanded="false" absoluteBounds="30.75, 2.75, 3.875, 0.45000000000000284">
+    <classShape Id="302a82cc-0e43-45a7-aac5-01a94104dcd8" isExpanded="false" absoluteBounds="23.625, 1, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoVariedadPorTipoCultivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="d3adea79-4961-47e9-8f8b-fbc25f05775f" absoluteBounds="30.765, 3.2100000000000009, 3.8449999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d3adea79-4961-47e9-8f8b-fbc25f05775f" absoluteBounds="23.64, 1.4600000000000009, 3.8449999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c8954029-fb1a-4558-a779-094af035be3f" isExpanded="false" absoluteBounds="30.75, 6.75, 4.125, 0.44999999999999929">
+    <classShape Id="c8954029-fb1a-4558-a779-094af035be3f" isExpanded="false" absoluteBounds="19.625, 7.625, 3.25, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CalidadFrutaVariedad" />
       <nestedChildShapes>
-        <elementListCompartment Id="d814b065-2c99-4c93-8809-4375a2fff8b1" absoluteBounds="30.765, 7.2100000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d814b065-2c99-4c93-8809-4375a2fff8b1" absoluteBounds="19.64, 8.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="33769e92-4071-4d6a-8b4d-beeabbefb3de" isExpanded="false" absoluteBounds="30.75, 14.75, 4, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_Dispostivo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d961cb44-8d0e-4b30-87dc-c7e62cb44aa6" absoluteBounds="30.765, 15.21, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1b16fec3-8d2b-4c90-a663-53c0b088e326" isExpanded="false" absoluteBounds="30.75, 29.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c61b0259-df42-4d22-92b4-eaa6e38d1544" absoluteBounds="30.765, 30.21, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="229ba044-2826-4d12-bb10-44c0645ef73d" isExpanded="false" absoluteBounds="0.75, 31.75, 3.875, 0.45000000000000284">
+    <classShape Id="229ba044-2826-4d12-bb10-44c0645ef73d" isExpanded="false" absoluteBounds="23.625, 0.5, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/DDPACKINGLIST" />
       <nestedChildShapes>
-        <elementListCompartment Id="93e89eb7-704f-48f9-8cf6-dee8508762c2" absoluteBounds="0.76500000000000057, 32.21, 1.9700000000000002, 18.7103271484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="93e89eb7-704f-48f9-8cf6-dee8508762c2" absoluteBounds="23.64, 0.96000000000000085, 1.9700000000000002, 18.7103271484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f6b7379e-1a89-4b5a-9adc-9adf8b1f3bd4" isExpanded="false" absoluteBounds="5.75, 31.75, 3.625, 0.45000000000000284">
+    <classShape Id="f6b7379e-1a89-4b5a-9adc-9adf8b1f3bd4" isExpanded="false" absoluteBounds="28.625, 1, 4, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/DDISTRIBUCIONPALETAS_CONTENEDOR" />
       <nestedChildShapes>
-        <elementListCompartment Id="676419d3-9982-4cbc-b21c-7b82a2e62bda" absoluteBounds="5.7650000000000006, 32.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="676419d3-9982-4cbc-b21c-7b82a2e62bda" absoluteBounds="28.64, 1.4600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="50051acd-b90b-44ae-b13f-e9b07d9f1f58" isExpanded="false" absoluteBounds="31.75, 8.75, 4, 0.45000000000000284">
+    <classShape Id="50051acd-b90b-44ae-b13f-e9b07d9f1f58" isExpanded="false" absoluteBounds="15.375, 0.5, 3.5, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDePackingList" />
       <nestedChildShapes>
-        <elementListCompartment Id="bb351856-2c18-42e3-8951-dace9b613c0d" absoluteBounds="31.765, 9.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bb351856-2c18-42e3-8951-dace9b613c0d" absoluteBounds="15.39, 0.96000000000000085, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="25c96616-a726-47f9-a6d4-d58d91876d13" isExpanded="false" absoluteBounds="10.75, 31.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_EstadoEnSolicitudRenovacionListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="aaa4e2d6-7b56-4467-b0d5-50e04fa93f50" absoluteBounds="10.765, 32.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fd0284e9-742f-40d3-864f-af69dad31038" isExpanded="false" absoluteBounds="15.75, 31.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeRenovacionTelefoniaCelularMovimiento" />
-      <nestedChildShapes>
-        <elementListCompartment Id="526d8a91-939c-4f47-b71f-3835b6056e83" absoluteBounds="15.765, 32.21, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7b735947-8766-425c-895c-b229eb35dfcb" isExpanded="false" absoluteBounds="31.75, 16.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitidudDeRenovacionCelularTipoDeJustificacion" />
-      <nestedChildShapes>
-        <elementListCompartment Id="23b0ec4b-3cf8-4995-9051-597721b213df" absoluteBounds="31.765, 17.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="48f9a575-0a49-4a39-9413-a78f72896307" isExpanded="false" absoluteBounds="20.75, 31.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeRenovacionTelefoniaCelular" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bc580223-5a92-4f78-a80d-614256ca672f" absoluteBounds="20.765, 32.21, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8e7229de-2382-4aa4-8cde-e363e5b378ce" isExpanded="false" absoluteBounds="31.75, 24.75, 4, 0.45000000000000284">
+    <classShape Id="8e7229de-2382-4aa4-8cde-e363e5b378ce" isExpanded="false" absoluteBounds="23.625, 4.375, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PersonalExterno" />
       <nestedChildShapes>
-        <elementListCompartment Id="cf31781f-80e6-4412-8ae7-6a52fb24f21a" absoluteBounds="31.765, 25.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cf31781f-80e6-4412-8ae7-6a52fb24f21a" absoluteBounds="23.64, 4.8350000000000009, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fff2537c-e870-4c99-98a6-3412827a4ff8" isExpanded="false" absoluteBounds="25.75, 31.75, 3.875, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoColaboradoresByDispositivo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="dff68ade-adc3-43fe-ac06-62765a1ebc07" absoluteBounds="25.765, 32.21, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3aa6121d-dc28-43f7-be0c-567832bced5b" isExpanded="false" absoluteBounds="30.75, 31.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoSoporteFuncional" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1994cbb9-37f3-4914-ad45-c5033efeb552" absoluteBounds="30.765, 32.21, 2.8449999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5.5 : 3.1); (6.25 : 3.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.375 : 1.725); (5.38541666666667 : 1.725 : JumpStart); (5.55208333333333 : 1.725 : JumpEnd); (6.25 : 1.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/PEDIDOSERVICIOS/PEDIDOSERVICIOS_DPEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
         <classShapeMoniker Id="749b86a0-0d97-4819-94ea-bc532e979b80" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.6); (6.25 : 6.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.375 : 2.875); (6.25 : 2.7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/ORDENCOMPRA/ORDENCOMPRA_DORDENCOMPRA" />
       <nodes>
         <classShapeMoniker Id="1ac304c8-cfd4-45bd-8b08-8d6478cd2b73" />
         <classShapeMoniker Id="4758ed7f-0314-45c2-bbe8-0d8c316e99c9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.1); (6.25 : 1.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 1.1); (6.25 : 1.1)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/ORDENSERVICIO/ORDENSERVICIO_DORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
         <classShapeMoniker Id="e3d2c7d9-9109-46e2-ba0c-e005a6c23e0b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 5.1); (9.5 : 5.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.625 : 3.375); (13.625 : 3.075)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SAS_ModuloSistema/SAS_ModuloSistema_SAS_FormularioSistema" />
       <nodes>
         <classShapeMoniker Id="40837690-c581-400a-bb59-c085c1493b52" />
         <classShapeMoniker Id="e44cf911-150c-489b-9a44-eb178a9d5df8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.5 : 5.1); (12.25 : 5.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.6875 : 2.625); (13.6875 : 2.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SAS_FormularioSistema/SAS_FormularioSistema_SAS_PrivilegioFormulario" />
       <nodes>
         <classShapeMoniker Id="e44cf911-150c-489b-9a44-eb178a9d5df8" />
         <classShapeMoniker Id="422dc739-1619-47ad-829d-94d0c38aec37" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.30284515384615); (3.28125 : 1.83409515384615); (3.28125 : 4.65625); (3.5 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 1.325); (3.375 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_PEDIDO" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.31738361538461); (3.125 : 1.69238361538461); (3.125 : 2.5); (3.22232443490112 : 2.59732443490112 : JumpStart); (3.34017556509888 : 2.71517556509888 : JumpEnd); (3.5 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 1.325); (3.375 : 1.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_PEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.05767007692308); (3.5 : 1.05767007692308)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 1.0687475); (3.5 : 1.0687475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/AREAS/AREAS_ORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="fe515b05-7bcc-479a-b698-c854a835eee6" />
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 3.325); (1.75 : 5.1312525); (3.5 : 5.1312525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.075); (3.375 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_PEDIDO" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="90dba26f-f936-45e6-8b89-a6beb1cc3669" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.1312525); (3.19791666666667 : 3.1312525 : JumpStart); (3.36458333333333 : 3.1312525 : JumpEnd); (3.5 : 3.1312525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 1.7875); (2.92252604166667 : 1.7875 : JumpStart); (3.08919270833333 : 1.7875 : JumpEnd); (3.375 : 1.7875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_PEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.2812525 : 3.325); (2.2812525 : 6.6); (3.5 : 6.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.075); (3.375 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_ORDENCOMPRA" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="1ac304c8-cfd4-45bd-8b08-8d6478cd2b73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.89715284615385); (3.40625 : 2.24090284615385); (3.40625 : 1.41875); (3.5 : 1.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.04375); (3.20279947916667 : 2.04375 : JumpStart); (3.36946614583333 : 2.04375 : JumpEnd); (5.46875 : 2.04375); (5.46875 : 1.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SUCURSALES/SUCURSALES_ORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="95709056-79f1-4471-b2d5-f501d00d7952" />
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.375 : 1.1); (12.125 : 1.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.375 : 1.1); (11.75 : 1.1); (11.75 : 0.725); (12.25 : 0.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionMaquinaria/SAS_ProgramacionMaquinaria_SAS_ProgramacionDetalleMaquinaria" />
       <nodes>
         <classShapeMoniker Id="4e01896a-ea71-4e8c-b3d4-6037a95c3eb5" />
         <classShapeMoniker Id="f6e611a7-e8ac-4ec2-b0e5-4e2d7704dd83" />
       </nodes>
     </associationConnector>
-    <classShape Id="fe1168d8-c584-44f9-ae79-42876e042bc4" isExpanded="false" absoluteBounds="32.75, 0.75, 2, 0.44999999999999929">
+    <classShape Id="fe1168d8-c584-44f9-ae79-42876e042bc4" isExpanded="false" absoluteBounds="15.375, 6.375, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_StockProductos2" />
       <nestedChildShapes>
-        <elementListCompartment Id="fb496ba1-3563-4ed8-8cc4-c1a49c1aa378" absoluteBounds="32.765, 1.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fb496ba1-3563-4ed8-8cc4-c1a49c1aa378" absoluteBounds="15.39, 6.8350000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5fc95e77-02cb-4098-9ef9-6f701a4468f4" isExpanded="false" absoluteBounds="32.75, 4.75, 2, 0.44999999999999929">
+    <classShape Id="5fc95e77-02cb-4098-9ef9-6f701a4468f4" isExpanded="false" absoluteBounds="15.375, 7, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_StockProductos11" />
       <nestedChildShapes>
-        <elementListCompartment Id="b2789eb2-faac-412b-8498-0fcb3877ac78" absoluteBounds="32.765, 5.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b2789eb2-faac-412b-8498-0fcb3877ac78" absoluteBounds="15.39, 7.4600000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="72e3188a-1e22-4384-82f7-acbf06cc48de" isExpanded="false" absoluteBounds="32.75, 10.75, 4.375, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivosTipoMantenimiento" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d9d60ce9-201f-49f5-9c12-e59131312037" absoluteBounds="32.765, 11.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="171e97a4-4fb9-44f5-a7ad-9a52c0f64b59" isExpanded="false" absoluteBounds="32.75, 12.75, 2, 0.45000000000000284">
+    <classShape Id="171e97a4-4fb9-44f5-a7ad-9a52c0f64b59" isExpanded="false" absoluteBounds="19.625, 4.375, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/CAMPANA_CULTIVO" />
       <nestedChildShapes>
-        <elementListCompartment Id="b5cc0fc3-8ee6-44f7-b3a1-6713e960a116" absoluteBounds="32.765, 13.21, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b5cc0fc3-8ee6-44f7-b3a1-6713e960a116" absoluteBounds="19.64, 4.8350000000000009, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="049b3a73-9517-4e2d-8821-24e1764ac245" isExpanded="false" absoluteBounds="10.625, 7.875, 2, 0.44999999999999929">
+    <classShape Id="049b3a73-9517-4e2d-8821-24e1764ac245" isExpanded="false" absoluteBounds="8.75, 3, 2.75, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/CONSUMIDOR" />
       <nestedChildShapes>
-        <elementListCompartment Id="1e08e931-8fdd-42a9-9b30-da875eea20ed" absoluteBounds="10.640000000596046, 8.33500000089407, 1.9700000000000002, 31.9791259765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1e08e931-8fdd-42a9-9b30-da875eea20ed" absoluteBounds="8.7650000005960464, 3.4600000008940697, 1.9700000000000002, 31.9791259765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.875 : 8.1); (10.625 : 8.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.0625 : 2.7); (10.0625 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AgroSaturnoDataContext/UNIMEDIDA/UNIMEDIDA_CONSUMIDOR" />
       <nodes>
         <classShapeMoniker Id="04e4cfd6-6177-46b7-88ec-a1f16b6379f7" />
         <classShapeMoniker Id="049b3a73-9517-4e2d-8821-24e1764ac245" />
       </nodes>
     </associationConnector>
-    <classShape Id="fc8423c0-0270-4ae2-86c6-2a50e07a60e6" isExpanded="false" absoluteBounds="32.75, 26.75, 4.625, 0.45000000000000284">
+    <classShape Id="fc8423c0-0270-4ae2-86c6-2a50e07a60e6" isExpanded="false" absoluteBounds="23.625, 5, 3.875, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoConsumidoresPorCampanaAgricolaPorVariedadYCultivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="244a0090-0d73-4735-acde-86d74bbdeb30" absoluteBounds="32.765, 27.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="244a0090-0d73-4735-acde-86d74bbdeb30" absoluteBounds="23.64, 5.4600000000000009, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="043e5612-0d92-40fe-b846-88dd85ce735b" isExpanded="false" absoluteBounds="10.75, 33.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoReferencias" />
-      <nestedChildShapes>
-        <elementListCompartment Id="57283571-6840-4a0a-b599-8caec55f17b5" absoluteBounds="10.765, 34.21, 3.9699999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="243512c0-a92b-4752-860b-dafc87c2c9cd" isExpanded="false" absoluteBounds="15.75, 33.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologico" />
-      <nestedChildShapes>
-        <elementListCompartment Id="35219e2b-a957-448e-8e48-897937427e8f" absoluteBounds="15.765, 34.21, 2.9699999999999998, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5f39ded6-6245-4257-9b6c-4edf124c6f38" isExpanded="false" absoluteBounds="33.75, 18.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c7dd9df9-cb6f-4a2b-94fa-db5d9b10a5e8" absoluteBounds="33.765, 19.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fc24f8ac-0026-4f3f-9788-a487cca0aee6" isExpanded="false" absoluteBounds="20.75, 33.75, 2, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoUsuarios" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2af959fd-dc0f-459d-aff1-fb4581188448" absoluteBounds="20.765, 34.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="724ee4f0-385e-41a4-a43d-9544743a7b50" isExpanded="false" absoluteBounds="33.75, 22.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajodetalleNumeroLabores" />
-      <nestedChildShapes>
-        <elementListCompartment Id="57bc55e6-43e3-473b-b2b4-2431383db781" absoluteBounds="33.765, 23.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4889aea5-23e3-4f66-90ce-04ddc909c188" isExpanded="false" absoluteBounds="23.75, 33.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajodetalleNumeroLaboresFinalizadas" />
-      <nestedChildShapes>
-        <elementListCompartment Id="50fac5c0-8ed3-4d2d-af53-066b7cde424d" absoluteBounds="23.765, 34.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3979e52f-b8f7-410c-9fe6-61f17c9561d1" isExpanded="false" absoluteBounds="28.75, 33.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivosListadoHerramientasParaTareasIT" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5b9a1c28-e755-45c7-b3cd-fef378f608fd" absoluteBounds="28.765, 34.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fe710778-ef12-4d6d-bf1b-94ae4f1aeffe" isExpanded="false" absoluteBounds="32.75, 33.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeAtencionesTotalesByUsuario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ede9e6f0-431f-4ae9-a55e-3d786b5a55a7" absoluteBounds="32.765, 34.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="083ab54e-c3c1-4dab-9efb-7d8f7283abce" isExpanded="false" absoluteBounds="34.75, 20.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoSoporteFuncionalDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1caa1b8e-0a55-46ba-a30d-c00a8abdea93" absoluteBounds="34.765, 21.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5e156f6d-4764-4061-bb4e-76eefefaa0d6" isExpanded="false" absoluteBounds="34.75, 31.75, 4.125, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivosTipoMantenimientoDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="38cd6643-ba32-4fae-9c9f-458231c0575b" absoluteBounds="34.765, 32.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="31b5deb8-9ca4-447e-88d5-2650ffad020a" isExpanded="false" absoluteBounds="35.75, 0.75, 4.75, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoSoporteFuncionalDetalleByMinutos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="23d57d17-e7c9-4094-bdfb-dd06277291ae" absoluteBounds="35.765, 1.2100000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b610d401-6c57-4176-b5e4-1371dc230362" isExpanded="false" absoluteBounds="0.75, 35.75, 4.75, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoSoporteFuncionalDetalleByMinutosGroupByAplicacion" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e7b4e951-4c34-46c8-a7cc-5298cfe3a65a" absoluteBounds="0.76500000000000057, 36.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a76c123b-5352-43cd-bd10-f3f3e334c202" isExpanded="false" absoluteBounds="35.75, 2.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivosTipoMantenimientoDetalleByMinutos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="316ccad0-990e-4fcd-85bf-7209edb09a1f" absoluteBounds="35.765, 3.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="13fe8564-e08e-4885-9499-d4f96d76cb42" isExpanded="false" absoluteBounds="35.75, 4.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivosTipoMantenimientoDetalleByMinutosGroupByAplicacion" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6903cbcc-e85e-4a87-b0c7-7477f285d8cd" absoluteBounds="35.765, 5.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2d2ab01e-05c3-4b2b-991c-516c2c9ae1f5" isExpanded="false" absoluteBounds="35.75, 6.75, 4.25, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c0974f08-961e-4a23-96ab-f0bb6c1a0657" absoluteBounds="35.765, 7.2100000000000009, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="91c1ff7f-15ff-4179-aa57-97fde18c7bc9" isExpanded="false" absoluteBounds="6.75, 35.75, 3.875, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajoAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="070ded12-ea97-4486-85e9-7ae2c40bd91b" absoluteBounds="6.7650000000000006, 36.21, 1.9700000000000002, 10.0567626953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a3cc517a-bd41-42fc-bcdc-6f8cc3527163" isExpanded="false" absoluteBounds="11.75, 35.75, 3.875, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoOrdenTrabajoAllWithCumplimiento" />
-      <nestedChildShapes>
-        <elementListCompartment Id="023555c0-41f7-45f7-af72-8ce0590fe13e" absoluteBounds="11.765, 36.21, 1.9700000000000002, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="aed570aa-7f5e-41b8-9fd6-af737952fae3" isExpanded="false" absoluteBounds="35.75, 12.75, 3.875, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeDispositivoOrdenTrabajo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="340c7bef-4350-407b-bc99-43a4c59752e2" absoluteBounds="35.765, 13.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="83cd2336-07fc-475d-9a78-56e983d4b321" isExpanded="false" absoluteBounds="35.75, 14.75, 2, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SoporteCanalDeAtencion" />
-      <nestedChildShapes>
-        <elementListCompartment Id="123142ea-5538-4178-b2be-e390882fb2f5" absoluteBounds="35.765, 15.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="74282b90-a139-4c59-a9a4-5a25059d0258" isExpanded="false" absoluteBounds="16.75, 35.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoSoporteFuncional" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8f44625c-b1c3-47ba-adaf-de66f3f0f1cf" absoluteBounds="16.765, 36.21, 3.4699999999999998, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e18c98de-d30c-4a65-8fb8-912ad206294f" isExpanded="false" absoluteBounds="20.75, 35.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoSoporteFuncionalAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bd8e173f-8933-44a7-b79b-fb95eba6fbe1" absoluteBounds="20.765, 36.21, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d0755f5d-afec-4a64-bc1a-5c9c4fe4dd14" isExpanded="false" absoluteBounds="24.75, 35.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeAtencionesDeSoporteFuncionalAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bd1b7a34-659f-4d10-9beb-714e14ac19b2" absoluteBounds="24.765, 36.21, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2791ad9a-3c5c-4211-81d7-b7d609672568" isExpanded="false" absoluteBounds="35.75, 28.75, 3.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeAtencionesDeSoporteFuncional" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0d7acc79-fb87-486f-88d9-39e62ca8bb05" absoluteBounds="35.765, 29.21, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b7642965-5b50-4244-a60f-395a23025ce0" isExpanded="false" absoluteBounds="28.75, 35.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoTipoDispositivo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="51427fc9-c7ae-4361-90e5-822fbe4f220f" absoluteBounds="28.765, 36.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f5bd9278-303d-4815-b9d3-20a07324b4cd" isExpanded="false" absoluteBounds="33.75, 35.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ParteDiariosDeDispositivos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7aad8975-c17c-4bf0-babb-d61732ae5990" absoluteBounds="33.765, 36.21, 3.9699999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5641dadc-fe47-489c-a4d8-6613f658f0c4" isExpanded="false" absoluteBounds="36.75, 8.75, 4.625, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ParteDiariosDeDispositivosMotivoInactivo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6e59f41d-daf8-48e0-83f0-cfc777ac290f" absoluteBounds="36.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8c42562c-70e4-4d04-8ce8-d20192d9aeda" isExpanded="false" absoluteBounds="36.75, 16.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ParteDiariosDeDispositivosDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d487d684-b6ec-4efd-aaf5-f121ce74e4d3" absoluteBounds="36.765, 17.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="670084a4-bda6-4982-9866-4aea6a5b1763" isExpanded="false" absoluteBounds="36.75, 24.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ParteDiariosDeDispositivosAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="21dff468-93c3-43b0-98ed-264605b71bb3" absoluteBounds="36.765, 25.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1cf4bdf3-5a6b-446b-9b50-6677338cfb8c" isExpanded="false" absoluteBounds="0.75, 37.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ParteDiariosDeDispositivosDetalleAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="091097e1-bc22-4faf-8f8a-0308d56d5410" absoluteBounds="0.76500000000000057, 38.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="03346683-7e1c-4c19-a73c-4aa104a621af" isExpanded="false" absoluteBounds="6.75, 37.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_DispositivoContadores" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7d8b2b1b-4112-46cf-945d-57dd68d130a2" absoluteBounds="6.7650000000000006, 38.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4d50cf72-e0ef-4684-b943-51ff6718a5c3" isExpanded="false" absoluteBounds="37.75, 10.75, 4.625, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoPropios" />
-      <nestedChildShapes>
-        <elementListCompartment Id="824f75ce-005d-45ca-9182-df078eb544fe" absoluteBounds="37.765, 11.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="56715ecb-04e0-4b3a-8b81-6448951a221b" isExpanded="false" absoluteBounds="11.75, 37.75, 4.75, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor" />
-      <nestedChildShapes>
-        <elementListCompartment Id="12537ad4-4fd5-44cb-a599-e471a9d98be3" absoluteBounds="11.765, 38.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4920efad-6732-4ca1-bb8b-27f97fdba7c8" isExpanded="false" absoluteBounds="17.75, 37.75, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cfbfdbfa-85c6-4b23-bb0f-80907d9f9a92" absoluteBounds="17.765, 38.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f18e073a-5f97-465b-a366-b8b5b04a7a69" isExpanded="false" absoluteBounds="27.75, 37.75, 4.5, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CuentasCorreoListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b744a5ff-0c3d-4e6d-8814-89d7979d3bab" absoluteBounds="27.765, 38.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="56597582-0a0a-414d-a475-7b92656f51b6" isExpanded="false" absoluteBounds="3.5, 7.875, 2, 0.44999999999999929">
+    <classShape Id="56597582-0a0a-414d-a475-7b92656f51b6" isExpanded="false" absoluteBounds="3.25, 3.5, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/PERIODOPRESUPUESTAL" />
       <nestedChildShapes>
-        <elementListCompartment Id="60705402-f88c-49a7-abf7-2464cb25a707" absoluteBounds="3.5150000005960464, 8.33500000089407, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60705402-f88c-49a7-abf7-2464cb25a707" absoluteBounds="3.2650000005960464, 3.9600000008940697, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="668d4e17-3ca9-491a-976d-59f8fd44042d" isExpanded="false" absoluteBounds="0.75, 7.875, 2, 0.44999999999999929">
+    <classShape Id="668d4e17-3ca9-491a-976d-59f8fd44042d" isExpanded="false" absoluteBounds="0.5, 2.25, 2, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/PRESUPUESTO" />
       <nestedChildShapes>
-        <elementListCompartment Id="79f5ab84-5a2d-42c3-8186-9a02928fccb2" absoluteBounds="0.76500000059604645, 8.33500000089407, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="79f5ab84-5a2d-42c3-8186-9a02928fccb2" absoluteBounds="0.51500000059604645, 2.7100000008940697, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 8.1); (3.5 : 8.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.7); (3.25 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/PRESUPUESTO/PRESUPUESTO_PERIODOPRESUPUESTAL" />
       <nodes>
         <classShapeMoniker Id="668d4e17-3ca9-491a-976d-59f8fd44042d" />
         <classShapeMoniker Id="56597582-0a0a-414d-a475-7b92656f51b6" />
       </nodes>
     </associationConnector>
-    <classShape Id="5d75a77f-a4e7-47e2-aa54-5cbcd7a22b23" isExpanded="false" absoluteBounds="32.75, 37.75, 2, 0.45000000000000284">
+    <classShape Id="5d75a77f-a4e7-47e2-aa54-5cbcd7a22b23" isExpanded="false" absoluteBounds="15.375, 5.75, 3.5, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_CultivosCb" />
       <nestedChildShapes>
-        <elementListCompartment Id="68209638-737b-4f38-bef3-4015b77f3e85" absoluteBounds="32.765, 38.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="68209638-737b-4f38-bef3-4015b77f3e85" absoluteBounds="15.39, 6.2100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cf17ac29-9859-413a-82ac-ccfbc7cd0583" isExpanded="false" absoluteBounds="37.75, 33.75, 2, 0.45000000000000284">
+    <classShape Id="cf17ac29-9859-413a-82ac-ccfbc7cd0583" isExpanded="false" absoluteBounds="15.375, 5, 3.5, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PesoPromedioJabasCosechaExportablesListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="c9b5080b-4480-41d2-b95d-c0313f9612cc" absoluteBounds="37.765, 34.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c9b5080b-4480-41d2-b95d-c0313f9612cc" absoluteBounds="15.39, 5.4600000000000009, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f21e4e90-b14f-417b-b97d-28d46f096921" isExpanded="false" absoluteBounds="32.75, 38.5, 3.5, 0.45000000000000284">
+    <classShape Id="f21e4e90-b14f-417b-b97d-28d46f096921" isExpanded="false" absoluteBounds="19.625, 6.375, 3.25, 0.45000000000000284">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PesoPromedioJabasCosechaExportables" />
       <nestedChildShapes>
-        <elementListCompartment Id="490ae72c-20c9-490b-9496-5bc7c89269c5" absoluteBounds="32.765, 38.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="dc2ae125-f964-4e6a-b1e0-4a0b0c3ddef2" isExpanded="false" absoluteBounds="38.75, 14.75, 2, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_FechaCampanaAnual" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4dbcbaca-1dd8-4395-be1d-d194e364c810" absoluteBounds="38.765, 15.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="58af8e7a-a937-4ffd-a507-0b2967a79b0f" isExpanded="false" absoluteBounds="0.625, 39.125, 4.75, 0.45">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_LineasCelularesCoporativa" />
-      <nestedChildShapes>
-        <elementListCompartment Id="abc678a7-4cc0-4450-83ac-56640a33adb4" absoluteBounds="0.63999999999999968, 39.585, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d3211df6-a546-4b04-92e2-473aff13cd3b" isExpanded="false" absoluteBounds="0.625, 39.75, 4.75, 0.45">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_LineasCelularesCoporativasAll" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c3cf9a9a-b1e3-409e-a0b8-39f53c96ab36" absoluteBounds="0.63999999999999968, 40.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="575704d2-8370-4240-8bde-60b6d2999414" isExpanded="false" absoluteBounds="0.625, 40.375, 4.75, 0.45">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_LineasCelularesCoporativasListado" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a20f086c-3417-4f9d-b263-b131b41f8749" absoluteBounds="0.64000000000000057, 40.835, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="76ce57c2-fa2c-4fae-b943-7018f8d15493" isExpanded="false" absoluteBounds="0.625, 41, 4.75, 0.45">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoDeLineasTelefonica" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d289de09-57e8-42dc-9aad-7ce61a4c31fa" absoluteBounds="0.64000000000000057, 41.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a6b6d0a4-fdc0-4f9a-8a19-477a4d42965f" isExpanded="false" absoluteBounds="17.75, 39, 4.125, 0.45">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SolicitudDeEquipamientoTecnologicoLineaCelular" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a5527b60-2ce9-4868-9428-da0644dcd7a0" absoluteBounds="17.765, 39.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="490ae72c-20c9-490b-9496-5bc7c89269c5" absoluteBounds="19.64, 6.8350000000000009, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

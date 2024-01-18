@@ -14,7 +14,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SoporteCanalDeAtencion> result = new List<SAS_SoporteCanalDeAtencion>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_SoporteCanalDeAtencion.ToList();
             }

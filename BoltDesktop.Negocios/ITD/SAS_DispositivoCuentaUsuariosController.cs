@@ -16,7 +16,7 @@ namespace Asistencia.Negocios
             List<SAS_DispositivoCuentaUsuariosByDeviceResult> resultado = new List<SAS_DispositivoCuentaUsuariosByDeviceResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivoCuentaUsuariosByDevice(device.id).ToList();
 

@@ -30,7 +30,7 @@ namespace Asistencia.Negocios
             List<Grupo> Listado = new List<Grupo>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext modelo = new ITDContextDataContext(cnx))
             {
 
                 var list = modelo.SAS_FechaCampanaAnual.ToList();
@@ -52,7 +52,7 @@ namespace Asistencia.Negocios
             List<Grupo> Listado = new List<Grupo>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext modelo = new ITDContextDataContext(cnx))
             {
 
                 var list = modelo.SAS_FechaCampanaAnual.ToList();
@@ -75,7 +75,7 @@ namespace Asistencia.Negocios
             List<Grupo> Listado = new List<Grupo>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext modelo = new ITDContextDataContext(cnx))
             {
 
                 var list = modelo.SAS_FechaCampanaAnual.ToList();
@@ -98,7 +98,7 @@ namespace Asistencia.Negocios
             List<Grupo> Listado = new List<Grupo>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext modelo = new ITDContextDataContext(cnx))
             {
 
                 var list = modelo.SAS_FechaCampanaAnual.ToList();
@@ -120,7 +120,7 @@ namespace Asistencia.Negocios
             List<Grupo> Listado = new List<Grupo>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext modelo = new ITDContextDataContext(cnx))
             {
 
                 var list = modelo.SAS_FechaCampanaAnual.ToList();
@@ -167,7 +167,7 @@ namespace Asistencia.Negocios
             List<Grupo> Listado = new List<Grupo>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext modelo = new ITDContextDataContext(cnx))
             {
 
                 var list = modelo.SAS_FechaCampanaAnual.ToList();

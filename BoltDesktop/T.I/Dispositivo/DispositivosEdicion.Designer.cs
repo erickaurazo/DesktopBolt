@@ -67,6 +67,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -141,14 +146,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle111 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle112 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             this.subMenuComponentes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnIrACatalogoDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImprimirEtiquetaComponente = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnProgramarSoporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGenerarInspeccion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRegistrarInventario = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -335,6 +338,16 @@
             this.tabComponentes = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnComponenteChangeState = new Telerik.WinControls.UI.RadButton();
             this.dgvComponente = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.chdispositivoCodigoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chItemComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chCodigoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDispositivoHijo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesdeComponente = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chHastaComponente = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chObservacionComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chIdEstadoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstadoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chseVisualizaEnReportesComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnComponenteRemove = new Telerik.WinControls.UI.RadButton();
             this.btnComponenteAdd = new Telerik.WinControls.UI.RadButton();
             this.tabCuentaUsuario = new Telerik.WinControls.UI.RadPageViewPage();
@@ -484,19 +497,6 @@
             this.bgwRegistrar = new System.ComponentModel.BackgroundWorker();
             this.bgwCambiarEstado = new System.ComponentModel.BackgroundWorker();
             this.ofdImagenes = new System.Windows.Forms.OpenFileDialog();
-            this.chdispositivoCodigoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chItemComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chCodigoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDispositivoHijo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chDesdeComponente = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
-            this.chHastaComponente = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
-            this.chObservacionComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chIdEstadoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstadoComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chseVisualizaEnReportesComponente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnProgramarSoporte = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGenerarInspeccion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnRegistrarInventario = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuComponentes.SuspendLayout();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
@@ -595,7 +595,7 @@
             this.btnGenerarInspeccion,
             this.btnRegistrarInventario});
             this.subMenuComponentes.Name = "subMenu";
-            this.subMenuComponentes.Size = new System.Drawing.Size(186, 136);
+            this.subMenuComponentes.Size = new System.Drawing.Size(186, 114);
             // 
             // btnIrACatalogoDispositivo
             // 
@@ -612,6 +612,30 @@
             this.btnImprimirEtiquetaComponente.Size = new System.Drawing.Size(185, 22);
             this.btnImprimirEtiquetaComponente.Text = "Imprimir etiqueta QR";
             this.btnImprimirEtiquetaComponente.Click += new System.EventHandler(this.btnImprimirEtiquetaComponente_Click);
+            // 
+            // btnProgramarSoporte
+            // 
+            this.btnProgramarSoporte.Image = ((System.Drawing.Image)(resources.GetObject("btnProgramarSoporte.Image")));
+            this.btnProgramarSoporte.Name = "btnProgramarSoporte";
+            this.btnProgramarSoporte.Size = new System.Drawing.Size(185, 22);
+            this.btnProgramarSoporte.Text = "Programar soporte";
+            this.btnProgramarSoporte.Click += new System.EventHandler(this.generarMantenimientoToolStripMenuItem_Click);
+            // 
+            // btnGenerarInspeccion
+            // 
+            this.btnGenerarInspeccion.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarInspeccion.Image")));
+            this.btnGenerarInspeccion.Name = "btnGenerarInspeccion";
+            this.btnGenerarInspeccion.Size = new System.Drawing.Size(185, 22);
+            this.btnGenerarInspeccion.Text = "Generar Inspección";
+            this.btnGenerarInspeccion.Click += new System.EventHandler(this.btnGenerarInspeccion_Click);
+            // 
+            // btnRegistrarInventario
+            // 
+            this.btnRegistrarInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarInventario.Image")));
+            this.btnRegistrarInventario.Name = "btnRegistrarInventario";
+            this.btnRegistrarInventario.Size = new System.Drawing.Size(185, 22);
+            this.btnRegistrarInventario.Text = "Registrar Inventario";
+            this.btnRegistrarInventario.Click += new System.EventHandler(this.btnRegistrarInventario_Click);
             // 
             // stsBarraEstado
             // 
@@ -2253,7 +2277,7 @@
             this.tabControl.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.tabControl.Location = new System.Drawing.Point(5, 21);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedPage = this.tabComponentes;
+            this.tabControl.SelectedPage = this.tabAsignacionIP;
             this.tabControl.Size = new System.Drawing.Size(1343, 411);
             this.tabControl.TabIndex = 0;
             this.tabControl.ThemeName = "Windows8";
@@ -2272,7 +2296,7 @@
             this.tabAsignacionIP.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabAsignacionIP.Location = new System.Drawing.Point(5, 5);
             this.tabAsignacionIP.Name = "tabAsignacionIP";
-            this.tabAsignacionIP.Size = new System.Drawing.Size(1675, 381);
+            this.tabAsignacionIP.Size = new System.Drawing.Size(1333, 377);
             this.tabAsignacionIP.Text = " IP  ";
             // 
             // btnAgregarDetalleActivarIP
@@ -2280,7 +2304,7 @@
             this.btnAgregarDetalleActivarIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarDetalleActivarIP.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDetalleActivarIP.Image")));
             this.btnAgregarDetalleActivarIP.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAgregarDetalleActivarIP.Location = new System.Drawing.Point(1585, 3);
+            this.btnAgregarDetalleActivarIP.Location = new System.Drawing.Point(1243, 3);
             this.btnAgregarDetalleActivarIP.Name = "btnAgregarDetalleActivarIP";
             this.btnAgregarDetalleActivarIP.Size = new System.Drawing.Size(25, 26);
             this.btnAgregarDetalleActivarIP.TabIndex = 172;
@@ -2359,7 +2383,7 @@
             this.dgvDetalleIP.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetalleIP.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetalleIP.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalleIP.Size = new System.Drawing.Size(1668, 354);
+            this.dgvDetalleIP.Size = new System.Drawing.Size(1326, 350);
             this.dgvDetalleIP.TabIndex = 171;
             this.dgvDetalleIP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetalleIP_KeyUp);
             // 
@@ -2527,7 +2551,7 @@
             // 
             this.btnQuitarDetalleIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuitarDetalleIP.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarDetalleIP.Image")));
-            this.btnQuitarDetalleIP.Location = new System.Drawing.Point(1647, 3);
+            this.btnQuitarDetalleIP.Location = new System.Drawing.Point(1305, 3);
             this.btnQuitarDetalleIP.Name = "btnQuitarDetalleIP";
             this.btnQuitarDetalleIP.Size = new System.Drawing.Size(25, 26);
             this.btnQuitarDetalleIP.TabIndex = 170;
@@ -2538,7 +2562,7 @@
             // 
             this.btnAgregarDetalleIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarDetalleIP.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDetalleIP.Image")));
-            this.btnAgregarDetalleIP.Location = new System.Drawing.Point(1616, 3);
+            this.btnAgregarDetalleIP.Location = new System.Drawing.Point(1274, 3);
             this.btnAgregarDetalleIP.Name = "btnAgregarDetalleIP";
             this.btnAgregarDetalleIP.Size = new System.Drawing.Size(25, 26);
             this.btnAgregarDetalleIP.TabIndex = 169;
@@ -3193,6 +3217,129 @@
             this.dgvComponente.TabIndex = 179;
             this.dgvComponente.SelectionChanged += new System.EventHandler(this.dgvComponente_SelectionChanged);
             this.dgvComponente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvComponente_KeyUp);
+            // 
+            // chdispositivoCodigoComponente
+            // 
+            this.chdispositivoCodigoComponente.DataPropertyName = "codigoDispositivo";
+            this.chdispositivoCodigoComponente.HeaderText = "dispositivoCodigo";
+            this.chdispositivoCodigoComponente.Name = "chdispositivoCodigoComponente";
+            this.chdispositivoCodigoComponente.ReadOnly = true;
+            this.chdispositivoCodigoComponente.Visible = false;
+            // 
+            // chItemComponente
+            // 
+            this.chItemComponente.DataPropertyName = "Item";
+            this.chItemComponente.HeaderText = "Item";
+            this.chItemComponente.Name = "chItemComponente";
+            this.chItemComponente.ReadOnly = true;
+            this.chItemComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chItemComponente.Visible = false;
+            this.chItemComponente.Width = 35;
+            // 
+            // chCodigoComponente
+            // 
+            this.chCodigoComponente.DataPropertyName = "codigoDispositivoComponente";
+            this.chCodigoComponente.HeaderText = "Dispositivo ID";
+            this.chCodigoComponente.Name = "chCodigoComponente";
+            this.chCodigoComponente.ReadOnly = true;
+            this.chCodigoComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chCodigoComponente.Width = 35;
+            // 
+            // chDispositivoHijo
+            // 
+            this.chDispositivoHijo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chDispositivoHijo.DataPropertyName = "Dispositivo";
+            this.chDispositivoHijo.HeaderText = "Dispositivo";
+            this.chDispositivoHijo.Name = "chDispositivoHijo";
+            this.chDispositivoHijo.ReadOnly = true;
+            this.chDispositivoHijo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chDesdeComponente
+            // 
+            this.chDesdeComponente.DataPropertyName = "desde";
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.Format = "d";
+            this.chDesdeComponente.DefaultCellStyle = dataGridViewCellStyle35;
+            this.chDesdeComponente.HeaderText = "Desde";
+            this.chDesdeComponente.Mask = "";
+            this.chDesdeComponente.Name = "chDesdeComponente";
+            this.chDesdeComponente.P_EsEditable = false;
+            this.chDesdeComponente.P_EsModificable = false;
+            this.chDesdeComponente.P_EsPrimaryKey = false;
+            this.chDesdeComponente.P_ExigeInformacion = false;
+            this.chDesdeComponente.P_NombreColumna = null;
+            this.chDesdeComponente.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chDesdeComponente.Width = 75;
+            // 
+            // chHastaComponente
+            // 
+            this.chHastaComponente.DataPropertyName = "hasta";
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.Format = "d";
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
+            this.chHastaComponente.DefaultCellStyle = dataGridViewCellStyle36;
+            this.chHastaComponente.HeaderText = "Hasta";
+            this.chHastaComponente.Mask = "";
+            this.chHastaComponente.Name = "chHastaComponente";
+            this.chHastaComponente.P_EsEditable = false;
+            this.chHastaComponente.P_EsModificable = false;
+            this.chHastaComponente.P_EsPrimaryKey = false;
+            this.chHastaComponente.P_ExigeInformacion = false;
+            this.chHastaComponente.P_NombreColumna = null;
+            this.chHastaComponente.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chHastaComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chHastaComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chHastaComponente.ToolTipText = "Hasta";
+            this.chHastaComponente.Width = 75;
+            // 
+            // chObservacionComponente
+            // 
+            this.chObservacionComponente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chObservacionComponente.DataPropertyName = "Observacion";
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
+            this.chObservacionComponente.DefaultCellStyle = dataGridViewCellStyle37;
+            this.chObservacionComponente.HeaderText = "Observación";
+            this.chObservacionComponente.MaxInputLength = 500;
+            this.chObservacionComponente.Name = "chObservacionComponente";
+            this.chObservacionComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chObservacionComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chIdEstadoComponente
+            // 
+            this.chIdEstadoComponente.DataPropertyName = "idestado";
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Black;
+            this.chIdEstadoComponente.DefaultCellStyle = dataGridViewCellStyle38;
+            this.chIdEstadoComponente.HeaderText = "IdEstado";
+            this.chIdEstadoComponente.Name = "chIdEstadoComponente";
+            this.chIdEstadoComponente.ReadOnly = true;
+            this.chIdEstadoComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chIdEstadoComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chIdEstadoComponente.Visible = false;
+            // 
+            // chEstadoComponente
+            // 
+            this.chEstadoComponente.DataPropertyName = "Estado";
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
+            this.chEstadoComponente.DefaultCellStyle = dataGridViewCellStyle39;
+            this.chEstadoComponente.HeaderText = "Estado";
+            this.chEstadoComponente.Name = "chEstadoComponente";
+            this.chEstadoComponente.ReadOnly = true;
+            this.chEstadoComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chEstadoComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chEstadoComponente.Width = 60;
+            // 
+            // chseVisualizaEnReportesComponente
+            // 
+            this.chseVisualizaEnReportesComponente.DataPropertyName = "seVisualizaEnReportes";
+            this.chseVisualizaEnReportesComponente.HeaderText = "En reporte";
+            this.chseVisualizaEnReportesComponente.Name = "chseVisualizaEnReportesComponente";
             // 
             // btnComponenteRemove
             // 
@@ -5066,7 +5213,7 @@
             this.tabSoftware.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabSoftware.Location = new System.Drawing.Point(5, 5);
             this.tabSoftware.Name = "tabSoftware";
-            this.tabSoftware.Size = new System.Drawing.Size(1675, 381);
+            this.tabSoftware.Size = new System.Drawing.Size(1333, 377);
             this.tabSoftware.Text = "Software ";
             // 
             // btnCompletarEspeficacionesSoftware
@@ -5098,7 +5245,7 @@
             this.btnSoftwareChangeStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSoftwareChangeStatus.Image = ((System.Drawing.Image)(resources.GetObject("btnSoftwareChangeStatus.Image")));
             this.btnSoftwareChangeStatus.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSoftwareChangeStatus.Location = new System.Drawing.Point(1584, 3);
+            this.btnSoftwareChangeStatus.Location = new System.Drawing.Point(1242, 3);
             this.btnSoftwareChangeStatus.Name = "btnSoftwareChangeStatus";
             this.btnSoftwareChangeStatus.Size = new System.Drawing.Size(25, 26);
             this.btnSoftwareChangeStatus.TabIndex = 180;
@@ -5177,7 +5324,7 @@
             this.dgvSoftware.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvSoftware.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvSoftware.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSoftware.Size = new System.Drawing.Size(1668, 343);
+            this.dgvSoftware.Size = new System.Drawing.Size(1326, 339);
             this.dgvSoftware.TabIndex = 179;
             this.dgvSoftware.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvSoftware_KeyUp);
             // 
@@ -5340,7 +5487,7 @@
             // 
             this.btnSoftwareRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSoftwareRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnSoftwareRemove.Image")));
-            this.btnSoftwareRemove.Location = new System.Drawing.Point(1646, 3);
+            this.btnSoftwareRemove.Location = new System.Drawing.Point(1304, 3);
             this.btnSoftwareRemove.Name = "btnSoftwareRemove";
             this.btnSoftwareRemove.Size = new System.Drawing.Size(25, 26);
             this.btnSoftwareRemove.TabIndex = 178;
@@ -5351,7 +5498,7 @@
             // 
             this.btnSoftwareAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSoftwareAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnSoftwareAdd.Image")));
-            this.btnSoftwareAdd.Location = new System.Drawing.Point(1615, 3);
+            this.btnSoftwareAdd.Location = new System.Drawing.Point(1273, 3);
             this.btnSoftwareAdd.Name = "btnSoftwareAdd";
             this.btnSoftwareAdd.Size = new System.Drawing.Size(25, 26);
             this.btnSoftwareAdd.TabIndex = 177;
@@ -5371,153 +5518,6 @@
             // ofdImagenes
             // 
             this.ofdImagenes.FileName = "Cargar Imagenes";
-            // 
-            // chdispositivoCodigoComponente
-            // 
-            this.chdispositivoCodigoComponente.DataPropertyName = "codigoDispositivo";
-            this.chdispositivoCodigoComponente.HeaderText = "dispositivoCodigo";
-            this.chdispositivoCodigoComponente.Name = "chdispositivoCodigoComponente";
-            this.chdispositivoCodigoComponente.ReadOnly = true;
-            this.chdispositivoCodigoComponente.Visible = false;
-            // 
-            // chItemComponente
-            // 
-            this.chItemComponente.DataPropertyName = "Item";
-            this.chItemComponente.HeaderText = "Item";
-            this.chItemComponente.Name = "chItemComponente";
-            this.chItemComponente.ReadOnly = true;
-            this.chItemComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chItemComponente.Visible = false;
-            this.chItemComponente.Width = 35;
-            // 
-            // chCodigoComponente
-            // 
-            this.chCodigoComponente.DataPropertyName = "codigoDispositivoComponente";
-            this.chCodigoComponente.HeaderText = "Dispositivo ID";
-            this.chCodigoComponente.Name = "chCodigoComponente";
-            this.chCodigoComponente.ReadOnly = true;
-            this.chCodigoComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chCodigoComponente.Width = 35;
-            // 
-            // chDispositivoHijo
-            // 
-            this.chDispositivoHijo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chDispositivoHijo.DataPropertyName = "Dispositivo";
-            this.chDispositivoHijo.HeaderText = "Dispositivo";
-            this.chDispositivoHijo.Name = "chDispositivoHijo";
-            this.chDispositivoHijo.ReadOnly = true;
-            this.chDispositivoHijo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chDesdeComponente
-            // 
-            this.chDesdeComponente.DataPropertyName = "desde";
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.Format = "d";
-            this.chDesdeComponente.DefaultCellStyle = dataGridViewCellStyle35;
-            this.chDesdeComponente.HeaderText = "Desde";
-            this.chDesdeComponente.Mask = "";
-            this.chDesdeComponente.Name = "chDesdeComponente";
-            this.chDesdeComponente.P_EsEditable = false;
-            this.chDesdeComponente.P_EsModificable = false;
-            this.chDesdeComponente.P_EsPrimaryKey = false;
-            this.chDesdeComponente.P_ExigeInformacion = false;
-            this.chDesdeComponente.P_NombreColumna = null;
-            this.chDesdeComponente.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.chDesdeComponente.Width = 75;
-            // 
-            // chHastaComponente
-            // 
-            this.chHastaComponente.DataPropertyName = "hasta";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.Format = "d";
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
-            this.chHastaComponente.DefaultCellStyle = dataGridViewCellStyle36;
-            this.chHastaComponente.HeaderText = "Hasta";
-            this.chHastaComponente.Mask = "";
-            this.chHastaComponente.Name = "chHastaComponente";
-            this.chHastaComponente.P_EsEditable = false;
-            this.chHastaComponente.P_EsModificable = false;
-            this.chHastaComponente.P_EsPrimaryKey = false;
-            this.chHastaComponente.P_ExigeInformacion = false;
-            this.chHastaComponente.P_NombreColumna = null;
-            this.chHastaComponente.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.chHastaComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chHastaComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chHastaComponente.ToolTipText = "Hasta";
-            this.chHastaComponente.Width = 75;
-            // 
-            // chObservacionComponente
-            // 
-            this.chObservacionComponente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chObservacionComponente.DataPropertyName = "Observacion";
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
-            this.chObservacionComponente.DefaultCellStyle = dataGridViewCellStyle37;
-            this.chObservacionComponente.HeaderText = "Observación";
-            this.chObservacionComponente.MaxInputLength = 500;
-            this.chObservacionComponente.Name = "chObservacionComponente";
-            this.chObservacionComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chObservacionComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // chIdEstadoComponente
-            // 
-            this.chIdEstadoComponente.DataPropertyName = "idestado";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.Black;
-            this.chIdEstadoComponente.DefaultCellStyle = dataGridViewCellStyle38;
-            this.chIdEstadoComponente.HeaderText = "IdEstado";
-            this.chIdEstadoComponente.Name = "chIdEstadoComponente";
-            this.chIdEstadoComponente.ReadOnly = true;
-            this.chIdEstadoComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chIdEstadoComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chIdEstadoComponente.Visible = false;
-            // 
-            // chEstadoComponente
-            // 
-            this.chEstadoComponente.DataPropertyName = "Estado";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
-            this.chEstadoComponente.DefaultCellStyle = dataGridViewCellStyle39;
-            this.chEstadoComponente.HeaderText = "Estado";
-            this.chEstadoComponente.Name = "chEstadoComponente";
-            this.chEstadoComponente.ReadOnly = true;
-            this.chEstadoComponente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chEstadoComponente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chEstadoComponente.Width = 60;
-            // 
-            // chseVisualizaEnReportesComponente
-            // 
-            this.chseVisualizaEnReportesComponente.DataPropertyName = "seVisualizaEnReportes";
-            this.chseVisualizaEnReportesComponente.HeaderText = "En reporte";
-            this.chseVisualizaEnReportesComponente.Name = "chseVisualizaEnReportesComponente";
-            // 
-            // btnProgramarSoporte
-            // 
-            this.btnProgramarSoporte.Image = ((System.Drawing.Image)(resources.GetObject("btnProgramarSoporte.Image")));
-            this.btnProgramarSoporte.Name = "btnProgramarSoporte";
-            this.btnProgramarSoporte.Size = new System.Drawing.Size(185, 22);
-            this.btnProgramarSoporte.Text = "Programar soporte";
-            this.btnProgramarSoporte.Click += new System.EventHandler(this.generarMantenimientoToolStripMenuItem_Click);
-            // 
-            // btnGenerarInspeccion
-            // 
-            this.btnGenerarInspeccion.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarInspeccion.Image")));
-            this.btnGenerarInspeccion.Name = "btnGenerarInspeccion";
-            this.btnGenerarInspeccion.Size = new System.Drawing.Size(185, 22);
-            this.btnGenerarInspeccion.Text = "Generar Inspección";
-            this.btnGenerarInspeccion.Click += new System.EventHandler(this.btnGenerarInspeccion_Click);
-            // 
-            // btnRegistrarInventario
-            // 
-            this.btnRegistrarInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarInventario.Image")));
-            this.btnRegistrarInventario.Name = "btnRegistrarInventario";
-            this.btnRegistrarInventario.Size = new System.Drawing.Size(185, 22);
-            this.btnRegistrarInventario.Text = "Registrar Inventario";
-            this.btnRegistrarInventario.Click += new System.EventHandler(this.btnRegistrarInventario_Click);
             // 
             // DispositivosEdicion
             // 

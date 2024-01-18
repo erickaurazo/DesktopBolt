@@ -17,7 +17,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_DispositivoTipoSoporteFuncional> list = new List<SAS_DispositivoTipoSoporteFuncional>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_DispositivoTipoSoporteFuncional.ToList();
             }
@@ -30,7 +30,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_DispositivoTipoSoporteFuncionalDetalleByIdCodigoResult> list = new List<SAS_DispositivoTipoSoporteFuncionalDetalleByIdCodigoResult>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalle.Where(x=> x.codigo.Trim()== item.codigo.Trim()).ToList();
                 list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalleByIdCodigo(item.codigo.Trim()).ToList();
@@ -45,7 +45,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_DispositivoTipoSoporteFuncionalDetalle> list = new List<SAS_DispositivoTipoSoporteFuncionalDetalle>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalle.Where(x=> x.codigo.Trim()== item.codigo.Trim()).ToList();
                 list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalle.Where(x => x.codigo == item.codigo.Trim() && x.idtipoSoftware == tipoSoftware).ToList();
@@ -62,7 +62,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             int operation = 0;
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var result01 = Modelo.SAS_DispositivoTipoSoporteFuncional.Where(x => x.codigo == item.codigo).ToList();
@@ -235,7 +235,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             int operation = 0;
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result01 = Modelo.SAS_DispositivoTipoSoporteFuncional.Where(x => x.codigo == item.codigo).ToList();
                 if (result01.Count == 1)
@@ -268,7 +268,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             int operation = 0;
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result01 = Modelo.SAS_DispositivoTipoSoporteFuncional.Where(x => x.codigo == item.codigo).ToList();
                 if (result01.Count == 1)
@@ -424,7 +424,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_DispositivoTipoSoporteFuncionalDetalleByMinutos> list = new List<SAS_DispositivoTipoSoporteFuncionalDetalleByMinutos>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalle.Where(x=> x.codigo.Trim()== item.codigo.Trim()).ToList();
                 list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalleByMinutos.ToList();
@@ -439,7 +439,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_DispositivoTipoSoporteFuncionalDetalleByMinutosGroupByAplicacion> list = new List<SAS_DispositivoTipoSoporteFuncionalDetalleByMinutosGroupByAplicacion>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalle.Where(x=> x.codigo.Trim()== item.codigo.Trim()).ToList();
                 list = Modelo.SAS_DispositivoTipoSoporteFuncionalDetalleByMinutosGroupByAplicacion.ToList();

@@ -15,14 +15,17 @@ namespace Asistencia.Negocios
     {
         private List<SAS_MotivoEquipamientoTecnologicoALL> listadoTipoSolicitudesEquipamiento;
         private List<SAS_DispositivoTipoDispositivo> listadoTipoDispositivoChip;
-        const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
-        const string passwordCorreo = @"iompqiiuhkjngkjr";
+        //const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
+        //const string passwordCorreo = @"iompqiiuhkjngkjr";
+
+        const string usuarioCorreo = "notify.bolt@gmail.com";
+        const string passwordCorreo = "wppi kiav vegf sesx";
 
         public List<SAS_SolicitudDeEquipamientoTecnologicoListado> ListRequests(string conection)
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoListado> list = new List<SAS_SolicitudDeEquipamientoTecnologicoListado>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoListado.ToList();
             }
@@ -34,7 +37,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeEquipamientoTecnologico item = new SAS_SolicitudDeEquipamientoTecnologico();
             item.id = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_SolicitudDeEquipamientoTecnologico.Where(x => x.id == id).ToList();
 
@@ -54,7 +57,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoListadoByDates2Result> list = new List<SAS_SolicitudDeEquipamientoTecnologicoListadoByDates2Result>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoListadoByDates2(fechaDesde, fechaHasta).ToList();
             }
@@ -66,7 +69,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoListado> list = new List<SAS_SolicitudDeEquipamientoTecnologicoListado>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoListado.ToList();
             }
@@ -81,7 +84,7 @@ namespace Asistencia.Negocios
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -183,7 +186,7 @@ namespace Asistencia.Negocios
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -354,7 +357,7 @@ namespace Asistencia.Negocios
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -885,7 +888,7 @@ namespace Asistencia.Negocios
             string codigoAnteriorALiberacion = string.Empty;
             string nombresColaborador = string.Empty;
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //using (TransactionScope Scope = new TransactionScope())
                 //{
@@ -1124,7 +1127,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == solicitud.id).ToList();
             }
@@ -1135,7 +1138,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelulars.Where(x => x.idSolicitudEquipamientoTecnologico == 0).ToList(); ;
 
@@ -1146,7 +1149,7 @@ namespace Asistencia.Negocios
         public void RegistarSolicitudDeEquipamientoTecnologico(string conection, SAS_SolicitudDeEquipamientoTecnologico item)
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeEquipamientoTecnologico.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -1187,7 +1190,7 @@ namespace Asistencia.Negocios
         public void RegistaDispositivoUsuarios(string conection, SAS_DispositivoUsuarios itemDetalle)
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoUsuarios.Where(x => x.dispositivoCodigo == itemDetalle.dispositivoCodigo && x.item == itemDetalle.item).ToList();
                 if (resultado != null)
@@ -1234,7 +1237,7 @@ namespace Asistencia.Negocios
         {
             SAS_SolicitudDeEquipamientoTecnologico oRegistro = new SAS_SolicitudDeEquipamientoTecnologico();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -1265,7 +1268,7 @@ namespace Asistencia.Negocios
         {
             SAS_SolicitudDeEquipamientoTecnologico oRegistro = new SAS_SolicitudDeEquipamientoTecnologico();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -1300,7 +1303,7 @@ namespace Asistencia.Negocios
         {
             SAS_SolicitudDeEquipamientoTecnologico oRegistro = new SAS_SolicitudDeEquipamientoTecnologico();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -1330,7 +1333,7 @@ namespace Asistencia.Negocios
         {
             SAS_SolicitudDeEquipamientoTecnologico oRegistro = new SAS_SolicitudDeEquipamientoTecnologico();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -1360,14 +1363,14 @@ namespace Asistencia.Negocios
         }
 
 
-        public int ToRegister(string conection, SAS_SolicitudDeEquipamientoTecnologico item, List<SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo> listadoSedesEnSolicitudRegistro, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareAEliminar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareAEliminar,  List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularAEliminar)
+        public int ToRegister(string conection, SAS_SolicitudDeEquipamientoTecnologico item, List<SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo> listadoSedesEnSolicitudRegistro, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularARegistrar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware> listadoHardwareAEliminar, List<SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware> listadoSoftwareAEliminar, List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelular> listadoLineaCelularAEliminar)
         {
             //SAS_DispositivoTipoSoftware oregistro = new SAS_DispositivoTipoSoftware();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             int codigo = 0; // 1 es registro , 0 es nuevo
             SAS_SolicitudDeEquipamientoTecnologico oRegistro = new SAS_SolicitudDeEquipamientoTecnologico();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -2212,7 +2215,7 @@ namespace Asistencia.Negocios
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //using (TransactionScope Scope = new TransactionScope())
                 //{
@@ -2976,7 +2979,7 @@ namespace Asistencia.Negocios
 
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listadoCabecera = Modelo.SAS_SolicitudDeEquipamientoTecnologicoListadoById(codigoSolicitudSelecionada).ToList();
                 listadoDetalleHardware = Modelo.SAS_SolicitudDeEquipamientoTecnologicoHardwareById(codigoSolicitudSelecionada).ToList();
@@ -3054,7 +3057,9 @@ namespace Asistencia.Negocios
                 mail.Subject = Asunto + " | " + listadoCabecera.ElementAt(0).tipoSolicitud + " | " + listadoCabecera.ElementAt(0).documento;
                 mail.Body = Mensaje.ToString();
 
-                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+
+                //SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                 smtp.Port = 587;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.UseDefaultCredentials = true;
@@ -3086,7 +3091,7 @@ namespace Asistencia.Negocios
             SAS_DispositivoTipoDispositivo tipoDeDispositivo = new SAS_DispositivoTipoDispositivo();
             SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware oItemHardware = new SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 var scopeOptions = new TransactionOptions();
@@ -5155,7 +5160,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeEquipamientoTecnologico oregistro = new SAS_SolicitudDeEquipamientoTecnologico();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeEquipamientoTecnologico.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -5192,7 +5197,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeEquipamientoTecnologico oregistro = new SAS_SolicitudDeEquipamientoTecnologico();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeEquipamientoTecnologico.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -5215,7 +5220,7 @@ namespace Asistencia.Negocios
             SAS_SolicitudDeEquipamientoTecnologico oregistro = new SAS_SolicitudDeEquipamientoTecnologico();
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_SolicitudDeEquipamientoTecnologico.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -5243,7 +5248,7 @@ namespace Asistencia.Negocios
         {
             SAS_SolicitudDeEquipamientoTecnologicoListadoByIdResult oItem = new SAS_SolicitudDeEquipamientoTecnologicoListadoByIdResult();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_SolicitudDeEquipamientoTecnologicoListadoById(item.id).ToList();
                 if (result.ToList().Count == 0)
@@ -5299,7 +5304,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSedesResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSedesResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSedes(item.id).ToList();
 
@@ -5312,7 +5317,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardwareResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoEnBlancoHardware(item.id).ToList();
 
@@ -5325,7 +5330,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftwareResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoEnBlancoSoftware(item.id).ToList();
 
@@ -5340,7 +5345,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoSedesByIdResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoSedesByIdResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoSedesById(item.id).ToList();
 
@@ -5353,7 +5358,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoHardwareByIdResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoHardwareById(item.id).ToList();
 
@@ -5366,7 +5371,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoSoftwareByIdResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoSoftwareById(item.id).ToList();
 
@@ -5384,7 +5389,7 @@ namespace Asistencia.Negocios
             List<SAS_SegmentoRed> typeOfInterfaces = new List<SAS_SegmentoRed>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "Usuario" });
                 listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Soporte" });
@@ -5399,7 +5404,7 @@ namespace Asistencia.Negocios
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resuklt = Modelo.SAS_DispositivoTipoSoftware.Where(x => x.enFormatoSolicitud == 1).ToList();
 
@@ -5422,7 +5427,7 @@ namespace Asistencia.Negocios
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             int obtenerultimoregistro = 0;
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 obtenerultimoregistro = Convert.ToInt32(Modelo.SAS_SolicitudDeEquipamientoTecnologico.Max(x => x.id)) + 1;
@@ -5436,7 +5441,7 @@ namespace Asistencia.Negocios
         {
             List<DFormatoSimple> resultado = new List<DFormatoSimple>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado01 = Modelo.SAS_DispositivoTipoSoftware.Where(x => x.enFormatoSolicitud == 1).ToList();
                 resultado = (from items in resultado01.ToList()
@@ -5456,7 +5461,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_SolicitudesDeEquipamientoTecnologicoByPeriodosResult> list = new List<SAS_SolicitudesDeEquipamientoTecnologicoByPeriodosResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudesDeEquipamientoTecnologicoByPeriodos(desde, hasta).ToList();
             }
@@ -5471,7 +5476,7 @@ namespace Asistencia.Negocios
             List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult> list = new List<SAS_SolicitudDeEquipamientoTecnologicoLineaCelularByIdResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 list = Modelo.SAS_SolicitudDeEquipamientoTecnologicoLineaCelularById(id).ToList();
             }
@@ -5499,8 +5504,6 @@ namespace Asistencia.Negocios
             //list.Add(item);
             return list;
         }
-
-
 
     }
 }

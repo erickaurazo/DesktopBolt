@@ -18,7 +18,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_RegistroCompraEquipoCelularesDetallePendientesResult> listado = new List<SAS_RegistroCompraEquipoCelularesDetallePendientesResult>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_RegistroCompraEquipoCelularesDetallePendientes(fechaHasta).ToList();
             }
@@ -32,7 +32,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_RegistroCompraEquipoCelularesAll> listado = new List<SAS_RegistroCompraEquipoCelularesAll>();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_RegistroCompraEquipoCelularesAll.ToList();
             }
@@ -45,7 +45,7 @@ namespace Asistencia.Negocios
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_RegistroCompraEquipoCelularesByDatesResult> listado = new List<SAS_RegistroCompraEquipoCelularesByDatesResult>();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_RegistroCompraEquipoCelularesByDates(desde, hasta).ToList();
             }
@@ -59,7 +59,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_RegistroCompraEquipoCelularesByIdResult> listado = new List<SAS_RegistroCompraEquipoCelularesByIdResult>();
             SAS_RegistroCompraEquipoCelularesByIdResult item = new SAS_RegistroCompraEquipoCelularesByIdResult();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_RegistroCompraEquipoCelularesById(id).ToList();
                 if (listado != null)
@@ -79,7 +79,7 @@ namespace Asistencia.Negocios
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<SAS_RegistroCompraEquipoCelularesDetalleByIdResult> listado = new List<SAS_RegistroCompraEquipoCelularesDetalleByIdResult>();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_RegistroCompraEquipoCelularesDetalleById(id).ToList();
             }

@@ -104,7 +104,7 @@ namespace Asistencia.Helper
             List<Grupo> result = new List<Grupo>();
             //List<SAS_DispositivosTipoMantenimiento> resultado = new List<SAS_DispositivosTipoMantenimiento>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivoEstado.Where(x => x.id != 0).ToList();
                 foreach (var item in resultado)
@@ -220,7 +220,7 @@ namespace Asistencia.Helper
             List<SAS_EstadoEnSolicitudRenovacionListado> resultado = new List<SAS_EstadoEnSolicitudRenovacionListado>();
             List<Grupo> resultado1 = new List<Grupo>();
             string cnx = ConfigurationManager.AppSettings[connection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_EstadoEnSolicitudRenovacionListado.ToList();
 
@@ -252,7 +252,7 @@ namespace Asistencia.Helper
                 #endregion
                 List<SAS_MotivoEquipamientoTecnologico> resultado = new List<SAS_MotivoEquipamientoTecnologico>();
                 string cnx = ConfigurationManager.AppSettings[conection].ToString();
-                using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+                using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
                 {
                     resultado = Modelo.SAS_MotivoEquipamientoTecnologico.Where(x => x.estado == 1).ToList();
                     foreach (var item in resultado)
@@ -267,7 +267,7 @@ namespace Asistencia.Helper
                 #region Tipo de solicitud de renovaciones para celulares corporativos()
                 List<SAS_MotivoRenovacionCelular> resultado = new List<SAS_MotivoRenovacionCelular>();
                 string cnx = ConfigurationManager.AppSettings[conection].ToString();
-                using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+                using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
                 {
                     resultado = Modelo.SAS_MotivoRenovacionCelular.Where(x => x.estado == 1).ToList();
                     foreach (var item in resultado)
@@ -290,7 +290,7 @@ namespace Asistencia.Helper
 
             List<SAS_SolicitidudDeRenovacionCelularTipoDeJustificacion> resultado = new List<SAS_SolicitidudDeRenovacionCelularTipoDeJustificacion>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_SolicitidudDeRenovacionCelularTipoDeJustificacion.Where(x => x.estado == 1).ToList();
                 foreach (var item in resultado)
@@ -311,7 +311,7 @@ namespace Asistencia.Helper
             List<Grupo> result = new List<Grupo>();
             List<SAS_DispositivosTipoMantenimiento> resultado = new List<SAS_DispositivosTipoMantenimiento>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivosTipoMantenimiento.Where(x => x.estado == 1).ToList();
                 foreach (var item in resultado)
@@ -329,7 +329,7 @@ namespace Asistencia.Helper
             List<Grupo> result = new List<Grupo>();
             List<SAS_DispositivoTipoSoporteFuncional> resultado = new List<SAS_DispositivoTipoSoporteFuncional>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivoTipoSoporteFuncional.Where(x => x.estado == 1).ToList();
                 foreach (var item in resultado)
@@ -358,7 +358,7 @@ namespace Asistencia.Helper
             List<Grupo> result = new List<Grupo>();
             List<SAS_DispositivoClasificacionDeSoftware> resultado = new List<SAS_DispositivoClasificacionDeSoftware>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivoClasificacionDeSoftware.Where(x => x.estado == 1).ToList();
                 foreach (var item in resultado)
@@ -441,7 +441,7 @@ namespace Asistencia.Helper
             result.Add(new Grupo { Codigo = "000", Descripcion = "-- Seleccionar item --" });
 
             string cnx = ConfigurationManager.AppSettings["SAS"].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 // SELECT * FROM SAS_SegmentoRed WHERE ESSEDETRABAJO = 1
 
@@ -788,7 +788,7 @@ namespace Asistencia.Helper
             List<Grupo> result = new List<Grupo>();
             List<SAS_TipoDeSistema> resultado = new List<SAS_TipoDeSistema>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_TipoDeSistema.Where(x => x.estado == 1 && x.tipoDispositivoCodigo == idTipoDispositivo).ToList();
                 foreach (var item in resultado)
@@ -815,7 +815,7 @@ namespace Asistencia.Helper
             List<DFormatoSimple> result = new List<DFormatoSimple>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_DispositivosListadoHerramientasParaTareasIT.ToList();
 
@@ -862,7 +862,7 @@ namespace Asistencia.Helper
             List<DFormatoSimple> result = new List<DFormatoSimple>();
             //List<SAS_ListadoColaboradoresByDispositivo> resultado = new List<SAS_ListadoColaboradoresByDispositivo>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 //resultado = Modelo.SAS_ListadoColaboradoresByDispositivo.Where(x => x.idcodigogeneral == codigoColaborador && x.tipoDispositivoCodigo == tipoDispositivo /*&& x.estado == "ACTIVO" */ && tipoDispositivo != null).ToList();
                 var resultado = Modelo.SAS_ListadoColaboradoresByDispositivoByIdColaborador(codigoColaborador).ToList().Where(x => x.tipoDispositivoCodigo == tipoDispositivo).ToList();
@@ -881,7 +881,7 @@ namespace Asistencia.Helper
             List<DFormatoSimple> result = new List<DFormatoSimple>();
             List<SAS_LineasCelularesCoporativasAll> resultado = new List<SAS_LineasCelularesCoporativasAll>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_LineasCelularesCoporativasAlls.Where(x => x.idCodigoGeneral.Trim() == codigoColaborador).ToList();
                 foreach (var item in resultado)
@@ -985,7 +985,7 @@ namespace Asistencia.Helper
             List<Grupo> result = new List<Grupo>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = (from item in Modelo.SAS_SoporteCanalDeAtencion.ToList()
                           group item by new { item.id } into j
@@ -1351,7 +1351,7 @@ namespace Asistencia.Helper
         {
             List<DFormatoSimple> resultado = new List<DFormatoSimple>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado01 = Modelo.SAS_ParteDiariosDeDispositivosMotivoInactivo.Where(x => x.Estado == 1).ToList();
                 resultado = (from items in resultado01.ToList()
@@ -1371,7 +1371,7 @@ namespace Asistencia.Helper
         {
             List<DFormatoSimple> resultado = new List<DFormatoSimple>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado01 = Modelo.SAS_DispositivoTipoDispositivo.Where(x => x.enFormatoSolicitud == 1).ToList();
                 resultado = (from items in resultado01.ToList()

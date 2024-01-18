@@ -15,7 +15,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DispositivoMaintenanceByDeviceIDResult> listado = new List<SAS_DispositivoMaintenanceByDeviceIDResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_DispositivoMaintenanceByDeviceID(codigo).ToList();
             }
@@ -28,7 +28,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DispositivoMaintenanceByDeviceIDResult> listado = new List<SAS_DispositivoMaintenanceByDeviceIDResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_DispositivoMaintenanceByDeviceID(device.id).ToList();
             }

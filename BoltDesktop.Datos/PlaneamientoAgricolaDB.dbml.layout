@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PlaneamientoAgricolaDB">
+  <DataContextMoniker Name="/PlaneamientoAgricolaDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4f46748b-7e85-4a0e-9163-78fba1c1960c" isExpanded="false" absoluteBounds="0.625, 2, 2, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/DPROGRAMASEMANA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4e2314e-65e0-49fb-86fe-fc35255fc1f7" absoluteBounds="0.64000000000000012, 2.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6180338-32ec-4160-bf67-019389e4e726" isExpanded="false" absoluteBounds="0.5, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/PROGRAMASEMANA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf22b8a9-9931-4c96-bd41-4a84c2a5bf3d" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48b76b6b-9145-4f4c-bad1-90316e890b02" isExpanded="false" absoluteBounds="1, 3.25, 2.625, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/DetalleRequerimientosInternos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5c4f957-5e44-4ca7-960e-37d3e6cf5a4f" absoluteBounds="1.015, 3.71, 2.5949999999999998, 14.6719970703125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63c8e520-d85a-4386-8b6f-cdd83e7ca7e6" isExpanded="false" absoluteBounds="3.75, 4, 2.5, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/ResponsableProgramaSemanal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39aca5d0-2573-4ee7-97ab-b6d6716f3846" absoluteBounds="3.7650000000000006, 4.46, 1.9700000000000002, 14.0950927734375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc650d57-36cc-4e00-91d8-c68114155561" isExpanded="false" absoluteBounds="4, 4.875, 2, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/TipoRecursoProgramaSemanal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae490f09-d3fa-4fa2-99e9-b097573dd5f2" absoluteBounds="4.0150000000000006, 5.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -15,7 +15,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.idReferencia.Trim() == codigoReferencia && x.formulario.Trim().ToUpper() == formulario.Trim().ToUpper() && x.estado == 1).ToList();
             }
@@ -27,7 +27,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.id.ToString().Trim() == codigo && x.estado == 1).ToList();
             }
@@ -40,7 +40,7 @@ namespace Asistencia.Negocios
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             int resultadoOperacion = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 #region
                 var result = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.id == item.id).ToList();
@@ -99,7 +99,7 @@ namespace Asistencia.Negocios
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             int resultadoOperacion = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.id == item.id).ToList();
                 if (result != null)
@@ -134,7 +134,7 @@ namespace Asistencia.Negocios
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             int resultadoOperacion = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.id == id).ToList();
                 if (result != null)
@@ -164,7 +164,7 @@ namespace Asistencia.Negocios
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             int resultadoOperacion = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.id == id).ToList();
                 if (result != null)
@@ -203,7 +203,7 @@ namespace Asistencia.Negocios
             List<SAS_DocumentosAdjuntosAlFormulario> listado = new List<SAS_DocumentosAdjuntosAlFormulario>();
             int resultadoOperacion = 1;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var result = Modelo.SAS_DocumentosAdjuntosAlFormulario.Where(x => x.id == item.id).ToList();
                 if (result != null)

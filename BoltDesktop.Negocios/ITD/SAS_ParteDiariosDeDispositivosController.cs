@@ -16,7 +16,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ParteDiariosDeDispositivosAllByPeriodoResult> result = new List<SAS_ParteDiariosDeDispositivosAllByPeriodoResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_ParteDiariosDeDispositivosAllByPeriodo(desde, hasta).ToList();
             }
@@ -28,7 +28,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ParteDiariosDeDispositivosDetalleByCodigoResult> result = new List<SAS_ParteDiariosDeDispositivosDetalleByCodigoResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_ParteDiariosDeDispositivosDetalleByCodigo(codigo).ToList();
             }
@@ -39,7 +39,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoDeDispositivosByProveedorByTipoHardwareySedeResult> result = new List<SAS_ListadoDeDispositivosByProveedorByTipoHardwareySedeResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_ListadoDeDispositivosByProveedorByTipoHardwareySede(idClieprov, idTipoHardware, idSede).ToList();
             }
@@ -50,7 +50,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoDeDispositivosByProveedorByTipoHardwareySedeRegisterResult> result = new List<SAS_ListadoDeDispositivosByProveedorByTipoHardwareySedeRegisterResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_ListadoDeDispositivosByProveedorByTipoHardwareySedeRegister(idClieprov, idTipoHardware, idSede, fecha).ToList();
             }
@@ -66,7 +66,7 @@ namespace Asistencia.Negocios
             int correlativo = 0;
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 correlativo = Modelo.SAS_ParteDiariosDeDispositivos.ToList().Count > 0 ? Modelo.SAS_ParteDiariosDeDispositivos.Max(x => x.Codigo) : 0;
             }
@@ -79,7 +79,7 @@ namespace Asistencia.Negocios
         {
             int codigo = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 if (itemAnular != null)
                 {
@@ -115,7 +115,7 @@ namespace Asistencia.Negocios
         {
             int codigo = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 if (itemDelete != null)
                 {
@@ -151,7 +151,7 @@ namespace Asistencia.Negocios
 
             int codigo = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 if (itemParteDiarioDispositivo != null)
                 {
@@ -338,7 +338,7 @@ namespace Asistencia.Negocios
             List<SAS_PartesDiariosDeDispositivosByPeriodByCodigoResult> result = new List<SAS_PartesDiariosDeDispositivosByPeriodByCodigoResult>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_PartesDiariosDeDispositivosByPeriodByCodigo(codigoDispositivo, desde, hasta).ToList();
             }
@@ -350,7 +350,7 @@ namespace Asistencia.Negocios
 
             int codigo = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 if (itemParteDiarioDispositivo != null)
                 {
@@ -409,7 +409,7 @@ namespace Asistencia.Negocios
         {
             int resultadoDelProceso = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 foreach (var item in detail)
                 {
@@ -521,7 +521,7 @@ namespace Asistencia.Negocios
         {
             List<DFormatoSimple> result = new List<DFormatoSimple>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
 
                 // Obtener listado Disponibles
@@ -578,7 +578,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor> result = new List<SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor.ToList();
             }
@@ -589,7 +589,7 @@ namespace Asistencia.Negocios
         {
             int cantidadDeRegistroCreador = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 SAS_ParteDiariosDeDispositivosController model = new SAS_ParteDiariosDeDispositivosController();
                 /* Separa por tres grupos: Sede | Proveedor | Tipo de dispositivos */

@@ -13,7 +13,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_DispositivoComponentesByDeviceResult> resultado = new List<SAS_DispositivoComponentesByDeviceResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_DispositivoComponentesByDevice(device.id).ToList();
             }

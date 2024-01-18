@@ -17,7 +17,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_CuentasDominio> listado = new List<SAS_CuentasDominio>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_CuentasDominio.ToList();
             }
@@ -29,7 +29,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_CuentasDominioListado> listado = new List<SAS_CuentasDominioListado>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_CuentasDominioListado.ToList();
             }
@@ -42,7 +42,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -109,7 +109,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -314,7 +314,7 @@ namespace Asistencia.Negocios
 
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultado = Modelo.SAS_CuentasDominio.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
@@ -349,7 +349,7 @@ namespace Asistencia.Negocios
             int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -382,7 +382,7 @@ namespace Asistencia.Negocios
 
             List<SAS_CuentasDominioDetalleByIdResult> listado = new List<SAS_CuentasDominioDetalleByIdResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado = Modelo.SAS_CuentasDominioDetalleById(item.id).ToList();
             }
@@ -394,7 +394,7 @@ namespace Asistencia.Negocios
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-           using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+           using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "BackUp" });
                 listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Imagen" });
@@ -416,7 +416,7 @@ namespace Asistencia.Negocios
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-           using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+           using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "BackUp" });
                 listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Imagen" });

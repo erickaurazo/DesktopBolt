@@ -137,7 +137,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult> result = new List<SAS_ObtenerListadoPalletDisponiblesByCodigoPLResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 result = Modelo.SAS_ObtenerListadoPalletDisponiblesByCodigoPL(packingListCodigo).OrderBy(x => x.posicion).ToList();
             }

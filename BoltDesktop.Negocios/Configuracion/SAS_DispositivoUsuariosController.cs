@@ -17,7 +17,7 @@ namespace Asistencia.Negocios
             List<SAS_ListadoColaboradoresByDispositivo> resultado2 = new List<SAS_ListadoColaboradoresByDispositivo>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_ListadoColaboradoresByDispositivo.ToList();
 
@@ -119,7 +119,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult> resultado = new List<SAS_ListadoColaboradoresByDispositivoByIdColaboradorResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_ListadoColaboradoresByDispositivoByIdColaborador(idCodigoGeneral).ToList();
             }
@@ -135,7 +135,7 @@ namespace Asistencia.Negocios
             List<SAS_ListadoColaboradoresByDispositivo> resultado2 = new List<SAS_ListadoColaboradoresByDispositivo>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_ListadoColaboradoresByDispositivo.Where(x => x.idcodigogeneral == idCodigoTrabajador).ToList();
 
@@ -237,7 +237,7 @@ namespace Asistencia.Negocios
             List<SAS_ListadoColaboradoresByDispositivo> resultado2 = new List<SAS_ListadoColaboradoresByDispositivo>();
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_ListadoColaboradoresByDispositivo.ToList();
             }
@@ -249,7 +249,7 @@ namespace Asistencia.Negocios
         {
             List<SAS_ListadoColaboradoresByDispositivoByCodigoResult> resultado = new List<SAS_ListadoColaboradoresByDispositivoByCodigoResult>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 resultado = Modelo.SAS_ListadoColaboradoresByDispositivoByCodigo(codigo).ToList();
             }
@@ -260,7 +260,7 @@ namespace Asistencia.Negocios
         {
             int tipoRegistro = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -317,7 +317,7 @@ namespace Asistencia.Negocios
         {
             int tipoRegistro = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -361,7 +361,7 @@ namespace Asistencia.Negocios
         {
             int tipoRegistro = 0;
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
@@ -472,7 +472,7 @@ namespace Asistencia.Negocios
             oItem.idcodigoGeneral = item.idcodigoGeneral;
 
             string cnx = ConfigurationManager.AppSettings[conection != null ? conection : "SAS"].ToString();
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 var resultQuery = Modelo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal(item.idcodigoGeneral).ToList();
 

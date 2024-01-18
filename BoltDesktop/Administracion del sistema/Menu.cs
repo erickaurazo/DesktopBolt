@@ -17,6 +17,7 @@ using ComparativoHorasVisualSATNISIRA.Evaluaciones_agricolas;
 using ComparativoHorasVisualSATNISIRA.Exportaciones;
 using ComparativoHorasVisualSATNISIRA.Maquinaria;
 using ComparativoHorasVisualSATNISIRA.MRP;
+using ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola;
 using ComparativoHorasVisualSATNISIRA.Presupuestos;
 using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.T.I;
@@ -185,6 +186,8 @@ namespace Asistencia
             GoPRESUPUESTOS.Enabled = true;
             GoPRESUPUESTOS.Visible = true;
 
+            GoPlaneamientoAgricola.Enabled = true;
+            GoPlaneamientoAgricola.Visible = true;
 
 
         }
@@ -507,6 +510,33 @@ namespace Asistencia
                             }
                             #endregion
                         }
+
+                        else if (itmOpcion.Name.ToUpper().Contains("GoPlaneamientoAgricola".ToUpper()) && nombreModulo.ToUpper() == "GoPlaneamientoAgricola".ToUpper())
+                        {
+                            #region GoPlaneamientoAgricola()
+                            string nameForm = (itmOpcion.Name.ToUpper());
+                            // Verifico sólo que tenga acceso al formulario para activar o desactivar su vista.
+                            if (ValidateAccessByUserAndFormDescription(nameForm) == true)
+                            {
+                                //Aqui lo deshabilitamos
+                                ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                                ((ToolStripMenuItem)itmOpcion).Visible = true;
+                            }
+                            else
+                            {
+                                //Puede ser padre --> si es padre lo valido y lo dejo pasar, caso contrario no le doy acceso
+                                if (ValidateAccessByUserAndFormDescriptionIsParent(nameForm) == true)
+                                {
+                                    //Aqui lo deshabilitamos
+                                    ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                                    ((ToolStripMenuItem)itmOpcion).Visible = true;
+                                }
+                            }
+                            #endregion
+                        }
+
+
+
                         else if (itmOpcion.Name.ToUpper().Contains("GoIT".ToUpper()) && nombreModulo.ToUpper() == "GoIT".ToUpper())
                         {
                             #region TI()
@@ -814,6 +844,30 @@ namespace Asistencia
                         if (itmOpcion.Name.ToUpper().Contains("GoPlanilla".ToUpper()) && nombreModulo.ToUpper() == "GoPlanilla".ToUpper())
                         {
                             #region Planillas() 
+                            string nameForm = (itmOpcion.Name.ToUpper());
+                            // Verifico sólo que tenga acceso al formulario para activar o desactivar su vista.
+                            if (ValidateAccessByUserAndFormDescription(nameForm) == true)
+                            {
+                                //Aqui lo deshabilitamos
+                                ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                                ((ToolStripMenuItem)itmOpcion).Visible = true;
+                            }
+                            else
+                            {
+                                //Puede ser padre --> si es padre lo valido y lo dejo pasar, caso contrario no le doy acceso
+                                if (ValidateAccessByUserAndFormDescriptionIsParent(nameForm) == true)
+                                {
+                                    //Aqui lo deshabilitamos
+                                    ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                                    ((ToolStripMenuItem)itmOpcion).Visible = true;
+                                }
+                            }
+                            #endregion
+                        }
+
+                        else if (itmOpcion.Name.ToUpper().Contains("GoPlaneamientoAgricola".ToUpper()) && nombreModulo.ToUpper() == "GoPlaneamientoAgricola".ToUpper())
+                        {
+                            #region GoPlaneamientoAgricola()
                             string nameForm = (itmOpcion.Name.ToUpper());
                             // Verifico sólo que tenga acceso al formulario para activar o desactivar su vista.
                             if (ValidateAccessByUserAndFormDescription(nameForm) == true)
@@ -1546,6 +1600,8 @@ namespace Asistencia
             GoSST.Enabled = true;
             GoSST.Visible = true;
 
+            GoPlaneamientoAgricola.Enabled =  true;
+            GoPlaneamientoAgricola.Visible = true;
 
             GoPRESUPUESTOS.Enabled = true;
             GoPRESUPUESTOS.Visible = true;
@@ -5183,6 +5239,42 @@ namespace Asistencia
                 MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
                 return;
             }
+        }
+
+        private void GoPlaneamientoAgricola_Click(object sender, EventArgs e)
+        {
+            var privilegesByUserByModule = privilegesByUser.Where(x => x.nombreEnElSistema.ToUpper().Trim().Contains("GoPlaneamientoAgricola".ToUpper())).ToList();
+            ActivarModulo("GoPlaneamientoAgricola", this, privilegesByUserByModule);
+        }
+
+        private void programaSemanalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //ConformacionDeCarga
+            string form2 = GoPlaneamientoAgricolaMovimientoProgramaSemanal.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                ProgramaAgricola frmHijo = new ProgramaAgricola("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                // frmHijo.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+            
         }
     }
 }

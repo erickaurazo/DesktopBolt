@@ -57,6 +57,7 @@
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.generarTicketQRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.gbCabecera.SuspendLayout();
             this.gbListado.SuspendLayout();
@@ -306,16 +307,17 @@
             // subMenu
             // 
             this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnImprimirTicketQR});
+            this.btnImprimirTicketQR,
+            this.generarTicketQRToolStripMenuItem});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(158, 26);
+            this.subMenu.Size = new System.Drawing.Size(244, 70);
             // 
             // btnImprimirTicketQR
             // 
             this.btnImprimirTicketQR.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTicketQR.Image")));
             this.btnImprimirTicketQR.Name = "btnImprimirTicketQR";
-            this.btnImprimirTicketQR.Size = new System.Drawing.Size(157, 22);
-            this.btnImprimirTicketQR.Text = "Imprimir tickets";
+            this.btnImprimirTicketQR.Size = new System.Drawing.Size(243, 22);
+            this.btnImprimirTicketQR.Text = "Generar Ticket | Codigo de Barra";
             this.btnImprimirTicketQR.Click += new System.EventHandler(this.btnImprimirTicketQR_Click);
             // 
             // stsBarraEstado
@@ -341,6 +343,13 @@
             // printDialog
             // 
             this.printDialog.UseEXDialog = true;
+            // 
+            // generarTicketQRToolStripMenuItem
+            // 
+            this.generarTicketQRToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generarTicketQRToolStripMenuItem.Image")));
+            this.generarTicketQRToolStripMenuItem.Name = "generarTicketQRToolStripMenuItem";
+            this.generarTicketQRToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.generarTicketQRToolStripMenuItem.Text = "Generar Ticket QR";
             // 
             // Productos
             // 
@@ -393,5 +402,6 @@
         private Telerik.WinControls.UI.CommandBarButton btnImprimir;
         private System.Windows.Forms.ToolStripProgressBar progressBar;
         private System.Windows.Forms.PrintDialog printDialog;
+        private System.Windows.Forms.ToolStripMenuItem generarTicketQRToolStripMenuItem;
     }
 }

@@ -20,9 +20,14 @@ namespace ComparativoHorasVisualSATNISIRA.Administracion_del_sistema
 {
     public partial class GoSistemaCatalogoUsersBoltDesktopCopiarPrivilegios : Form
     {
-        const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
-        //const string passwordCorreo = @"YF6TE-XWW79-A77WE-FLLM7-6N5A2";
-        const string passwordCorreo = @"iompqiiuhkjngkjr";
+        //const string usuarioCorreo = "notify.bolt.agrosaturno@outlook.com";
+        //const string passwordCorreo = @"iompqiiuhkjngkjr";
+
+        const string usuarioCorreo = "notify.bolt@gmail.com";
+        const string passwordCorreo = "wppi kiav vegf sesx";
+
+
+
         private string companyId;
         private string conection;
         private PrivilegesByUser privilege;
@@ -202,10 +207,12 @@ namespace ComparativoHorasVisualSATNISIRA.Administracion_del_sistema
                 mail.Subject = Asunto;
                 mail.Body = Mensaje.ToString();
 
-                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                // SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
                 smtp.Port = 587;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.UseDefaultCredentials = true;
+                smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new System.Net.NetworkCredential(usuarioCorreo, passwordCorreo);
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
