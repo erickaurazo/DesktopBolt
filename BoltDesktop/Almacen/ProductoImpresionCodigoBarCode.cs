@@ -16,14 +16,14 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ProductoImpresionCodigoBarraRPT : ReportClass {
+    public class ProductoImpresionCodigoBarCode : ReportClass {
         
-        public ProductoImpresionCodigoBarraRPT() {
+        public ProductoImpresionCodigoBarCode() {
         }
         
         public override string ResourceName {
             get {
-                return "ProductoImpresionCodigoBarraRPT.rpt";
+                return "ProductoImpresionCodigoBarCode.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen {
         
         public override string FullResourceName {
             get {
-                return "ComparativoHorasVisualSATNISIRA.Almacen.ProductoImpresionCodigoBarraRPT.rpt";
+                return "ComparativoHorasVisualSATNISIRA.Almacen.ProductoImpresionCodigoBarCode.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,20 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_idproducto {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedProductoImpresionCodigoBarraRPT : Component, ICachedReport {
+    public class CachedProductoImpresionCodigoBarCode : Component, ICachedReport {
         
-        public CachedProductoImpresionCodigoBarraRPT() {
+        public CachedProductoImpresionCodigoBarCode() {
         }
         
         [Browsable(false)]
@@ -129,7 +137,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ProductoImpresionCodigoBarraRPT rpt = new ProductoImpresionCodigoBarraRPT();
+            ProductoImpresionCodigoBarCode rpt = new ProductoImpresionCodigoBarCode();
             rpt.Site = this.Site;
             return rpt;
         }

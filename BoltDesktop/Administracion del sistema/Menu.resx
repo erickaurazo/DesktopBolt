@@ -215,13 +215,13 @@
   </data>
   <data name="GoPlaneamientoAgricola.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAEySURBVDhPzdPPK0VBAMXxUUroYaGQXiHyo2QhZf1KSrKR
-        HxsUWZCNJBsWNkjkRwilFIklf6HvmTP35tooWTj1effc2+vOvJl54V+nDu+YiXe/yBl6cI4+Pfgp1emq
-        TGHJNdTiGfXQd4YwnHqeWdziCgd4QhWydOMVd1jDLlaQZwtl1zCPdddCrtNVace2q7MBjaKsQlP8not0
-        VTqx6eqMYdI1zKHiWsjXF4xjwtXR9C9dQwuOXPPo2b5rjNaq2dUr/pDotyl6WatrzA56XcMItOCPGNWD
-        N32QJmi7OtAGrbjSgGwBNW2Nri2swQfCNJZVSAmavmZwAh2iUxzjHovItvcQcQaKdmEPjfHOh2YBL9Do
-        /ciiQbSghUVUBqC3amQdY50F/R8GoZloFjepd+EvEsInxqoqhDTFb1wAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAATJJREFUOE/N088rRUEAxfFRSuhhoZBeIfKjZCFl/UpKspEfGxRZkI0kGxY2SORH
+        CKUUiSV/oe+ZM/fm2ihZOPV599zb6868mXnhX6cO75iJd7/IGXpwjj49+CnV6apMYck11OIZ9dB3hjCc
+        ep5Z3OIKB3hCFbJ04xV3WMMuVpBnC2XXMI9110Ku01Vpx7arswGNoqxCU/yei3RVOrHp6oxh0jXMoeJa
+        yNcXjGPC1dH0L11DC45c8+jZvmuM1qrZ1Sv+kOi3KXpZq2vMDnpdwwi04I8Y1YM3fZAmaLs60AatuNKA
+        bAE1bY2uLazBB8I0llVICZq+ZnACHaJTHOMei8i29xBxBop2YQ+N8c6HZgEv0Oj9yKJBtKCFRVQGoLdq
+        ZB1jnQX9HwahmWgWN6l34S8SwifGqiqENMVvXAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="GoEvaluacionAgricola.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

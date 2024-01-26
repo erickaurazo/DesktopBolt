@@ -328,7 +328,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 if (_formulario == string.Empty)
                 {
                     ListadoPedidos = modelo.ObternerListadoSeguimientoPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
-                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido).ToList();
+                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido, string.Empty).ToList();
                     ListadoOrdenesServicio = modelo.ObternerListadoOrdenesServicioPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
                     ListadoOrdenesCompra = modelo.ObternerListadoOrdenesCompraPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
                     ListadoPedidosSeguimiento = modelo.ObternerListadoSeguimientoPorPeriodoCompleto("SAS", desde, hasta, idpedidoServicio).ToList();
@@ -336,7 +336,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 else if (_formulario.ToUpper() == "PEDIDO COMPRAS".ToUpper())
                 {
                     ListadoPedidos = modelo.ObternerListadoSeguimientoPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
-                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido).ToList();
+                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido, string.Empty).ToList();
                     //ListadoOrdenesServicio = modelo.ObternerListadoOrdenesServicioPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
                     //ListadoOrdenesCompra = modelo.ObternerListadoOrdenesCompraPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
                     ListadoPedidosSeguimiento = modelo.ObternerListadoSeguimientoPorPeriodoCompleto("SAS", desde, hasta, idpedidoServicio).ToList();
@@ -344,7 +344,8 @@ namespace ComparativoHorasVisualSATNISIRA
                 else if (_formulario.ToUpper() == "PEDIDO SERVICIOS".ToUpper())
                 {
                     //ListadoPedidos = modelo.ObternerListadoSeguimientoPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
-                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido).ToList();
+
+                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido, string.Empty).ToList();
                     //ListadoOrdenesServicio = modelo.ObternerListadoOrdenesServicioPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
                     //ListadoOrdenesCompra = modelo.ObternerListadoOrdenesCompraPorPeriodo("SAS", desde, hasta, idpedidoServicio).ToList();
                     //ListadoPedidosSeguimiento = modelo.ObternerListadoSeguimientoPorPeriodoCompleto("SAS", desde, hasta, idpedidoServicio).ToList();
@@ -675,7 +676,7 @@ namespace ComparativoHorasVisualSATNISIRA
                     modelo = new PedidoControllers();
                     resultado = modelo.ActualizarEstadoPedidoServicioDocumento("SAS", idpedidoServicio, IdEstadoNuevo);
                     ListadoPedidosServicios = new List<SAS_SeguimientoPedidosServicio2Result>();
-                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido).ToList();
+                    ListadoPedidosServicios = modelo.ObternerSeguimientoPedidosServicio("SAS", Convert.ToDateTime(desde).ToString("yyyyMMdd"), Convert.ToDateTime(hasta).ToString("yyyyMMdd"), idpedido , string.Empty).ToList();
                 }
                 else if (tipoCambio == "D")
                 {

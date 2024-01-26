@@ -8,9 +8,9 @@ namespace Asistencia.Negocios
 {
     public class ProductoController
     {
-        public List<SAS_ListadoProductos> GetListAll(string connection, int incluirAnulados)
+        public List<SAS_ListadoProducto> GetListAll(string connection, int incluirAnulados)
         {
-            List<SAS_ListadoProductos> resultado = new List<SAS_ListadoProductos>();
+            List<SAS_ListadoProducto> resultado = new List<SAS_ListadoProducto>();
 
             string cnx = ConfigurationManager.AppSettings[connection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
@@ -27,9 +27,9 @@ namespace Asistencia.Negocios
         }
 
 
-        public SAS_ListadoProductos GetDescriptionProductById(string connection, string idproducto)
+        public SAS_ListadoProducto GetDescriptionProductById(string connection, string idproducto)
         {
-            SAS_ListadoProductos resultado = new SAS_ListadoProductos();
+            SAS_ListadoProducto resultado = new SAS_ListadoProducto();
 
             string cnx = ConfigurationManager.AppSettings[connection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))

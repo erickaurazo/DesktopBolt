@@ -21,6 +21,7 @@ using Telerik.WinControls.UI.Localization;
 using System.Reflection;
 using ComparativoHorasVisualSATNISIRA.Administracion_del_sistema;
 using Telerik.WinControls.Data;
+using System.Collections;
 
 namespace ComparativoHorasVisualSATNISIRA.T.I
 {
@@ -37,6 +38,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private SAS_LineasCelularesCoporativa item;
         private SAS_LineasCelularesCoporativasListadoAllResult itemSelecionado;
         private SAS_LineasCelularesCoporativasController modelo;
+        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ListaDetalleRegistro = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ListaDetalleEliminar = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+        private List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult> ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
+
+
         public List<int> valores_permitidos = new List<int>() { 8, 13, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 46 };
         private string lineaCelular = string.Empty;
         private string mensajeDeValidacion;
@@ -56,6 +62,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             Inicio();
             user2 = new SAS_USUARIOS();
             user2.IdUsuario = Environment.UserName.Trim();
+            conection = "SAS";
+            companyId = "001";
             Actualizar();
         }
 
@@ -319,7 +327,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             CambiarEstado();
         }
 
-        private void ObtenerObjeto()
+        private SAS_LineasCelularesCoporativa ObtenerObjetoCabecera()
         {
 
             try
@@ -348,8 +356,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
-                return;
+
             }
+            return item;
         }
 
         private void ObtenerObjetoEliminar()
@@ -372,7 +381,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                ObtenerObjeto();
+                ObtenerObjetoCabecera();
                 if (item.lineaCelular != string.Empty)
                 {
                     modelo = new SAS_LineasCelularesCoporativasController();
@@ -542,9 +551,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
 
-                ObtenerObjeto();
+
+                item = new SAS_LineasCelularesCoporativa();
+                item = ObtenerObjetoCabecera();
+                ListaDetalleRegistro = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+                ListaDetalleRegistro = ObtenerObjetoDetalle();
+
                 modelo = new SAS_LineasCelularesCoporativasController();
-                int resultado = modelo.ToRegister("SAS", item);
+                int resultado = modelo.ToRegister("SAS", item, ListaDetalleEliminar, ListaDetalleRegistro);
                 btnGrabar.Enabled = !false;
                 btnCancelar.Enabled = !false;
                 if (resultado == 0)
@@ -569,6 +583,53 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 return;
             }
+        }
+
+        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ObtenerObjetoDetalle()
+        {
+
+            #region Obtener Colaboradores()
+            List<SAS_LineasCelularesCoporativasPersonalAsignado> Asignaciones = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+            if (this.dgvDetalleAsignacionesAPersonal != null)
+            {
+                if (this.dgvDetalleAsignacionesAPersonal.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow fila in this.dgvDetalleAsignacionesAPersonal.Rows)
+                    {
+                        if (fila.Cells["chLineaCelularPersonalID"].Value.ToString().Trim() != String.Empty)
+                        {
+                            try
+                            {
+                                #region Obtener detalle ()
+                                SAS_LineasCelularesCoporativasPersonalAsignado oColaborador = new SAS_LineasCelularesCoporativasPersonalAsignado();
+                                oColaborador.LineaCelularPersonalID = fila.Cells["chLineaCelularPersonalID"].Value != null ? Convert.ToInt32(fila.Cells["chLineaCelularPersonalID"].Value.ToString().Trim()) : 0;
+                                oColaborador.LineaCelularID = fila.Cells["chLineaCelularID"].Value != null ? Convert.ToInt32(fila.Cells["chLineaCelularID"].Value.ToString().Trim()) : (this.txtCodigo.Text != string.Empty ? Convert.ToInt32(txtCodigo.Text.Trim()) : 0);
+                                oColaborador.PersonalID = fila.Cells["chPersonalID"].Value != null ? fila.Cells["chPersonalID"].Value.ToString().Trim() : string.Empty;
+                                oColaborador.Desde = (fila.Cells["chDesde"].Value != null && fila.Cells["chDesde"].Value.ToString().Trim() != "" && fila.Cells["chDesde"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chDesde"].Value.ToString().Trim()) : DateTime.Now;
+                                oColaborador.Hasta = (fila.Cells["chHasta"].Value != null && fila.Cells["chHasta"].Value.ToString().Trim() != "" && fila.Cells["chHasta"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chHasta"].Value.ToString().Trim()) : (DateTime?)null;
+                                oColaborador.ReferenciaID =          (fila.Cells["chReferenciaID"].Value != null ? Convert.ToInt32((fila.Cells["chReferenciaID"].Value.ToString().Trim() != string.Empty ? fila.Cells["chReferenciaID"].Value.ToString().Trim() : "0")) : (int?)null);
+                                oColaborador.ReferenciaSolicitudID = (fila.Cells["chReferenciaSolicitudID"].Value != null ? Convert.ToInt32((fila.Cells["chReferenciaSolicitudID"].Value.ToString().Trim() != string.Empty ? fila.Cells["chReferenciaSolicitudID"].Value.ToString().Trim() : "0")) : (int?)null);
+                                oColaborador.Glosa = fila.Cells["chGlosa"].Value != null ? fila.Cells["chGlosa"].Value.ToString().Trim() : string.Empty;
+                                oColaborador.Estado = fila.Cells["chEstado"].Value != null ? Convert.ToDecimal(fila.Cells["chEstado"].Value.ToString().Trim()) : Convert.ToDecimal(1);
+                                #endregion
+                                Asignaciones.Add(oColaborador);
+                            }
+                            catch (Exception Ex)
+                            {
+                                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+
+            #endregion
+
+            return Asignaciones;
         }
 
         private bool ValidarFormulario()
@@ -698,6 +759,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void dgvRegistro_SelectionChanged(object sender, EventArgs e)
         {
             IdLineaCelular = 0;
+            ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
             try
             {
                 Limpiar();
@@ -717,18 +779,28 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             IdLineaCelular = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chId"].Value.ToString()) : 0);
                             int codigoNumerico = Convert.ToInt32(codigo);
                             var resultado = listado.Where(x => x.id == codigoNumerico).ToList();
-                            if (resultado.ToList().Count == 1)
-                            {
-                                itemSelecionado = resultado.Single();
-                                itemSelecionado.id = codigoNumerico;
-                                AsignarObjetoEnFormularioDeEdicion(itemSelecionado);
-                            }
-                            else if (resultado.ToList().Count > 1)
+                            if (resultado.ToList().Count >= 1)
                             {
                                 itemSelecionado = resultado.ElementAt(0);
                                 itemSelecionado.id = codigoNumerico;
                                 AsignarObjetoEnFormularioDeEdicion(itemSelecionado);
+                                modelo = new SAS_LineasCelularesCoporativasController();
+                                ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
+                                ListadoColaboradoresAsignados = modelo.ObtejerListadoDeLineasCelularesCoporativasPersonalByLineaID(conection != null ? conection : "SAS", IdLineaCelular);
+                                if (ListadoColaboradoresAsignados != null && ListadoColaboradoresAsignados.ToList().Count >= 1)
+                                {
+                                    dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoColaboradoresAsignados.ToDataTable<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>());
+                                    dgvDetalleAsignacionesAPersonal.Refresh();
+                                }
+                                else
+                                {
+                                    ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
+                                    dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoColaboradoresAsignados.ToDataTable<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>());
+                                    dgvDetalleAsignacionesAPersonal.Refresh();
+                                }
+
                             }
+
                             else
                             {
                                 Limpiar();
@@ -1461,5 +1533,230 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
+        private void dgvDetalleAsignacionesAPersonal_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            modelo = new SAS_LineasCelularesCoporativasController();
+            if (((DataGridView)sender).RowCount > 0)
+            {
+                #region Colaborador() 
+                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chPersonalID" || ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chPersonal")
+                {
+                    if (e.KeyCode == Keys.F3)
+                    {
+                        frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
+                        search.ListaGeneralResultado = modelo.ObtenerListadoDeColaboradores(conection);
+                        search.Text = "Buscar colaboradores y/ personal asignado";
+                        search.txtTextoFiltro.Text = "";
+                        if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            //idRetorno = busquedas.ObjetoRetorno.Codigo; 
+                            this.dgvDetalleAsignacionesAPersonal.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonalID"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvDetalleAsignacionesAPersonal.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonal"].Value = search.ObjetoRetorno.Descripcion;
+
+                        }
+                    }
+                }
+                #endregion 
+            }
+        }
+
+        private void btnActivarEstado_Click(object sender, EventArgs e)
+        {
+            CambiarEstadoDetalle();
+        }
+
+        private void CambiarEstadoDetalle()
+        {
+            try
+            {
+
+                if (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstado"].Value.ToString() == "1")
+                {
+                    dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstado"].Value = "0";
+                    //dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoSW"].Value = "INACTIVO";
+                }
+                else
+                {
+                    dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstado"].Value = "1";
+                    //dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoSW"].Value = "ACTIVO";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+
+        private void btnAgregarDetalle_Click(object sender, EventArgs e)
+        {
+            AddItemDetalle();
+        }
+
+        private void AddItemDetalle()
+        {
+            try
+            {
+                if (dgvDetalleAsignacionesAPersonal != null)
+                {
+                    ArrayList array = new ArrayList();
+                    array.Add(0); // LineaCelularPersonalID | 10     | chLineaCelularPersonalID            
+                    array.Add(Convert.ToInt32(txtCodigo.Text.Trim())); // LineaCelularID 10 | chLineaCelularID
+                    array.Add(string.Empty); // PersonalID | 100301 | chPersonalID
+                    array.Add(string.Empty); // Personal  | HUAMAN JIMENEZ, ANDREA CAROLINA      | chPersonal             
+                    array.Add(string.Empty); // xxxxxxxxxxxxxxxx | RETIRADO | chPersonalSituacion
+                    array.Add(string.Empty); // xxxxxxxxxxxxxxxx | EMPLEADOS REGIMEN AGRICOLA | chPersonalPlanilla
+                    array.Add(string.Empty); // xxxxxxxxxxxxxxxx | ASISTENTE DE EXPORTACIONES | chPersonalCargo
+                    array.Add(string.Empty); // xxxxxxxxxxxxxxxx | 77032141                   | chPersonalDocumentoDeIdentificacion
+                    array.Add(DateTime.Now.ToShortDateString()); // desde | 2009-04-08 00:00:00 | chDesde
+                    array.Add(DateTime.Now.AddYears(1).ToShortDateString()); // Hasta | 2009-04-08 00:00:00          | chHasta                              
+                    array.Add(Convert.ToInt32(0)); // ReferenciaID | 0       | chReferenciaID
+                    array.Add(Convert.ToInt32(0)); // ReferenciaSolicitudID | 0            | chReferenciaSolicitudID           
+                    array.Add(string.Empty); // Glosa | ALGUNA OBSERVACION COMO ASISTENTE DE EXPORTACIONES     | chGlosa
+                    array.Add(Convert.ToInt32(1)); // Estado | 1 | chEstado
+                    dgvDetalleAsignacionesAPersonal.AgregarFila(array);
+                }
+                else
+                {
+                    Formateador.MostrarMensajeAdvertencia(this, "Haga click en la Grilla a Modificar", "Validacion Ingreso de Datos");
+                }
+            }
+            catch (Exception ex)
+            {
+                Formateador.ControlExcepcion(this, this.Name, ex);
+            }
+        }
+
+
+        private void btnQuitarDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvDetalleAsignacionesAPersonal.RowCount > 0)
+            {
+                QuitarDetalle();
+            }
+        }
+
+
+
+        private void QuitarDetalle()
+        {
+            if (this.dgvDetalleAsignacionesAPersonal != null)
+            {
+                #region
+                if (dgvDetalleAsignacionesAPersonal.CurrentRow != null && dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chLineaCelularPersonalID"].Value != null)
+                {
+                    //if (MessageBox.Show(this, "¿Desea eliminar el elemento seleccionado?", "Confirmar Operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    //{
+                    try
+                    {
+
+                        Int32 dispositivoCodigo = (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chLineaCelularPersonalID"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chLineaCelularPersonalID"].Value) : 0);
+                        if (dispositivoCodigo != 0)
+                        {
+                            if (dispositivoCodigo != 0)
+                            {
+                                ListaDetalleEliminar.Add(new SAS_LineasCelularesCoporativasPersonalAsignado
+                                {
+                                    LineaCelularPersonalID = dispositivoCodigo,
+                                });
+                            }
+                        }
+
+                        dgvDetalleAsignacionesAPersonal.Rows.Remove(dgvDetalleAsignacionesAPersonal.CurrentRow);
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                        return;
+                    }
+                    //}
+                }
+                #endregion
+            }
+        }
+
+        private void BtnPorValidarAsignacion_Click(object sender, EventArgs e)
+        {
+            PorValidarAsignacion();
+        }
+
+        private void PorValidarAsignacion()
+        {
+            try
+            {
+                if (IdLineaCelular > 0)
+                {
+                    modelo = new SAS_LineasCelularesCoporativasController();
+                    int resultado = 0;
+                    resultado = modelo.PorValidarAsignacion("SAS", IdLineaCelular);
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
+                        Actualizar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("o se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Debe incluir una descripción", "Advertencia del sistema");
+                    this.txtLineaCelular.Focus();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+        }
+
+        private void btnEnProcesoDeReasignacion_Click(object sender, EventArgs e)
+        {
+            EnProcesoDeReasignacion();
+        }
+
+        private void EnProcesoDeReasignacion()
+        {
+            try
+            {
+                if (IdLineaCelular > 0)
+                {
+                    modelo = new SAS_LineasCelularesCoporativasController();
+                    int resultado = 0;
+                    resultado = modelo.EnProcesoDeReasignacion("SAS", IdLineaCelular);
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
+                        Actualizar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("o se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Debe incluir una descripción", "Advertencia del sistema");
+                    this.txtLineaCelular.Focus();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+        }
     }
 }

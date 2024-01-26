@@ -42,14 +42,14 @@ namespace Asistencia.Negocios
         
 
 
-        public List<SAS_SeguimientoPedidosServicio2Result> ObternerSeguimientoPedidosServicio(string conection, string desde, string hasta, string idPedido)
+        public List<SAS_SeguimientoPedidosServicio2Result> ObternerSeguimientoPedidosServicio(string conection, string desde, string hasta, string idPedido, string UsuarioID)
         {
             List<SAS_SeguimientoPedidosServicio2Result> resultado = new List<SAS_SeguimientoPedidosServicio2Result>();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
                 Modelo.CommandTimeout = 99999999;
-                resultado = Modelo.SAS_SeguimientoPedidosServicio2("001","", desde, hasta).ToList();
+                resultado = Modelo.SAS_SeguimientoPedidosServicio2("001","", desde, hasta, UsuarioID).ToList();
             }
 
             return resultado;

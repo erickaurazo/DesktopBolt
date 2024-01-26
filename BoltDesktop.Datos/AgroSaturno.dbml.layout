@@ -68,10 +68,10 @@
         <elementListCompartment Id="55a8c163-20a4-46ec-ac61-4f11ac25b36e" absoluteBounds="6.2650000000000006, 1.3350000000000009, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d810697d-dfb1-4a24-a2e1-dba9e633e148" isExpanded="false" absoluteBounds="15.375, 4.375, 3.5, 0.44999999999999929">
+    <classShape Id="d810697d-dfb1-4a24-a2e1-dba9e633e148" isExpanded="false" absoluteBounds="11.25, 5.625, 3.5, 0.44999999999999929">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SeguimientoPedidoCompras" />
       <nestedChildShapes>
-        <elementListCompartment Id="9252254c-2faf-4176-b2ed-4db4b8b5ea36" absoluteBounds="15.39, 4.8350000000000009, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9252254c-2faf-4176-b2ed-4db4b8b5ea36" absoluteBounds="11.265, 6.0850000000000009, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="b777da47-b202-4bcf-a26b-718ba0fdd352" isExpanded="false" absoluteBounds="0.5, 3.375, 2, 0.44999999999999929">
@@ -210,12 +210,6 @@
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_InfoPersonal" />
       <nestedChildShapes>
         <elementListCompartment Id="1dfc1522-a82d-4314-baca-8ec94617d2dd" absoluteBounds="19.64, 2.8350000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f04364f6-de8b-4424-b7a2-0262d05f89f9" isExpanded="false" absoluteBounds="28.625, 4.25, 4, 0.45000000000000284">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoProductos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4b1979d8-19cb-4685-ad85-a0129f28be92" absoluteBounds="28.64, 4.7100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="9adff289-1106-41e9-b1f3-715aa41b5bcc" isExpanded="false" absoluteBounds="19.625, 3.625, 3.25, 0.44999999999999929">
@@ -362,7 +356,7 @@
         <elementListCompartment Id="cf31781f-80e6-4412-8ae7-6a52fb24f21a" absoluteBounds="23.64, 4.8350000000000009, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 1.725); (5.38541666666667 : 1.725 : JumpStart); (5.55208333333333 : 1.725 : JumpEnd); (6.25 : 1.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.375 : 1.725); (5.38541666666667 : 1.725 : JumpStart); (5.55208333333333 : 1.725 : JumpEnd); (6.25 : 1.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/PEDIDOSERVICIOS/PEDIDOSERVICIOS_DPEDIDOSERVICIOS" />
       <nodes>
         <classShapeMoniker Id="2ae47f2c-dc69-4fd7-9373-9d24de61943d" />
@@ -376,21 +370,21 @@
         <classShapeMoniker Id="4758ed7f-0314-45c2-bbe8-0d8c316e99c9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.1); (6.25 : 1.1)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.1); (6.25 : 1.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/ORDENSERVICIO/ORDENSERVICIO_DORDENSERVICIO" />
       <nodes>
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
         <classShapeMoniker Id="e3d2c7d9-9109-46e2-ba0c-e005a6c23e0b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.625 : 3.375); (13.625 : 3.075)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.625 : 3.375); (13.625 : 3.075)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SAS_ModuloSistema/SAS_ModuloSistema_SAS_FormularioSistema" />
       <nodes>
         <classShapeMoniker Id="40837690-c581-400a-bb59-c085c1493b52" />
         <classShapeMoniker Id="e44cf911-150c-489b-9a44-eb178a9d5df8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.6875 : 2.625); (13.6875 : 2.325)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.6875 : 2.625); (13.6875 : 2.325)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SAS_FormularioSistema/SAS_FormularioSistema_SAS_PrivilegioFormulario" />
       <nodes>
         <classShapeMoniker Id="e44cf911-150c-489b-9a44-eb178a9d5df8" />
@@ -446,7 +440,7 @@
         <classShapeMoniker Id="cb7270c9-c624-4734-bcff-8f3d9735c2c1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.375 : 1.1); (11.75 : 1.1); (11.75 : 0.725); (12.25 : 0.725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.375 : 1.1); (11.75 : 1.1); (11.75 : 0.725); (12.25 : 0.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/SAS_ProgramacionMaquinaria/SAS_ProgramacionMaquinaria_SAS_ProgramacionDetalleMaquinaria" />
       <nodes>
         <classShapeMoniker Id="4e01896a-ea71-4e8c-b3d4-6037a95c3eb5" />
@@ -477,7 +471,7 @@
         <elementListCompartment Id="1e08e931-8fdd-42a9-9b30-da875eea20ed" absoluteBounds="8.7650000005960464, 3.4600000008940697, 1.9700000000000002, 31.9791259765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.0625 : 2.7); (10.0625 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.0625 : 2.7); (10.0625 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AgroSaturnoDataContext/UNIMEDIDA/UNIMEDIDA_CONSUMIDOR" />
       <nodes>
         <classShapeMoniker Id="04e4cfd6-6177-46b7-88ec-a1f16b6379f7" />
@@ -525,6 +519,24 @@
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_PesoPromedioJabasCosechaExportables" />
       <nestedChildShapes>
         <elementListCompartment Id="490ae72c-20c9-490b-9496-5bc7c89269c5" absoluteBounds="19.64, 6.8350000000000009, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ffbf84d-e13e-45fe-957f-40ba2d1181d4" isExpanded="false" absoluteBounds="28.625, 3.875, 4, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoProducto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0632cc44-8dfb-4522-8925-e4826f30b3eb" absoluteBounds="28.64, 4.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a814b29-cb19-4bf4-b80d-3e6bfa43ca4d" isExpanded="false" absoluteBounds="28.625, 4.5, 4, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_RptSolicitudDeRequerimientoConProgramaSemanal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac01ea9b-1bd2-49f7-8e9f-a6563c97c852" absoluteBounds="28.64, 4.96, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16c6ff1d-0295-4128-bf6c-222c469f7e7f" isExpanded="false" absoluteBounds="11.75, 6.625, 2.875, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_SeguimientoPedidoServicio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2a17dfa-9af1-4c07-80b7-356f81b9b31f" absoluteBounds="11.765, 7.085, 2.8449999999999998, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

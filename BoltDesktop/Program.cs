@@ -36,7 +36,7 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new ConformacionDeCarga());
-            //Application.Run(new ProgramaAgricola());
+            //Application.Run(new ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna());
             Application.Run(new Menu());
         }
     }

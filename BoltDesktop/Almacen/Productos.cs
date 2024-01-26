@@ -24,7 +24,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen
     public partial class Productos : Form
     {
         private ProductoController modelo;
-        private List<SAS_ListadoProductos> listado;
+        private List<SAS_ListadoProducto> listado;
         private int incluirAnulados;
 
         string codigoProductoSelecionado = string.Empty;
@@ -117,7 +117,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen
             try
             {
                 modelo = new ProductoController();
-                listado = new List<SAS_ListadoProductos>();
+                listado = new List<SAS_ListadoProducto>();
                 listado = modelo.GetListAll("SAS", incluirAnulados).ToList();
             }
             catch (Exception Ex)
@@ -131,7 +131,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen
         {
             try
             {
-                dgvListado.DataSource = listado.ToDataTable<SAS_ListadoProductos>();
+                dgvListado.DataSource = listado.ToDataTable<SAS_ListadoProducto>();
                 dgvListado.Refresh();
                 dgvListado.Enabled = true;
                 gbCabecera.Enabled = !false;
@@ -206,7 +206,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen
             if (codigoProductoSelecionado != string.Empty)
             {
 
-                ProductosImpresionCodigoBarras ofrm = new ProductosImpresionCodigoBarras(codigoProductoSelecionado);
+                ProductosImpresionCodigoBarCode ofrm = new ProductosImpresionCodigoBarCode(codigoProductoSelecionado);
                 ofrm.ShowDialog();
             }
             else

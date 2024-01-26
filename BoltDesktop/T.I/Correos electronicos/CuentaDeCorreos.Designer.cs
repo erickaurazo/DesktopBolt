@@ -43,7 +43,7 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -125,6 +125,26 @@
             this.btnMenu = new Telerik.WinControls.UI.RadCommandBar();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.btnEnProcesoDeCopiaDeSeguridad = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEnProcesosDeSuspencion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEnProcesoDeBaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSuspendido = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBajarCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnActivarCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSinLicenciaCorporativa = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnVerDatosDelColaborador = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAnularCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.bgwCambioEstado = new System.ComponentModel.BackgroundWorker();
+            this.btnReasginado = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLiberacionDeCuentaM365 = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
@@ -254,39 +274,42 @@
             gridViewTextBoxColumn1.FieldName = "id";
             gridViewTextBoxColumn1.FormatString = "{0:N0}";
             gridViewTextBoxColumn1.HeaderText = "Código";
+            gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "chId";
             gridViewTextBoxColumn1.ReadOnly = true;
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 42;
+            gridViewTextBoxColumn1.Width = 44;
             gridViewTextBoxColumn2.AllowGroup = false;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "idcodigoGeneral";
             gridViewTextBoxColumn2.HeaderText = "Código. Per.";
             gridViewTextBoxColumn2.Name = "chCodigo";
             gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 42;
+            gridViewTextBoxColumn2.Width = 75;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Gerencia";
             gridViewTextBoxColumn3.HeaderText = "Gerencia";
+            gridViewTextBoxColumn3.IsVisible = false;
             gridViewTextBoxColumn3.Name = "chGerencia";
-            gridViewTextBoxColumn3.Width = 80;
+            gridViewTextBoxColumn3.Width = 67;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Area";
             gridViewTextBoxColumn4.HeaderText = "Area";
+            gridViewTextBoxColumn4.IsVisible = false;
             gridViewTextBoxColumn4.Name = "chArea";
-            gridViewTextBoxColumn4.Width = 72;
+            gridViewTextBoxColumn4.Width = 84;
             gridViewTextBoxColumn5.AllowGroup = false;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "Nombres";
             gridViewTextBoxColumn5.HeaderText = "Nombres";
             gridViewTextBoxColumn5.Name = "chNombresCompletos";
-            gridViewTextBoxColumn5.Width = 102;
+            gridViewTextBoxColumn5.Width = 183;
             gridViewTextBoxColumn6.AllowGroup = false;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "cuenta";
             gridViewTextBoxColumn6.HeaderText = "Cuenta";
             gridViewTextBoxColumn6.Name = "chcuenta";
-            gridViewTextBoxColumn6.Width = 76;
+            gridViewTextBoxColumn6.Width = 148;
             gridViewTextBoxColumn7.AllowGroup = false;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "clave";
@@ -294,42 +317,42 @@
             gridViewTextBoxColumn7.IsVisible = false;
             gridViewTextBoxColumn7.Name = "chclave";
             gridViewTextBoxColumn7.Width = 61;
-            gridViewTextBoxColumn8.AllowGroup = false;
             gridViewTextBoxColumn8.EnableExpressionEditor = true;
             gridViewTextBoxColumn8.FieldName = "descripcion";
             gridViewTextBoxColumn8.HeaderText = "Plan";
             gridViewTextBoxColumn8.Name = "chdescripcion";
-            gridViewTextBoxColumn8.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn8.Width = 85;
+            gridViewTextBoxColumn8.Width = 121;
             gridViewCheckBoxColumn1.AllowGroup = false;
             gridViewCheckBoxColumn1.EnableExpressionEditor = true;
             gridViewCheckBoxColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
             gridViewCheckBoxColumn1.FieldName = "esCorportativo";
             gridViewCheckBoxColumn1.FormatString = "{0:N0}";
             gridViewCheckBoxColumn1.HeaderText = "Cta. Coorp.";
+            gridViewCheckBoxColumn1.IsVisible = false;
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "chesCorportativo";
-            gridViewCheckBoxColumn1.Width = 42;
+            gridViewCheckBoxColumn1.Width = 72;
             gridViewCheckBoxColumn2.AllowGroup = false;
             gridViewCheckBoxColumn2.EnableExpressionEditor = true;
             gridViewCheckBoxColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
             gridViewCheckBoxColumn2.FieldName = "vienesDesdeSolicitud";
             gridViewCheckBoxColumn2.FormatString = "{0:N0}";
             gridViewCheckBoxColumn2.HeaderText = "Vis. Rpts";
+            gridViewCheckBoxColumn2.IsVisible = false;
             gridViewCheckBoxColumn2.MinWidth = 20;
             gridViewCheckBoxColumn2.Name = "chvienesDesdeSolicitud";
-            gridViewCheckBoxColumn2.Width = 48;
+            gridViewCheckBoxColumn2.Width = 47;
             gridViewCheckBoxColumn3.AllowGroup = false;
             gridViewCheckBoxColumn3.EnableExpressionEditor = true;
             gridViewCheckBoxColumn3.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
             gridViewCheckBoxColumn3.FieldName = "estado";
             gridViewCheckBoxColumn3.FormatString = "{0:N0}";
             gridViewCheckBoxColumn3.HeaderText = "Estado";
+            gridViewCheckBoxColumn3.IsVisible = false;
             gridViewCheckBoxColumn3.MinWidth = 20;
             gridViewCheckBoxColumn3.Name = "chEstado";
             gridViewCheckBoxColumn3.ReadOnly = true;
-            gridViewCheckBoxColumn3.Width = 39;
-            gridViewTextBoxColumn9.AllowGroup = false;
+            gridViewCheckBoxColumn3.Width = 58;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "situacionEnPLanilla";
             gridViewTextBoxColumn9.HeaderText = "Situacion en PLanilla";
@@ -342,6 +365,11 @@
             gridViewTextBoxColumn10.IsVisible = false;
             gridViewTextBoxColumn10.Name = "chcargo";
             gridViewTextBoxColumn10.Width = 46;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "EstadoDescripcion";
+            gridViewTextBoxColumn11.HeaderText = "Estado Cta.";
+            gridViewTextBoxColumn11.Name = "chEstadoDescripcion";
+            gridViewTextBoxColumn11.Width = 96;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -355,15 +383,13 @@
             gridViewCheckBoxColumn2,
             gridViewCheckBoxColumn3,
             gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10});
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
             this.dgvRegistro.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvRegistro.MasterTemplate.ShowGroupedColumns = true;
-            sortDescriptor1.PropertyName = "chdescripcion";
-            this.dgvRegistro.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
             this.dgvRegistro.Name = "dgvRegistro";
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -375,14 +401,34 @@
             // subMenu
             // 
             this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAsociarAreaDeTrabajo});
+            this.btnAsociarAreaDeTrabajo,
+            this.toolStripSeparator2,
+            this.btnVerDatosDelColaborador,
+            this.toolStripSeparator7,
+            this.btnEnProcesoDeCopiaDeSeguridad,
+            this.toolStripSeparator5,
+            this.btnEnProcesosDeSuspencion,
+            this.btnSuspendido,
+            this.toolStripSeparator4,
+            this.btnEnProcesoDeBaja,
+            this.btnBajarCuenta,
+            this.toolStripSeparator3,
+            this.btnActivarCuenta,
+            this.toolStripSeparator6,
+            this.btnSinLicenciaCorporativa,
+            this.toolStripSeparator1,
+            this.btnAnularCuenta,
+            this.toolStripSeparator8,
+            this.btnReasginado,
+            this.btnLiberacionDeCuentaM365});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(195, 26);
+            this.subMenu.Size = new System.Drawing.Size(252, 316);
             // 
             // btnAsociarAreaDeTrabajo
             // 
+            this.btnAsociarAreaDeTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsociarAreaDeTrabajo.Image")));
             this.btnAsociarAreaDeTrabajo.Name = "btnAsociarAreaDeTrabajo";
-            this.btnAsociarAreaDeTrabajo.Size = new System.Drawing.Size(194, 22);
+            this.btnAsociarAreaDeTrabajo.Size = new System.Drawing.Size(251, 22);
             this.btnAsociarAreaDeTrabajo.Text = "Asociar área de trabajo";
             this.btnAsociarAreaDeTrabajo.Click += new System.EventHandler(this.btnAsociarAreaDeTrabajo_Click);
             // 
@@ -1214,6 +1260,139 @@
             // 
             this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             // 
+            // btnEnProcesoDeCopiaDeSeguridad
+            // 
+            this.btnEnProcesoDeCopiaDeSeguridad.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesoDeCopiaDeSeguridad.Image")));
+            this.btnEnProcesoDeCopiaDeSeguridad.Name = "btnEnProcesoDeCopiaDeSeguridad";
+            this.btnEnProcesoDeCopiaDeSeguridad.Size = new System.Drawing.Size(251, 22);
+            this.btnEnProcesoDeCopiaDeSeguridad.Text = "En proceso de copia de seguridad";
+            this.btnEnProcesoDeCopiaDeSeguridad.Click += new System.EventHandler(this.btnEnProcesoDeCopiaDeSeguridad_Click);
+            // 
+            // btnEnProcesosDeSuspencion
+            // 
+            this.btnEnProcesosDeSuspencion.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesosDeSuspencion.Image")));
+            this.btnEnProcesosDeSuspencion.Name = "btnEnProcesosDeSuspencion";
+            this.btnEnProcesosDeSuspencion.Size = new System.Drawing.Size(251, 22);
+            this.btnEnProcesosDeSuspencion.Text = "En procesos de suspención";
+            this.btnEnProcesosDeSuspencion.Click += new System.EventHandler(this.btnEnProcesosDeSuspencion_Click);
+            // 
+            // btnEnProcesoDeBaja
+            // 
+            this.btnEnProcesoDeBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesoDeBaja.Image")));
+            this.btnEnProcesoDeBaja.Name = "btnEnProcesoDeBaja";
+            this.btnEnProcesoDeBaja.Size = new System.Drawing.Size(251, 22);
+            this.btnEnProcesoDeBaja.Text = "En proceso de baja";
+            this.btnEnProcesoDeBaja.Click += new System.EventHandler(this.btnEnProcesoDeBaja_Click);
+            // 
+            // btnSuspendido
+            // 
+            this.btnSuspendido.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspendido.Image")));
+            this.btnSuspendido.Name = "btnSuspendido";
+            this.btnSuspendido.Size = new System.Drawing.Size(251, 22);
+            this.btnSuspendido.Text = "Suspendido";
+            this.btnSuspendido.Click += new System.EventHandler(this.btnSuspendido_Click);
+            // 
+            // btnBajarCuenta
+            // 
+            this.btnBajarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnBajarCuenta.Image")));
+            this.btnBajarCuenta.Name = "btnBajarCuenta";
+            this.btnBajarCuenta.Size = new System.Drawing.Size(251, 22);
+            this.btnBajarCuenta.Text = "Bajar cuenta";
+            this.btnBajarCuenta.Click += new System.EventHandler(this.btnBajarCuenta_Click);
+            // 
+            // btnActivarCuenta
+            // 
+            this.btnActivarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarCuenta.Image")));
+            this.btnActivarCuenta.Name = "btnActivarCuenta";
+            this.btnActivarCuenta.Size = new System.Drawing.Size(251, 22);
+            this.btnActivarCuenta.Text = "Activar cuenta";
+            this.btnActivarCuenta.Click += new System.EventHandler(this.btnActivarCuenta_Click);
+            // 
+            // btnSinLicenciaCorporativa
+            // 
+            this.btnSinLicenciaCorporativa.Image = ((System.Drawing.Image)(resources.GetObject("btnSinLicenciaCorporativa.Image")));
+            this.btnSinLicenciaCorporativa.Name = "btnSinLicenciaCorporativa";
+            this.btnSinLicenciaCorporativa.Size = new System.Drawing.Size(251, 22);
+            this.btnSinLicenciaCorporativa.Text = "Sin licencia corporativa";
+            this.btnSinLicenciaCorporativa.Click += new System.EventHandler(this.btnSinLicenciaCorporativa_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(248, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnVerDatosDelColaborador
+            // 
+            this.btnVerDatosDelColaborador.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDatosDelColaborador.Image")));
+            this.btnVerDatosDelColaborador.Name = "btnVerDatosDelColaborador";
+            this.btnVerDatosDelColaborador.Size = new System.Drawing.Size(251, 22);
+            this.btnVerDatosDelColaborador.Text = "Ver datos del colaborador";
+            this.btnVerDatosDelColaborador.Click += new System.EventHandler(this.btnVerDatosDelColaborador_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(248, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(248, 6);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(248, 6);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnAnularCuenta
+            // 
+            this.btnAnularCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnAnularCuenta.Image")));
+            this.btnAnularCuenta.Name = "btnAnularCuenta";
+            this.btnAnularCuenta.Size = new System.Drawing.Size(251, 22);
+            this.btnAnularCuenta.Text = "Anular cuenta";
+            this.btnAnularCuenta.Click += new System.EventHandler(this.btnAnularCuenta_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(248, 6);
+            // 
+            // bgwCambioEstado
+            // 
+            this.bgwCambioEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCambioEstado_DoWork);
+            this.bgwCambioEstado.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCambioEstado_RunWorkerCompleted);
+            // 
+            // btnReasginado
+            // 
+            this.btnReasginado.Image = ((System.Drawing.Image)(resources.GetObject("btnReasginado.Image")));
+            this.btnReasginado.Name = "btnReasginado";
+            this.btnReasginado.Size = new System.Drawing.Size(251, 22);
+            this.btnReasginado.Text = "Reasginado";
+            this.btnReasginado.Click += new System.EventHandler(this.btnReasginado_Click);
+            // 
+            // btnLiberacionDeCuentaM365
+            // 
+            this.btnLiberacionDeCuentaM365.Image = ((System.Drawing.Image)(resources.GetObject("btnLiberacionDeCuentaM365.Image")));
+            this.btnLiberacionDeCuentaM365.Name = "btnLiberacionDeCuentaM365";
+            this.btnLiberacionDeCuentaM365.Size = new System.Drawing.Size(251, 22);
+            this.btnLiberacionDeCuentaM365.Text = "Liberación de cuenta M365";
+            this.btnLiberacionDeCuentaM365.Click += new System.EventHandler(this.btnLiberacionDeCuentaM365_Click);
+            // 
             // CuentaDeCorreos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1351,5 +1530,25 @@
         private System.Windows.Forms.ToolStripMenuItem btnAsociarAreaDeTrabajo;
         private Telerik.WinControls.UI.CommandBarButton btnVistaPrevia;
         private Telerik.WinControls.UI.CommandBarButton btnEnviarCorreo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem btnVerDatosDelColaborador;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem btnEnProcesoDeCopiaDeSeguridad;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem btnEnProcesosDeSuspencion;
+        private System.Windows.Forms.ToolStripMenuItem btnSuspendido;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem btnEnProcesoDeBaja;
+        private System.Windows.Forms.ToolStripMenuItem btnBajarCuenta;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem btnActivarCuenta;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem btnSinLicenciaCorporativa;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem btnAnularCuenta;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.ComponentModel.BackgroundWorker bgwCambioEstado;
+        private System.Windows.Forms.ToolStripMenuItem btnReasginado;
+        private System.Windows.Forms.ToolStripMenuItem btnLiberacionDeCuentaM365;
     }
 }

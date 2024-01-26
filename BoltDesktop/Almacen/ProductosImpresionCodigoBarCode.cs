@@ -7,7 +7,7 @@ using Telerik.WinControls.UI;
 
 namespace ComparativoHorasVisualSATNISIRA.Almacen
 {
-    public partial class ProductosImpresionCodigoBarras : Form
+    public partial class ProductosImpresionCodigoBarCode : Form
     {
 
         public ReportDocument oRpt;
@@ -22,12 +22,12 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen
         private int correlativo;
         private string _correlativo;
 
-        public ProductosImpresionCodigoBarras()
+        public ProductosImpresionCodigoBarCode()
         {
             InitializeComponent();
         }
 
-        public ProductosImpresionCodigoBarras(string codigo)
+        public ProductosImpresionCodigoBarCode(string codigo)
         {
             #region 
             InitializeComponent();

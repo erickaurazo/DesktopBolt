@@ -732,7 +732,7 @@
             this.tabControl.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.tabControl.Location = new System.Drawing.Point(5, 21);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedPage = this.tabPedidoSeguimientoCompleto;
+            this.tabControl.SelectedPage = this.tabPedidoServicio;
             this.tabControl.Size = new System.Drawing.Size(972, 296);
             this.tabControl.TabIndex = 3;
             this.tabControl.ThemeName = "VisualStudio2012Light";
@@ -1469,7 +1469,7 @@
             this.tabPedidoServicio.ItemSize = new System.Drawing.SizeF(190F, 24F);
             this.tabPedidoServicio.Location = new System.Drawing.Point(5, 5);
             this.tabPedidoServicio.Name = "tabPedidoServicio";
-            this.tabPedidoServicio.Size = new System.Drawing.Size(1130, 235);
+            this.tabPedidoServicio.Size = new System.Drawing.Size(962, 261);
             this.tabPedidoServicio.Text = "P. Servicio";
             // 
             // dgvPedidoServicio
@@ -1483,7 +1483,7 @@
             this.dgvPedidoServicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvPedidoServicio.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // dgvPedidoServicio
             // 
             this.dgvPedidoServicio.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.dgvPedidoServicio.MasterTemplate.AllowAddNewRow = false;
@@ -1500,7 +1500,7 @@
             gridViewTextBoxColumn88.FieldName = "ESTADO";
             gridViewTextBoxColumn88.HeaderText = "Estado";
             gridViewTextBoxColumn88.Name = "chESTADO";
-            gridViewTextBoxColumn88.Width = 79;
+            gridViewTextBoxColumn88.Width = 67;
             gridViewTextBoxColumn89.EnableExpressionEditor = false;
             gridViewTextBoxColumn89.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewTextBoxColumn89.FieldName = "FECHAPEDIDO";
@@ -1508,13 +1508,13 @@
             gridViewTextBoxColumn89.HeaderText = "Fecha";
             gridViewTextBoxColumn89.Name = "chFECHAPEDIDO";
             gridViewTextBoxColumn89.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn89.Width = 75;
+            gridViewTextBoxColumn89.Width = 64;
             gridViewTextBoxColumn90.EnableExpressionEditor = false;
             gridViewTextBoxColumn90.FieldName = "DOCPEDIDO";
             gridViewTextBoxColumn90.HeaderText = "Pedido";
             gridViewTextBoxColumn90.Name = "chDOCPEDIDO";
             gridViewTextBoxColumn90.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn90.Width = 95;
+            gridViewTextBoxColumn90.Width = 81;
             gridViewTextBoxColumn91.EnableExpressionEditor = false;
             gridViewTextBoxColumn91.FieldName = "IDAREA";
             gridViewTextBoxColumn91.HeaderText = "IDAREA";
@@ -1538,7 +1538,7 @@
             gridViewTextBoxColumn94.HeaderText = "Razón Social";
             gridViewTextBoxColumn94.Name = "chRAZON_SOCIAL";
             gridViewTextBoxColumn94.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn94.Width = 104;
+            gridViewTextBoxColumn94.Width = 88;
             gridViewTextBoxColumn95.EnableExpressionEditor = false;
             gridViewTextBoxColumn95.FieldName = "SOLICITANTE";
             gridViewTextBoxColumn95.HeaderText = "Solicitante";
@@ -1556,13 +1556,13 @@
             gridViewTextBoxColumn97.HeaderText = "Fecha O.S";
             gridViewTextBoxColumn97.Name = "chFECHA_OSERVICIO";
             gridViewTextBoxColumn97.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn97.Width = 33;
+            gridViewTextBoxColumn97.Width = 28;
             gridViewTextBoxColumn98.EnableExpressionEditor = false;
             gridViewTextBoxColumn98.FieldName = "ORD_SERVICIO";
             gridViewTextBoxColumn98.HeaderText = "Orden. Serv.";
             gridViewTextBoxColumn98.Name = "chORD_SERVICIO";
             gridViewTextBoxColumn98.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn98.Width = 106;
+            gridViewTextBoxColumn98.Width = 90;
             gridViewTextBoxColumn99.EnableExpressionEditor = false;
             gridViewTextBoxColumn99.FieldName = "FECHA_OCCLIENTE";
             gridViewTextBoxColumn99.HeaderText = "FECHA_OCCLIENTE";
@@ -1574,19 +1574,19 @@
             gridViewTextBoxColumn100.HeaderText = "Moneda";
             gridViewTextBoxColumn100.Name = "chMONEDA";
             gridViewTextBoxColumn100.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn100.Width = 33;
+            gridViewTextBoxColumn100.Width = 28;
             gridViewTextBoxColumn101.EnableExpressionEditor = false;
             gridViewTextBoxColumn101.FieldName = "IMPORTE_MOF";
             gridViewTextBoxColumn101.FormatString = "{0:N2}";
             gridViewTextBoxColumn101.HeaderText = "Soles";
             gridViewTextBoxColumn101.Name = "chIMPORTE_MOF";
-            gridViewTextBoxColumn101.Width = 73;
+            gridViewTextBoxColumn101.Width = 62;
             gridViewTextBoxColumn102.EnableExpressionEditor = false;
             gridViewTextBoxColumn102.FieldName = "IMPORTE_MEX";
             gridViewTextBoxColumn102.FormatString = "{0:N2}";
             gridViewTextBoxColumn102.HeaderText = "Dólares";
             gridViewTextBoxColumn102.Name = "chIMPORTE_MEX";
-            gridViewTextBoxColumn102.Width = 66;
+            gridViewTextBoxColumn102.Width = 56;
             gridViewTextBoxColumn103.EnableExpressionEditor = false;
             gridViewTextBoxColumn103.FieldName = "FECHA_PT";
             gridViewTextBoxColumn103.HeaderText = "FECHA_PT";
@@ -1616,12 +1616,12 @@
             gridViewTextBoxColumn107.FormatString = "{0:d}";
             gridViewTextBoxColumn107.HeaderText = "Fecha Confor.";
             gridViewTextBoxColumn107.Name = "chFECHA_CONFORMIDAD";
-            gridViewTextBoxColumn107.Width = 66;
+            gridViewTextBoxColumn107.Width = 56;
             gridViewTextBoxColumn108.EnableExpressionEditor = false;
             gridViewTextBoxColumn108.FieldName = "CONFORMIDAD";
             gridViewTextBoxColumn108.HeaderText = "Conformidad";
             gridViewTextBoxColumn108.Name = "chCONFORMIDAD";
-            gridViewTextBoxColumn108.Width = 108;
+            gridViewTextBoxColumn108.Width = 92;
             gridViewTextBoxColumn109.EnableExpressionEditor = false;
             gridViewTextBoxColumn109.FieldName = "DIAS_FLUJO";
             gridViewTextBoxColumn109.HeaderText = "DIAS_FLUJO";
@@ -1645,13 +1645,13 @@
             gridViewTextBoxColumn112.FormatString = "{0:d}";
             gridViewTextBoxColumn112.HeaderText = "Fec. Provisión";
             gridViewTextBoxColumn112.Name = "chFECHA_PROVISION";
-            gridViewTextBoxColumn112.Width = 55;
+            gridViewTextBoxColumn112.Width = 47;
             gridViewTextBoxColumn113.EnableExpressionEditor = false;
             gridViewTextBoxColumn113.FieldName = "PROVISION";
             gridViewTextBoxColumn113.HeaderText = "Provisión";
             gridViewTextBoxColumn113.Name = "chPROVISION";
             gridViewTextBoxColumn113.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn113.Width = 115;
+            gridViewTextBoxColumn113.Width = 98;
             gridViewTextBoxColumn114.EnableExpressionEditor = false;
             gridViewTextBoxColumn114.FieldName = "IDFORMAPAGO";
             gridViewTextBoxColumn114.HeaderText = "IDFORMAPAGO";
@@ -1692,7 +1692,7 @@
             gridViewTextBoxColumn120.FieldName = "DOCBANCOS";
             gridViewTextBoxColumn120.HeaderText = "Doc. Bancos";
             gridViewTextBoxColumn120.Name = "chDOCBANCOS";
-            gridViewTextBoxColumn120.Width = 117;
+            gridViewTextBoxColumn120.Width = 100;
             gridViewTextBoxColumn121.EnableExpressionEditor = false;
             gridViewTextBoxColumn121.FieldName = "HECHO_POR";
             gridViewTextBoxColumn121.HeaderText = "HECHO_POR";
@@ -1747,9 +1747,8 @@
             this.dgvPedidoServicio.ReadOnly = true;
             this.dgvPedidoServicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvPedidoServicio.ShowHeaderCellButtons = true;
-            this.dgvPedidoServicio.Size = new System.Drawing.Size(1130, 235);
+            this.dgvPedidoServicio.Size = new System.Drawing.Size(962, 261);
             this.dgvPedidoServicio.TabIndex = 29;
-            this.dgvPedidoServicio.Text = "Resumen por periodo y ruta";
             this.dgvPedidoServicio.ThemeName = "VisualStudio2012Light";
             this.dgvPedidoServicio.SelectionChanged += new System.EventHandler(this.dgvPedidoServicio_SelectionChanged);
             // 
@@ -1901,7 +1900,7 @@
             this.dgvOrdenesCompra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvOrdenesCompra.Location = new System.Drawing.Point(0, 0);
             // 
-            // dgvOrdenesCompra
+            // 
             // 
             this.dgvOrdenesCompra.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.dgvOrdenesCompra.MasterTemplate.AllowAddNewRow = false;
@@ -2461,7 +2460,7 @@
             this.txtPeriodo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPeriodo.ThemeName = "Windows8";
             this.txtPeriodo.Value = new decimal(new int[] {
-            2022,
+            2024,
             0,
             0,
             0});

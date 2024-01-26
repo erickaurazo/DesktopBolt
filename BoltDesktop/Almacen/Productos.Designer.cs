@@ -33,7 +33,15 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.BarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
             this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -50,14 +58,23 @@
             this.gbListado = new System.Windows.Forms.GroupBox();
             this.dgvListado = new Telerik.WinControls.UI.RadGridView();
             this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnImprimirTicketQR = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGenerarTicketBarCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGenerarTicketQR = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.printDialog = new System.Windows.Forms.PrintDialog();
-            this.generarTicketQRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFiltro = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnResaltar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnElegirColumna = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnVistaPreviaBarCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVistaPreviaQR = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnImprimirBarCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImprimirQR = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.gbCabecera.SuspendLayout();
             this.gbListado.SuspendLayout();
@@ -124,6 +141,9 @@
             this.btnExportToExcel,
             this.btnVistaPrevia,
             this.btnImprimir,
+            this.btnResaltar,
+            this.btnFiltro,
+            this.btnElegirColumna,
             this.btnCerrar});
             this.commandBarStripElement3.Name = "commandBarStripElement3";
             this.commandBarStripElement3.Text = "";
@@ -211,7 +231,7 @@
             // 
             this.chkIncluirAnulados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkIncluirAnulados.AutoSize = true;
-            this.chkIncluirAnulados.Location = new System.Drawing.Point(724, 18);
+            this.chkIncluirAnulados.Location = new System.Drawing.Point(724, 21);
             this.chkIncluirAnulados.Name = "chkIncluirAnulados";
             this.chkIncluirAnulados.Size = new System.Drawing.Size(100, 17);
             this.chkIncluirAnulados.TabIndex = 1;
@@ -266,28 +286,82 @@
             gridViewTextBoxColumn1.FieldName = "idproducto";
             gridViewTextBoxColumn1.HeaderText = "Código";
             gridViewTextBoxColumn1.Name = "chidproducto";
-            gridViewTextBoxColumn1.Width = 144;
+            gridViewTextBoxColumn1.Width = 131;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "descripcion";
-            gridViewTextBoxColumn2.HeaderText = "Producto";
-            gridViewTextBoxColumn2.Name = "chdescripcion";
-            gridViewTextBoxColumn2.Width = 592;
+            gridViewTextBoxColumn2.FieldName = "Grupo";
+            gridViewTextBoxColumn2.HeaderText = "Grupo";
+            gridViewTextBoxColumn2.Name = "chGrupo";
+            gridViewTextBoxColumn2.Width = 316;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "idmedida";
-            gridViewTextBoxColumn3.HeaderText = "UM";
-            gridViewTextBoxColumn3.Name = "chidmedida";
-            gridViewTextBoxColumn3.Width = 95;
+            gridViewTextBoxColumn3.FieldName = "descripcion";
+            gridViewTextBoxColumn3.HeaderText = "Producto";
+            gridViewTextBoxColumn3.Name = "chdescripcion";
+            gridViewTextBoxColumn3.Width = 363;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "idmedida";
+            gridViewTextBoxColumn4.HeaderText = "UM";
+            gridViewTextBoxColumn4.Name = "chidmedida";
+            gridViewTextBoxColumn4.Width = 60;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.FieldName = "estado";
             gridViewCheckBoxColumn1.HeaderText = "Estado ";
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "chestado";
-            gridViewCheckBoxColumn1.Width = 100;
+            gridViewCheckBoxColumn1.Width = 62;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "EstadoDescripcion";
+            gridViewTextBoxColumn5.HeaderText = "EstadoDescripcion";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "chEstadoDescripcion";
+            gridViewTextBoxColumn5.Width = 29;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "RutaBarCode";
+            gridViewTextBoxColumn6.HeaderText = "RutaBarCode";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "chRutaBarCode";
+            gridViewTextBoxColumn6.Width = 30;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "RutaQR";
+            gridViewTextBoxColumn7.HeaderText = "RutaQR";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "chRutaQR";
+            gridViewTextBoxColumn7.Width = 31;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "SubGrupo";
+            gridViewTextBoxColumn8.HeaderText = "SubGrupo";
+            gridViewTextBoxColumn8.IsVisible = false;
+            gridViewTextBoxColumn8.Name = "chSubGrupo";
+            gridViewTextBoxColumn8.Width = 44;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "UnidadMedida";
+            gridViewTextBoxColumn9.HeaderText = "UnidadMedida";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "chUnidadMedida";
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "FechaFormatoImpresion";
+            gridViewTextBoxColumn10.HeaderText = "FechaFormatoImpresion";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chFechaFormatoImpresion";
+            gridViewTextBoxColumn10.Width = 58;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Empresa";
+            gridViewTextBoxColumn11.HeaderText = "Empresa";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "chEmpresa";
+            gridViewTextBoxColumn11.Width = 64;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewCheckBoxColumn1});
+            gridViewTextBoxColumn4,
+            gridViewCheckBoxColumn1,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.MultiSelect = true;
@@ -307,18 +381,31 @@
             // subMenu
             // 
             this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnImprimirTicketQR,
-            this.generarTicketQRToolStripMenuItem});
+            this.btnGenerarTicketBarCode,
+            this.btnVistaPreviaBarCode,
+            this.btnImprimirBarCode,
+            this.toolStripSeparator2,
+            this.btnGenerarTicketQR,
+            this.btnVistaPreviaQR,
+            this.btnImprimirQR,
+            this.toolStripSeparator1});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(244, 70);
+            this.subMenu.Size = new System.Drawing.Size(207, 170);
             // 
-            // btnImprimirTicketQR
+            // btnGenerarTicketBarCode
             // 
-            this.btnImprimirTicketQR.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTicketQR.Image")));
-            this.btnImprimirTicketQR.Name = "btnImprimirTicketQR";
-            this.btnImprimirTicketQR.Size = new System.Drawing.Size(243, 22);
-            this.btnImprimirTicketQR.Text = "Generar Ticket | Codigo de Barra";
-            this.btnImprimirTicketQR.Click += new System.EventHandler(this.btnImprimirTicketQR_Click);
+            this.btnGenerarTicketBarCode.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarTicketBarCode.Image")));
+            this.btnGenerarTicketBarCode.Name = "btnGenerarTicketBarCode";
+            this.btnGenerarTicketBarCode.Size = new System.Drawing.Size(206, 22);
+            this.btnGenerarTicketBarCode.Text = "Generar Ticket | Bar Code";
+            this.btnGenerarTicketBarCode.Click += new System.EventHandler(this.btnImprimirTicketQR_Click);
+            // 
+            // btnGenerarTicketQR
+            // 
+            this.btnGenerarTicketQR.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarTicketQR.Image")));
+            this.btnGenerarTicketQR.Name = "btnGenerarTicketQR";
+            this.btnGenerarTicketQR.Size = new System.Drawing.Size(206, 22);
+            this.btnGenerarTicketQR.Text = "Generar Ticket | QR";
             // 
             // stsBarraEstado
             // 
@@ -344,12 +431,76 @@
             // 
             this.printDialog.UseEXDialog = true;
             // 
-            // generarTicketQRToolStripMenuItem
+            // btnFiltro
             // 
-            this.generarTicketQRToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generarTicketQRToolStripMenuItem.Image")));
-            this.generarTicketQRToolStripMenuItem.Name = "generarTicketQRToolStripMenuItem";
-            this.generarTicketQRToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.generarTicketQRToolStripMenuItem.Text = "Generar Ticket QR";
+            this.btnFiltro.AccessibleDescription = "Filtro";
+            this.btnFiltro.AccessibleName = "Filtro";
+            this.btnFiltro.AutoSize = false;
+            this.btnFiltro.Bounds = new System.Drawing.Rectangle(0, 0, 75, 35);
+            this.btnFiltro.DisplayName = "commandBarButton1";
+            this.btnFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.Image")));
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Text = "";
+            // 
+            // btnResaltar
+            // 
+            this.btnResaltar.AccessibleDescription = "Resaltar";
+            this.btnResaltar.AccessibleName = "Resaltar";
+            this.btnResaltar.AutoSize = false;
+            this.btnResaltar.Bounds = new System.Drawing.Rectangle(0, 0, 75, 35);
+            this.btnResaltar.DisplayName = "Resaltar";
+            this.btnResaltar.Image = ((System.Drawing.Image)(resources.GetObject("btnResaltar.Image")));
+            this.btnResaltar.Name = "btnResaltar";
+            this.btnResaltar.Text = "";
+            // 
+            // btnElegirColumna
+            // 
+            this.btnElegirColumna.AccessibleDescription = "ElegirColumna";
+            this.btnElegirColumna.AccessibleName = "ElegirColumna";
+            this.btnElegirColumna.AutoSize = false;
+            this.btnElegirColumna.Bounds = new System.Drawing.Rectangle(0, 0, 75, 35);
+            this.btnElegirColumna.DisplayName = "commandBarButton3";
+            this.btnElegirColumna.Image = ((System.Drawing.Image)(resources.GetObject("btnElegirColumna.Image")));
+            this.btnElegirColumna.Name = "btnElegirColumna";
+            this.btnElegirColumna.Text = "";
+            // 
+            // btnVistaPreviaBarCode
+            // 
+            this.btnVistaPreviaBarCode.Image = ((System.Drawing.Image)(resources.GetObject("btnVistaPreviaBarCode.Image")));
+            this.btnVistaPreviaBarCode.Name = "btnVistaPreviaBarCode";
+            this.btnVistaPreviaBarCode.Size = new System.Drawing.Size(206, 22);
+            this.btnVistaPreviaBarCode.Text = "Vista previa Bar | Code";
+            // 
+            // btnVistaPreviaQR
+            // 
+            this.btnVistaPreviaQR.Image = ((System.Drawing.Image)(resources.GetObject("btnVistaPreviaQR.Image")));
+            this.btnVistaPreviaQR.Name = "btnVistaPreviaQR";
+            this.btnVistaPreviaQR.Size = new System.Drawing.Size(206, 22);
+            this.btnVistaPreviaQR.Text = "Vista previa QR";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(203, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
+            // 
+            // btnImprimirBarCode
+            // 
+            this.btnImprimirBarCode.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirBarCode.Image")));
+            this.btnImprimirBarCode.Name = "btnImprimirBarCode";
+            this.btnImprimirBarCode.Size = new System.Drawing.Size(206, 22);
+            this.btnImprimirBarCode.Text = "Imprimir | Bar Code";
+            // 
+            // btnImprimirQR
+            // 
+            this.btnImprimirQR.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirQR.Image")));
+            this.btnImprimirQR.Name = "btnImprimirQR";
+            this.btnImprimirQR.Size = new System.Drawing.Size(206, 22);
+            this.btnImprimirQR.Text = "Imprimir | QR";
             // 
             // Productos
             // 
@@ -395,13 +546,22 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ContextMenuStrip subMenu;
-        private System.Windows.Forms.ToolStripMenuItem btnImprimirTicketQR;
+        private System.Windows.Forms.ToolStripMenuItem btnGenerarTicketBarCode;
         private System.Windows.Forms.StatusStrip stsBarraEstado;
         private System.ComponentModel.BackgroundWorker bgwHilo;
         private Telerik.WinControls.UI.CommandBarButton btnVistaPrevia;
         private Telerik.WinControls.UI.CommandBarButton btnImprimir;
         private System.Windows.Forms.ToolStripProgressBar progressBar;
         private System.Windows.Forms.PrintDialog printDialog;
-        private System.Windows.Forms.ToolStripMenuItem generarTicketQRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnGenerarTicketQR;
+        private Telerik.WinControls.UI.CommandBarButton btnResaltar;
+        private Telerik.WinControls.UI.CommandBarButton btnFiltro;
+        private Telerik.WinControls.UI.CommandBarButton btnElegirColumna;
+        private System.Windows.Forms.ToolStripMenuItem btnVistaPreviaBarCode;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem btnVistaPreviaQR;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem btnImprimirBarCode;
+        private System.Windows.Forms.ToolStripMenuItem btnImprimirQR;
     }
 }

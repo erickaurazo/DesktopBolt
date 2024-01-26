@@ -321,7 +321,7 @@
             this.txtPeriodo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPeriodo.ThemeName = "Windows8";
             this.txtPeriodo.Value = new decimal(new int[] {
-            2022,
+            2024,
             0,
             0,
             0});
@@ -626,7 +626,7 @@
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.menuPrincipal.Size = new System.Drawing.Size(933, 62);
+            this.menuPrincipal.Size = new System.Drawing.Size(933, 37);
             this.menuPrincipal.TabIndex = 209;
             this.menuPrincipal.Text = "Nuevo";
             this.menuPrincipal.ThemeName = "VisualStudio2012Light";

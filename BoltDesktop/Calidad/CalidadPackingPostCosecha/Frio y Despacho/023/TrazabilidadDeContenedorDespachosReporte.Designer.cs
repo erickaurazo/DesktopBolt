@@ -712,7 +712,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1302, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1302, 62);
             this.BarraPrincipal.TabIndex = 229;
             this.BarraPrincipal.ThemeName = "Windows8";
             // 

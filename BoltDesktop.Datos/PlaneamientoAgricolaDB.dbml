@@ -235,27 +235,6 @@
       <Column Name="ES_FERTILIZANTE" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.SAS_ProgramaSemanalListadoByPeriodo" Method="SAS_ProgramaSemanalListadoByPeriodo">
-    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="SAS_ProgramaSemanalListadoByPeriodoResult">
-      <Column Name="ProgramaSemanaID" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
-      <Column Name="Documento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="RecursoID" Type="System.String" DbType="Char(4)" CanBeNull="true" />
-      <Column Name="Recurso" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ResponsableID" Type="System.String" DbType="Char(6)" CanBeNull="true" />
-      <Column Name="Responsable" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="Glosa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="EstadoID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="ConsumidorID" Type="System.String" DbType="Char(12)" CanBeNull="true" />
-      <Column Name="consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="RequerimientoInternoId" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="RequerimientoInterno" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-      <Column Name="RequerimientoInternoEstadoID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SAS_ProgramaSemanalListadoByID" Method="SAS_ProgramaSemanalListadoByID">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(16)" />
     <ElementType Name="SAS_ProgramaSemanalListadoByIDResult">
@@ -306,6 +285,35 @@
       <Column Name="DiaConDDP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MotivoID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
       <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ProgramaSemanalListadoByPeriodo" Method="SAS_ProgramaSemanalListadoByPeriodo">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SAS_ProgramaSemanalListadoByPeriodoResult">
+      <Column Name="ProgramaSemanaID" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Documento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RecursoID" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Recurso" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ResponsableID" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="Responsable" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Glosa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="EstadoID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ConsumidorID" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="Consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RequerimientoInternoId" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RequerimientoInterno" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="RequerimientoInternoEstadoID" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ConsumidorID1" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Consumidor1" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HectareaLote" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Column Name="Dosis" Type="System.Decimal" DbType="Decimal(17,3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ProductoID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductoUM" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

@@ -376,10 +376,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductoImpresinCodigoBarrasDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\ProductoImpresionCodigoBarraRPT.cs">
+    <Compile Include="Almacen\ProductoImpresionCodigoQR.cs">
+      <DependentUpon>ProductoImpresionCodigoQR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Almacen\ProductoImpresionCodigoBarCode.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductoImpresionCodigoBarraRPT.rpt</DependentUpon>
+      <DependentUpon>ProductoImpresionCodigoBarCode.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Almacen\Productos.cs">
@@ -388,11 +394,29 @@
     <Compile Include="Almacen\Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\ProductosImpresionCodigoBarras.cs">
+    <Compile Include="Almacen\ProductosGenerarCodigos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\ProductosImpresionCodigoBarras.Designer.cs">
-      <DependentUpon>ProductosImpresionCodigoBarras.cs</DependentUpon>
+    <Compile Include="Almacen\ProductosGenerarCodigos.Designer.cs">
+      <DependentUpon>ProductosGenerarCodigos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\ProductosImpresionCodigoQR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\ProductosImpresionCodigoQR.Designer.cs">
+      <DependentUpon>ProductosImpresionCodigoQR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen\ProductosImpresionCodigoBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\ProductosImpresionCodigoBarCode.Designer.cs">
+      <DependentUpon>ProductosImpresionCodigoBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.Designer.cs">
+      <DependentUpon>ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Calidad Campo\Calidades.cs">
       <SubType>Form</SubType>
@@ -2594,16 +2618,32 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>UsuariosRendimientosBoltPreviewCarnetRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\ProductoImpresionCodigoBarraRPT.rpt">
+    <EmbeddedResource Include="Almacen\ProductoImpresionCodigoQR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ProductoImpresionCodigoBarraRPT.cs</LastGenOutput>
+      <LastGenOutput>ProductoImpresionCodigoQR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\ProductoImpresionCodigoBarCode.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductoImpresionCodigoBarCode.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Almacen\Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\ProductosImpresionCodigoBarras.resx">
-      <DependentUpon>ProductosImpresionCodigoBarras.cs</DependentUpon>
+    <EmbeddedResource Include="Almacen\ProductosGenerarCodigos.resx">
+      <DependentUpon>ProductosGenerarCodigos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.resx">
+      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\ProductosImpresionCodigoQR.resx">
+      <DependentUpon>ProductosImpresionCodigoQR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\ProductosImpresionCodigoBarCode.resx">
+      <DependentUpon>ProductosImpresionCodigoBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.resx">
+      <DependentUpon>ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Calidad Campo\Calidades.resx">
       <DependentUpon>Calidades.cs</DependentUpon>

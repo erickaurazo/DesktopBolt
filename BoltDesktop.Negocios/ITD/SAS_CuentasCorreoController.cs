@@ -136,7 +136,7 @@ namespace Asistencia.Negocios
                                     foreach (var itemDetalle in detalles)
                                     {
                                         var resultadoDetalle = Modelo.SAS_CuentasCorreoDetalle.Where(x => x.id == oregistro.id && x.item == itemDetalle.item).ToList();
-                                        if (resultadoDetalle.Count == 0 )
+                                        if (resultadoDetalle.Count == 0)
                                         {
                                             #region Registrar() 
                                             SAS_CuentasCorreoDetalle oDetalle = new SAS_CuentasCorreoDetalle();
@@ -146,7 +146,7 @@ namespace Asistencia.Negocios
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
-                                            oDetalle.creadoPor = Environment.UserName;                                            
+                                            oDetalle.creadoPor = Environment.UserName;
                                             Modelo.SAS_CuentasCorreoDetalle.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -160,7 +160,7 @@ namespace Asistencia.Negocios
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
-                                            oDetalle.creadoPor = Environment.UserName;                                            
+                                            oDetalle.creadoPor = Environment.UserName;
                                             Modelo.SubmitChanges();
                                             #endregion  
                                         }
@@ -384,6 +384,29 @@ namespace Asistencia.Negocios
             return tipoResultadoOperacion;
         }
 
+        public int ChangeState(string conection, SAS_CuentasCorreo item, int EstadoID)
+        {
+
+            int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                var resultado = Modelo.SAS_CuentasCorreo.Where(x => x.id == item.id).ToList();
+                if (resultado != null)
+                {
+                    if (resultado.ToList().Count == 1)
+                    {
+                        #region Cambiar de estado()
+                        SAS_CuentasCorreo oregistro = new SAS_CuentasCorreo();
+                        oregistro = resultado.Single();
+                        oregistro.estado = EstadoID;
+                        Modelo.SubmitChanges();
+                        #endregion                       
+                    }
+                }
+            }
+            return tipoResultadoOperacion;
+        }
 
         public List<SAS_CuentasCorreoDetalleByIdResult> GetEmailAccountsDetailById(string conection, SAS_CuentasCorreo item)
         {
@@ -400,14 +423,14 @@ namespace Asistencia.Negocios
 
         public List<DFormatoSimple> GetType(string conection)
         {
-            List<DFormatoSimple> listado = new List<DFormatoSimple>();            
+            List<DFormatoSimple> listado = new List<DFormatoSimple>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-           using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
                 listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "Generación de BackUp" });
                 listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Imagen" });
-                listado.Add(new DFormatoSimple { Codigo = "3", Descripcion = "Cambio de contraseña" });                
+                listado.Add(new DFormatoSimple { Codigo = "3", Descripcion = "Cambio de contraseña" });
                 listado.Add(new DFormatoSimple { Codigo = "4", Descripcion = "Descarga y validación del Backup" });
                 listado.Add(new DFormatoSimple { Codigo = "5", Descripcion = "Configuración de backup" });
                 listado.Add(new DFormatoSimple { Codigo = "6", Descripcion = "Liberación de licencia" });
@@ -417,7 +440,7 @@ namespace Asistencia.Negocios
                 listado.Add(new DFormatoSimple { Codigo = "10", Descripcion = "Agregar Alias" });
                 listado.Add(new DFormatoSimple { Codigo = "11", Descripcion = "Agregar a grupo" });
                 listado.Add(new DFormatoSimple { Codigo = "12", Descripcion = "Baja de grupo" });
-                listado.Add(new DFormatoSimple { Codigo = "13", Descripcion = "Downgrade licencia" }); 
+                listado.Add(new DFormatoSimple { Codigo = "13", Descripcion = "Downgrade licencia" });
                 listado.Add(new DFormatoSimple { Codigo = "14", Descripcion = "Baja de cuenta" });
                 listado.Add(new DFormatoSimple { Codigo = "15", Descripcion = "Suspención de cuenta" });
                 listado.Add(new DFormatoSimple { Codigo = "16", Descripcion = "Activación y/o Reactivación de cuenta" });

@@ -117,18 +117,18 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ProgramaSemanalListadoByPeriodo")]
-		public ISingleResult<SAS_ProgramaSemanalListadoByPeriodoResult> SAS_ProgramaSemanalListadoByPeriodo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string hasta)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
-			return ((ISingleResult<SAS_ProgramaSemanalListadoByPeriodoResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ProgramaSemanalListadoByID")]
 		public ISingleResult<SAS_ProgramaSemanalListadoByIDResult> SAS_ProgramaSemanalListadoByID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(16)")] string iD)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
 			return ((ISingleResult<SAS_ProgramaSemanalListadoByIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ProgramaSemanalListadoByPeriodo")]
+		public ISingleResult<SAS_ProgramaSemanalListadoByPeriodoResult> SAS_ProgramaSemanalListadoByPeriodo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string hasta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
+			return ((ISingleResult<SAS_ProgramaSemanalListadoByPeriodoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -5482,284 +5482,6 @@ namespace Asistencia.Datos
 		}
 	}
 	
-	public partial class SAS_ProgramaSemanalListadoByPeriodoResult
-	{
-		
-		private string _ProgramaSemanaID;
-		
-		private string _Documento;
-		
-		private System.Nullable<System.DateTime> _Fecha;
-		
-		private string _RecursoID;
-		
-		private string _Recurso;
-		
-		private string _ResponsableID;
-		
-		private string _Responsable;
-		
-		private string _Glosa;
-		
-		private string _EstadoID;
-		
-		private string _Estado;
-		
-		private string _ConsumidorID;
-		
-		private string _consumidor;
-		
-		private string _RequerimientoInternoId;
-		
-		private string _RequerimientoInterno;
-		
-		private string _RequerimientoInternoEstadoID;
-		
-		public SAS_ProgramaSemanalListadoByPeriodoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramaSemanaID", DbType="Char(15) NOT NULL", CanBeNull=false)]
-		public string ProgramaSemanaID
-		{
-			get
-			{
-				return this._ProgramaSemanaID;
-			}
-			set
-			{
-				if ((this._ProgramaSemanaID != value))
-				{
-					this._ProgramaSemanaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Documento", DbType="VarChar(16)")]
-		public string Documento
-		{
-			get
-			{
-				return this._Documento;
-			}
-			set
-			{
-				if ((this._Documento != value))
-				{
-					this._Documento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecursoID", DbType="Char(4)")]
-		public string RecursoID
-		{
-			get
-			{
-				return this._RecursoID;
-			}
-			set
-			{
-				if ((this._RecursoID != value))
-				{
-					this._RecursoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recurso", DbType="VarChar(100)")]
-		public string Recurso
-		{
-			get
-			{
-				return this._Recurso;
-			}
-			set
-			{
-				if ((this._Recurso != value))
-				{
-					this._Recurso = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsableID", DbType="Char(6)")]
-		public string ResponsableID
-		{
-			get
-			{
-				return this._ResponsableID;
-			}
-			set
-			{
-				if ((this._ResponsableID != value))
-				{
-					this._ResponsableID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Responsable", DbType="VarChar(80)")]
-		public string Responsable
-		{
-			get
-			{
-				return this._Responsable;
-			}
-			set
-			{
-				if ((this._Responsable != value))
-				{
-					this._Responsable = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Glosa", DbType="VarChar(200)")]
-		public string Glosa
-		{
-			get
-			{
-				return this._Glosa;
-			}
-			set
-			{
-				if ((this._Glosa != value))
-				{
-					this._Glosa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="Char(2)")]
-		public string EstadoID
-		{
-			get
-			{
-				return this._EstadoID;
-			}
-			set
-			{
-				if ((this._EstadoID != value))
-				{
-					this._EstadoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(30)")]
-		public string Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumidorID", DbType="Char(12)")]
-		public string ConsumidorID
-		{
-			get
-			{
-				return this._ConsumidorID;
-			}
-			set
-			{
-				if ((this._ConsumidorID != value))
-				{
-					this._ConsumidorID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_consumidor", DbType="VarChar(200)")]
-		public string consumidor
-		{
-			get
-			{
-				return this._consumidor;
-			}
-			set
-			{
-				if ((this._consumidor != value))
-				{
-					this._consumidor = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequerimientoInternoId", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string RequerimientoInternoId
-		{
-			get
-			{
-				return this._RequerimientoInternoId;
-			}
-			set
-			{
-				if ((this._RequerimientoInternoId != value))
-				{
-					this._RequerimientoInternoId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequerimientoInterno", DbType="VarChar(16)")]
-		public string RequerimientoInterno
-		{
-			get
-			{
-				return this._RequerimientoInterno;
-			}
-			set
-			{
-				if ((this._RequerimientoInterno != value))
-				{
-					this._RequerimientoInterno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequerimientoInternoEstadoID", DbType="Char(2) NOT NULL", CanBeNull=false)]
-		public string RequerimientoInternoEstadoID
-		{
-			get
-			{
-				return this._RequerimientoInternoEstadoID;
-			}
-			set
-			{
-				if ((this._RequerimientoInternoEstadoID != value))
-				{
-					this._RequerimientoInternoEstadoID = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SAS_ProgramaSemanalListadoByIDResult
 	{
 		
@@ -6609,6 +6331,428 @@ namespace Asistencia.Datos
 				if ((this._Motivo != value))
 				{
 					this._Motivo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ProgramaSemanalListadoByPeriodoResult
+	{
+		
+		private string _ProgramaSemanaID;
+		
+		private string _Documento;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		private string _RecursoID;
+		
+		private string _Recurso;
+		
+		private string _ResponsableID;
+		
+		private string _Responsable;
+		
+		private string _Glosa;
+		
+		private string _EstadoID;
+		
+		private string _Estado;
+		
+		private string _ConsumidorID;
+		
+		private string _Consumidor;
+		
+		private string _RequerimientoInternoId;
+		
+		private string _RequerimientoInterno;
+		
+		private string _RequerimientoInternoEstadoID;
+		
+		private string _ConsumidorID1;
+		
+		private string _Consumidor1;
+		
+		private System.Nullable<decimal> _HectareaLote;
+		
+		private System.Nullable<decimal> _Dosis;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _ProductoID;
+		
+		private string _Producto;
+		
+		private string _ProductoUM;
+		
+		public SAS_ProgramaSemanalListadoByPeriodoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramaSemanaID", DbType="Char(15) NOT NULL", CanBeNull=false)]
+		public string ProgramaSemanaID
+		{
+			get
+			{
+				return this._ProgramaSemanaID;
+			}
+			set
+			{
+				if ((this._ProgramaSemanaID != value))
+				{
+					this._ProgramaSemanaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Documento", DbType="VarChar(16)")]
+		public string Documento
+		{
+			get
+			{
+				return this._Documento;
+			}
+			set
+			{
+				if ((this._Documento != value))
+				{
+					this._Documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecursoID", DbType="Char(4)")]
+		public string RecursoID
+		{
+			get
+			{
+				return this._RecursoID;
+			}
+			set
+			{
+				if ((this._RecursoID != value))
+				{
+					this._RecursoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recurso", DbType="VarChar(100)")]
+		public string Recurso
+		{
+			get
+			{
+				return this._Recurso;
+			}
+			set
+			{
+				if ((this._Recurso != value))
+				{
+					this._Recurso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsableID", DbType="Char(6)")]
+		public string ResponsableID
+		{
+			get
+			{
+				return this._ResponsableID;
+			}
+			set
+			{
+				if ((this._ResponsableID != value))
+				{
+					this._ResponsableID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Responsable", DbType="VarChar(80)")]
+		public string Responsable
+		{
+			get
+			{
+				return this._Responsable;
+			}
+			set
+			{
+				if ((this._Responsable != value))
+				{
+					this._Responsable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Glosa", DbType="VarChar(200)")]
+		public string Glosa
+		{
+			get
+			{
+				return this._Glosa;
+			}
+			set
+			{
+				if ((this._Glosa != value))
+				{
+					this._Glosa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="Char(2)")]
+		public string EstadoID
+		{
+			get
+			{
+				return this._EstadoID;
+			}
+			set
+			{
+				if ((this._EstadoID != value))
+				{
+					this._EstadoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(30)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumidorID", DbType="Char(12)")]
+		public string ConsumidorID
+		{
+			get
+			{
+				return this._ConsumidorID;
+			}
+			set
+			{
+				if ((this._ConsumidorID != value))
+				{
+					this._ConsumidorID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumidor", DbType="VarChar(200)")]
+		public string Consumidor
+		{
+			get
+			{
+				return this._Consumidor;
+			}
+			set
+			{
+				if ((this._Consumidor != value))
+				{
+					this._Consumidor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequerimientoInternoId", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string RequerimientoInternoId
+		{
+			get
+			{
+				return this._RequerimientoInternoId;
+			}
+			set
+			{
+				if ((this._RequerimientoInternoId != value))
+				{
+					this._RequerimientoInternoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequerimientoInterno", DbType="VarChar(16)")]
+		public string RequerimientoInterno
+		{
+			get
+			{
+				return this._RequerimientoInterno;
+			}
+			set
+			{
+				if ((this._RequerimientoInterno != value))
+				{
+					this._RequerimientoInterno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequerimientoInternoEstadoID", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string RequerimientoInternoEstadoID
+		{
+			get
+			{
+				return this._RequerimientoInternoEstadoID;
+			}
+			set
+			{
+				if ((this._RequerimientoInternoEstadoID != value))
+				{
+					this._RequerimientoInternoEstadoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumidorID1", DbType="VarChar(12)")]
+		public string ConsumidorID1
+		{
+			get
+			{
+				return this._ConsumidorID1;
+			}
+			set
+			{
+				if ((this._ConsumidorID1 != value))
+				{
+					this._ConsumidorID1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumidor1", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Consumidor1
+		{
+			get
+			{
+				return this._Consumidor1;
+			}
+			set
+			{
+				if ((this._Consumidor1 != value))
+				{
+					this._Consumidor1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HectareaLote", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> HectareaLote
+		{
+			get
+			{
+				return this._HectareaLote;
+			}
+			set
+			{
+				if ((this._HectareaLote != value))
+				{
+					this._HectareaLote = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dosis", DbType="Decimal(17,3)")]
+		public System.Nullable<decimal> Dosis
+		{
+			get
+			{
+				return this._Dosis;
+			}
+			set
+			{
+				if ((this._Dosis != value))
+				{
+					this._Dosis = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(18,4)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductoID", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string ProductoID
+		{
+			get
+			{
+				return this._ProductoID;
+			}
+			set
+			{
+				if ((this._ProductoID != value))
+				{
+					this._ProductoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Producto", DbType="VarChar(240) NOT NULL", CanBeNull=false)]
+		public string Producto
+		{
+			get
+			{
+				return this._Producto;
+			}
+			set
+			{
+				if ((this._Producto != value))
+				{
+					this._Producto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductoUM", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
+		public string ProductoUM
+		{
+			get
+			{
+				return this._ProductoUM;
+			}
+			set
+			{
+				if ((this._ProductoUM != value))
+				{
+					this._ProductoUM = value;
 				}
 			}
 		}

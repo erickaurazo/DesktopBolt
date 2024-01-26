@@ -1213,14 +1213,6 @@
       <Column Name="cargo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SAS_ListadoProductos" Member="SAS_ListadoProductos">
-    <Type Name="SAS_ListadoProductos">
-      <Column Name="idproducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(240)" CanBeNull="true" />
-      <Column Name="idmedida" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(41)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SAS_GuiaRemisionProveedor" Member="SAS_GuiaRemisionProveedor">
     <Type Name="SAS_GuiaRemisionProveedor">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -2097,6 +2089,106 @@
       <Column Name="IdCampana" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.SAS_ListadoProductos" Member="SAS_ListadoProductos">
+    <Type Name="SAS_ListadoProducto">
+      <Column Name="idproducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(240)" CanBeNull="true" />
+      <Column Name="idmedida" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(41)" CanBeNull="true" />
+      <Column Name="EstadoDescripcion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="RutaBarCode" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RutaQR" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Grupo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SubGrupo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="UnidadMedida" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFormatoImpresion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(29) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_RptSolicitudDeRequerimientoConProgramaSemanal" Member="SAS_RptSolicitudDeRequerimientoConProgramaSemanals">
+    <Type Name="SAS_RptSolicitudDeRequerimientoConProgramaSemanal" Id="ID5">
+      <Column Name="IDREQINTERNO" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="REQUERIMIENTO" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="FECHA_REQ" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IDRESPONSABLE_REQ" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="RESPONSABLE_REQ" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="IDMOTIVO" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="MOTIVO" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="IDAREA" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ITEM_REQ" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="IDPRODUCTO_REQ" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DESCRIPCION_REQ" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="IDMEDIDA_REQ" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CANTIDAD_REQ" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="IDINGRESOSALIDAALM" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="DOCUMENTO_SAL" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="FECHA_SAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IDRESPONSABLE_SAL" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="RESPONSABLE_SAL" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="ITEM_SAL" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="IDPRODUCTO_SAL" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="DESCRIPCION_SAL" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="IDMEDIDA_SAL" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CANTIDAD_SAL" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="preciomof" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="preciomex" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="importemof" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="importemex" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="idreferencia" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="itemref" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="tablaref" Type="System.String" DbType="VarChar(230)" CanBeNull="true" />
+      <Column Name="ProgramaSemanalDocumento" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="ProgramaSemanalOrigenDelRequerimiento" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ProgramaSemanalEstadoID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="ProgramaSemanalEstado" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ConsumidorID" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Consumidor" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_SeguimientoPedidoServicio" Member="SAS_SeguimientoPedidoServicios">
+    <Type Name="SAS_SeguimientoPedidoServicio">
+      <Column Name="IDPEDIDO" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="DOCPEDIDO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IDAREA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="FECHAPEDIDO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDSERVICIO" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="IDCLIEPROV" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="RAZON_SOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAVBP_S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORD_SERVICIO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FECHA_OSERVICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_OCCLIENTE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MONEDA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IMPORTE_MOF" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Column Name="IMPORTE_MEX" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Column Name="FECHA_PT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_V1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_V2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_V3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_AP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APROBADO_POR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCONFORMIDAD" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="CONFORMIDAD" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FECHA_CONFORMIDAD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DIAS_FLUJO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIAS_ATENCION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDPROVISION" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PROVISION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FECHA_PROVISION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDFORMAPAGO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="CONDICIONPAGO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAPROGRAMAPAGO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MONTOXPAGAR" Type="System.Decimal" DbType="Decimal(17,4)" CanBeNull="true" />
+      <Column Name="MONTOPAGADO" Type="System.Decimal" DbType="Decimal(17,4)" CanBeNull="true" />
+      <Column Name="HECHO_POR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrdenServicioEstadoID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrdenServicioFecha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SAS_ReporteStockPorAlmacen" Method="SAS_ReporteStockPorAlmacen">
     <Parameter Name="C_EMP" Parameter="c_EMP" Type="System.String" DbType="VarChar(3)" />
     <Parameter Name="C_SUC" Parameter="c_SUC" Type="System.String" DbType="VarChar(3)" />
@@ -2551,52 +2643,6 @@
       <Column Name="areaSolicitante" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SAS_SeguimientoPedidosServicio2" Method="SAS_SeguimientoPedidosServicio2">
-    <Parameter Name="EMPRESA" Parameter="eMPRESA" Type="System.String" DbType="Char(3)" />
-    <Parameter Name="PROVEEDOR" Parameter="pROVEEDOR" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="FINICIO" Parameter="fINICIO" Type="System.String" DbType="Char(8)" />
-    <Parameter Name="FFINAL" Parameter="fFINAL" Type="System.String" DbType="Char(8)" />
-    <ElementType Name="SAS_SeguimientoPedidosServicio2Result">
-      <Column Name="IDPEDIDO" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Column Name="DOCPEDIDO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="IDAREA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="FECHAPEDIDO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDSERVICIO" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Column Name="IDCLIEPROV" Type="System.String" DbType="Char(11)" CanBeNull="true" />
-      <Column Name="RAZON_SOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="FECHAVBP_S" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ORD_SERVICIO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FECHA_OSERVICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FECHA_OCCLIENTE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTADO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MONEDA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="IMPORTE_MOF" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
-      <Column Name="IMPORTE_MEX" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
-      <Column Name="FECHA_PT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FECHA_V1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FECHA_V2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FECHA_V3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FECHA_AP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="APROBADO_POR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IDCONFORMIDAD" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Column Name="CONFORMIDAD" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FECHA_CONFORMIDAD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DIAS_FLUJO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DIAS_ATENCION" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDPROVISION" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Column Name="PROVISION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FECHA_PROVISION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDFORMAPAGO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
-      <Column Name="CONDICIONPAGO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="FECHAPROGRAMAPAGO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MONTOXPAGAR" Type="System.Decimal" DbType="Decimal(17,4)" CanBeNull="true" />
-      <Column Name="MONTOPAGADO" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
-      <Column Name="HECHO_POR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CODBANCOS" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Column Name="DOCBANCOS" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SAS_ListadoPresupuestos" Method="SAS_ListadoPresupuestos">
     <ElementType Name="SAS_ListadoPresupuestosResult">
       <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
@@ -2700,6 +2746,70 @@
       <Column Name="VERIFICADO" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
       <Column Name="NROMANUAL" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
       <Column Name="TIPOPRODUCTO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoAreaEnProgramaSemanal" Method="SAS_ListadoAreaEnProgramaSemanal">
+    <ElementType Name="SAS_ListadoAreaEnProgramaSemanalResult">
+      <Column Name="AreaID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_OBJREPORTE_RETURNREQCONSALIDAS" Method="SAS_OBJREPORTE_RETURNREQCONSALIDAS">
+    <Parameter Name="EMP" Parameter="eMP" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="AREA1" Parameter="aREA1" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="ESTA" Parameter="eSTA" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="MOTI" Parameter="mOTI" Type="System.String" DbType="Char(3)" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.SAS_SeguimientoPedidosServicio2" Method="SAS_SeguimientoPedidosServicio2">
+    <Parameter Name="EMPRESA" Parameter="eMPRESA" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="PROVEEDOR" Parameter="pROVEEDOR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="FINICIO" Parameter="fINICIO" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="FFINAL" Parameter="fFINAL" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="Idusuario" Parameter="idusuario" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="SAS_SeguimientoPedidosServicio2Result">
+      <Column Name="IDPEDIDO" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="DOCPEDIDO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IDAREA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="FECHAPEDIDO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDSERVICIO" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="IDCLIEPROV" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="RAZON_SOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAVBP_S" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORD_SERVICIO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FECHA_OSERVICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_OCCLIENTE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MONEDA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IMPORTE_MOF" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Column Name="IMPORTE_MEX" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Column Name="FECHA_PT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_V1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_V2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_V3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_AP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APROBADO_POR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDCONFORMIDAD" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="CONFORMIDAD" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FECHA_CONFORMIDAD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DIAS_FLUJO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIAS_ATENCION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDPROVISION" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="PROVISION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FECHA_PROVISION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDFORMAPAGO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="CONDICIONPAGO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAPROGRAMAPAGO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MONTOXPAGAR" Type="System.Decimal" DbType="Decimal(17,4)" CanBeNull="true" />
+      <Column Name="MONTOPAGADO" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Column Name="HECHO_POR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CODBANCOS" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="DOCBANCOS" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="OrdenServicioEstadoID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="OrdenServicioFecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

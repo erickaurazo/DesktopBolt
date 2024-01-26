@@ -46,6 +46,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_CuentasCorreoDetalle> detalleEliminados = new List<SAS_CuentasCorreoDetalle>();
         private List<SAS_CuentasCorreoDetalle> detalle = new List<SAS_CuentasCorreoDetalle>();
         object result;
+        private int EstadoCambio = 0;
         private int CodigoRegistro;
 
         public CuentaDeCorreos()
@@ -215,10 +216,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                btnMenu.Enabled = false;
-                gbEdit.Enabled = false;
-                gbList.Enabled = false;
-                progressBar1.Visible = true;
+                BloquearControlesConsulta();
                 bgwHilo.RunWorkerAsync();
 
             }
@@ -228,6 +226,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 return;
             }
         }
+
+        private void BloquearControlesConsulta()
+        {
+            btnMenu.Enabled = false;
+            gbEdit.Enabled = false;
+            gbList.Enabled = false;
+            progressBar1.Visible = true;
+        }
+
 
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -438,7 +445,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 this.txtCuenta.Text = oDetalle.cuenta != null ? oDetalle.cuenta.Trim() : string.Empty;
                 this.txtclave.Text = oDetalle.clave != null ? oDetalle.clave.Trim() : string.Empty;
                 this.txtObservaciones.Text = oDetalle.observaciones != null ? oDetalle.observaciones.Trim() : string.Empty;
-                this.txtEstado.Text = (oDetalle.estado.Value != null ? Convert.ToInt32(oDetalle.estado.Value) : 1) == 1 ? "ACTIVO" : "ANULADO";
+                //this.txtEstado.Text = (oDetalle.estado.Value != null ? Convert.ToInt32(oDetalle.estado.Value) : 1) == 1 ? "ACTIVO" : "ANULADO";
+                this.txtEstado.Text = oDetalle.estadoDescripcion != null ? oDetalle.estadoDescripcion.ToString().Trim() : string.Empty;
                 this.txtCodigoSolicitud.Text = oDetalle.codigoSolicitud != null ? oDetalle.codigoSolicitud.Value.ToString() : string.Empty;
 
                 this.txtLicenciaCodigo.Text = oDetalle.idLicencia != null ? oDetalle.idLicencia.ToString() : string.Empty;
@@ -767,6 +775,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            MostrarResultadoConsulta();
+        }
+
+        private void MostrarResultadoConsulta()
+        {
             try
             {
                 dgvRegistro.DataSource = listado.OrderBy(x => x.cuenta).ToList().ToDataTable<SAS_CuentasCorreoListado>();
@@ -1059,6 +1072,248 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             MessageBox.Show("Opción no habilitada", "Advertencia del sistema");
             return;
+        }
+
+        private void btnVerDatosDelColaborador_Click(object sender, EventArgs e)
+        {
+            VerDatosDelColaborador();
+        }
+
+        private void VerDatosDelColaborador()
+        {
+
+        }
+
+        private void btnEnProcesoDeCopiaDeSeguridad_Click(object sender, EventArgs e)
+        {
+            EnProcesoDeCopiaDeSeguridad();
+        }
+
+        private void EnProcesoDeCopiaDeSeguridad()
+        {
+            try
+            {
+                EstadoCambio = 7;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+
+        }
+
+        private void btnEnProcesosDeSuspencion_Click(object sender, EventArgs e)
+        {
+            EnProcesosDeSuspencion();
+        }
+
+        private void EnProcesosDeSuspencion()
+        {
+            try
+            {
+                EstadoCambio = 8;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnSuspendido_Click(object sender, EventArgs e)
+        {
+            SuspenderCuenta();
+        }
+
+        private void SuspenderCuenta()
+        {
+            try
+            {
+                EstadoCambio = 2;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnEnProcesoDeBaja_Click(object sender, EventArgs e)
+        {
+            GenerarProcesoDeBaja();
+        }
+
+        private void GenerarProcesoDeBaja()
+        {
+            try
+            {
+                EstadoCambio = 9;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnBajarCuenta_Click(object sender, EventArgs e)
+        {
+            BajarCuenta();
+        }
+
+        private void BajarCuenta()
+        {
+            try
+            {
+                EstadoCambio = 3;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnActivarCuenta_Click(object sender, EventArgs e)
+        {
+            ActivarCuenta();
+        }
+
+        private void ActivarCuenta()
+        {
+            try
+            {
+                EstadoCambio = 1;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnSinLicenciaCorporativa_Click(object sender, EventArgs e)
+        {
+            SinLicenciaCorporativa();
+        }
+
+        private void SinLicenciaCorporativa()
+        {
+            try
+            {
+                EstadoCambio = 5;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnAnularCuenta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EstadoCambio = 0;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void bgwCambioEstado_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                odetalle = new SAS_CuentasCorreo();
+                odetalle.id = Convert.ToInt32(this.txtCodigo.Text);
+                Modelo = new SAS_CuentasCorreoController();
+                int resultado = 0;
+                resultado = Modelo.ChangeState("SAS", odetalle, EstadoCambio);
+                listado = new List<SAS_CuentasCorreoListado>();
+                Modelo = new SAS_CuentasCorreoController();
+                listado = Modelo.GetEmailAccounts("SAS");
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void bgwCambioEstado_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MostrarResultadoConsulta();
+        }
+
+        private void btnReasginado_Click(object sender, EventArgs e)
+        {
+            Reasginado();
+        }
+
+        private void Reasginado()
+        {
+            try
+            {
+                EstadoCambio = 4;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
+        }
+
+        private void btnLiberacionDeCuentaM365_Click(object sender, EventArgs e)
+        {
+            LiberacionDeCuentaM365();
+        }
+
+        private void LiberacionDeCuentaM365()
+        {
+            try
+            {
+                EstadoCambio = 6;
+                BloquearControlesConsulta();
+                bgwCambioEstado.RunWorkerAsync();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
+                return;
+            }
         }
     }
 }

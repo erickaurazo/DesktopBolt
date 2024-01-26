@@ -45,6 +45,7 @@
             this.GoCCostos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSeparador10 = new System.Windows.Forms.ToolStripSeparator();
             this.GoAcopio = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricola = new System.Windows.Forms.ToolStripMenuItem();
             this.GoEvaluacionAgricola = new System.Windows.Forms.ToolStripMenuItem();
             this.GoHidraulicaYFertilizacion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
@@ -217,6 +218,7 @@
             this.GoCCostosMovimientoActualizarFechaPodas = new System.Windows.Forms.ToolStripMenuItem();
             this.GoCCostosMovimientoActualizarFechaAplicacionCianamida = new System.Windows.Forms.ToolStripMenuItem();
             this.GoProduccionMovimientoConformidadDeCarga = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteBPM = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene = new System.Windows.Forms.ToolStripMenuItem();
@@ -313,8 +315,7 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoPlaneamientoAgricola = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -468,6 +469,14 @@
             this.GoAcopio.Size = new System.Drawing.Size(278, 22);
             this.GoAcopio.Text = "Acopio";
             this.GoAcopio.Click += new System.EventHandler(this.GoAcopio_Click);
+            // 
+            // GoPlaneamientoAgricola
+            // 
+            this.GoPlaneamientoAgricola.Image = ((System.Drawing.Image)(resources.GetObject("GoPlaneamientoAgricola.Image")));
+            this.GoPlaneamientoAgricola.Name = "GoPlaneamientoAgricola";
+            this.GoPlaneamientoAgricola.Size = new System.Drawing.Size(278, 22);
+            this.GoPlaneamientoAgricola.Text = "Planeamiento Agrícola";
+            this.GoPlaneamientoAgricola.Click += new System.EventHandler(this.GoPlaneamientoAgricola_Click);
             // 
             // GoEvaluacionAgricola
             // 
@@ -1787,6 +1796,13 @@
             this.GoProduccionMovimientoConformidadDeCarga.Text = "Conformidad de carga";
             this.GoProduccionMovimientoConformidadDeCarga.Click += new System.EventHandler(this.GoProduccionMovimientoConformidadDeCarga_Click);
             // 
+            // GoPlaneamientoAgricolaMovimientoProgramaSemanal
+            // 
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Name = "GoPlaneamientoAgricolaMovimientoProgramaSemanal";
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Size = new System.Drawing.Size(354, 22);
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Text = "Programa semanal";
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Click += new System.EventHandler(this.programaSemanalToolStripMenuItem_Click);
+            // 
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1822,7 +1838,8 @@
             this.GoAsegCalCerReporteRegistroDeGasificado,
             this.GoAsegCalCerReporteFrioYDespacho,
             this.GoAsegCalCerReporteProductoTerminado,
-            this.GoProduccionReporteConformacionDeCarga});
+            this.GoProduccionReporteConformacionDeCarga,
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(65, 20);
             this.toolsMenu.Text = "&Reportes";
@@ -1847,7 +1864,7 @@
             this.GoAsegCalCerReporteBPMChecklistProcesoDeAplicacionDeSo2,
             this.GoAsegCalCerReporteBPMVerificacionDeLimpiezaEInocuidadDeMandilesEnFiltroPacking});
             this.GoAsegCalCerReporteBPM.Name = "GoAsegCalCerReporteBPM";
-            this.GoAsegCalCerReporteBPM.Size = new System.Drawing.Size(386, 22);
+            this.GoAsegCalCerReporteBPM.Size = new System.Drawing.Size(453, 22);
             this.GoAsegCalCerReporteBPM.Text = "BPM";
             // 
             // GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene
@@ -1968,7 +1985,7 @@
             this.GoContabilidadReporteAnalisisDiferencialTipoDeCambio,
             this.GoContabilidadReporteAnalisisRevisionDatosContables});
             this.GoContabilidadReporteReporesAnalisis.Name = "GoContabilidadReporteReporesAnalisis";
-            this.GoContabilidadReporteReporesAnalisis.Size = new System.Drawing.Size(386, 22);
+            this.GoContabilidadReporteReporesAnalisis.Size = new System.Drawing.Size(453, 22);
             this.GoContabilidadReporteReporesAnalisis.Text = "Reporte contable de análisis";
             // 
             // GoContabilidadReporteAnalisisDiferencialTipoDeCambio
@@ -1990,7 +2007,7 @@
             this.GoAlmacenReporteStockDeProductos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GoAlmacenReporteStockDeProducto});
             this.GoAlmacenReporteStockDeProductos.Name = "GoAlmacenReporteStockDeProductos";
-            this.GoAlmacenReporteStockDeProductos.Size = new System.Drawing.Size(386, 22);
+            this.GoAlmacenReporteStockDeProductos.Size = new System.Drawing.Size(453, 22);
             this.GoAlmacenReporteStockDeProductos.Text = "Stock de productos";
             // 
             // GoAlmacenReporteStockDeProducto
@@ -2009,7 +2026,7 @@
             this.GoLogisticaReporteSeguimientoLogisticoOrdenServicios,
             this.GoLogisticaReporteSeguimientoLogisticoConformidadServicios});
             this.GoLogisticaReporteSeguimientoLogistico.Name = "GoLogisticaReporteSeguimientoLogistico";
-            this.GoLogisticaReporteSeguimientoLogistico.Size = new System.Drawing.Size(386, 22);
+            this.GoLogisticaReporteSeguimientoLogistico.Size = new System.Drawing.Size(453, 22);
             this.GoLogisticaReporteSeguimientoLogistico.Text = "Seguimiento logístico";
             // 
             // GoLogisticaReporteSeguimientoLogisticoPedidoCompras
@@ -2052,7 +2069,7 @@
             this.GoMAQUINARIAReporteUsoDeMaquinaria.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GoMaquinariaReporteComparativoVSATvsNISIRA});
             this.GoMAQUINARIAReporteUsoDeMaquinaria.Name = "GoMAQUINARIAReporteUsoDeMaquinaria";
-            this.GoMAQUINARIAReporteUsoDeMaquinaria.Size = new System.Drawing.Size(386, 22);
+            this.GoMAQUINARIAReporteUsoDeMaquinaria.Size = new System.Drawing.Size(453, 22);
             this.GoMAQUINARIAReporteUsoDeMaquinaria.Text = "Reporte de uso maquinaria";
             // 
             // GoMaquinariaReporteComparativoVSATvsNISIRA
@@ -2066,7 +2083,7 @@
             // 
             this.GoTransportesReporteVencimientoDocumentos.Enabled = false;
             this.GoTransportesReporteVencimientoDocumentos.Name = "GoTransportesReporteVencimientoDocumentos";
-            this.GoTransportesReporteVencimientoDocumentos.Size = new System.Drawing.Size(386, 22);
+            this.GoTransportesReporteVencimientoDocumentos.Size = new System.Drawing.Size(453, 22);
             this.GoTransportesReporteVencimientoDocumentos.Text = "Reporte de vencimiento de documentos";
             this.GoTransportesReporteVencimientoDocumentos.Visible = false;
             this.GoTransportesReporteVencimientoDocumentos.Click += new System.EventHandler(this.RRHHReporteDeVencimientodEDocumentos_Click);
@@ -2074,135 +2091,135 @@
             // toolStripSeparator24
             // 
             this.toolStripSeparator24.Name = "toolStripSeparator24";
-            this.toolStripSeparator24.Size = new System.Drawing.Size(383, 6);
+            this.toolStripSeparator24.Size = new System.Drawing.Size(450, 6);
             // 
             // GoTIReportesListadoSolicitudesRenovacionCelular
             // 
             this.GoTIReportesListadoSolicitudesRenovacionCelular.Name = "GoTIReportesListadoSolicitudesRenovacionCelular";
-            this.GoTIReportesListadoSolicitudesRenovacionCelular.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoSolicitudesRenovacionCelular.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoSolicitudesRenovacionCelular.Text = "Reporte de solicitudes para renovación de teléfonos";
             this.GoTIReportesListadoSolicitudesRenovacionCelular.Click += new System.EventHandler(this.GoTIReportesListadoSolicitudesRenovacionCelular_Click);
             // 
             // GoTIReportesDeLineasTelefonicas
             // 
             this.GoTIReportesDeLineasTelefonicas.Name = "GoTIReportesDeLineasTelefonicas";
-            this.GoTIReportesDeLineasTelefonicas.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesDeLineasTelefonicas.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesDeLineasTelefonicas.Text = "Reporte de líneas telefónicas";
             this.GoTIReportesDeLineasTelefonicas.Click += new System.EventHandler(this.GoTIReportesDeLineasTelefonicas_Click);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(383, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(450, 6);
             // 
             // GoTIReporteDeInventantario
             // 
             this.GoTIReporteDeInventantario.Name = "GoTIReporteDeInventantario";
-            this.GoTIReporteDeInventantario.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReporteDeInventantario.Size = new System.Drawing.Size(453, 22);
             this.GoTIReporteDeInventantario.Text = "Reporte de inventantarios";
             this.GoTIReporteDeInventantario.Click += new System.EventHandler(this.GoTIReporteDeInventantario_Click);
             // 
             // GoTIReportesListadoDeMACs
             // 
             this.GoTIReportesListadoDeMACs.Name = "GoTIReportesListadoDeMACs";
-            this.GoTIReportesListadoDeMACs.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoDeMACs.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoDeMACs.Text = "Reporte de listado de MACs";
             this.GoTIReportesListadoDeMACs.Click += new System.EventHandler(this.GoTIReportesListadoDeMACs_Click);
             // 
             // GoTIReportesListadoCaracteristicasPorDispositivos
             // 
             this.GoTIReportesListadoCaracteristicasPorDispositivos.Name = "GoTIReportesListadoCaracteristicasPorDispositivos";
-            this.GoTIReportesListadoCaracteristicasPorDispositivos.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoCaracteristicasPorDispositivos.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoCaracteristicasPorDispositivos.Text = "Reporte de características por Dispositivos";
             this.GoTIReportesListadoCaracteristicasPorDispositivos.Click += new System.EventHandler(this.GoTIReportesListadoCaracteristicasPorDispositivos_Click);
             // 
             // GoTIReportesListadoComponentesPorDispositivos
             // 
             this.GoTIReportesListadoComponentesPorDispositivos.Name = "GoTIReportesListadoComponentesPorDispositivos";
-            this.GoTIReportesListadoComponentesPorDispositivos.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoComponentesPorDispositivos.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoComponentesPorDispositivos.Text = "Reporte de componentes por dispositivos";
             this.GoTIReportesListadoComponentesPorDispositivos.Click += new System.EventHandler(this.GoTIReportesListadoComponentesPorDispositivos_Click);
             // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(383, 6);
+            this.toolStripSeparator16.Size = new System.Drawing.Size(450, 6);
             // 
             // GoTIReportesListadoActividadesSoporteFuncional
             // 
             this.GoTIReportesListadoActividadesSoporteFuncional.Name = "GoTIReportesListadoActividadesSoporteFuncional";
-            this.GoTIReportesListadoActividadesSoporteFuncional.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoActividadesSoporteFuncional.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoActividadesSoporteFuncional.Text = "Reporte de actividades de soporte funcional";
             this.GoTIReportesListadoActividadesSoporteFuncional.Click += new System.EventHandler(this.GoTIReportesListadoActividadesSoporteFuncional_Click);
             // 
             // GoTIReportesListadoActividadesSoporteTecnico
             // 
             this.GoTIReportesListadoActividadesSoporteTecnico.Name = "GoTIReportesListadoActividadesSoporteTecnico";
-            this.GoTIReportesListadoActividadesSoporteTecnico.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoActividadesSoporteTecnico.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoActividadesSoporteTecnico.Text = "Reporte de actividades de soporte técnico";
             this.GoTIReportesListadoActividadesSoporteTecnico.Click += new System.EventHandler(this.GoTIReportesListadoActividadesSoporteTecnico_Click);
             // 
             // GoTIReportesListadoDeSolicitudesDeAsignacion
             // 
             this.GoTIReportesListadoDeSolicitudesDeAsignacion.Name = "GoTIReportesListadoDeSolicitudesDeAsignacion";
-            this.GoTIReportesListadoDeSolicitudesDeAsignacion.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoDeSolicitudesDeAsignacion.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoDeSolicitudesDeAsignacion.Text = "Reporte de solicitudes de asiganción de equipamiento";
             this.GoTIReportesListadoDeSolicitudesDeAsignacion.Click += new System.EventHandler(this.GoTIReportesListadoDeSolicitudesDeAsignacion_Click);
             // 
             // toolStripSeparator23
             // 
             this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(383, 6);
+            this.toolStripSeparator23.Size = new System.Drawing.Size(450, 6);
             // 
             // GoTIReportesListadoSeguimientoPedidoServicios
             // 
             this.GoTIReportesListadoSeguimientoPedidoServicios.Name = "GoTIReportesListadoSeguimientoPedidoServicios";
-            this.GoTIReportesListadoSeguimientoPedidoServicios.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoSeguimientoPedidoServicios.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoSeguimientoPedidoServicios.Text = "Reportes de seguimiento de pedidos de servicios";
             this.GoTIReportesListadoSeguimientoPedidoServicios.Click += new System.EventHandler(this.GoTIReportesListadoSeguimientoPedidoServicios_Click);
             // 
             // GoTIReportesListadoSeguimientoPedidoCompra
             // 
             this.GoTIReportesListadoSeguimientoPedidoCompra.Name = "GoTIReportesListadoSeguimientoPedidoCompra";
-            this.GoTIReportesListadoSeguimientoPedidoCompra.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoSeguimientoPedidoCompra.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoSeguimientoPedidoCompra.Text = "Reporte de seguimiento de pedidos para compra";
             this.GoTIReportesListadoSeguimientoPedidoCompra.Click += new System.EventHandler(this.GoTIReportesListadoSeguimientoPedidoCompra_Click);
             // 
             // toolStripSeparator25
             // 
             this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(383, 6);
+            this.toolStripSeparator25.Size = new System.Drawing.Size(450, 6);
             // 
             // GoTIReportesListadoSoftwareEnDispositivos
             // 
             this.GoTIReportesListadoSoftwareEnDispositivos.Name = "GoTIReportesListadoSoftwareEnDispositivos";
-            this.GoTIReportesListadoSoftwareEnDispositivos.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoSoftwareEnDispositivos.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoSoftwareEnDispositivos.Text = "Reporte de Software en dispositivos";
             this.GoTIReportesListadoSoftwareEnDispositivos.Click += new System.EventHandler(this.GoTIReportesListadoSoftwareEnDispositivos_Click);
             // 
             // toolStripSeparator26
             // 
             this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(383, 6);
+            this.toolStripSeparator26.Size = new System.Drawing.Size(450, 6);
             // 
             // GoTIReportesListadoCuentasDeUsuariosEnDispositivos
             // 
             this.GoTIReportesListadoCuentasDeUsuariosEnDispositivos.Name = "GoTIReportesListadoCuentasDeUsuariosEnDispositivos";
-            this.GoTIReportesListadoCuentasDeUsuariosEnDispositivos.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesListadoCuentasDeUsuariosEnDispositivos.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesListadoCuentasDeUsuariosEnDispositivos.Text = "Reporte de cuentas de usuario en dispositivos";
             this.GoTIReportesListadoCuentasDeUsuariosEnDispositivos.Click += new System.EventHandler(this.GoTIReportesListadoCuentasDeUsuariosEnDispositivos_Click);
             // 
             // GoTIReportesDeListadoDeCorreosParaEquipamientoCelular
             // 
             this.GoTIReportesDeListadoDeCorreosParaEquipamientoCelular.Name = "GoTIReportesDeListadoDeCorreosParaEquipamientoCelular";
-            this.GoTIReportesDeListadoDeCorreosParaEquipamientoCelular.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesDeListadoDeCorreosParaEquipamientoCelular.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesDeListadoDeCorreosParaEquipamientoCelular.Text = "Reporte de listado de correos para equipamiento celular";
             this.GoTIReportesDeListadoDeCorreosParaEquipamientoCelular.Click += new System.EventHandler(this.GoTIReportesDeListadoDeCorreosParaEquipamientoCelular_Click);
             // 
             // GoTIReportesFormatosGenericos
             // 
             this.GoTIReportesFormatosGenericos.Name = "GoTIReportesFormatosGenericos";
-            this.GoTIReportesFormatosGenericos.Size = new System.Drawing.Size(386, 22);
+            this.GoTIReportesFormatosGenericos.Size = new System.Drawing.Size(453, 22);
             this.GoTIReportesFormatosGenericos.Text = "Reporte de formatos genéricos";
             this.GoTIReportesFormatosGenericos.Click += new System.EventHandler(this.GoTIReportesFormatosGenericos_Click);
             // 
@@ -2214,7 +2231,7 @@
             this.GoAcopioReportePlanDeVentas,
             this.GoAcopioReporteProgramaCosechaVSRecepcion});
             this.GoAcopioReportePlanesYProgramasMRP.Name = "GoAcopioReportePlanesYProgramasMRP";
-            this.GoAcopioReportePlanesYProgramasMRP.Size = new System.Drawing.Size(386, 22);
+            this.GoAcopioReportePlanesYProgramasMRP.Size = new System.Drawing.Size(453, 22);
             this.GoAcopioReportePlanesYProgramasMRP.Text = "Programas y planes MRP";
             // 
             // GoAcopioReportePlanDeCosecha
@@ -2245,7 +2262,7 @@
             // GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento
             // 
             this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento.Name = "GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento";
-            this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento.Size = new System.Drawing.Size(386, 22);
+            this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento.Size = new System.Drawing.Size(453, 22);
             this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento.Text = "Registro de Tickets vs Lectura de Tickets a líneas de proceso";
             this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento.Click += new System.EventHandler(this.GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento_Click);
             // 
@@ -2255,7 +2272,7 @@
             this.GoAsegCalCerReporteRegistroDeGasificadoIngresoSalida,
             this.GoAsegCalCerReporteRegistroDeGasificadoTicketLeidos});
             this.GoAsegCalCerReporteRegistroDeGasificado.Name = "GoAsegCalCerReporteRegistroDeGasificado";
-            this.GoAsegCalCerReporteRegistroDeGasificado.Size = new System.Drawing.Size(386, 22);
+            this.GoAsegCalCerReporteRegistroDeGasificado.Size = new System.Drawing.Size(453, 22);
             this.GoAsegCalCerReporteRegistroDeGasificado.Text = "Reporte de Ingreso salida gasificado";
             // 
             // GoAsegCalCerReporteRegistroDeGasificadoIngresoSalida
@@ -2280,7 +2297,7 @@
             this.GoAsegCalCerReporteFrioYDespachoEvaluacionCarga,
             this.GoAsegCalCerReporteFrioYDespachoCheckListRevisionContenedor});
             this.GoAsegCalCerReporteFrioYDespacho.Name = "GoAsegCalCerReporteFrioYDespacho";
-            this.GoAsegCalCerReporteFrioYDespacho.Size = new System.Drawing.Size(386, 22);
+            this.GoAsegCalCerReporteFrioYDespacho.Size = new System.Drawing.Size(453, 22);
             this.GoAsegCalCerReporteFrioYDespacho.Text = "Frio y despacho";
             // 
             // GoAsegCalCerReporteFrioYDespachoVerificacionYCalibracionDeSensoresDeTunelesDeEnfriamiento
@@ -2319,7 +2336,7 @@
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUva,
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables});
             this.GoAsegCalCerReporteProductoTerminado.Name = "GoAsegCalCerReporteProductoTerminado";
-            this.GoAsegCalCerReporteProductoTerminado.Size = new System.Drawing.Size(386, 22);
+            this.GoAsegCalCerReporteProductoTerminado.Size = new System.Drawing.Size(453, 22);
             this.GoAsegCalCerReporteProductoTerminado.Text = "Producto terminado";
             // 
             // GoAsegCalCerReporteProductoTerminadoCosechaControlDeCalidadRecepcionUva
@@ -2347,7 +2364,7 @@
             // GoProduccionReporteConformacionDeCarga
             // 
             this.GoProduccionReporteConformacionDeCarga.Name = "GoProduccionReporteConformacionDeCarga";
-            this.GoProduccionReporteConformacionDeCarga.Size = new System.Drawing.Size(386, 22);
+            this.GoProduccionReporteConformacionDeCarga.Size = new System.Drawing.Size(453, 22);
             this.GoProduccionReporteConformacionDeCarga.Text = "Conformaciones de carga";
             this.GoProduccionReporteConformacionDeCarga.Click += new System.EventHandler(this.GoProduccionReporteConformacionDeCarga_Click);
             // 
@@ -2523,20 +2540,12 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // GoPlaneamientoAgricola
+            // GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal
             // 
-            this.GoPlaneamientoAgricola.Image = ((System.Drawing.Image)(resources.GetObject("GoPlaneamientoAgricola.Image")));
-            this.GoPlaneamientoAgricola.Name = "GoPlaneamientoAgricola";
-            this.GoPlaneamientoAgricola.Size = new System.Drawing.Size(278, 22);
-            this.GoPlaneamientoAgricola.Text = "Planeamiento Agrícola";
-            this.GoPlaneamientoAgricola.Click += new System.EventHandler(this.GoPlaneamientoAgricola_Click);
-            // 
-            // GoPlaneamientoAgricolaMovimientoProgramaSemanal
-            // 
-            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Name = "GoPlaneamientoAgricolaMovimientoProgramaSemanal";
-            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Size = new System.Drawing.Size(354, 22);
-            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Text = "Programa semanal";
-            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal.Click += new System.EventHandler(this.programaSemanalToolStripMenuItem_Click);
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Name = "GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal";
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Size = new System.Drawing.Size(453, 22);
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Text = "Reporte de solicitudes de Requerimiento Interno con Programa semanal";
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Click += new System.EventHandler(this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal_Click);
             // 
             // Menu
             // 
@@ -2850,5 +2859,6 @@
         private System.Windows.Forms.ToolStripMenuItem GoProduccionReporteConformacionDeCarga;
         private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricola;
         private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaMovimientoProgramaSemanal;
+        private System.Windows.Forms.ToolStripMenuItem GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal;
     }
 }

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen\SolicitudesDeRequerimientoInternoControllers.cs" />
     <Compile Include="Calidad\ParametrosDeTemperaturaCampanaController.cs" />
     <Compile Include="Calidad\SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoController.cs" />
     <Compile Include="Calidad\TermoRegistroPorClienteCampanaController.cs" />
@@ -115,7 +116,7 @@
     <Compile Include="Calidad\SAS_FormatosDeInspeccionCalidadPacking.cs" />
     <Compile Include="ITD\SAS_InfoPersonalController.cs" />
     <Compile Include="ITD\SAS_LicenciaCorreoController.cs" />
-    <Compile Include="ITD\SAS_LineasCelularesCoporativasController.cs" />
+    <Compile Include="ITD\SAS_LineasCelularesCorporativasController.cs" />
     <Compile Include="ITD\SAS_OperadorTelefoniaMovilController.cs" />
     <Compile Include="ProduccionPacking\SAS_OrdenProduccionLineasController.cs" />
     <Compile Include="ITD\SAS_ParteDiariosDeDispositivosController.cs" />

@@ -2415,8 +2415,6 @@ namespace ComparativoHorasVisualSATNISIRA
                     }
                 }
                 #endregion 
-
-
             }
         }
 
@@ -4430,6 +4428,7 @@ namespace ComparativoHorasVisualSATNISIRA
                 Formateador.ControlExcepcion(this, this.Name, ex);
             }
         }
+
     }
 }
 
