@@ -729,5 +729,18 @@ namespace Asistencia.Negocios
             return listado;
 
         }
+
+
+        public List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult> ListadoDeSolicitudesPorLineaCelular(string conection, string LineaCelular)
+        {
+            List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult> list = new List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                list = Modelo.SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumber(LineaCelular).ToList();
+            }
+            return list;
+        }
+
     }
 }

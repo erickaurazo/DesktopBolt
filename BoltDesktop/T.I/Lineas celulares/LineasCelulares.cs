@@ -51,10 +51,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private int ClickResaltarResultados;
 
         public int IdLineaCelular = 0;
+        private List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult> ListadoSolicitudesPorLinea;
+        private SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult itemSeleccionado;
 
         public LineasCelulares()
         {
             InitializeComponent();
+            InicioSubMenuSolicitudRenovacion();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -70,6 +73,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         public LineasCelulares(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
+            InicioSubMenuSolicitudRenovacion();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -80,11 +84,71 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             companyId = _companyId;
             privilege = _privilege;
             Actualizar();
+
+            #region SubMenu Solicitud de Renovacion()
+
+
+
+            #endregion
+
+        }
+
+        private void InicioSubMenuSolicitudRenovacion()
+        {
+            btnActivarSolicitud.Enabled = false;
+            btnDesactivarSolicitud.Enabled = false;
+            btnEditarRegistro.Enabled = false;
+            btnActualizarEstado.Enabled = false;
+            btnVerDatosGeneralesDelColaborador.Enabled = false;
+            btnAsociarAreaDeTrabajo.Enabled = false;
+            btnVerDispositivoBaja.Enabled = false;
+            btnVerDispositivoAlta.Enabled = false;
+            btnVerLineaCelular.Enabled = false;
+            btnVerSolicitudReferencia.Enabled = false;
+            btnVerSolicitudDeAlta.Enabled = false;
+            btnVistaPreviaSolicitudAlta.Enabled = false;
+            btnVistaPreviaSolicitudAltaAnexo.Enabled = false;
+            btnVerSolicitudDeBaja.Enabled = false;
+            btnVistaPreviaSolicitudBaja.Enabled = false;
+            btnAprobarSolicitud.Enabled = false;
+            btnAtendidoParcial.Enabled = false;
+            btnAtendidoTotal.Enabled = false;
+            btnRechazarSolicitud.Enabled = false;
+            btnLiberarSolicitud.Enabled = false;
+            btnRetornarEstadoASolicitud.Enabled = false;
+            btnDVerDocumentosAdjuntos.Enabled = false;
+            btnAsociarGuiaRecepcion.Enabled = false;
+
+
+            btnActivarSolicitud.Visible = false;
+            btnDesactivarSolicitud.Visible = false;
+            btnEditarRegistro.Visible = true;
+            btnActualizarEstado.Visible = false;
+            btnVerDatosGeneralesDelColaborador.Visible = true;
+            btnAsociarAreaDeTrabajo.Visible = true;
+            btnVerDispositivoBaja.Visible = true;
+            btnVerDispositivoAlta.Visible = true;
+            btnVerLineaCelular.Visible = false;
+            btnVerSolicitudReferencia.Visible = true;
+            btnVerSolicitudDeAlta.Visible = true;
+            btnVistaPreviaSolicitudAlta.Visible = true;
+            btnVistaPreviaSolicitudAltaAnexo.Visible = true;
+            btnVerSolicitudDeBaja.Visible = true;
+            btnVistaPreviaSolicitudBaja.Visible = true;
+            btnAprobarSolicitud.Visible = false;
+            btnAtendidoParcial.Visible = false;
+            btnAtendidoTotal.Visible = false;
+            btnRechazarSolicitud.Visible = false;
+            btnLiberarSolicitud.Visible = false;
+            btnRetornarEstadoASolicitud.Visible = false;
+            btnDVerDocumentosAdjuntos.Visible = true;
+            btnAsociarGuiaRecepcion.Visible = false;
         }
 
         public LineasCelulares(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege, string _lineaCelular)
         {
             InitializeComponent();
+            InicioSubMenuSolicitudRenovacion();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -607,7 +671,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 oColaborador.PersonalID = fila.Cells["chPersonalID"].Value != null ? fila.Cells["chPersonalID"].Value.ToString().Trim() : string.Empty;
                                 oColaborador.Desde = (fila.Cells["chDesde"].Value != null && fila.Cells["chDesde"].Value.ToString().Trim() != "" && fila.Cells["chDesde"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chDesde"].Value.ToString().Trim()) : DateTime.Now;
                                 oColaborador.Hasta = (fila.Cells["chHasta"].Value != null && fila.Cells["chHasta"].Value.ToString().Trim() != "" && fila.Cells["chHasta"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chHasta"].Value.ToString().Trim()) : (DateTime?)null;
-                                oColaborador.ReferenciaID =          (fila.Cells["chReferenciaID"].Value != null ? Convert.ToInt32((fila.Cells["chReferenciaID"].Value.ToString().Trim() != string.Empty ? fila.Cells["chReferenciaID"].Value.ToString().Trim() : "0")) : (int?)null);
+                                oColaborador.ReferenciaID = (fila.Cells["chReferenciaID"].Value != null ? Convert.ToInt32((fila.Cells["chReferenciaID"].Value.ToString().Trim() != string.Empty ? fila.Cells["chReferenciaID"].Value.ToString().Trim() : "0")) : (int?)null);
                                 oColaborador.ReferenciaSolicitudID = (fila.Cells["chReferenciaSolicitudID"].Value != null ? Convert.ToInt32((fila.Cells["chReferenciaSolicitudID"].Value.ToString().Trim() != string.Empty ? fila.Cells["chReferenciaSolicitudID"].Value.ToString().Trim() : "0")) : (int?)null);
                                 oColaborador.Glosa = fila.Cells["chGlosa"].Value != null ? fila.Cells["chGlosa"].Value.ToString().Trim() : string.Empty;
                                 oColaborador.Estado = fila.Cells["chEstado"].Value != null ? Convert.ToDecimal(fila.Cells["chEstado"].Value.ToString().Trim()) : Convert.ToDecimal(1);
@@ -785,20 +849,28 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 itemSelecionado.id = codigoNumerico;
                                 AsignarObjetoEnFormularioDeEdicion(itemSelecionado);
                                 modelo = new SAS_LineasCelularesCoporativasController();
+                                ListadoSolicitudesPorLinea = new List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult>();
                                 ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
                                 ListadoColaboradoresAsignados = modelo.ObtejerListadoDeLineasCelularesCoporativasPersonalByLineaID(conection != null ? conection : "SAS", IdLineaCelular);
                                 if (ListadoColaboradoresAsignados != null && ListadoColaboradoresAsignados.ToList().Count >= 1)
                                 {
                                     dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoColaboradoresAsignados.ToDataTable<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>());
                                     dgvDetalleAsignacionesAPersonal.Refresh();
+                                    ListadoSolicitudesPorLinea = modelo.ListadoDeSolicitudesPorLineaCelular(conection, itemSelecionado.lineaCelular.Trim()).ToList();
+                                    dgvListadoSolicitudesRenovacion.DataSource = ListadoSolicitudesPorLinea;
+
+
                                 }
                                 else
                                 {
                                     ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
                                     dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoColaboradoresAsignados.ToDataTable<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>());
                                     dgvDetalleAsignacionesAPersonal.Refresh();
+                                    ListadoSolicitudesPorLinea = new List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult>();
+                                    dgvListadoSolicitudesRenovacion.DataSource = ListadoSolicitudesPorLinea;
                                 }
 
+                                dgvListadoSolicitudesRenovacion.Refresh();
                             }
 
                             else
@@ -991,6 +1063,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             ElegirColumnas();
         }
+
         private void ElegirColumnas()
         {
             this.dgvRegistro.ShowColumnChooser();
@@ -1294,15 +1367,18 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if ((ClickFiltro % 2) == 0)
             {
-                #region Par() | DesActivar Filtro()
-                dgvRegistro.EnableFiltering = true;
+                #region Par() | DesActivar Filtro()                
+                dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = false;
+
                 #endregion
             }
             else
             {
 
                 #region Par() | Activar Filtro()
-                dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
                 #endregion
             }
         }
@@ -1641,7 +1717,6 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         }
 
 
-
         private void QuitarDetalle()
         {
             if (this.dgvDetalleAsignacionesAPersonal != null)
@@ -1757,6 +1832,451 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
+        }
+
+        private void btnExportarPersonalAsignado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListadoSolicitudesRenovacion_SelectionChanged(object sender, EventArgs e)
+        {
+            InicioSubMenuSolicitudRenovacion();
+            try
+            {
+                #region Cuando se recorre dentro de la grilla detalle()
+                itemSeleccionado = new SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult();
+                itemSeleccionado.idCodigoGeneral = string.Empty;
+                if (dgvListadoSolicitudesRenovacion != null && dgvListadoSolicitudesRenovacion.Rows.Count > 0)
+                {
+                    if (dgvListadoSolicitudesRenovacion.CurrentRow != null)
+                    {
+                        if (dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chid"].Value != null)
+                        {
+                            if (dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chid"].Value.ToString() != string.Empty)
+                            {
+                                string id = (dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chid"].Value != null ? dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chid"].Value.ToString() : string.Empty);
+                                string codigo = (dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chidCodigoGeneral"].Value != null ? dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chidCodigoGeneral"].Value.ToString() : string.Empty);
+                                string nombres = (dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chnombres"].Value != null ? dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chnombres"].Value.ToString() : string.Empty);
+
+                                string tipoDeSolicitud = (dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chmotivoSolicitud"].Value != null ? dgvListadoSolicitudesRenovacion.CurrentRow.Cells["chmotivoSolicitud"].Value.ToString() : string.Empty);
+                                btnEditarRegistro.Enabled = true;
+
+
+                                if (tipoDeSolicitud.ToUpper().Trim() == "RENOVACION" || tipoDeSolicitud.ToUpper().Trim() == "RENOVACIÓN")
+                                {
+                                    btnActualizarEstado.Enabled = true;
+                                }
+                                else
+                                {
+                                    btnActualizarEstado.Enabled = false;
+                                }
+
+                                var resultado = listado.Where(x => x.id.ToString() == id).ToList();
+                                #region
+                                if (resultado.ToList().Count > 0)
+                                {
+                                    #region Unico registro()
+                                    btnDVerDocumentosAdjuntos.Enabled = true;
+                                    itemSeleccionado = ListadoSolicitudesPorLinea.ElementAt(0);
+                                    itemSeleccionado.idCodigoGeneral = codigo;
+                                    itemSeleccionado.nombres = nombres;
+
+                                    // habilitar dispositivo si tiene un IdDispositivo.
+                                    if (itemSeleccionado.idDispositivoBaja != null)
+                                    {
+                                        if (itemSeleccionado.idDispositivoBaja != 0)
+                                        {
+                                            btnVerDispositivoBaja.Enabled = true;
+
+                                        }
+                                    }
+
+                                    if (itemSeleccionado.idDispositivoAlta != null)
+                                    {
+                                        if (itemSeleccionado.idDispositivoAlta != 0)
+                                        {
+                                            btnVerDispositivoAlta.Enabled = true;
+
+                                        }
+                                    }
+
+                                    if (itemSeleccionado.idReferenciaAlta != null)
+                                    {
+                                        if (itemSeleccionado.idReferenciaAlta != 0)
+                                        {
+                                            btnVerSolicitudDeAlta.Enabled = true;
+                                            btnVistaPreviaSolicitudAlta.Enabled = true;
+                                            btnVistaPreviaSolicitudAltaAnexo.Enabled = true;
+                                        }
+                                    }
+                                    if (itemSeleccionado.idReferenciaBaja != null)
+                                    {
+                                        if (itemSeleccionado.idReferenciaBaja != 0)
+                                        {
+                                            btnVerSolicitudDeBaja.Enabled = true;
+                                            btnVistaPreviaSolicitudBaja.Enabled = true;
+                                        }
+                                    }
+                                    // habilitar dispositivo si tiene línea celular.
+                                    if (itemSeleccionado.numeroCelular != null)
+                                    {
+                                        if (itemSeleccionado.numeroCelular != string.Empty)
+                                        {
+                                            btnVerLineaCelular.Enabled = true;
+                                        }
+                                    }
+                                    // habilitar las opciones de edición y anular.
+                                    if (itemSeleccionado.estadoCodigo != null)
+                                    {
+                                        if (itemSeleccionado.estadoCodigo == "PE")
+                                        {
+                                            btnRetornarEstadoASolicitud.Enabled = false;
+                                            //btnEditarRegistro.Enabled = false;
+                                            btnDesactivarSolicitud.Enabled = true;
+                                            if (user2.IdUsuario == "EAURAZO")
+                                            {
+                                                btnLiberarSolicitud.Enabled = true;
+                                                btnAtendidoParcial.Enabled = true;
+                                                btnAtendidoTotal.Enabled = true;
+                                            }
+                                        }
+                                        else if (itemSeleccionado.estadoCodigo == "AN")
+                                        {
+                                            btnRetornarEstadoASolicitud.Enabled = false;
+                                            btnActivarSolicitud.Enabled = true;
+                                            btnLiberarSolicitud.Enabled = false;
+                                        }
+                                        else if (itemSeleccionado.estadoCodigo == "SO")
+                                        {
+                                            // btnEditarRegistro.Enabled = true;
+                                            btnDesactivarSolicitud.Enabled = false;
+                                            btnAprobarSolicitud.Enabled = true;
+                                            btnRechazarSolicitud.Enabled = true;
+                                            btnLiberarSolicitud.Enabled = false;
+                                            btnRetornarEstadoASolicitud.Enabled = false;
+                                            btnAtendidoParcial.Enabled = true;
+                                            btnAtendidoTotal.Enabled = true;
+
+                                            if (user2.IdUsuario == "EAURAZO")
+                                            {
+                                                if (itemSeleccionado.idReferenciaBaja != (int?)null || itemSeleccionado.idReferenciaAlta != (int?)null)
+                                                {
+                                                    btnRetornarEstadoASolicitud.Enabled = true;
+
+                                                    btnAtendidoParcial.Enabled = true;
+                                                    btnAtendidoTotal.Enabled = true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    // habilitar documento de referencia (Desde equipamiento tecnologico) 
+                                    if (itemSeleccionado.idReferencia != null)
+                                    {
+                                        if (itemSeleccionado.idReferencia != 0)
+                                        {
+                                            btnVerSolicitudReferencia.Enabled = true;
+                                        }
+                                    }
+                                    // habilitar opción de asociar área de trabajo
+                                    if (itemSeleccionado.idCodigoGeneral != null)
+                                    {
+                                        if (itemSeleccionado.idCodigoGeneral != string.Empty)
+                                        {
+                                            btnAsociarAreaDeTrabajo.Enabled = true;
+                                            btnVerDatosGeneralesDelColaborador.Enabled = true;
+                                        }
+                                    }
+                                    #endregion
+                                }
+                                else
+                                {
+                                    InicioSubMenuSolicitudRenovacion();
+                                }
+                            }
+                        }
+                    }
+                }
+                #endregion
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistems");
+                return;
+            }
+        }
+
+        private void btnSelecionarColumnasDetalleSolicitud_Click(object sender, EventArgs e)
+        {
+            ElegirColumnasSolicitudes();
+        }
+
+        private void ElegirColumnasSolicitudes()
+        {
+            this.dgvListadoSolicitudesRenovacion.ShowColumnChooser();
+        }
+
+
+        private void btnExportarDetalleSolicitudes_Click(object sender, EventArgs e)
+        {
+            if (dgvListadoSolicitudesRenovacion != null)
+            {
+                if (dgvListadoSolicitudesRenovacion.Rows.Count > 0)
+                {
+                    Exportar(dgvListadoSolicitudesRenovacion);
+                }
+
+                else
+                {
+                    MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
+                    return;
+                }
+            }
+        }
+
+        private void btnEditarRegistro_Click(object sender, EventArgs e)
+        {
+            VerRegistroDeSolicitud();
+        }
+
+        private void VerRegistroDeSolicitud()
+        {
+            if (itemSeleccionado != null)
+            {
+                if (itemSeleccionado.id != null)
+                {
+                    if (itemSeleccionado.id != 0)
+                    {
+                        SAS_SolicitudDeRenovacionTelefoniaCelular solicitud = new SAS_SolicitudDeRenovacionTelefoniaCelular();
+                        solicitud.id = itemSeleccionado.id;
+                        SolicitudDeRenovaciónDeEquipoCelularDetalle ofrm = new SolicitudDeRenovaciónDeEquipoCelularDetalle(conection, user2, companyId, privilege, solicitud);
+                        ofrm.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
+                        ofrm.WindowState = FormWindowState.Maximized;
+                        ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                        ofrm.Show();
+
+                    }
+                }
+            }
+        }
+
+        private void btnDVerDocumentosAdjuntos_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                VerDocumentosAdjuntosSolicitudRenovacion();
+            }
+
+        }
+
+        private void VerDocumentosAdjuntosSolicitudRenovacion()
+        {
+            try
+            {
+                #region Attach()
+                if (itemSeleccionado.id != 0)
+                {
+                    int codigoSelecionado = itemSeleccionado.id;
+                    AdjuntarArchivos ofrm = new AdjuntarArchivos(conection, user2, companyId, privilege, codigoSelecionado.ToString(), "RenovacionDeEquiposCelulares");
+                    ofrm.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("El registro no se encuentra asociado en el sistema", "MENSAJE DEL SISTEMA");
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void btnVerSolicitudDeAlta_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                int codigoSolicitudReferencia = itemSeleccionado.idReferenciaAlta;
+                GoToReferenceRequest(codigoSolicitudReferencia);
+            }
+
+        }
+
+
+        private void GoToReferenceRequest(int codigoReferencia)
+        {
+            #region Ir a solicitud de referencia(EQuipamiento tecnológico)           
+            SolicitudDeEquipamientoTecnologicoMantenimiento ofrm = new SolicitudDeEquipamientoTecnologicoMantenimiento(conection, user2, companyId, privilege, codigoReferencia);
+            ofrm.Show();
+            #endregion
+        }
+
+        private void btnVistaPreviaSolicitudAlta_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                int codigoSolicitudReferencia = itemSeleccionado.idReferenciaAlta;
+                PrintRequetsUp(codigoSolicitudReferencia);
+            }
+
+        }
+
+        private void PrintRequetsUp(int id)
+        {
+
+            if (id > 0)
+            {
+                FormatoActaDeEntrega ofrm = new FormatoActaDeEntrega(id);
+                ofrm.ShowDialog();
+            }
+
+        }
+
+        private void btnVistaPreviaSolicitudAltaAnexo_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                int codigoSolicitudReferencia = itemSeleccionado.idReferenciaAlta;
+                PrintRequetsUpAnexo(codigoSolicitudReferencia);
+            }
+        }
+
+        private void PrintRequetsUpAnexo(int id)
+        {
+
+            if (id > 0)
+            {
+                FormatoActaDeEntregaAnexo ofrm = new FormatoActaDeEntregaAnexo(id);
+                ofrm.ShowDialog();
+            }
+
+        }
+
+        private void btnVerSolicitudDeBaja_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                int codigoSolicitudReferencia = itemSeleccionado.idReferenciaBaja;
+                GoToReferenceRequest(codigoSolicitudReferencia);
+            }
+
+        }
+
+        private void btnVistaPreviaSolicitudBaja_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                int codigoSolicitudReferencia = itemSeleccionado.idReferenciaBaja;
+                PrintRequetsdown(codigoSolicitudReferencia);
+            }
+
+
+        }
+
+
+        private void PrintRequetsdown(int id)
+        {
+
+            if (id > 0)
+            {
+                FormatoActaDeDevolucion ofrm = new FormatoActaDeDevolucion(id);
+                ofrm.ShowDialog();
+            }
+
+        }
+
+        private void btnVerDatosGeneralesDelColaborador_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                GoToWorkerCatalog();
+            }
+        }
+
+        private void GoToWorkerCatalog()
+        {
+            #region Ir a catalogo de colaboradores con el filtro del idcolaborador() 
+            if (itemSeleccionado != null)
+            {
+                if (itemSeleccionado.idCodigoGeneral != null)
+                {
+                    if (itemSeleccionado.idCodigoGeneral.ToString().Trim() != string.Empty)
+                    {
+                        string codigoColaboradorFiltrado = itemSeleccionado.idCodigoGeneral.ToString().Trim();
+                        ColaboradoresListado ofrm = new ColaboradoresListado(conection, user2, companyId, privilege, codigoColaboradorFiltrado);
+                        ofrm.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
+                        ofrm.WindowState = FormWindowState.Maximized;
+                        ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                        ofrm.Show();
+                    }
+                }
+            }
+            #endregion
+        }
+
+        private void btnAsociarAreaDeTrabajo_Click(object sender, EventArgs e)
+        {
+            if (itemSeleccionado != null)
+            {
+                if (itemSeleccionado.idCodigoGeneral != null)
+                {
+                    AssociateWorkerToWorkArea();
+                }
+
+            }
+
+        }
+
+        private void AssociateWorkerToWorkArea()
+        {
+            #region Asociar Trabajador A Area de Trabajo() 
+            ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(conection, user2, companyId, privilege, itemSeleccionado.idCodigoGeneral);
+            ofrm.Show();
+            #endregion
+        }
+
+        private void btnGenerarSolicitudDeRenovacion_Click(object sender, EventArgs e)
+        {
+            GenerarSolicitudDeRenovacion();
+        }
+
+        private void GenerarSolicitudDeRenovacion()
+        {
+            try
+            {
+                SAS_SolicitudDeRenovacionTelefoniaCelular SolicitudDeRenovacion = new SAS_SolicitudDeRenovacionTelefoniaCelular();
+                SolicitudDeRenovacion.id = 0;
+                SolicitudDeRenovacion.idCodigoGeneral = itemSelecionado.idCodigoGeneral;
+                SolicitudDeRenovacion.idEmpresa = "001";
+                SolicitudDeRenovacion.idSucursal = "001";
+                SolicitudDeRenovacion.justificacion = "SOLICITUD DE RENOVACION";
+                SolicitudDeRenovacion.numeroCelular = itemSeleccionado.numeroCelular;
+                SolicitudDeRenovacion.usuarioEnAtencion = user2.IdUsuario;
+                SolicitudDeRenovacion.estacionDeTrabajo = Environment.MachineName.Trim();
+                SolicitudDeRenovacion.estadoCodigo = "PE";
+                SolicitudDeRenovacion.fecha = DateTime.Now;
+                SolicitudDeRenovacion.fechaCreacion = DateTime.Now;
+                //SolicitudDeRenovacion.
+
+                SolicitudDeRenovaciónDeEquipoCelularDetalle ofrm = new SolicitudDeRenovaciónDeEquipoCelularDetalle(conection, user2, companyId, privilege, SolicitudDeRenovacion);
+                ofrm.MdiParent = LineasCelulares.ActiveForm;
+                ofrm.WindowState = FormWindowState.Maximized;
+                ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                ofrm.Show();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
         }
     }
 }

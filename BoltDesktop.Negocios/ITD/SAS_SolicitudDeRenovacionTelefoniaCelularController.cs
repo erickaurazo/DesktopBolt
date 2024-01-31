@@ -701,6 +701,54 @@ namespace Asistencia.Negocios
         }
 
 
+        public string CambiarAEstadoAtendidoTotal(string conection, int codigoSolicitud, SAS_USUARIOS user)
+        {
+            string resultadoProceso = string.Empty;
+            SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();            
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                var scopeOptions = new TransactionOptions();
+                scopeOptions.IsolationLevel = System.Transactions.IsolationLevel.ReadCommitted;
+                scopeOptions.Timeout = TimeSpan.MaxValue;
+                var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == codigoSolicitud).ToList();
+                if (resultado != null)
+                {
+                    if (resultado.ToList().Count == 1)
+                    {
+                        oregistro = resultado.Single();
+                        oregistro.estadoCodigo = "AT";
+                        Modelo.SubmitChanges();
+                    }
+                }
+            }
+            return resultadoProceso;
+        }
+
+        public string CambiarAEstadoAtendidoParcial(string conection, int codigoSolicitud, SAS_USUARIOS user)
+        {
+            string resultadoProceso = string.Empty;
+            SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                var scopeOptions = new TransactionOptions();
+                scopeOptions.IsolationLevel = System.Transactions.IsolationLevel.ReadCommitted;
+                scopeOptions.Timeout = TimeSpan.MaxValue;
+                var resultado = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelular.Where(x => x.id == codigoSolicitud).ToList();
+                if (resultado != null)
+                {
+                    if (resultado.ToList().Count == 1)
+                    {
+                        oregistro = resultado.Single();
+                        oregistro.estadoCodigo = "TP";
+                        Modelo.SubmitChanges();
+                    }
+                }
+            }
+            return resultadoProceso;
+        }
+
 
         public string ReleaseRequest(string conection, int codigoSolicitud, SAS_USUARIOS user)
         {

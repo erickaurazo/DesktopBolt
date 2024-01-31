@@ -1630,6 +1630,13 @@ namespace Asistencia.Datos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), @int);
 			return ((ISingleResult<SAS_PersonalExternoDetalleByIdResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumber")]
+		public ISingleResult<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult> SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumber([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CellPhoneNumber", DbType="VarChar(10)")] string cellPhoneNumber)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cellPhoneNumber);
+			return ((ISingleResult<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_DispositivoImagenes")]
@@ -64756,6 +64763,788 @@ namespace Asistencia.Datos
 				if ((this._creadoPor != value))
 				{
 					this._creadoPor = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult
+	{
+		
+		private int _id;
+		
+		private string _idCodigoGeneral;
+		
+		private string _nombres;
+		
+		private string _situacion;
+		
+		private string _planilla;
+		
+		private string _cargo;
+		
+		private string _idGerencia;
+		
+		private string _gerencia;
+		
+		private string _idArea;
+		
+		private string _area;
+		
+		private string _idEmpresa;
+		
+		private string _empresa;
+		
+		private string _idSucursal;
+		
+		private string _sucursal;
+		
+		private string _serie;
+		
+		private string _iddocumento;
+		
+		private string _documento;
+		
+		private System.DateTime _fecha;
+		
+		private string _estadoCodigo;
+		
+		private string _estado;
+		
+		private string _numeroCelular;
+		
+		private int _idDispositivoAlta;
+		
+		private string _dispositivoAlta;
+		
+		private System.Nullable<int> _idReferencia;
+		
+		private string _documentoDeReferencia;
+		
+		private string _usuarioEnAtencion;
+		
+		private System.Nullable<int> _motivoCodigo;
+		
+		private string _motivoSolicitud;
+		
+		private System.Nullable<System.DateTime> _fechaCreacion;
+		
+		private string _estacionDeTrabajo;
+		
+		private int _idDispositivoBaja;
+		
+		private string _dispositivoBaja;
+		
+		private int _idReferenciaAlta;
+		
+		private string _documentoDeReferenciaAlta;
+		
+		private int _idReferenciaBaja;
+		
+		private string _documentoDeReferenciaBaja;
+		
+		private string _justificacion;
+		
+		private string _glosa;
+		
+		private string _nota;
+		
+		private decimal _dias;
+		
+		private string _justificacionDeReposicionCodigo;
+		
+		private string _justificacionDeReposicion;
+		
+		private int _contienAdjunto;
+		
+		public SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCodigoGeneral", DbType="VarChar(14) NOT NULL", CanBeNull=false)]
+		public string idCodigoGeneral
+		{
+			get
+			{
+				return this._idCodigoGeneral;
+			}
+			set
+			{
+				if ((this._idCodigoGeneral != value))
+				{
+					this._idCodigoGeneral = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombres", DbType="VarChar(160)")]
+		public string nombres
+		{
+			get
+			{
+				return this._nombres;
+			}
+			set
+			{
+				if ((this._nombres != value))
+				{
+					this._nombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_situacion", DbType="VarChar(20)")]
+		public string situacion
+		{
+			get
+			{
+				return this._situacion;
+			}
+			set
+			{
+				if ((this._situacion != value))
+				{
+					this._situacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_planilla", DbType="VarChar(90)")]
+		public string planilla
+		{
+			get
+			{
+				return this._planilla;
+			}
+			set
+			{
+				if ((this._planilla != value))
+				{
+					this._planilla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cargo", DbType="VarChar(200)")]
+		public string cargo
+		{
+			get
+			{
+				return this._cargo;
+			}
+			set
+			{
+				if ((this._cargo != value))
+				{
+					this._cargo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="VarChar(12)")]
+		public string idGerencia
+		{
+			get
+			{
+				return this._idGerencia;
+			}
+			set
+			{
+				if ((this._idGerencia != value))
+				{
+					this._idGerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gerencia", DbType="VarChar(150)")]
+		public string gerencia
+		{
+			get
+			{
+				return this._gerencia;
+			}
+			set
+			{
+				if ((this._gerencia != value))
+				{
+					this._gerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="VarChar(3)")]
+		public string idArea
+		{
+			get
+			{
+				return this._idArea;
+			}
+			set
+			{
+				if ((this._idArea != value))
+				{
+					this._idArea = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_area", DbType="VarChar(100)")]
+		public string area
+		{
+			get
+			{
+				return this._area;
+			}
+			set
+			{
+				if ((this._area != value))
+				{
+					this._area = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEmpresa", DbType="VarChar(3)")]
+		public string idEmpresa
+		{
+			get
+			{
+				return this._idEmpresa;
+			}
+			set
+			{
+				if ((this._idEmpresa != value))
+				{
+					this._idEmpresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empresa", DbType="VarChar(200)")]
+		public string empresa
+		{
+			get
+			{
+				return this._empresa;
+			}
+			set
+			{
+				if ((this._empresa != value))
+				{
+					this._empresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idSucursal", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string idSucursal
+		{
+			get
+			{
+				return this._idSucursal;
+			}
+			set
+			{
+				if ((this._idSucursal != value))
+				{
+					this._idSucursal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sucursal", DbType="VarChar(200)")]
+		public string sucursal
+		{
+			get
+			{
+				return this._sucursal;
+			}
+			set
+			{
+				if ((this._sucursal != value))
+				{
+					this._sucursal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_serie", DbType="VarChar(4)")]
+		public string serie
+		{
+			get
+			{
+				return this._serie;
+			}
+			set
+			{
+				if ((this._serie != value))
+				{
+					this._serie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iddocumento", DbType="VarChar(3)")]
+		public string iddocumento
+		{
+			get
+			{
+				return this._iddocumento;
+			}
+			set
+			{
+				if ((this._iddocumento != value))
+				{
+					this._iddocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_documento", DbType="VarChar(16)")]
+		public string documento
+		{
+			get
+			{
+				return this._documento;
+			}
+			set
+			{
+				if ((this._documento != value))
+				{
+					this._documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estadoCodigo", DbType="Char(2)")]
+		public string estadoCodigo
+		{
+			get
+			{
+				return this._estadoCodigo;
+			}
+			set
+			{
+				if ((this._estadoCodigo != value))
+				{
+					this._estadoCodigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="VarChar(32)")]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroCelular", DbType="VarChar(9)")]
+		public string numeroCelular
+		{
+			get
+			{
+				return this._numeroCelular;
+			}
+			set
+			{
+				if ((this._numeroCelular != value))
+				{
+					this._numeroCelular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idDispositivoAlta", DbType="Int NOT NULL")]
+		public int idDispositivoAlta
+		{
+			get
+			{
+				return this._idDispositivoAlta;
+			}
+			set
+			{
+				if ((this._idDispositivoAlta != value))
+				{
+					this._idDispositivoAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dispositivoAlta", DbType="VarChar(MAX)")]
+		public string dispositivoAlta
+		{
+			get
+			{
+				return this._dispositivoAlta;
+			}
+			set
+			{
+				if ((this._dispositivoAlta != value))
+				{
+					this._dispositivoAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReferencia", DbType="Int")]
+		public System.Nullable<int> idReferencia
+		{
+			get
+			{
+				return this._idReferencia;
+			}
+			set
+			{
+				if ((this._idReferencia != value))
+				{
+					this._idReferencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_documentoDeReferencia", DbType="VarChar(7)")]
+		public string documentoDeReferencia
+		{
+			get
+			{
+				return this._documentoDeReferencia;
+			}
+			set
+			{
+				if ((this._documentoDeReferencia != value))
+				{
+					this._documentoDeReferencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuarioEnAtencion", DbType="VarChar(50)")]
+		public string usuarioEnAtencion
+		{
+			get
+			{
+				return this._usuarioEnAtencion;
+			}
+			set
+			{
+				if ((this._usuarioEnAtencion != value))
+				{
+					this._usuarioEnAtencion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_motivoCodigo", DbType="Int")]
+		public System.Nullable<int> motivoCodigo
+		{
+			get
+			{
+				return this._motivoCodigo;
+			}
+			set
+			{
+				if ((this._motivoCodigo != value))
+				{
+					this._motivoCodigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_motivoSolicitud", DbType="VarChar(150)")]
+		public string motivoSolicitud
+		{
+			get
+			{
+				return this._motivoSolicitud;
+			}
+			set
+			{
+				if ((this._motivoSolicitud != value))
+				{
+					this._motivoSolicitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaCreacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				if ((this._fechaCreacion != value))
+				{
+					this._fechaCreacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estacionDeTrabajo", DbType="VarChar(100)")]
+		public string estacionDeTrabajo
+		{
+			get
+			{
+				return this._estacionDeTrabajo;
+			}
+			set
+			{
+				if ((this._estacionDeTrabajo != value))
+				{
+					this._estacionDeTrabajo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idDispositivoBaja", DbType="Int NOT NULL")]
+		public int idDispositivoBaja
+		{
+			get
+			{
+				return this._idDispositivoBaja;
+			}
+			set
+			{
+				if ((this._idDispositivoBaja != value))
+				{
+					this._idDispositivoBaja = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dispositivoBaja", DbType="VarChar(MAX)")]
+		public string dispositivoBaja
+		{
+			get
+			{
+				return this._dispositivoBaja;
+			}
+			set
+			{
+				if ((this._dispositivoBaja != value))
+				{
+					this._dispositivoBaja = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReferenciaAlta", DbType="Int NOT NULL")]
+		public int idReferenciaAlta
+		{
+			get
+			{
+				return this._idReferenciaAlta;
+			}
+			set
+			{
+				if ((this._idReferenciaAlta != value))
+				{
+					this._idReferenciaAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_documentoDeReferenciaAlta", DbType="VarChar(7)")]
+		public string documentoDeReferenciaAlta
+		{
+			get
+			{
+				return this._documentoDeReferenciaAlta;
+			}
+			set
+			{
+				if ((this._documentoDeReferenciaAlta != value))
+				{
+					this._documentoDeReferenciaAlta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReferenciaBaja", DbType="Int NOT NULL")]
+		public int idReferenciaBaja
+		{
+			get
+			{
+				return this._idReferenciaBaja;
+			}
+			set
+			{
+				if ((this._idReferenciaBaja != value))
+				{
+					this._idReferenciaBaja = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_documentoDeReferenciaBaja", DbType="VarChar(7)")]
+		public string documentoDeReferenciaBaja
+		{
+			get
+			{
+				return this._documentoDeReferenciaBaja;
+			}
+			set
+			{
+				if ((this._documentoDeReferenciaBaja != value))
+				{
+					this._documentoDeReferenciaBaja = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_justificacion", DbType="VarChar(2500)")]
+		public string justificacion
+		{
+			get
+			{
+				return this._justificacion;
+			}
+			set
+			{
+				if ((this._justificacion != value))
+				{
+					this._justificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_glosa", DbType="VarChar(2500)")]
+		public string glosa
+		{
+			get
+			{
+				return this._glosa;
+			}
+			set
+			{
+				if ((this._glosa != value))
+				{
+					this._glosa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nota", DbType="VarChar(2500)")]
+		public string nota
+		{
+			get
+			{
+				return this._nota;
+			}
+			set
+			{
+				if ((this._nota != value))
+				{
+					this._nota = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dias", DbType="Decimal(12,0) NOT NULL")]
+		public decimal dias
+		{
+			get
+			{
+				return this._dias;
+			}
+			set
+			{
+				if ((this._dias != value))
+				{
+					this._dias = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_justificacionDeReposicionCodigo", DbType="Char(2)")]
+		public string justificacionDeReposicionCodigo
+		{
+			get
+			{
+				return this._justificacionDeReposicionCodigo;
+			}
+			set
+			{
+				if ((this._justificacionDeReposicionCodigo != value))
+				{
+					this._justificacionDeReposicionCodigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_justificacionDeReposicion", DbType="VarChar(150)")]
+		public string justificacionDeReposicion
+		{
+			get
+			{
+				return this._justificacionDeReposicion;
+			}
+			set
+			{
+				if ((this._justificacionDeReposicion != value))
+				{
+					this._justificacionDeReposicion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contienAdjunto", DbType="Int NOT NULL")]
+		public int contienAdjunto
+		{
+			get
+			{
+				return this._contienAdjunto;
+			}
+			set
+			{
+				if ((this._contienAdjunto != value))
+				{
+					this._contienAdjunto = value;
 				}
 			}
 		}

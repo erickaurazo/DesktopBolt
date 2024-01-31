@@ -49,6 +49,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         public MesController MesesNeg;
         public string FechaDesdeConsulta;
         public string FechaHastaConsulta;
+        private int ClickFiltro = 1;
+        private int ClickResaltarResultados = 1;
 
         public SolicitudDeRenovaciónDeEquipoCelular()
         {
@@ -284,6 +286,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             btnLiberarSolicitud.Enabled = false;
             btnRetornarEstadoASolicitud.Enabled = false;
             btnDVerDocumentosAdjuntos.Enabled = false;
+            btnAtendidoParcial.Enabled = false;
+            btnAtendidoTotal.Enabled = false;
 
 
             try
@@ -384,9 +388,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                             btnDesactivarSolicitud.Enabled = true;
                                             btnAnular.Enabled = false;
                                             btnEliminarRegistro.Enabled = false;
+
+
+
                                             if (_user2.IdUsuario == "EAURAZO")
                                             {
                                                 btnLiberarSolicitud.Enabled = true;
+
+                                                btnAtendidoParcial.Enabled = true;
+                                                btnAtendidoTotal.Enabled = true;
 
                                             }
                                         }
@@ -407,11 +417,18 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                             btnRechazarSolicitud.Enabled = true;
                                             btnLiberarSolicitud.Enabled = false;
                                             btnRetornarEstadoASolicitud.Enabled = false;
+
+                                            btnAtendidoParcial.Enabled = true;
+                                            btnAtendidoTotal.Enabled = true;
+
                                             if (_user2.IdUsuario == "EAURAZO")
                                             {
                                                 if (itemSeleccionado.idReferenciaBaja != (int?)null || itemSeleccionado.idReferenciaAlta != (int?)null)
                                                 {
                                                     btnRetornarEstadoASolicitud.Enabled = true;
+
+                                                    btnAtendidoParcial.Enabled = true;
+                                                    btnAtendidoTotal.Enabled = true;
                                                 }
                                             }
                                         }
@@ -463,6 +480,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     btnVistaPreviaSolicitudAlta.Enabled = false;
                                     btnVistaPreviaSolicitudBaja.Enabled = false;
                                     btnVistaPreviaSolicitudAltaAnexo.Enabled = false;
+                                    btnAtendidoParcial.Enabled = false;
+                                    btnAtendidoTotal.Enabled = false;
                                 }
                             }
                         }
@@ -1016,5 +1035,183 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 }
             }
         }
+
+        private void btnActivarFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+        private void ActivateFilter()
+        {
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | DesActivar Filtro()
+                dgvListado.EnableFiltering = !true;
+                dgvListado.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+
+                #region Par() | Activar Filtro()
+                dgvListado.EnableFiltering = true;
+                dgvListado.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+        private void btnResaltarResultados_Click(object sender, EventArgs e)
+        {
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
+        }
+
+        private void ResaltarResultados()
+        {
+
+            if ((ClickResaltarResultados % 2) == 0)
+            {
+                #region Par() | Acción pintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "ANULADO", string.Empty, true);
+                c1.RowBackColor = Color.LightPink;
+                c1.CellBackColor = Color.LightPink;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c1);
+
+                ConditionalFormattingObject c2 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "POR REASIGNAR | POR RECUPERAR", "", true);
+                c2.RowBackColor = Utiles.colorAmarilloClaro;
+                c2.CellBackColor = Utiles.colorAmarilloClaro;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c2);
+
+                ConditionalFormattingObject c3 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "PENDIENTE DE SOLICITUD", "", true);
+                c3.RowBackColor = Color.LightCyan;
+                c3.CellBackColor = Color.LightCyan;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c3);
+
+                ConditionalFormattingObject c4 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "APROBADO POR GERENCIA INMEDIATA", string.Empty, true);
+                c4.RowBackColor = Color.SkyBlue;
+                c4.CellBackColor =  Color.SkyBlue;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c4);
+
+                ConditionalFormattingObject c5 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "EN SOLICITUD", "", true);
+                c5.RowBackColor = Color.White;
+                c5.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c5);
+
+                ConditionalFormattingObject c6 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "FINALIZADO", "", true);
+                c6.RowBackColor = Color.PaleGreen;
+                c6.CellBackColor = Color.PaleGreen;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c6);
+
+                ConditionalFormattingObject c7 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "Atendido Total".ToUpper(), "", true);
+                c7.RowBackColor = Color.PaleGreen;
+                c7.CellBackColor = Color.PaleGreen;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c7);
+
+                ConditionalFormattingObject c8 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "Atendido Parcial".ToUpper(), "", true);
+                c8.RowBackColor = Color.Moccasin;
+                c8.CellBackColor = Color.Moccasin;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c8);
+
+                #endregion
+            }
+            else
+            {
+                #region Par() | Acción despintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "ANULADO", string.Empty, true);
+                c1.RowBackColor = Color.White;
+                c1.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c1);
+
+                ConditionalFormattingObject c2 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "POR REASIGNAR | POR RECUPERAR", "", true);
+                c2.RowBackColor = Color.White;
+                c2.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c2);
+
+                ConditionalFormattingObject c3 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "PENDIENTE DE SOLICITUD", "", true);
+                c3.RowBackColor = Color.White;
+                c3.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c3);
+
+                ConditionalFormattingObject c4 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "APROBADO POR GERENCIA INMEDIATA", string.Empty, true);
+                c4.RowBackColor = Color.White;
+                c4.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c4);
+
+                ConditionalFormattingObject c5 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "EN SOLICITUD", "", true);
+                c5.RowBackColor = Color.White;
+                c5.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c5);
+
+                ConditionalFormattingObject c6 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "FINALIZADO", "", true);
+                c6.RowBackColor = Color.White;
+                c6.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c6);
+
+
+                ConditionalFormattingObject c7 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "Atendido Total".ToUpper(), "", true);
+                c7.RowBackColor = Color.White;
+                c7.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c7);
+
+                ConditionalFormattingObject c8 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Equal, "Atendido Parcial".ToUpper(), "", true);
+                c8.RowBackColor = Color.White;
+                c8.CellBackColor = Color.White;
+                dgvListado.Columns["chESTADO"].ConditionalFormattingObjectList.Add(c8);
+
+                #endregion
+            }
+        }
+
+        private void finalizarAtenciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void AtendidoTotal()
+        {
+            try
+            {
+                int codigoDeDispositivo = itemSeleccionado.id;
+                Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
+                string resultadoAprobacion = Modelo.CambiarAEstadoAtendidoTotal("SAS", codigoDeDispositivo, _user2);
+                MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
+                Actualizar();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void btnAtendidoParcial_Click(object sender, EventArgs e)
+        {
+            AtendidoParcial();
+        }
+
+        private void AtendidoParcial()
+        {
+            try
+            {
+                int codigoDeDispositivo = itemSeleccionado.id;
+                Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
+                string resultadoAprobacion = Modelo.CambiarAEstadoAtendidoParcial("SAS", codigoDeDispositivo, _user2);
+                MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
+                Actualizar();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
     }
 }

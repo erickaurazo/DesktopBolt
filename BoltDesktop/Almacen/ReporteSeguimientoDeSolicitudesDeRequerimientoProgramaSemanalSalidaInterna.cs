@@ -601,7 +601,7 @@ namespace ComparativoHorasVisualSATNISIRA.Almacen
 
 
                 ConditionalFormattingObject c4 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "PENDIENTE", string.Empty, true);
-                c4.RowForeColor = Color.Black;
+                c4.RowBackColor = Color.Black;
                 c4.CellBackColor = Color.Black;
                 c4.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
                 dgvRegistros.Columns["chEstado"].ConditionalFormattingObjectList.Add(c4);
