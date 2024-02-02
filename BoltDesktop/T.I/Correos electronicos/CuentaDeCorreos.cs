@@ -48,6 +48,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         object result;
         private int EstadoCambio = 0;
         private int CodigoRegistro;
+        private int ClickFiltro = 0;
 
         public CuentaDeCorreos()
         {
@@ -1314,6 +1315,42 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMAS");
                 return;
             }
+        }
+
+        private void btnActivarFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+
+        }
+
+        private void ActivateFilter()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+        private void btnResaltarResultados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void commandBarButton1_Click(object sender, EventArgs e)
+        {
+            this.dgvRegistro.ShowColumnChooser();
         }
     }
 }

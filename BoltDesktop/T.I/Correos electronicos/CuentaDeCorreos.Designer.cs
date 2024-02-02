@@ -44,11 +44,71 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn26 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn28 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn29 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn30 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn31 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn32 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn33 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn34 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn35 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn36 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn37 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn38 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn39 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn40 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn41 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn42 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn43 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn44 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn45 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn46 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn47 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn48 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn49 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn50 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn51 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn52 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn53 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.gbList = new Telerik.WinControls.UI.RadGroupBox();
@@ -58,9 +118,26 @@
             this.dgvRegistro = new Telerik.WinControls.UI.RadGridView();
             this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnAsociarAreaDeTrabajo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnVerDatosDelColaborador = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEnProcesoDeCopiaDeSeguridad = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEnProcesosDeSuspencion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSuspendido = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEnProcesoDeBaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBajarCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnActivarCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSinLicenciaCorporativa = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAnularCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnReasginado = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLiberacionDeCuentaM365 = new System.Windows.Forms.ToolStripMenuItem();
             this.gbEdit = new Telerik.WinControls.UI.RadGroupBox();
-            this.tabControl = new Telerik.WinControls.UI.RadPageView();
-            this.tabDetalles = new Telerik.WinControls.UI.RadPageViewPage();
             this.dgvDetail = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
             this.chid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,8 +166,6 @@
             this.txtIdCodigoGeneral = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.btnPersonalBuscar = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
             this.txtNombres = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.lbObservaciones = new Telerik.WinControls.UI.RadLabel();
             this.txtclave = new System.Windows.Forms.TextBox();
             this.lblClave = new Telerik.WinControls.UI.RadLabel();
             this.txtCuenta = new System.Windows.Forms.TextBox();
@@ -125,26 +200,71 @@
             this.btnMenu = new Telerik.WinControls.UI.RadCommandBar();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
-            this.btnEnProcesoDeCopiaDeSeguridad = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEnProcesosDeSuspencion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEnProcesoDeBaja = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSuspendido = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnBajarCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnActivarCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSinLicenciaCorporativa = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnVerDatosDelColaborador = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAnularCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.bgwCambioEstado = new System.ComponentModel.BackgroundWorker();
-            this.btnReasginado = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLiberacionDeCuentaM365 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnActivarFiltro = new Telerik.WinControls.UI.CommandBarButton();
+            this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
+            this.tabPersonalAsignado = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnExportarPersonalAsignado = new Telerik.WinControls.UI.RadButton();
+            this.btnActivarEstado = new Telerik.WinControls.UI.RadButton();
+            this.dgvDetalleAsignacionesAPersonal = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.chLineaCelularPersonalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chLineaCelularID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPersonalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPersonalSituacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPersonalPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPersonalCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPersonalDocumentoDeIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesde = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chReferenciaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chReferenciaSolicitudID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chGlosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuitarDetalle = new Telerik.WinControls.UI.RadButton();
+            this.btnAgregarDetalle = new Telerik.WinControls.UI.RadButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblAnios = new Telerik.WinControls.UI.RadLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFechaProduccion = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
+            this.lblFechaBaja = new System.Windows.Forms.Label();
+            this.txtFechaActivacion = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
+            this.myDataGridViewMaskedTextEditingControl1 = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
+            this.txtAnioDepreciar = new Telerik.WinControls.UI.RadSpinEditor();
+            this.lblAniosADepreciar = new Telerik.WinControls.UI.RadLabel();
+            this.lblLatitud = new System.Windows.Forms.Label();
+            this.txtLatitud = new System.Windows.Forms.TextBox();
+            this.txtUbicacion = new System.Windows.Forms.TextBox();
+            this.lblUbicacion = new System.Windows.Forms.Label();
+            this.txtLongitud = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabGlosa = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.tabSolicitud = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnExportarDetalleSolicitudes = new Telerik.WinControls.UI.RadButton();
+            this.btnSelecionarColumnasDetalleSolicitud = new Telerik.WinControls.UI.RadButton();
+            this.dgvListadoSolicitudesRenovacion = new Telerik.WinControls.UI.RadGridView();
+            this.tabHistoricoDePlanes = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnExportarHistoricoPlanes = new Telerik.WinControls.UI.RadButton();
+            this.btnCambiarEstadoHistoricoPlanes = new Telerik.WinControls.UI.RadButton();
+            this.dgvHistoricoPlanes = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.myDataGridViewMaskedTextColumn1 = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.myDataGridViewMaskedTextColumn2 = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuitarHistoricoPlanes = new Telerik.WinControls.UI.RadButton();
+            this.btnAgregarHistoricoPlanes = new Telerik.WinControls.UI.RadButton();
+            this.tabLog = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnResaltarResultados = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnElegirColumna = new Telerik.WinControls.UI.CommandBarButton();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
@@ -155,9 +275,6 @@
             this.subMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbEdit)).BeginInit();
             this.gbEdit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
-            this.tabControl.SuspendLayout();
-            this.tabDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeStateDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteItem)).BeginInit();
@@ -170,7 +287,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoSolicitud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblcodSolicitud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblcuenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdEstado)).BeginInit();
@@ -182,15 +298,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
+            this.radPageView1.SuspendLayout();
+            this.tabPersonalAsignado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportarPersonalAsignado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActivarEstado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAsignacionesAPersonal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQuitarDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblAnios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAnioDepreciar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblAniosADepreciar)).BeginInit();
+            this.tabGlosa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
+            this.tabSolicitud.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportarDetalleSolicitudes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelecionarColumnasDetalleSolicitud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSolicitudesRenovacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSolicitudesRenovacion.MasterTemplate)).BeginInit();
+            this.tabHistoricoDePlanes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportarHistoricoPlanes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCambiarEstadoHistoricoPlanes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistoricoPlanes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQuitarHistoricoPlanes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarHistoricoPlanes)).BeginInit();
+            this.tabLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // stsBarraEstado
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 612);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 735);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1221, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1377, 22);
             this.stsBarraEstado.TabIndex = 209;
             // 
             // progressBar1
@@ -211,7 +352,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(5, 32);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(641, 577);
+            this.gbList.Size = new System.Drawing.Size(797, 700);
             this.gbList.TabIndex = 207;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -220,7 +361,7 @@
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.Location = new System.Drawing.Point(551, 17);
+            this.btnConsultar.Location = new System.Drawing.Point(707, 17);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(88, 24);
             this.btnConsultar.TabIndex = 258;
@@ -243,7 +384,7 @@
             // 
             this.chkVerAgrupados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkVerAgrupados.AutoSize = true;
-            this.chkVerAgrupados.Location = new System.Drawing.Point(395, 20);
+            this.chkVerAgrupados.Location = new System.Drawing.Point(551, 20);
             this.chkVerAgrupados.Name = "chkVerAgrupados";
             this.chkVerAgrupados.Size = new System.Drawing.Size(151, 17);
             this.chkVerAgrupados.TabIndex = 256;
@@ -261,7 +402,7 @@
             this.dgvRegistro.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.dgvRegistro.ForeColor = System.Drawing.Color.Black;
             this.dgvRegistro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgvRegistro.Location = new System.Drawing.Point(2, 43);
+            this.dgvRegistro.Location = new System.Drawing.Point(2, 47);
             // 
             // dgvRegistro
             // 
@@ -285,7 +426,7 @@
             gridViewTextBoxColumn2.HeaderText = "Código. Per.";
             gridViewTextBoxColumn2.Name = "chCodigo";
             gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 75;
+            gridViewTextBoxColumn2.Width = 94;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Gerencia";
             gridViewTextBoxColumn3.HeaderText = "Gerencia";
@@ -303,13 +444,13 @@
             gridViewTextBoxColumn5.FieldName = "Nombres";
             gridViewTextBoxColumn5.HeaderText = "Nombres";
             gridViewTextBoxColumn5.Name = "chNombresCompletos";
-            gridViewTextBoxColumn5.Width = 183;
+            gridViewTextBoxColumn5.Width = 229;
             gridViewTextBoxColumn6.AllowGroup = false;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "cuenta";
             gridViewTextBoxColumn6.HeaderText = "Cuenta";
             gridViewTextBoxColumn6.Name = "chcuenta";
-            gridViewTextBoxColumn6.Width = 148;
+            gridViewTextBoxColumn6.Width = 185;
             gridViewTextBoxColumn7.AllowGroup = false;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "clave";
@@ -321,7 +462,7 @@
             gridViewTextBoxColumn8.FieldName = "descripcion";
             gridViewTextBoxColumn8.HeaderText = "Plan";
             gridViewTextBoxColumn8.Name = "chdescripcion";
-            gridViewTextBoxColumn8.Width = 121;
+            gridViewTextBoxColumn8.Width = 151;
             gridViewCheckBoxColumn1.AllowGroup = false;
             gridViewCheckBoxColumn1.EnableExpressionEditor = true;
             gridViewCheckBoxColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
@@ -369,7 +510,7 @@
             gridViewTextBoxColumn11.FieldName = "EstadoDescripcion";
             gridViewTextBoxColumn11.HeaderText = "Estado Cta.";
             gridViewTextBoxColumn11.Name = "chEstadoDescripcion";
-            gridViewTextBoxColumn11.Width = 96;
+            gridViewTextBoxColumn11.Width = 120;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -390,10 +531,12 @@
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
             this.dgvRegistro.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvRegistro.MasterTemplate.ShowGroupedColumns = true;
+            this.dgvRegistro.MasterTemplate.ShowHeaderCellButtons = true;
             this.dgvRegistro.Name = "dgvRegistro";
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvRegistro.Size = new System.Drawing.Size(637, 532);
+            this.dgvRegistro.ShowHeaderCellButtons = true;
+            this.dgvRegistro.Size = new System.Drawing.Size(793, 653);
             this.dgvRegistro.TabIndex = 164;
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
@@ -432,12 +575,140 @@
             this.btnAsociarAreaDeTrabajo.Text = "Asociar área de trabajo";
             this.btnAsociarAreaDeTrabajo.Click += new System.EventHandler(this.btnAsociarAreaDeTrabajo_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnVerDatosDelColaborador
+            // 
+            this.btnVerDatosDelColaborador.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDatosDelColaborador.Image")));
+            this.btnVerDatosDelColaborador.Name = "btnVerDatosDelColaborador";
+            this.btnVerDatosDelColaborador.Size = new System.Drawing.Size(251, 22);
+            this.btnVerDatosDelColaborador.Text = "Ver datos del colaborador";
+            this.btnVerDatosDelColaborador.Click += new System.EventHandler(this.btnVerDatosDelColaborador_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnEnProcesoDeCopiaDeSeguridad
+            // 
+            this.btnEnProcesoDeCopiaDeSeguridad.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesoDeCopiaDeSeguridad.Image")));
+            this.btnEnProcesoDeCopiaDeSeguridad.Name = "btnEnProcesoDeCopiaDeSeguridad";
+            this.btnEnProcesoDeCopiaDeSeguridad.Size = new System.Drawing.Size(251, 22);
+            this.btnEnProcesoDeCopiaDeSeguridad.Text = "En proceso de copia de seguridad";
+            this.btnEnProcesoDeCopiaDeSeguridad.Click += new System.EventHandler(this.btnEnProcesoDeCopiaDeSeguridad_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnEnProcesosDeSuspencion
+            // 
+            this.btnEnProcesosDeSuspencion.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesosDeSuspencion.Image")));
+            this.btnEnProcesosDeSuspencion.Name = "btnEnProcesosDeSuspencion";
+            this.btnEnProcesosDeSuspencion.Size = new System.Drawing.Size(251, 22);
+            this.btnEnProcesosDeSuspencion.Text = "En procesos de suspención";
+            this.btnEnProcesosDeSuspencion.Click += new System.EventHandler(this.btnEnProcesosDeSuspencion_Click);
+            // 
+            // btnSuspendido
+            // 
+            this.btnSuspendido.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspendido.Image")));
+            this.btnSuspendido.Name = "btnSuspendido";
+            this.btnSuspendido.Size = new System.Drawing.Size(251, 22);
+            this.btnSuspendido.Text = "Suspendido";
+            this.btnSuspendido.Click += new System.EventHandler(this.btnSuspendido_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnEnProcesoDeBaja
+            // 
+            this.btnEnProcesoDeBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesoDeBaja.Image")));
+            this.btnEnProcesoDeBaja.Name = "btnEnProcesoDeBaja";
+            this.btnEnProcesoDeBaja.Size = new System.Drawing.Size(251, 22);
+            this.btnEnProcesoDeBaja.Text = "En proceso de baja";
+            this.btnEnProcesoDeBaja.Click += new System.EventHandler(this.btnEnProcesoDeBaja_Click);
+            // 
+            // btnBajarCuenta
+            // 
+            this.btnBajarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnBajarCuenta.Image")));
+            this.btnBajarCuenta.Name = "btnBajarCuenta";
+            this.btnBajarCuenta.Size = new System.Drawing.Size(251, 22);
+            this.btnBajarCuenta.Text = "Bajar cuenta";
+            this.btnBajarCuenta.Click += new System.EventHandler(this.btnBajarCuenta_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnActivarCuenta
+            // 
+            this.btnActivarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarCuenta.Image")));
+            this.btnActivarCuenta.Name = "btnActivarCuenta";
+            this.btnActivarCuenta.Size = new System.Drawing.Size(251, 22);
+            this.btnActivarCuenta.Text = "Activar cuenta";
+            this.btnActivarCuenta.Click += new System.EventHandler(this.btnActivarCuenta_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnSinLicenciaCorporativa
+            // 
+            this.btnSinLicenciaCorporativa.Image = ((System.Drawing.Image)(resources.GetObject("btnSinLicenciaCorporativa.Image")));
+            this.btnSinLicenciaCorporativa.Name = "btnSinLicenciaCorporativa";
+            this.btnSinLicenciaCorporativa.Size = new System.Drawing.Size(251, 22);
+            this.btnSinLicenciaCorporativa.Text = "Sin licencia corporativa";
+            this.btnSinLicenciaCorporativa.Click += new System.EventHandler(this.btnSinLicenciaCorporativa_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnAnularCuenta
+            // 
+            this.btnAnularCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnAnularCuenta.Image")));
+            this.btnAnularCuenta.Name = "btnAnularCuenta";
+            this.btnAnularCuenta.Size = new System.Drawing.Size(251, 22);
+            this.btnAnularCuenta.Text = "Anular cuenta";
+            this.btnAnularCuenta.Click += new System.EventHandler(this.btnAnularCuenta_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(248, 6);
+            // 
+            // btnReasginado
+            // 
+            this.btnReasginado.Image = ((System.Drawing.Image)(resources.GetObject("btnReasginado.Image")));
+            this.btnReasginado.Name = "btnReasginado";
+            this.btnReasginado.Size = new System.Drawing.Size(251, 22);
+            this.btnReasginado.Text = "Reasginado";
+            this.btnReasginado.Click += new System.EventHandler(this.btnReasginado_Click);
+            // 
+            // btnLiberacionDeCuentaM365
+            // 
+            this.btnLiberacionDeCuentaM365.Image = ((System.Drawing.Image)(resources.GetObject("btnLiberacionDeCuentaM365.Image")));
+            this.btnLiberacionDeCuentaM365.Name = "btnLiberacionDeCuentaM365";
+            this.btnLiberacionDeCuentaM365.Size = new System.Drawing.Size(251, 22);
+            this.btnLiberacionDeCuentaM365.Text = "Liberación de cuenta M365";
+            this.btnLiberacionDeCuentaM365.Click += new System.EventHandler(this.btnLiberacionDeCuentaM365_Click);
+            // 
             // gbEdit
             // 
             this.gbEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEdit.Controls.Add(this.tabControl);
+            this.gbEdit.Controls.Add(this.radPageView1);
             this.gbEdit.Controls.Add(this.lblPlanDeCuenta);
             this.gbEdit.Controls.Add(this.txtLicenciaCodigo);
             this.gbEdit.Controls.Add(this.btnLicenciaCodigo);
@@ -454,8 +725,6 @@
             this.gbEdit.Controls.Add(this.txtIdCodigoGeneral);
             this.gbEdit.Controls.Add(this.btnPersonalBuscar);
             this.gbEdit.Controls.Add(this.txtNombres);
-            this.gbEdit.Controls.Add(this.txtObservaciones);
-            this.gbEdit.Controls.Add(this.lbObservaciones);
             this.gbEdit.Controls.Add(this.txtclave);
             this.gbEdit.Controls.Add(this.lblClave);
             this.gbEdit.Controls.Add(this.txtCuenta);
@@ -470,68 +739,37 @@
             this.gbEdit.Controls.Add(this.radLabel2);
             this.gbEdit.Enabled = false;
             this.gbEdit.HeaderText = " Mantenimiento";
-            this.gbEdit.Location = new System.Drawing.Point(650, 32);
+            this.gbEdit.Location = new System.Drawing.Point(806, 32);
             this.gbEdit.Name = "gbEdit";
             this.gbEdit.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbEdit.Size = new System.Drawing.Size(571, 575);
+            this.gbEdit.Size = new System.Drawing.Size(571, 698);
             this.gbEdit.TabIndex = 206;
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
             this.gbEdit.ThemeName = "Windows8";
-            // 
-            // tabControl
-            // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tabDetalles);
-            this.tabControl.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
-            this.tabControl.Location = new System.Drawing.Point(5, 321);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedPage = this.tabDetalles;
-            this.tabControl.Size = new System.Drawing.Size(561, 223);
-            this.tabControl.TabIndex = 270;
-            this.tabControl.Text = "Detalles";
-            this.tabControl.ThemeName = "Windows8";
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.tabControl.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.tabControl.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Fill;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.tabControl.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Bottom;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.tabControl.GetChildAt(0))).ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
-            // 
-            // tabDetalles
-            // 
-            this.tabDetalles.Controls.Add(this.dgvDetail);
-            this.tabDetalles.Controls.Add(this.btnChangeStateDetail);
-            this.tabDetalles.Controls.Add(this.btnDeleteItem);
-            this.tabDetalles.Controls.Add(this.btnAddItem);
-            this.tabDetalles.ItemSize = new System.Drawing.SizeF(559F, 26F);
-            this.tabDetalles.Location = new System.Drawing.Point(5, 5);
-            this.tabDetalles.Name = "tabDetalles";
-            this.tabDetalles.Size = new System.Drawing.Size(551, 189);
-            this.tabDetalles.Text = "     Detalle            ";
             // 
             // dgvDetail
             // 
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToDeleteRows = false;
             this.dgvDetail.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDetail.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chid,
@@ -542,16 +780,16 @@
             this.chdescripcion,
             this.chestado,
             this.chestadoDescripcion});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvDetail.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvDetail.Location = new System.Drawing.Point(0, 33);
+            this.dgvDetail.Location = new System.Drawing.Point(-5, 35);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.P_EsEditable = false;
             this.dgvDetail.P_FormatoDecimal = null;
@@ -559,24 +797,24 @@
             this.dgvDetail.P_NombreColCorrelativa = null;
             this.dgvDetail.P_NombreTabla = null;
             this.dgvDetail.P_NumeroDigitos = 0;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvDetail.RowHeadersWidth = 10;
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvDetail.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetail.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetail.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetail.Size = new System.Drawing.Size(556, 153);
+            this.dgvDetail.Size = new System.Drawing.Size(554, 337);
             this.dgvDetail.TabIndex = 268;
             this.dgvDetail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetail_KeyUp);
             // 
@@ -648,7 +886,7 @@
             this.btnChangeStateDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChangeStateDetail.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeStateDetail.Image")));
             this.btnChangeStateDetail.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnChangeStateDetail.Location = new System.Drawing.Point(457, 1);
+            this.btnChangeStateDetail.Location = new System.Drawing.Point(454, 3);
             this.btnChangeStateDetail.Name = "btnChangeStateDetail";
             this.btnChangeStateDetail.Size = new System.Drawing.Size(25, 26);
             this.btnChangeStateDetail.TabIndex = 269;
@@ -659,7 +897,7 @@
             // 
             this.btnDeleteItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteItem.Image")));
-            this.btnDeleteItem.Location = new System.Drawing.Point(519, 1);
+            this.btnDeleteItem.Location = new System.Drawing.Point(516, 3);
             this.btnDeleteItem.Name = "btnDeleteItem";
             this.btnDeleteItem.Size = new System.Drawing.Size(25, 26);
             this.btnDeleteItem.TabIndex = 267;
@@ -670,7 +908,7 @@
             // 
             this.btnAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
-            this.btnAddItem.Location = new System.Drawing.Point(488, 1);
+            this.btnAddItem.Location = new System.Drawing.Point(485, 3);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(25, 26);
             this.btnAddItem.TabIndex = 266;
@@ -748,7 +986,7 @@
             // 
             this.txtFechaBaja.BackColor = System.Drawing.Color.MistyRose;
             this.txtFechaBaja.Enabled = false;
-            this.txtFechaBaja.Location = new System.Drawing.Point(388, 295);
+            this.txtFechaBaja.Location = new System.Drawing.Point(381, 227);
             this.txtFechaBaja.Name = "txtFechaBaja";
             this.txtFechaBaja.Size = new System.Drawing.Size(178, 20);
             this.txtFechaBaja.TabIndex = 261;
@@ -757,7 +995,7 @@
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(302, 297);
+            this.radLabel5.Location = new System.Drawing.Point(295, 229);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(80, 18);
             this.radLabel5.TabIndex = 260;
@@ -767,7 +1005,7 @@
             // 
             this.txtFechaDeActivación.BackColor = System.Drawing.Color.Honeydew;
             this.txtFechaDeActivación.Enabled = false;
-            this.txtFechaDeActivación.Location = new System.Drawing.Point(132, 295);
+            this.txtFechaDeActivación.Location = new System.Drawing.Point(125, 227);
             this.txtFechaDeActivación.Name = "txtFechaDeActivación";
             this.txtFechaDeActivación.Size = new System.Drawing.Size(152, 20);
             this.txtFechaDeActivación.TabIndex = 259;
@@ -776,7 +1014,7 @@
             // 
             // lblActivoDesde
             // 
-            this.lblActivoDesde.Location = new System.Drawing.Point(34, 297);
+            this.lblActivoDesde.Location = new System.Drawing.Point(27, 229);
             this.lblActivoDesde.Name = "lblActivoDesde";
             this.lblActivoDesde.Size = new System.Drawing.Size(88, 18);
             this.lblActivoDesde.TabIndex = 258;
@@ -788,7 +1026,7 @@
             this.chkActivoEnReporte.AutoSize = true;
             this.chkActivoEnReporte.Checked = true;
             this.chkActivoEnReporte.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActivoEnReporte.Location = new System.Drawing.Point(154, 275);
+            this.chkActivoEnReporte.Location = new System.Drawing.Point(132, 201);
             this.chkActivoEnReporte.Name = "chkActivoEnReporte";
             this.chkActivoEnReporte.Size = new System.Drawing.Size(122, 17);
             this.chkActivoEnReporte.TabIndex = 258;
@@ -798,16 +1036,16 @@
             // txtCodigoSolicitud
             // 
             this.txtCodigoSolicitud.Enabled = false;
-            this.txtCodigoSolicitud.Location = new System.Drawing.Point(388, 53);
+            this.txtCodigoSolicitud.Location = new System.Drawing.Point(336, 53);
             this.txtCodigoSolicitud.Name = "txtCodigoSolicitud";
-            this.txtCodigoSolicitud.Size = new System.Drawing.Size(178, 20);
+            this.txtCodigoSolicitud.Size = new System.Drawing.Size(230, 20);
             this.txtCodigoSolicitud.TabIndex = 257;
             this.txtCodigoSolicitud.TabStop = false;
             this.txtCodigoSolicitud.ThemeName = "VisualStudio2012Light";
             // 
             // lblcodSolicitud
             // 
-            this.lblcodSolicitud.Location = new System.Drawing.Point(306, 53);
+            this.lblcodSolicitud.Location = new System.Drawing.Point(255, 53);
             this.lblcodSolicitud.Name = "lblcodSolicitud";
             this.lblcodSolicitud.Size = new System.Drawing.Size(78, 18);
             this.lblcodSolicitud.TabIndex = 256;
@@ -819,7 +1057,7 @@
             this.chkEsCuentaCorporativa.AutoSize = true;
             this.chkEsCuentaCorporativa.Checked = true;
             this.chkEsCuentaCorporativa.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEsCuentaCorporativa.Location = new System.Drawing.Point(154, 254);
+            this.chkEsCuentaCorporativa.Location = new System.Drawing.Point(132, 180);
             this.chkEsCuentaCorporativa.Name = "chkEsCuentaCorporativa";
             this.chkEsCuentaCorporativa.Size = new System.Drawing.Size(136, 17);
             this.chkEsCuentaCorporativa.TabIndex = 255;
@@ -893,23 +1131,6 @@
             this.txtNombres.Size = new System.Drawing.Size(337, 20);
             this.txtNombres.TabIndex = 233;
             // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(132, 179);
-            this.txtObservaciones.MaxLength = 500;
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(434, 70);
-            this.txtObservaciones.TabIndex = 230;
-            // 
-            // lbObservaciones
-            // 
-            this.lbObservaciones.Location = new System.Drawing.Point(37, 179);
-            this.lbObservaciones.Name = "lbObservaciones";
-            this.lbObservaciones.Size = new System.Drawing.Size(85, 18);
-            this.lbObservaciones.TabIndex = 229;
-            this.lbObservaciones.Text = "Observaciones :";
-            // 
             // txtclave
             // 
             this.txtclave.Location = new System.Drawing.Point(132, 154);
@@ -946,7 +1167,7 @@
             // 
             // txtIdEstado
             // 
-            this.txtIdEstado.Location = new System.Drawing.Point(281, 27);
+            this.txtIdEstado.Location = new System.Drawing.Point(250, 27);
             this.txtIdEstado.Name = "txtIdEstado";
             this.txtIdEstado.Size = new System.Drawing.Size(32, 20);
             this.txtIdEstado.TabIndex = 4;
@@ -956,7 +1177,7 @@
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(229, 28);
+            this.radLabel7.Location = new System.Drawing.Point(198, 28);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(55, 18);
             this.radLabel7.TabIndex = 3;
@@ -968,7 +1189,7 @@
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGrabar.Location = new System.Drawing.Point(326, 546);
+            this.btnGrabar.Location = new System.Drawing.Point(326, 669);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(102, 24);
             this.btnGrabar.TabIndex = 25;
@@ -980,7 +1201,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(218, 546);
+            this.btnCancelar.Location = new System.Drawing.Point(218, 669);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 24;
@@ -1011,9 +1232,9 @@
             // 
             this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(388, 27);
+            this.txtEstado.Location = new System.Drawing.Point(336, 25);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(178, 20);
+            this.txtEstado.Size = new System.Drawing.Size(230, 20);
             this.txtEstado.TabIndex = 6;
             this.txtEstado.TabStop = false;
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1021,7 +1242,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(340, 27);
+            this.radLabel2.Location = new System.Drawing.Point(285, 27);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(45, 18);
             this.radLabel2.TabIndex = 5;
@@ -1075,6 +1296,7 @@
             this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
             this.commandBarStripElement3.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.btnNuevo,
+            this.btnActivarFiltro,
             this.btnActualizarLista,
             this.btnEditar,
             this.btnAnular,
@@ -1082,7 +1304,9 @@
             this.btnExportar,
             this.btnHistorial,
             this.btnImprimir,
+            this.btnResaltarResultados,
             this.btnVistaPrevia,
+            this.btnElegirColumna,
             this.btnEnviarCorreo,
             this.btnSalir});
             this.commandBarStripElement3.Name = "commandBarStripElement3";
@@ -1095,7 +1319,7 @@
             this.btnNuevo.AccessibleDescription = "Nuevo";
             this.btnNuevo.AccessibleName = "Nuevo";
             this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnNuevo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNuevo.DisplayName = "Nuevo";
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
@@ -1110,7 +1334,7 @@
             this.btnActualizarLista.AccessibleDescription = "Actualizar Lista";
             this.btnActualizarLista.AccessibleName = "Actualizar Lista";
             this.btnActualizarLista.AutoSize = false;
-            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnActualizarLista.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.DisplayName = "Actualizar Lista";
             this.btnActualizarLista.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarLista.Image")));
@@ -1125,7 +1349,7 @@
             this.btnEditar.AccessibleDescription = "Editar";
             this.btnEditar.AccessibleName = "Editar";
             this.btnEditar.AutoSize = false;
-            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEditar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEditar.DisplayName = "Editar";
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -1140,7 +1364,7 @@
             this.btnAnular.AccessibleDescription = "Anular";
             this.btnAnular.AccessibleName = "Anular";
             this.btnAnular.AutoSize = false;
-            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnAnular.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAnular.DisplayName = "Anular";
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
@@ -1156,7 +1380,7 @@
             this.btnEliminar.AccessibleDescription = "Eliminar";
             this.btnEliminar.AccessibleName = "Eliminar";
             this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEliminar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminar.DisplayName = "Eliminar";
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -1171,7 +1395,7 @@
             this.btnExportar.AccessibleDescription = "Exportar";
             this.btnExportar.AccessibleName = "Exportar";
             this.btnExportar.AutoSize = false;
-            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnExportar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnExportar.DisplayName = "Exportar";
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
@@ -1186,7 +1410,7 @@
             this.btnHistorial.AccessibleDescription = "btnHistorial";
             this.btnHistorial.AccessibleName = "btnHistorial";
             this.btnHistorial.AutoSize = false;
-            this.btnHistorial.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnHistorial.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnHistorial.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnHistorial.DisplayName = "Historial";
             this.btnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorial.Image")));
@@ -1200,7 +1424,7 @@
             this.btnImprimir.AccessibleDescription = "Imprimir";
             this.btnImprimir.AccessibleName = "Imprimir";
             this.btnImprimir.AutoSize = false;
-            this.btnImprimir.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnImprimir.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnImprimir.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnImprimir.DisplayName = "Imprimir";
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
@@ -1212,7 +1436,7 @@
             // btnVistaPrevia
             // 
             this.btnVistaPrevia.AutoSize = false;
-            this.btnVistaPrevia.Bounds = new System.Drawing.Rectangle(0, 0, 75, 35);
+            this.btnVistaPrevia.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnVistaPrevia.DisplayName = "Vista Previa";
             this.btnVistaPrevia.Image = ((System.Drawing.Image)(resources.GetObject("btnVistaPrevia.Image")));
             this.btnVistaPrevia.Name = "btnVistaPrevia";
@@ -1222,7 +1446,7 @@
             // btnEnviarCorreo
             // 
             this.btnEnviarCorreo.AutoSize = false;
-            this.btnEnviarCorreo.Bounds = new System.Drawing.Rectangle(0, 0, 75, 35);
+            this.btnEnviarCorreo.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEnviarCorreo.DisplayName = "Enviar Correo";
             this.btnEnviarCorreo.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviarCorreo.Image")));
             this.btnEnviarCorreo.Name = "btnEnviarCorreo";
@@ -1234,7 +1458,7 @@
             this.btnSalir.AccessibleDescription = "Salir";
             this.btnSalir.AccessibleName = "Salir";
             this.btnSalir.AutoSize = false;
-            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 80, 35);
+            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnSalir.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnSalir.DisplayName = "Salir";
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
@@ -1251,7 +1475,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.btnMenu.Size = new System.Drawing.Size(1221, 37);
+            this.btnMenu.Size = new System.Drawing.Size(1377, 62);
             this.btnMenu.TabIndex = 208;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             this.btnMenu.Click += new System.EventHandler(this.btnEditar_Click);
@@ -1260,143 +1484,1222 @@
             // 
             this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             // 
-            // btnEnProcesoDeCopiaDeSeguridad
-            // 
-            this.btnEnProcesoDeCopiaDeSeguridad.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesoDeCopiaDeSeguridad.Image")));
-            this.btnEnProcesoDeCopiaDeSeguridad.Name = "btnEnProcesoDeCopiaDeSeguridad";
-            this.btnEnProcesoDeCopiaDeSeguridad.Size = new System.Drawing.Size(251, 22);
-            this.btnEnProcesoDeCopiaDeSeguridad.Text = "En proceso de copia de seguridad";
-            this.btnEnProcesoDeCopiaDeSeguridad.Click += new System.EventHandler(this.btnEnProcesoDeCopiaDeSeguridad_Click);
-            // 
-            // btnEnProcesosDeSuspencion
-            // 
-            this.btnEnProcesosDeSuspencion.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesosDeSuspencion.Image")));
-            this.btnEnProcesosDeSuspencion.Name = "btnEnProcesosDeSuspencion";
-            this.btnEnProcesosDeSuspencion.Size = new System.Drawing.Size(251, 22);
-            this.btnEnProcesosDeSuspencion.Text = "En procesos de suspención";
-            this.btnEnProcesosDeSuspencion.Click += new System.EventHandler(this.btnEnProcesosDeSuspencion_Click);
-            // 
-            // btnEnProcesoDeBaja
-            // 
-            this.btnEnProcesoDeBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnEnProcesoDeBaja.Image")));
-            this.btnEnProcesoDeBaja.Name = "btnEnProcesoDeBaja";
-            this.btnEnProcesoDeBaja.Size = new System.Drawing.Size(251, 22);
-            this.btnEnProcesoDeBaja.Text = "En proceso de baja";
-            this.btnEnProcesoDeBaja.Click += new System.EventHandler(this.btnEnProcesoDeBaja_Click);
-            // 
-            // btnSuspendido
-            // 
-            this.btnSuspendido.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspendido.Image")));
-            this.btnSuspendido.Name = "btnSuspendido";
-            this.btnSuspendido.Size = new System.Drawing.Size(251, 22);
-            this.btnSuspendido.Text = "Suspendido";
-            this.btnSuspendido.Click += new System.EventHandler(this.btnSuspendido_Click);
-            // 
-            // btnBajarCuenta
-            // 
-            this.btnBajarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnBajarCuenta.Image")));
-            this.btnBajarCuenta.Name = "btnBajarCuenta";
-            this.btnBajarCuenta.Size = new System.Drawing.Size(251, 22);
-            this.btnBajarCuenta.Text = "Bajar cuenta";
-            this.btnBajarCuenta.Click += new System.EventHandler(this.btnBajarCuenta_Click);
-            // 
-            // btnActivarCuenta
-            // 
-            this.btnActivarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarCuenta.Image")));
-            this.btnActivarCuenta.Name = "btnActivarCuenta";
-            this.btnActivarCuenta.Size = new System.Drawing.Size(251, 22);
-            this.btnActivarCuenta.Text = "Activar cuenta";
-            this.btnActivarCuenta.Click += new System.EventHandler(this.btnActivarCuenta_Click);
-            // 
-            // btnSinLicenciaCorporativa
-            // 
-            this.btnSinLicenciaCorporativa.Image = ((System.Drawing.Image)(resources.GetObject("btnSinLicenciaCorporativa.Image")));
-            this.btnSinLicenciaCorporativa.Name = "btnSinLicenciaCorporativa";
-            this.btnSinLicenciaCorporativa.Size = new System.Drawing.Size(251, 22);
-            this.btnSinLicenciaCorporativa.Text = "Sin licencia corporativa";
-            this.btnSinLicenciaCorporativa.Click += new System.EventHandler(this.btnSinLicenciaCorporativa_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(248, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(248, 6);
-            // 
-            // btnVerDatosDelColaborador
-            // 
-            this.btnVerDatosDelColaborador.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDatosDelColaborador.Image")));
-            this.btnVerDatosDelColaborador.Name = "btnVerDatosDelColaborador";
-            this.btnVerDatosDelColaborador.Size = new System.Drawing.Size(251, 22);
-            this.btnVerDatosDelColaborador.Text = "Ver datos del colaborador";
-            this.btnVerDatosDelColaborador.Click += new System.EventHandler(this.btnVerDatosDelColaborador_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(248, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(248, 6);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(248, 6);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(248, 6);
-            // 
-            // btnAnularCuenta
-            // 
-            this.btnAnularCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnAnularCuenta.Image")));
-            this.btnAnularCuenta.Name = "btnAnularCuenta";
-            this.btnAnularCuenta.Size = new System.Drawing.Size(251, 22);
-            this.btnAnularCuenta.Text = "Anular cuenta";
-            this.btnAnularCuenta.Click += new System.EventHandler(this.btnAnularCuenta_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(248, 6);
-            // 
             // bgwCambioEstado
             // 
             this.bgwCambioEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCambioEstado_DoWork);
             this.bgwCambioEstado.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCambioEstado_RunWorkerCompleted);
             // 
-            // btnReasginado
+            // btnActivarFiltro
             // 
-            this.btnReasginado.Image = ((System.Drawing.Image)(resources.GetObject("btnReasginado.Image")));
-            this.btnReasginado.Name = "btnReasginado";
-            this.btnReasginado.Size = new System.Drawing.Size(251, 22);
-            this.btnReasginado.Text = "Reasginado";
-            this.btnReasginado.Click += new System.EventHandler(this.btnReasginado_Click);
+            this.btnActivarFiltro.AccessibleDescription = "ActivarFiltro";
+            this.btnActivarFiltro.AccessibleName = "ActivarFiltro";
+            this.btnActivarFiltro.AutoSize = false;
+            this.btnActivarFiltro.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnActivarFiltro.DisplayName = "ActivarFiltro";
+            this.btnActivarFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarFiltro.Image")));
+            this.btnActivarFiltro.Name = "btnActivarFiltro";
+            this.btnActivarFiltro.Tag = "Activar Filtro";
+            this.btnActivarFiltro.Text = "";
+            this.btnActivarFiltro.Click += new System.EventHandler(this.btnActivarFiltro_Click);
             // 
-            // btnLiberacionDeCuentaM365
+            // radPageView1
             // 
-            this.btnLiberacionDeCuentaM365.Image = ((System.Drawing.Image)(resources.GetObject("btnLiberacionDeCuentaM365.Image")));
-            this.btnLiberacionDeCuentaM365.Name = "btnLiberacionDeCuentaM365";
-            this.btnLiberacionDeCuentaM365.Size = new System.Drawing.Size(251, 22);
-            this.btnLiberacionDeCuentaM365.Text = "Liberación de cuenta M365";
-            this.btnLiberacionDeCuentaM365.Click += new System.EventHandler(this.btnLiberacionDeCuentaM365_Click);
+            this.radPageView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radPageView1.Controls.Add(this.tabPersonalAsignado);
+            this.radPageView1.Controls.Add(this.tabGlosa);
+            this.radPageView1.Controls.Add(this.tabSolicitud);
+            this.radPageView1.Controls.Add(this.tabHistoricoDePlanes);
+            this.radPageView1.Controls.Add(this.tabLog);
+            this.radPageView1.DefaultPage = this.tabLog;
+            this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
+            this.radPageView1.Location = new System.Drawing.Point(5, 257);
+            this.radPageView1.Name = "radPageView1";
+            this.radPageView1.SelectedPage = this.tabPersonalAsignado;
+            this.radPageView1.Size = new System.Drawing.Size(554, 406);
+            this.radPageView1.TabIndex = 332;
+            this.radPageView1.ThemeName = "Windows8";
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Fill;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Bottom;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
+            // 
+            // tabPersonalAsignado
+            // 
+            this.tabPersonalAsignado.Controls.Add(this.btnExportarPersonalAsignado);
+            this.tabPersonalAsignado.Controls.Add(this.btnActivarEstado);
+            this.tabPersonalAsignado.Controls.Add(this.dgvDetalleAsignacionesAPersonal);
+            this.tabPersonalAsignado.Controls.Add(this.btnQuitarDetalle);
+            this.tabPersonalAsignado.Controls.Add(this.btnAgregarDetalle);
+            this.tabPersonalAsignado.Controls.Add(this.label2);
+            this.tabPersonalAsignado.Controls.Add(this.lblAnios);
+            this.tabPersonalAsignado.Controls.Add(this.label1);
+            this.tabPersonalAsignado.Controls.Add(this.txtFechaProduccion);
+            this.tabPersonalAsignado.Controls.Add(this.lblFechaBaja);
+            this.tabPersonalAsignado.Controls.Add(this.txtFechaActivacion);
+            this.tabPersonalAsignado.Controls.Add(this.myDataGridViewMaskedTextEditingControl1);
+            this.tabPersonalAsignado.Controls.Add(this.txtAnioDepreciar);
+            this.tabPersonalAsignado.Controls.Add(this.lblAniosADepreciar);
+            this.tabPersonalAsignado.Controls.Add(this.lblLatitud);
+            this.tabPersonalAsignado.Controls.Add(this.txtLatitud);
+            this.tabPersonalAsignado.Controls.Add(this.txtUbicacion);
+            this.tabPersonalAsignado.Controls.Add(this.lblUbicacion);
+            this.tabPersonalAsignado.Controls.Add(this.txtLongitud);
+            this.tabPersonalAsignado.Controls.Add(this.label3);
+            this.tabPersonalAsignado.ItemSize = new System.Drawing.SizeF(110F, 26F);
+            this.tabPersonalAsignado.Location = new System.Drawing.Point(5, 5);
+            this.tabPersonalAsignado.Name = "tabPersonalAsignado";
+            this.tabPersonalAsignado.Size = new System.Drawing.Size(544, 372);
+            this.tabPersonalAsignado.Text = "Asignaciones";
+            // 
+            // btnExportarPersonalAsignado
+            // 
+            this.btnExportarPersonalAsignado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportarPersonalAsignado.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarPersonalAsignado.Image")));
+            this.btnExportarPersonalAsignado.Location = new System.Drawing.Point(423, 6);
+            this.btnExportarPersonalAsignado.Name = "btnExportarPersonalAsignado";
+            this.btnExportarPersonalAsignado.Size = new System.Drawing.Size(25, 26);
+            this.btnExportarPersonalAsignado.TabIndex = 335;
+            this.btnExportarPersonalAsignado.ThemeName = "VisualStudio2012Light";
+            // 
+            // btnActivarEstado
+            // 
+            this.btnActivarEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActivarEstado.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarEstado.Image")));
+            this.btnActivarEstado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnActivarEstado.Location = new System.Drawing.Point(454, 6);
+            this.btnActivarEstado.Name = "btnActivarEstado";
+            this.btnActivarEstado.Size = new System.Drawing.Size(25, 26);
+            this.btnActivarEstado.TabIndex = 334;
+            this.btnActivarEstado.ThemeName = "VisualStudio2012Light";
+            // 
+            // dgvDetalleAsignacionesAPersonal
+            // 
+            this.dgvDetalleAsignacionesAPersonal.AllowUserToAddRows = false;
+            this.dgvDetalleAsignacionesAPersonal.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleAsignacionesAPersonal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDetalleAsignacionesAPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDetalleAsignacionesAPersonal.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDetalleAsignacionesAPersonal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleAsignacionesAPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDetalleAsignacionesAPersonal.ColumnHeadersHeight = 40;
+            this.dgvDetalleAsignacionesAPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDetalleAsignacionesAPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chLineaCelularPersonalID,
+            this.chLineaCelularID,
+            this.chPersonalID,
+            this.chPersonal,
+            this.chPersonalSituacion,
+            this.chPersonalPlanilla,
+            this.chPersonalCargo,
+            this.chPersonalDocumentoDeIdentificacion,
+            this.chDesde,
+            this.chHasta,
+            this.chReferenciaID,
+            this.chReferenciaSolicitudID,
+            this.chGlosa,
+            this.dataGridViewTextBoxColumn1});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleAsignacionesAPersonal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDetalleAsignacionesAPersonal.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvDetalleAsignacionesAPersonal.Location = new System.Drawing.Point(0, 38);
+            this.dgvDetalleAsignacionesAPersonal.Name = "dgvDetalleAsignacionesAPersonal";
+            this.dgvDetalleAsignacionesAPersonal.P_EsEditable = false;
+            this.dgvDetalleAsignacionesAPersonal.P_FormatoDecimal = null;
+            this.dgvDetalleAsignacionesAPersonal.P_FormatoFecha = null;
+            this.dgvDetalleAsignacionesAPersonal.P_NombreColCorrelativa = null;
+            this.dgvDetalleAsignacionesAPersonal.P_NombreTabla = null;
+            this.dgvDetalleAsignacionesAPersonal.P_NumeroDigitos = 0;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleAsignacionesAPersonal.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDetalleAsignacionesAPersonal.RowHeadersWidth = 10;
+            this.dgvDetalleAsignacionesAPersonal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleAsignacionesAPersonal.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDetalleAsignacionesAPersonal.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvDetalleAsignacionesAPersonal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvDetalleAsignacionesAPersonal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleAsignacionesAPersonal.Size = new System.Drawing.Size(544, 334);
+            this.dgvDetalleAsignacionesAPersonal.TabIndex = 277;
+            // 
+            // chLineaCelularPersonalID
+            // 
+            this.chLineaCelularPersonalID.DataPropertyName = "LineaCelularPersonalID";
+            this.chLineaCelularPersonalID.HeaderText = "LineaCelularPersonalID";
+            this.chLineaCelularPersonalID.Name = "chLineaCelularPersonalID";
+            this.chLineaCelularPersonalID.ReadOnly = true;
+            this.chLineaCelularPersonalID.Visible = false;
+            // 
+            // chLineaCelularID
+            // 
+            this.chLineaCelularID.DataPropertyName = "LineaCelularID";
+            this.chLineaCelularID.HeaderText = "LineaCelularID";
+            this.chLineaCelularID.Name = "chLineaCelularID";
+            this.chLineaCelularID.ReadOnly = true;
+            this.chLineaCelularID.Visible = false;
+            // 
+            // chPersonalID
+            // 
+            this.chPersonalID.DataPropertyName = "PersonalID";
+            this.chPersonalID.HeaderText = "Cod.";
+            this.chPersonalID.MaxInputLength = 20;
+            this.chPersonalID.Name = "chPersonalID";
+            this.chPersonalID.Width = 50;
+            // 
+            // chPersonal
+            // 
+            this.chPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chPersonal.DataPropertyName = "Personal";
+            this.chPersonal.HeaderText = "Personal";
+            this.chPersonal.Name = "chPersonal";
+            this.chPersonal.ReadOnly = true;
+            // 
+            // chPersonalSituacion
+            // 
+            this.chPersonalSituacion.DataPropertyName = "PersonalSituacion";
+            this.chPersonalSituacion.HeaderText = "PersonalSituacion";
+            this.chPersonalSituacion.Name = "chPersonalSituacion";
+            this.chPersonalSituacion.ReadOnly = true;
+            this.chPersonalSituacion.Visible = false;
+            // 
+            // chPersonalPlanilla
+            // 
+            this.chPersonalPlanilla.DataPropertyName = "PersonalPlanilla";
+            this.chPersonalPlanilla.HeaderText = "PersonalPlanilla";
+            this.chPersonalPlanilla.Name = "chPersonalPlanilla";
+            this.chPersonalPlanilla.ReadOnly = true;
+            this.chPersonalPlanilla.ToolTipText = "Planilla";
+            this.chPersonalPlanilla.Visible = false;
+            // 
+            // chPersonalCargo
+            // 
+            this.chPersonalCargo.DataPropertyName = "PersonalCargo";
+            this.chPersonalCargo.HeaderText = "PersonalCargo";
+            this.chPersonalCargo.Name = "chPersonalCargo";
+            this.chPersonalCargo.ReadOnly = true;
+            this.chPersonalCargo.ToolTipText = "Cargo";
+            this.chPersonalCargo.Visible = false;
+            // 
+            // chPersonalDocumentoDeIdentificacion
+            // 
+            this.chPersonalDocumentoDeIdentificacion.DataPropertyName = "PersonalDocumentoDeIdentificacion";
+            this.chPersonalDocumentoDeIdentificacion.HeaderText = "PersonalDocumentoDeIdentificacion";
+            this.chPersonalDocumentoDeIdentificacion.Name = "chPersonalDocumentoDeIdentificacion";
+            this.chPersonalDocumentoDeIdentificacion.ReadOnly = true;
+            this.chPersonalDocumentoDeIdentificacion.Visible = false;
+            // 
+            // chDesde
+            // 
+            this.chDesde.DataPropertyName = "Desde";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "d";
+            this.chDesde.DefaultCellStyle = dataGridViewCellStyle3;
+            this.chDesde.HeaderText = "Desde";
+            this.chDesde.Mask = "";
+            this.chDesde.Name = "chDesde";
+            this.chDesde.P_EsEditable = false;
+            this.chDesde.P_EsModificable = false;
+            this.chDesde.P_EsPrimaryKey = false;
+            this.chDesde.P_ExigeInformacion = false;
+            this.chDesde.P_NombreColumna = null;
+            this.chDesde.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chDesde.ToolTipText = "Desde";
+            this.chDesde.Width = 65;
+            // 
+            // chHasta
+            // 
+            this.chHasta.DataPropertyName = "Hasta";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.chHasta.DefaultCellStyle = dataGridViewCellStyle4;
+            this.chHasta.HeaderText = "Hasta";
+            this.chHasta.Mask = "";
+            this.chHasta.Name = "chHasta";
+            this.chHasta.P_EsEditable = false;
+            this.chHasta.P_EsModificable = false;
+            this.chHasta.P_EsPrimaryKey = false;
+            this.chHasta.P_ExigeInformacion = false;
+            this.chHasta.P_NombreColumna = null;
+            this.chHasta.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chHasta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chHasta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chHasta.ToolTipText = "Hasta";
+            this.chHasta.Width = 65;
+            // 
+            // chReferenciaID
+            // 
+            this.chReferenciaID.DataPropertyName = "ReferenciaID";
+            this.chReferenciaID.HeaderText = "ReferenciaID";
+            this.chReferenciaID.Name = "chReferenciaID";
+            this.chReferenciaID.ReadOnly = true;
+            this.chReferenciaID.Visible = false;
+            // 
+            // chReferenciaSolicitudID
+            // 
+            this.chReferenciaSolicitudID.DataPropertyName = "ReferenciaSolicitudID";
+            this.chReferenciaSolicitudID.HeaderText = "ReferenciaSolicitudID";
+            this.chReferenciaSolicitudID.Name = "chReferenciaSolicitudID";
+            this.chReferenciaSolicitudID.ReadOnly = true;
+            this.chReferenciaSolicitudID.Visible = false;
+            // 
+            // chGlosa
+            // 
+            this.chGlosa.DataPropertyName = "Glosa";
+            this.chGlosa.HeaderText = "Glosa";
+            this.chGlosa.Name = "chGlosa";
+            this.chGlosa.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Estado";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 40;
+            // 
+            // btnQuitarDetalle
+            // 
+            this.btnQuitarDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuitarDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarDetalle.Image")));
+            this.btnQuitarDetalle.Location = new System.Drawing.Point(516, 6);
+            this.btnQuitarDetalle.Name = "btnQuitarDetalle";
+            this.btnQuitarDetalle.Size = new System.Drawing.Size(25, 26);
+            this.btnQuitarDetalle.TabIndex = 333;
+            this.btnQuitarDetalle.ThemeName = "VisualStudio2012Light";
+            // 
+            // btnAgregarDetalle
+            // 
+            this.btnAgregarDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDetalle.Image")));
+            this.btnAgregarDetalle.Location = new System.Drawing.Point(485, 6);
+            this.btnAgregarDetalle.Name = "btnAgregarDetalle";
+            this.btnAgregarDetalle.Size = new System.Drawing.Size(25, 26);
+            this.btnAgregarDetalle.TabIndex = 332;
+            this.btnAgregarDetalle.ThemeName = "VisualStudio2012Light";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(716, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 241;
+            this.label2.Text = "F. Producción :";
+            // 
+            // lblAnios
+            // 
+            this.lblAnios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnios.Location = new System.Drawing.Point(853, 235);
+            this.lblAnios.Name = "lblAnios";
+            this.lblAnios.Size = new System.Drawing.Size(30, 18);
+            this.lblAnios.TabIndex = 276;
+            this.lblAnios.Text = "años";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(721, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 235;
+            this.label1.Text = "F. Activación :";
+            // 
+            // txtFechaProduccion
+            // 
+            this.txtFechaProduccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFechaProduccion.EditingControlDataGridView = null;
+            this.txtFechaProduccion.EditingControlFormattedValue = "  /  /";
+            this.txtFechaProduccion.EditingControlRowIndex = 0;
+            this.txtFechaProduccion.EditingControlValueChanged = true;
+            this.txtFechaProduccion.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.txtFechaProduccion.Location = new System.Drawing.Point(799, 68);
+            this.txtFechaProduccion.Mask = "00/00/0000";
+            this.txtFechaProduccion.Name = "txtFechaProduccion";
+            this.txtFechaProduccion.P_EsEditable = false;
+            this.txtFechaProduccion.P_EsModificable = false;
+            this.txtFechaProduccion.P_ExigeInformacion = false;
+            this.txtFechaProduccion.P_Hora = null;
+            this.txtFechaProduccion.P_NombreColumna = null;
+            this.txtFechaProduccion.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtFechaProduccion.Size = new System.Drawing.Size(80, 20);
+            this.txtFechaProduccion.TabIndex = 240;
+            this.txtFechaProduccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFechaProduccion.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblFechaBaja
+            // 
+            this.lblFechaBaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFechaBaja.AutoSize = true;
+            this.lblFechaBaja.Location = new System.Drawing.Point(752, 45);
+            this.lblFechaBaja.Name = "lblFechaBaja";
+            this.lblFechaBaja.Size = new System.Drawing.Size(46, 13);
+            this.lblFechaBaja.TabIndex = 243;
+            this.lblFechaBaja.Text = "F. Baja :";
+            // 
+            // txtFechaActivacion
+            // 
+            this.txtFechaActivacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFechaActivacion.EditingControlDataGridView = null;
+            this.txtFechaActivacion.EditingControlFormattedValue = "  /  /";
+            this.txtFechaActivacion.EditingControlRowIndex = 0;
+            this.txtFechaActivacion.EditingControlValueChanged = true;
+            this.txtFechaActivacion.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.txtFechaActivacion.Location = new System.Drawing.Point(799, 16);
+            this.txtFechaActivacion.Mask = "00/00/0000";
+            this.txtFechaActivacion.Name = "txtFechaActivacion";
+            this.txtFechaActivacion.P_EsEditable = false;
+            this.txtFechaActivacion.P_EsModificable = false;
+            this.txtFechaActivacion.P_ExigeInformacion = false;
+            this.txtFechaActivacion.P_Hora = null;
+            this.txtFechaActivacion.P_NombreColumna = null;
+            this.txtFechaActivacion.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtFechaActivacion.Size = new System.Drawing.Size(80, 20);
+            this.txtFechaActivacion.TabIndex = 234;
+            this.txtFechaActivacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFechaActivacion.ValidatingType = typeof(System.DateTime);
+            // 
+            // myDataGridViewMaskedTextEditingControl1
+            // 
+            this.myDataGridViewMaskedTextEditingControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.myDataGridViewMaskedTextEditingControl1.EditingControlDataGridView = null;
+            this.myDataGridViewMaskedTextEditingControl1.EditingControlFormattedValue = "  /  /";
+            this.myDataGridViewMaskedTextEditingControl1.EditingControlRowIndex = 0;
+            this.myDataGridViewMaskedTextEditingControl1.EditingControlValueChanged = true;
+            this.myDataGridViewMaskedTextEditingControl1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.myDataGridViewMaskedTextEditingControl1.Location = new System.Drawing.Point(799, 42);
+            this.myDataGridViewMaskedTextEditingControl1.Mask = "00/00/0000";
+            this.myDataGridViewMaskedTextEditingControl1.Name = "myDataGridViewMaskedTextEditingControl1";
+            this.myDataGridViewMaskedTextEditingControl1.P_EsEditable = false;
+            this.myDataGridViewMaskedTextEditingControl1.P_EsModificable = false;
+            this.myDataGridViewMaskedTextEditingControl1.P_ExigeInformacion = false;
+            this.myDataGridViewMaskedTextEditingControl1.P_Hora = null;
+            this.myDataGridViewMaskedTextEditingControl1.P_NombreColumna = null;
+            this.myDataGridViewMaskedTextEditingControl1.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.myDataGridViewMaskedTextEditingControl1.Size = new System.Drawing.Size(80, 20);
+            this.myDataGridViewMaskedTextEditingControl1.TabIndex = 242;
+            this.myDataGridViewMaskedTextEditingControl1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.myDataGridViewMaskedTextEditingControl1.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtAnioDepreciar
+            // 
+            this.txtAnioDepreciar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAnioDepreciar.Location = new System.Drawing.Point(801, 234);
+            this.txtAnioDepreciar.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.txtAnioDepreciar.Name = "txtAnioDepreciar";
+            // 
+            // 
+            // 
+            this.txtAnioDepreciar.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
+            this.txtAnioDepreciar.Size = new System.Drawing.Size(50, 20);
+            this.txtAnioDepreciar.TabIndex = 263;
+            this.txtAnioDepreciar.TabStop = false;
+            this.txtAnioDepreciar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAnioDepreciar.ThemeName = "Windows8";
+            // 
+            // lblAniosADepreciar
+            // 
+            this.lblAniosADepreciar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAniosADepreciar.Location = new System.Drawing.Point(712, 236);
+            this.lblAniosADepreciar.Name = "lblAniosADepreciar";
+            this.lblAniosADepreciar.Size = new System.Drawing.Size(87, 18);
+            this.lblAniosADepreciar.TabIndex = 262;
+            this.lblAniosADepreciar.Text = "Depreciable en :";
+            // 
+            // lblLatitud
+            // 
+            this.lblLatitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLatitud.AutoSize = true;
+            this.lblLatitud.Location = new System.Drawing.Point(656, 141);
+            this.lblLatitud.Name = "lblLatitud";
+            this.lblLatitud.Size = new System.Drawing.Size(49, 13);
+            this.lblLatitud.TabIndex = 246;
+            this.lblLatitud.Text = "Latitud :";
+            // 
+            // txtLatitud
+            // 
+            this.txtLatitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLatitud.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLatitud.Location = new System.Drawing.Point(708, 138);
+            this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.Size = new System.Drawing.Size(174, 20);
+            this.txtLatitud.TabIndex = 247;
+            // 
+            // txtUbicacion
+            // 
+            this.txtUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUbicacion.BackColor = System.Drawing.SystemColors.Info;
+            this.txtUbicacion.Location = new System.Drawing.Point(708, 191);
+            this.txtUbicacion.Multiline = true;
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.Size = new System.Drawing.Size(174, 36);
+            this.txtUbicacion.TabIndex = 261;
+            // 
+            // lblUbicacion
+            // 
+            this.lblUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUbicacion.AutoSize = true;
+            this.lblUbicacion.Location = new System.Drawing.Point(644, 192);
+            this.lblUbicacion.Name = "lblUbicacion";
+            this.lblUbicacion.Size = new System.Drawing.Size(64, 13);
+            this.lblUbicacion.TabIndex = 260;
+            this.lblUbicacion.Text = "Ubicación :";
+            // 
+            // txtLongitud
+            // 
+            this.txtLongitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLongitud.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLongitud.Location = new System.Drawing.Point(708, 165);
+            this.txtLongitud.Name = "txtLongitud";
+            this.txtLongitud.Size = new System.Drawing.Size(176, 20);
+            this.txtLongitud.TabIndex = 249;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(644, 169);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 248;
+            this.label3.Text = "Longitud :";
+            // 
+            // tabGlosa
+            // 
+            this.tabGlosa.Controls.Add(this.radLabel11);
+            this.tabGlosa.Controls.Add(this.txtObservaciones);
+            this.tabGlosa.ItemSize = new System.Drawing.SizeF(110F, 26F);
+            this.tabGlosa.Location = new System.Drawing.Point(5, 5);
+            this.tabGlosa.Name = "tabGlosa";
+            this.tabGlosa.Size = new System.Drawing.Size(544, 372);
+            this.tabGlosa.Text = "Glosa";
+            // 
+            // radLabel11
+            // 
+            this.radLabel11.Location = new System.Drawing.Point(6, -1);
+            this.radLabel11.Name = "radLabel11";
+            this.radLabel11.Size = new System.Drawing.Size(39, 18);
+            this.radLabel11.TabIndex = 325;
+            this.radLabel11.Text = "Glosa :";
+            this.radLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtObservaciones.Location = new System.Drawing.Point(3, 19);
+            this.txtObservaciones.MaxLength = 25000;
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(538, 350);
+            this.txtObservaciones.TabIndex = 326;
+            // 
+            // tabSolicitud
+            // 
+            this.tabSolicitud.Controls.Add(this.btnExportarDetalleSolicitudes);
+            this.tabSolicitud.Controls.Add(this.btnSelecionarColumnasDetalleSolicitud);
+            this.tabSolicitud.Controls.Add(this.dgvListadoSolicitudesRenovacion);
+            this.tabSolicitud.ItemSize = new System.Drawing.SizeF(110F, 26F);
+            this.tabSolicitud.Location = new System.Drawing.Point(5, 5);
+            this.tabSolicitud.Name = "tabSolicitud";
+            this.tabSolicitud.Size = new System.Drawing.Size(544, 372);
+            this.tabSolicitud.Text = "Solicitudes";
+            // 
+            // btnExportarDetalleSolicitudes
+            // 
+            this.btnExportarDetalleSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportarDetalleSolicitudes.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarDetalleSolicitudes.Image")));
+            this.btnExportarDetalleSolicitudes.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExportarDetalleSolicitudes.Location = new System.Drawing.Point(481, 2);
+            this.btnExportarDetalleSolicitudes.Name = "btnExportarDetalleSolicitudes";
+            this.btnExportarDetalleSolicitudes.Size = new System.Drawing.Size(25, 26);
+            this.btnExportarDetalleSolicitudes.TabIndex = 336;
+            this.btnExportarDetalleSolicitudes.ThemeName = "VisualStudio2012Light";
+            // 
+            // btnSelecionarColumnasDetalleSolicitud
+            // 
+            this.btnSelecionarColumnasDetalleSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecionarColumnasDetalleSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecionarColumnasDetalleSolicitud.Image")));
+            this.btnSelecionarColumnasDetalleSolicitud.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSelecionarColumnasDetalleSolicitud.Location = new System.Drawing.Point(512, 2);
+            this.btnSelecionarColumnasDetalleSolicitud.Name = "btnSelecionarColumnasDetalleSolicitud";
+            this.btnSelecionarColumnasDetalleSolicitud.Size = new System.Drawing.Size(25, 26);
+            this.btnSelecionarColumnasDetalleSolicitud.TabIndex = 335;
+            this.btnSelecionarColumnasDetalleSolicitud.ThemeName = "VisualStudio2012Light";
+            // 
+            // dgvListadoSolicitudesRenovacion
+            // 
+            this.dgvListadoSolicitudesRenovacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListadoSolicitudesRenovacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.dgvListadoSolicitudesRenovacion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvListadoSolicitudesRenovacion.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.dgvListadoSolicitudesRenovacion.ForeColor = System.Drawing.Color.Black;
+            this.dgvListadoSolicitudesRenovacion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dgvListadoSolicitudesRenovacion.Location = new System.Drawing.Point(-5, 31);
+            // 
+            // dgvListadoSolicitudesRenovacion
+            // 
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.AllowAddNewRow = false;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.AutoExpandGroups = true;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.AutoGenerateColumns = false;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "id";
+            gridViewTextBoxColumn12.HeaderText = "Id";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "chid";
+            gridViewTextBoxColumn12.Width = 6;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
+            gridViewTextBoxColumn13.FieldName = "fecha";
+            gridViewTextBoxColumn13.FormatString = "{0:d}";
+            gridViewTextBoxColumn13.HeaderText = "Fecha";
+            gridViewTextBoxColumn13.Name = "chfecha";
+            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn13.Width = 87;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "documento";
+            gridViewTextBoxColumn14.HeaderText = "Documento";
+            gridViewTextBoxColumn14.Name = "chdocumento";
+            gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn14.Width = 111;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "idCodigoGeneral";
+            gridViewTextBoxColumn15.HeaderText = "Cod. Colaborador";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "chidCodigoGeneral";
+            gridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn15.Width = 35;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "nombres";
+            gridViewTextBoxColumn16.HeaderText = "Nombres";
+            gridViewTextBoxColumn16.Name = "chnombres";
+            gridViewTextBoxColumn16.Width = 162;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "situacion";
+            gridViewTextBoxColumn17.HeaderText = "situacion";
+            gridViewTextBoxColumn17.IsVisible = false;
+            gridViewTextBoxColumn17.Name = "chsituacion";
+            gridViewTextBoxColumn17.Width = 17;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "planilla";
+            gridViewTextBoxColumn18.HeaderText = "planilla";
+            gridViewTextBoxColumn18.IsVisible = false;
+            gridViewTextBoxColumn18.Name = "chplanilla";
+            gridViewTextBoxColumn18.Width = 18;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "cargo";
+            gridViewTextBoxColumn19.HeaderText = "Cargo";
+            gridViewTextBoxColumn19.IsVisible = false;
+            gridViewTextBoxColumn19.Name = "chcargo";
+            gridViewTextBoxColumn19.Width = 130;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.FieldName = "idGerencia";
+            gridViewTextBoxColumn20.HeaderText = "idGerencia";
+            gridViewTextBoxColumn20.IsVisible = false;
+            gridViewTextBoxColumn20.Name = "chidGerencia";
+            gridViewTextBoxColumn20.Width = 24;
+            gridViewTextBoxColumn21.EnableExpressionEditor = false;
+            gridViewTextBoxColumn21.FieldName = "gerencia";
+            gridViewTextBoxColumn21.HeaderText = "gerencia";
+            gridViewTextBoxColumn21.IsVisible = false;
+            gridViewTextBoxColumn21.Name = "chgerencia";
+            gridViewTextBoxColumn21.Width = 8;
+            gridViewTextBoxColumn22.EnableExpressionEditor = false;
+            gridViewTextBoxColumn22.FieldName = "idArea";
+            gridViewTextBoxColumn22.HeaderText = "idArea";
+            gridViewTextBoxColumn22.IsVisible = false;
+            gridViewTextBoxColumn22.Name = "chidArea";
+            gridViewTextBoxColumn22.Width = 10;
+            gridViewTextBoxColumn23.EnableExpressionEditor = false;
+            gridViewTextBoxColumn23.FieldName = "area";
+            gridViewTextBoxColumn23.HeaderText = "area";
+            gridViewTextBoxColumn23.IsVisible = false;
+            gridViewTextBoxColumn23.Name = "charea";
+            gridViewTextBoxColumn23.Width = 10;
+            gridViewTextBoxColumn24.EnableExpressionEditor = false;
+            gridViewTextBoxColumn24.FieldName = "idEmpresa";
+            gridViewTextBoxColumn24.HeaderText = "idEmpresa";
+            gridViewTextBoxColumn24.IsVisible = false;
+            gridViewTextBoxColumn24.Name = "chidEmpresa";
+            gridViewTextBoxColumn24.Width = 9;
+            gridViewTextBoxColumn25.EnableExpressionEditor = false;
+            gridViewTextBoxColumn25.FieldName = "empresa";
+            gridViewTextBoxColumn25.HeaderText = "empresa";
+            gridViewTextBoxColumn25.IsVisible = false;
+            gridViewTextBoxColumn25.Name = "chempresa";
+            gridViewTextBoxColumn25.Width = 10;
+            gridViewTextBoxColumn26.EnableExpressionEditor = false;
+            gridViewTextBoxColumn26.FieldName = "idSucursal";
+            gridViewTextBoxColumn26.HeaderText = "idSucursal";
+            gridViewTextBoxColumn26.IsVisible = false;
+            gridViewTextBoxColumn26.Name = "chidSucursal";
+            gridViewTextBoxColumn26.Width = 13;
+            gridViewTextBoxColumn27.EnableExpressionEditor = false;
+            gridViewTextBoxColumn27.FieldName = "sucursal";
+            gridViewTextBoxColumn27.HeaderText = "sucursal";
+            gridViewTextBoxColumn27.IsVisible = false;
+            gridViewTextBoxColumn27.Name = "chsucursal";
+            gridViewTextBoxColumn27.Width = 13;
+            gridViewTextBoxColumn28.EnableExpressionEditor = false;
+            gridViewTextBoxColumn28.FieldName = "serie";
+            gridViewTextBoxColumn28.HeaderText = "serie";
+            gridViewTextBoxColumn28.IsVisible = false;
+            gridViewTextBoxColumn28.Name = "chserie";
+            gridViewTextBoxColumn28.Width = 13;
+            gridViewTextBoxColumn29.EnableExpressionEditor = false;
+            gridViewTextBoxColumn29.FieldName = "iddocumento";
+            gridViewTextBoxColumn29.HeaderText = "iddocumento";
+            gridViewTextBoxColumn29.IsVisible = false;
+            gridViewTextBoxColumn29.Name = "chiddocumento";
+            gridViewTextBoxColumn29.Width = 17;
+            gridViewTextBoxColumn30.EnableExpressionEditor = false;
+            gridViewTextBoxColumn30.FieldName = "estadoCodigo";
+            gridViewTextBoxColumn30.HeaderText = "estadoCodigo";
+            gridViewTextBoxColumn30.IsVisible = false;
+            gridViewTextBoxColumn30.Name = "chestadoCodigo";
+            gridViewTextBoxColumn30.Width = 22;
+            gridViewTextBoxColumn31.EnableExpressionEditor = false;
+            gridViewTextBoxColumn31.FieldName = "dispositivoAlta";
+            gridViewTextBoxColumn31.HeaderText = "Disp. Alta";
+            gridViewTextBoxColumn31.IsVisible = false;
+            gridViewTextBoxColumn31.Name = "chdispositivoAlta";
+            gridViewTextBoxColumn31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn31.Width = 48;
+            gridViewTextBoxColumn32.EnableExpressionEditor = false;
+            gridViewTextBoxColumn32.FieldName = "dispositivoBaja";
+            gridViewTextBoxColumn32.HeaderText = "Disp. Baja";
+            gridViewTextBoxColumn32.IsVisible = false;
+            gridViewTextBoxColumn32.Name = "chdispositivoBaja";
+            gridViewTextBoxColumn32.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn32.Width = 51;
+            gridViewTextBoxColumn33.EnableExpressionEditor = false;
+            gridViewTextBoxColumn33.FieldName = "numeroCelular";
+            gridViewTextBoxColumn33.HeaderText = "# Celular";
+            gridViewTextBoxColumn33.IsVisible = false;
+            gridViewTextBoxColumn33.Name = "chnumeroCelular";
+            gridViewTextBoxColumn33.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn33.Width = 29;
+            gridViewTextBoxColumn34.EnableExpressionEditor = false;
+            gridViewTextBoxColumn34.FieldName = "idDispositivoAlta";
+            gridViewTextBoxColumn34.HeaderText = "idDispositivoAlta";
+            gridViewTextBoxColumn34.IsVisible = false;
+            gridViewTextBoxColumn34.Name = "chidDispositivoAlta";
+            gridViewTextBoxColumn34.Width = 29;
+            gridViewTextBoxColumn35.EnableExpressionEditor = false;
+            gridViewTextBoxColumn35.FieldName = "dispositivo";
+            gridViewTextBoxColumn35.HeaderText = "idReferencia";
+            gridViewTextBoxColumn35.IsVisible = false;
+            gridViewTextBoxColumn35.Name = "chidReferencia";
+            gridViewTextBoxColumn35.Width = 33;
+            gridViewTextBoxColumn36.EnableExpressionEditor = false;
+            gridViewTextBoxColumn36.FieldName = "usuarioEnAtencion";
+            gridViewTextBoxColumn36.HeaderText = "usuarioEnAtencion";
+            gridViewTextBoxColumn36.IsVisible = false;
+            gridViewTextBoxColumn36.Name = "chusuarioEnAtencion";
+            gridViewTextBoxColumn36.Width = 120;
+            gridViewTextBoxColumn37.EnableExpressionEditor = false;
+            gridViewTextBoxColumn37.FieldName = "motivoCodigo";
+            gridViewTextBoxColumn37.HeaderText = "motivoCodigo";
+            gridViewTextBoxColumn37.IsVisible = false;
+            gridViewTextBoxColumn37.Name = "chmotivoCodigo";
+            gridViewTextBoxColumn38.EnableExpressionEditor = false;
+            gridViewTextBoxColumn38.FieldName = "motivoSolicitud";
+            gridViewTextBoxColumn38.HeaderText = "Motivo";
+            gridViewTextBoxColumn38.Name = "chmotivoSolicitud";
+            gridViewTextBoxColumn38.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn38.Width = 81;
+            gridViewTextBoxColumn39.EnableExpressionEditor = false;
+            gridViewTextBoxColumn39.FieldName = "documentoDeReferencia";
+            gridViewTextBoxColumn39.HeaderText = "Documento Ref.";
+            gridViewTextBoxColumn39.IsVisible = false;
+            gridViewTextBoxColumn39.Name = "chdocumentoDeReferencia";
+            gridViewTextBoxColumn39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn39.Width = 46;
+            gridViewTextBoxColumn40.EnableExpressionEditor = false;
+            gridViewTextBoxColumn40.FieldName = "fechaCreacion";
+            gridViewTextBoxColumn40.HeaderText = "fechaCreacion";
+            gridViewTextBoxColumn40.IsVisible = false;
+            gridViewTextBoxColumn40.Name = "chfechaCreacion";
+            gridViewTextBoxColumn40.Width = 63;
+            gridViewTextBoxColumn41.EnableExpressionEditor = false;
+            gridViewTextBoxColumn41.FieldName = "estacionDeTrabajo";
+            gridViewTextBoxColumn41.HeaderText = "estacionDeTrabajo";
+            gridViewTextBoxColumn41.IsVisible = false;
+            gridViewTextBoxColumn41.Name = "chestacionDeTrabajo";
+            gridViewTextBoxColumn41.Width = 113;
+            gridViewTextBoxColumn42.EnableExpressionEditor = false;
+            gridViewTextBoxColumn42.FieldName = "idDispositivoBaja";
+            gridViewTextBoxColumn42.HeaderText = "idDispositivoBaja";
+            gridViewTextBoxColumn42.IsVisible = false;
+            gridViewTextBoxColumn42.Name = "chidDispositivoBaja";
+            gridViewTextBoxColumn42.Width = 26;
+            gridViewTextBoxColumn43.EnableExpressionEditor = false;
+            gridViewTextBoxColumn43.FieldName = "idReferenciaAlta";
+            gridViewTextBoxColumn43.HeaderText = "idReferenciaAlta";
+            gridViewTextBoxColumn43.IsVisible = false;
+            gridViewTextBoxColumn43.Name = "chidReferenciaAlta";
+            gridViewTextBoxColumn43.Width = 32;
+            gridViewTextBoxColumn44.EnableExpressionEditor = false;
+            gridViewTextBoxColumn44.FieldName = "documentoDeReferenciaAlta";
+            gridViewTextBoxColumn44.HeaderText = "Doc Ref. Alta";
+            gridViewTextBoxColumn44.IsVisible = false;
+            gridViewTextBoxColumn44.Name = "chdocumentoDeReferenciaAlta";
+            gridViewTextBoxColumn44.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn44.Width = 35;
+            gridViewTextBoxColumn45.EnableExpressionEditor = false;
+            gridViewTextBoxColumn45.FieldName = "idReferenciaBaja";
+            gridViewTextBoxColumn45.HeaderText = "idReferenciaBaja";
+            gridViewTextBoxColumn45.IsVisible = false;
+            gridViewTextBoxColumn45.Name = "chidReferenciaBaja";
+            gridViewTextBoxColumn45.Width = 40;
+            gridViewTextBoxColumn46.EnableExpressionEditor = false;
+            gridViewTextBoxColumn46.FieldName = "documentoDeReferenciaBaja";
+            gridViewTextBoxColumn46.HeaderText = "Doc Ref. Baja";
+            gridViewTextBoxColumn46.IsVisible = false;
+            gridViewTextBoxColumn46.Name = "chdocumentoDeReferenciaBaja";
+            gridViewTextBoxColumn46.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn46.Width = 51;
+            gridViewTextBoxColumn47.EnableExpressionEditor = false;
+            gridViewTextBoxColumn47.FieldName = "estado";
+            gridViewTextBoxColumn47.HeaderText = "Estado";
+            gridViewTextBoxColumn47.Name = "chestado";
+            gridViewTextBoxColumn47.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn47.Width = 95;
+            gridViewCheckBoxColumn4.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn4.FieldName = "contienAdjunto";
+            gridViewCheckBoxColumn4.HeaderText = "Adjuntos";
+            gridViewCheckBoxColumn4.IsVisible = false;
+            gridViewCheckBoxColumn4.MinWidth = 20;
+            gridViewCheckBoxColumn4.Name = "chcontienAdjunto";
+            gridViewCheckBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCheckBoxColumn4.Width = 64;
+            gridViewTextBoxColumn48.EnableExpressionEditor = false;
+            gridViewTextBoxColumn48.FieldName = "justificacion";
+            gridViewTextBoxColumn48.HeaderText = "Justificación";
+            gridViewTextBoxColumn48.IsVisible = false;
+            gridViewTextBoxColumn48.Name = "chjustificacion";
+            gridViewTextBoxColumn48.Width = 32;
+            gridViewTextBoxColumn49.EnableExpressionEditor = false;
+            gridViewTextBoxColumn49.FieldName = "glosa";
+            gridViewTextBoxColumn49.HeaderText = "Glosa";
+            gridViewTextBoxColumn49.IsVisible = false;
+            gridViewTextBoxColumn49.Name = "chglosa";
+            gridViewTextBoxColumn49.Width = 35;
+            gridViewTextBoxColumn50.EnableExpressionEditor = false;
+            gridViewTextBoxColumn50.FieldName = "nota";
+            gridViewTextBoxColumn50.HeaderText = "Nota";
+            gridViewTextBoxColumn50.IsVisible = false;
+            gridViewTextBoxColumn50.Name = "chnota";
+            gridViewTextBoxColumn50.Width = 42;
+            gridViewTextBoxColumn51.EnableExpressionEditor = false;
+            gridViewTextBoxColumn51.FieldName = "dias";
+            gridViewTextBoxColumn51.HeaderText = "dias";
+            gridViewTextBoxColumn51.IsVisible = false;
+            gridViewTextBoxColumn51.Name = "chdias";
+            gridViewTextBoxColumn51.Width = 47;
+            gridViewTextBoxColumn52.EnableExpressionEditor = false;
+            gridViewTextBoxColumn52.FieldName = "justificacionDeReposicionCodigo";
+            gridViewTextBoxColumn52.HeaderText = "Cod. Justificacion";
+            gridViewTextBoxColumn52.IsVisible = false;
+            gridViewTextBoxColumn52.Name = "chjustificacionDeReposicionCodigo";
+            gridViewTextBoxColumn52.Width = 56;
+            gridViewTextBoxColumn53.EnableExpressionEditor = false;
+            gridViewTextBoxColumn53.FieldName = "justificacionDeReposicion";
+            gridViewTextBoxColumn53.HeaderText = "Desc. Justificacion";
+            gridViewTextBoxColumn53.IsVisible = false;
+            gridViewTextBoxColumn53.Name = "chjustificacionDeReposicion";
+            gridViewTextBoxColumn53.Width = 67;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20,
+            gridViewTextBoxColumn21,
+            gridViewTextBoxColumn22,
+            gridViewTextBoxColumn23,
+            gridViewTextBoxColumn24,
+            gridViewTextBoxColumn25,
+            gridViewTextBoxColumn26,
+            gridViewTextBoxColumn27,
+            gridViewTextBoxColumn28,
+            gridViewTextBoxColumn29,
+            gridViewTextBoxColumn30,
+            gridViewTextBoxColumn31,
+            gridViewTextBoxColumn32,
+            gridViewTextBoxColumn33,
+            gridViewTextBoxColumn34,
+            gridViewTextBoxColumn35,
+            gridViewTextBoxColumn36,
+            gridViewTextBoxColumn37,
+            gridViewTextBoxColumn38,
+            gridViewTextBoxColumn39,
+            gridViewTextBoxColumn40,
+            gridViewTextBoxColumn41,
+            gridViewTextBoxColumn42,
+            gridViewTextBoxColumn43,
+            gridViewTextBoxColumn44,
+            gridViewTextBoxColumn45,
+            gridViewTextBoxColumn46,
+            gridViewTextBoxColumn47,
+            gridViewCheckBoxColumn4,
+            gridViewTextBoxColumn48,
+            gridViewTextBoxColumn49,
+            gridViewTextBoxColumn50,
+            gridViewTextBoxColumn51,
+            gridViewTextBoxColumn52,
+            gridViewTextBoxColumn53});
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.EnableAlternatingRowColor = true;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.EnableFiltering = true;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.MultiSelect = true;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
+            this.dgvListadoSolicitudesRenovacion.MasterTemplate.ShowHeaderCellButtons = true;
+            this.dgvListadoSolicitudesRenovacion.Name = "dgvListadoSolicitudesRenovacion";
+            this.dgvListadoSolicitudesRenovacion.Padding = new System.Windows.Forms.Padding(1);
+            this.dgvListadoSolicitudesRenovacion.ReadOnly = true;
+            this.dgvListadoSolicitudesRenovacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvListadoSolicitudesRenovacion.ShowGroupPanel = false;
+            this.dgvListadoSolicitudesRenovacion.ShowHeaderCellButtons = true;
+            this.dgvListadoSolicitudesRenovacion.Size = new System.Drawing.Size(552, 338);
+            this.dgvListadoSolicitudesRenovacion.TabIndex = 197;
+            this.dgvListadoSolicitudesRenovacion.ThemeName = "VisualStudio2012Light";
+            // 
+            // tabHistoricoDePlanes
+            // 
+            this.tabHistoricoDePlanes.Controls.Add(this.btnExportarHistoricoPlanes);
+            this.tabHistoricoDePlanes.Controls.Add(this.btnCambiarEstadoHistoricoPlanes);
+            this.tabHistoricoDePlanes.Controls.Add(this.dgvHistoricoPlanes);
+            this.tabHistoricoDePlanes.Controls.Add(this.btnQuitarHistoricoPlanes);
+            this.tabHistoricoDePlanes.Controls.Add(this.btnAgregarHistoricoPlanes);
+            this.tabHistoricoDePlanes.ItemSize = new System.Drawing.SizeF(110F, 26F);
+            this.tabHistoricoDePlanes.Location = new System.Drawing.Point(5, 5);
+            this.tabHistoricoDePlanes.Name = "tabHistoricoDePlanes";
+            this.tabHistoricoDePlanes.Size = new System.Drawing.Size(544, 372);
+            this.tabHistoricoDePlanes.Text = "Hist. Planes";
+            // 
+            // btnExportarHistoricoPlanes
+            // 
+            this.btnExportarHistoricoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportarHistoricoPlanes.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarHistoricoPlanes.Image")));
+            this.btnExportarHistoricoPlanes.Location = new System.Drawing.Point(423, 3);
+            this.btnExportarHistoricoPlanes.Name = "btnExportarHistoricoPlanes";
+            this.btnExportarHistoricoPlanes.Size = new System.Drawing.Size(25, 26);
+            this.btnExportarHistoricoPlanes.TabIndex = 340;
+            this.btnExportarHistoricoPlanes.ThemeName = "VisualStudio2012Light";
+            // 
+            // btnCambiarEstadoHistoricoPlanes
+            // 
+            this.btnCambiarEstadoHistoricoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambiarEstadoHistoricoPlanes.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarEstadoHistoricoPlanes.Image")));
+            this.btnCambiarEstadoHistoricoPlanes.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCambiarEstadoHistoricoPlanes.Location = new System.Drawing.Point(454, 3);
+            this.btnCambiarEstadoHistoricoPlanes.Name = "btnCambiarEstadoHistoricoPlanes";
+            this.btnCambiarEstadoHistoricoPlanes.Size = new System.Drawing.Size(25, 26);
+            this.btnCambiarEstadoHistoricoPlanes.TabIndex = 339;
+            this.btnCambiarEstadoHistoricoPlanes.ThemeName = "VisualStudio2012Light";
+            // 
+            // dgvHistoricoPlanes
+            // 
+            this.dgvHistoricoPlanes.AllowUserToAddRows = false;
+            this.dgvHistoricoPlanes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvHistoricoPlanes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvHistoricoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHistoricoPlanes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvHistoricoPlanes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoricoPlanes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvHistoricoPlanes.ColumnHeadersHeight = 40;
+            this.dgvHistoricoPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvHistoricoPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.myDataGridViewMaskedTextColumn1,
+            this.myDataGridViewMaskedTextColumn2,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistoricoPlanes.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvHistoricoPlanes.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvHistoricoPlanes.Location = new System.Drawing.Point(0, 42);
+            this.dgvHistoricoPlanes.Name = "dgvHistoricoPlanes";
+            this.dgvHistoricoPlanes.P_EsEditable = false;
+            this.dgvHistoricoPlanes.P_FormatoDecimal = null;
+            this.dgvHistoricoPlanes.P_FormatoFecha = null;
+            this.dgvHistoricoPlanes.P_NombreColCorrelativa = null;
+            this.dgvHistoricoPlanes.P_NombreTabla = null;
+            this.dgvHistoricoPlanes.P_NumeroDigitos = 0;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistoricoPlanes.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvHistoricoPlanes.RowHeadersWidth = 10;
+            this.dgvHistoricoPlanes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvHistoricoPlanes.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvHistoricoPlanes.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvHistoricoPlanes.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvHistoricoPlanes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvHistoricoPlanes.Size = new System.Drawing.Size(544, 327);
+            this.dgvHistoricoPlanes.TabIndex = 336;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "LineaCelularPersonalID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "LineaCelularPersonalID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "LineaCelularID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "LineaCelularID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PersonalID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cod.";
+            this.dataGridViewTextBoxColumn4.MaxInputLength = 20;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Personal";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Plan";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PersonalSituacion";
+            dataGridViewCellStyle11.Format = "{0:N2}";
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Valor del plan";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // myDataGridViewMaskedTextColumn1
+            // 
+            this.myDataGridViewMaskedTextColumn1.DataPropertyName = "Desde";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "d";
+            this.myDataGridViewMaskedTextColumn1.DefaultCellStyle = dataGridViewCellStyle12;
+            this.myDataGridViewMaskedTextColumn1.HeaderText = "Desde";
+            this.myDataGridViewMaskedTextColumn1.Mask = "";
+            this.myDataGridViewMaskedTextColumn1.Name = "myDataGridViewMaskedTextColumn1";
+            this.myDataGridViewMaskedTextColumn1.P_EsEditable = false;
+            this.myDataGridViewMaskedTextColumn1.P_EsModificable = false;
+            this.myDataGridViewMaskedTextColumn1.P_EsPrimaryKey = false;
+            this.myDataGridViewMaskedTextColumn1.P_ExigeInformacion = false;
+            this.myDataGridViewMaskedTextColumn1.P_NombreColumna = null;
+            this.myDataGridViewMaskedTextColumn1.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.myDataGridViewMaskedTextColumn1.ToolTipText = "Desde";
+            this.myDataGridViewMaskedTextColumn1.Width = 65;
+            // 
+            // myDataGridViewMaskedTextColumn2
+            // 
+            this.myDataGridViewMaskedTextColumn2.DataPropertyName = "Hasta";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.myDataGridViewMaskedTextColumn2.DefaultCellStyle = dataGridViewCellStyle13;
+            this.myDataGridViewMaskedTextColumn2.HeaderText = "Hasta";
+            this.myDataGridViewMaskedTextColumn2.Mask = "";
+            this.myDataGridViewMaskedTextColumn2.Name = "myDataGridViewMaskedTextColumn2";
+            this.myDataGridViewMaskedTextColumn2.P_EsEditable = false;
+            this.myDataGridViewMaskedTextColumn2.P_EsModificable = false;
+            this.myDataGridViewMaskedTextColumn2.P_EsPrimaryKey = false;
+            this.myDataGridViewMaskedTextColumn2.P_ExigeInformacion = false;
+            this.myDataGridViewMaskedTextColumn2.P_NombreColumna = null;
+            this.myDataGridViewMaskedTextColumn2.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.myDataGridViewMaskedTextColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.myDataGridViewMaskedTextColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.myDataGridViewMaskedTextColumn2.ToolTipText = "Hasta";
+            this.myDataGridViewMaskedTextColumn2.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ReferenciaID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ReferenciaID";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ReferenciaSolicitudID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ReferenciaSolicitudID";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Glosa";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Glosa";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Estado";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn12.Width = 40;
+            // 
+            // btnQuitarHistoricoPlanes
+            // 
+            this.btnQuitarHistoricoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuitarHistoricoPlanes.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarHistoricoPlanes.Image")));
+            this.btnQuitarHistoricoPlanes.Location = new System.Drawing.Point(516, 3);
+            this.btnQuitarHistoricoPlanes.Name = "btnQuitarHistoricoPlanes";
+            this.btnQuitarHistoricoPlanes.Size = new System.Drawing.Size(25, 26);
+            this.btnQuitarHistoricoPlanes.TabIndex = 338;
+            this.btnQuitarHistoricoPlanes.ThemeName = "VisualStudio2012Light";
+            // 
+            // btnAgregarHistoricoPlanes
+            // 
+            this.btnAgregarHistoricoPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarHistoricoPlanes.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarHistoricoPlanes.Image")));
+            this.btnAgregarHistoricoPlanes.Location = new System.Drawing.Point(485, 3);
+            this.btnAgregarHistoricoPlanes.Name = "btnAgregarHistoricoPlanes";
+            this.btnAgregarHistoricoPlanes.Size = new System.Drawing.Size(25, 26);
+            this.btnAgregarHistoricoPlanes.TabIndex = 337;
+            this.btnAgregarHistoricoPlanes.ThemeName = "VisualStudio2012Light";
+            // 
+            // tabLog
+            // 
+            this.tabLog.Controls.Add(this.dgvDetail);
+            this.tabLog.Controls.Add(this.btnChangeStateDetail);
+            this.tabLog.Controls.Add(this.btnAddItem);
+            this.tabLog.Controls.Add(this.btnDeleteItem);
+            this.tabLog.ItemSize = new System.Drawing.SizeF(110F, 26F);
+            this.tabLog.Location = new System.Drawing.Point(5, 5);
+            this.tabLog.Name = "tabLog";
+            this.tabLog.Size = new System.Drawing.Size(544, 372);
+            this.tabLog.Text = "Log";
+            // 
+            // btnResaltarResultados
+            // 
+            this.btnResaltarResultados.AccessibleDescription = "ResaltarResultados";
+            this.btnResaltarResultados.AccessibleName = "ResaltarResultados";
+            this.btnResaltarResultados.AutoSize = false;
+            this.btnResaltarResultados.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnResaltarResultados.DisplayName = "ResaltarResultados";
+            this.btnResaltarResultados.Image = ((System.Drawing.Image)(resources.GetObject("btnResaltarResultados.Image")));
+            this.btnResaltarResultados.Name = "btnResaltarResultados";
+            this.btnResaltarResultados.Tag = "Resaltar resultados";
+            this.btnResaltarResultados.Text = "";
+            this.btnResaltarResultados.Click += new System.EventHandler(this.btnResaltarResultados_Click);
+            // 
+            // btnElegirColumna
+            // 
+            this.btnElegirColumna.AccessibleDescription = "btnElegirColumna";
+            this.btnElegirColumna.AccessibleName = "ElegirColumna";
+            this.btnElegirColumna.AutoSize = false;
+            this.btnElegirColumna.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnElegirColumna.DisplayName = "ElegirColumna";
+            this.btnElegirColumna.Image = ((System.Drawing.Image)(resources.GetObject("btnElegirColumna.Image")));
+            this.btnElegirColumna.Name = "btnElegirColumna";
+            this.btnElegirColumna.Tag = "Elegir Columna";
+            this.btnElegirColumna.Text = "";
+            this.btnElegirColumna.Click += new System.EventHandler(this.commandBarButton1_Click);
             // 
             // CuentaDeCorreos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1221, 634);
+            this.ClientSize = new System.Drawing.Size(1377, 757);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.gbList);
@@ -1420,9 +2723,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbEdit)).EndInit();
             this.gbEdit.ResumeLayout(false);
             this.gbEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl)).EndInit();
-            this.tabControl.ResumeLayout(false);
-            this.tabDetalles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeStateDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteItem)).EndInit();
@@ -1435,7 +2735,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoSolicitud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblcodSolicitud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbObservaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblcuenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdEstado)).EndInit();
@@ -1447,6 +2746,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
+            this.radPageView1.ResumeLayout(false);
+            this.tabPersonalAsignado.ResumeLayout(false);
+            this.tabPersonalAsignado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportarPersonalAsignado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActivarEstado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAsignacionesAPersonal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQuitarDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblAnios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAnioDepreciar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblAniosADepreciar)).EndInit();
+            this.tabGlosa.ResumeLayout(false);
+            this.tabGlosa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
+            this.tabSolicitud.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportarDetalleSolicitudes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelecionarColumnasDetalleSolicitud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSolicitudesRenovacion.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoSolicitudesRenovacion)).EndInit();
+            this.tabHistoricoDePlanes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportarHistoricoPlanes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCambiarEstadoHistoricoPlanes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistoricoPlanes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQuitarHistoricoPlanes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarHistoricoPlanes)).EndInit();
+            this.tabLog.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1475,8 +2801,6 @@
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtIdCodigoGeneral;
         private MyControlsDataBinding.Controles.MyButtonSearchSimple btnPersonalBuscar;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtNombres;
-        private System.Windows.Forms.TextBox txtObservaciones;
-        private Telerik.WinControls.UI.RadLabel lbObservaciones;
         private System.Windows.Forms.TextBox txtclave;
         private Telerik.WinControls.UI.RadLabel lblClave;
         private System.Windows.Forms.TextBox txtCuenta;
@@ -1497,8 +2821,6 @@
         private MyControlsDataBinding.Controles.MyDataGridViewDetails dgvDetail;
         private Telerik.WinControls.UI.RadButton btnDeleteItem;
         private Telerik.WinControls.UI.RadButton btnAddItem;
-        private Telerik.WinControls.UI.RadPageView tabControl;
-        private Telerik.WinControls.UI.RadPageViewPage tabDetalles;
         private System.Windows.Forms.DataGridViewTextBoxColumn chid;
         private System.Windows.Forms.DataGridViewTextBoxColumn chitem;
         private System.Windows.Forms.DataGridViewTextBoxColumn chidTipo;
@@ -1550,5 +2872,69 @@
         private System.ComponentModel.BackgroundWorker bgwCambioEstado;
         private System.Windows.Forms.ToolStripMenuItem btnReasginado;
         private System.Windows.Forms.ToolStripMenuItem btnLiberacionDeCuentaM365;
+        private Telerik.WinControls.UI.CommandBarButton btnActivarFiltro;
+        private Telerik.WinControls.UI.RadPageView radPageView1;
+        private Telerik.WinControls.UI.RadPageViewPage tabPersonalAsignado;
+        private Telerik.WinControls.UI.RadButton btnExportarPersonalAsignado;
+        private Telerik.WinControls.UI.RadButton btnActivarEstado;
+        private MyControlsDataBinding.Controles.MyDataGridViewDetails dgvDetalleAsignacionesAPersonal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chLineaCelularPersonalID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chLineaCelularID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPersonalID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPersonal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPersonalSituacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPersonalPlanilla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPersonalCargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPersonalDocumentoDeIdentificacion;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chDesde;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chHasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chReferenciaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chReferenciaSolicitudID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chGlosa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private Telerik.WinControls.UI.RadButton btnQuitarDetalle;
+        private Telerik.WinControls.UI.RadButton btnAgregarDetalle;
+        private System.Windows.Forms.Label label2;
+        private Telerik.WinControls.UI.RadLabel lblAnios;
+        private System.Windows.Forms.Label label1;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtFechaProduccion;
+        private System.Windows.Forms.Label lblFechaBaja;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtFechaActivacion;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl myDataGridViewMaskedTextEditingControl1;
+        private Telerik.WinControls.UI.RadSpinEditor txtAnioDepreciar;
+        private Telerik.WinControls.UI.RadLabel lblAniosADepreciar;
+        private System.Windows.Forms.Label lblLatitud;
+        private System.Windows.Forms.TextBox txtLatitud;
+        private System.Windows.Forms.TextBox txtUbicacion;
+        private System.Windows.Forms.Label lblUbicacion;
+        private System.Windows.Forms.TextBox txtLongitud;
+        private System.Windows.Forms.Label label3;
+        private Telerik.WinControls.UI.RadPageViewPage tabGlosa;
+        private Telerik.WinControls.UI.RadLabel radLabel11;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private Telerik.WinControls.UI.RadPageViewPage tabSolicitud;
+        private Telerik.WinControls.UI.RadButton btnExportarDetalleSolicitudes;
+        private Telerik.WinControls.UI.RadButton btnSelecionarColumnasDetalleSolicitud;
+        private Telerik.WinControls.UI.RadGridView dgvListadoSolicitudesRenovacion;
+        private Telerik.WinControls.UI.RadPageViewPage tabHistoricoDePlanes;
+        private Telerik.WinControls.UI.RadButton btnExportarHistoricoPlanes;
+        private Telerik.WinControls.UI.RadButton btnCambiarEstadoHistoricoPlanes;
+        private MyControlsDataBinding.Controles.MyDataGridViewDetails dgvHistoricoPlanes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn myDataGridViewMaskedTextColumn1;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn myDataGridViewMaskedTextColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private Telerik.WinControls.UI.RadButton btnQuitarHistoricoPlanes;
+        private Telerik.WinControls.UI.RadButton btnAgregarHistoricoPlanes;
+        private Telerik.WinControls.UI.RadPageViewPage tabLog;
+        private Telerik.WinControls.UI.CommandBarButton btnResaltarResultados;
+        private Telerik.WinControls.UI.CommandBarButton btnElegirColumna;
     }
 }

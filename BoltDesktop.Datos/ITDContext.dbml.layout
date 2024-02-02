@@ -638,5 +638,17 @@
         <elementListCompartment Id="629b54d7-f5fa-4fdb-bfd1-047a62cd1c5a" absoluteBounds="39.39, 21.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="0581b4a9-03ff-42db-a55c-b7bcec15ddc0" absoluteBounds="39.375, 24.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoAsignacionPersonal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="213f2d75-16dd-4567-b2ae-f444ffce8374" absoluteBounds="39.39, 25.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6667bfeb-0f09-41cb-b7ff-1772108559d0" absoluteBounds="24.375, 39.75, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentaCorreoHistoricoPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea8994d3-346d-4dd6-baa9-446f2a69750e" absoluteBounds="24.39, 40.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
