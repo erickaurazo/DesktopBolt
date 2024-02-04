@@ -760,7 +760,7 @@
             this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.radPageView1.Location = new System.Drawing.Point(5, 257);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.tabPersonalAsignado;
+            this.radPageView1.SelectedPage = this.tabHistoricoDePlanes;
             this.radPageView1.Size = new System.Drawing.Size(554, 325);
             this.radPageView1.TabIndex = 332;
             this.radPageView1.ThemeName = "Windows8";
@@ -1730,6 +1730,7 @@
             this.dgvHistoricoPlanes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvHistoricoPlanes.Size = new System.Drawing.Size(544, 256);
             this.dgvHistoricoPlanes.TabIndex = 336;
+            this.dgvHistoricoPlanes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvHistoricoPlanes_KeyUp);
             // 
             // btnQuitarHistoricoPlanes
             // 

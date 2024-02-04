@@ -965,6 +965,49 @@ namespace Asistencia.Negocios
             return listado;
         }
 
+        public List<DFormatoSimple> ObtenerListadoDePlanesDeCorreo(string conection)
+        {
+            List<DFormatoSimple> listado = new List<DFormatoSimple>();
+            string cnx;
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+
+                var ResultadoQuery = Modelo.SAS_LicenciaCorreo.ToList();
+                if (ResultadoQuery != null && ResultadoQuery.ToList().Count > 0)
+                {
+                    listado = (from items in ResultadoQuery.ToList()
+                               group items by new { items.id } into j
+                               select new DFormatoSimple
+                               {
+                                   Codigo = j.Key.id.ToString(),
+                                   Descripcion = j.FirstOrDefault().descripcion.Trim().ToUpper(),
+                               }
+                           ).ToList();
+                }
+
+                //C.Add(new DFormatoSimple { Codigo = "0", Descripcion = "Apertura de cuenta" });
+                //listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "Generación de BackUp" });
+                //listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Imagen" });
+                //listado.Add(new DFormatoSimple { Codigo = "3", Descripcion = "Cambio de contraseña" });
+                //listado.Add(new DFormatoSimple { Codigo = "4", Descripcion = "Descarga y validación del Backup" });
+                //listado.Add(new DFormatoSimple { Codigo = "5", Descripcion = "Configuración de backup" });
+                //listado.Add(new DFormatoSimple { Codigo = "6", Descripcion = "Liberación de licencia" });
+                //listado.Add(new DFormatoSimple { Codigo = "7", Descripcion = "Asignación o reasignación de licencia" });
+                //listado.Add(new DFormatoSimple { Codigo = "8", Descripcion = "Upgrade licencia" });
+                //listado.Add(new DFormatoSimple { Codigo = "9", Descripcion = "Renombrar nombre de cuenta" });
+                //listado.Add(new DFormatoSimple { Codigo = "10", Descripcion = "Agregar Alias" });
+                //listado.Add(new DFormatoSimple { Codigo = "11", Descripcion = "Agregar a grupo" });
+                //listado.Add(new DFormatoSimple { Codigo = "12", Descripcion = "Baja de grupo" });
+                //listado.Add(new DFormatoSimple { Codigo = "13", Descripcion = "Downgrade licencia" });
+                //listado.Add(new DFormatoSimple { Codigo = "14", Descripcion = "Baja de cuenta" });
+                //listado.Add(new DFormatoSimple { Codigo = "15", Descripcion = "Suspención de cuenta" });
+                //listado.Add(new DFormatoSimple { Codigo = "16", Descripcion = "Activación y/o Reactivación de cuenta" });
+
+            }
+            return listado;
+        }
+
 
         
 

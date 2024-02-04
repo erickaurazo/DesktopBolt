@@ -1771,8 +1771,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                         {
                             //idRetorno = busquedas.ObjetoRetorno.Codigo;
-                            this.dgvDetail.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonalID"].Value = search.ObjetoRetorno.Codigo;
-                            this.dgvDetail.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonal"].Value = search.ObjetoRetorno.Descripcion;
+                            this.dgvDetalleAsignacionesAPersonal.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonalID"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvDetalleAsignacionesAPersonal.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonal"].Value = search.ObjetoRetorno.Descripcion;
                         }
                     }
                 }
@@ -1783,6 +1783,32 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void dgvRegistro_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void dgvHistoricoPlanes_KeyUp(object sender, KeyEventArgs e)
+        {
+            Modelo = new SAS_CuentasCorreoController();
+            if (((DataGridView)sender).RowCount > 0)
+            {
+                #region Tipo de detalle() 
+                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chLicenciaTipoIdHistoricoPlan" || ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chLicenciaHistoricoPlan")
+                {
+                    if (e.KeyCode == Keys.F3)
+                    {
+                        frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
+                        search.ListaGeneralResultado = Modelo.ObtenerListadoDePlanesDeCorreo("SAS");
+                        search.Text = "Buscar tipo de planes";
+                        search.txtTextoFiltro.Text = "";
+                        if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            //idRetorno = busquedas.ObjetoRetorno.Codigo;
+                            this.dgvHistoricoPlanes.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chLicenciaTipoIdHistoricoPlan"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvHistoricoPlanes.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chLicenciaHistoricoPlan"].Value = search.ObjetoRetorno.Descripcion;
+                        }
+                    }
+                }
+                #endregion
+            }
         }
     }
 }
