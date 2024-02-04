@@ -298,13 +298,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         foreach (DataGridViewRow fila in this.dgvDetail.Rows)
                         {
-                            if (fila.Cells["chId"].Value.ToString().Trim() != String.Empty)
+                            if (fila.Cells["chid"].Value.ToString().Trim() != String.Empty)
                             {
                                 try
                                 {
                                     #region Obtener detalle por linea detalle() 
                                     SAS_CuentasCorreoDetalle oAcountDetail = new SAS_CuentasCorreoDetalle();
-                                    oAcountDetail.id = fila.Cells["chId"].Value != null ? Convert.ToInt32(fila.Cells["chId"].Value.ToString().Trim()) : 0;
+                                    oAcountDetail.id = fila.Cells["chid"].Value != null ? Convert.ToInt32(fila.Cells["chId"].Value.ToString().Trim()) : 0;
                                     oAcountDetail.item = fila.Cells["chItem"].Value != null ? fila.Cells["chItem"].Value.ToString().Trim() : string.Empty;
                                     oAcountDetail.idTipo = fila.Cells["chidTipo"].Value != null ? Convert.ToByte(fila.Cells["chidTipo"].Value.ToString().Trim()) : Convert.ToInt32(1);
                                     oAcountDetail.link = fila.Cells["chlink"].Value != null ? fila.Cells["chlink"].Value.ToString().Trim() : string.Empty;
@@ -340,7 +340,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         foreach (DataGridViewRow fila in this.dgvDetalleAsignacionesAPersonal.Rows)
                         {
-                            if (fila.Cells["chId"].Value.ToString().Trim() != String.Empty)
+                            if (fila.Cells["chCuentaCorreoAsignacionID"].Value.ToString().Trim() != String.Empty)
                             {
                                 try
                                 {
@@ -1501,7 +1501,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 if (dgvDetalleAsignacionesAPersonal != null)
                 {
                     ArrayList array = new ArrayList();
-                    array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chCuentaCorreoAsignacionID                 
+                    array.Add(0); // chCuentaCorreoAsignacionID                 
                     array.Add(Convert.ToInt32(this.txtCodigo.Text)); // chCuentaCorreoID
                     array.Add(string.Empty); // chPersonalID
                     array.Add(string.Empty); // chPersonal       
