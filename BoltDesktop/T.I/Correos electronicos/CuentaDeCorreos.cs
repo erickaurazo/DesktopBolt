@@ -545,6 +545,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
+                Modelo = new SAS_CuentasCorreoController();
                 this.txtCodigo.Text = oDetalle.id != null ? oDetalle.id.ToString().Trim() : string.Empty;
                 this.txtIdCodigoGeneral.Text = oDetalle.idcodigoGeneral != null ? oDetalle.idcodigoGeneral.Trim() : string.Empty;
                 this.txtNombres.Text = oDetalle.nombres != null ? oDetalle.nombres.Trim() : string.Empty;
@@ -584,11 +585,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 ListadoCuentasDeCorreoDetalleLog = new List<SAS_CuentasCorreoDetalleByIdResult>();
                 ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
+                ListadoDetallHistoricoPlanByCuentaCorreo = new List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>();
 
                 SAS_CuentasCorreo account = new SAS_CuentasCorreo();
                 account.id = oDetalle.id;
                 ListadoCuentasDeCorreoDetalleLog = Modelo.GetEmailAccountsDetailById("SAS", account); // Obtener listado detalle
                 ListadoDetalleAsignacionDeCuentas = Modelo.ObtenerListadoDePersonalAsignacionPorCodigoCorreoElectronico(conection, account.id);
+                ListadoDetallHistoricoPlanByCuentaCorreo = Modelo.ObtenerListadoDePlanHistoricoPorCodigoCorreoElectronico(conection, account.id);
 
                 lastItem = 0;
 
@@ -608,6 +611,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoDetalleAsignacionDeCuentas.ToDataTable<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>());
                 dgvDetalleAsignacionesAPersonal.Refresh();
                 msgError += "IP OK GRILLA ASIGNACION PERSONAL";
+
+
+                dgvHistoricoPlanes.CargarDatos(ListadoDetallHistoricoPlanByCuentaCorreo.ToDataTable<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>());
+                dgvHistoricoPlanes.Refresh();
+                msgError += "IP OK GRILLA Historico Plane";
 
             }
             catch (Exception Ex)
@@ -629,6 +637,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 #region 
                 oCuentaDeCorreoSeleccionado = new SAS_CuentasCorreoListado();
                 ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
+                ListadoDetallHistoricoPlanByCuentaCorreo = new List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>();
+
+
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
                     if (dgvRegistro.CurrentRow != null)
@@ -1767,6 +1778,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 }
                 #endregion
             }
+        }
+
+        private void dgvRegistro_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }
