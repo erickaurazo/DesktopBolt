@@ -358,7 +358,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     oPersonalAsignado.TablaReferencia = string.Empty;
                                     oPersonalAsignado.TablaSolicitud = string.Empty;                                
                                     oPersonalAsignado.UserID = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
-                                    oPersonalAsignado.HostName = Environment.MachineName;
+                                    oPersonalAsignado.HostName = Environment.MachineName.Trim();
                                     oPersonalAsignado.FechaRegistro = DateTime.Now;
                                     ListadoDetalleAsignacionDeCuentaRegistrar.Add(oPersonalAsignado);
                                     #endregion
