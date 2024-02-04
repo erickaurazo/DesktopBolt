@@ -2036,17 +2036,6 @@
       <Column Name="lineaCorporativo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.SAS_CuentasCorreoDetalle" Member="SAS_CuentasCorreoDetalle">
-    <Type Name="SAS_CuentasCorreoDetalle">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
-      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SAS_ListadoPersonalEmpresaYExterno" Member="SAS_ListadoPersonalEmpresaYExterno">
     <Type Name="SAS_ListadoPersonalEmpresaYExterno">
       <Column Name="codigo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
@@ -2069,17 +2058,6 @@
       <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SAS_CuentasCorreoAsignacionPersonal" Member="SAS_CuentasCorreoAsignacionPersonals">
-    <Type Name="SAS_CuentasCorreoAsignacionPersonal">
-      <Column Name="CuentaCorreoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CuentaCorreoAsignacionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PersonalID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SAS_CuentaCorreoHistoricoPlan" Member="SAS_CuentaCorreoHistoricoPlans">
     <Type Name="SAS_CuentaCorreoHistoricoPlan">
       <Column Name="CuentaCorreoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -2089,6 +2067,63 @@
       <Column Name="Hasta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Nota" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CuentasCorreoTipoLog" Member="SAS_CuentasCorreoTipoLogs">
+    <Type Name="SAS_CuentasCorreoTipoLog">
+      <Column Name="CuentaCorreoTipoLogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CuentasCorreoDetalle" Member="SAS_CuentasCorreoDetalles">
+    <Type Name="SAS_CuentasCorreoDetalle">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CuentasCorreoAsignacionPersonal" Member="SAS_CuentasCorreoAsignacionPersonals">
+    <Type Name="SAS_CuentasCorreoAsignacionPersonal">
+      <Column Name="CuentaCorreoAsignacionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CuentaCorreoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonalID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_CuentasCorreosHistoricoPlan" Member="SAS_CuentasCorreosHistoricoPlans">
+    <Type Name="SAS_CuentasCorreosHistoricoPlan">
+      <Column Name="CuentaCorreoTipoLicenciaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CuentaCorreoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LicenciaTipoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.SAS_EsPropioCBO" Method="SAS_EsPropioCBO">
@@ -2721,34 +2756,6 @@
       <Column Name="idFacturaCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="facturaCompra" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.SAS_CuentasCorreoDetalleById" Method="SAS_CuentasCorreoDetalleById">
-    <Parameter Name="int" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SAS_CuentasCorreoDetalleByIdResult">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="tipo" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
-      <Column Name="estadoDescripcion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.SAS_CuentasDominioDetalleById" Method="SAS_CuentasDominioDetalleById">
-    <Parameter Name="int" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SAS_CuentasDominioDetalleByIdResult">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="tipo" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
-      <Column Name="estadoDescripcion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.SAS_DetalleDeDispositivosPorIPByCodigoDispositivo" Method="SAS_DetalleDeDispositivosPorIPByCodigoDispositivo">
@@ -3950,17 +3957,21 @@
       <Column Name="contienAdjunto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoId" Method="SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoId">
-    <Parameter Name="CuentaCorreoID" Parameter="cuentaCorreoID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult">
-      <Column Name="CuentaCorreoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CuentaCorreoTipoLicenciaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LicenciaTipoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Licencia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Hasta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+  <Function Name="dbo.SAS_CuentasCorreoDetalleById" Method="SAS_CuentasCorreoDetalleById">
+    <Parameter Name="int" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CuentasCorreoDetalleByIdResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoDescripcion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoId" Method="SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoId">
@@ -3974,6 +3985,42 @@
       <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="Nota" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoId" Method="SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoId">
+    <Parameter Name="CuentaCorreoID" Parameter="cuentaCorreoID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult">
+      <Column Name="CuentaCorreoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CuentaCorreoTipoLicenciaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LicenciaTipoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Licencia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_CuentasDominioDetalleById" Method="SAS_CuentasDominioDetalleById">
+    <Parameter Name="int" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_CuentasDominioDetalleByIdResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="idTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoDescripcion" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="creadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

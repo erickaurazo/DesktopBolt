@@ -213,8 +213,9 @@
             // 
             // lblEspacioEnBlanco
             // 
+            this.lblEspacioEnBlanco.AutoSize = false;
             this.lblEspacioEnBlanco.Name = "lblEspacioEnBlanco";
-            this.lblEspacioEnBlanco.Size = new System.Drawing.Size(28, 17);
+            this.lblEspacioEnBlanco.Size = new System.Drawing.Size(108, 17);
             this.lblEspacioEnBlanco.Text = "       ";
             // 
             // lbl1NombreDelUsuario
@@ -231,8 +232,9 @@
             // 
             // lblSeparador
             // 
+            this.lblSeparador.AutoSize = false;
             this.lblSeparador.Name = "lblSeparador";
-            this.lblSeparador.Size = new System.Drawing.Size(28, 17);
+            this.lblSeparador.Size = new System.Drawing.Size(190, 17);
             this.lblSeparador.Text = "       ";
             // 
             // ProgressBar
@@ -285,7 +287,7 @@
             this.chkNotificar.Text = "Notificar cambios realizados";
             this.chkNotificar.UseVisualStyleBackColor = true;
             // 
-            // GoSistemaCatalogoUsersCopiarPrivilegios
+            // GoSistemaCatalogoUsersBoltDesktopCopiarPrivilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,7 +307,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "GoSistemaCatalogoUsersCopiarPrivilegios";
+            this.Name = "GoSistemaCatalogoUsersBoltDesktopCopiarPrivilegios";
             this.Text = "Usuarios del sistema | Copiar privilegios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoSistemaCatalogoUsersCopiarPrivilegios_FormClosing);
             this.Load += new System.EventHandler(this.GoSistemaCatalogoUsersCopiarPrivilegios_Load);

@@ -46,6 +46,7 @@ namespace Asistencia
             conection = "SAS";
             userLogin = new SAS_USUARIOS();
             userLogin.IdUsuario = Environment.UserName.Trim();
+            userLogin.NombreCompleto = Environment.MachineName.Trim();
             companyId = "001";
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
@@ -61,6 +62,10 @@ namespace Asistencia
             conection = _conection;
             userLogin = _userLogin;
             companyId = _companyId;
+
+            lblUsuarioNombre.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
+            lblNombreDescripcion.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto : Environment.MachineName;
+
             privilege = new PrivilegesByUser();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
@@ -77,6 +82,10 @@ namespace Asistencia
             userLogin = _userLogin;
             companyId = _companyId;
             privilege = _privilege;
+
+            lblUsuarioNombre.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
+            lblNombreDescripcion.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto : Environment.MachineName;
+
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -563,7 +572,7 @@ namespace Asistencia
             {
                 users = new List<ASJ_USUARIOS>();
                 usersSystem = new List<SAS_ListadoDeUsuariosDelSistema>();
-                Modelo = new UsersController();                
+                Modelo = new UsersController();
                 usersSystem = Modelo.GetListAllUserSystem(conection, companyId).ToList();
             }
             catch (Exception Ex)
@@ -624,7 +633,7 @@ namespace Asistencia
             {
                 if (ValidateForm() == true)
                 {
-                    GoSistemaCatalogoUsersPrivileges ofrm = new GoSistemaCatalogoUsersPrivileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim(), "SAS", userToRegister, companyId);
+                    GoSistemaCatalogoUsersPrivileges ofrm = new GoSistemaCatalogoUsersPrivileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim(), "SAS", userLogin, companyId);
                     ofrm.MdiParent = GoSistemaCatalogoUsers.ActiveForm;
                     ofrm.WindowState = FormWindowState.Maximized;
                     ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;

@@ -31,20 +31,31 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
     public partial class CuentaDeCorreos : Form
     {
         private PrivilegesByUser privilege;
-        private string _companyId;
-        private string _conection;
-        private SAS_USUARIOS _user2;
+        private string companyId;
+        private string conection;
+        private SAS_USUARIOS userLogin;
         private string fileName;
         private bool exportVisualSettings;
-        private List<SAS_CuentasCorreoListado> listado;
+        private List<SAS_CuentasCorreoListado> ListarCuentasDeCorreoAll;
         private SAS_CuentasCorreoController Modelo;
-        private SAS_CuentasCorreo odetalle;
-        private SAS_CuentasCorreoListado odetalleSelecionado;
-        private List<SAS_CuentasCorreoDetalleByIdResult> listDetails;
+        private SAS_CuentasCorreo oCuentaDeCorreo;
+        private SAS_CuentasCorreoListado oCuentaDeCorreoSeleccionado;
+        private List<SAS_CuentasCorreoDetalleByIdResult> ListadoCuentasDeCorreoDetalleLog;
         private int lastItem;
         private string msgError;
-        private List<SAS_CuentasCorreoDetalle> detalleEliminados = new List<SAS_CuentasCorreoDetalle>();
-        private List<SAS_CuentasCorreoDetalle> detalle = new List<SAS_CuentasCorreoDetalle>();
+        private List<SAS_CuentasCorreoDetalle> ListadoDetalleLogEliminar = new List<SAS_CuentasCorreoDetalle>();
+        private List<SAS_CuentasCorreoDetalle> ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
+
+        private List<SAS_CuentasCorreoAsignacionPersonal> ListadoDetalleAsignacionDeCuentaEliminar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+        private List<SAS_CuentasCorreoAsignacionPersonal> ListadoDetalleAsignacionDeCuentaRegistrar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+        private List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult> ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
+
+
+        private List<SAS_CuentasCorreosHistoricoPlan> ListadoDetalleHistoricoPlanEliminar = new List<SAS_CuentasCorreosHistoricoPlan>();
+        private List<SAS_CuentasCorreosHistoricoPlan> ListadoDetalleHistoricoPlanRegistrar = new List<SAS_CuentasCorreosHistoricoPlan>();
+        private List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult> ListadoDetallHistoricoPlanByCuentaCorreo = new List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>();
+
+
         object result;
         private int EstadoCambio = 0;
         private int CodigoRegistro;
@@ -77,7 +88,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             //}
         }
 
-        public CuentaDeCorreos(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser privilege)
+        public CuentaDeCorreos(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
         {
             try
             {
@@ -88,10 +99,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
                 RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
 
-                this._conection = _conection;
-                this._user2 = _user2;
-                this._companyId = _companyId;
-                this.privilege = privilege;
+                conection = _conection;
+                userLogin = _user2;
+                companyId = _companyId;
+                privilege = _privilege;
                 Actualizar();
             }
             catch (Exception Ex)
@@ -264,23 +275,23 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
             try
             {
-                odetalle = new SAS_CuentasCorreo();
-                odetalle.id = Convert.ToInt32(this.txtCodigo.Text);
-                odetalle.cuenta = this.txtCuenta.Text.Trim();
-                odetalle.idcodigoGeneral = this.txtIdCodigoGeneral.Text.Trim();
-                odetalle.vienesDesdeSolicitud = chkActivoEnReporte.Checked == true ? 1 : 0;
-                odetalle.estado = this.txtIdEstado.Text.ToString().Trim() == "1" ? 1 : 0;
-                odetalle.codigoSolicitud = this.txtCodigoSolicitud.Text != string.Empty ? Convert.ToInt32(this.txtCodigoSolicitud.Text) : 0;
-                odetalle.observaciones = this.txtObservaciones.Text.Trim();
-                odetalle.fechaActivacion = DateTime.Now;
-                odetalle.fechaBaja = DateTime.Now;
-                odetalle.esCorportativo = chkEsCuentaCorporativa.Checked == true ? 1 : 0;
-                odetalle.clave = this.txtclave.Text.Trim();
-                odetalle.nombres = this.txtNombres.Text.Trim();
-                odetalle.idLicencia = this.txtLicenciaCodigo.Text.Trim() != null ? Convert.ToInt32(this.txtLicenciaCodigo.Text) : (int?)null;
+                oCuentaDeCorreo = new SAS_CuentasCorreo();
+                oCuentaDeCorreo.id = Convert.ToInt32(this.txtCodigo.Text);
+                oCuentaDeCorreo.cuenta = this.txtCuenta.Text.Trim();
+                oCuentaDeCorreo.idcodigoGeneral = this.txtIdCodigoGeneral.Text.Trim();
+                oCuentaDeCorreo.vienesDesdeSolicitud = chkActivoEnReporte.Checked == true ? 1 : 0;
+                oCuentaDeCorreo.estado = this.txtIdEstado.Text.ToString().Trim() == "1" ? 1 : 0;
+                oCuentaDeCorreo.codigoSolicitud = this.txtCodigoSolicitud.Text != string.Empty ? Convert.ToInt32(this.txtCodigoSolicitud.Text) : 0;
+                oCuentaDeCorreo.observaciones = this.txtObservaciones.Text.Trim();
+                oCuentaDeCorreo.fechaActivacion = DateTime.Now;
+                oCuentaDeCorreo.fechaBaja = DateTime.Now;
+                oCuentaDeCorreo.esCorportativo = chkEsCuentaCorporativa.Checked == true ? 1 : 0;
+                oCuentaDeCorreo.clave = this.txtclave.Text.Trim();
+                oCuentaDeCorreo.nombres = this.txtNombres.Text.Trim();
+                oCuentaDeCorreo.idLicencia = this.txtLicenciaCodigo.Text.Trim() != null ? Convert.ToInt32(this.txtLicenciaCodigo.Text) : (int?)null;
 
-                #region Obtener detalle()
-                detalle = new List<SAS_CuentasCorreoDetalle>();
+                #region Obtener detalle Log()
+                ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
                 if (this.dgvDetail != null)
                 {
                     if (this.dgvDetail.Rows.Count > 0)
@@ -299,8 +310,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     oAcountDetail.link = fila.Cells["chlink"].Value != null ? fila.Cells["chlink"].Value.ToString().Trim() : string.Empty;
                                     oAcountDetail.descripcion = fila.Cells["chdescripcion"].Value != null ? fila.Cells["chdescripcion"].Value.ToString().Trim() : string.Empty;
                                     oAcountDetail.estado = fila.Cells["chestado"].Value != null ? Convert.ToInt32(fila.Cells["chestado"].Value.ToString().Trim()) : Convert.ToInt32(1);
+                                    oAcountDetail.FechaRegistro = DateTime.Now;
+                                    oAcountDetail.UserID = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
                                     oAcountDetail.creadoPor = Environment.UserName;
-                                    detalle.Add(oAcountDetail);
+                                    oAcountDetail.Hostname = Environment.MachineName;
+                                    ListadoDetalleLogRegistrar.Add(oAcountDetail);
                                     #endregion
                                 }
                                 catch (Exception Ex)
@@ -318,6 +332,97 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 #endregion
 
+                #region Obtener detalle Asignacion a Colaborador()
+                ListadoDetalleAsignacionDeCuentaRegistrar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+                if (this.dgvDetalleAsignacionesAPersonal != null)
+                {
+                    if (this.dgvDetalleAsignacionesAPersonal.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow fila in this.dgvDetalleAsignacionesAPersonal.Rows)
+                        {
+                            if (fila.Cells["chId"].Value.ToString().Trim() != String.Empty)
+                            {
+                                try
+                                {
+                                    #region Obtener detalle por linea detalle() 
+                                    SAS_CuentasCorreoAsignacionPersonal oPersonalAsignado = new SAS_CuentasCorreoAsignacionPersonal();
+                                    oPersonalAsignado.CuentaCorreoAsignacionId = fila.Cells["chCuentaCorreoAsignacionId"].Value != null ? Convert.ToInt32(fila.Cells["chCuentaCorreoAsignacionId"].Value.ToString().Trim()) : 0;
+                                    oPersonalAsignado.CuentaCorreoID = fila.Cells["chCuentaCorreoID"].Value != null ? Convert.ToInt32(fila.Cells["CuentaCorreoID"].Value.ToString().Trim()) : 0;
+                                    oPersonalAsignado.PersonalID = fila.Cells["PersonalID"].Value != null ? fila.Cells["PersonalID"].Value.ToString().Trim() : string.Empty;
+                                    oPersonalAsignado.Desde = (fila.Cells["chDesde"].Value != null && fila.Cells["chDesde"].Value.ToString().Trim() != "" && fila.Cells["chDesde"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chDesde"].Value.ToString().Trim()) : DateTime.Now;
+                                    oPersonalAsignado.Hasta = (fila.Cells["chHasta"].Value != null && fila.Cells["chHasta"].Value.ToString().Trim() != "" && fila.Cells["chHasta"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chHasta"].Value.ToString().Trim()) : (DateTime?)null;                                    
+                                    oPersonalAsignado.Nota = fila.Cells["chNota"].Value != null ? fila.Cells["chNota"].Value.ToString().Trim() : string.Empty;
+                                    oPersonalAsignado.Estado = fila.Cells["chestado"].Value != null ? Convert.ToInt32(fila.Cells["chestado"].Value.ToString().Trim()) : Convert.ToInt32(1);
+                                    oPersonalAsignado.ReferenciaSolicitudID = fila.Cells["chReferenciaSolicitudID"].Value != null ? Convert.ToInt32(fila.Cells["chReferenciaSolicitudID"].Value.ToString().Trim()) : 0;
+                                    oPersonalAsignado.ReferenciaID = fila.Cells["chReferenciaID"].Value != null ? Convert.ToInt32(fila.Cells["chReferenciaID"].Value.ToString().Trim()) : 0;
+                                    oPersonalAsignado.TablaReferencia = fila.Cells["chTablaReferencia"].Value != null ? fila.Cells["chTablaReferencia"].Value.ToString().Trim() : string.Empty;
+                                    oPersonalAsignado.TablaSolicitud = fila.Cells["chTablaSolicitud"].Value != null ? fila.Cells["chTablaSolicitud"].Value.ToString().Trim() : string.Empty;                                
+                                    oPersonalAsignado.UserID = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
+                                    oPersonalAsignado.HostName = Environment.MachineName;
+                                    oPersonalAsignado.FechaRegistro = DateTime.Now;
+                                    ListadoDetalleAsignacionDeCuentaRegistrar.Add(oPersonalAsignado);
+                                    #endregion
+                                }
+                                catch (Exception Ex)
+                                {
+                                    MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                                    return;
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+
+
+                #endregion
+                
+                #region Obtener detalle HistoricoPlan()
+                ListadoDetalleHistoricoPlanRegistrar = new List<SAS_CuentasCorreosHistoricoPlan>();
+                if (this.dgvHistoricoPlanes != null)
+                {
+                    if (this.dgvHistoricoPlanes.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow fila in this.dgvHistoricoPlanes.Rows)
+                        {
+                            if (fila.Cells["chCuentaCorreoTipoLicenciaIdHistoricoPlan"].Value.ToString().Trim() != String.Empty)
+                            {
+                                try
+                                {
+                                    #region Obtener detalle por linea detalle() 
+                                    SAS_CuentasCorreosHistoricoPlan oPlanHistorico = new SAS_CuentasCorreosHistoricoPlan();
+                                    oPlanHistorico.CuentaCorreoTipoLicenciaId = fila.Cells["chCuentaCorreoTipoLicenciaIdHistoricoPlan"].Value != null ? Convert.ToInt32(fila.Cells["chCuentaCorreoTipoLicenciaIdHistoricoPlan"].Value.ToString().Trim()) : 0;
+                                    oPlanHistorico.CuentaCorreoID = fila.Cells["chCuentaCorreoIDHistoricoPlan"].Value != null ? Convert.ToInt32(fila.Cells["chCuentaCorreoIDHistoricoPlan"].Value.ToString().Trim()) : 0;
+                                    oPlanHistorico.LicenciaTipoId = fila.Cells["chLicenciaTipoIdHistoricoPlan"].Value != null ? Convert.ToInt32(fila.Cells["chLicenciaTipoIdHistoricoPlan"].Value.ToString().Trim()) : 0;
+                                    oPlanHistorico.Desde = (fila.Cells["chDesdeHistoricoPlan"].Value != null && fila.Cells["chDesdeHistoricoPlan"].Value.ToString().Trim() != "" && fila.Cells["chDesdeHistoricoPlan"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chDesdeHistoricoPlan"].Value.ToString().Trim()) : DateTime.Now;
+                                    oPlanHistorico.Hasta = (fila.Cells["chHastaHistoricoPlan"].Value != null && fila.Cells["chHastaHistoricoPlan"].Value.ToString().Trim() != "" && fila.Cells["chHastaHistoricoPlan"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chHastaHistoricoPlan"].Value.ToString().Trim()) : (DateTime?)null;
+                                    oPlanHistorico.Nota = fila.Cells["chNotaHistoricoPlan"].Value != null ? fila.Cells["chNotaHistoricoPlan"].Value.ToString().Trim() : string.Empty;
+                                    oPlanHistorico.Estado = fila.Cells["chEstadoHistoricoPlan"].Value != null ? Convert.ToInt32(fila.Cells["chEstadoHistoricoPlan"].Value.ToString().Trim()) : Convert.ToInt32(1);
+                                    oPlanHistorico.ReferenciaSolicitudID = fila.Cells["chReferenciaIDHistoricoPlan"].Value != null ? Convert.ToInt32(fila.Cells["chReferenciaIDHistoricoPlan"].Value.ToString().Trim()) : 0;
+                                    oPlanHistorico.ReferenciaID = fila.Cells["chReferenciaSolicitudIDHistoricoPlan"].Value != null ? Convert.ToInt32(fila.Cells["chReferenciaSolicitudIDHistoricoPlan"].Value.ToString().Trim()) : 0;
+                                    oPlanHistorico.TablaReferencia = fila.Cells["chTablaReferenciaHistoricoPlan"].Value != null ? fila.Cells["chTablaReferenciaHistoricoPlan"].Value.ToString().Trim() : string.Empty;
+                                    oPlanHistorico.TablaSolicitud = fila.Cells["chTablaSolicitudHistoricoPlan"].Value != null ? fila.Cells["chTablaSolicitudHistoricoPlan"].Value.ToString().Trim() : string.Empty;
+                                    oPlanHistorico.UserID = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
+                                    oPlanHistorico.HostName = Environment.MachineName;
+                                    oPlanHistorico.FechaRegistro = DateTime.Now;
+                                    ListadoDetalleHistoricoPlanRegistrar.Add(oPlanHistorico);
+                                    #endregion
+                                }
+                                catch (Exception Ex)
+                                {
+                                    MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                                    return;
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+
+
+                #endregion
 
             }
             catch (Exception ex)
@@ -335,11 +440,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 ObtenerObjeto();
                 #region Cambiar Estado
-                if (odetalle.cuenta != string.Empty)
+                if (oCuentaDeCorreo.cuenta != string.Empty)
                 {
                     Modelo = new SAS_CuentasCorreoController();
                     int resultado = 0;
-                    resultado = Modelo.ChangeState("SAS", odetalle);
+                    resultado = Modelo.ChangeState("SAS", oCuentaDeCorreo);
                     if (resultado == 2)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de anulación");
@@ -379,15 +484,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void Eliminar()
         {
-            if (_user2 != null)
+            if (userLogin != null)
             {
-                if (_user2.IdUsuario != null)
+                if (userLogin.IdUsuario != null)
                 {
-                    if (_user2.IdUsuario != string.Empty)
+                    if (userLogin.IdUsuario != string.Empty)
                     {
-                        if (_user2.IdUsuario.Trim().ToUpper() == "ADMINISTRADOR" || _user2.IdUsuario.Trim().ToUpper() == "EAURAZO")
+                        if (userLogin.IdUsuario.Trim().ToUpper() == "ADMINISTRADOR" || userLogin.IdUsuario.Trim().ToUpper() == "EAURAZO")
                         {
-                            int ResultadoProceso = Modelo.Eliminar(_conection, CodigoRegistro);
+                            int ResultadoProceso = Modelo.Eliminar(conection, CodigoRegistro);
                             Actualizar();
                         }
                     }
@@ -476,25 +581,33 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
 
 
-                listDetails = new List<SAS_CuentasCorreoDetalleByIdResult>();
+
+                ListadoCuentasDeCorreoDetalleLog = new List<SAS_CuentasCorreoDetalleByIdResult>();
+                ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
+
                 SAS_CuentasCorreo account = new SAS_CuentasCorreo();
                 account.id = oDetalle.id;
-                listDetails = Modelo.GetEmailAccountsDetailById("SAS", account); // Obtener listado detalle
+                ListadoCuentasDeCorreoDetalleLog = Modelo.GetEmailAccountsDetailById("SAS", account); // Obtener listado detalle
+                ListadoDetalleAsignacionDeCuentas = Modelo.ObtenerListadoDePersonalAsignacionPorCodigoCorreoElectronico(conection, account.id);
 
                 lastItem = 0;
 
-                if (listDetails != null)
+                if (ListadoCuentasDeCorreoDetalleLog != null)
                 {
-                    if (listDetails.Count > 0)
+                    if (ListadoCuentasDeCorreoDetalleLog.Count > 0)
                     {
-                        lastItem = Convert.ToInt32(listDetails.Max(X => X.item) + 1);
+                        lastItem = Convert.ToInt32(ListadoCuentasDeCorreoDetalleLog.Max(X => X.item) + 1);
                     }
                 }
 
-                dgvDetail.CargarDatos(listDetails.ToDataTable<SAS_CuentasCorreoDetalleByIdResult>());
+                dgvDetail.CargarDatos(ListadoCuentasDeCorreoDetalleLog.ToDataTable<SAS_CuentasCorreoDetalleByIdResult>());
                 dgvDetail.Refresh();
-                msgError += "IP OK GRILLA ";
+                msgError += "IP OK GRILLA LOG ";
 
+
+                dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoDetalleAsignacionDeCuentas.ToDataTable<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>());
+                dgvDetalleAsignacionesAPersonal.Refresh();
+                msgError += "IP OK GRILLA ASIGNACION PERSONAL";
 
             }
             catch (Exception Ex)
@@ -514,7 +627,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 #region 
-                odetalleSelecionado = new SAS_CuentasCorreoListado();
+                oCuentaDeCorreoSeleccionado = new SAS_CuentasCorreoListado();
+                ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
                 if (dgvRegistro != null && dgvRegistro.Rows.Count > 0)
                 {
                     if (dgvRegistro.CurrentRow != null)
@@ -525,18 +639,18 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             {
                                 int codigo = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? (int)Convert.ChangeType(dgvRegistro.CurrentRow.Cells["chId"].Value, typeof(Int32)) : 0);
                                 CodigoRegistro = codigo;
-                                var resultado = listado.Where(x => x.id == codigo).ToList();
+                                var resultado = ListarCuentasDeCorreoAll.Where(x => x.id == codigo).ToList();
                                 if (resultado.ToList().Count == 1)
                                 {
-                                    odetalleSelecionado = resultado.Single();
-                                    odetalleSelecionado.id = codigo;
-                                    AsingarObjeto(odetalleSelecionado);
+                                    oCuentaDeCorreoSeleccionado = resultado.Single();
+                                    oCuentaDeCorreoSeleccionado.id = codigo;
+                                    AsingarObjeto(oCuentaDeCorreoSeleccionado);
                                 }
                                 else if (resultado.ToList().Count > 1)
                                 {
-                                    odetalleSelecionado = resultado.ElementAt(0);
-                                    odetalleSelecionado.id = codigo;
-                                    AsingarObjeto(odetalleSelecionado);
+                                    oCuentaDeCorreoSeleccionado = resultado.ElementAt(0);
+                                    oCuentaDeCorreoSeleccionado.id = codigo;
+                                    AsingarObjeto(oCuentaDeCorreoSeleccionado);
                                 }
                                 else
                                 {
@@ -646,19 +760,19 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                odetalle = new SAS_CuentasCorreo();
-                odetalle.id = 0;
-                odetalle.cuenta = string.Empty;
-                odetalle.idcodigoGeneral = string.Empty;
-                odetalle.vienesDesdeSolicitud = 0;
-                odetalle.estado = 1;
-                odetalle.codigoSolicitud = 0;
-                odetalle.observaciones = string.Empty;
-                odetalle.fechaActivacion = DateTime.Now;
-                odetalle.fechaBaja = DateTime.Now;
-                odetalle.esCorportativo = 0;
-                odetalle.clave = string.Empty;
-                odetalle.nombres = string.Empty;
+                oCuentaDeCorreo = new SAS_CuentasCorreo();
+                oCuentaDeCorreo.id = 0;
+                oCuentaDeCorreo.cuenta = string.Empty;
+                oCuentaDeCorreo.idcodigoGeneral = string.Empty;
+                oCuentaDeCorreo.vienesDesdeSolicitud = 0;
+                oCuentaDeCorreo.estado = 1;
+                oCuentaDeCorreo.codigoSolicitud = 0;
+                oCuentaDeCorreo.observaciones = string.Empty;
+                oCuentaDeCorreo.fechaActivacion = DateTime.Now;
+                oCuentaDeCorreo.fechaBaja = DateTime.Now;
+                oCuentaDeCorreo.esCorportativo = 0;
+                oCuentaDeCorreo.clave = string.Empty;
+                oCuentaDeCorreo.nombres = string.Empty;
                 Limpiar();
                 Editar();
             }
@@ -684,35 +798,35 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             #region Limpiar() 
             try
             {
-                odetalle = new SAS_CuentasCorreo();
-                odetalle.id = 0;
-                odetalle.cuenta = string.Empty;
-                odetalle.idcodigoGeneral = string.Empty;
-                odetalle.vienesDesdeSolicitud = 0;
-                odetalle.estado = 1;
-                odetalle.codigoSolicitud = 0;
-                odetalle.observaciones = string.Empty;
-                odetalle.fechaActivacion = DateTime.Now;
-                odetalle.fechaBaja = DateTime.Now;
-                odetalle.esCorportativo = 0;
-                odetalle.clave = string.Empty;
-                odetalle.nombres = string.Empty;
+                oCuentaDeCorreo = new SAS_CuentasCorreo();
+                oCuentaDeCorreo.id = 0;
+                oCuentaDeCorreo.cuenta = string.Empty;
+                oCuentaDeCorreo.idcodigoGeneral = string.Empty;
+                oCuentaDeCorreo.vienesDesdeSolicitud = 0;
+                oCuentaDeCorreo.estado = 1;
+                oCuentaDeCorreo.codigoSolicitud = 0;
+                oCuentaDeCorreo.observaciones = string.Empty;
+                oCuentaDeCorreo.fechaActivacion = DateTime.Now;
+                oCuentaDeCorreo.fechaBaja = DateTime.Now;
+                oCuentaDeCorreo.esCorportativo = 0;
+                oCuentaDeCorreo.clave = string.Empty;
+                oCuentaDeCorreo.nombres = string.Empty;
 
-                odetalleSelecionado = new SAS_CuentasCorreoListado();
-                odetalleSelecionado.id = 0;
-                odetalleSelecionado.cuenta = string.Empty;
-                odetalleSelecionado.idcodigoGeneral = string.Empty;
-                odetalleSelecionado.vienesDesdeSolicitud = 0;
-                odetalleSelecionado.estado = 1;
-                odetalleSelecionado.codigoSolicitud = 0;
-                odetalleSelecionado.observaciones = string.Empty;
-                odetalleSelecionado.fechaActivacion = DateTime.Now;
-                odetalleSelecionado.fechaBaja = DateTime.Now;
-                odetalleSelecionado.esCorportativo = 0;
-                odetalleSelecionado.clave = string.Empty;
-                odetalleSelecionado.nombres = string.Empty;
-                odetalleSelecionado.idLicencia = 0;
-                odetalleSelecionado.descripcion = string.Empty;
+                oCuentaDeCorreoSeleccionado = new SAS_CuentasCorreoListado();
+                oCuentaDeCorreoSeleccionado.id = 0;
+                oCuentaDeCorreoSeleccionado.cuenta = string.Empty;
+                oCuentaDeCorreoSeleccionado.idcodigoGeneral = string.Empty;
+                oCuentaDeCorreoSeleccionado.vienesDesdeSolicitud = 0;
+                oCuentaDeCorreoSeleccionado.estado = 1;
+                oCuentaDeCorreoSeleccionado.codigoSolicitud = 0;
+                oCuentaDeCorreoSeleccionado.observaciones = string.Empty;
+                oCuentaDeCorreoSeleccionado.fechaActivacion = DateTime.Now;
+                oCuentaDeCorreoSeleccionado.fechaBaja = DateTime.Now;
+                oCuentaDeCorreoSeleccionado.esCorportativo = 0;
+                oCuentaDeCorreoSeleccionado.clave = string.Empty;
+                oCuentaDeCorreoSeleccionado.nombres = string.Empty;
+                oCuentaDeCorreoSeleccionado.idLicencia = 0;
+                oCuentaDeCorreoSeleccionado.descripcion = string.Empty;
 
                 this.txtCodigo.Text = "0";
                 this.txtEstado.Text = "ACTIVO";
@@ -731,8 +845,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 this.txtFechaBaja.Text = string.Empty;
 
                 ClearGridDetail();
-                detalle = new List<SAS_CuentasCorreoDetalle>();
-                detalleEliminados = new List<SAS_CuentasCorreoDetalle>();
+                ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
+                ListadoDetalleLogEliminar = new List<SAS_CuentasCorreoDetalle>();
                 lastItem = 0;
 
 
@@ -754,9 +868,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             //{
             try
             {
-                listado = new List<SAS_CuentasCorreoListado>();
+                ListarCuentasDeCorreoAll = new List<SAS_CuentasCorreoListado>();
                 Modelo = new SAS_CuentasCorreoController();
-                listado = Modelo.GetEmailAccounts("SAS");
+                ListarCuentasDeCorreoAll = Modelo.GetEmailAccounts("SAS");
 
 
 
@@ -783,7 +897,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                dgvRegistro.DataSource = listado.OrderBy(x => x.cuenta).ToList().ToDataTable<SAS_CuentasCorreoListado>();
+                dgvRegistro.DataSource = ListarCuentasDeCorreoAll.OrderBy(x => x.cuenta).ToList().ToDataTable<SAS_CuentasCorreoListado>();
                 dgvRegistro.Refresh();
 
                 btnMenu.Enabled = true;
@@ -811,7 +925,18 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 ObtenerObjeto();
                 Modelo = new SAS_CuentasCorreoController();
-                int resultado = Modelo.Register("SAS", odetalle, detalleEliminados, detalle);
+                int resultado = Modelo.Register("SAS", oCuentaDeCorreo, ListadoDetalleLogEliminar, ListadoDetalleLogRegistrar, ListadoDetalleHistoricoPlanEliminar, ListadoDetalleHistoricoPlanRegistrar, ListadoDetalleAsignacionDeCuentaEliminar, ListadoDetalleAsignacionDeCuentaRegistrar);
+                ListadoDetalleAsignacionDeCuentaEliminar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+                ListadoDetalleAsignacionDeCuentaRegistrar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+                ListadoDetalleLogEliminar = new List<SAS_CuentasCorreoDetalle>();
+                ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
+                ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
+                oCuentaDeCorreo = new SAS_CuentasCorreo();
+
+                ListadoDetalleHistoricoPlanRegistrar = new List<SAS_CuentasCorreosHistoricoPlan>();
+                ListadoDetalleHistoricoPlanEliminar = new List<SAS_CuentasCorreosHistoricoPlan>();
+                ListadoDetallHistoricoPlanByCuentaCorreo = new List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>();
+
                 btnGrabar.Enabled = !false;
                 btnCancelar.Enabled = !false;
                 if (resultado == 0)
@@ -828,8 +953,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 gbList.Enabled = true;
                 btnEditar.Enabled = true;
                 btnCancelar.Enabled = true;
-                detalleEliminados = new List<SAS_CuentasCorreoDetalle>();
-                detalle = new List<SAS_CuentasCorreoDetalle>();
+                                
                 lastItem = 0;
             }
             catch (Exception Ex)
@@ -846,10 +970,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void btnAgregarDetalleActivarIP_Click(object sender, EventArgs e)
         {
-            ChangeStateDetail();
+            ChangeStateDetailLog();
         }
 
-        private void ChangeStateDetail()
+        private void ChangeStateDetailLog()
         {
             try
             {
@@ -876,7 +1000,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            Additem();
+            AdditemDetalle();
         }
 
         private string ObtenerItemDetalle(int numeroRegistros)
@@ -888,7 +1012,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         }
 
 
-        private void Additem()
+        private void AdditemDetalle()
         {
             try
             {
@@ -945,7 +1069,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 if (dispositivoCodigo != 0 && itemIP != string.Empty)
                                 {
 
-                                    detalleEliminados.Add(new SAS_CuentasCorreoDetalle
+                                    ListadoDetalleLogEliminar.Add(new SAS_CuentasCorreoDetalle
                                     {
                                         id = dispositivoCodigo,
                                         item = itemIP,
@@ -1045,9 +1169,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void AsociarAreaDeTrabajo()
         {
 
-            if (odetalleSelecionado.idcodigoGeneral != string.Empty)
+            if (oCuentaDeCorreoSeleccionado.idcodigoGeneral != string.Empty)
             {
-                ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(_conection, _user2, _companyId, privilege, odetalleSelecionado);
+                ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(conection, userLogin, companyId, privilege, oCuentaDeCorreoSeleccionado);
                 ofrm.Show();
             }
         }
@@ -1253,14 +1377,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                odetalle = new SAS_CuentasCorreo();
-                odetalle.id = Convert.ToInt32(this.txtCodigo.Text);
+                oCuentaDeCorreo = new SAS_CuentasCorreo();
+                oCuentaDeCorreo.id = Convert.ToInt32(this.txtCodigo.Text);
                 Modelo = new SAS_CuentasCorreoController();
                 int resultado = 0;
-                resultado = Modelo.ChangeState("SAS", odetalle, EstadoCambio);
-                listado = new List<SAS_CuentasCorreoListado>();
+                resultado = Modelo.ChangeState("SAS", oCuentaDeCorreo, EstadoCambio);
+                ListarCuentasDeCorreoAll = new List<SAS_CuentasCorreoListado>();
                 Modelo = new SAS_CuentasCorreoController();
-                listado = Modelo.GetEmailAccounts("SAS");
+                ListarCuentasDeCorreoAll = Modelo.GetEmailAccounts("SAS");
 
             }
             catch (Exception Ex)
@@ -1351,6 +1475,298 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
             this.dgvRegistro.ShowColumnChooser();
+        }
+
+        private void btnExportarPersonalAsignado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddItemDetalleAsignacion()
+        {
+            try
+            {
+                #region add Item()
+                if (dgvDetalleAsignacionesAPersonal != null)
+                {
+                    ArrayList array = new ArrayList();
+                    array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chCuentaCorreoAsignacionID                 
+                    array.Add(Convert.ToInt32(this.txtCodigo.Text)); // chCuentaCorreoID
+                    array.Add(string.Empty); // chPersonalID
+                    array.Add(string.Empty); // chPersonal       
+                    array.Add(DateTime.Now.ToShortDateString()); // chDesde
+                    array.Add(DateTime.Now.AddYears(1).ToShortDateString()); //chHasta        
+                    array.Add(string.Empty); // chNota                                                     
+                    array.Add(0); // chReferenciaID
+                    array.Add(0); // chReferenciaSolicitudID
+                    array.Add(1); // chEstadoDetalleCuentaCorreo                    
+                    dgvDetalleAsignacionesAPersonal.AgregarFila(array);
+                }
+                else
+                {
+                    Formateador.MostrarMensajeAdvertencia(this, "Haga click en la Grilla a Modificar", "Validacion Ingreso de Datos");
+                }
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                Formateador.ControlExcepcion(this, this.Name, ex);
+            }
+        }
+
+
+        private void btnActivarEstado_Click(object sender, EventArgs e)
+        {
+            ChangeStateDetailAsignacionPersonal();
+        }
+
+        private void ChangeStateDetailAsignacionPersonal()
+        {
+            try
+            {
+
+                if (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chestado"].Value.ToString() == "1")
+                {
+                    dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chestado"].Value = "0";
+                }
+                else
+                {
+                    dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chestado"].Value = "1";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void btnAgregarDetalle_Click(object sender, EventArgs e)
+        {
+            AddItemDetalleAsignacion();
+        }
+
+        private void btnQuitarDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvDetalleAsignacionesAPersonal.Rows.Count > 0)
+            {
+                DeleteitemAsignacionPersonal();
+            }
+        }
+
+        private void DeleteitemAsignacionPersonal()
+        {
+            try
+            {
+                if (this.dgvDetalleAsignacionesAPersonal != null)
+                {
+                    #region delete item() 
+                    if (dgvDetalleAsignacionesAPersonal.CurrentRow != null && dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoAsignacionID"].Value != null)
+                    {
+                        //if (MessageBox.Show(this, "¿Desea eliminar el elemento seleccionado?", "Confirmar Operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        //{
+                        try
+                        {
+
+                            Int32 dispositivoCodigo = (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoAsignacionID"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoAsignacionID"].Value) : 0);
+                            if (dispositivoCodigo != 0)
+                            {
+                                //  string itemIP = ((dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoID"].Value != null | dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chItem"].Value.ToString().Trim() != string.Empty) ? (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoID"].Value.ToString()) : string.Empty);
+                                if (dispositivoCodigo != 0)
+                                {
+
+                                    ListadoDetalleAsignacionDeCuentaEliminar.Add(new SAS_CuentasCorreoAsignacionPersonal
+                                    {
+                                        CuentaCorreoAsignacionId = dispositivoCodigo,
+                                    });
+                                }
+                            }
+
+                            dgvDetalleAsignacionesAPersonal.Rows.Remove(dgvDetalleAsignacionesAPersonal.CurrentRow);
+                        }
+                        catch (Exception Ex)
+                        {
+                            MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                            return;
+                        }
+                        //}
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+
+        private void btnExportarHistoricoPlanes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCambiarEstadoHistoricoPlanes_Click(object sender, EventArgs e)
+        {
+            CambiarEstadoHistoricoPlan();
+        }
+
+        private void CambiarEstadoHistoricoPlan()
+        {
+            try
+            {
+
+                if (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoHistoricoPlan"].Value.ToString() == "1")
+                {
+                    dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoHistoricoPlan"].Value = "0";
+                    //dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoSW"].Value = "INACTIVO";
+                }
+                else
+                {
+                    dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoHistoricoPlan"].Value = "1";
+                    //dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chEstadoSW"].Value = "ACTIVO";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+
+        private void btnAgregarHistoricoPlanes_Click(object sender, EventArgs e)
+        {
+            AddItemHistoricoPlan();
+        }
+
+        private void btnQuitarHistoricoPlanes_Click(object sender, EventArgs e)
+        {
+            if (dgvHistoricoPlanes.Rows.Count > 0)
+            {
+                DeleteItemHistoricoPlan();
+            }
+        }
+
+        private void AddItemHistoricoPlan()
+        {
+            try
+            {
+                #region add Item()
+                if (dgvHistoricoPlanes != null)
+                {
+                    ArrayList array = new ArrayList();
+                    array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // chCuentaCorreoIDHistoricoPlan                 
+                    array.Add(0); // chCuentaCorreoIDHistoricoPlan   
+                    array.Add(string.Empty); // chLicenciaTipoIdHistoricoPlan
+                    array.Add(string.Empty); // chLicenciaHistoricoPlan
+                    array.Add(DateTime.Now.ToShortDateString()); // chDesdeHistoricoPlan
+                    array.Add(DateTime.Now.AddYears(1).ToShortDateString()); //chHastaHistoricoPlan      
+                    array.Add(string.Empty); // chNotaHistoricoPlan
+                    array.Add(1); // chEstadoHistoricoPlan                    
+                    array.Add(0); // chReferenciaIDHistoricoPlan
+                    array.Add(0); // chReferenciaSolicitudIDHistoricoPlan
+                    array.Add(string.Empty); //chTablaReferenciaHistoricoPlan
+                    array.Add(string.Empty); // chTablaSolicitudHistoricoPlan
+                    array.Add(string.Empty); // chUserIDHistoricoPlan
+                    array.Add(string.Empty); // chHostNameHistoricoPlan
+                    array.Add(string.Empty); // chFechaRegistroHistoricoPlan
+                    dgvHistoricoPlanes.AgregarFila(array);
+                }
+                else
+                {
+                    Formateador.MostrarMensajeAdvertencia(this, "Haga click en la Grilla a Modificar", "Validacion Ingreso de Datos");
+                }
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                Formateador.ControlExcepcion(this, this.Name, ex);
+            }
+        }
+
+        private void DeleteItemHistoricoPlan()
+        {
+            try
+            {
+                if (this.dgvHistoricoPlanes != null)
+                {
+                    #region delete item() 
+                    if (dgvHistoricoPlanes.CurrentRow != null && dgvHistoricoPlanes.CurrentRow.Cells["chCuentaCorreoTipoLicenciaIdHistoricoPlan"].Value != null)
+                    {
+                        //if (MessageBox.Show(this, "¿Desea eliminar el elemento seleccionado?", "Confirmar Operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        //{
+                        try
+                        {
+
+                            Int32 dispositivoCodigo = (dgvHistoricoPlanes.CurrentRow.Cells["chCuentaCorreoTipoLicenciaIdHistoricoPlan"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvHistoricoPlanes.CurrentRow.Cells["chCuentaCorreoTipoLicenciaIdHistoricoPlan"].Value) : 0);
+                            if (dispositivoCodigo != 0)
+                            {
+                                //  string itemIP = ((dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoID"].Value != null | dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chItem"].Value.ToString().Trim() != string.Empty) ? (dgvDetalleAsignacionesAPersonal.CurrentRow.Cells["chCuentaCorreoID"].Value.ToString()) : string.Empty);
+                                if (dispositivoCodigo != 0)
+                                {
+
+                                    ListadoDetalleHistoricoPlanEliminar.Add(new SAS_CuentasCorreosHistoricoPlan
+                                    {
+                                        CuentaCorreoTipoLicenciaId = dispositivoCodigo,
+                                    });
+                                }
+                            }
+
+                            dgvHistoricoPlanes.Rows.Remove(dgvHistoricoPlanes.CurrentRow);
+                        }
+                        catch (Exception Ex)
+                        {
+                            MessageBox.Show(Ex.Message.ToString() + "No se puede eliminar el item selecionado", "MENSAJE DE TEXTO");
+                            return;
+                        }
+                        //}
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+
+        private void btnExportarDetalleLog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleAsignacionesAPersonal_KeyUp(object sender, KeyEventArgs e)
+        {
+            Modelo = new SAS_CuentasCorreoController();
+            if (((DataGridView)sender).RowCount > 0)
+            {
+                #region Tipo de detalle() 
+                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chPersonalID" || ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chPersonal")
+                {
+                    if (e.KeyCode == Keys.F3)
+                    {
+                        frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
+                        search.ListaGeneralResultado = Modelo.ObtenerListadoDePersonal("SAS");
+                        search.Text = "Buscar personal para asignar";
+                        search.txtTextoFiltro.Text = "";
+                        if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            //idRetorno = busquedas.ObjetoRetorno.Codigo;
+                            this.dgvDetail.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonalID"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvDetail.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPersonal"].Value = search.ObjetoRetorno.Descripcion;
+                        }
+                    }
+                }
+                #endregion
+            }
         }
     }
 }

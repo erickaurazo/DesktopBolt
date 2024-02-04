@@ -1674,6 +1674,12 @@
     <Compile Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.Designer.cs">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
     </Compile>
+    <Compile Include="T.I\Correos electronicos\CuentaDeCorreosTipoLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Correos electronicos\CuentaDeCorreosTipoLog.Designer.cs">
+      <DependentUpon>CuentaDeCorreosTipoLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3029,6 +3035,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.resx">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosTipoLog.resx">
+      <DependentUpon>CuentaDeCorreosTipoLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.resx">
       <DependentUpon>ImpresiponDeTicketPorRangos.cs</DependentUpon>

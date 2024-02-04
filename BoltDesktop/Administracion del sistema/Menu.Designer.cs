@@ -291,6 +291,7 @@
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUva = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables = new System.Windows.Forms.ToolStripMenuItem();
             this.GoProduccionReporteConformacionDeCarga = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal = new System.Windows.Forms.ToolStripMenuItem();
             this.procesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GoPlanillaProcesoActualizarListaSincronizacionATablets = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIProcesoGeneracionMasivaParteDiario = new System.Windows.Forms.ToolStripMenuItem();
@@ -315,7 +316,7 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -1168,7 +1169,8 @@
             this.GoTIMaestroClasificacionSoftware,
             this.GoTIMaestroLicenciasSoftware,
             this.GoTIMaestroRenovacionDeCelulares,
-            this.GoTIMaestroEquipamientoTecnologico});
+            this.GoTIMaestroEquipamientoTecnologico,
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico});
             this.GoTITipoYClasificacionesHardwareYSoftware.Name = "GoTITipoYClasificacionesHardwareYSoftware";
             this.GoTITipoYClasificacionesHardwareYSoftware.Size = new System.Drawing.Size(293, 22);
             this.GoTITipoYClasificacionesHardwareYSoftware.Text = "Tipos y clasificaciones";
@@ -2368,6 +2370,13 @@
             this.GoProduccionReporteConformacionDeCarga.Text = "Conformaciones de carga";
             this.GoProduccionReporteConformacionDeCarga.Click += new System.EventHandler(this.GoProduccionReporteConformacionDeCarga_Click);
             // 
+            // GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal
+            // 
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Name = "GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal";
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Size = new System.Drawing.Size(453, 22);
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Text = "Reporte de solicitudes de Requerimiento Interno con Programa semanal";
+            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Click += new System.EventHandler(this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal_Click);
+            // 
             // procesoToolStripMenuItem
             // 
             this.procesoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2540,12 +2549,12 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal
+            // GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico
             // 
-            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Name = "GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal";
-            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Size = new System.Drawing.Size(453, 22);
-            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Text = "Reporte de solicitudes de Requerimiento Interno con Programa semanal";
-            this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal.Click += new System.EventHandler(this.GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal_Click);
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Name = "GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico";
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Size = new System.Drawing.Size(214, 22);
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Text = "Tipo Log Cuenta Correo";
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Click += new System.EventHandler(this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico_Click);
             // 
             // Menu
             // 
@@ -2860,5 +2869,6 @@
         private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricola;
         private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaMovimientoProgramaSemanal;
         private System.Windows.Forms.ToolStripMenuItem GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal;
+        private System.Windows.Forms.ToolStripMenuItem GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico;
     }
 }

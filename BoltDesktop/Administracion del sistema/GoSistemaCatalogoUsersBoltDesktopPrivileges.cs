@@ -22,10 +22,21 @@ namespace Asistencia
         private SAS_USUARIOS user;
         private SAS_USUARIOS userLogin;
         private string companyId;
+        private List<PrivilegioFormulario> privilegesRegistrar;
 
         public GoSistemaCatalogoUsersPrivileges()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            userLogin = new SAS_USUARIOS();
+            userLogin.IdUsuario = Environment.UserName; ;
+            userLogin.NombreCompleto = Environment.MachineName;
+            fullName = userLogin.NombreCompleto;
+            conection = "SAS";
+            companyId = "001";
+            
+            lblIdUsuario.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
+            lblNombreDelUsuario.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto : Environment.MachineName;
+
         }
 
 
@@ -61,15 +72,26 @@ namespace Asistencia
             companyId = _companyId;
             this.txtFullName.Text = _fullName.Trim();
             this.txtUserCode.Text = _userId.Trim();
+            lblNombreDelUsuario.Text = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
+            lblIdUsuario.Text = userLogin.NombreCompleto != null ? userLogin.NombreCompleto : Environment.MachineName;
+
             RefreshList();
         }
 
         private void RefreshList()
         {
+            DesactivarControles();
+
+
+            bgwHilo.RunWorkerAsync();
+        }
+
+        private void DesactivarControles()
+        {
             gbEdition.Enabled = false;
             gbList.Enabled = false;
-            ProgressBar.Visible = true;
-            bgwHilo.RunWorkerAsync();
+            pbForm.Visible = true;
+            BarraPrincipal.Enabled = false;
         }
 
         private void Privileges_Load(object sender, EventArgs e)
@@ -98,13 +120,24 @@ namespace Asistencia
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+           
+                PresentarResultados();
+            
+
+        }
+
+        private void PresentarResultados()
+        {
+
+
             try
             {
                 dgvList.DataSource = privileges;
                 dgvList.Refresh();
                 gbEdition.Enabled = !false;
                 gbList.Enabled = !false;
-                ProgressBar.Visible = !true;
+                pbForm.Visible = !true;
+                BarraPrincipal.Enabled = !false;
             }
             catch (Exception Ex)
             {
@@ -112,10 +145,10 @@ namespace Asistencia
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 gbEdition.Enabled = !false;
                 gbList.Enabled = !false;
-                ProgressBar.Visible = !true;
+                pbForm.Visible = !true;
                 return;
             }
-
+          
         }
 
         private void dgvList_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
@@ -213,10 +246,10 @@ namespace Asistencia
                     #region Obtener listado()
                     if (dgvList.RowCount > 0)
                     {
-                        List<PrivilegioFormulario> privileges = new List<PrivilegioFormulario>();
+                        privilegesRegistrar = new List<PrivilegioFormulario>();
                         foreach (GridViewRowInfo rowInfo in dgvList.Rows)
                         {
-                            privileges.Add(new PrivilegioFormulario
+                            privilegesRegistrar.Add(new PrivilegioFormulario
                             {
                                 usuarioCodigo = userId,
                                 formularioCodigo = rowInfo.Cells["chFormularioCodigo"].Value != null ? rowInfo.Cells["chFormularioCodigo"].Value.ToString().Trim() : string.Empty,
@@ -231,11 +264,8 @@ namespace Asistencia
                             });
                         }
 
-                        if (Modelo.AddListPrivilegesByUser(conection, privileges, companyId) == true)
-                        {
-                            MessageBox.Show("Actualización correcta", "Confirmación del sistem");
-                            RefreshList();
-                        }
+                        DesactivarControles();
+                        bgwActualizarPrivilegios.RunWorkerAsync();
 
                     }
 
@@ -249,6 +279,26 @@ namespace Asistencia
                 return;
             }
 
+        }
+
+        private void bgwActualizarPrivilegios_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Modelo = new UsersController();
+            if (Modelo.AddListPrivilegesByUser(conection, privilegesRegistrar, companyId) == true)
+            {
+                MessageBox.Show("Actualización correcta", "Confirmación del sistem");
+                RefreshList();
+            }
+        }
+
+        private void btnSincronizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bgwActualizarPrivilegios_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            PresentarResultados();
         }
     }
 }

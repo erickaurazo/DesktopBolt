@@ -1,653 +1,665 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 42, 47" name="ITDContext">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 52.625, 12.5" name="ITDContext">
   <DataContextMoniker Name="/ITDContextDataContext" />
   <nestedChildShapes>
-    <classShape Id="d02781e4-1d63-437b-ba2c-231f0b35ef46" absoluteBounds="3.625, 1.25, 3.125, 2.5401025390625">
+    <classShape Id="d02781e4-1d63-437b-ba2c-231f0b35ef46" isExpanded="false" absoluteBounds="0.5, 1.25, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoImagene" />
       <nestedChildShapes>
-        <elementListCompartment Id="03b5d6f7-4a11-4edd-b4be-6bc28348df29" absoluteBounds="3.64, 1.71, 3.0949999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="03b5d6f7-4a11-4edd-b4be-6bc28348df29" absoluteBounds="0.51500000000000012, 1.71, 3.0949999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bcca0b3a-559f-4424-892e-f40dbdb4255a" absoluteBounds="1, 6.25, 2, 2.5401025390624996">
+    <classShape Id="bcca0b3a-559f-4424-892e-f40dbdb4255a" isExpanded="false" absoluteBounds="0.5, 3.125, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasCelularesCoporativasPersonalAsignado" />
       <nestedChildShapes>
-        <elementListCompartment Id="cff04155-a134-4209-92ff-3806dd5f5ca5" absoluteBounds="1.0149999999999997, 6.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cff04155-a134-4209-92ff-3806dd5f5ca5" absoluteBounds="0.51499999999999968, 3.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8f8a2c55-1ea1-4750-bae8-728e732fb21b" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+    <classShape Id="8f8a2c55-1ea1-4750-bae8-728e732fb21b" isExpanded="false" absoluteBounds="0.5, 0.5, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasDominioTipoPerfil" />
       <nestedChildShapes>
-        <elementListCompartment Id="beb3270e-2440-427e-a58f-a3e7373032bc" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="beb3270e-2440-427e-a58f-a3e7373032bc" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="21c4bbc0-5f62-4d28-a07d-3e8929aa36f7" absoluteBounds="0.75, 3.75, 2, 1.5785953776041666">
+    <classShape Id="21c4bbc0-5f62-4d28-a07d-3e8929aa36f7" isExpanded="false" absoluteBounds="0.5, 1.875, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoCuentaUsuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="3eecbad6-8ed3-4d94-ab41-1d792b3dfa27" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3eecbad6-8ed3-4d94-ab41-1d792b3dfa27" absoluteBounds="0.515, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="eb4a2ddb-758d-481f-b96c-cd58f6cb97f1" absoluteBounds="3.875, 5.75, 2, 3.1170068359375005">
+    <classShape Id="eb4a2ddb-758d-481f-b96c-cd58f6cb97f1" isExpanded="false" absoluteBounds="0.5, 3.75, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoSoftware" />
       <nestedChildShapes>
-        <elementListCompartment Id="ed6b4388-35ea-4fdd-8c1b-6986dc0f374e" absoluteBounds="3.89, 6.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ed6b4388-35ea-4fdd-8c1b-6986dc0f374e" absoluteBounds="0.51500000000000012, 4.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="324b9066-ab0a-411d-8165-d94c6a286374" absoluteBounds="6.75, 5.75, 2, 2.9247054036458326">
+    <classShape Id="324b9066-ab0a-411d-8165-d94c6a286374" isExpanded="false" absoluteBounds="0.5, 4.375, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_OperadorTelefoniaMovilListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="944e4db1-56d2-44a5-9d68-e84565adbd85" absoluteBounds="6.765, 6.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="944e4db1-56d2-44a5-9d68-e84565adbd85" absoluteBounds="0.51499999999999968, 4.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="67e5352d-c12a-4946-ab1e-2de3ee1e2ee6" absoluteBounds="7.75, 0.75, 2, 3.1170068359375005">
+    <classShape Id="67e5352d-c12a-4946-ab1e-2de3ee1e2ee6" isExpanded="false" absoluteBounds="0.5, 2.5, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoHardware" />
       <nestedChildShapes>
-        <elementListCompartment Id="d6bb0d95-5277-47e7-83fc-fc9324d6c33b" absoluteBounds="7.765, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d6bb0d95-5277-47e7-83fc-fc9324d6c33b" absoluteBounds="0.51499999999999968, 2.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9a5e810c-8b1e-4aef-9e48-ba111e3a8ec2" absoluteBounds="0.75, 9.75, 2, 1.5785953776041666">
+    <classShape Id="9a5e810c-8b1e-4aef-9e48-ba111e3a8ec2" isExpanded="false" absoluteBounds="4, 4, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_LicenciaCorreo" />
       <nestedChildShapes>
-        <elementListCompartment Id="469e93b5-da36-4faf-bb82-1a5d39b77e02" absoluteBounds="0.765, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="469e93b5-da36-4faf-bb82-1a5d39b77e02" absoluteBounds="4.015, 4.4600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="56bfee67-9332-4066-8679-0090378b2081" absoluteBounds="3.75, 9.75, 2, 2.3478011067708344">
+    <classShape Id="56bfee67-9332-4066-8679-0090378b2081" isExpanded="false" absoluteBounds="4, 0.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoSoftwareListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="1d319dfc-e1b2-4ad0-b8ef-cfd83fd01845" absoluteBounds="3.765, 10.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1d319dfc-e1b2-4ad0-b8ef-cfd83fd01845" absoluteBounds="4.0150000000000006, 0.96000000000000085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c09a0535-2ba5-46b2-a3c3-1471c62cfbea" absoluteBounds="9.75, 4.75, 2, 1.9631982421875005">
+    <classShape Id="c09a0535-2ba5-46b2-a3c3-1471c62cfbea" isExpanded="false" absoluteBounds="0.5, 5, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo" />
       <nestedChildShapes>
-        <elementListCompartment Id="28d4bc99-5112-4fc7-ada7-2ed1fd61fc6c" absoluteBounds="9.765, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="28d4bc99-5112-4fc7-ada7-2ed1fd61fc6c" absoluteBounds="0.51500000000000057, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="01c24bce-e115-43f7-9af1-b17222129a69" absoluteBounds="6.75, 9.75, 2, 1.3862939453124987">
+    <classShape Id="01c24bce-e115-43f7-9af1-b17222129a69" isExpanded="false" absoluteBounds="3.875, 1.25, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoNumeroIPBySegmento" />
       <nestedChildShapes>
-        <elementListCompartment Id="73a9be89-55a3-4590-8ac0-dc1bd351c159" absoluteBounds="6.765, 10.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="73a9be89-55a3-4590-8ac0-dc1bd351c159" absoluteBounds="3.8899999999999997, 1.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5bb068f8-dd63-4a2c-a3ea-2fe0e7779aa4" absoluteBounds="9.75, 7.75, 2, 1.9631982421874996">
+    <classShape Id="5bb068f8-dd63-4a2c-a3ea-2fe0e7779aa4" isExpanded="false" absoluteBounds="0.5, 5.75, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoHardware" />
       <nestedChildShapes>
-        <elementListCompartment Id="5be4b15d-63ac-4a67-a0db-f05ef8a80a05" absoluteBounds="9.765, 8.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5be4b15d-63ac-4a67-a0db-f05ef8a80a05" absoluteBounds="0.51500000000000057, 6.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f37284a3-022b-49a7-87be-af46292b8639" absoluteBounds="9.75, 10.75, 2, 4.8477197265624987">
+    <classShape Id="f37284a3-022b-49a7-87be-af46292b8639" isExpanded="false" absoluteBounds="4, 2, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasDominioListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="b6d9d963-17b7-4ee4-a6ae-09f8f5749a3e" absoluteBounds="9.765, 11.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b6d9d963-17b7-4ee4-a6ae-09f8f5749a3e" absoluteBounds="4.0150000000000006, 2.4600000000000009, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="568641f6-9cef-4a04-86b2-0cdd99551488" absoluteBounds="10.75, 0.75, 2, 2.1554996744791666">
+    <classShape Id="568641f6-9cef-4a04-86b2-0cdd99551488" isExpanded="false" absoluteBounds="0.5, 6.375, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasDominioDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="00cef50a-ff1c-439e-b405-07564f0f1347" absoluteBounds="10.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="00cef50a-ff1c-439e-b405-07564f0f1347" absoluteBounds="0.51500000000000057, 6.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="eebdd668-ae40-461b-a64c-af35124f0957" absoluteBounds="0.75, 12.75, 2, 2.7324039713541666">
+    <classShape Id="eebdd668-ae40-461b-a64c-af35124f0957" isExpanded="false" absoluteBounds="3.75, 4.625, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_OperadorTelefoniaMovil" />
       <nestedChildShapes>
-        <elementListCompartment Id="cd16ec73-c2f9-4fab-86b6-142ae160009c" absoluteBounds="0.765, 13.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cd16ec73-c2f9-4fab-86b6-142ae160009c" absoluteBounds="3.765, 5.0850000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="942393fc-36cf-4aba-962b-582b16c6e3a9" absoluteBounds="12.75, 3.75, 2, 3.6939111328124992">
+    <classShape Id="942393fc-36cf-4aba-962b-582b16c6e3a9" isExpanded="false" absoluteBounds="31.375, 1.875, 3, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_PlanesDeTelefoniaMovil" />
       <nestedChildShapes>
-        <elementListCompartment Id="f77f8ebe-8b67-40d5-b955-b64bf08a89a3" absoluteBounds="12.765, 4.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f77f8ebe-8b67-40d5-b955-b64bf08a89a3" absoluteBounds="31.39, 2.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a9d542bb-fb86-4742-8a1b-2a63d9e2c7f8" absoluteBounds="12.75, 8.75, 2, 3.6939111328124987">
+    <classShape Id="a9d542bb-fb86-4742-8a1b-2a63d9e2c7f8" isExpanded="false" absoluteBounds="4, 5.375, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoDocumento" />
       <nestedChildShapes>
-        <elementListCompartment Id="8548dba1-43a9-4305-a169-f57e3bd10c92" absoluteBounds="12.765, 9.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8548dba1-43a9-4305-a169-f57e3bd10c92" absoluteBounds="4.0150000000000006, 5.8350000000000009, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9d18ea2f-a1ec-47ac-8caf-7f6683058c16" absoluteBounds="3.75, 13.75, 2, 2.9247054036458309">
+    <classShape Id="9d18ea2f-a1ec-47ac-8caf-7f6683058c16" isExpanded="false" absoluteBounds="4, 3.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoMovimientoMantenimientos" />
       <nestedChildShapes>
-        <elementListCompartment Id="d8b0e4da-a673-43e7-89b0-fc85f698ee4c" absoluteBounds="3.765, 14.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d8b0e4da-a673-43e7-89b0-fc85f698ee4c" absoluteBounds="4.0150000000000006, 3.9600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="170f2394-a8eb-4832-8cb8-2d72fb15622d" absoluteBounds="13.75, 0.75, 2, 2.1554996744791666">
+    <classShape Id="170f2394-a8eb-4832-8cb8-2d72fb15622d" isExpanded="false" absoluteBounds="12.875, 0.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoSoftware" />
       <nestedChildShapes>
-        <elementListCompartment Id="07fcf134-d228-4f57-8c48-892f85304e4e" absoluteBounds="13.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="07fcf134-d228-4f57-8c48-892f85304e4e" absoluteBounds="12.89, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="63f90750-cd61-4797-9d21-4d908daa26da" absoluteBounds="12.75, 13.75, 2, 3.1170068359375023">
+    <classShape Id="63f90750-cd61-4797-9d21-4d908daa26da" isExpanded="false" absoluteBounds="6.375, 2, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasVPN" />
       <nestedChildShapes>
-        <elementListCompartment Id="9bd2a697-e749-4584-a736-3e374030af72" absoluteBounds="12.765, 14.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9bd2a697-e749-4584-a736-3e374030af72" absoluteBounds="6.3900000000000006, 2.4600000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="07275692-cce3-4b38-bd39-41251c994636" absoluteBounds="15.75, 3.75, 2, 3.3093082682291666">
+    <classShape Id="07275692-cce3-4b38-bd39-41251c994636" isExpanded="false" absoluteBounds="44.5, 0.5, 3.375, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreo" />
       <nestedChildShapes>
-        <elementListCompartment Id="8cb1c1d8-0ffc-49c7-8ab1-7e059e02c740" absoluteBounds="15.765, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8cb1c1d8-0ffc-49c7-8ab1-7e059e02c740" absoluteBounds="44.515, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1f585c01-921d-422f-ac2e-a8faaaa3a6b1" absoluteBounds="15.75, 8.75, 2, 1.5785953776041666">
+    <classShape Id="1f585c01-921d-422f-ac2e-a8faaaa3a6b1" isExpanded="false" absoluteBounds="6.125, 0.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoDocumento" />
       <nestedChildShapes>
-        <elementListCompartment Id="a6261db9-f614-4f34-8eaa-0201d31b3dd9" absoluteBounds="15.765, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a6261db9-f614-4f34-8eaa-0201d31b3dd9" absoluteBounds="6.1400000000000006, 0.96000000000000085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e944243c-551f-4e0d-b7eb-bb246d06b71d" absoluteBounds="15.75, 11.75, 2, 2.3478011067708344">
+    <classShape Id="e944243c-551f-4e0d-b7eb-bb246d06b71d" isExpanded="false" absoluteBounds="6.25, 1.25, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoComponentes" />
       <nestedChildShapes>
-        <elementListCompartment Id="40a8d809-9dbf-4051-9cfc-8cfb1a2762d4" absoluteBounds="15.765, 12.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="40a8d809-9dbf-4051-9cfc-8cfb1a2762d4" absoluteBounds="6.2650000000000006, 1.7100000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6c67db3a-2537-4f60-b9e0-feb40abd4d7f" absoluteBounds="15.75, 15.75, 2, 2.1554996744791666">
+    <classShape Id="6c67db3a-2537-4f60-b9e0-feb40abd4d7f" isExpanded="false" absoluteBounds="5.25, 7.125, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SegmentoRed" />
       <nestedChildShapes>
-        <elementListCompartment Id="fa715d6d-b67d-495b-a5c0-58a4d96cefa8" absoluteBounds="15.765, 16.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fa715d6d-b67d-495b-a5c0-58a4d96cefa8" absoluteBounds="5.2650000000000006, 7.5850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c8a0e0ee-9cf6-4834-8cad-b4ec7852882f" absoluteBounds="6.75, 16.75, 2, 3.3093082682291666">
+    <classShape Id="c8a0e0ee-9cf6-4834-8cad-b4ec7852882f" isExpanded="false" absoluteBounds="5.125, 7.875, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasDominio" />
       <nestedChildShapes>
-        <elementListCompartment Id="abe42b4d-e5fc-4ad3-b20d-ef1d94d1a1fa" absoluteBounds="6.765, 17.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="abe42b4d-e5fc-4ad3-b20d-ef1d94d1a1fa" absoluteBounds="5.14, 8.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="401edb69-a2c1-45d1-ab13-94f01b52ae38" absoluteBounds="0.75, 17.75, 2, 4.0785139973958309">
+    <classShape Id="401edb69-a2c1-45d1-ab13-94f01b52ae38" isExpanded="false" absoluteBounds="0.75, 7.25, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_PlanesDeTelefoniaMovilListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="7407c8db-3b3f-404f-aefe-6cb9cd4e5dd5" absoluteBounds="0.765, 18.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7407c8db-3b3f-404f-aefe-6cb9cd4e5dd5" absoluteBounds="0.765, 7.7100000000000009, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8f280057-9e6a-4101-b01a-c9771d052e0b" absoluteBounds="6.75, 12.75, 2, 2.9247054036458309">
+    <classShape Id="8f280057-9e6a-4101-b01a-c9771d052e0b" isExpanded="false" absoluteBounds="4.125, 2.625, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoIP" />
       <nestedChildShapes>
-        <elementListCompartment Id="6259e461-5280-44cc-8b22-7679aac6a0a0" absoluteBounds="6.765, 13.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6259e461-5280-44cc-8b22-7679aac6a0a0" absoluteBounds="4.14, 3.0850000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="dfcaebf6-2b4e-4fd2-ace7-943e66a5b7c6" absoluteBounds="16.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="dfcaebf6-2b4e-4fd2-ace7-943e66a5b7c6" isExpanded="false" absoluteBounds="40.625, 1.125, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasGestionadasEnCotizacionDeCompras" />
       <nestedChildShapes>
-        <elementListCompartment Id="dcbdf902-e495-4985-8260-eacefe77522d" absoluteBounds="16.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dcbdf902-e495-4985-8260-eacefe77522d" absoluteBounds="40.64, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bb961e50-67a1-415d-b89a-87b17982a2c4" absoluteBounds="9.75, 16.75, 2, 3.3093082682291666">
+    <classShape Id="bb961e50-67a1-415d-b89a-87b17982a2c4" isExpanded="false" absoluteBounds="5.125, 8.75, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CotizacionDeCompraEquipoCelularesDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f854ff8-35b9-44ed-afc2-313bf0cfe48f" absoluteBounds="9.765, 17.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f854ff8-35b9-44ed-afc2-313bf0cfe48f" absoluteBounds="5.1400000000000006, 9.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bb11e25a-bb2b-483e-ae68-a07da4de4981" absoluteBounds="3.75, 17.75, 2, 7.7322412109375023">
+    <classShape Id="bb11e25a-bb2b-483e-ae68-a07da4de4981" isExpanded="false" absoluteBounds="3, 7.125, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeRenovacionTelefoniaCelularListadoAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="be4ef74e-e7ae-4c6d-ab08-ddce84cbeb50" absoluteBounds="3.765, 18.21, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="be4ef74e-e7ae-4c6d-ab08-ddce84cbeb50" absoluteBounds="3.015, 7.5850000000000009, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="efa10edb-70cd-4a5f-be11-f344b3ad74e8" absoluteBounds="12.75, 17.75, 2, 1.9631982421875023">
+    <classShape Id="efa10edb-70cd-4a5f-be11-f344b3ad74e8" isExpanded="false" absoluteBounds="5.125, 9.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_MotivoRenovacionCelular" />
       <nestedChildShapes>
-        <elementListCompartment Id="2c1fe087-7570-4209-b95d-6bf1e4e79b28" absoluteBounds="12.765, 18.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2c1fe087-7570-4209-b95d-6bf1e4e79b28" absoluteBounds="5.1400000000000006, 9.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7efab2d9-319b-4a03-b8b1-2de2f608d132" absoluteBounds="18.75, 2.75, 2, 4.4631168619791666">
+    <classShape Id="7efab2d9-319b-4a03-b8b1-2de2f608d132" isExpanded="false" absoluteBounds="40.625, 0.5, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CotizacionDeCompraEquipoCelularesAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="946089b8-a7d7-4d39-8731-a7992e25c201" absoluteBounds="18.765, 3.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="946089b8-a7d7-4d39-8731-a7992e25c201" absoluteBounds="40.64, 0.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a0fa6394-b5a9-46b5-906b-58168cb05c51" absoluteBounds="18.75, 8.75, 2, 3.3093082682291666">
+    <classShape Id="a0fa6394-b5a9-46b5-906b-58168cb05c51" isExpanded="false" absoluteBounds="16.75, 1.75, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoSoporteFuncionalDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="978a1c51-efe0-48e9-a33c-781648f40212" absoluteBounds="18.765, 9.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="978a1c51-efe0-48e9-a33c-781648f40212" absoluteBounds="16.765, 2.2100000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="db1eb066-2571-4cc4-93f9-fb4c08010a17" absoluteBounds="18.75, 13.75, 2, 3.3093082682291666">
+    <classShape Id="db1eb066-2571-4cc4-93f9-fb4c08010a17" isExpanded="false" absoluteBounds="15.75, 1.125, 4.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoSoporteFuncionalDetalleByMinutos" />
       <nestedChildShapes>
-        <elementListCompartment Id="2c8808bb-dcca-4020-b69a-4ecaeeccb63f" absoluteBounds="18.765, 14.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2c8808bb-dcca-4020-b69a-4ecaeeccb63f" absoluteBounds="15.765, 1.5850000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="38e78b16-e45f-48de-a310-ae166e0a86d3" absoluteBounds="15.75, 18.75, 2, 3.1170068359375023">
+    <classShape Id="38e78b16-e45f-48de-a310-ae166e0a86d3" isExpanded="false" absoluteBounds="7.375, 8.875, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivosTipoMantenimientoDetalleByMinutos" />
       <nestedChildShapes>
-        <elementListCompartment Id="6cf7ce86-ee14-4dd4-8842-3a033abb4574" absoluteBounds="15.765, 19.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6cf7ce86-ee14-4dd4-8842-3a033abb4574" absoluteBounds="7.3900000000000006, 9.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="43f36807-1d6f-4f8f-a6f2-7cd7c9b53e9c" absoluteBounds="18.75, 18.75, 2, 1.9631982421875023">
+    <classShape Id="43f36807-1d6f-4f8f-a6f2-7cd7c9b53e9c" isExpanded="false" absoluteBounds="19.25, 6.75, 4.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivosTipoMantenimientoDetalleByMinutosGroupByAplicacion" />
       <nestedChildShapes>
-        <elementListCompartment Id="5d2fa92e-2e49-4e77-bc18-932f59f402a1" absoluteBounds="18.765, 19.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5d2fa92e-2e49-4e77-bc18-932f59f402a1" absoluteBounds="19.265, 7.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="268562ec-1b7c-4936-861f-eb04d6892ea6" absoluteBounds="21.75, 0.75, 2, 7.7322412109375014">
+    <classShape Id="268562ec-1b7c-4936-861f-eb04d6892ea6" isExpanded="false" absoluteBounds="20.375, 0.5, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajo" />
       <nestedChildShapes>
-        <elementListCompartment Id="5968fcf6-72f3-4c24-8966-53489bd91958" absoluteBounds="21.765, 1.21, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5968fcf6-72f3-4c24-8966-53489bd91958" absoluteBounds="20.39, 0.96, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e3e128c5-fa78-412d-9ea7-e04ddb199aa1" absoluteBounds="6.75, 21.75, 2, 1.3862939453125023">
+    <classShape Id="e3e128c5-fa78-412d-9ea7-e04ddb199aa1" isExpanded="false" absoluteBounds="0.625, 8.125, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ParteDiariosDeDispositivosMotivoInactivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="a70ae0d2-458e-4206-a903-13b198d4512f" absoluteBounds="6.765, 22.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a70ae0d2-458e-4206-a903-13b198d4512f" absoluteBounds="0.63999999999999968, 8.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5e1914c6-608a-457e-930e-4a1c917fde7a" absoluteBounds="21.75, 9.75, 2, 2.7324039713541666">
+    <classShape Id="5e1914c6-608a-457e-930e-4a1c917fde7a" isExpanded="false" absoluteBounds="24.375, 1.75, 2.875, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoPropios" />
       <nestedChildShapes>
-        <elementListCompartment Id="3bb8b04d-9c97-4058-b60a-8c98b743eb1e" absoluteBounds="21.765, 10.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3bb8b04d-9c97-4058-b60a-8c98b743eb1e" absoluteBounds="24.39, 2.2100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6e94c836-f1fd-4613-9631-f7cc958d4210" absoluteBounds="9.75, 21.75, 2, 2.1554996744791666">
+    <classShape Id="6e94c836-f1fd-4613-9631-f7cc958d4210" isExpanded="false" absoluteBounds="7.625, 7, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivosTipoMantenimiento" />
       <nestedChildShapes>
-        <elementListCompartment Id="09759a8f-392e-451c-9ed0-775a01c4d60d" absoluteBounds="9.765, 22.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="09759a8f-392e-451c-9ed0-775a01c4d60d" absoluteBounds="7.6400000000000006, 7.4600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="84a9581c-fc74-478d-8966-5ece3db74909" absoluteBounds="21.75, 13.75, 2, 9.27065266927083">
+    <classShape Id="84a9581c-fc74-478d-8966-5ece3db74909" isExpanded="false" absoluteBounds="20.5, 2.375, 3.5, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeDispositivoOrdenTrabajo" />
       <nestedChildShapes>
-        <elementListCompartment Id="cf91bcb9-33c6-4e34-987f-a8947b5e1d5d" absoluteBounds="21.765, 14.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cf91bcb9-33c6-4e34-987f-a8947b5e1d5d" absoluteBounds="20.515, 2.8350000000000009, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="32b321fa-63dc-4d15-b9d2-c3c4cd4d26ff" absoluteBounds="12.75, 22.75, 2, 1.3862939453125023">
+    <classShape Id="32b321fa-63dc-4d15-b9d2-c3c4cd4d26ff" isExpanded="false" absoluteBounds="7.625, 7.625, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SoporteCanalDeAtencion" />
       <nestedChildShapes>
-        <elementListCompartment Id="c3b3db97-40d5-4898-9207-26b6b6e42427" absoluteBounds="12.765, 23.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c3b3db97-40d5-4898-9207-26b6b6e42427" absoluteBounds="7.6400000000000006, 8.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9f0a1883-e27b-440b-b7b6-1ea1b4f9fa1d" absoluteBounds="15.75, 22.75, 2, 1.7708968098958309">
+    <classShape Id="9f0a1883-e27b-440b-b7b6-1ea1b4f9fa1d" isExpanded="false" absoluteBounds="7.375, 9.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_FechaCampanaAnual" />
       <nestedChildShapes>
-        <elementListCompartment Id="b6144b47-2f8f-40a9-9a09-114351df5edf" absoluteBounds="15.765, 23.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b6144b47-2f8f-40a9-9a09-114351df5edf" absoluteBounds="7.3900000000000006, 9.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4b90c847-14bb-4f57-b8bb-1caa2414460c" absoluteBounds="24.75, 0.75, 2, 2.3478011067708335">
+    <classShape Id="4b90c847-14bb-4f57-b8bb-1caa2414460c" isExpanded="false" absoluteBounds="24.375, 0.5, 2.875, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ParteDiariosDeDispositivosDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="cd02db2b-2c00-40a0-be1e-6d884c7a328a" absoluteBounds="24.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cd02db2b-2c00-40a0-be1e-6d884c7a328a" absoluteBounds="24.39, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9cffdbf6-5b3d-44d4-be27-2e8be0f89a10" absoluteBounds="24.75, 4.75, 2, 1.3862939453125005">
+    <classShape Id="9cffdbf6-5b3d-44d4-be27-2e8be0f89a10" isExpanded="false" absoluteBounds="35.375, 0.5, 4, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitidudDeRenovacionCelularTipoDeJustificacion" />
       <nestedChildShapes>
-        <elementListCompartment Id="68062298-a5e4-4fed-9d42-2e0b6d9a5b3d" absoluteBounds="24.765, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="68062298-a5e4-4fed-9d42-2e0b6d9a5b3d" absoluteBounds="35.39, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="387f0421-a0b2-41e4-bec7-c4cf1b874340" absoluteBounds="6.75, 24.75, 2, 3.5016097005208309">
+    <classShape Id="387f0421-a0b2-41e4-bec7-c4cf1b874340" isExpanded="false" absoluteBounds="2.75, 8, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologicoTipoDeHardware" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f4fb185-c624-486e-869c-ffa2e76a9fe4" absoluteBounds="6.765, 25.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f4fb185-c624-486e-869c-ffa2e76a9fe4" absoluteBounds="2.7649999999999997, 8.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5874c6fb-499a-44ae-b8cf-dff8b05a8ab4" absoluteBounds="24.75, 7.75, 2, 2.7324039713541666">
+    <classShape Id="5874c6fb-499a-44ae-b8cf-dff8b05a8ab4" isExpanded="false" absoluteBounds="16.25, 3.125, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoSoporteFuncionalDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="6a4f0cf9-8a9b-41c8-844b-57111d61e435" absoluteBounds="24.765, 8.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6a4f0cf9-8a9b-41c8-844b-57111d61e435" absoluteBounds="16.265, 3.5850000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1d684083-5fda-42cf-b798-c6980a753514" absoluteBounds="24.75, 11.75, 2, 1.1939925130208344">
+    <classShape Id="1d684083-5fda-42cf-b798-c6980a753514" isExpanded="false" absoluteBounds="19.5, 8.5, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajodetalleNumeroLabores" />
       <nestedChildShapes>
-        <elementListCompartment Id="65223437-ae39-44f8-986a-89bf09d1c86d" absoluteBounds="24.765, 12.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="65223437-ae39-44f8-986a-89bf09d1c86d" absoluteBounds="19.515, 8.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="90befdd2-c1a8-4756-95bf-586be4334a78" absoluteBounds="24.75, 13.75, 2, 4.2708154296875005">
+    <classShape Id="90befdd2-c1a8-4756-95bf-586be4334a78" isExpanded="false" absoluteBounds="24.375, 1.125, 2.875, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ParteDiariosDeDispositivosAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="72d353e5-d246-4d83-817f-f42b16b201e9" absoluteBounds="24.765, 14.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="72d353e5-d246-4d83-817f-f42b16b201e9" absoluteBounds="24.39, 1.5850000000000009, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="39ac5f9e-2edc-4964-bbbe-8608e1916edd" absoluteBounds="18.75, 24.75, 2, 7.9245426432291666">
+    <classShape Id="39ac5f9e-2edc-4964-bbbe-8608e1916edd" isExpanded="false" absoluteBounds="16.125, 2.375, 3.75, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeAtencionesDeSoporteFuncional" />
       <nestedChildShapes>
-        <elementListCompartment Id="64791e63-5b8f-4384-b083-ecf0ea062b94" absoluteBounds="18.765, 25.21, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="64791e63-5b8f-4384-b083-ecf0ea062b94" absoluteBounds="16.14, 2.8350000000000009, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="385340bc-a2ba-43e3-95a1-2caa1cd17b60" absoluteBounds="24.75, 19.75, 2, 6.5784326171875023">
+    <classShape Id="385340bc-a2ba-43e3-95a1-2caa1cd17b60" isExpanded="false" absoluteBounds="48.5, 2.375, 3.875, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologicoListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="a4c4e4f1-516f-4f41-9f0a-87394dca6378" absoluteBounds="24.765, 20.21, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a4c4e4f1-516f-4f41-9f0a-87394dca6378" absoluteBounds="48.515, 2.8350000000000009, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b18120eb-091a-46de-acc9-af416391fda3" absoluteBounds="9.75, 25.75, 2, 1.9631982421875023">
+    <classShape Id="b18120eb-091a-46de-acc9-af416391fda3" isExpanded="false" absoluteBounds="2.75, 8.75, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoSoporteFuncional" />
       <nestedChildShapes>
-        <elementListCompartment Id="ac1c1be3-dc43-43cb-9c1b-aaa3592ea3dd" absoluteBounds="9.765, 26.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ac1c1be3-dc43-43cb-9c1b-aaa3592ea3dd" absoluteBounds="2.7650000000000006, 9.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b4c5558d-8a09-4d46-933b-7e42f9ad4126" absoluteBounds="12.75, 25.75, 2, 2.7324039713541666">
+    <classShape Id="b4c5558d-8a09-4d46-933b-7e42f9ad4126" isExpanded="false" absoluteBounds="2.75, 9.625, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivosTipoMantenimientoDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="77e1723e-5751-46cf-a737-902281d701ab" absoluteBounds="12.765, 26.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="77e1723e-5751-46cf-a737-902281d701ab" absoluteBounds="2.7650000000000006, 10.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d3ec37c4-7b4d-4fed-ab67-139bbcdebc87" absoluteBounds="0.75, 26.75, 2, 2.7324039713541666">
+    <classShape Id="d3ec37c4-7b4d-4fed-ab67-139bbcdebc87" isExpanded="false" absoluteBounds="0.5, 9.625, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ParteDiariosDeDispositivos" />
       <nestedChildShapes>
-        <elementListCompartment Id="edad8517-d816-4c9d-a8ef-cbc6a841f448" absoluteBounds="0.765, 27.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="edad8517-d816-4c9d-a8ef-cbc6a841f448" absoluteBounds="0.515, 10.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4e0cd681-3120-4a6f-9a61-4e749074fb53" absoluteBounds="27.75, 0.75, 2, 2.1554996744791666">
+    <classShape Id="4e0cd681-3120-4a6f-9a61-4e749074fb53" isExpanded="false" absoluteBounds="27.75, 1.125, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoDispositivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="0e244acd-4e61-4423-908a-ad442deed792" absoluteBounds="27.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0e244acd-4e61-4423-908a-ad442deed792" absoluteBounds="27.765, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e01b1a6d-0374-4c5e-873f-4128cdfda0f1" absoluteBounds="27.75, 3.75, 2, 8.69374837239583">
+    <classShape Id="e01b1a6d-0374-4c5e-873f-4128cdfda0f1" isExpanded="false" absoluteBounds="16.125, 0.5, 3.75, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeAtencionesDeSoporteFuncionalAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="00e20155-5f97-4825-893f-22057d9908d9" absoluteBounds="27.765, 4.21, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="00e20155-5f97-4825-893f-22057d9908d9" absoluteBounds="16.14, 0.96, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9d8abaa6-c265-473d-9a3c-f480335b61e0" absoluteBounds="27.75, 13.75, 2, 1.1939925130208344">
+    <classShape Id="9d8abaa6-c265-473d-9a3c-f480335b61e0" isExpanded="false" absoluteBounds="20.375, 3, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajodetalleNumeroLaboresFinalizadas" />
       <nestedChildShapes>
-        <elementListCompartment Id="be9ea193-7d7a-4fa2-b07f-866fe217ca06" absoluteBounds="27.765, 14.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="be9ea193-7d7a-4fa2-b07f-866fe217ca06" absoluteBounds="20.39, 3.4600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="06d7adac-a800-4f93-8af2-a25e1f76d70c" absoluteBounds="27.75, 15.75, 2, 9.6552555338541666">
+    <classShape Id="06d7adac-a800-4f93-8af2-a25e1f76d70c" isExpanded="false" absoluteBounds="16.125, 4, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoSoporteFuncionalAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="eddb8619-91a8-47f0-9d2b-de0eac7fb7dc" absoluteBounds="27.765, 16.21, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="eddb8619-91a8-47f0-9d2b-de0eac7fb7dc" absoluteBounds="16.14, 4.4600000000000009, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5a3b5bd7-5e2e-49e0-806f-79fbfbeae2d8" absoluteBounds="21.75, 27.75, 2, 3.5016097005208309">
+    <classShape Id="5a3b5bd7-5e2e-49e0-806f-79fbfbeae2d8" isExpanded="false" absoluteBounds="18.875, 7.25, 4.5, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologicoTipoDeSoftware" />
       <nestedChildShapes>
-        <elementListCompartment Id="9a80ef82-b274-4e44-92bf-2aa7ab209b45" absoluteBounds="21.765, 28.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9a80ef82-b274-4e44-92bf-2aa7ab209b45" absoluteBounds="18.89, 7.7100000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3e9aed38-0a22-49d9-a567-ed5e9878da49" absoluteBounds="24.75, 27.75, 2, 2.9247054036458309">
+    <classShape Id="3e9aed38-0a22-49d9-a567-ed5e9878da49" isExpanded="false" absoluteBounds="48.5, 3, 3.875, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologicoLineaCelular" />
       <nestedChildShapes>
-        <elementListCompartment Id="191565e2-b364-4e46-801e-4beddc4baf4c" absoluteBounds="24.765, 28.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="191565e2-b364-4e46-801e-4beddc4baf4c" absoluteBounds="48.515, 3.4600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7f1fdab0-fa81-4d49-8e92-1bd9195275c2" absoluteBounds="18.375, 21.75, 2, 1.5785953776041666">
+    <classShape Id="7f1fdab0-fa81-4d49-8e92-1bd9195275c2" isExpanded="false" absoluteBounds="19.375, 6, 4.375, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoClasificacionDeSoftware" />
       <nestedChildShapes>
-        <elementListCompartment Id="448889ec-8d31-4095-9fda-459138ee8a7a" absoluteBounds="18.39, 22.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="448889ec-8d31-4095-9fda-459138ee8a7a" absoluteBounds="19.39, 6.4600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3f6724e5-23a5-4561-82f5-50894eb951eb" absoluteBounds="0.75, 22.75, 2, 2.1554996744791666">
+    <classShape Id="3f6724e5-23a5-4561-82f5-50894eb951eb" isExpanded="false" absoluteBounds="0.5, 8.875, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_NumeroIP" />
       <nestedChildShapes>
-        <elementListCompartment Id="5534874d-d565-44fa-bea4-a789681f7e08" absoluteBounds="0.765, 23.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5534874d-d565-44fa-bea4-a789681f7e08" absoluteBounds="0.515, 9.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="41183912-049f-4718-92a2-678b58add13d" absoluteBounds="15.75, 25.75, 2, 2.3478011067708309">
+    <classShape Id="41183912-049f-4718-92a2-678b58add13d" isExpanded="false" absoluteBounds="2.875, 10.375, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispostivoColor" />
       <nestedChildShapes>
-        <elementListCompartment Id="41d406fb-9933-450f-b5cd-d4d692d65844" absoluteBounds="15.765, 26.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="41d406fb-9933-450f-b5cd-d4d692d65844" absoluteBounds="2.8900000000000006, 10.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5cb06fc7-8683-460d-ab64-1e0f5f25359e" absoluteBounds="3.375, 26.75, 2, 7.3476383463541666">
+    <classShape Id="5cb06fc7-8683-460d-ab64-1e0f5f25359e" isExpanded="false" absoluteBounds="0.5, 10.375, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoSoftwareByDevice" />
       <nestedChildShapes>
-        <elementListCompartment Id="c91a063f-b820-4504-8e07-2da96e4577d4" absoluteBounds="3.39, 27.21, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c91a063f-b820-4504-8e07-2da96e4577d4" absoluteBounds="0.51500000000000012, 10.835, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="35740275-5bf5-4920-8f93-03b0d0d1a1f5" absoluteBounds="27.375, 26.75, 2, 8.69374837239583">
+    <classShape Id="35740275-5bf5-4920-8f93-03b0d0d1a1f5" isExpanded="false" absoluteBounds="27.75, 0.5, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_Dispostivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="39ff79ba-a19f-4212-9e08-08f0eb17b4f6" absoluteBounds="27.39, 27.21, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="39ff79ba-a19f-4212-9e08-08f0eb17b4f6" absoluteBounds="27.765, 0.96000000000000085, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="19876800-ab1d-4c9a-b13a-235cb8323a8a" absoluteBounds="9.375, 28.75, 2, 5.2323225911458309">
+    <classShape Id="19876800-ab1d-4c9a-b13a-235cb8323a8a" isExpanded="false" absoluteBounds="0.5, 11.125, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_RegistroCompraEquipoCelulares" />
       <nestedChildShapes>
-        <elementListCompartment Id="e4012fc1-1d8b-444e-8960-8545bcf8d39b" absoluteBounds="9.39, 29.21, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e4012fc1-1d8b-444e-8960-8545bcf8d39b" absoluteBounds="0.51500000000000057, 11.585, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="93aa8896-e5d5-46af-b091-87e6d4ff9241" absoluteBounds="21.375, 24.75, 2, 1.7708968098958309">
+    <classShape Id="93aa8896-e5d5-46af-b091-87e6d4ff9241" isExpanded="false" absoluteBounds="27.75, 4.875, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_TipoDeSistema" />
       <nestedChildShapes>
-        <elementListCompartment Id="67f48ec1-d150-4503-a3e3-6806b42d0105" absoluteBounds="21.39, 25.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="67f48ec1-d150-4503-a3e3-6806b42d0105" absoluteBounds="27.765, 5.3350000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5642d3ae-5f8b-4414-b84d-98c0d991e444" absoluteBounds="12.375, 29.75, 2, 1.9631982421875023">
+    <classShape Id="5642d3ae-5f8b-4414-b84d-98c0d991e444" isExpanded="false" absoluteBounds="3, 11, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoTipoSoporteFuncionalDetalleByMinutosGroupByAplicacion" />
       <nestedChildShapes>
-        <elementListCompartment Id="e1660d12-3924-4785-999e-6dc7d05a21e8" absoluteBounds="12.39, 30.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e1660d12-3924-4785-999e-6dc7d05a21e8" absoluteBounds="3.0150000000000006, 11.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="aea6c43b-e137-4d3c-8638-319bbf0156d4" absoluteBounds="15.375, 29.75, 2, 5.040021158854163">
+    <classShape Id="aea6c43b-e137-4d3c-8638-319bbf0156d4" isExpanded="false" absoluteBounds="0.5, 11.75, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ParteDiariosDeDispositivosDetalleAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="369af822-4267-4626-9ba3-caf47ec50991" absoluteBounds="15.39, 30.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="369af822-4267-4626-9ba3-caf47ec50991" absoluteBounds="0.51500000000000057, 12.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="317be035-3592-481c-8cff-41786997275c" absoluteBounds="30.375, 0.75, 2, 5.4246240234374987">
+    <classShape Id="317be035-3592-481c-8cff-41786997275c" isExpanded="false" absoluteBounds="31.375, 0.5, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasCelularesCoporativa" />
       <nestedChildShapes>
-        <elementListCompartment Id="fba55757-03ac-4086-8401-82d537b6a9cc" absoluteBounds="30.39, 1.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fba55757-03ac-4086-8401-82d537b6a9cc" absoluteBounds="31.39, 0.96, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5b00af39-c91f-4e32-b69b-f77848ffc8b7" absoluteBounds="30.375, 7.75, 2, 7.1553369140624987">
+    <classShape Id="5b00af39-c91f-4e32-b69b-f77848ffc8b7" isExpanded="false" absoluteBounds="31.375, 1.25, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasCelularesCoporativasAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="87bb1b73-eb5a-454e-85d2-2c98208683aa" absoluteBounds="30.39, 8.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="87bb1b73-eb5a-454e-85d2-2c98208683aa" absoluteBounds="31.39, 1.7100000000000009, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2fa6a0d3-a845-4d1d-85de-6d96de6393ec" absoluteBounds="30.375, 15.75, 2, 8.3091455078125023">
+    <classShape Id="2fa6a0d3-a845-4d1d-85de-6d96de6393ec" isExpanded="false" absoluteBounds="31.375, 2.5, 2.5, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasCelularesCoporativasListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="78fcc790-1e61-4cb3-9d95-30f8d3110b45" absoluteBounds="30.39, 16.21, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="78fcc790-1e61-4cb3-9d95-30f8d3110b45" absoluteBounds="31.39, 2.9600000000000009, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="586541ce-05bd-4812-8a77-45315118d121" absoluteBounds="30.375, 25.75, 2, 3.5016097005208309">
+    <classShape Id="586541ce-05bd-4812-8a77-45315118d121" isExpanded="false" absoluteBounds="27.75, 3, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoContadores" />
       <nestedChildShapes>
-        <elementListCompartment Id="023d5965-efa1-4a08-a1bb-7e4c1891805a" absoluteBounds="30.39, 26.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="023d5965-efa1-4a08-a1bb-7e4c1891805a" absoluteBounds="27.765, 3.4600000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f9dd2bc9-e120-4938-baa8-d7926f27a1c6" absoluteBounds="30.375, 30.75, 2, 10.616762695312502">
+    <classShape Id="f9dd2bc9-e120-4938-baa8-d7926f27a1c6" isExpanded="false" absoluteBounds="20.375, 1.75, 3.5, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajoAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="787db86b-0d43-40c0-90b3-31968e42d726" absoluteBounds="30.39, 31.21, 1.9700000000000002, 10.0567626953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="787db86b-0d43-40c0-90b3-31968e42d726" absoluteBounds="20.39, 2.2100000000000009, 1.9700000000000002, 10.0567626953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0cfa223e-5d8d-47b1-af7b-1adda86c9db2" absoluteBounds="21.375, 32.75, 2, 2.3478011067708309">
+    <classShape Id="0cfa223e-5d8d-47b1-af7b-1adda86c9db2" isExpanded="false" absoluteBounds="48.5, 1.75, 3.75, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologicoReferencias" />
       <nestedChildShapes>
-        <elementListCompartment Id="690d9d49-41f8-424c-bb03-ad40b6269bdf" absoluteBounds="21.39, 33.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="690d9d49-41f8-424c-bb03-ad40b6269bdf" absoluteBounds="48.515, 2.2100000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="92188b0f-6557-44f2-8266-70c04dcacf8b" absoluteBounds="33.375, 0.75, 2, 11.770571289062502">
+    <classShape Id="92188b0f-6557-44f2-8266-70c04dcacf8b" isExpanded="false" absoluteBounds="20.375, 1.125, 3.5, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajoAllWithCumplimiento" />
       <nestedChildShapes>
-        <elementListCompartment Id="ca457dcc-b6b2-4554-8791-55f3c50fc7a8" absoluteBounds="33.39, 1.21, 1.9700000000000002, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ca457dcc-b6b2-4554-8791-55f3c50fc7a8" absoluteBounds="20.39, 1.585, 3.4699999999999998, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fb1a202a-e8e0-4763-a316-53cd9ef9ff9c" absoluteBounds="33.375, 13.75, 2, 3.6939111328125005">
+    <classShape Id="fb1a202a-e8e0-4763-a316-53cd9ef9ff9c" isExpanded="false" absoluteBounds="24, 8.625, 5.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeDispositivosDisponiblesParaPartesDeEquipamientoAllProveedor" />
       <nestedChildShapes>
-        <elementListCompartment Id="038de0c8-4815-45a7-a96f-1c169aa45965" absoluteBounds="33.39, 14.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="038de0c8-4815-45a7-a96f-1c169aa45965" absoluteBounds="24.015, 9.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b9b78d76-536b-4e20-9e44-493c5b15e7b8" absoluteBounds="33.375, 18.75, 2, 5.6169254557291666">
+    <classShape Id="b9b78d76-536b-4e20-9e44-493c5b15e7b8" isExpanded="false" absoluteBounds="31.375, 3, 2.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeLineasTelefonica" />
       <nestedChildShapes>
-        <elementListCompartment Id="0973dab8-a63d-4da8-8da6-e02b7cdb422d" absoluteBounds="33.39, 19.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0973dab8-a63d-4da8-8da6-e02b7cdb422d" absoluteBounds="31.39, 3.4600000000000009, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ac959da9-b2e3-482c-867a-853396d9f0fc" absoluteBounds="33.75, 25.75, 2, 4.6554182942708309">
+    <classShape Id="ac959da9-b2e3-482c-867a-853396d9f0fc" isExpanded="false" absoluteBounds="48.5, 0.5, 3.75, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeEquipamientoTecnologico" />
       <nestedChildShapes>
-        <elementListCompartment Id="f6985f65-bf2b-4dbc-8aeb-6baf4f9519f7" absoluteBounds="33.765, 26.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f6985f65-bf2b-4dbc-8aeb-6baf4f9519f7" absoluteBounds="48.515, 0.96000000000000085, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cca65a00-9445-4fec-8698-6e6c3143f53b" absoluteBounds="33.75, 31.75, 2, 2.9247054036458309">
+    <classShape Id="cca65a00-9445-4fec-8698-6e6c3143f53b" isExpanded="false" absoluteBounds="27.75, 3.625, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoUsuarios" />
       <nestedChildShapes>
-        <elementListCompartment Id="e6f924b2-d108-44bf-b288-fe0d14109287" absoluteBounds="33.765, 32.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e6f924b2-d108-44bf-b288-fe0d14109287" absoluteBounds="27.765, 4.0850000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0c3644ae-0df8-49e1-8505-5b64f90de2f2" absoluteBounds="6.75, 34.75, 2, 7.1553369140625023">
+    <classShape Id="0c3644ae-0df8-49e1-8505-5b64f90de2f2" isExpanded="false" absoluteBounds="8.5, 2.375, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoSoporteFuncional" />
       <nestedChildShapes>
-        <elementListCompartment Id="a3ec3041-b8ce-44f8-aeac-d5bffe159eb4" absoluteBounds="6.765, 35.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a3ec3041-b8ce-44f8-aeac-d5bffe159eb4" absoluteBounds="8.515, 2.8350000000000009, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d5dd1f15-057e-4e2b-bec6-fc69c772f6e3" absoluteBounds="9.75, 34.75, 2, 5.0400211588541595">
+    <classShape Id="d5dd1f15-057e-4e2b-bec6-fc69c772f6e3" isExpanded="false" absoluteBounds="8.625, 1.75, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="a6dd975c-cf87-4b93-a051-63813498fa05" absoluteBounds="9.765, 35.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a6dd975c-cf87-4b93-a051-63813498fa05" absoluteBounds="8.64, 2.2100000000000009, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e04080e9-d2bc-494c-ba1e-5a8349b0f012" absoluteBounds="0.75, 35.75, 2, 2.1554996744791595">
+    <classShape Id="e04080e9-d2bc-494c-ba1e-5a8349b0f012" isExpanded="false" absoluteBounds="8.5, 3.75, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivosListadoHerramientasParaTareasIT" />
       <nestedChildShapes>
-        <elementListCompartment Id="63452d17-aa67-44a2-a105-231ff2bdc59a" absoluteBounds="0.765, 36.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="63452d17-aa67-44a2-a105-231ff2bdc59a" absoluteBounds="8.515, 4.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7be3d4d0-e45d-49e4-a5fe-489fb8a7ad5f" absoluteBounds="12.75, 35.75, 2, 3.8862125651041595">
+    <classShape Id="7be3d4d0-e45d-49e4-a5fe-489fb8a7ad5f" isExpanded="false" absoluteBounds="8.625, 1.125, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoDeAtencionesTotalesByUsuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="4ab68e76-a67e-478d-9ac5-da08df205767" absoluteBounds="12.765, 36.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4ab68e76-a67e-478d-9ac5-da08df205767" absoluteBounds="8.64, 1.5850000000000009, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f328f962-9eb2-432d-ba08-930020f481c5" absoluteBounds="3.75, 35.75, 2, 2.7324039713541595">
+    <classShape Id="f328f962-9eb2-432d-ba08-930020f481c5" isExpanded="false" absoluteBounds="8.625, 3, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajoDetalleSuministroAlmacen" />
       <nestedChildShapes>
-        <elementListCompartment Id="e3b3ad65-ec72-43eb-af2d-16705a49b28a" absoluteBounds="3.765, 36.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e3b3ad65-ec72-43eb-af2d-16705a49b28a" absoluteBounds="8.64, 3.4600000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b84cfc47-c9fa-4c03-b2d0-6003c6371ce0" absoluteBounds="15.75, 35.75, 2, 3.1170068359375023">
+    <classShape Id="b84cfc47-c9fa-4c03-b2d0-6003c6371ce0" isExpanded="false" absoluteBounds="8.625, 0.5, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoCuentaUsuarios" />
       <nestedChildShapes>
-        <elementListCompartment Id="470bb0db-cc22-40a6-a41c-5341026a4d60" absoluteBounds="15.765, 36.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="470bb0db-cc22-40a6-a41c-5341026a4d60" absoluteBounds="8.64, 0.96000000000000085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="774b43e3-94c3-4bc2-984e-6f81613d2c68" absoluteBounds="33.75, 35.75, 2, 7.1553369140625023">
+    <classShape Id="774b43e3-94c3-4bc2-984e-6f81613d2c68" isExpanded="false" absoluteBounds="27.75, 5.5, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoHardwareByDevice" />
       <nestedChildShapes>
-        <elementListCompartment Id="8d27de8f-8c53-4ca1-907b-e7098cce1403" absoluteBounds="33.765, 36.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8d27de8f-8c53-4ca1-907b-e7098cce1403" absoluteBounds="27.765, 5.9600000000000009, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1f7c3def-44be-4ee4-919b-460d94259d57" absoluteBounds="36.75, 0.75, 2, 6.1938297526041666">
+    <classShape Id="1f7c3def-44be-4ee4-919b-460d94259d57" isExpanded="false" absoluteBounds="27.75, 1.75, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoComponentesByDevice" />
       <nestedChildShapes>
-        <elementListCompartment Id="22202b87-f97b-40a7-9ece-ee09d975c8a3" absoluteBounds="36.765, 1.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="22202b87-f97b-40a7-9ece-ee09d975c8a3" absoluteBounds="27.765, 2.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e195a2d7-b7f4-4565-8237-ab708e626888" absoluteBounds="36.75, 7.75, 2, 1.5785953776041666">
+    <classShape Id="e195a2d7-b7f4-4565-8237-ab708e626888" isExpanded="false" absoluteBounds="27.75, 2.375, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoEstado" />
       <nestedChildShapes>
-        <elementListCompartment Id="38c3b2ed-f61b-4a3c-8969-14d38c489e68" absoluteBounds="36.765, 8.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="38c3b2ed-f61b-4a3c-8969-14d38c489e68" absoluteBounds="27.765, 2.8350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c96a9816-06e9-4328-8fe0-a29326a69ec0" absoluteBounds="36.75, 10.75, 2, 3.5016097005208309">
+    <classShape Id="c96a9816-06e9-4328-8fe0-a29326a69ec0" isExpanded="false" absoluteBounds="40.625, 3, 3.125, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CotizacionDeCompraEquipoCelulares" />
       <nestedChildShapes>
-        <elementListCompartment Id="edc4eb86-77b6-4c13-b382-ee4951eb5917" absoluteBounds="36.765, 11.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="edc4eb86-77b6-4c13-b382-ee4951eb5917" absoluteBounds="40.64, 3.4600000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7fccc919-3375-4ce1-964c-2e57d7c23a4b" absoluteBounds="36.75, 15.75, 2, 4.0785139973958309">
+    <classShape Id="7fccc919-3375-4ce1-964c-2e57d7c23a4b" isExpanded="false" absoluteBounds="24.375, 2.375, 3, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ProgramacionDetalleMaquinariaListAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="0f7df0aa-b0c7-45df-9f08-bda01525beab" absoluteBounds="36.765, 16.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0f7df0aa-b0c7-45df-9f08-bda01525beab" absoluteBounds="24.39, 2.8350000000000009, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e6c64afb-ad8a-40cb-86ee-ef864acb9418" absoluteBounds="18.75, 36.75, 2, 2.7324039713541595">
+    <classShape Id="e6c64afb-ad8a-40cb-86ee-ef864acb9418" isExpanded="false" absoluteBounds="19.625, 7.875, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajoDetalleHerramientas" />
       <nestedChildShapes>
-        <elementListCompartment Id="1b281550-741c-41b4-96bd-504936e9003c" absoluteBounds="18.765, 37.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1b281550-741c-41b4-96bd-504936e9003c" absoluteBounds="19.64, 8.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5ad2d117-463e-42f6-bb99-d2c0443d3859" absoluteBounds="36.75, 20.75, 2, 3.1170068359375023">
+    <classShape Id="5ad2d117-463e-42f6-bb99-d2c0443d3859" isExpanded="false" absoluteBounds="20.375, 3.625, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoOrdenTrabajoDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="229b8c5c-3061-45a1-9b61-6eccd34dfd7c" absoluteBounds="36.765, 21.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="229b8c5c-3061-45a1-9b61-6eccd34dfd7c" absoluteBounds="20.39, 4.0850000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="06bbdcc5-cb5a-43d4-bb00-27f20d86daeb" absoluteBounds="21.75, 36.75, 2, 7.3476383463541595">
+    <classShape Id="06bbdcc5-cb5a-43d4-bb00-27f20d86daeb" isExpanded="false" absoluteBounds="24.125, 6.625, 3.375, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoMacByIpByColaborador" />
       <nestedChildShapes>
-        <elementListCompartment Id="2aee1c2d-2752-4d4a-ba55-a3116d6bb43b" absoluteBounds="21.765, 37.21, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2aee1c2d-2752-4d4a-ba55-a3116d6bb43b" absoluteBounds="24.14, 7.0850000000000009, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e985afd6-5345-4eb7-9d30-ab91660a851a" absoluteBounds="36.75, 24.75, 2, 1.9631982421875023">
+    <classShape Id="e985afd6-5345-4eb7-9d30-ab91660a851a" isExpanded="false" absoluteBounds="48.5, 1.125, 3.75, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_MotivoEquipamientoTecnologico" />
       <nestedChildShapes>
-        <elementListCompartment Id="12045e54-a425-4ceb-b511-d4dec6b871b4" absoluteBounds="36.765, 25.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="12045e54-a425-4ceb-b511-d4dec6b871b4" absoluteBounds="48.515, 1.5850000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3f193351-3fde-402d-9e89-a2ecf4b33993" absoluteBounds="24.75, 36.75, 2, 1.9631982421875023">
+    <classShape Id="3f193351-3fde-402d-9e89-a2ecf4b33993" isExpanded="false" absoluteBounds="48.5, 3.625, 2.875, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_MotivoEquipamientoTecnologicoALL" />
       <nestedChildShapes>
-        <elementListCompartment Id="280bbb5d-d2dd-4589-8183-27d2cdf4e648" absoluteBounds="24.765, 37.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="280bbb5d-d2dd-4589-8183-27d2cdf4e648" absoluteBounds="48.515, 4.0850000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="657730b5-8ced-4ca8-b044-68b791c5c5ed" absoluteBounds="36.75, 27.75, 2, 3.5016097005208309">
+    <classShape Id="657730b5-8ced-4ca8-b044-68b791c5c5ed" isExpanded="false" absoluteBounds="40.625, 1.75, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_RegistroCompraEquipoCelularesDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="9b89d711-6b14-47a2-846a-829142c74680" absoluteBounds="36.765, 28.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9b89d711-6b14-47a2-846a-829142c74680" absoluteBounds="40.64, 2.21, 3.9699999999999998, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ca0e1fcc-d076-4977-8523-af818b2b0b3b" absoluteBounds="36.75, 32.75, 2, 6.1938297526041595">
+    <classShape Id="ca0e1fcc-d076-4977-8523-af818b2b0b3b" isExpanded="false" absoluteBounds="40.625, 2.375, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_RegistroCompraEquipoCelularesAll" />
       <nestedChildShapes>
-        <elementListCompartment Id="a1973010-ee66-4bb3-8362-18647939a05f" absoluteBounds="36.765, 33.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a1973010-ee66-4bb3-8362-18647939a05f" absoluteBounds="40.64, 2.8350000000000009, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8b3e387e-7792-4305-aff9-c18fe5d1bf80" absoluteBounds="39.75, 0.75, 2, 5.2323225911458326">
+    <classShape Id="8b3e387e-7792-4305-aff9-c18fe5d1bf80" isExpanded="false" absoluteBounds="35.375, 1.125, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeRenovacionTelefoniaCelular" />
       <nestedChildShapes>
-        <elementListCompartment Id="df2977de-d1d9-4730-8287-fc712920c721" absoluteBounds="39.765, 1.21, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="df2977de-d1d9-4730-8287-fc712920c721" absoluteBounds="35.39, 1.585, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e6d7eba5-e44a-4d77-8e72-fe90e11e4753" absoluteBounds="0.75, 39.75, 2, 2.7324039713541595">
+    <classShape Id="e6d7eba5-e44a-4d77-8e72-fe90e11e4753" isExpanded="false" absoluteBounds="8.25, 5.25, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DocumentosAdjuntosAlFormulario" />
       <nestedChildShapes>
-        <elementListCompartment Id="67d0046f-b3cb-4c62-ba87-2462c8963be8" absoluteBounds="0.765, 40.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="67d0046f-b3cb-4c62-ba87-2462c8963be8" absoluteBounds="8.265, 5.7100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d32a9fa2-04d4-4d17-9d30-3bca50615ac5" absoluteBounds="3.75, 39.75, 2, 6.9630354817708309">
+    <classShape Id="d32a9fa2-04d4-4d17-9d30-3bca50615ac5" isExpanded="false" absoluteBounds="8.25, 5.875, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_SolicitudDeRenovacionTelefoniaCelularMovimiento" />
       <nestedChildShapes>
-        <elementListCompartment Id="a237e664-a084-4e85-ad01-9868a632c59a" absoluteBounds="3.765, 40.21, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a237e664-a084-4e85-ad01-9868a632c59a" absoluteBounds="8.265, 6.3350000000000009, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="95f061cd-4d63-4d41-a824-6f9362c25f92" absoluteBounds="39.75, 6.75, 2, 1.3862939453124996">
+    <classShape Id="95f061cd-4d63-4d41-a824-6f9362c25f92" isExpanded="false" absoluteBounds="35.375, 1.75, 3.625, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_EstadoEnSolicitudRenovacionListado" />
       <nestedChildShapes>
-        <elementListCompartment Id="8a50fb40-3b73-466b-8d4a-7f552434b429" absoluteBounds="39.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8a50fb40-3b73-466b-8d4a-7f552434b429" absoluteBounds="35.39, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e68c54f0-911f-4a9b-a73f-7969948fb03a" absoluteBounds="39.75, 9.75, 2, 9.84755696614583">
+    <classShape Id="e68c54f0-911f-4a9b-a73f-7969948fb03a" isExpanded="false" absoluteBounds="27.75, 4.25, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoColaboradoresByDispositivo" />
       <nestedChildShapes>
-        <elementListCompartment Id="c093b528-d956-462b-b35e-a4e9c88e1b82" absoluteBounds="39.765, 10.21, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c093b528-d956-462b-b35e-a4e9c88e1b82" absoluteBounds="27.765, 4.7100000000000009, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a398e887-d1f6-4ec2-bc29-5133443f8ab3" absoluteBounds="15.375, 39.75, 2, 2.1554996744791595">
-      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoDetalle" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a609f59b-083d-4d4c-a9ba-803029835106" absoluteBounds="15.39, 40.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4b91267d-c207-4e9d-9a3d-5144170208f8" absoluteBounds="12.375, 20.75, 2, 1.1939925130208309">
+    <classShape Id="4b91267d-c207-4e9d-9a3d-5144170208f8" isExpanded="false" absoluteBounds="7.5, 8.25, 2, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_ListadoPersonalEmpresaYExterno" />
       <nestedChildShapes>
-        <elementListCompartment Id="4605df3c-b0c6-467f-890a-c21259d77409" absoluteBounds="12.39, 21.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4605df3c-b0c6-467f-890a-c21259d77409" absoluteBounds="7.5150000000000006, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a0a2ec6e-1c8d-4ea3-b3c4-cfc22e147f49" absoluteBounds="39.375, 20.75, 2, 3.1170068359375023">
+    <classShape Id="a0a2ec6e-1c8d-4ea3-b3c4-cfc22e147f49" isExpanded="false" absoluteBounds="27.75, 6.125, 3.25, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_DispositivoMovimientoAlmacen" />
       <nestedChildShapes>
-        <elementListCompartment Id="629b54d7-f5fa-4fdb-bfd1-047a62cd1c5a" absoluteBounds="39.39, 21.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="629b54d7-f5fa-4fdb-bfd1-047a62cd1c5a" absoluteBounds="27.765, 6.5850000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0581b4a9-03ff-42db-a55c-b7bcec15ddc0" absoluteBounds="39.375, 24.75, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoAsignacionPersonal" />
-      <nestedChildShapes>
-        <elementListCompartment Id="213f2d75-16dd-4567-b2ae-f444ffce8374" absoluteBounds="39.39, 25.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6667bfeb-0f09-41cb-b7ff-1772108559d0" absoluteBounds="24.375, 39.75, 2, 2.1554996744791595">
+    <classShape Id="6667bfeb-0f09-41cb-b7ff-1772108559d0" isExpanded="false" absoluteBounds="44.5, 1.625, 3.375, 0.45">
       <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentaCorreoHistoricoPlan" />
       <nestedChildShapes>
-        <elementListCompartment Id="ea8994d3-346d-4dd6-baa9-446f2a69750e" absoluteBounds="24.39, 40.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ea8994d3-346d-4dd6-baa9-446f2a69750e" absoluteBounds="44.515, 2.0850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea812733-cce5-443f-90cc-9f946df4c9f8" isExpanded="false" absoluteBounds="44.5, 1, 3.375, 0.45">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoTipoLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa1b209c-053c-453a-9f16-d6bef0b62f42" absoluteBounds="44.515, 1.46, 3.3449999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef91093a-5a6d-497c-b98f-9e0de7dd79b3" isExpanded="false" absoluteBounds="6.25, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db3cb760-7f3f-4e56-805f-db7dc30b49a0" absoluteBounds="6.265, 3.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="454bd428-170d-40b0-b795-5e07614c1ae7" isExpanded="false" absoluteBounds="44.5, 2.25, 3.375, 0.45">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreoAsignacionPersonal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27c21ee2-4103-4355-9afe-6cf472ea26ba" absoluteBounds="44.515, 2.71, 3.3449999999999998, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96c6ba4d-b0c1-4685-9aac-f0a54906a305" isExpanded="false" absoluteBounds="44.5, 2.875, 3.375, 0.45">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_CuentasCorreosHistoricoPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf672266-1a62-493b-9a1c-719a29f1f268" absoluteBounds="44.515, 3.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
