@@ -346,17 +346,17 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 {
                                     #region Obtener detalle por linea detalle() 
                                     SAS_CuentasCorreoAsignacionPersonal oPersonalAsignado = new SAS_CuentasCorreoAsignacionPersonal();
-                                    oPersonalAsignado.CuentaCorreoAsignacionId = fila.Cells["chCuentaCorreoAsignacionId"].Value != null ? Convert.ToInt32(fila.Cells["chCuentaCorreoAsignacionId"].Value.ToString().Trim()) : 0;
-                                    oPersonalAsignado.CuentaCorreoID = fila.Cells["chCuentaCorreoID"].Value != null ? Convert.ToInt32(fila.Cells["CuentaCorreoID"].Value.ToString().Trim()) : 0;
-                                    oPersonalAsignado.PersonalID = fila.Cells["PersonalID"].Value != null ? fila.Cells["PersonalID"].Value.ToString().Trim() : string.Empty;
+                                    oPersonalAsignado.CuentaCorreoAsignacionId = fila.Cells["chCuentaCorreoAsignacionID"].Value != null ? Convert.ToInt32(fila.Cells["chCuentaCorreoAsignacionID"].Value.ToString().Trim()) : 0;
+                                    oPersonalAsignado.CuentaCorreoID = fila.Cells["chCuentaCorreoID"].Value != null ? Convert.ToInt32(fila.Cells["chCuentaCorreoID"].Value.ToString().Trim()) : 0;
+                                    oPersonalAsignado.PersonalID = fila.Cells["chPersonalID"].Value != null ? fila.Cells["chPersonalID"].Value.ToString().Trim() : string.Empty;
                                     oPersonalAsignado.Desde = (fila.Cells["chDesde"].Value != null && fila.Cells["chDesde"].Value.ToString().Trim() != "" && fila.Cells["chDesde"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chDesde"].Value.ToString().Trim()) : DateTime.Now;
                                     oPersonalAsignado.Hasta = (fila.Cells["chHasta"].Value != null && fila.Cells["chHasta"].Value.ToString().Trim() != "" && fila.Cells["chHasta"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chHasta"].Value.ToString().Trim()) : (DateTime?)null;                                    
                                     oPersonalAsignado.Nota = fila.Cells["chNota"].Value != null ? fila.Cells["chNota"].Value.ToString().Trim() : string.Empty;
-                                    oPersonalAsignado.Estado = fila.Cells["chestado"].Value != null ? Convert.ToInt32(fila.Cells["chestado"].Value.ToString().Trim()) : Convert.ToInt32(1);
+                                    oPersonalAsignado.Estado = fila.Cells["chEstadoDetalleCuentaCorreo"].Value != null ? Convert.ToInt32(fila.Cells["chEstadoDetalleCuentaCorreo"].Value.ToString().Trim()) : Convert.ToInt32(1);
                                     oPersonalAsignado.ReferenciaSolicitudID = fila.Cells["chReferenciaSolicitudID"].Value != null ? Convert.ToInt32(fila.Cells["chReferenciaSolicitudID"].Value.ToString().Trim()) : 0;
                                     oPersonalAsignado.ReferenciaID = fila.Cells["chReferenciaID"].Value != null ? Convert.ToInt32(fila.Cells["chReferenciaID"].Value.ToString().Trim()) : 0;
-                                    oPersonalAsignado.TablaReferencia = fila.Cells["chTablaReferencia"].Value != null ? fila.Cells["chTablaReferencia"].Value.ToString().Trim() : string.Empty;
-                                    oPersonalAsignado.TablaSolicitud = fila.Cells["chTablaSolicitud"].Value != null ? fila.Cells["chTablaSolicitud"].Value.ToString().Trim() : string.Empty;                                
+                                    oPersonalAsignado.TablaReferencia = string.Empty;
+                                    oPersonalAsignado.TablaSolicitud = string.Empty;                                
                                     oPersonalAsignado.UserID = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
                                     oPersonalAsignado.HostName = Environment.MachineName;
                                     oPersonalAsignado.FechaRegistro = DateTime.Now;
