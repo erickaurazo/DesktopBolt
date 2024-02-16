@@ -172,242 +172,24 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
+            RealizarConsulta();   
+        }
+
+        private void RealizarConsulta()
+        {
             modelo = new SAS_DispositivoIPController();
             listado = new List<SAS_ListadoDeDispositivosAllResult>();
-            //listadoCboEstadoDispositivos = new List<SAS_EstadoDispositivoCBOResult>();
-            //listadoCboProveedorDispositivos = new List<SAS_ProveedorDispositivoCBOResult>();
-            //listadoCboFuncionamientoDispositivos = new List<SAS_FuncionamientoDispositivoCBOResult>();
-            //listadoCboSedeDispositivos = new List<SAS_SedeDispositivoCBOResult>();
-            //listadoCboModeloDispositivos = new List<SAS_ModeloDispositivoCBOResult>();
-            //listadoCboMarcaDispositivos = new List<SAS_MarcaDispositivoCBOResult>();
-            //listadoCboEsPropioDispositivos = new List<SAS_EsPropioCBOResult>();
-            //listadoCboTipoDispositivos = new List<SAS_TipoDispositivoCBOResult>();
-
-            //listadoCboEstadoDispositivos = modelo.ObtenerListadoCboEstadoDispositivos("SAS").ToList();
-            //listadoCboProveedorDispositivos = modelo.ObtenerListadoProveedorDispositivoCBO("SAS").ToList();
-            //listadoCboFuncionamientoDispositivos = modelo.ObtenerListadoFuncionamientoDispositivoCBO("SAS").ToList();
-            //listadoCboSedeDispositivos = modelo.ObtenerListadoSedeDispositivoCBO("SAS").ToList();
-            //listadoCboModeloDispositivos = modelo.ObtenerListadoModeloDispositivoCBO("SAS").ToList();
-            //listadoCboMarcaDispositivos = modelo.ObtenerListadoMarcaDispositivoCBO("SAS").ToList();
-            //listadoCboEsPropioDispositivos = modelo.ObtenerListadoEsPropioCBO("SAS").ToList();
-            //listadoCboTipoDispositivos = modelo.ObtenerListadoTipoDispositivoCBO("SAS").ToList();
-
-
-            //listadoPalletPendientesByClienteIdFiltro01 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro02 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro03 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro04 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro05 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro06 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro07 = new List<SAS_ListadoDeDispositivos>();
-            //listadoPalletPendientesByClienteIdFiltro08 = new List<SAS_ListadoDeDispositivos>();
-
             listado = modelo.ListadoDeDispositivos("SAS").ToList();
-
-
-            if (listado != null && listado.ToList().Count > 0)
-            {
-
-                //oTipoPallets = new List<RadCheckedListDataItem>();
-                //oTipoPallets = (from item in listadoCboTipoDispositivos
-                //                group item by new { item.codigo } into j
-                //                select new RadCheckedListDataItem
-                //                {
-                //                    Value = j.Key.codigo,
-                //                    Text = j.FirstOrDefault().descripcion,
-                //                    Checked = true
-                //                }).ToList();
-
-
-                //lPertenencia = new List<RadCheckedListDataItem>();
-                //lPertenencia = (from item in listadoCboEsPropioDispositivos
-                //                group item by new { item.codigo } into j
-                //                select new RadCheckedListDataItem
-                //                {
-                //                    Value = j.Key.codigo,
-                //                    Text = j.FirstOrDefault().descripcion,
-                //                    Checked = true
-                //                }).ToList();
-
-
-                //lmarcas = new List<RadCheckedListDataItem>();
-                //lmarcas = (from item in listadoCboMarcaDispositivos
-                //           group item by new { item.codigo } into j
-                //           select new RadCheckedListDataItem
-                //           {
-                //               Value = j.Key.codigo,
-                //               Text = j.FirstOrDefault().descripcion,
-                //               Checked = true
-                //           }).ToList();
-
-                //lmodelo = new List<RadCheckedListDataItem>();
-                //lmodelo = (from item in listadoCboModeloDispositivos
-                //           group item by new { item.codigo } into j
-                //           select new RadCheckedListDataItem
-                //           {
-                //               Value = j.Key.codigo,
-                //               Text = j.FirstOrDefault().descripcion,
-                //               Checked = true
-                //           }).ToList();
-
-                //lsede = new List<RadCheckedListDataItem>();
-                //lsede = (from item in listadoCboSedeDispositivos
-                //         group item by new { item.codigo } into j
-                //         select new RadCheckedListDataItem
-                //         {
-                //             Value = j.Key.codigo,
-                //             Text = j.FirstOrDefault().descripcion,
-                //             Checked = true
-                //         }).ToList();
-
-                //lfuncionamiento = new List<RadCheckedListDataItem>();
-                //lfuncionamiento = (from item in listadoCboFuncionamientoDispositivos
-                //                   group item by new { item.codigo } into j
-                //                   select new RadCheckedListDataItem
-                //                   {
-                //                       Value = j.Key.codigo,
-                //                       Text = j.FirstOrDefault().descripcion,
-                //                       Checked = true
-                //                   }).ToList();
-
-
-                //lproveedores = new List<RadCheckedListDataItem>();
-                //lproveedores = (from item in listadoCboProveedorDispositivos
-                //                group item by new { item.codigo } into j
-                //                select new RadCheckedListDataItem
-                //                {
-                //                    Value = j.Key.codigo,
-                //                    Text = j.FirstOrDefault().descripcion,
-                //                    Checked = true
-                //                }).ToList();
-
-                //lEstados = new List<RadCheckedListDataItem>();
-                //lEstados = (from item in listadoCboEstadoDispositivos
-                //            group item by new { item.codigo } into j
-                //            select new RadCheckedListDataItem
-                //            {
-                //                Value = j.Key.codigo,
-                //                Text = j.FirstOrDefault().descripcion,
-                //                Checked = true
-                //            }).ToList();
-
-                //listadoTipoDispositivo = (from item in listadoCboTipoDispositivos
-                //                          group item by new { item.codigo } into j
-                //                          select new Grupo
-                //                          {
-                //                              Valor = j.Key.codigo,
-                //                              Descripcion = j.FirstOrDefault().descripcion
-                //                          }).ToList();
-
-                //listadoTipoPertenencia = (from item in listadoCboEsPropioDispositivos
-                //                          group item by new { item.codigo } into j
-                //                          select new Grupo
-                //                          {
-                //                              Valor = j.Key.codigo.ToString(),
-                //                              Descripcion = j.FirstOrDefault().descripcion,
-                //                          }).ToList();
-
-                //listadoMarcas = (from item in listadoCboMarcaDispositivos
-                //                 group item by new { item.codigo } into j
-                //                 select new Grupo
-                //                 {
-                //                     Valor = j.Key.codigo.ToString(),
-                //                     Descripcion = j.FirstOrDefault().descripcion,
-                //                 }).ToList();
-
-                //listadoModelos = (from item in listadoCboModeloDispositivos
-                //                  group item by new { item.codigo } into j
-                //                  select new Grupo
-                //                  {
-                //                      Valor = j.Key.codigo.ToString(),
-                //                      Descripcion = j.FirstOrDefault().descripcion,
-                //                  }).ToList();
-
-                //listadoSede = (from item in listadoCboSedeDispositivos
-                //               group item by new { item.codigo } into j
-                //               select new Grupo
-                //               {
-                //                   Valor = j.Key.codigo.ToString(),
-                //                   Descripcion = j.FirstOrDefault().descripcion,
-                //               }).ToList();
-
-                //listadoFuncionamiento = (from item in listadoCboFuncionamientoDispositivos
-                //                         group item by new { item.codigo } into j
-                //                         select new Grupo
-                //                         {
-                //                             Valor = j.Key.codigo.ToString(),
-                //                             Descripcion = j.FirstOrDefault().descripcion,
-                //                         }).ToList();
-
-                //listadoProveedores = (from item in listadoCboProveedorDispositivos
-                //                      group item by new { item.codigo } into j
-                //                      select new Grupo
-                //                      {
-                //                          Valor = j.Key.codigo.ToString(),
-                //                          Descripcion = j.FirstOrDefault().descripcion,
-                //                      }).ToList();
-
-                //listadoEstadosDispositivos = (from item in listadoCboEstadoDispositivos
-                //                              group item by new { item.codigo } into j
-                //                              select new Grupo
-                //                              {
-                //                                  Valor = j.Key.codigo.ToString(),
-                //                                  Descripcion = j.FirstOrDefault().descripcion,
-                //                              }).ToList();
-
-            }
-
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
-            PresentaResultadoConsultaCB();
+           // PresentaResultadoConsultaCB();
             PresentarResultadosGrilla();
         }
 
-        private void PresentaResultadoConsultaCB()
-        {
-            if (listado != null && listado.ToList().Count > 0)
-            {
-               
-                //cboTipoDispotivo.DisplayMember = "Descripcion";
-                //cboTipoDispotivo.ValueMember = "Valor";
-                //cboTipoDispotivo.Items.AddRange(oTipoPallets);
-
-                //cboPertenencia.DisplayMember = "Descripcion";
-                //cboPertenencia.ValueMember = "Valor";                
-                //cboPertenencia.Items.AddRange(lPertenencia);              
-
-                //cboMarca.DisplayMember = "Descripcion";
-                //cboMarca.ValueMember = "Valor";                
-                //cboMarca.Items.AddRange(lmarcas);
-                                
-                //cboModelo.DisplayMember = "Descripcion";
-                //cboModelo.ValueMember = "Valor";                
-                //cboModelo.Items.AddRange(lmodelo);
-                
-                //cboSede.DisplayMember = "Descripcion";
-                //cboSede.ValueMember = "Valor";                
-                //cboSede.Items.AddRange(lsede);
-                
-                //cbofuncionamiento.DisplayMember = "Descripcion";
-                //cbofuncionamiento.ValueMember = "Valor";                
-                //cbofuncionamiento.Items.AddRange(lfuncionamiento);
-                
-                //cboProveedor.DisplayMember = "Descripcion";
-                //cboProveedor.ValueMember = "Valor";
-                //cboProveedor.Items.AddRange(lproveedores);
-                                
-                //cboEstado.DisplayMember = "Descripcion";
-                //cboEstado.ValueMember = "Valor";                
-                //cboEstado.Items.AddRange(lEstados);
-
-            }
-
-
-        }
-
+        
         private void PresentarResultadosGrilla()
         {
             try
@@ -459,11 +241,7 @@ namespace ComparativoHorasVisualSATNISIRA
         {
             try
             {
-                dgvDispositivo.Enabled = false;
-                BarraPrincipal.Enabled = !true;
-                gbCabecera.Enabled = false;
-                gbListado.Enabled = false;
-                pgbar.Visible = true;
+                DeshabilitarControlesAntesDeConsulta();
 
                 bgwHilo.RunWorkerAsync();
             }
@@ -472,6 +250,15 @@ namespace ComparativoHorasVisualSATNISIRA
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 return;
             }
+        }
+
+        private void DeshabilitarControlesAntesDeConsulta()
+        {
+            dgvDispositivo.Enabled = false;
+            BarraPrincipal.Enabled = !true;
+            gbCabecera.Enabled = false;
+            gbListado.Enabled = false;
+            pgbar.Visible = true;
         }
 
         private void DispositivosListado_Load(object sender, EventArgs e)
@@ -502,6 +289,7 @@ namespace ComparativoHorasVisualSATNISIRA
             btnProgramarDisponibilidad.Enabled = false;
             btnRegistrarInspeccion.Enabled = false;
             btnRegistrarInventario.Enabled = false;
+            btnLimpiarDispositivo.Enabled = false;
 
             codigo = 0;
             string imgQr = string.Empty;
@@ -543,7 +331,7 @@ namespace ComparativoHorasVisualSATNISIRA
                                         btnVistaPreviaDeFichaDeDispositivo.Enabled = false;
                                         btnVerLineaCelular.Enabled = false;
                                         btnVerProgramacionDiaria.Enabled = !false;
-
+                                        btnLimpiarDispositivo.Enabled = !false;
                                         btnProgramarSoporte.Enabled = true;
                                         btnProgramarDisponibilidad.Enabled = true;
                                         btnRegistrarInspeccion.Enabled = true;
@@ -1311,6 +1099,36 @@ namespace ComparativoHorasVisualSATNISIRA
         private void RegistrarInventario()
         {
             
+        }
+
+        private void btnLimpiarDispositivo_Click(object sender, EventArgs e)
+        {
+            if (DeviceId > 0)
+            {
+                
+                LimpiarDispositivo();
+            }
+            
+        }
+
+        private void LimpiarDispositivo()
+        {
+            DeshabilitarControlesAntesDeConsulta();
+            bgwLiberarDatosDelDispositivo.RunWorkerAsync();
+        }
+
+        private void bgwLiberarDatosDelDispositivo_DoWork(object sender, DoWorkEventArgs e)
+        {
+            deviceModelo = new SAS_DispostivoController();
+            int Resultado = deviceModelo.LimpiarDispositivo(conection, DeviceId);
+
+            RealizarConsulta();
+
+        }
+
+        private void bgwLiberarDatosDelDispositivo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            PresentarResultadosGrilla();
         }
     }
 }

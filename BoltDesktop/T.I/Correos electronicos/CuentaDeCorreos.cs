@@ -292,11 +292,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 #region Obtener detalle Log()
                 ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
-                if (this.dgvDetail != null)
+                if (this.dgvDetalleLog != null)
                 {
-                    if (this.dgvDetail.Rows.Count > 0)
+                    if (this.dgvDetalleLog.Rows.Count > 0)
                     {
-                        foreach (DataGridViewRow fila in this.dgvDetail.Rows)
+                        foreach (DataGridViewRow fila in this.dgvDetalleLog.Rows)
                         {
                             if (fila.Cells["chid"].Value.ToString().Trim() != String.Empty)
                             {
@@ -603,8 +603,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     }
                 }
 
-                dgvDetail.CargarDatos(ListadoCuentasDeCorreoDetalleLog.ToDataTable<SAS_CuentasCorreoDetalleByIdResult>());
-                dgvDetail.Refresh();
+                dgvDetalleLog.CargarDatos(ListadoCuentasDeCorreoDetalleLog.ToDataTable<SAS_CuentasCorreoDetalleByIdResult>());
+                dgvDetalleLog.Refresh();
                 msgError += "IP OK GRILLA LOG ";
 
 
@@ -615,7 +615,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 dgvHistoricoPlanes.CargarDatos(ListadoDetallHistoricoPlanByCuentaCorreo.ToDataTable<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>());
                 dgvHistoricoPlanes.Refresh();
-                msgError += "IP OK GRILLA Historico Plane";
+                msgError += "IP OK GRILLA Historico Planes";
 
             }
             catch (Exception Ex)
@@ -651,13 +651,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 int codigo = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? (int)Convert.ChangeType(dgvRegistro.CurrentRow.Cells["chId"].Value, typeof(Int32)) : 0);
                                 CodigoRegistro = codigo;
                                 var resultado = ListarCuentasDeCorreoAll.Where(x => x.id == codigo).ToList();
-                                if (resultado.ToList().Count == 1)
-                                {
-                                    oCuentaDeCorreoSeleccionado = resultado.Single();
-                                    oCuentaDeCorreoSeleccionado.id = codigo;
-                                    AsingarObjeto(oCuentaDeCorreoSeleccionado);
-                                }
-                                else if (resultado.ToList().Count > 1)
+                                if (resultado.ToList().Count >= 1)
                                 {
                                     oCuentaDeCorreoSeleccionado = resultado.ElementAt(0);
                                     oCuentaDeCorreoSeleccionado.id = codigo;
@@ -989,15 +983,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
 
-                if (dgvDetail.CurrentRow.Cells["chestado"].Value.ToString() == "1")
+                if (dgvDetalleLog.CurrentRow.Cells["chestado"].Value.ToString() == "1")
                 {
-                    dgvDetail.CurrentRow.Cells["chestado"].Value = "0";
-                    dgvDetail.CurrentRow.Cells["chestadoDescripcion"].Value = "ANULADO";
+                    dgvDetalleLog.CurrentRow.Cells["chestado"].Value = "0";
+                    dgvDetalleLog.CurrentRow.Cells["chestadoDescripcion"].Value = "ANULADO";
                 }
                 else
                 {
-                    dgvDetail.CurrentRow.Cells["chestado"].Value = "1";
-                    dgvDetail.CurrentRow.Cells["chestadoDescripcion"].Value = "ACTIVO";
+                    dgvDetalleLog.CurrentRow.Cells["chestado"].Value = "1";
+                    dgvDetalleLog.CurrentRow.Cells["chestadoDescripcion"].Value = "ACTIVO";
                 }
 
             }
@@ -1028,7 +1022,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 #region add Item()
-                if (dgvDetail != null)
+                if (dgvDetalleLog != null)
                 {
                     ArrayList array = new ArrayList();
                     array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // id                 
@@ -1039,7 +1033,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     array.Add(string.Empty); // descripcion
                     array.Add(1); // IdEstado
                     array.Add("ACTIVO"); // Estado                              
-                    dgvDetail.AgregarFila(array);
+                    dgvDetalleLog.AgregarFila(array);
                     lastItem += 1;
                 }
                 else
@@ -1063,20 +1057,20 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                if (this.dgvDetail != null)
+                if (this.dgvDetalleLog != null)
                 {
                     #region delete item() 
-                    if (dgvDetail.CurrentRow != null && dgvDetail.CurrentRow.Cells["chId"].Value != null)
+                    if (dgvDetalleLog.CurrentRow != null && dgvDetalleLog.CurrentRow.Cells["chId"].Value != null)
                     {
                         //if (MessageBox.Show(this, "¿Desea eliminar el elemento seleccionado?", "Confirmar Operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         //{
                         try
                         {
 
-                            Int32 dispositivoCodigo = (dgvDetail.CurrentRow.Cells["chId"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetail.CurrentRow.Cells["chId"].Value) : 0);
+                            Int32 dispositivoCodigo = (dgvDetalleLog.CurrentRow.Cells["chId"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetalleLog.CurrentRow.Cells["chId"].Value) : 0);
                             if (dispositivoCodigo != 0)
                             {
-                                string itemIP = ((dgvDetail.CurrentRow.Cells["chItem"].Value != null | dgvDetail.CurrentRow.Cells["chItem"].Value.ToString().Trim() != string.Empty) ? (dgvDetail.CurrentRow.Cells["chItem"].Value.ToString()) : string.Empty);
+                                string itemIP = ((dgvDetalleLog.CurrentRow.Cells["chItem"].Value != null | dgvDetalleLog.CurrentRow.Cells["chItem"].Value.ToString().Trim() != string.Empty) ? (dgvDetalleLog.CurrentRow.Cells["chItem"].Value.ToString()) : string.Empty);
                                 if (dispositivoCodigo != 0 && itemIP != string.Empty)
                                 {
 
@@ -1088,7 +1082,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 }
                             }
 
-                            dgvDetail.Rows.Remove(dgvDetail.CurrentRow);
+                            dgvDetalleLog.Rows.Remove(dgvDetalleLog.CurrentRow);
                         }
                         catch (Exception Ex)
                         {
@@ -1112,14 +1106,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                if (this.dgvDetail != null)
+                if (this.dgvDetalleLog != null)
                 {
-                    if (this.dgvDetail.Rows.Count > 0)
+                    if (this.dgvDetalleLog.Rows.Count > 0)
                     {
-                        int tope = dgvDetail.Rows.Count;
+                        int tope = dgvDetalleLog.Rows.Count;
                         for (int i = 0; i < tope; i++)
                         {
-                            dgvDetail.Rows.RemoveAt(0);
+                            dgvDetalleLog.Rows.RemoveAt(0);
                         }
 
                     }
@@ -1150,8 +1144,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                         {
                             //idRetorno = busquedas.ObjetoRetorno.Codigo;
-                            this.dgvDetail.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chidTipo"].Value = search.ObjetoRetorno.Codigo;
-                            this.dgvDetail.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chtipo"].Value = search.ObjetoRetorno.Descripcion;
+                            this.dgvDetalleLog.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chidTipo"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvDetalleLog.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chtipo"].Value = search.ObjetoRetorno.Descripcion;
                         }
                     }
                 }

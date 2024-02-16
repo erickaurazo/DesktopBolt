@@ -48,6 +48,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_CuentasDominioDetalle> detalle = new List<SAS_CuentasDominioDetalle>();
         object result;
         int oParImpar = 0;
+        private int ClickFiltro = 0;
 
         public CuentaDeDominio()
         {
@@ -74,6 +75,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 user2 = _user2;
                 companyId = _companyId;
                 privilege = _privilege;
+                lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+                lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+
                 Actualizar();
             }
             catch (Exception Ex)
@@ -82,9 +86,6 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 return;
             }
         }
-
-
-
         protected override void OnLoad(EventArgs e)
         {
             try
@@ -104,10 +105,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 result = ex.Message;
             }
         }
-
     
-
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Nuevo();
@@ -1080,6 +1078,32 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 return;
+            }
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+        private void ActivateFilter()
+        {
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | DesActivar Filtro()                
+                dgvListado.EnableFiltering = !true;
+                dgvListado.ShowHeaderCellButtons = false;
+
+                #endregion
+            }
+            else
+            {
+
+                #region Par() | Activar Filtro()
+                dgvListado.EnableFiltering = true;
+                dgvListado.ShowHeaderCellButtons = true;
+                #endregion
             }
         }
     }

@@ -2004,6 +2004,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         }
 
+        private void chkCompletarCreacionDeDispositivos_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnFlujoAprobacion_Click(object sender, EventArgs e)
         {
 

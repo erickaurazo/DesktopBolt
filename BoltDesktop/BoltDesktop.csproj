@@ -1885,6 +1885,12 @@
     <Compile Include="T.I\Partes Diarios\PartesDiariosDeEquipamientoReporteAll.Designer.cs">
       <DependentUpon>PartesDiariosDeEquipamientoReporteAll.cs</DependentUpon>
     </Compile>
+    <Compile Include="T.I\Renovacion de celulares\ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Renovacion de celulares\ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular.Designer.cs">
+      <DependentUpon>ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular.cs</DependentUpon>
+    </Compile>
     <Compile Include="T.I\Renovacion de celulares\SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2295,11 +2301,11 @@
     <Compile Include="T.I\Dispositivo\ReportesListadoSoftwareEnDispositivos.Designer.cs">
       <DependentUpon>ReportesListadoSoftwareEnDispositivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelular.cs">
+    <Compile Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelularPorColaboradorIdYMotivoId.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelular.Designer.cs">
-      <DependentUpon>ReportesListadoSolicitudesRenovacionCelular.cs</DependentUpon>
+    <Compile Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelularPorColaboradorIdYMotivoId.Designer.cs">
+      <DependentUpon>ReportesListadoSolicitudesRenovacionCelularPorColaboradorIdYMotivoId.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Dispositivo\SegmentoDeRed.cs">
       <SubType>Form</SubType>
@@ -3149,6 +3155,9 @@
     <EmbeddedResource Include="T.I\Equipamiento tecnologico\VistaPreviaSolicitudEquipamiento.resx">
       <DependentUpon>VistaPreviaSolicitudEquipamiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Renovacion de celulares\ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular.resx">
+      <DependentUpon>ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="T.I\Renovacion de celulares\SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud.resx">
       <DependentUpon>SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud.cs</DependentUpon>
     </EmbeddedResource>
@@ -3344,8 +3353,8 @@
     <EmbeddedResource Include="T.I\Dispositivo\ReportesListadoSoftwareEnDispositivos.resx">
       <DependentUpon>ReportesListadoSoftwareEnDispositivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelular.resx">
-      <DependentUpon>ReportesListadoSolicitudesRenovacionCelular.cs</DependentUpon>
+    <EmbeddedResource Include="T.I\Renovacion de celulares\ReportesListadoSolicitudesRenovacionCelularPorColaboradorIdYMotivoId.resx">
+      <DependentUpon>ReportesListadoSolicitudesRenovacionCelularPorColaboradorIdYMotivoId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Dispositivo\SegmentoDeRed.resx">
       <DependentUpon>SegmentoDeRed.cs</DependentUpon>

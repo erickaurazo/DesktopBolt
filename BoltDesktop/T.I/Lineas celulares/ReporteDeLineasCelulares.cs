@@ -33,6 +33,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private List<SAS_ListadoDeLineasTelefonica> listado;
         private SAS_ListadoDeLineasTelefonica itemSelecionado;
         private SAS_LineasCelularesCoporativasController modelo;
+        private int ClickFiltro = 0;
         #endregion
 
         public ReporteDeLineasCelulares()
@@ -317,6 +318,32 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void btnElegirColumnas_Click(object sender, EventArgs e)
         {
             this.dgvRegistro.ShowColumnChooser();
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+        private void ActivateFilter()
+        {
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | DesActivar Filtro()                
+                dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = false;
+
+                #endregion
+            }
+            else
+            {
+
+                #region Par() | Activar Filtro()
+                dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
+                #endregion
+            }
         }
     }
 }

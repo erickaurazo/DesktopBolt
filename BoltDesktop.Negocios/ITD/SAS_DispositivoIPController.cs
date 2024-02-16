@@ -47,11 +47,13 @@ namespace Asistencia.Negocios
             return resultado2;
         }
 
-        public int ActualizarFoto(string v, SAS_Dispostivo dispositivo)
+        public int ActualizarFoto(string connection, SAS_Dispostivo dispositivo)
         {
-            throw new NotImplementedException();
+            int resulta = 0;
+            return resulta;
         }
 
+        
 
         //     List<SAS_EstadoDispositivoCBOResult> listadoCboEstadoDispositivos = new List<SAS_EstadoDispositivoCBOResult>();
         public List<SAS_EstadoDispositivoCBOResult> ObtenerListadoCboEstadoDispositivos(string connection)

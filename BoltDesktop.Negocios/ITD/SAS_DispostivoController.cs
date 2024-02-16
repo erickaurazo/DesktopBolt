@@ -6615,5 +6615,36 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
+
+        public int LimpiarDispositivo(string Connection, int DispositivoID)
+        {
+            int codigo = 0;
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[Connection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                var resultado = Modelo.SAS_Dispostivo.Where(x => x.id == DispositivoID).ToList();
+                using (TransactionScope Scope = new TransactionScope())
+                {
+                    if (resultado.ToList().Count == 1)
+                    {
+                        #region Editar() 
+                        SAS_Dispostivo oDevice = new SAS_Dispostivo();
+                        oDevice = resultado.Single();
+                        oDevice.nombres = "-";
+                        oDevice.descripcion = "-";
+                        oDevice.esFinal = 0;
+                        oDevice.tipoDispositivoCodigo = "000";
+                        Modelo.SubmitChanges();
+                        codigo = oDevice.id;
+                        #endregion
+                    }
+                    Scope.Complete();
+                }
+            }
+            return codigo;
+        }
+
+
     }
 }

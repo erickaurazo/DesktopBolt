@@ -212,6 +212,7 @@
             this.chkCompletarCreacionDeDispositivos.TabIndex = 279;
             this.chkCompletarCreacionDeDispositivos.Text = "Completar generando dispositivo de alta y/o baja";
             this.chkCompletarCreacionDeDispositivos.UseVisualStyleBackColor = true;
+            this.chkCompletarCreacionDeDispositivos.CheckedChanged += new System.EventHandler(this.chkCompletarCreacionDeDispositivos_CheckedChanged);
             // 
             // txtDispositivoAlta
             // 

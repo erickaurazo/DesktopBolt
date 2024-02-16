@@ -59,6 +59,33 @@ namespace Asistencia.Negocios
             return list.OrderByDescending(x => x.id).ToList();
         }
 
+        // Buscar por personal y motivo
+        public List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByMotivoIdPersonalIdResult> ListRequestsRenovacionByPersonalID(string conection, int MotivoRenovacionId , string PersonalId)
+        {
+            List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByMotivoIdPersonalIdResult> list = new List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByMotivoIdPersonalIdResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                list = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByMotivoIdPersonalId(PersonalId, MotivoRenovacionId).ToList();
+            }
+            return list.OrderByDescending(x => x.id).ToList();
+        }
+
+
+
+        // Buscar por numero celular
+        public List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByNumeroCelularResult> ListRequestsRenovacionByNumeroCelular(string conection,  string NumeroCelular)
+        {
+            List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByNumeroCelularResult> list = new List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByNumeroCelularResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                list = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByNumeroCelular(NumeroCelular).ToList();
+            }
+            return list.OrderByDescending(x => x.id).ToList();
+        }
+
+
         // registrar
         public int ToRegister(string conection, SAS_SolicitudDeRenovacionTelefoniaCelular item, SAS_USUARIOS user, string nombreColaborador)
         {
@@ -704,7 +731,7 @@ namespace Asistencia.Negocios
         public string CambiarAEstadoAtendidoTotal(string conection, int codigoSolicitud, SAS_USUARIOS user)
         {
             string resultadoProceso = string.Empty;
-            SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();            
+            SAS_SolicitudDeRenovacionTelefoniaCelular oregistro = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
@@ -778,7 +805,7 @@ namespace Asistencia.Negocios
             return resultadoProceso;
         }
 
-        
+
         public string ReturnRequestStatus(string conection, int codigoSolicitud, SAS_USUARIOS user)
         {
             string resultadoProceso = string.Empty;
@@ -847,12 +874,12 @@ namespace Asistencia.Negocios
                     if (resultado.ToList().Count == 1)
                     {
                         oregistro = resultado.Single();
-                        if (oregistro.estadoCodigo == "SO")
-                        {
-                            oregistro.estadoCodigo = "RE";
-                            Modelo.SubmitChanges();
-                            tipoResultadoOperacion = 5; // RECHAZAR
-                        }
+                        //if (oregistro.estadoCodigo == "SO")
+                        //{
+                        oregistro.estadoCodigo = "RE";
+                        Modelo.SubmitChanges();
+                        tipoResultadoOperacion = 5; // RECHAZAR
+                        //}
                     }
                 }
             }
@@ -937,12 +964,12 @@ namespace Asistencia.Negocios
         public void Notify(string conection, string Para, string Asunto, int codigoSolicitudSelecionada)
         {
             List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByIDResult> listadoCabecera = new List<SAS_SolicitudDeRenovacionTelefoniaCelularListadoByIDResult>();
-            
+
 
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                listadoCabecera = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByID(codigoSolicitudSelecionada).ToList();                
+                listadoCabecera = Modelo.SAS_SolicitudDeRenovacionTelefoniaCelularListadoByID(codigoSolicitudSelecionada).ToList();
             }
 
             #region  Notify()
@@ -953,17 +980,17 @@ namespace Asistencia.Negocios
                 Mensaje.Append(string.Format("Envio Automático, no responder a este correo \n"));
                 Mensaje.Append(Environment.NewLine);
                 Mensaje.Append(string.Format("Por el presente se notifica solicitud de " + listadoCabecera.ElementAt(0).motivoSolicitud + " \n"));
-                Mensaje.Append(string.Format("Solicitud Generada : " + listadoCabecera.ElementAt(0).documento + "\n"));                
+                Mensaje.Append(string.Format("Solicitud Generada : " + listadoCabecera.ElementAt(0).documento + "\n"));
                 Mensaje.Append(string.Format("Fecha de solicitud {0:dd/MM/yyyy} \n\n", listadoCabecera.ElementAt(0).fecha));
-                Mensaje.Append(string.Format("Datos del colaborador : " + listadoCabecera.ElementAt(0).idCodigoGeneral + " - " + listadoCabecera.ElementAt(0).nombres +  "\n"));
+                Mensaje.Append(string.Format("Datos del colaborador : " + listadoCabecera.ElementAt(0).idCodigoGeneral + " - " + listadoCabecera.ElementAt(0).nombres + "\n"));
                 Mensaje.Append(string.Format("Línea celular: \n\n", listadoCabecera.ElementAt(0).numeroCelular));
 
                 Mensaje.Append(string.Format("Atendido Por : " + listadoCabecera.ElementAt(0).usuarioEnAtencion + "\n"));
-                Mensaje.Append(string.Format("Equipo para baja | devolución : " + listadoCabecera.ElementAt(0).idDispositivoBaja.ToString() + " | " +  listadoCabecera.ElementAt(0).dispositivoBaja.ToString() + "\n"));
+                Mensaje.Append(string.Format("Equipo para baja | devolución : " + listadoCabecera.ElementAt(0).idDispositivoBaja.ToString() + " | " + listadoCabecera.ElementAt(0).dispositivoBaja.ToString() + "\n"));
                 Mensaje.Append(string.Format("Equipo para alta | préstamo " + listadoCabecera.ElementAt(0).idDispositivoAlta.ToString() + " | " + listadoCabecera.ElementAt(0).dispositivoAlta.ToString() + "\n"));
-                
-               
-               
+
+
+
                 Mensaje.Append(Environment.NewLine);
                 Mensaje.Append(Environment.NewLine);
                 Mensaje.Append(Environment.NewLine);

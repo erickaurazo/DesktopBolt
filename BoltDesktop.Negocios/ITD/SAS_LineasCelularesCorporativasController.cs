@@ -203,6 +203,7 @@ namespace Asistencia.Negocios
                             oregistro.idCCostoVariable = item.idCCostoVariable != null ? item.idCCostoVariable : string.Empty;
                             oregistro.glosa = item.glosa != null ? item.glosa : string.Empty;
                             oregistro.codigoERP = item.codigoERP != null ? item.codigoERP.Value : (int?)null;
+                            oregistro.EstadoId = item.EstadoId != null ? item.EstadoId : "AN";
                             Modelo.SubmitChanges();
                             #endregion
 
@@ -626,6 +627,36 @@ namespace Asistencia.Negocios
                         if (LineaCelular.estado == 1)
                         {
                             LineaCelular.EstadoId = "PZ";
+                            tipoResultadoOperacion = 1;
+                        }
+                        Modelo.SubmitChanges();
+                        #endregion                       
+                    }
+                }
+            }
+            return tipoResultadoOperacion;
+        }
+
+
+        public int EnProcesoDeDevolucionAEmpresa(string conection, int IdLineaCelular)
+        {
+            SAS_LineasCelularesCoporativa LineaCelular = new SAS_LineasCelularesCoporativa();
+            int tipoResultadoOperacion = 0; // 0 es No se realizo , 1 se actualizo el estado
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                var resultado = Modelo.SAS_LineasCelularesCoporativas.Where(x => x.id == IdLineaCelular).ToList();
+                if (resultado != null)
+                {
+                    if (resultado.ToList().Count == 1)
+                    {
+                        #region Cambiar de estado() 
+                        LineaCelular = new SAS_LineasCelularesCoporativa();
+                        LineaCelular = resultado.Single();
+
+                        if (LineaCelular.estado == 1)
+                        {
+                            LineaCelular.EstadoId = "0D";
                             tipoResultadoOperacion = 1;
                         }
                         Modelo.SubmitChanges();

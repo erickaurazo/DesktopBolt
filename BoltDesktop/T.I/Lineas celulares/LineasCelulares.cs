@@ -22,6 +22,7 @@ using System.Reflection;
 using ComparativoHorasVisualSATNISIRA.Administracion_del_sistema;
 using Telerik.WinControls.Data;
 using System.Collections;
+using ComparativoHorasVisualSATNISIRA.T.I.Renovacion_de_celulares;
 
 namespace ComparativoHorasVisualSATNISIRA.T.I
 {
@@ -29,26 +30,27 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
     {
         string nombreformulario = "LINEAS CELULARES";
         private PrivilegesByUser privilege;
-        private string companyId;
-        private string conection;
+        private string companyId = "001";
+        private string conection = "SAS";
         private SAS_USUARIOS user2;
-        private string fileName;
+        private string fileName = string.Empty;
         private bool exportVisualSettings;
         private List<SAS_LineasCelularesCoporativasListadoAllResult> listado;
-        private SAS_LineasCelularesCoporativa item;
+        private SAS_LineasCelularesCoporativa iLineaCelular;
         private SAS_LineasCelularesCoporativasListadoAllResult itemSelecionado;
-        private SAS_LineasCelularesCoporativasController modelo;
-        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ListaDetalleRegistro = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
-        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ListaDetalleEliminar = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+        private SAS_LineasCelularesCoporativasController Modelo;
+        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ListaDetallePersonalAsginadoRegistro = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ListaDetallePersonalAsignadoEliminar = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
         private List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult> ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
-
-
         public List<int> valores_permitidos = new List<int>() { 8, 13, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 46 };
-        private string lineaCelular = string.Empty;
-        private string mensajeDeValidacion;
+        private string lineaCelularFiltro = string.Empty;
+        private string lineaCelularSeleccionada = string.Empty;
+        private string PersonalID = string.Empty;
+        private string mensajeDeValidacion = string.Empty;
         private string result;
         private int ClickFiltro = 0;
-        private int ClickResaltarResultados;
+        private int MotivoSolicitudRenovacionID = 0;
+        private int ClickResaltarResultados = 0;
 
         public int IdLineaCelular = 0;
         private List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult> ListadoSolicitudesPorLinea;
@@ -158,7 +160,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             user2 = _user2;
             companyId = _companyId;
             privilege = _privilege;
-            lineaCelular = _lineaCelular;
+            lineaCelularFiltro = _lineaCelular;
             Actualizar();
         }
 
@@ -308,8 +310,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 listado = new List<SAS_LineasCelularesCoporativasListadoAllResult>();
-                modelo = new SAS_LineasCelularesCoporativasController();
-                listado = modelo.ListOfCellLines("SAS");
+                Modelo = new SAS_LineasCelularesCoporativasController();
+                listado = Modelo.ListOfCellLines("SAS");
                 //if (lineaCelular != null)
                 //{
                 //    if (lineaCelular != string.Empty)
@@ -336,16 +338,18 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
 
-                if (lineaCelular != null)
+                if (lineaCelularFiltro != null)
                 {
-                    if (lineaCelular != string.Empty)
+                    if (lineaCelularFiltro != string.Empty)
                     {
 
                         FilterDescriptor filter1 = new FilterDescriptor();
                         filter1.Operator = FilterOperator.Contains;
-                        filter1.Value = lineaCelular;
+                        filter1.Value = lineaCelularFiltro;
                         filter1.IsFilterEditor = true;
-                        this.dgvRegistro.Columns["chlineaCelular"].FilterDescriptor = filter1;
+                        dgvRegistro.Columns["chlineaCelular"].FilterDescriptor = filter1;
+                        dgvRegistro.EnableFiltering = true;
+                        dgvRegistro.ShowHeaderCellButtons = true;
                         dgvRegistro.DataSource = listado.OrderBy(x => x.lineaCelular).ToList().ToDataTable<SAS_LineasCelularesCoporativasListadoAllResult>();
                         dgvRegistro.Refresh();
                     }
@@ -396,33 +400,34 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
             try
             {
-                item = new SAS_LineasCelularesCoporativa();
-                item.id = this.txtCodigo.Text != string.Empty ? Convert.ToInt32(this.txtCodigo.Text.Trim()) : Convert.ToInt32("0");
-                item.idOperador = this.txtClieProvCodigo.Text != string.Empty ? Convert.ToInt32(this.txtClieProvCodigo.Text.Trim()) : Convert.ToInt32("1");
-                item.operador = this.txtClieProv.Text != string.Empty ? Convert.ToString(this.txtClieProv.Text.Trim()) : string.Empty;
-                item.lineaCelular = this.txtLineaCelular.Text != string.Empty ? Convert.ToString(this.txtLineaCelular.Text.Trim()) : string.Empty;
-                item.FechaDeAlta = this.txtFechaAlta.Text != string.Empty ? Convert.ToDateTime(this.txtFechaAlta.Text.Trim()) : (DateTime?)null;
-                item.estado = this.txtIdEstado.Text != string.Empty ? Convert.ToInt32(this.txtIdEstado.Text.Trim()) : Convert.ToInt32("0");
-                item.estadoDescripcion = this.txtEstado.Text != string.Empty ? Convert.ToString(this.txtEstado.Text.Trim()) : string.Empty;
-                item.idProducto = this.txtProductoCodigo.Text != string.Empty ? Convert.ToString(this.txtProductoCodigo.Text.Trim()) : string.Empty;
-                item.equipo = this.txtEquipo.Text != string.Empty ? Convert.ToString(this.txtEquipo.Text.Trim()) : string.Empty;
-                item.idPlanDeTelefoniaMovil = this.txtPlanId.Text != string.Empty ? Convert.ToInt32(this.txtPlanId.Text.Trim()) : (Int32?)null;
-                item.planDeTelefoniaMovil = this.txtPlan.Text != string.Empty ? Convert.ToString(this.txtPlan.Text.Trim()) : string.Empty;
-                item.valorPlan = this.txtValorPlan.Text != string.Empty ? Convert.ToDecimal(this.txtValorPlan.Text.Trim()) : (decimal?)null;
-                item.permanenciaFalta = this.txtDiasRestantesParaRenovacion.Text != string.Empty ? Convert.ToInt32(this.txtDiasRestantesParaRenovacion.Text.Trim()) : (Int32?)null;
-                item.penalidad = this.txtPenalidad.Text != string.Empty ? Convert.ToDecimal(this.txtPenalidad.Text.Trim()) : (decimal?)null;
-                item.idCodigoGeneral = this.txtIdCodigoGeneral.Text != string.Empty ? Convert.ToString(this.txtIdCodigoGeneral.Text.Trim()) : string.Empty;
-                item.idCCostoFijo = this.txtCCFijoCodigo.Text != string.Empty ? Convert.ToString(this.txtCCFijoCodigo.Text.Trim()) : string.Empty;
-                item.idCCostoVariable = this.txtCCVarCodigo.Text != string.Empty ? Convert.ToString(this.txtCCVarCodigo.Text.Trim()) : string.Empty;
-                item.glosa = this.txtGlosa.Text != string.Empty ? Convert.ToString(this.txtGlosa.Text.Trim()) : string.Empty;
-                item.codigoERP = this.txtERPCodigo.Text != string.Empty ? Convert.ToInt32(this.txtERPCodigo.Text.Trim()) : (int?)null;
+                iLineaCelular = new SAS_LineasCelularesCoporativa();
+                iLineaCelular.id = this.txtCodigo.Text != string.Empty ? Convert.ToInt32(this.txtCodigo.Text.Trim()) : Convert.ToInt32("0");
+                iLineaCelular.idOperador = this.txtClieProvCodigo.Text != string.Empty ? Convert.ToInt32(this.txtClieProvCodigo.Text.Trim()) : Convert.ToInt32("1");
+                iLineaCelular.operador = this.txtClieProv.Text != string.Empty ? Convert.ToString(this.txtClieProv.Text.Trim()) : string.Empty;
+                iLineaCelular.lineaCelular = this.txtLineaCelular.Text != string.Empty ? Convert.ToString(this.txtLineaCelular.Text.Trim()) : string.Empty;
+                iLineaCelular.FechaDeAlta = this.txtFechaAlta.Text != string.Empty ? Convert.ToDateTime(this.txtFechaAlta.Text.Trim()) : (DateTime?)null;
+                iLineaCelular.EstadoId = this.txtIdEstado.Text != string.Empty ? Convert.ToString(this.txtIdEstado.Text.Trim()) : Convert.ToString("AN");
+                iLineaCelular.estado = 1;
+                iLineaCelular.estadoDescripcion = this.txtEstado.Text != string.Empty ? Convert.ToString(this.txtEstado.Text.Trim()) : string.Empty;
+                iLineaCelular.idProducto = this.txtProductoCodigo.Text != string.Empty ? Convert.ToString(this.txtProductoCodigo.Text.Trim()) : string.Empty;
+                iLineaCelular.equipo = this.txtEquipo.Text != string.Empty ? Convert.ToString(this.txtEquipo.Text.Trim()) : string.Empty;
+                iLineaCelular.idPlanDeTelefoniaMovil = this.txtPlanId.Text != string.Empty ? Convert.ToInt32(this.txtPlanId.Text.Trim()) : (Int32?)null;
+                iLineaCelular.planDeTelefoniaMovil = this.txtPlan.Text != string.Empty ? Convert.ToString(this.txtPlan.Text.Trim()) : string.Empty;
+                iLineaCelular.valorPlan = this.txtValorPlan.Text != string.Empty ? Convert.ToDecimal(this.txtValorPlan.Text.Trim()) : (decimal?)null;
+                iLineaCelular.permanenciaFalta = this.txtDiasRestantesParaRenovacion.Text != string.Empty ? Convert.ToInt32(this.txtDiasRestantesParaRenovacion.Text.Trim()) : (Int32?)null;
+                iLineaCelular.penalidad = this.txtPenalidad.Text != string.Empty ? Convert.ToDecimal(this.txtPenalidad.Text.Trim()) : (decimal?)null;
+                iLineaCelular.idCodigoGeneral = this.txtIdCodigoGeneral.Text != string.Empty ? Convert.ToString(this.txtIdCodigoGeneral.Text.Trim()) : string.Empty;
+                iLineaCelular.idCCostoFijo = this.txtCCFijoCodigo.Text != string.Empty ? Convert.ToString(this.txtCCFijoCodigo.Text.Trim()) : string.Empty;
+                iLineaCelular.idCCostoVariable = this.txtCCVarCodigo.Text != string.Empty ? Convert.ToString(this.txtCCVarCodigo.Text.Trim()) : string.Empty;
+                iLineaCelular.glosa = this.txtGlosa.Text != string.Empty ? Convert.ToString(this.txtGlosa.Text.Trim()) : string.Empty;
+                iLineaCelular.codigoERP = this.txtERPCodigo.Text != string.Empty ? Convert.ToInt32(this.txtERPCodigo.Text.Trim()) : (int?)null;
             }
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
 
             }
-            return item;
+            return iLineaCelular;
         }
 
         private void ObtenerObjetoEliminar()
@@ -430,8 +435,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
             try
             {
-                item = new SAS_LineasCelularesCoporativa();
-                item.id = this.txtCodigo.Text != string.Empty ? Convert.ToInt32(this.txtCodigo.Text.Trim()) : Convert.ToInt32("0");
+                iLineaCelular = new SAS_LineasCelularesCoporativa();
+                iLineaCelular.id = this.txtCodigo.Text != string.Empty ? Convert.ToInt32(this.txtCodigo.Text.Trim()) : Convert.ToInt32("0");
             }
             catch (Exception ex)
             {
@@ -446,11 +451,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 ObtenerObjetoCabecera();
-                if (item.lineaCelular != string.Empty)
+                if (iLineaCelular.lineaCelular != string.Empty)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.ChangeState("SAS", item);
+                    resultado = Modelo.ChangeState("SAS", iLineaCelular);
                     if (resultado == 2)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de anulación");
@@ -498,11 +503,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         try
                         {
                             ObtenerObjetoEliminar();
-                            if (item.lineaCelular != string.Empty)
+                            if (iLineaCelular.lineaCelular != string.Empty)
                             {
-                                modelo = new SAS_LineasCelularesCoporativasController();
+                                Modelo = new SAS_LineasCelularesCoporativasController();
                                 int resultado = 0;
-                                resultado = modelo.Remove("SAS", item);
+                                resultado = Modelo.Remove("SAS", iLineaCelular);
                                 if (resultado == 4)
                                 {
                                     MessageBox.Show("Se cambio ha eliminado correctamente", "Confirmación de Eliminación del registro");
@@ -616,13 +621,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
 
 
-                item = new SAS_LineasCelularesCoporativa();
-                item = ObtenerObjetoCabecera();
-                ListaDetalleRegistro = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
-                ListaDetalleRegistro = ObtenerObjetoDetalle();
+                iLineaCelular = new SAS_LineasCelularesCoporativa();
+                iLineaCelular = ObtenerObjetoCabecera();
+                ListaDetallePersonalAsginadoRegistro = new List<SAS_LineasCelularesCoporativasPersonalAsignado>();
+                ListaDetallePersonalAsginadoRegistro = ObtenerListadoDetalle();
 
-                modelo = new SAS_LineasCelularesCoporativasController();
-                int resultado = modelo.ToRegister("SAS", item, ListaDetalleEliminar, ListaDetalleRegistro);
+                Modelo = new SAS_LineasCelularesCoporativasController();
+                int resultado = Modelo.ToRegister("SAS", iLineaCelular, ListaDetallePersonalAsignadoEliminar, ListaDetallePersonalAsginadoRegistro);
                 btnGrabar.Enabled = !false;
                 btnCancelar.Enabled = !false;
                 if (resultado == 0)
@@ -649,7 +654,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
-        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ObtenerObjetoDetalle()
+        private List<SAS_LineasCelularesCoporativasPersonalAsignado> ObtenerListadoDetalle()
         {
 
             #region Obtener Colaboradores()
@@ -773,15 +778,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                item = new SAS_LineasCelularesCoporativa();
-                item.id = 0;
-                item.lineaCelular = string.Empty;
-                item.estado = 0;
+                iLineaCelular = new SAS_LineasCelularesCoporativa();
+                iLineaCelular.id = 0;
+                iLineaCelular.lineaCelular = string.Empty;
+                iLineaCelular.estado = 0;
 
                 itemSelecionado = new SAS_LineasCelularesCoporativasListadoAllResult();
-                item.id = 0;
-                item.lineaCelular = string.Empty;
-                item.estado = 0;
+                iLineaCelular.id = 0;
+                iLineaCelular.lineaCelular = string.Empty;
+                iLineaCelular.estado = 0;
 
                 txtCodigo.Text = string.Empty;
                 txtEstado.Text = "ACTIVO";
@@ -824,6 +829,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             IdLineaCelular = 0;
             ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
+            lineaCelularSeleccionada = string.Empty;
             try
             {
                 Limpiar();
@@ -840,6 +846,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                             //if (dgvRegistro.CurrentRow.Cells["chLineaCelular"].Value.ToString() != string.Empty)
                             //{
                             string codigo = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? (dgvRegistro.CurrentRow.Cells["chId"].Value.ToString()) : "0");
+                            lineaCelularSeleccionada = (dgvRegistro.CurrentRow.Cells["chlineaCelular"].Value != null ? (dgvRegistro.CurrentRow.Cells["chlineaCelular"].Value.ToString()) : "XXXXXXX");
                             IdLineaCelular = (dgvRegistro.CurrentRow.Cells["chId"].Value != null ? Convert.ToInt32(dgvRegistro.CurrentRow.Cells["chId"].Value.ToString()) : 0);
                             int codigoNumerico = Convert.ToInt32(codigo);
                             var resultado = listado.Where(x => x.id == codigoNumerico).ToList();
@@ -848,15 +855,19 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 itemSelecionado = resultado.ElementAt(0);
                                 itemSelecionado.id = codigoNumerico;
                                 AsignarObjetoEnFormularioDeEdicion(itemSelecionado);
-                                modelo = new SAS_LineasCelularesCoporativasController();
+
+                                PersonalID = itemSelecionado.idCodigoGeneral != null ? itemSelecionado.idCodigoGeneral.Trim() : string.Empty;
+                                MotivoSolicitudRenovacionID = 1;
+                                //lineaCelularSeleccionada = itemSeleccionado.numeroCelular != null ? itemSeleccionado.numeroCelular.Trim() : "XXXXXXX";
+                                Modelo = new SAS_LineasCelularesCoporativasController();
                                 ListadoSolicitudesPorLinea = new List<SAS_SolicitudesDeRenovacionTelefoniaCelularByCellPhoneNumberResult>();
                                 ListadoColaboradoresAsignados = new List<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>();
-                                ListadoColaboradoresAsignados = modelo.ObtejerListadoDeLineasCelularesCoporativasPersonalByLineaID(conection != null ? conection : "SAS", IdLineaCelular);
+                                ListadoColaboradoresAsignados = Modelo.ObtejerListadoDeLineasCelularesCoporativasPersonalByLineaID(conection != null ? conection : "SAS", IdLineaCelular);
                                 if (ListadoColaboradoresAsignados != null && ListadoColaboradoresAsignados.ToList().Count >= 1)
                                 {
                                     dgvDetalleAsignacionesAPersonal.CargarDatos(ListadoColaboradoresAsignados.ToDataTable<SAS_LineasCelularesCoporativasPersonalByLineaIDResult>());
                                     dgvDetalleAsignacionesAPersonal.Refresh();
-                                    ListadoSolicitudesPorLinea = modelo.ListadoDeSolicitudesPorLineaCelular(conection, itemSelecionado.lineaCelular.Trim()).ToList();
+                                    ListadoSolicitudesPorLinea = Modelo.ListadoDeSolicitudesPorLineaCelular(conection, itemSelecionado.lineaCelular.Trim()).ToList();
                                     dgvListadoSolicitudesRenovacion.DataSource = ListadoSolicitudesPorLinea;
 
 
@@ -897,16 +908,19 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 this.txtCodigo.Text = itemSelecionado.id != null ? itemSelecionado.id.ToString().Trim() : string.Empty;
                 this.txtLineaCelular.Text = itemSelecionado.lineaCelular != null ? itemSelecionado.lineaCelular.Trim() : string.Empty;
-                if (itemSelecionado.estado == 1)
-                {
-                    this.txtEstado.Text = "ACTIVO";
-                    this.txtIdEstado.Text = "1";
-                }
-                else
-                {
-                    this.txtEstado.Text = "ANULADO";
-                    this.txtIdEstado.Text = "0";
-                }
+                //if (itemSelecionado.estado == 1)
+                //{
+                //    this.txtEstado.Text = "ACTIVO";
+                //    this.txtIdEstado.Text = "1";
+                //}
+                //else
+                //{
+                //    this.txtEstado.Text = "ANULADO";
+                //    this.txtIdEstado.Text = "0";
+                //}
+                this.txtIdEstado.Text = itemSelecionado.EstadoId != null ? itemSelecionado.EstadoId.ToString().Trim() : string.Empty;
+                this.txtEstado.Text = itemSelecionado.EstadoLinea != null ? itemSelecionado.EstadoLinea.ToString().Trim() : string.Empty;
+
                 txtClieProvCodigo.Text = itemSelecionado.idOperador != null ? itemSelecionado.idOperador.Value.ToString().Trim() : string.Empty;
                 txtClieProv.Text = itemSelecionado.operador != null ? itemSelecionado.operador.ToString().Trim() : string.Empty;
                 txtCCVarCodigo.Text = itemSelecionado.idCCostoVariable != null ? itemSelecionado.idCCostoVariable.ToString().Trim() : string.Empty;
@@ -941,10 +955,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                item = new SAS_LineasCelularesCoporativa();
-                item.id = 0;
-                item.lineaCelular = string.Empty;
-                item.estado = 0;
+                iLineaCelular = new SAS_LineasCelularesCoporativa();
+                iLineaCelular.id = 0;
+                iLineaCelular.lineaCelular = string.Empty;
+                iLineaCelular.estado = 0;
 
 
                 Limpiar();
@@ -1129,9 +1143,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.ActivarLinea("SAS", IdLineaCelular);
+                    resultado = Modelo.ActivarLinea("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Activacion de Línea");
@@ -1169,9 +1183,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.SuspenderLinea("SAS", IdLineaCelular);
+                    resultado = Modelo.SuspenderLinea("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Suspención de Línea celular");
@@ -1208,9 +1222,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.AveriarLinea("SAS", IdLineaCelular);
+                    resultado = Modelo.AveriarLinea("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Notificación de suspención de Línea celular");
@@ -1248,9 +1262,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.BajarLinea("SAS", IdLineaCelular);
+                    resultado = Modelo.BajarLinea("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
@@ -1288,9 +1302,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.EnProcesoDeSuspencion("SAS", IdLineaCelular);
+                    resultado = Modelo.EnProcesoDeSuspencion("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación proceso de suspención de Línea celular");
@@ -1328,9 +1342,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.EnProcesoDeActivacion("SAS", IdLineaCelular);
+                    resultado = Modelo.EnProcesoDeActivacion("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Activación de Línea celular");
@@ -1498,9 +1512,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.EnProcesoDeBaja("SAS", IdLineaCelular);
+                    resultado = Modelo.EnProcesoDeBaja("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación proceso de suspención de Línea celular");
@@ -1539,9 +1553,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.EnProcesoDeCesion("SAS", IdLineaCelular);
+                    resultado = Modelo.EnProcesoDeCesion("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación proceso de suspención de Línea celular");
@@ -1580,9 +1594,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.CesionDeTitularidad("SAS", IdLineaCelular);
+                    resultado = Modelo.CesionDeTitularidad("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación proceso de suspención de Línea celular");
@@ -1612,7 +1626,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void dgvDetalleAsignacionesAPersonal_KeyUp(object sender, KeyEventArgs e)
         {
 
-            modelo = new SAS_LineasCelularesCoporativasController();
+            Modelo = new SAS_LineasCelularesCoporativasController();
             if (((DataGridView)sender).RowCount > 0)
             {
                 #region Colaborador() 
@@ -1621,7 +1635,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     if (e.KeyCode == Keys.F3)
                     {
                         frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
-                        search.ListaGeneralResultado = modelo.ObtenerListadoDeColaboradores(conection);
+                        search.ListaGeneralResultado = Modelo.ObtenerListadoDeColaboradores(conection);
                         search.Text = "Buscar colaboradores y/ personal asignado";
                         search.txtTextoFiltro.Text = "";
                         if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1734,7 +1748,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         {
                             if (dispositivoCodigo != 0)
                             {
-                                ListaDetalleEliminar.Add(new SAS_LineasCelularesCoporativasPersonalAsignado
+                                ListaDetallePersonalAsignadoEliminar.Add(new SAS_LineasCelularesCoporativasPersonalAsignado
                                 {
                                     LineaCelularPersonalID = dispositivoCodigo,
                                 });
@@ -1765,9 +1779,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.PorValidarAsignacion("SAS", IdLineaCelular);
+                    resultado = Modelo.PorValidarAsignacion("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
@@ -1805,9 +1819,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (IdLineaCelular > 0)
                 {
-                    modelo = new SAS_LineasCelularesCoporativasController();
+                    Modelo = new SAS_LineasCelularesCoporativasController();
                     int resultado = 0;
-                    resultado = modelo.EnProcesoDeReasignacion("SAS", IdLineaCelular);
+                    resultado = Modelo.EnProcesoDeReasignacion("SAS", IdLineaCelular);
                     if (resultado == 1)
                     {
                         MessageBox.Show("Se cambio el estado correctamente", "Confirmación de Baja de Línea celular");
@@ -2278,5 +2292,79 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
 
         }
+
+        private void btnEnProcesoDeDevolucionAEmpresa_Click(object sender, EventArgs e)
+        {
+            EnProcesoDeDevolucionAEmpresa();
+        }
+
+        private void btnVerTodasLasSolicitudesDelColaborador_Click(object sender, EventArgs e)
+        {
+            AbrirReporteDeRenovacionPorColaboradorYMotivo(0);
+        }
+
+        private void EnProcesoDeDevolucionAEmpresa()
+        {
+            try
+            {
+                if (IdLineaCelular > 0)
+                {
+                    Modelo = new SAS_LineasCelularesCoporativasController();
+                    int resultado = 0;
+                    resultado = Modelo.EnProcesoDeDevolucionAEmpresa(conection, IdLineaCelular);
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Se cambio el estado correctamente", "Confirmación de proceso de Devolucion de equipo y/o línea a Empresa");
+                        Actualizar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("o se cambio el estado correctamente", "Confirmación de proceso de Devolucion de equipo y/o línea a Empresa");
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Debe incluir una descripción", "Advertencia del sistema");
+                    this.txtLineaCelular.Focus();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
+                return;
+            }
+        }
+
+        private void btnVerTodasLasSolicitudesDeLaLineaCelular_Click(object sender, EventArgs e)
+        {
+            AbrirReporteDeRenovacionPorLuniaCelular();
+        }
+
+        private void btnVerSolicitudesDeRenovacionPorColaborador_Click(object sender, EventArgs e)
+        {
+            AbrirReporteDeRenovacionPorColaboradorYMotivo(1);
+        }
+
+        public void AbrirReporteDeRenovacionPorColaboradorYMotivo(int _MotivoSolicitudRenovacionID)
+        {
+            ReportesListadoSolicitudesRenovacionCelular ofrm = new ReportesListadoSolicitudesRenovacionCelular(conection, user2, companyId, privilege, PersonalID, _MotivoSolicitudRenovacionID);
+            ofrm.MdiParent = LineasCelulares.ActiveForm;
+            ofrm.WindowState = FormWindowState.Maximized;
+            ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            ofrm.Show();
+        }
+
+        public void AbrirReporteDeRenovacionPorLuniaCelular()
+        {
+            ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular ofrm = new ReporteListadoSolicitudesRenovacionCelularPorNumeroCelular(conection, user2, companyId, privilege, lineaCelularSeleccionada);
+            ofrm.MdiParent = LineasCelulares.ActiveForm;
+            ofrm.WindowState = FormWindowState.Maximized;
+            ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            ofrm.Show();
+        }
+
     }
 }

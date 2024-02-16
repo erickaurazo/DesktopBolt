@@ -58,6 +58,7 @@
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.btnActualizarLista = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnFiltro = new Telerik.WinControls.UI.CommandBarButton();
             this.btnEditar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnAnular = new Telerik.WinControls.UI.CommandBarButton();
             this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
@@ -78,6 +79,14 @@
             this.tabControl = new Telerik.WinControls.UI.RadPageView();
             this.tabDetalles = new Telerik.WinControls.UI.RadPageViewPage();
             this.dgvDetail = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
+            this.chid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chidTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chlink = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chestadoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChangeStateDetail = new Telerik.WinControls.UI.RadButton();
             this.btnDeleteItem = new Telerik.WinControls.UI.RadButton();
             this.btnAddItem = new Telerik.WinControls.UI.RadButton();
@@ -116,14 +125,10 @@
             this.btnVerResumen = new Telerik.WinControls.UI.RadButton();
             this.chkVerAgrupados = new System.Windows.Forms.CheckBox();
             this.dgvListado = new Telerik.WinControls.UI.RadGridView();
-            this.chid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chidTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chlink = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chestadoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFullName = new System.Windows.Forms.ToolStripStatusLabel();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbEdit)).BeginInit();
@@ -165,6 +170,10 @@
             // stsBarraEstado
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUserNames,
+            this.lblFullName,
+            this.lblUser,
+            this.lblCodeUser,
             this.progressBar1});
             this.stsBarraEstado.Location = new System.Drawing.Point(0, 717);
             this.stsBarraEstado.Name = "stsBarraEstado";
@@ -231,6 +240,7 @@
             this.commandBarStripElement3.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.btnNuevo,
             this.btnActualizarLista,
+            this.btnFiltro,
             this.btnEditar,
             this.btnAnular,
             this.btnEliminar,
@@ -277,6 +287,19 @@
             this.btnActualizarLista.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.ToolTipText = "Actualizar Lista";
             this.btnActualizarLista.Click += new System.EventHandler(this.btnActualizarLista_Click);
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.AccessibleDescription = "Filtro";
+            this.btnFiltro.AccessibleName = "Filtro";
+            this.btnFiltro.AutoSize = false;
+            this.btnFiltro.Bounds = new System.Drawing.Rectangle(0, 0, 55, 35);
+            this.btnFiltro.DisplayName = "Filtro";
+            this.btnFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.Image")));
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Tag = "Filtro";
+            this.btnFiltro.Text = "";
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
             // btnEditar
             // 
@@ -626,6 +649,72 @@
             this.dgvDetail.Size = new System.Drawing.Size(617, 246);
             this.dgvDetail.TabIndex = 268;
             this.dgvDetail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetail_KeyUp);
+            // 
+            // chid
+            // 
+            this.chid.DataPropertyName = "id";
+            this.chid.HeaderText = "Id";
+            this.chid.Name = "chid";
+            this.chid.ReadOnly = true;
+            this.chid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chid.Visible = false;
+            this.chid.Width = 35;
+            // 
+            // chitem
+            // 
+            this.chitem.DataPropertyName = "Item";
+            this.chitem.HeaderText = "Item";
+            this.chitem.Name = "chitem";
+            this.chitem.ReadOnly = true;
+            this.chitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chitem.Visible = false;
+            this.chitem.Width = 35;
+            // 
+            // chidTipo
+            // 
+            this.chidTipo.DataPropertyName = "idTipo";
+            this.chidTipo.HeaderText = "idTipo";
+            this.chidTipo.Name = "chidTipo";
+            this.chidTipo.ReadOnly = true;
+            this.chidTipo.Visible = false;
+            // 
+            // chtipo
+            // 
+            this.chtipo.DataPropertyName = "tipo";
+            this.chtipo.HeaderText = "Tipo";
+            this.chtipo.Name = "chtipo";
+            this.chtipo.ReadOnly = true;
+            this.chtipo.Width = 160;
+            // 
+            // chlink
+            // 
+            this.chlink.DataPropertyName = "link";
+            this.chlink.HeaderText = "Link";
+            this.chlink.Name = "chlink";
+            // 
+            // chdescripcion
+            // 
+            this.chdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chdescripcion.DataPropertyName = "descripcion";
+            this.chdescripcion.HeaderText = "Glosa";
+            this.chdescripcion.Name = "chdescripcion";
+            // 
+            // chestado
+            // 
+            this.chestado.DataPropertyName = "estado";
+            this.chestado.HeaderText = "Estado";
+            this.chestado.Name = "chestado";
+            this.chestado.ReadOnly = true;
+            this.chestado.Width = 45;
+            // 
+            // chestadoDescripcion
+            // 
+            this.chestadoDescripcion.DataPropertyName = "estadoDescripcion";
+            this.chestadoDescripcion.HeaderText = "Estado";
+            this.chestadoDescripcion.Name = "chestadoDescripcion";
+            this.chestadoDescripcion.ReadOnly = true;
+            this.chestadoDescripcion.Visible = false;
+            this.chestadoDescripcion.Width = 55;
             // 
             // btnChangeStateDetail
             // 
@@ -1167,7 +1256,6 @@
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
-            this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.MultiSelect = true;
             this.dgvListado.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvListado.MasterTemplate.ShowGroupedColumns = true;
@@ -1179,71 +1267,29 @@
             this.dgvListado.ThemeName = "VisualStudio2012Light";
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
             // 
-            // chid
+            // lblUserNames
             // 
-            this.chid.DataPropertyName = "id";
-            this.chid.HeaderText = "Id";
-            this.chid.Name = "chid";
-            this.chid.ReadOnly = true;
-            this.chid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chid.Visible = false;
-            this.chid.Width = 35;
+            this.lblUserNames.Name = "lblUserNames";
+            this.lblUserNames.Size = new System.Drawing.Size(33, 17);
+            this.lblUserNames.Text = "User:";
             // 
-            // chitem
+            // lblCodeUser
             // 
-            this.chitem.DataPropertyName = "Item";
-            this.chitem.HeaderText = "Item";
-            this.chitem.Name = "chitem";
-            this.chitem.ReadOnly = true;
-            this.chitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chitem.Visible = false;
-            this.chitem.Width = 35;
+            this.lblCodeUser.Name = "lblCodeUser";
+            this.lblCodeUser.Size = new System.Drawing.Size(59, 17);
+            this.lblCodeUser.Text = "username";
             // 
-            // chidTipo
+            // lblUser
             // 
-            this.chidTipo.DataPropertyName = "idTipo";
-            this.chidTipo.HeaderText = "idTipo";
-            this.chidTipo.Name = "chidTipo";
-            this.chidTipo.ReadOnly = true;
-            this.chidTipo.Visible = false;
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(65, 17);
+            this.lblUser.Text = "Nombres : ";
             // 
-            // chtipo
+            // lblFullName
             // 
-            this.chtipo.DataPropertyName = "tipo";
-            this.chtipo.HeaderText = "Tipo";
-            this.chtipo.Name = "chtipo";
-            this.chtipo.ReadOnly = true;
-            this.chtipo.Width = 160;
-            // 
-            // chlink
-            // 
-            this.chlink.DataPropertyName = "link";
-            this.chlink.HeaderText = "Link";
-            this.chlink.Name = "chlink";
-            // 
-            // chdescripcion
-            // 
-            this.chdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chdescripcion.DataPropertyName = "descripcion";
-            this.chdescripcion.HeaderText = "Glosa";
-            this.chdescripcion.Name = "chdescripcion";
-            // 
-            // chestado
-            // 
-            this.chestado.DataPropertyName = "estado";
-            this.chestado.HeaderText = "Estado";
-            this.chestado.Name = "chestado";
-            this.chestado.ReadOnly = true;
-            this.chestado.Width = 45;
-            // 
-            // chestadoDescripcion
-            // 
-            this.chestadoDescripcion.DataPropertyName = "estadoDescripcion";
-            this.chestadoDescripcion.HeaderText = "Estado";
-            this.chestadoDescripcion.Name = "chestadoDescripcion";
-            this.chestadoDescripcion.ReadOnly = true;
-            this.chestadoDescripcion.Visible = false;
-            this.chestadoDescripcion.Width = 55;
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(61, 17);
+            this.lblFullName.Text = "userName";
             // 
             // CuentaDeDominio
             // 
@@ -1380,5 +1426,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chdescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn chestado;
         private System.Windows.Forms.DataGridViewTextBoxColumn chestadoDescripcion;
+        private Telerik.WinControls.UI.CommandBarButton btnFiltro;
+        private System.Windows.Forms.ToolStripStatusLabel lblUserNames;
+        private System.Windows.Forms.ToolStripStatusLabel lblFullName;
+        private System.Windows.Forms.ToolStripStatusLabel lblUser;
+        private System.Windows.Forms.ToolStripStatusLabel lblCodeUser;
     }
 }

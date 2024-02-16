@@ -32,9 +32,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
     {
 
         private PrivilegesByUser privilege;
-        private string _companyId;
-        private string _conection;
-        private SAS_USUARIOS _user2;
+        private string companyId;
+        private string conection;
+        private SAS_USUARIOS user2;
         private GlobalesHelper globalHelper;
         private string result;
         private string fileName = "DEFAULT";
@@ -60,25 +60,28 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            _conection = "SAS";
-            _user2 = new SAS_USUARIOS();
-            _user2.AREA = "TI";
-            _user2.email = "EAURAZO@SATURNO.NET.PE";
-            _user2.EmpresaID = "001";
-            _user2.IdCodigoGeneral = "100369";
-            _user2.idestado = "PE";
-            _user2.IdUsuario = "EAURAZO";
-            _user2.NombreCompleto = "ERICK AURAZO CARHUATANTA";
-            _user2.SUCURSAL = "001";
+            conection = "SAS";
+            user2 = new SAS_USUARIOS();
+            user2.AREA = "TI";
+            user2.email = "EAURAZO@SATURNO.NET.PE";
+            user2.EmpresaID = "001";
+            user2.IdCodigoGeneral = "100369";
+            user2.idestado = "PE";
+            user2.IdUsuario = "EAURAZO";
+            user2.NombreCompleto = "ERICK AURAZO CARHUATANTA";
+            user2.SUCURSAL = "001";
 
-            _companyId = "001";
+            companyId = "001";
             this.privilege = new PrivilegesByUser();
+
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
             CargarMeses();
             ObtenerFechasIniciales();
             Actualizar();
         }
 
-        public SolicitudDeRenovaciónDeEquipoCelular(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser privilege)
+        public SolicitudDeRenovaciónDeEquipoCelular(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
             Inicio();
@@ -86,10 +89,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-            this._conection = _conection;
-            this._user2 = _user2;
-            this._companyId = _companyId;
-            this.privilege = privilege;
+            conection = _conection;
+            user2 = _user2;
+            companyId = _companyId;
+            privilege = _privilege;
+
+            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
             CargarMeses();
             ObtenerFechasIniciales();
             Actualizar();
@@ -388,15 +394,16 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                             btnDesactivarSolicitud.Enabled = true;
                                             btnAnular.Enabled = false;
                                             btnEliminarRegistro.Enabled = false;
+                                            btnRechazarSolicitud.Enabled = true;
 
 
-
-                                            if (_user2.IdUsuario == "EAURAZO")
+                                            if (user2.IdUsuario == "EAURAZO")
                                             {
                                                 btnLiberarSolicitud.Enabled = true;
 
                                                 btnAtendidoParcial.Enabled = true;
                                                 btnAtendidoTotal.Enabled = true;
+                                                btnRechazarSolicitud.Enabled = true;
 
                                             }
                                         }
@@ -416,12 +423,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                             btnAprobarSolicitud.Enabled = true;
                                             btnRechazarSolicitud.Enabled = true;
                                             btnLiberarSolicitud.Enabled = false;
-                                            btnRetornarEstadoASolicitud.Enabled = false;
-
+                                            btnRetornarEstadoASolicitud.Enabled = false;                                            
                                             btnAtendidoParcial.Enabled = true;
                                             btnAtendidoTotal.Enabled = true;
 
-                                            if (_user2.IdUsuario == "EAURAZO")
+                                            if (user2.IdUsuario == "EAURAZO")
                                             {
                                                 if (itemSeleccionado.idReferenciaBaja != (int?)null || itemSeleccionado.idReferenciaAlta != (int?)null)
                                                 {
@@ -429,6 +435,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                                                     btnAtendidoParcial.Enabled = true;
                                                     btnAtendidoTotal.Enabled = true;
+                                                    btnRechazarSolicitud.Enabled = true;
                                                 }
                                             }
                                         }
@@ -482,6 +489,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     btnVistaPreviaSolicitudAltaAnexo.Enabled = false;
                                     btnAtendidoParcial.Enabled = false;
                                     btnAtendidoTotal.Enabled = false;
+                                    btnRechazarSolicitud.Enabled = !true;
                                 }
                             }
                         }
@@ -513,7 +521,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
             solicitud = new SAS_SolicitudDeRenovacionTelefoniaCelular();
             solicitud.id = 0;
-            SolicitudDeRenovaciónDeEquipoCelularDetalle ofrm = new SolicitudDeRenovaciónDeEquipoCelularDetalle(_conection, _user2, _companyId, privilege, solicitud);
+            SolicitudDeRenovaciónDeEquipoCelularDetalle ofrm = new SolicitudDeRenovaciónDeEquipoCelularDetalle(conection, user2, companyId, privilege, solicitud);
             ofrm.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
             ofrm.WindowState = FormWindowState.Maximized;
             ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -542,7 +550,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         solicitud = new SAS_SolicitudDeRenovacionTelefoniaCelular();
                         solicitud.id = itemSeleccionado.id;
-                        SolicitudDeRenovaciónDeEquipoCelularDetalle ofrm = new SolicitudDeRenovaciónDeEquipoCelularDetalle(_conection, _user2, _companyId, privilege, solicitud);
+                        SolicitudDeRenovaciónDeEquipoCelularDetalle ofrm = new SolicitudDeRenovaciónDeEquipoCelularDetalle(conection, user2, companyId, privilege, solicitud);
                         ofrm.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
                         ofrm.WindowState = FormWindowState.Maximized;
                         ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -731,7 +739,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void AssociateWorkerToWorkArea()
         {
             #region Asociar Trabajador A Area de Trabajo() 
-            ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(_conection, _user2, _companyId, privilege, itemSeleccionado.idCodigoGeneral);
+            ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(conection, user2, companyId, privilege, itemSeleccionado.idCodigoGeneral);
             ofrm.Show();
             #endregion
         }
@@ -747,7 +755,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
 
             #region Ir a catálogo de dispositivos            
-            DispositivosEdicion oFron = new DispositivosEdicion("SAS", codigoDeDispositivo, _user2, _companyId, privilege);
+            DispositivosEdicion oFron = new DispositivosEdicion("SAS", codigoDeDispositivo, user2, companyId, privilege);
             //oFron.Show(); Actualizado el 24.04.2022, para que no salga del formulario
             oFron.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
             oFron.WindowState = FormWindowState.Maximized;
@@ -765,7 +773,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void GoToCellLineCatalog()
         {
             #region Ir a catalogo de línea celulares() 
-            LineasCelulares ofrm = new LineasCelulares(_conection, _user2, _companyId, privilege, itemSeleccionado.numeroCelular);
+            LineasCelulares ofrm = new LineasCelulares(conection, user2, companyId, privilege, itemSeleccionado.numeroCelular);
             ofrm.Show();
             #endregion
         }
@@ -779,7 +787,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private void GoToReferenceRequest(int codigoReferencia)
         {
             #region Ir a solicitud de referencia(EQuipamiento tecnológico)           
-            SolicitudDeEquipamientoTecnologicoMantenimiento ofrm = new SolicitudDeEquipamientoTecnologicoMantenimiento(_conection, _user2, _companyId, privilege, codigoReferencia);
+            SolicitudDeEquipamientoTecnologicoMantenimiento ofrm = new SolicitudDeEquipamientoTecnologicoMantenimiento(conection, user2, companyId, privilege, codigoReferencia);
             ofrm.Show();
             #endregion
         }
@@ -809,7 +817,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     if (itemSeleccionado.idCodigoGeneral.ToString().Trim() != string.Empty)
                     {
                         string codigoColaboradorFiltrado = itemSeleccionado.idCodigoGeneral.ToString().Trim();
-                        ColaboradoresListado ofrm = new ColaboradoresListado(_conection, _user2, _companyId, privilege, codigoColaboradorFiltrado);
+                        ColaboradoresListado ofrm = new ColaboradoresListado(conection, user2, companyId, privilege, codigoColaboradorFiltrado);
                         ofrm.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
                         ofrm.WindowState = FormWindowState.Maximized;
                         ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -851,7 +859,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 int codigoDeDispositivo = itemSeleccionado.id;
                 Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
-                string resultadoAprobacion = Modelo.ApproveRequest("SAS", codigoDeDispositivo, _user2);
+                string resultadoAprobacion = Modelo.ApproveRequest("SAS", codigoDeDispositivo, user2);
                 MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
                 Actualizar();
             }
@@ -932,7 +940,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 int codigoDeDispositivo = itemSeleccionado.id;
                 Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
-                string resultadoAprobacion = Modelo.ReleaseRequest("SAS", codigoDeDispositivo, _user2);
+                string resultadoAprobacion = Modelo.ReleaseRequest("SAS", codigoDeDispositivo, user2);
                 MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
                 Actualizar();
             }
@@ -950,7 +958,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 int codigoDeDispositivo = itemSeleccionado.id;
                 Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
-                string resultadoAprobacion = Modelo.ReturnRequestStatus("SAS", codigoDeDispositivo, _user2);
+                string resultadoAprobacion = Modelo.ReturnRequestStatus("SAS", codigoDeDispositivo, user2);
                 MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
                 Actualizar();
             }
@@ -990,7 +998,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 if (itemSeleccionado.id != 0)
                 {
                     int codigoSelecionado = itemSeleccionado.id;
-                    AdjuntarArchivos ofrm = new AdjuntarArchivos(_conection, _user2, _companyId, privilege, codigoSelecionado.ToString(), "RenovacionDeEquiposCelulares");
+                    AdjuntarArchivos ofrm = new AdjuntarArchivos(conection, user2, companyId, privilege, codigoSelecionado.ToString(), "RenovacionDeEquiposCelulares");
                     ofrm.Show();
 
                 }
@@ -1019,7 +1027,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     {
                         solicitud = new SAS_SolicitudDeRenovacionTelefoniaCelular();
                         solicitud.id = itemSeleccionado.id;
-                        SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud ofrm = new SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud(_conection, _user2, _companyId, privilege, solicitud);
+                        SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud ofrm = new SolicitudDeRenovaciónDeEquipoCelularActualizarEstadoDeSolicitud(conection, user2, companyId, privilege, solicitud);
                         //ofrm.MdiParent = SolicitudDeRenovaciónDeEquipoCelular.ActiveForm;
                         ////ofrm.WindowState = FormWindowState.Maximized;
                         ////ofrm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1176,7 +1184,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 int codigoDeDispositivo = itemSeleccionado.id;
                 Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
-                string resultadoAprobacion = Modelo.CambiarAEstadoAtendidoTotal("SAS", codigoDeDispositivo, _user2);
+                string resultadoAprobacion = Modelo.CambiarAEstadoAtendidoTotal("SAS", codigoDeDispositivo, user2);
                 MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
                 Actualizar();
             }
@@ -1200,7 +1208,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 int codigoDeDispositivo = itemSeleccionado.id;
                 Modelo = new SAS_SolicitudDeRenovacionTelefoniaCelularController();
-                string resultadoAprobacion = Modelo.CambiarAEstadoAtendidoParcial("SAS", codigoDeDispositivo, _user2);
+                string resultadoAprobacion = Modelo.CambiarAEstadoAtendidoParcial("SAS", codigoDeDispositivo, user2);
                 MessageBox.Show(resultadoAprobacion, "CONFIRMACION DEL SISTEMA");
                 Actualizar();
             }
