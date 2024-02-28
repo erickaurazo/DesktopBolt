@@ -101,6 +101,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -196,14 +199,6 @@
             this.tabLog = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnExportarDetalleLog = new Telerik.WinControls.UI.RadButton();
             this.dgvDetalleLog = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
-            this.chid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chidTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chlink = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chestadoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChangeStateDetail = new Telerik.WinControls.UI.RadButton();
             this.btnAddItem = new Telerik.WinControls.UI.RadButton();
             this.btnDeleteItem = new Telerik.WinControls.UI.RadButton();
@@ -261,6 +256,20 @@
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.bgwCambioEstado = new System.ComponentModel.BackgroundWorker();
+            this.chid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chidTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chlink = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chestadoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chcreadoPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chFechaRegistro = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chHostname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chDesdeLog = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chHastaLog = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
@@ -911,7 +920,7 @@
             // 
             this.chPersonalID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.chPersonalID.DataPropertyName = "PersonalID";
-            this.chPersonalID.HeaderText = "PersonalID";
+            this.chPersonalID.HeaderText = "Personal Cod.";
             this.chPersonalID.Name = "chPersonalID";
             this.chPersonalID.ReadOnly = true;
             // 
@@ -1945,15 +1954,21 @@
             this.chlink,
             this.chdescripcion,
             this.chestado,
-            this.chestadoDescripcion});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleLog.DefaultCellStyle = dataGridViewCellStyle15;
+            this.chestadoDescripcion,
+            this.chcreadoPor,
+            this.chFechaRegistro,
+            this.chHostname,
+            this.chUserID,
+            this.chDesdeLog,
+            this.chHastaLog});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleLog.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvDetalleLog.GridColor = System.Drawing.SystemColors.Control;
             this.dgvDetalleLog.Location = new System.Drawing.Point(-5, 32);
             this.dgvDetalleLog.Name = "dgvDetalleLog";
@@ -1963,89 +1978,27 @@
             this.dgvDetalleLog.P_NombreColCorrelativa = null;
             this.dgvDetalleLog.P_NombreTabla = null;
             this.dgvDetalleLog.P_NumeroDigitos = 0;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDetalleLog.RowHeadersWidth = 10;
             this.dgvDetalleLog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalleLog.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleLog.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvDetalleLog.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDetalleLog.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDetalleLog.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvDetalleLog.Size = new System.Drawing.Size(554, 259);
             this.dgvDetalleLog.TabIndex = 268;
+            this.dgvDetalleLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleLog_CellContentClick);
             this.dgvDetalleLog.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDetail_KeyUp);
-            // 
-            // chid
-            // 
-            this.chid.DataPropertyName = "id";
-            this.chid.HeaderText = "Id";
-            this.chid.Name = "chid";
-            this.chid.ReadOnly = true;
-            this.chid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chid.Visible = false;
-            this.chid.Width = 35;
-            // 
-            // chitem
-            // 
-            this.chitem.DataPropertyName = "Item";
-            this.chitem.HeaderText = "Item";
-            this.chitem.Name = "chitem";
-            this.chitem.ReadOnly = true;
-            this.chitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chitem.Visible = false;
-            this.chitem.Width = 35;
-            // 
-            // chidTipo
-            // 
-            this.chidTipo.DataPropertyName = "idTipo";
-            this.chidTipo.HeaderText = "idTipo";
-            this.chidTipo.Name = "chidTipo";
-            this.chidTipo.ReadOnly = true;
-            this.chidTipo.Visible = false;
-            // 
-            // chtipo
-            // 
-            this.chtipo.DataPropertyName = "tipo";
-            this.chtipo.HeaderText = "Tipo";
-            this.chtipo.Name = "chtipo";
-            this.chtipo.ReadOnly = true;
-            // 
-            // chlink
-            // 
-            this.chlink.DataPropertyName = "link";
-            this.chlink.HeaderText = "Link";
-            this.chlink.Name = "chlink";
-            // 
-            // chdescripcion
-            // 
-            this.chdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chdescripcion.DataPropertyName = "descripcion";
-            this.chdescripcion.HeaderText = "Glosa";
-            this.chdescripcion.Name = "chdescripcion";
-            // 
-            // chestado
-            // 
-            this.chestado.DataPropertyName = "estado";
-            this.chestado.HeaderText = "Estado";
-            this.chestado.Name = "chestado";
-            this.chestado.ReadOnly = true;
-            this.chestado.Visible = false;
-            // 
-            // chestadoDescripcion
-            // 
-            this.chestadoDescripcion.DataPropertyName = "estadoDescripcion";
-            this.chestadoDescripcion.HeaderText = "Estado";
-            this.chestadoDescripcion.Name = "chestadoDescripcion";
-            this.chestadoDescripcion.ReadOnly = true;
             // 
             // btnChangeStateDetail
             // 
@@ -2680,7 +2633,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.btnMenu.Size = new System.Drawing.Size(1218, 62);
+            this.btnMenu.Size = new System.Drawing.Size(1218, 37);
             this.btnMenu.TabIndex = 208;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             this.btnMenu.Click += new System.EventHandler(this.btnEditar_Click);
@@ -2693,6 +2646,140 @@
             // 
             this.bgwCambioEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCambioEstado_DoWork);
             this.bgwCambioEstado.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCambioEstado_RunWorkerCompleted);
+            // 
+            // chid
+            // 
+            this.chid.DataPropertyName = "id";
+            this.chid.HeaderText = "Id";
+            this.chid.Name = "chid";
+            this.chid.ReadOnly = true;
+            this.chid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chid.Visible = false;
+            this.chid.Width = 35;
+            // 
+            // chitem
+            // 
+            this.chitem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chitem.DataPropertyName = "Item";
+            this.chitem.HeaderText = "Item";
+            this.chitem.Name = "chitem";
+            this.chitem.ReadOnly = true;
+            this.chitem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chitem.Visible = false;
+            // 
+            // chidTipo
+            // 
+            this.chidTipo.DataPropertyName = "idTipo";
+            this.chidTipo.HeaderText = "idTipo";
+            this.chidTipo.Name = "chidTipo";
+            this.chidTipo.ReadOnly = true;
+            this.chidTipo.Visible = false;
+            // 
+            // chtipo
+            // 
+            this.chtipo.DataPropertyName = "tipo";
+            this.chtipo.HeaderText = "Tipo";
+            this.chtipo.Name = "chtipo";
+            this.chtipo.ReadOnly = true;
+            // 
+            // chlink
+            // 
+            this.chlink.DataPropertyName = "link";
+            this.chlink.HeaderText = "Link";
+            this.chlink.Name = "chlink";
+            // 
+            // chdescripcion
+            // 
+            this.chdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chdescripcion.DataPropertyName = "descripcion";
+            this.chdescripcion.HeaderText = "Glosa";
+            this.chdescripcion.Name = "chdescripcion";
+            // 
+            // chestado
+            // 
+            this.chestado.DataPropertyName = "estado";
+            this.chestado.HeaderText = "Estado";
+            this.chestado.Name = "chestado";
+            this.chestado.ReadOnly = true;
+            this.chestado.Visible = false;
+            // 
+            // chestadoDescripcion
+            // 
+            this.chestadoDescripcion.DataPropertyName = "estadoDescripcion";
+            this.chestadoDescripcion.HeaderText = "Estado";
+            this.chestadoDescripcion.Name = "chestadoDescripcion";
+            this.chestadoDescripcion.ReadOnly = true;
+            // 
+            // chcreadoPor
+            // 
+            this.chcreadoPor.DataPropertyName = "creadoPor";
+            this.chcreadoPor.HeaderText = "Creado Por";
+            this.chcreadoPor.Name = "chcreadoPor";
+            this.chcreadoPor.Visible = false;
+            // 
+            // chFechaRegistro
+            // 
+            this.chFechaRegistro.DataPropertyName = "FechaRegistro";
+            dataGridViewCellStyle15.Format = "d";
+            this.chFechaRegistro.DefaultCellStyle = dataGridViewCellStyle15;
+            this.chFechaRegistro.HeaderText = "Fecha";
+            this.chFechaRegistro.Mask = "";
+            this.chFechaRegistro.MinimumWidth = 10;
+            this.chFechaRegistro.Name = "chFechaRegistro";
+            this.chFechaRegistro.P_EsEditable = false;
+            this.chFechaRegistro.P_EsModificable = false;
+            this.chFechaRegistro.P_EsPrimaryKey = false;
+            this.chFechaRegistro.P_ExigeInformacion = false;
+            this.chFechaRegistro.P_NombreColumna = null;
+            this.chFechaRegistro.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chFechaRegistro.ReadOnly = true;
+            this.chFechaRegistro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chFechaRegistro.ToolTipText = "Fecha de Registro";
+            this.chFechaRegistro.Width = 75;
+            // 
+            // chHostname
+            // 
+            this.chHostname.DataPropertyName = "Hostname";
+            this.chHostname.HeaderText = "Hostname";
+            this.chHostname.Name = "chHostname";
+            this.chHostname.Visible = false;
+            // 
+            // chUserID
+            // 
+            this.chUserID.DataPropertyName = "UserID";
+            this.chUserID.HeaderText = "UserID";
+            this.chUserID.Name = "chUserID";
+            this.chUserID.Visible = false;
+            // 
+            // chDesdeLog
+            // 
+            this.chDesdeLog.DataPropertyName = "Desde";
+            dataGridViewCellStyle16.Format = "d";
+            this.chDesdeLog.DefaultCellStyle = dataGridViewCellStyle16;
+            this.chDesdeLog.HeaderText = "Desde";
+            this.chDesdeLog.Mask = "";
+            this.chDesdeLog.Name = "chDesdeLog";
+            this.chDesdeLog.P_EsEditable = false;
+            this.chDesdeLog.P_EsModificable = false;
+            this.chDesdeLog.P_EsPrimaryKey = false;
+            this.chDesdeLog.P_ExigeInformacion = false;
+            this.chDesdeLog.P_NombreColumna = null;
+            this.chDesdeLog.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            // 
+            // chHastaLog
+            // 
+            this.chHastaLog.DataPropertyName = "Hasta";
+            dataGridViewCellStyle17.Format = "d";
+            this.chHastaLog.DefaultCellStyle = dataGridViewCellStyle17;
+            this.chHastaLog.HeaderText = "Hasta";
+            this.chHastaLog.Mask = "";
+            this.chHastaLog.Name = "chHastaLog";
+            this.chHastaLog.P_EsEditable = false;
+            this.chHastaLog.P_EsModificable = false;
+            this.chHastaLog.P_EsPrimaryKey = false;
+            this.chHastaLog.P_ExigeInformacion = false;
+            this.chHastaLog.P_NombreColumna = null;
+            this.chHastaLog.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             // 
             // CuentaDeCorreos
             // 
@@ -2903,6 +2990,21 @@
         private Telerik.WinControls.UI.CommandBarButton btnResaltarResultados;
         private Telerik.WinControls.UI.CommandBarButton btnElegirColumna;
         private Telerik.WinControls.UI.RadButton btnExportarDetalleLog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chCuentaCorreoIDHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chCuentaCorreoTipoLicenciaIdHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chLicenciaTipoIdHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chLicenciaHistoricoPlan;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chDesdeHistoricoPlan;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chHastaHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chNotaHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chReferenciaIDHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chReferenciaSolicitudIDHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chTablaReferenciaHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chTablaSolicitudHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chUserIDHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chHostNameHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chFechaRegistroHistoricoPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn chCuentaCorreoAsignacionID;
         private System.Windows.Forms.DataGridViewTextBoxColumn chCuentaCorreoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn chPersonalID;
@@ -2921,20 +3023,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chdescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn chestado;
         private System.Windows.Forms.DataGridViewTextBoxColumn chestadoDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chCuentaCorreoIDHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chCuentaCorreoTipoLicenciaIdHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chLicenciaTipoIdHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chLicenciaHistoricoPlan;
-        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chDesdeHistoricoPlan;
-        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chHastaHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chNotaHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chReferenciaIDHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chReferenciaSolicitudIDHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chTablaReferenciaHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chTablaSolicitudHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chUserIDHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chHostNameHistoricoPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chFechaRegistroHistoricoPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chcreadoPor;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chFechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chHostname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chUserID;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chDesdeLog;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chHastaLog;
     }
 }

@@ -1680,6 +1680,30 @@
     <Compile Include="T.I\Correos electronicos\CuentaDeCorreosTipoLog.Designer.cs">
       <DependentUpon>CuentaDeCorreosTipoLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasERPDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasERPDetalle.Designer.cs">
+      <DependentUpon>CuentasERPDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasEdoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasEdoc.Designer.cs">
+      <DependentUpon>CuentasEdoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasERP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasERP.Designer.cs">
+      <DependentUpon>CuentasERP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasMRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Cuentas NISIRA\CuentasMRP.Designer.cs">
+      <DependentUpon>CuentasMRP.cs</DependentUpon>
+    </Compile>
     <Compile Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.cs">
       <SubType>Form</SubType>
     </Compile>

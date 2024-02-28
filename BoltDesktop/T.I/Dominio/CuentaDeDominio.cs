@@ -259,7 +259,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                #region 
+                #region Item selecionado()
                 odetalleSelecionado = new SAS_CuentasDominioListado();
                 if (dgvListado != null && dgvListado.Rows.Count > 0)
                 {
@@ -336,10 +336,12 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     chkActivoEnReporte.Checked = !true;
                 }
 
-                this.txtFechaDeActivación.Text = oDetalle.fechaActivacion != (DateTime?)null ? oDetalle.fechaActivacion.ToPresentationDate() : string.Empty;
-                this.txtFechaBaja.Text = oDetalle.fechaBaja != (DateTime?)null ? oDetalle.fechaBaja.ToPresentationDate() : string.Empty;
+                txtFechaDeActivación.Text = oDetalle.fechaActivacion != (DateTime?)null ? oDetalle.fechaActivacion.ToPresentationDate() : string.Empty;
+                txtFechaBaja.Text = oDetalle.fechaBaja != (DateTime?)null ? oDetalle.fechaBaja.ToPresentationDate() : string.Empty;
 
-
+                txtEmpresa.Text    = oDetalle.Empresa != null ? oDetalle.Empresa.Trim() : string.Empty;
+                txtInstruccion.Text = oDetalle.Instruccion != null ? oDetalle.Instruccion.Trim() : string.Empty;
+                txtGlosa.Text = oDetalle.Glosa != null ? oDetalle.Glosa.Trim() : string.Empty;
 
                 listDetails = new List<SAS_CuentasDominioDetalleByIdResult>();
                 SAS_CuentasDominio account = new SAS_CuentasDominio();
@@ -787,28 +789,37 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                ObtenerObjeto();
-                Modelo = new SAS_CuentasDominioController();
-                int resultado = Modelo.Register("SAS", odetalle, detalleEliminados, detalle);
-                btnGrabar.Enabled = !false;
-                btnCancelar.Enabled = !false;
-                if (resultado == 0)
+
+                if (ObtenerObjeto() == true)
                 {
-                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se registró satisfactoriamente", "Confirmación del sistema");
+                    Modelo = new SAS_CuentasDominioController();
+                    int resultado = Modelo.Register("SAS", odetalle, detalleEliminados, detalle);
+                    btnGrabar.Enabled = !false;
+                    btnCancelar.Enabled = !false;
+                    if (resultado == 0)
+                    {
+                        MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se registró satisfactoriamente", "Confirmación del sistema");
+                    }
+                    else if (resultado == 1)
+                    {
+                        MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se actualizó satisfactoriamente", "Confirmación del sistema");
+                    }
+                    Actualizar();
+                    btnGrabar.Enabled = false;
+                    gbEdit.Enabled = false;
+                    gbList.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    detalleEliminados = new List<SAS_CuentasDominioDetalle>();
+                    detalle = new List<SAS_CuentasDominioDetalle>();
+                    lastItem = 0;
                 }
-                else if (resultado == 1)
+                else
                 {
-                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se actualizó satisfactoriamente", "Confirmación del sistema");
+                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " No se registró", "Error en el guardado");
                 }
-                Actualizar();
-                btnGrabar.Enabled = false;
-                gbEdit.Enabled = false;
-                gbList.Enabled = true;
-                btnEditar.Enabled = true;
-                btnCancelar.Enabled = true;
-                detalleEliminados = new List<SAS_CuentasDominioDetalle>();
-                detalle = new List<SAS_CuentasDominioDetalle>();
-                lastItem = 0;
+               
+               
             }
             catch (Exception Ex)
             {
@@ -817,9 +828,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
-        private void ObtenerObjeto()
+        private bool ObtenerObjeto()
         {
-
+            
             try
             {
                 odetalle = new SAS_CuentasDominio();
@@ -836,6 +847,15 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 odetalle.clave = this.txtclave.Text.Trim();
                 odetalle.nombres = this.txtNombres.Text.Trim();
                 odetalle.idPerfilCuenta = this.txtPerfilDeAccesoCodigo.Text.Trim() != null ? Convert.ToInt32(this.txtPerfilDeAccesoCodigo.Text) : 1;
+
+                odetalle.Empresa = this.txtEmpresa.Text.Trim();
+                odetalle.Instruccion = this.txtInstruccion.Text.Trim();
+                odetalle.Glosa = this.txtGlosa.Text.Trim();
+                odetalle.FechaCreacion = DateTime.Now;
+                odetalle.CreadoPor = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName;
+                odetalle.HostName = Environment.MachineName;
+
+
 
                 #region Obtener detalle()
                 detalle = new List<SAS_CuentasDominioDetalle>();
@@ -858,13 +878,35 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     oAcountDetail.descripcion = fila.Cells["chdescripcion"].Value != null ? fila.Cells["chdescripcion"].Value.ToString().Trim() : string.Empty;
                                     oAcountDetail.estado = fila.Cells["chestado"].Value != null ? Convert.ToInt32(fila.Cells["chestado"].Value.ToString().Trim()) : Convert.ToInt32(1);
                                     oAcountDetail.creadoPor = Environment.UserName;
+
+                                    
+
+
+                                    oAcountDetail.Fecha = (DateTime?)null;
+                                    var resulTime = fila.Cells["chFecha"].Value;
+                                    if (resulTime != null)
+                                    {
+                                        if (resulTime.ToString().Trim() != string.Empty)
+                                        {
+                                            oAcountDetail.Fecha = fila.Cells["chFecha"].Value != null ? ((fila.Cells["chFecha"].Value.ToString().Trim()) != string.Empty ? Convert.ToDateTime(fila.Cells["chFecha"].Value.ToString().Trim()) : (DateTime?)null) : DateTime.Now;
+                                        }
+                                    }
+
+                                    //oAcountDetail.Fecha = fila.Cells["chFecha"].Value != null ? Convert.ToDateTime(fila.Cells["chFecha"].Value.ToString().Trim()) : DateTime.Now;
+                                    oAcountDetail.SolicitudGenerada = fila.Cells["chSolicitudGenerada"].Value != null ? Convert.ToInt32(fila.Cells["chSolicitudGenerada"].Value.ToString().Trim()) : Convert.ToInt32(0);
+                                    oAcountDetail.SolicitudID = fila.Cells["chSolicitudID"].Value != null ? Convert.ToInt32(fila.Cells["chSolicitudID"].Value.ToString().Trim()) : Convert.ToInt32(0);
+                                    oAcountDetail.Tabla = fila.Cells["chTabla"].Value != null ? Convert.ToString(fila.Cells["chTabla"].Value.ToString().Trim()) : string.Empty;
+                                    oAcountDetail.Desde = fila.Cells["chDesdeLog"].Value != null ? ((fila.Cells["chDesdeLog"].Value.ToString().Trim()) != string.Empty ? Convert.ToDateTime(fila.Cells["chDesdeLog"].Value.ToString().Trim()) : (DateTime?)null) : DateTime.Now;
+                                    oAcountDetail.Hasta = fila.Cells["chHastaLog"].Value != null ? ((fila.Cells["chHastaLog"].Value.ToString().Trim()) != string.Empty ? Convert.ToDateTime(fila.Cells["chHastaLog"].Value.ToString().Trim()) : (DateTime?)null) : DateTime.Now;
+
+
                                     detalle.Add(oAcountDetail);
                                     #endregion
                                 }
                                 catch (Exception Ex)
                                 {
                                     MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
-                                    return;
+                                    return false;
                                 }
 
                             }
@@ -876,12 +918,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 #endregion
 
+                return true;
 
             }
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
-                return;
+                return false ;
             }
         }
 
@@ -967,7 +1010,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     array.Add(string.Empty); // link                                                     
                     array.Add(string.Empty); // descripcion
                     array.Add(1); // IdEstado
-                    array.Add("ACTIVO"); // Estado                              
+                    array.Add("ACTIVO"); // Estado          
+                    array.Add(user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName); // creadoPor          
+                    array.Add(DateTime.Now.ToShortDateString()); // Fecha       
+                    array.Add(1); // SolicitudGenerada
+                    array.Add(1); // SolicitudID
+                    array.Add(string.Empty); // Tabla
+                    array.Add(DateTime.Now.ToShortDateString()); // Desde
+                    array.Add(DateTime.Now.AddDays(180).ToShortDateString()); // Hasta              
                     dgvDetail.AgregarFila(array);
                     lastItem += 1;
                 }
@@ -1085,6 +1135,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             ClickFiltro += 1;
             ActivateFilter();
+            Cancelar();
         }
 
         private void ActivateFilter()

@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CuentaVPN));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn31 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn32 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn33 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn34 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn35 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn36 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn6 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.btnMenu = new Telerik.WinControls.UI.RadCommandBar();
@@ -82,6 +82,9 @@
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.btnElegirColumna = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnResaltar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnFiltro = new Telerik.WinControls.UI.CommandBarButton();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
@@ -111,9 +114,9 @@
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 431);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 671);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(970, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1049, 22);
             this.stsBarraEstado.TabIndex = 209;
             // 
             // progressBar1
@@ -128,7 +131,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.btnMenu.Size = new System.Drawing.Size(970, 37);
+            this.btnMenu.Size = new System.Drawing.Size(1049, 37);
             this.btnMenu.TabIndex = 208;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             // 
@@ -155,15 +158,15 @@
             // 
             // btnTI
             // 
-            this.btnTI.AccessibleDescription = "T.I ";
-            this.btnTI.AccessibleName = "T.I ";
+            this.btnTI.AccessibleDescription = "ITD";
+            this.btnTI.AccessibleName = "ITD";
             this.btnTI.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnTI.DisplayName = "T.I ";
             this.btnTI.DrawText = true;
             this.btnTI.Image = ((System.Drawing.Image)(resources.GetObject("btnTI.Image")));
             this.btnTI.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTI.Name = "btnTI";
-            this.btnTI.Text = "Tecnologías de información ";
+            this.btnTI.Text = "      ITD   .";
             this.btnTI.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTI.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTI.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -180,6 +183,9 @@
             this.btnAnular,
             this.btnEliminar,
             this.btnExportar,
+            this.btnElegirColumna,
+            this.btnResaltar,
+            this.btnFiltro,
             this.btnSalir});
             this.commandBarStripElement3.Name = "commandBarStripElement3";
             this.commandBarStripElement3.Text = "";
@@ -191,7 +197,7 @@
             this.btnNuevo.AccessibleDescription = "Nuevo";
             this.btnNuevo.AccessibleName = "Nuevo";
             this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnNuevo.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnNuevo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNuevo.DisplayName = "Nuevo";
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
@@ -206,7 +212,7 @@
             this.btnActualizarLista.AccessibleDescription = "Actualizar Lista";
             this.btnActualizarLista.AccessibleName = "Actualizar Lista";
             this.btnActualizarLista.AutoSize = false;
-            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnActualizarLista.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnActualizarLista.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.DisplayName = "Actualizar Lista";
             this.btnActualizarLista.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarLista.Image")));
@@ -221,7 +227,7 @@
             this.btnEditar.AccessibleDescription = "Editar";
             this.btnEditar.AccessibleName = "Editar";
             this.btnEditar.AutoSize = false;
-            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnEditar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEditar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEditar.DisplayName = "Editar";
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -236,7 +242,7 @@
             this.btnAnular.AccessibleDescription = "Anular";
             this.btnAnular.AccessibleName = "Anular";
             this.btnAnular.AutoSize = false;
-            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnAnular.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnAnular.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnAnular.DisplayName = "Anular";
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
@@ -252,7 +258,7 @@
             this.btnEliminar.AccessibleDescription = "Eliminar";
             this.btnEliminar.AccessibleName = "Eliminar";
             this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnEliminar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnEliminar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminar.DisplayName = "Eliminar";
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -267,7 +273,7 @@
             this.btnExportar.AccessibleDescription = "Exportar";
             this.btnExportar.AccessibleName = "Exportar";
             this.btnExportar.AutoSize = false;
-            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnExportar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnExportar.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnExportar.DisplayName = "Exportar";
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
@@ -282,7 +288,7 @@
             this.btnSalir.AccessibleDescription = "Salir";
             this.btnSalir.AccessibleName = "Salir";
             this.btnSalir.AutoSize = false;
-            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnSalir.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
             this.btnSalir.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnSalir.DisplayName = "Salir";
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
@@ -303,7 +309,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(12, 41);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(484, 387);
+            this.gbList.Size = new System.Drawing.Size(563, 627);
             this.gbList.TabIndex = 207;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -323,54 +329,54 @@
             this.dgvRegistro.MasterTemplate.AllowAddNewRow = false;
             this.dgvRegistro.MasterTemplate.AutoGenerateColumns = false;
             this.dgvRegistro.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "id";
-            gridViewTextBoxColumn1.HeaderText = "Código";
-            gridViewTextBoxColumn1.Name = "chId";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 41;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "idcodigoGeneral";
-            gridViewTextBoxColumn2.HeaderText = "Código. Per.";
-            gridViewTextBoxColumn2.Name = "chCodigo";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 65;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "NombresCompletos";
-            gridViewTextBoxColumn3.HeaderText = "Nombres";
-            gridViewTextBoxColumn3.Name = "chNombresCompletos";
-            gridViewTextBoxColumn3.Width = 100;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "cuenta";
-            gridViewTextBoxColumn4.HeaderText = "Cuenta";
-            gridViewTextBoxColumn4.Name = "chcuenta";
-            gridViewTextBoxColumn4.Width = 84;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "clave";
-            gridViewTextBoxColumn5.HeaderText = "Clave";
-            gridViewTextBoxColumn5.Name = "chclave";
-            gridViewTextBoxColumn5.Width = 47;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "empresa";
-            gridViewTextBoxColumn6.HeaderText = "Empresa";
-            gridViewTextBoxColumn6.Name = "chempresa";
-            gridViewTextBoxColumn6.Width = 80;
-            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.FieldName = "estado";
-            gridViewCheckBoxColumn1.HeaderText = "Estado";
-            gridViewCheckBoxColumn1.MinWidth = 20;
-            gridViewCheckBoxColumn1.Name = "chEstado";
-            gridViewCheckBoxColumn1.ReadOnly = true;
-            gridViewCheckBoxColumn1.Width = 51;
+            gridViewTextBoxColumn31.EnableExpressionEditor = false;
+            gridViewTextBoxColumn31.FieldName = "id";
+            gridViewTextBoxColumn31.HeaderText = "Código";
+            gridViewTextBoxColumn31.Name = "chId";
+            gridViewTextBoxColumn31.ReadOnly = true;
+            gridViewTextBoxColumn31.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn31.Width = 48;
+            gridViewTextBoxColumn32.EnableExpressionEditor = false;
+            gridViewTextBoxColumn32.FieldName = "idcodigoGeneral";
+            gridViewTextBoxColumn32.HeaderText = "Código. Per.";
+            gridViewTextBoxColumn32.Name = "chCodigo";
+            gridViewTextBoxColumn32.ReadOnly = true;
+            gridViewTextBoxColumn32.Width = 76;
+            gridViewTextBoxColumn33.EnableExpressionEditor = false;
+            gridViewTextBoxColumn33.FieldName = "NombresCompletos";
+            gridViewTextBoxColumn33.HeaderText = "Nombres";
+            gridViewTextBoxColumn33.Name = "chNombresCompletos";
+            gridViewTextBoxColumn33.Width = 117;
+            gridViewTextBoxColumn34.EnableExpressionEditor = false;
+            gridViewTextBoxColumn34.FieldName = "cuenta";
+            gridViewTextBoxColumn34.HeaderText = "Cuenta";
+            gridViewTextBoxColumn34.Name = "chcuenta";
+            gridViewTextBoxColumn34.Width = 98;
+            gridViewTextBoxColumn35.EnableExpressionEditor = false;
+            gridViewTextBoxColumn35.FieldName = "clave";
+            gridViewTextBoxColumn35.HeaderText = "Clave";
+            gridViewTextBoxColumn35.Name = "chclave";
+            gridViewTextBoxColumn35.Width = 55;
+            gridViewTextBoxColumn36.EnableExpressionEditor = false;
+            gridViewTextBoxColumn36.FieldName = "empresa";
+            gridViewTextBoxColumn36.HeaderText = "Empresa";
+            gridViewTextBoxColumn36.Name = "chempresa";
+            gridViewTextBoxColumn36.Width = 94;
+            gridViewCheckBoxColumn6.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn6.FieldName = "estado";
+            gridViewCheckBoxColumn6.HeaderText = "Estado";
+            gridViewCheckBoxColumn6.MinWidth = 20;
+            gridViewCheckBoxColumn6.Name = "chEstado";
+            gridViewCheckBoxColumn6.ReadOnly = true;
+            gridViewCheckBoxColumn6.Width = 59;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewCheckBoxColumn1});
+            gridViewTextBoxColumn31,
+            gridViewTextBoxColumn32,
+            gridViewTextBoxColumn33,
+            gridViewTextBoxColumn34,
+            gridViewTextBoxColumn35,
+            gridViewTextBoxColumn36,
+            gridViewCheckBoxColumn6});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
@@ -381,7 +387,7 @@
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvRegistro.ShowHeaderCellButtons = true;
-            this.dgvRegistro.Size = new System.Drawing.Size(480, 367);
+            this.dgvRegistro.Size = new System.Drawing.Size(559, 607);
             this.dgvRegistro.TabIndex = 163;
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             this.dgvRegistro.SelectionChanged += new System.EventHandler(this.dgvRegistro_SelectionChanged);
@@ -418,10 +424,10 @@
             this.gbEdit.Enabled = false;
             this.gbEdit.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbEdit.HeaderText = " Mantenimiento";
-            this.gbEdit.Location = new System.Drawing.Point(502, 41);
+            this.gbEdit.Location = new System.Drawing.Point(581, 41);
             this.gbEdit.Name = "gbEdit";
             this.gbEdit.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbEdit.Size = new System.Drawing.Size(467, 387);
+            this.gbEdit.Size = new System.Drawing.Size(467, 627);
             this.gbEdit.TabIndex = 206;
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
@@ -496,16 +502,16 @@
             // 
             // txtGlosa
             // 
-            this.txtGlosa.Location = new System.Drawing.Point(100, 292);
+            this.txtGlosa.Location = new System.Drawing.Point(100, 336);
             this.txtGlosa.MaxLength = 500;
             this.txtGlosa.Multiline = true;
             this.txtGlosa.Name = "txtGlosa";
-            this.txtGlosa.Size = new System.Drawing.Size(362, 60);
+            this.txtGlosa.Size = new System.Drawing.Size(362, 239);
             this.txtGlosa.TabIndex = 258;
             // 
             // lblGlosa
             // 
-            this.lblGlosa.Location = new System.Drawing.Point(48, 292);
+            this.lblGlosa.Location = new System.Drawing.Point(51, 338);
             this.lblGlosa.Name = "lblGlosa";
             this.lblGlosa.Size = new System.Drawing.Size(39, 18);
             this.lblGlosa.TabIndex = 257;
@@ -517,7 +523,7 @@
             this.txtInstrucciones.MaxLength = 500;
             this.txtInstrucciones.Multiline = true;
             this.txtInstrucciones.Name = "txtInstrucciones";
-            this.txtInstrucciones.Size = new System.Drawing.Size(362, 53);
+            this.txtInstrucciones.Size = new System.Drawing.Size(362, 97);
             this.txtInstrucciones.TabIndex = 256;
             // 
             // radLabel3
@@ -626,7 +632,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.Location = new System.Drawing.Point(262, 358);
+            this.btnGrabar.Location = new System.Drawing.Point(262, 598);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(102, 24);
             this.btnGrabar.TabIndex = 25;
@@ -639,7 +645,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(154, 358);
+            this.btnCancelar.Location = new System.Drawing.Point(154, 598);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 24;
@@ -686,10 +692,50 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
+            // btnElegirColumna
+            // 
+            this.btnElegirColumna.AccessibleDescription = "ElegirColumna";
+            this.btnElegirColumna.AccessibleName = "ElegirColumna";
+            this.btnElegirColumna.AutoSize = false;
+            this.btnElegirColumna.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnElegirColumna.DisplayName = "commandBarButton1";
+            this.btnElegirColumna.Image = ((System.Drawing.Image)(resources.GetObject("btnElegirColumna.Image")));
+            this.btnElegirColumna.Name = "btnElegirColumna";
+            this.btnElegirColumna.Tag = "ElegirColumna";
+            this.btnElegirColumna.Text = "";
+            this.btnElegirColumna.ToolTipText = "ElegirColumna";
+            this.btnElegirColumna.Click += new System.EventHandler(this.btnElegirColumna_Click);
+            // 
+            // btnResaltar
+            // 
+            this.btnResaltar.AccessibleDescription = "Resaltar";
+            this.btnResaltar.AccessibleName = "Resaltar";
+            this.btnResaltar.AutoSize = false;
+            this.btnResaltar.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnResaltar.DisplayName = "Resaltar";
+            this.btnResaltar.Image = ((System.Drawing.Image)(resources.GetObject("btnResaltar.Image")));
+            this.btnResaltar.Name = "btnResaltar";
+            this.btnResaltar.Tag = "Resaltar";
+            this.btnResaltar.Text = "";
+            this.btnResaltar.Click += new System.EventHandler(this.btnResaltar_Click);
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.AccessibleDescription = "Filtro";
+            this.btnFiltro.AccessibleName = "Filtro";
+            this.btnFiltro.AutoSize = false;
+            this.btnFiltro.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnFiltro.DisplayName = "commandBarButton3";
+            this.btnFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.Image")));
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Tag = "Filtro";
+            this.btnFiltro.Text = "";
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
             // CuentaVPN
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(970, 453);
+            this.ClientSize = new System.Drawing.Size(1049, 693);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.gbList);
@@ -777,5 +823,8 @@
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtIdCodigoGeneral;
         private MyControlsDataBinding.Controles.MyButtonSearchSimple btnPersonalBuscar;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtNombres;
+        private Telerik.WinControls.UI.CommandBarButton btnElegirColumna;
+        private Telerik.WinControls.UI.CommandBarButton btnResaltar;
+        private Telerik.WinControls.UI.CommandBarButton btnFiltro;
     }
 }

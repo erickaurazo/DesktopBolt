@@ -270,7 +270,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
 
 
-        private void ObtenerObjeto()
+        private bool ObtenerObjeto()
         {
 
             try
@@ -310,17 +310,32 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                     oAcountDetail.link = fila.Cells["chlink"].Value != null ? fila.Cells["chlink"].Value.ToString().Trim() : string.Empty;
                                     oAcountDetail.descripcion = fila.Cells["chdescripcion"].Value != null ? fila.Cells["chdescripcion"].Value.ToString().Trim() : string.Empty;
                                     oAcountDetail.estado = fila.Cells["chestado"].Value != null ? Convert.ToInt32(fila.Cells["chestado"].Value.ToString().Trim()) : Convert.ToInt32(1);
-                                    oAcountDetail.FechaRegistro = DateTime.Now;
+
+                                    oAcountDetail.FechaRegistro = (DateTime?)null;
+                                    var resulTime = fila.Cells["chFechaRegistro"].Value;
+                                    if (resulTime != null)
+                                    {
+                                        if (resulTime.ToString().Trim() != string.Empty)
+                                        {
+                                            oAcountDetail.FechaRegistro = fila.Cells["chFechaRegistro"].Value != null ? ((fila.Cells["chFechaRegistro"].Value.ToString().Trim()) != string.Empty ? Convert.ToDateTime(fila.Cells["chFechaRegistro"].Value.ToString().Trim()) : (DateTime?)null) : DateTime.Now;
+                                        }
+                                    }
+
+                                   
                                     oAcountDetail.UserID = userLogin.IdUsuario != null ? userLogin.IdUsuario : Environment.UserName;
                                     oAcountDetail.creadoPor = Environment.UserName;
                                     oAcountDetail.Hostname = Environment.MachineName;
+                                    oAcountDetail.Desde = fila.Cells["chDesdeLog"].Value != null ? ((fila.Cells["chDesdeLog"].Value.ToString().Trim()) != string.Empty ? Convert.ToDateTime(fila.Cells["chDesdeLog"].Value.ToString().Trim()) : (DateTime?)null) : DateTime.Now;
+                                    oAcountDetail.Hasta = fila.Cells["chHastaLog"].Value != null ? ((fila.Cells["chHastaLog"].Value.ToString().Trim()) != string.Empty ? Convert.ToDateTime(fila.Cells["chHastaLog"].Value.ToString().Trim()) : (DateTime?)null) : DateTime.Now;
+
                                     ListadoDetalleLogRegistrar.Add(oAcountDetail);
+                                    
                                     #endregion
                                 }
                                 catch (Exception Ex)
                                 {
                                     MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
-                                    return;
+                                    return false;
                                 }
 
                             }
@@ -366,7 +381,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 catch (Exception Ex)
                                 {
                                     MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
-                                    return;
+                                    return false;
                                 }
 
                             }
@@ -412,7 +427,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 catch (Exception Ex)
                                 {
                                     MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
-                                    return;
+                                    return false;
                                 }
 
                             }
@@ -424,11 +439,12 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 #endregion
 
+                return true;
             }
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
-                return;
+                return false;
             }
         }
 
@@ -928,38 +944,42 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             try
             {
-                ObtenerObjeto();
-                Modelo = new SAS_CuentasCorreoController();
-                int resultado = Modelo.Register("SAS", oCuentaDeCorreo, ListadoDetalleLogEliminar, ListadoDetalleLogRegistrar, ListadoDetalleHistoricoPlanEliminar, ListadoDetalleHistoricoPlanRegistrar, ListadoDetalleAsignacionDeCuentaEliminar, ListadoDetalleAsignacionDeCuentaRegistrar);
-                ListadoDetalleAsignacionDeCuentaEliminar = new List<SAS_CuentasCorreoAsignacionPersonal>();
-                ListadoDetalleAsignacionDeCuentaRegistrar = new List<SAS_CuentasCorreoAsignacionPersonal>();
-                ListadoDetalleLogEliminar = new List<SAS_CuentasCorreoDetalle>();
-                ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
-                ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
-                oCuentaDeCorreo = new SAS_CuentasCorreo();
-
-                ListadoDetalleHistoricoPlanRegistrar = new List<SAS_CuentasCorreosHistoricoPlan>();
-                ListadoDetalleHistoricoPlanEliminar = new List<SAS_CuentasCorreosHistoricoPlan>();
-                ListadoDetallHistoricoPlanByCuentaCorreo = new List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>();
-
-                btnGrabar.Enabled = !false;
-                btnCancelar.Enabled = !false;
-                if (resultado == 0)
+                if (ObtenerObjeto() == true)
                 {
-                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se registró satisfactoriamente", "Confirmación del sistema");
+                    Modelo = new SAS_CuentasCorreoController();
+                    int resultado = Modelo.Register("SAS", oCuentaDeCorreo, ListadoDetalleLogEliminar, ListadoDetalleLogRegistrar, ListadoDetalleHistoricoPlanEliminar, ListadoDetalleHistoricoPlanRegistrar, ListadoDetalleAsignacionDeCuentaEliminar, ListadoDetalleAsignacionDeCuentaRegistrar);
+                    ListadoDetalleAsignacionDeCuentaEliminar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+                    ListadoDetalleAsignacionDeCuentaRegistrar = new List<SAS_CuentasCorreoAsignacionPersonal>();
+                    ListadoDetalleLogEliminar = new List<SAS_CuentasCorreoDetalle>();
+                    ListadoDetalleLogRegistrar = new List<SAS_CuentasCorreoDetalle>();
+                    ListadoDetalleAsignacionDeCuentas = new List<SAS_ListadoDeCuentasCorreoAsignacionPersonalByCuentaCorreoIdResult>();
+                    oCuentaDeCorreo = new SAS_CuentasCorreo();
+
+                    ListadoDetalleHistoricoPlanRegistrar = new List<SAS_CuentasCorreosHistoricoPlan>();
+                    ListadoDetalleHistoricoPlanEliminar = new List<SAS_CuentasCorreosHistoricoPlan>();
+                    ListadoDetallHistoricoPlanByCuentaCorreo = new List<SAS_ListadoDeCuentaCorreoHistoricoPlanByCuentaCorreoIdResult>();
+
+                    btnGrabar.Enabled = !false;
+                    btnCancelar.Enabled = !false;
+                    if (resultado == 0)
+                    {
+                        MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se registró satisfactoriamente", "Confirmación del sistema");
+                    }
+                    else if (resultado == 1)
+                    {
+                        MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se actualizó satisfactoriamente", "Confirmación del sistema");
+                    }
+                    Actualizar();
+                    btnGrabar.Enabled = false;
+                    gbEdit.Enabled = false;
+                    gbList.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnCancelar.Enabled = true;
+
+                    lastItem = 0;
                 }
-                else if (resultado == 1)
-                {
-                    MessageBox.Show("El registro " + this.txtCodigo.Text.Trim() + " se actualizó satisfactoriamente", "Confirmación del sistema");
-                }
-                Actualizar();
-                btnGrabar.Enabled = false;
-                gbEdit.Enabled = false;
-                gbList.Enabled = true;
-                btnEditar.Enabled = true;
-                btnCancelar.Enabled = true;
-                                
-                lastItem = 0;
+                //ObtenerObjeto();
+                
             }
             catch (Exception Ex)
             {
@@ -1028,11 +1048,19 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     array.Add(Convert.ToDecimal(txtCodigo.Text.Trim() != String.Empty ? txtCodigo.Text.Trim() : "0")); // id                 
                     array.Add((ObtenerItemDetalle(lastItem))); // item
                     array.Add(1); // idTipo
-                    array.Add("BackUp"); // tipocuenta         
+                    array.Add(("BackUp").ToUpper()); // tipocuenta         
                     array.Add(string.Empty); // link                                                     
                     array.Add(string.Empty); // descripcion
                     array.Add(1); // IdEstado
-                    array.Add("ACTIVO"); // Estado                              
+                    array.Add("ACTIVO"); // Estado       
+
+                    array.Add(userLogin.IdUsuario != null ? userLogin.IdUsuario  : Environment.UserName); // creadoPor      
+                    array.Add(DateTime.Now.ToShortDateString()); // FechaRegistro      
+                    array.Add(Environment.MachineName); // Hostname      
+                    array.Add(Environment.UserName); // UserID    
+                    array.Add(DateTime.Now.ToShortDateString()); // Desde
+                    array.Add(DateTime.Now.AddDays(180).ToShortDateString()); // Hasta      
+
                     dgvDetalleLog.AgregarFila(array);
                     lastItem += 1;
                 }
@@ -1450,6 +1478,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             ClickFiltro += 1;
             ActivateFilter();
+            Cancelar();
 
         }
 
@@ -1803,6 +1832,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 }
                 #endregion
             }
+        }
+
+        private void dgvDetalleLog_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

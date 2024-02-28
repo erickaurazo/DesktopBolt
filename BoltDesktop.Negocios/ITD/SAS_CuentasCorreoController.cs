@@ -342,6 +342,13 @@ namespace Asistencia.Negocios
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
                                             oDetalle.creadoPor = Environment.UserName;
+
+                                            oDetalle.FechaRegistro = itemDetalle.FechaRegistro;
+                                            oDetalle.Hostname = itemDetalle.Hostname;
+                                            oDetalle.UserID = itemDetalle.UserID;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
                                             Modelo.SAS_CuentasCorreoDetalles.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -355,7 +362,14 @@ namespace Asistencia.Negocios
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
-                                            oDetalle.creadoPor = Environment.UserName;
+                                            //oDetalle.creadoPor = Environment.UserName;
+
+                                            //oDetalle.FechaRegistro = itemDetalle.FechaRegistro;
+                                            //oDetalle.Hostname = itemDetalle.Hostname;
+                                            //oDetalle.UserID = itemDetalle.UserID;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
                                             Modelo.SubmitChanges();
                                             #endregion  
                                         }
@@ -553,6 +567,12 @@ namespace Asistencia.Negocios
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
                                             oDetalle.creadoPor = Environment.UserName;
+                                            oDetalle.FechaRegistro = itemDetalle.FechaRegistro;
+                                            oDetalle.Hostname = itemDetalle.Hostname;
+                                            oDetalle.UserID = itemDetalle.UserID;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
                                             Modelo.SAS_CuentasCorreoDetalles.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
@@ -566,7 +586,14 @@ namespace Asistencia.Negocios
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
-                                            oDetalle.creadoPor = Environment.UserName;
+                                            //oDetalle.creadoPor = Environment.UserName;
+
+                                            //oDetalle.FechaRegistro = itemDetalle.FechaRegistro;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+                                            //oDetalle.Hostname = itemDetalle.Hostname;
+                                            //oDetalle.UserID = itemDetalle.UserID;
+
                                             //Modelo.SAS_CuentasCorreoDetalle.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion  

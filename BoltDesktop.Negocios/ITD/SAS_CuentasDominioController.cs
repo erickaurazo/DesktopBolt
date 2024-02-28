@@ -19,7 +19,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                listado = Modelo.SAS_CuentasDominio.ToList();
+                listado = Modelo.SAS_CuentasDominios.ToList();
             }
             return listado.OrderBy(x => x.cuenta).ToList();
         }
@@ -31,7 +31,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                listado = Modelo.SAS_CuentasDominioListado.ToList();
+                listado = Modelo.SAS_CuentasDominioListados.ToList();
             }
             return listado.OrderBy(x => x.cuenta).ToList();
         }
@@ -46,7 +46,7 @@ namespace Asistencia.Negocios
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
-                    var resultado = Modelo.SAS_CuentasDominio.Where(x => x.id == item.id).ToList();
+                    var resultado = Modelo.SAS_CuentasDominios.Where(x => x.id == item.id).ToList();
                     if (resultado != null)
                     {
                         #region Registro | Actualizacion() 
@@ -67,7 +67,7 @@ namespace Asistencia.Negocios
                             oregistro.clave = item.clave;
 
 
-                            Modelo.SAS_CuentasDominio.InsertOnSubmit(oregistro);
+                            Modelo.SAS_CuentasDominios.InsertOnSubmit(oregistro);
                             Modelo.SubmitChanges();
                             tipoResultadoOperacion = 0; // registrar
                             #endregion
@@ -113,7 +113,7 @@ namespace Asistencia.Negocios
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
-                    var resultado = Modelo.SAS_CuentasDominio.Where(x => x.id == item.id).ToList();
+                    var resultado = Modelo.SAS_CuentasDominios.Where(x => x.id == item.id).ToList();
                     if (resultado != null)
                     {
                         #region Registro | Actualizacion() 
@@ -134,7 +134,13 @@ namespace Asistencia.Negocios
                             oregistro.clave = item.clave;
                             oregistro.idPerfilCuenta = item.idPerfilCuenta;
                             oregistro.nombres = item.nombres;
-                            Modelo.SAS_CuentasDominio.InsertOnSubmit(oregistro);
+                            oregistro.Empresa = item.Empresa;
+                            oregistro.Instruccion = item.Instruccion;
+                            oregistro.Glosa = item.Glosa;
+                            oregistro.FechaCreacion = item.FechaCreacion;
+                            oregistro.CreadoPor = item.CreadoPor;
+                            oregistro.HostName = item.HostName;
+                            Modelo.SAS_CuentasDominios.InsertOnSubmit(oregistro);
                             Modelo.SubmitChanges();
                             tipoResultadoOperacion = 0; // registrar
                             #endregion
@@ -146,12 +152,12 @@ namespace Asistencia.Negocios
                                 {
                                     foreach (var itemDetalle in detalles)
                                     {
-                                        var resultadoDetalle = Modelo.SAS_CuentasDominioDetalle.Where(x => x.id == oregistro.id && x.item == itemDetalle.item).ToList();
-                                        
+                                        var resultadoDetalle = Modelo.SAS_CuentasDominioDetalles.Where(x => x.id == oregistro.id && x.item == itemDetalle.item).ToList();
+
 
                                         if (resultadoDetalle.Count == 0)
                                         {
-                                            var listadoDetalles = Modelo.SAS_CuentasDominioDetalle.Where(x => x.id == oregistro.id).ToList();
+                                            var listadoDetalles = Modelo.SAS_CuentasDominioDetalles.Where(x => x.id == oregistro.id).ToList();
                                             if (listadoDetalles != null && listadoDetalles.ToList().Count == 0)
                                             {
                                                 correlativo = 0;
@@ -164,15 +170,20 @@ namespace Asistencia.Negocios
                                             #region Registrar() 
                                             SAS_CuentasDominioDetalle oDetalle = new SAS_CuentasDominioDetalle();
                                             oDetalle.id = oregistro.id;
-
-
-                                            oDetalle.item = correlativo.ToString().PadLeft(3,'0');
+                                            oDetalle.item = correlativo.ToString().PadLeft(3, '0');
                                             oDetalle.idTipo = itemDetalle.idTipo;
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
                                             oDetalle.creadoPor = Environment.UserName;
-                                            Modelo.SAS_CuentasDominioDetalle.InsertOnSubmit(oDetalle);
+                                            oDetalle.Fecha = itemDetalle.Fecha;
+                                            oDetalle.SolicitudGenerada = itemDetalle.SolicitudGenerada;
+                                            oDetalle.SolicitudID = itemDetalle.SolicitudID;
+                                            oDetalle.Tabla = itemDetalle.Tabla;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
+                                            Modelo.SAS_CuentasDominioDetalles.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
                                         }
@@ -185,6 +196,13 @@ namespace Asistencia.Negocios
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
+                                            //oDetalle.Fecha = itemDetalle.Fecha;
+                                            oDetalle.SolicitudGenerada = itemDetalle.SolicitudGenerada;
+                                            oDetalle.SolicitudID = itemDetalle.SolicitudID;
+                                            oDetalle.Tabla = itemDetalle.Tabla;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
                                             //oDetalle.creadoPor = Environment.UserName;
                                             Modelo.SubmitChanges();
                                             #endregion  
@@ -212,6 +230,12 @@ namespace Asistencia.Negocios
                             oregistro.clave = item.clave;
                             oregistro.idPerfilCuenta = item.idPerfilCuenta;
                             oregistro.nombres = item.nombres;
+                            oregistro.Empresa = item.Empresa;
+                            oregistro.Instruccion = item.Instruccion;
+                            oregistro.Glosa = item.Glosa;
+                            //oregistro.FechaCreacion = item.FechaCreacion;
+                            //oregistro.CreadoPor = item.CreadoPor;
+                            //oregistro.HostName = item.HostName;
                             Modelo.SubmitChanges();
                             #endregion
                             tipoResultadoOperacion = 1; // modificar
@@ -225,13 +249,13 @@ namespace Asistencia.Negocios
                                 {
                                     foreach (var itemDetalle in detalleEliminados)
                                     {
-                                        var resultadoDetalle = Modelo.SAS_CuentasDominioDetalle.Where(x => x.id == itemDetalle.id && x.item == itemDetalle.item).ToList();
+                                        var resultadoDetalle = Modelo.SAS_CuentasDominioDetalles.Where(x => x.id == itemDetalle.id && x.item == itemDetalle.item).ToList();
                                         if (resultadoDetalle.Count == 1)
                                         {
                                             #region Modificar() 
                                             SAS_CuentasDominioDetalle oDetalle = new SAS_CuentasDominioDetalle();
                                             oDetalle = resultadoDetalle.Single();
-                                            Modelo.SAS_CuentasDominioDetalle.DeleteOnSubmit(oDetalle);
+                                            Modelo.SAS_CuentasDominioDetalles.DeleteOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion  
                                         }
@@ -249,12 +273,12 @@ namespace Asistencia.Negocios
                                 {
                                     foreach (var itemDetalle in detalles)
                                     {
-                                        var resultadoDetalle = Modelo.SAS_CuentasDominioDetalle.Where(x => x.id == itemDetalle.id && x.item == itemDetalle.item).ToList();
+                                        var resultadoDetalle = Modelo.SAS_CuentasDominioDetalles.Where(x => x.id == itemDetalle.id && x.item == itemDetalle.item).ToList();
                                         if (resultadoDetalle.Count == 0)
                                         {
                                             #region Registrar() 
 
-                                            var listadoDetalles = Modelo.SAS_CuentasDominioDetalle.Where(x => x.id == oregistro.id).ToList();
+                                            var listadoDetalles = Modelo.SAS_CuentasDominioDetalles.Where(x => x.id == oregistro.id).ToList();
                                             if (listadoDetalles != null && listadoDetalles.ToList().Count == 0)
                                             {
                                                 correlativo = 0;
@@ -266,13 +290,20 @@ namespace Asistencia.Negocios
 
                                             SAS_CuentasDominioDetalle oDetalle = new SAS_CuentasDominioDetalle();
                                             oDetalle.id = item.id;
-                                            oDetalle.item = correlativo.ToString().PadLeft(3, '0'); 
+                                            oDetalle.item = correlativo.ToString().PadLeft(3, '0');
                                             oDetalle.idTipo = itemDetalle.idTipo;
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
                                             oDetalle.creadoPor = Environment.UserName;
-                                            Modelo.SAS_CuentasDominioDetalle.InsertOnSubmit(oDetalle);
+                                            oDetalle.Fecha = itemDetalle.Fecha;
+                                            oDetalle.SolicitudGenerada = itemDetalle.SolicitudGenerada;
+                                            oDetalle.SolicitudID = itemDetalle.SolicitudID;
+                                            oDetalle.Tabla = itemDetalle.Tabla;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
+                                            Modelo.SAS_CuentasDominioDetalles.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion
                                         }
@@ -285,7 +316,14 @@ namespace Asistencia.Negocios
                                             oDetalle.link = itemDetalle.link;
                                             oDetalle.descripcion = itemDetalle.descripcion;
                                             oDetalle.estado = itemDetalle.estado;
-                                            oDetalle.creadoPor = Environment.UserName;
+                                           // oDetalle.creadoPor = Environment.UserName;
+                                            //oDetalle.Fecha = itemDetalle.Fecha;
+                                            oDetalle.SolicitudGenerada = itemDetalle.SolicitudGenerada;
+                                            oDetalle.SolicitudID = itemDetalle.SolicitudID;
+                                            oDetalle.Tabla = itemDetalle.Tabla;
+                                            oDetalle.Desde = itemDetalle.Desde;
+                                            oDetalle.Hasta = itemDetalle.Hasta;
+
                                             //Modelo.SAS_CuentasCorreoDetalle.InsertOnSubmit(oDetalle);
                                             Modelo.SubmitChanges();
                                             #endregion  
@@ -308,7 +346,6 @@ namespace Asistencia.Negocios
 
         }
 
-
         public int ChangeState(string conection, SAS_CuentasDominio item)
         {
 
@@ -316,7 +353,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                var resultado = Modelo.SAS_CuentasDominio.Where(x => x.id == item.id).ToList();
+                var resultado = Modelo.SAS_CuentasDominios.Where(x => x.id == item.id).ToList();
                 if (resultado != null)
                 {
                     if (resultado.ToList().Count == 1)
@@ -353,7 +390,7 @@ namespace Asistencia.Negocios
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
-                    var resultado = Modelo.SAS_CuentasDominio.Where(x => x.id == item.id).ToList();
+                    var resultado = Modelo.SAS_CuentasDominios.Where(x => x.id == item.id).ToList();
                     if (resultado != null)
                     {
                         #region REGISTRAR BAJA  
@@ -394,7 +431,7 @@ namespace Asistencia.Negocios
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-           using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "BackUp" });
                 listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Imagen" });
@@ -416,7 +453,7 @@ namespace Asistencia.Negocios
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
             string cnx;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
-           using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
                 listado.Add(new DFormatoSimple { Codigo = "1", Descripcion = "BackUp" });
                 listado.Add(new DFormatoSimple { Codigo = "2", Descripcion = "Imagen" });

@@ -34,6 +34,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private SAS_CuentasVPN odetalleSelecionado;
         private List<SAS_CuentasVPN> listado;
         private SAS_CuentasVPNController Modelo;
+        private int ClickFiltro = 0;
+        private int ClickResaltarResultados = 0;
 
         public CuentaVPN()
         {
@@ -113,7 +115,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 ObtenerObjeto();
-                Modelo =new SAS_CuentasVPNController();
+                Modelo = new SAS_CuentasVPNController();
                 int resultado = Modelo.Register("SAS", odetalle);
                 btnGrabar.Enabled = !false;
                 btnCancelar.Enabled = !false;
@@ -224,7 +226,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 ObtenerObjeto();
                 if (odetalle.cuenta != string.Empty)
                 {
-                    Modelo =new SAS_CuentasVPNController();
+                    Modelo = new SAS_CuentasVPNController();
                     int resultado = 0;
                     resultado = Modelo.ChangeState("SAS", odetalle);
                     if (resultado == 2)
@@ -542,7 +544,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 this.txtObservaciones.Text = string.Empty;
                 this.txtInstrucciones.Text = string.Empty;
                 this.txtGlosa.Text = string.Empty;
-                this.txtEmpresa.Text = string.Empty;                
+                this.txtEmpresa.Text = string.Empty;
             }
             catch (Exception Ex)
             {
@@ -558,7 +560,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             try
             {
                 listado = new List<SAS_CuentasVPN>();
-                Modelo =new SAS_CuentasVPNController();
+                Modelo = new SAS_CuentasVPNController();
                 listado = Modelo.GetVPNaccounts("SAS");
             }
             catch (Exception Ex)
@@ -582,6 +584,68 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 RadMessageBox.Show(this, ex.Message, "I/O Error", MessageBoxButtons.OK, RadMessageIcon.Error);
                 return;
             }
+        }
+
+        private void btnElegirColumna_Click(object sender, EventArgs e)
+        {
+            this.dgvRegistro.ShowColumnChooser();
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+        private void ActivateFilter()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvRegistro.EnableFiltering = !true;
+                dgvRegistro.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvRegistro.EnableFiltering = true;
+                dgvRegistro.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
+        private void btnResaltar_Click(object sender, EventArgs e)
+        {
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
+        }
+
+
+        private void ResaltarResultados()
+        {
+
+            if ((ClickResaltarResultados % 2) == 0)
+            {
+                #region Par() | Acción pintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "1", string.Empty, true);
+                c1.RowBackColor = Color.IndianRed;
+                c1.CellBackColor = Color.IndianRed;
+                c1.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
+                dgvRegistro.Columns["chEstado"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
+            else
+            {
+                #region Par() | Acción despintar()
+                ConditionalFormattingObject c1 = new ConditionalFormattingObject("Estado, applied to entire row", ConditionTypes.Contains, "0", string.Empty, true);
+                c1.RowBackColor = Color.White;
+                c1.CellBackColor = Color.White;
+                c1.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
+                dgvRegistro.Columns["chEstado"].ConditionalFormattingObjectList.Add(c1);
+                #endregion
+            }
+
         }
     }
 }
