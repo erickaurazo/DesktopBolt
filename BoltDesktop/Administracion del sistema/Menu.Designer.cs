@@ -139,6 +139,7 @@
             this.GoTIMaestroLicenciasSoftware = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroRenovacionDeCelulares = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroEquipamientoTecnologico = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador06 = new System.Windows.Forms.ToolStripSeparator();
             this.GoTIMaestroProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIProductosCatalogo = new System.Windows.Forms.ToolStripMenuItem();
@@ -316,7 +317,6 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -769,37 +769,36 @@
             this.GoTIcuentaNisiraMRP,
             this.GoTIcuentaNisiraEDoc,
             this.GoTIcuentaTareoMovil});
-            this.GoTIcuentaNisira.Enabled = false;
             this.GoTIcuentaNisira.Name = "GoTIcuentaNisira";
             this.GoTIcuentaNisira.Size = new System.Drawing.Size(251, 22);
             this.GoTIcuentaNisira.Text = "NISIRA";
             // 
             // GoTIcuentaNisiraERP
             // 
-            this.GoTIcuentaNisiraERP.Enabled = false;
             this.GoTIcuentaNisiraERP.Name = "GoTIcuentaNisiraERP";
-            this.GoTIcuentaNisiraERP.Size = new System.Drawing.Size(135, 22);
+            this.GoTIcuentaNisiraERP.Size = new System.Drawing.Size(152, 22);
             this.GoTIcuentaNisiraERP.Text = "ERP";
+            this.GoTIcuentaNisiraERP.Click += new System.EventHandler(this.GoTIcuentaNisiraERP_Click);
             // 
             // GoTIcuentaNisiraMRP
             // 
             this.GoTIcuentaNisiraMRP.Enabled = false;
             this.GoTIcuentaNisiraMRP.Name = "GoTIcuentaNisiraMRP";
-            this.GoTIcuentaNisiraMRP.Size = new System.Drawing.Size(135, 22);
+            this.GoTIcuentaNisiraMRP.Size = new System.Drawing.Size(152, 22);
             this.GoTIcuentaNisiraMRP.Text = "MRP";
             // 
             // GoTIcuentaNisiraEDoc
             // 
             this.GoTIcuentaNisiraEDoc.Enabled = false;
             this.GoTIcuentaNisiraEDoc.Name = "GoTIcuentaNisiraEDoc";
-            this.GoTIcuentaNisiraEDoc.Size = new System.Drawing.Size(135, 22);
+            this.GoTIcuentaNisiraEDoc.Size = new System.Drawing.Size(152, 22);
             this.GoTIcuentaNisiraEDoc.Text = "eDoc";
             // 
             // GoTIcuentaTareoMovil
             // 
             this.GoTIcuentaTareoMovil.Enabled = false;
             this.GoTIcuentaTareoMovil.Name = "GoTIcuentaTareoMovil";
-            this.GoTIcuentaTareoMovil.Size = new System.Drawing.Size(135, 22);
+            this.GoTIcuentaTareoMovil.Size = new System.Drawing.Size(152, 22);
             this.GoTIcuentaTareoMovil.Text = "Tareo Movil";
             // 
             // GoTIcuentaFitoSoft
@@ -1223,6 +1222,13 @@
             this.GoTIMaestroEquipamientoTecnologico.Size = new System.Drawing.Size(214, 22);
             this.GoTIMaestroEquipamientoTecnologico.Text = "Equipamiento tecnológico";
             this.GoTIMaestroEquipamientoTecnologico.Click += new System.EventHandler(this.GoTIMaestroEquipamientoTecnologico_Click);
+            // 
+            // GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico
+            // 
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Name = "GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico";
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Size = new System.Drawing.Size(214, 22);
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Text = "Tipo Log Cuenta Correo";
+            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Click += new System.EventHandler(this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico_Click);
             // 
             // GoTIMaestroSeparador06
             // 
@@ -2548,13 +2554,6 @@
             // 
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
-            // 
-            // GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico
-            // 
-            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Name = "GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico";
-            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Size = new System.Drawing.Size(214, 22);
-            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Text = "Tipo Log Cuenta Correo";
-            this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico.Click += new System.EventHandler(this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico_Click);
             // 
             // Menu
             // 

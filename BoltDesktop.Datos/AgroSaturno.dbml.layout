@@ -539,5 +539,11 @@
         <elementListCompartment Id="d2a17dfa-9af1-4c07-80b7-356f81b9b31f" absoluteBounds="11.765, 7.085, 2.8449999999999998, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="af89a2d7-3c3e-4f6c-92fd-f9bd23e06201" isExpanded="false" absoluteBounds="5.875, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/USUARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4cfe5f4-fb80-483a-8378-ed5ab9ff84fe" absoluteBounds="5.89, 5.71, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

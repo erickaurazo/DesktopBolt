@@ -373,6 +373,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
+            EjecutarConsulta();
+        }
+
+        private void EjecutarConsulta()
+        {
             //Thread t = new Thread((ThreadStart)(() =>
             //{
             try
@@ -1068,7 +1073,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 ConditionalFormattingObject c4 = new ConditionalFormattingObject("Cerrado applied to entire row", ConditionTypes.Equal, "0", "", true);
                 c4.RowForeColor = Color.Black;
-                c4.RowFont = new Font("chEstado UI", 8, FontStyle.Strikeout);
+                c4.RowFont = new Font("Segoe UI", 8, FontStyle.Strikeout);
                 dgvListado.Columns["chEstado"].ConditionalFormattingObjectList.Add(c4);
                 #endregion
             }
@@ -1083,7 +1088,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
                 ConditionalFormattingObject c4 = new ConditionalFormattingObject("Cerrado applied to entire row", ConditionTypes.Equal, "0", "", true);
                 c4.RowForeColor = Color.White;
-                c4.RowFont = new Font("chEstado UI", 8, FontStyle.Regular);
+                c4.RowFont = new Font("Segoe UI", 8, FontStyle.Regular);
                 dgvListado.Columns["chEstado"].ConditionalFormattingObjectList.Add(c4);
                 #endregion
             }

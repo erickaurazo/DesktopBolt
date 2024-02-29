@@ -3069,6 +3069,9 @@
     <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosTipoLog.resx">
       <DependentUpon>CuentaDeCorreosTipoLog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Cuentas NISIRA\CuentasERP.resx">
+      <DependentUpon>CuentasERP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="T.I\Dispositivo\ImpresiponDeTicketPorRangos.resx">
       <DependentUpon>ImpresiponDeTicketPorRangos.cs</DependentUpon>
     </EmbeddedResource>

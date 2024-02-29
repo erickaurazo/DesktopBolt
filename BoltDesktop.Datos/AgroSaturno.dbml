@@ -2189,6 +2189,46 @@
       <Column Name="OrdenServicioFecha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.USUARIO" Member="USUARIOs">
+    <Type Name="USUARIO">
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USR_NOMBRES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="USR_INICIALES" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="VERBARRA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ESTIPO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDUSUARIOTIPO" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="FIRMA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BLOQUEO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DURACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="idclieprov" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDMODULO" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="password2" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="clave_correo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="usa_firma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="firma_html" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idgrupousuario" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="DIST_OPER" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="usa_nisiraerp" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usa_nisirapacking" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usa_tareomovil" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="idusuario_equivalente" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="usa_ensucursal" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="USA_ALMACENMOVIL" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="USA_TOMAPEDIDO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ruta_firma" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="USA_ACOPIOCAMPO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usa_qrate" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usa_agroapp" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="USA_PUNTOVENTAWEB" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SAS_ReporteStockPorAlmacen" Method="SAS_ReporteStockPorAlmacen">
     <Parameter Name="C_EMP" Parameter="c_EMP" Type="System.String" DbType="VarChar(3)" />
     <Parameter Name="C_SUC" Parameter="c_SUC" Type="System.String" DbType="VarChar(3)" />

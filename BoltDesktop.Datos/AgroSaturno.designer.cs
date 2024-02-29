@@ -162,6 +162,9 @@ namespace Asistencia.Datos
     partial void InsertSAS_PesoPromedioJabasCosechaExportables(SAS_PesoPromedioJabasCosechaExportables instance);
     partial void UpdateSAS_PesoPromedioJabasCosechaExportables(SAS_PesoPromedioJabasCosechaExportables instance);
     partial void DeleteSAS_PesoPromedioJabasCosechaExportables(SAS_PesoPromedioJabasCosechaExportables instance);
+    partial void InsertUSUARIO(USUARIO instance);
+    partial void UpdateUSUARIO(USUARIO instance);
+    partial void DeleteUSUARIO(USUARIO instance);
     #endregion
 		
 		public AgroSaturnoDataContext() : 
@@ -767,6 +770,14 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<SAS_SeguimientoPedidoServicio>();
+			}
+		}
+		
+		public System.Data.Linq.Table<USUARIO> USUARIOs
+		{
+			get
+			{
+				return this.GetTable<USUARIO>();
 			}
 		}
 		
@@ -45572,6 +45583,908 @@ namespace Asistencia.Datos
 				{
 					this._OrdenServicioFecha = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.USUARIO")]
+	public partial class USUARIO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _IDUSUARIO;
+		
+		private string _PASSWORD;
+		
+		private System.Nullable<int> _ESTADO;
+		
+		private string _USR_NOMBRES;
+		
+		private string _USR_INICIALES;
+		
+		private System.Nullable<System.DateTime> _FECHACREACION;
+		
+		private System.Nullable<char> _SINCRONIZA;
+		
+		private System.Nullable<decimal> _VERBARRA;
+		
+		private System.Nullable<decimal> _ESTIPO;
+		
+		private string _IDUSUARIOTIPO;
+		
+		private System.Data.Linq.Binary _FIRMA;
+		
+		private string _BLOQUEO;
+		
+		private string _DURACION;
+		
+		private string _idclieprov;
+		
+		private string _EMAIL;
+		
+		private string _IDBASEDATOS;
+		
+		private string _IDMODULO;
+		
+		private string _IDCODIGOGENERAL;
+		
+		private string _password2;
+		
+		private string _clave_correo;
+		
+		private System.Nullable<int> _usa_firma;
+		
+		private string _firma_html;
+		
+		private string _idgrupousuario;
+		
+		private System.Nullable<decimal> _DIST_OPER;
+		
+		private decimal _usa_nisiraerp;
+		
+		private decimal _usa_nisirapacking;
+		
+		private decimal _usa_tareomovil;
+		
+		private string _idusuario_equivalente;
+		
+		private System.Nullable<decimal> _usa_ensucursal;
+		
+		private decimal _USA_ALMACENMOVIL;
+		
+		private decimal _USA_TOMAPEDIDO;
+		
+		private string _ruta_firma;
+		
+		private decimal _USA_ACOPIOCAMPO;
+		
+		private decimal _usa_qrate;
+		
+		private decimal _usa_agroapp;
+		
+		private System.Nullable<decimal> _USA_PUNTOVENTAWEB;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDUSUARIOChanging(string value);
+    partial void OnIDUSUARIOChanged();
+    partial void OnPASSWORDChanging(string value);
+    partial void OnPASSWORDChanged();
+    partial void OnESTADOChanging(System.Nullable<int> value);
+    partial void OnESTADOChanged();
+    partial void OnUSR_NOMBRESChanging(string value);
+    partial void OnUSR_NOMBRESChanged();
+    partial void OnUSR_INICIALESChanging(string value);
+    partial void OnUSR_INICIALESChanged();
+    partial void OnFECHACREACIONChanging(System.Nullable<System.DateTime> value);
+    partial void OnFECHACREACIONChanged();
+    partial void OnSINCRONIZAChanging(System.Nullable<char> value);
+    partial void OnSINCRONIZAChanged();
+    partial void OnVERBARRAChanging(System.Nullable<decimal> value);
+    partial void OnVERBARRAChanged();
+    partial void OnESTIPOChanging(System.Nullable<decimal> value);
+    partial void OnESTIPOChanged();
+    partial void OnIDUSUARIOTIPOChanging(string value);
+    partial void OnIDUSUARIOTIPOChanged();
+    partial void OnFIRMAChanging(System.Data.Linq.Binary value);
+    partial void OnFIRMAChanged();
+    partial void OnBLOQUEOChanging(string value);
+    partial void OnBLOQUEOChanged();
+    partial void OnDURACIONChanging(string value);
+    partial void OnDURACIONChanged();
+    partial void OnidclieprovChanging(string value);
+    partial void OnidclieprovChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnIDBASEDATOSChanging(string value);
+    partial void OnIDBASEDATOSChanged();
+    partial void OnIDMODULOChanging(string value);
+    partial void OnIDMODULOChanged();
+    partial void OnIDCODIGOGENERALChanging(string value);
+    partial void OnIDCODIGOGENERALChanged();
+    partial void Onpassword2Changing(string value);
+    partial void Onpassword2Changed();
+    partial void Onclave_correoChanging(string value);
+    partial void Onclave_correoChanged();
+    partial void Onusa_firmaChanging(System.Nullable<int> value);
+    partial void Onusa_firmaChanged();
+    partial void Onfirma_htmlChanging(string value);
+    partial void Onfirma_htmlChanged();
+    partial void OnidgrupousuarioChanging(string value);
+    partial void OnidgrupousuarioChanged();
+    partial void OnDIST_OPERChanging(System.Nullable<decimal> value);
+    partial void OnDIST_OPERChanged();
+    partial void Onusa_nisiraerpChanging(decimal value);
+    partial void Onusa_nisiraerpChanged();
+    partial void Onusa_nisirapackingChanging(decimal value);
+    partial void Onusa_nisirapackingChanged();
+    partial void Onusa_tareomovilChanging(decimal value);
+    partial void Onusa_tareomovilChanged();
+    partial void Onidusuario_equivalenteChanging(string value);
+    partial void Onidusuario_equivalenteChanged();
+    partial void Onusa_ensucursalChanging(System.Nullable<decimal> value);
+    partial void Onusa_ensucursalChanged();
+    partial void OnUSA_ALMACENMOVILChanging(decimal value);
+    partial void OnUSA_ALMACENMOVILChanged();
+    partial void OnUSA_TOMAPEDIDOChanging(decimal value);
+    partial void OnUSA_TOMAPEDIDOChanged();
+    partial void Onruta_firmaChanging(string value);
+    partial void Onruta_firmaChanged();
+    partial void OnUSA_ACOPIOCAMPOChanging(decimal value);
+    partial void OnUSA_ACOPIOCAMPOChanged();
+    partial void Onusa_qrateChanging(decimal value);
+    partial void Onusa_qrateChanged();
+    partial void Onusa_agroappChanging(decimal value);
+    partial void Onusa_agroappChanged();
+    partial void OnUSA_PUNTOVENTAWEBChanging(System.Nullable<decimal> value);
+    partial void OnUSA_PUNTOVENTAWEBChanged();
+    #endregion
+		
+		public USUARIO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSUARIO", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string IDUSUARIO
+		{
+			get
+			{
+				return this._IDUSUARIO;
+			}
+			set
+			{
+				if ((this._IDUSUARIO != value))
+				{
+					this.OnIDUSUARIOChanging(value);
+					this.SendPropertyChanging();
+					this._IDUSUARIO = value;
+					this.SendPropertyChanged("IDUSUARIO");
+					this.OnIDUSUARIOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="VarChar(200)")]
+		public string PASSWORD
+		{
+			get
+			{
+				return this._PASSWORD;
+			}
+			set
+			{
+				if ((this._PASSWORD != value))
+				{
+					this.OnPASSWORDChanging(value);
+					this.SendPropertyChanging();
+					this._PASSWORD = value;
+					this.SendPropertyChanged("PASSWORD");
+					this.OnPASSWORDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="Int")]
+		public System.Nullable<int> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this.OnESTADOChanging(value);
+					this.SendPropertyChanging();
+					this._ESTADO = value;
+					this.SendPropertyChanged("ESTADO");
+					this.OnESTADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USR_NOMBRES", DbType="VarChar(80)")]
+		public string USR_NOMBRES
+		{
+			get
+			{
+				return this._USR_NOMBRES;
+			}
+			set
+			{
+				if ((this._USR_NOMBRES != value))
+				{
+					this.OnUSR_NOMBRESChanging(value);
+					this.SendPropertyChanging();
+					this._USR_NOMBRES = value;
+					this.SendPropertyChanged("USR_NOMBRES");
+					this.OnUSR_NOMBRESChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USR_INICIALES", DbType="Char(4)")]
+		public string USR_INICIALES
+		{
+			get
+			{
+				return this._USR_INICIALES;
+			}
+			set
+			{
+				if ((this._USR_INICIALES != value))
+				{
+					this.OnUSR_INICIALESChanging(value);
+					this.SendPropertyChanging();
+					this._USR_INICIALES = value;
+					this.SendPropertyChanged("USR_INICIALES");
+					this.OnUSR_INICIALESChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHACREACION", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHACREACION
+		{
+			get
+			{
+				return this._FECHACREACION;
+			}
+			set
+			{
+				if ((this._FECHACREACION != value))
+				{
+					this.OnFECHACREACIONChanging(value);
+					this.SendPropertyChanging();
+					this._FECHACREACION = value;
+					this.SendPropertyChanged("FECHACREACION");
+					this.OnFECHACREACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SINCRONIZA", DbType="Char(1)")]
+		public System.Nullable<char> SINCRONIZA
+		{
+			get
+			{
+				return this._SINCRONIZA;
+			}
+			set
+			{
+				if ((this._SINCRONIZA != value))
+				{
+					this.OnSINCRONIZAChanging(value);
+					this.SendPropertyChanging();
+					this._SINCRONIZA = value;
+					this.SendPropertyChanged("SINCRONIZA");
+					this.OnSINCRONIZAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VERBARRA", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> VERBARRA
+		{
+			get
+			{
+				return this._VERBARRA;
+			}
+			set
+			{
+				if ((this._VERBARRA != value))
+				{
+					this.OnVERBARRAChanging(value);
+					this.SendPropertyChanging();
+					this._VERBARRA = value;
+					this.SendPropertyChanged("VERBARRA");
+					this.OnVERBARRAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTIPO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> ESTIPO
+		{
+			get
+			{
+				return this._ESTIPO;
+			}
+			set
+			{
+				if ((this._ESTIPO != value))
+				{
+					this.OnESTIPOChanging(value);
+					this.SendPropertyChanging();
+					this._ESTIPO = value;
+					this.SendPropertyChanged("ESTIPO");
+					this.OnESTIPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSUARIOTIPO", DbType="Char(20)")]
+		public string IDUSUARIOTIPO
+		{
+			get
+			{
+				return this._IDUSUARIOTIPO;
+			}
+			set
+			{
+				if ((this._IDUSUARIOTIPO != value))
+				{
+					this.OnIDUSUARIOTIPOChanging(value);
+					this.SendPropertyChanging();
+					this._IDUSUARIOTIPO = value;
+					this.SendPropertyChanged("IDUSUARIOTIPO");
+					this.OnIDUSUARIOTIPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FIRMA", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary FIRMA
+		{
+			get
+			{
+				return this._FIRMA;
+			}
+			set
+			{
+				if ((this._FIRMA != value))
+				{
+					this.OnFIRMAChanging(value);
+					this.SendPropertyChanging();
+					this._FIRMA = value;
+					this.SendPropertyChanged("FIRMA");
+					this.OnFIRMAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BLOQUEO", DbType="Char(2)")]
+		public string BLOQUEO
+		{
+			get
+			{
+				return this._BLOQUEO;
+			}
+			set
+			{
+				if ((this._BLOQUEO != value))
+				{
+					this.OnBLOQUEOChanging(value);
+					this.SendPropertyChanging();
+					this._BLOQUEO = value;
+					this.SendPropertyChanged("BLOQUEO");
+					this.OnBLOQUEOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DURACION", DbType="VarChar(20)")]
+		public string DURACION
+		{
+			get
+			{
+				return this._DURACION;
+			}
+			set
+			{
+				if ((this._DURACION != value))
+				{
+					this.OnDURACIONChanging(value);
+					this.SendPropertyChanging();
+					this._DURACION = value;
+					this.SendPropertyChanged("DURACION");
+					this.OnDURACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idclieprov", DbType="Char(11)")]
+		public string idclieprov
+		{
+			get
+			{
+				return this._idclieprov;
+			}
+			set
+			{
+				if ((this._idclieprov != value))
+				{
+					this.OnidclieprovChanging(value);
+					this.SendPropertyChanging();
+					this._idclieprov = value;
+					this.SendPropertyChanged("idclieprov");
+					this.OnidclieprovChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(100)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBASEDATOS", DbType="VarChar(100)")]
+		public string IDBASEDATOS
+		{
+			get
+			{
+				return this._IDBASEDATOS;
+			}
+			set
+			{
+				if ((this._IDBASEDATOS != value))
+				{
+					this.OnIDBASEDATOSChanging(value);
+					this.SendPropertyChanging();
+					this._IDBASEDATOS = value;
+					this.SendPropertyChanged("IDBASEDATOS");
+					this.OnIDBASEDATOSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMODULO", DbType="Char(8)")]
+		public string IDMODULO
+		{
+			get
+			{
+				return this._IDMODULO;
+			}
+			set
+			{
+				if ((this._IDMODULO != value))
+				{
+					this.OnIDMODULOChanging(value);
+					this.SendPropertyChanging();
+					this._IDMODULO = value;
+					this.SendPropertyChanged("IDMODULO");
+					this.OnIDMODULOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCODIGOGENERAL", DbType="Char(8)")]
+		public string IDCODIGOGENERAL
+		{
+			get
+			{
+				return this._IDCODIGOGENERAL;
+			}
+			set
+			{
+				if ((this._IDCODIGOGENERAL != value))
+				{
+					this.OnIDCODIGOGENERALChanging(value);
+					this.SendPropertyChanging();
+					this._IDCODIGOGENERAL = value;
+					this.SendPropertyChanged("IDCODIGOGENERAL");
+					this.OnIDCODIGOGENERALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password2", DbType="VarChar(8000)")]
+		public string password2
+		{
+			get
+			{
+				return this._password2;
+			}
+			set
+			{
+				if ((this._password2 != value))
+				{
+					this.Onpassword2Changing(value);
+					this.SendPropertyChanging();
+					this._password2 = value;
+					this.SendPropertyChanged("password2");
+					this.Onpassword2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_clave_correo", DbType="VarChar(200)")]
+		public string clave_correo
+		{
+			get
+			{
+				return this._clave_correo;
+			}
+			set
+			{
+				if ((this._clave_correo != value))
+				{
+					this.Onclave_correoChanging(value);
+					this.SendPropertyChanging();
+					this._clave_correo = value;
+					this.SendPropertyChanged("clave_correo");
+					this.Onclave_correoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_firma", DbType="Int")]
+		public System.Nullable<int> usa_firma
+		{
+			get
+			{
+				return this._usa_firma;
+			}
+			set
+			{
+				if ((this._usa_firma != value))
+				{
+					this.Onusa_firmaChanging(value);
+					this.SendPropertyChanging();
+					this._usa_firma = value;
+					this.SendPropertyChanged("usa_firma");
+					this.Onusa_firmaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firma_html", DbType="VarChar(MAX)")]
+		public string firma_html
+		{
+			get
+			{
+				return this._firma_html;
+			}
+			set
+			{
+				if ((this._firma_html != value))
+				{
+					this.Onfirma_htmlChanging(value);
+					this.SendPropertyChanging();
+					this._firma_html = value;
+					this.SendPropertyChanged("firma_html");
+					this.Onfirma_htmlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idgrupousuario", DbType="Char(3)")]
+		public string idgrupousuario
+		{
+			get
+			{
+				return this._idgrupousuario;
+			}
+			set
+			{
+				if ((this._idgrupousuario != value))
+				{
+					this.OnidgrupousuarioChanging(value);
+					this.SendPropertyChanging();
+					this._idgrupousuario = value;
+					this.SendPropertyChanged("idgrupousuario");
+					this.OnidgrupousuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIST_OPER", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> DIST_OPER
+		{
+			get
+			{
+				return this._DIST_OPER;
+			}
+			set
+			{
+				if ((this._DIST_OPER != value))
+				{
+					this.OnDIST_OPERChanging(value);
+					this.SendPropertyChanging();
+					this._DIST_OPER = value;
+					this.SendPropertyChanged("DIST_OPER");
+					this.OnDIST_OPERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_nisiraerp", DbType="Decimal(1,0) NOT NULL")]
+		public decimal usa_nisiraerp
+		{
+			get
+			{
+				return this._usa_nisiraerp;
+			}
+			set
+			{
+				if ((this._usa_nisiraerp != value))
+				{
+					this.Onusa_nisiraerpChanging(value);
+					this.SendPropertyChanging();
+					this._usa_nisiraerp = value;
+					this.SendPropertyChanged("usa_nisiraerp");
+					this.Onusa_nisiraerpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_nisirapacking", DbType="Decimal(1,0) NOT NULL")]
+		public decimal usa_nisirapacking
+		{
+			get
+			{
+				return this._usa_nisirapacking;
+			}
+			set
+			{
+				if ((this._usa_nisirapacking != value))
+				{
+					this.Onusa_nisirapackingChanging(value);
+					this.SendPropertyChanging();
+					this._usa_nisirapacking = value;
+					this.SendPropertyChanged("usa_nisirapacking");
+					this.Onusa_nisirapackingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_tareomovil", DbType="Decimal(1,0) NOT NULL")]
+		public decimal usa_tareomovil
+		{
+			get
+			{
+				return this._usa_tareomovil;
+			}
+			set
+			{
+				if ((this._usa_tareomovil != value))
+				{
+					this.Onusa_tareomovilChanging(value);
+					this.SendPropertyChanging();
+					this._usa_tareomovil = value;
+					this.SendPropertyChanged("usa_tareomovil");
+					this.Onusa_tareomovilChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idusuario_equivalente", DbType="Char(20)")]
+		public string idusuario_equivalente
+		{
+			get
+			{
+				return this._idusuario_equivalente;
+			}
+			set
+			{
+				if ((this._idusuario_equivalente != value))
+				{
+					this.Onidusuario_equivalenteChanging(value);
+					this.SendPropertyChanging();
+					this._idusuario_equivalente = value;
+					this.SendPropertyChanged("idusuario_equivalente");
+					this.Onidusuario_equivalenteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_ensucursal", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> usa_ensucursal
+		{
+			get
+			{
+				return this._usa_ensucursal;
+			}
+			set
+			{
+				if ((this._usa_ensucursal != value))
+				{
+					this.Onusa_ensucursalChanging(value);
+					this.SendPropertyChanging();
+					this._usa_ensucursal = value;
+					this.SendPropertyChanged("usa_ensucursal");
+					this.Onusa_ensucursalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USA_ALMACENMOVIL", DbType="Decimal(1,0) NOT NULL")]
+		public decimal USA_ALMACENMOVIL
+		{
+			get
+			{
+				return this._USA_ALMACENMOVIL;
+			}
+			set
+			{
+				if ((this._USA_ALMACENMOVIL != value))
+				{
+					this.OnUSA_ALMACENMOVILChanging(value);
+					this.SendPropertyChanging();
+					this._USA_ALMACENMOVIL = value;
+					this.SendPropertyChanged("USA_ALMACENMOVIL");
+					this.OnUSA_ALMACENMOVILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USA_TOMAPEDIDO", DbType="Decimal(1,0) NOT NULL")]
+		public decimal USA_TOMAPEDIDO
+		{
+			get
+			{
+				return this._USA_TOMAPEDIDO;
+			}
+			set
+			{
+				if ((this._USA_TOMAPEDIDO != value))
+				{
+					this.OnUSA_TOMAPEDIDOChanging(value);
+					this.SendPropertyChanging();
+					this._USA_TOMAPEDIDO = value;
+					this.SendPropertyChanged("USA_TOMAPEDIDO");
+					this.OnUSA_TOMAPEDIDOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ruta_firma", DbType="VarChar(250)")]
+		public string ruta_firma
+		{
+			get
+			{
+				return this._ruta_firma;
+			}
+			set
+			{
+				if ((this._ruta_firma != value))
+				{
+					this.Onruta_firmaChanging(value);
+					this.SendPropertyChanging();
+					this._ruta_firma = value;
+					this.SendPropertyChanged("ruta_firma");
+					this.Onruta_firmaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USA_ACOPIOCAMPO", DbType="Decimal(1,0) NOT NULL")]
+		public decimal USA_ACOPIOCAMPO
+		{
+			get
+			{
+				return this._USA_ACOPIOCAMPO;
+			}
+			set
+			{
+				if ((this._USA_ACOPIOCAMPO != value))
+				{
+					this.OnUSA_ACOPIOCAMPOChanging(value);
+					this.SendPropertyChanging();
+					this._USA_ACOPIOCAMPO = value;
+					this.SendPropertyChanged("USA_ACOPIOCAMPO");
+					this.OnUSA_ACOPIOCAMPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_qrate", DbType="Decimal(1,0) NOT NULL")]
+		public decimal usa_qrate
+		{
+			get
+			{
+				return this._usa_qrate;
+			}
+			set
+			{
+				if ((this._usa_qrate != value))
+				{
+					this.Onusa_qrateChanging(value);
+					this.SendPropertyChanging();
+					this._usa_qrate = value;
+					this.SendPropertyChanged("usa_qrate");
+					this.Onusa_qrateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usa_agroapp", DbType="Decimal(1,0) NOT NULL")]
+		public decimal usa_agroapp
+		{
+			get
+			{
+				return this._usa_agroapp;
+			}
+			set
+			{
+				if ((this._usa_agroapp != value))
+				{
+					this.Onusa_agroappChanging(value);
+					this.SendPropertyChanging();
+					this._usa_agroapp = value;
+					this.SendPropertyChanged("usa_agroapp");
+					this.Onusa_agroappChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USA_PUNTOVENTAWEB", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> USA_PUNTOVENTAWEB
+		{
+			get
+			{
+				return this._USA_PUNTOVENTAWEB;
+			}
+			set
+			{
+				if ((this._USA_PUNTOVENTAWEB != value))
+				{
+					this.OnUSA_PUNTOVENTAWEBChanging(value);
+					this.SendPropertyChanging();
+					this._USA_PUNTOVENTAWEB = value;
+					this.SendPropertyChanged("USA_PUNTOVENTAWEB");
+					this.OnUSA_PUNTOVENTAWEBChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

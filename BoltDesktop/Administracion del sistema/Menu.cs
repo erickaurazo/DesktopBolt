@@ -22,6 +22,7 @@ using ComparativoHorasVisualSATNISIRA.Presupuestos;
 using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.T.I;
 using ComparativoHorasVisualSATNISIRA.T.I.Correos_electronicos;
+using ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA;
 using ComparativoHorasVisualSATNISIRA.T.I.Partes_Diarios;
 using System;
 using System.Collections.Generic;
@@ -5330,6 +5331,35 @@ namespace Asistencia
                 MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
                 return;
             }
+        }
+
+        private void GoTIcuentaNisiraERP_Click(object sender, EventArgs e)
+        {
+
+            string form2 = GoTIcuentaNisiraERP.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                CuentasERP frmHijo = new CuentasERP("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                // frmHijo.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+            
         }
     }
 }
