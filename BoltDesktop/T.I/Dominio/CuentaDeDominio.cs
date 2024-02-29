@@ -762,7 +762,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void VerResumen()
         {
-
+            //No implementado
         }
 
         private void Editar()

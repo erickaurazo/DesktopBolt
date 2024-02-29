@@ -1838,5 +1838,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
 
         }
+
+        private void btnVerResumen_Click(object sender, EventArgs e)
+        {
+            //no implementado
+        }
     }
 }
