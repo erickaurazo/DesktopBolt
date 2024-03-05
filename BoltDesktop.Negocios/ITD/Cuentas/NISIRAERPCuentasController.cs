@@ -147,7 +147,48 @@ namespace Asistencia.Negocios.ITD.Cuentas
                 Scope.Complete();
             }
         }
+        public void ActivarCuenta(string CuentaDeUsuarioID, string conection)
+        {
+            using (TransactionScope Scope = new TransactionScope())
+            {
+                #region Transacción()
 
+                string cnx = string.Empty;
+
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
+
+                using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+                {
+                    var result = Modelo.USUARIOs.Where(x => x.IDUSUARIO.Trim() == CuentaDeUsuarioID).ToList();
+
+                    if (result.Count >= 1)
+                    {
+                        //Anular
+                        try
+                        {
+                            USUARIO CuentaUsuario = new USUARIO();
+                            CuentaUsuario = result.ElementAt(0);
+                            //CuentaUsuario.PASSWORD = "RETIRADO";
+                            CuentaUsuario.ESTADO = 1;
+                            Modelo.SubmitChanges();
+                        }
+                        catch (Exception Ex)
+                        {
+
+                            throw Ex;
+                        }
+
+                    }
+
+                }
+                #endregion
+
+                Scope.Complete();
+            }
+        }
+
+
+        
 
     }
 }

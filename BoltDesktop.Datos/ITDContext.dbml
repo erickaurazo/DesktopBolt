@@ -126,16 +126,6 @@
       <Column Name="numeroIP" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SAS_DispositivoTipoHardware" Member="SAS_DispositivoTipoHardware">
-    <Type Name="SAS_DispositivoTipoHardware">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="nombreCorto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="enFormatoSolicitud" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SAS_OperadorTelefoniaMovil" Member="SAS_OperadorTelefoniaMovil">
     <Type Name="SAS_OperadorTelefoniaMovil">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -2146,6 +2136,17 @@
       <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.SAS_DispositivoTipoHardware" Member="SAS_DispositivoTipoHardwares">
+    <Type Name="SAS_DispositivoTipoHardware">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreCorto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="enFormatoSolicitud" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="TipoHardwareID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SAS_EsPropioCBO" Method="SAS_EsPropioCBO">
     <ElementType Name="SAS_EsPropioCBOResult">
       <Column Name="codigo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
@@ -4146,6 +4147,61 @@
       <Column Name="Tabla" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
       <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoCuentasERPALL" Method="SAS_ListadoCuentasERPALL">
+    <ElementType Name="SAS_ListadoCuentasERPALLResult">
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USR_NOMBRES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="USR_INICIALES" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(160) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Situacion" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AreaAsignada" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaActualizacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAll" Method="SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAll">
+    <ElementType Name="SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreCorto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="enFormatoSolicitud" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="TipoHardwareID" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoHardware" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoDescripcion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_DispositivoHardwareByTipoDispositivoID" Method="SAS_DispositivoHardwareByTipoDispositivoID">
+    <Parameter Name="TipoDispositivoID" Parameter="tipoDispositivoID" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="DispositivoID" Parameter="dispositivoID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_DispositivoHardwareByTipoDispositivoIDResult">
+      <Column Name="codigoDispositivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoHardware" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hardware" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="serie" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="capacidad" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="unidadMedidaCapacidad" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="numeroParte" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="desde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idestado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="seVisualizaEnReportes" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUnico" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

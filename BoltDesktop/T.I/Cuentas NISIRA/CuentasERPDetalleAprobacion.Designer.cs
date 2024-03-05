@@ -1,6 +1,6 @@
 ﻿namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
 {
-    partial class CuentasERPDetalle
+    partial class CuentasERPDetalleAprobacion
     {
         /// <summary>
         /// Required designer variable.

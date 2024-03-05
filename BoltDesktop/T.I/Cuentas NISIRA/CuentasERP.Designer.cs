@@ -58,8 +58,23 @@
             this.btnResaltarResultados = new Telerik.WinControls.UI.CommandBarButton();
             this.btnAdjuntar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.gbList = new Telerik.WinControls.UI.RadGroupBox();
             this.dgvListado = new Telerik.WinControls.UI.RadGridView();
+            this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnAsociarAreaDeTrabajo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnVerDatosDelColaborador = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnResetearClave = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSuspenderCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSuspenderTemporalmente = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnActivarCuenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnPrivilegiosDeAprobacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHeredarPrivilegiosDeOtroUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblFullName = new System.Windows.Forms.ToolStripStatusLabel();
@@ -70,28 +85,13 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
-            this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnAsociarAreaDeTrabajo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnVerDatosDelColaborador = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnResetearClave = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSuspenderTemporalmente = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnActivarCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSuspenderCuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnPrivilegiosDeAprobacion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHeredarPrivilegiosDeOtroUsuario = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado.MasterTemplate)).BeginInit();
-            this.stsBarraEstado.SuspendLayout();
             this.subMenu.SuspendLayout();
+            this.stsBarraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -102,7 +102,7 @@
             this.btnMenu.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior,
             this.commandBarRowElement1});
-            this.btnMenu.Size = new System.Drawing.Size(1276, 65);
+            this.btnMenu.Size = new System.Drawing.Size(1125, 67);
             this.btnMenu.TabIndex = 209;
             this.btnMenu.ThemeName = "VisualStudio2012Light";
             // 
@@ -382,6 +382,10 @@
             this.btnSalir.ToolTipText = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // commandBarRowElement1
+            // 
+            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
+            // 
             // gbList
             // 
             this.gbList.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -392,7 +396,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(0, 41);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(1276, 709);
+            this.gbList.Size = new System.Drawing.Size(1125, 412);
             this.gbList.TabIndex = 211;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -403,7 +407,6 @@
             this.dgvListado.ContextMenuStrip = this.subMenu;
             this.dgvListado.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvListado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListado.EnableCustomFiltering = true;
             this.dgvListado.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.dgvListado.ForeColor = System.Drawing.Color.Black;
             this.dgvListado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -418,42 +421,42 @@
             gridViewTextBoxColumn1.FieldName = "IDUSUARIO";
             gridViewTextBoxColumn1.HeaderText = "Usuario ID";
             gridViewTextBoxColumn1.Name = "chIDUSUARIO";
-            gridViewTextBoxColumn1.Width = 118;
+            gridViewTextBoxColumn1.Width = 104;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "PASSWORD";
             gridViewTextBoxColumn2.HeaderText = "Password";
             gridViewTextBoxColumn2.Name = "chPASSWORD";
-            gridViewTextBoxColumn2.Width = 121;
+            gridViewTextBoxColumn2.Width = 107;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "USR_NOMBRES";
             gridViewTextBoxColumn3.HeaderText = "Usuario";
             gridViewTextBoxColumn3.Name = "chUSR_NOMBRES";
-            gridViewTextBoxColumn3.Width = 323;
+            gridViewTextBoxColumn3.Width = 284;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "USR_INICIALES";
             gridViewTextBoxColumn4.HeaderText = "Iniciales";
             gridViewTextBoxColumn4.Name = "chUSR_INICIALES";
-            gridViewTextBoxColumn4.Width = 75;
+            gridViewTextBoxColumn4.Width = 66;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "FECHACREACION";
             gridViewTextBoxColumn5.HeaderText = "Creacion";
             gridViewTextBoxColumn5.Name = "chFECHACREACION";
-            gridViewTextBoxColumn5.Width = 118;
+            gridViewTextBoxColumn5.Width = 104;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "EMAIL";
             gridViewTextBoxColumn6.HeaderText = "Correo";
             gridViewTextBoxColumn6.Name = "chEMAIL";
-            gridViewTextBoxColumn6.Width = 332;
+            gridViewTextBoxColumn6.Width = 292;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "IDCODIGOGENERAL";
             gridViewTextBoxColumn7.HeaderText = "Cod. Trabajador";
             gridViewTextBoxColumn7.Name = "chIDCODIGOGENERAL";
-            gridViewTextBoxColumn7.Width = 98;
+            gridViewTextBoxColumn7.Width = 86;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "ESTADO";
             gridViewTextBoxColumn8.HeaderText = "Estado (0 Inactivo, 1 Activo)";
             gridViewTextBoxColumn8.Name = "chESTADO";
-            gridViewTextBoxColumn8.Width = 76;
+            gridViewTextBoxColumn8.Width = 67;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -463,10 +466,7 @@
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8});
-            this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
-            this.dgvListado.MasterTemplate.EnableCustomFiltering = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
-            this.dgvListado.MasterTemplate.MultiSelect = true;
             this.dgvListado.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvListado.MasterTemplate.ShowGroupedColumns = true;
             this.dgvListado.MasterTemplate.ShowHeaderCellButtons = true;
@@ -474,10 +474,126 @@
             this.dgvListado.ReadOnly = true;
             this.dgvListado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvListado.ShowHeaderCellButtons = true;
-            this.dgvListado.Size = new System.Drawing.Size(1272, 689);
+            this.dgvListado.Size = new System.Drawing.Size(1121, 392);
             this.dgvListado.TabIndex = 164;
             this.dgvListado.ThemeName = "VisualStudio2012Light";
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
+            // 
+            // subMenu
+            // 
+            this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAsociarAreaDeTrabajo,
+            this.toolStripSeparator2,
+            this.btnVerDatosDelColaborador,
+            this.toolStripSeparator4,
+            this.btnResetearClave,
+            this.toolStripSeparator1,
+            this.btnSuspenderCuenta,
+            this.btnSuspenderTemporalmente,
+            this.toolStripSeparator3,
+            this.btnActivarCuenta,
+            this.toolStripSeparator8,
+            this.btnPrivilegiosDeAprobacion,
+            this.btnHeredarPrivilegiosDeOtroUsuario});
+            this.subMenu.Name = "subMenu";
+            this.subMenu.Size = new System.Drawing.Size(257, 210);
+            // 
+            // btnAsociarAreaDeTrabajo
+            // 
+            this.btnAsociarAreaDeTrabajo.Enabled = false;
+            this.btnAsociarAreaDeTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsociarAreaDeTrabajo.Image")));
+            this.btnAsociarAreaDeTrabajo.Name = "btnAsociarAreaDeTrabajo";
+            this.btnAsociarAreaDeTrabajo.Size = new System.Drawing.Size(256, 22);
+            this.btnAsociarAreaDeTrabajo.Text = "Asociar área de trabajo";
+            this.btnAsociarAreaDeTrabajo.Click += new System.EventHandler(this.btnAsociarAreaDeTrabajo_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(253, 6);
+            // 
+            // btnVerDatosDelColaborador
+            // 
+            this.btnVerDatosDelColaborador.Enabled = false;
+            this.btnVerDatosDelColaborador.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDatosDelColaborador.Image")));
+            this.btnVerDatosDelColaborador.Name = "btnVerDatosDelColaborador";
+            this.btnVerDatosDelColaborador.Size = new System.Drawing.Size(256, 22);
+            this.btnVerDatosDelColaborador.Text = "Ver datos del colaborador";
+            this.btnVerDatosDelColaborador.Click += new System.EventHandler(this.btnVerDatosDelColaborador_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(253, 6);
+            // 
+            // btnResetearClave
+            // 
+            this.btnResetearClave.Enabled = false;
+            this.btnResetearClave.Image = ((System.Drawing.Image)(resources.GetObject("btnResetearClave.Image")));
+            this.btnResetearClave.Name = "btnResetearClave";
+            this.btnResetearClave.Size = new System.Drawing.Size(256, 22);
+            this.btnResetearClave.Text = "Envia a reseteo de clave";
+            this.btnResetearClave.Click += new System.EventHandler(this.btnResetearClave_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(253, 6);
+            // 
+            // btnSuspenderCuenta
+            // 
+            this.btnSuspenderCuenta.Enabled = false;
+            this.btnSuspenderCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspenderCuenta.Image")));
+            this.btnSuspenderCuenta.Name = "btnSuspenderCuenta";
+            this.btnSuspenderCuenta.Size = new System.Drawing.Size(256, 22);
+            this.btnSuspenderCuenta.Text = "Suspender cuenta";
+            this.btnSuspenderCuenta.Click += new System.EventHandler(this.btnSuspenderCuenta_Click);
+            // 
+            // btnSuspenderTemporalmente
+            // 
+            this.btnSuspenderTemporalmente.Enabled = false;
+            this.btnSuspenderTemporalmente.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspenderTemporalmente.Image")));
+            this.btnSuspenderTemporalmente.Name = "btnSuspenderTemporalmente";
+            this.btnSuspenderTemporalmente.Size = new System.Drawing.Size(256, 22);
+            this.btnSuspenderTemporalmente.Text = "Suspender temporalmente";
+            this.btnSuspenderTemporalmente.Click += new System.EventHandler(this.btnSuspenderTemporalmente_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(253, 6);
+            // 
+            // btnActivarCuenta
+            // 
+            this.btnActivarCuenta.Enabled = false;
+            this.btnActivarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarCuenta.Image")));
+            this.btnActivarCuenta.Name = "btnActivarCuenta";
+            this.btnActivarCuenta.Size = new System.Drawing.Size(256, 22);
+            this.btnActivarCuenta.Text = "Activar cuenta";
+            this.btnActivarCuenta.Click += new System.EventHandler(this.btnActivarCuenta_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(253, 6);
+            // 
+            // btnPrivilegiosDeAprobacion
+            // 
+            this.btnPrivilegiosDeAprobacion.Enabled = false;
+            this.btnPrivilegiosDeAprobacion.Image = ((System.Drawing.Image)(resources.GetObject("btnPrivilegiosDeAprobacion.Image")));
+            this.btnPrivilegiosDeAprobacion.Name = "btnPrivilegiosDeAprobacion";
+            this.btnPrivilegiosDeAprobacion.Size = new System.Drawing.Size(256, 22);
+            this.btnPrivilegiosDeAprobacion.Text = "Privilegios de Aprobación";
+            this.btnPrivilegiosDeAprobacion.Click += new System.EventHandler(this.btnPrivilegiosDeAprobacion_Click);
+            // 
+            // btnHeredarPrivilegiosDeOtroUsuario
+            // 
+            this.btnHeredarPrivilegiosDeOtroUsuario.Enabled = false;
+            this.btnHeredarPrivilegiosDeOtroUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnHeredarPrivilegiosDeOtroUsuario.Image")));
+            this.btnHeredarPrivilegiosDeOtroUsuario.Name = "btnHeredarPrivilegiosDeOtroUsuario";
+            this.btnHeredarPrivilegiosDeOtroUsuario.Size = new System.Drawing.Size(256, 22);
+            this.btnHeredarPrivilegiosDeOtroUsuario.Text = "Heredar privilegios de otro usuario";
+            this.btnHeredarPrivilegiosDeOtroUsuario.Click += new System.EventHandler(this.btnHeredarPrivilegiosDeOtroUsuario_Click);
             // 
             // stsBarraEstado
             // 
@@ -487,9 +603,9 @@
             this.lblUser,
             this.lblCodeUser,
             this.progressBar1});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 753);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 456);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1276, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1125, 22);
             this.stsBarraEstado.TabIndex = 212;
             // 
             // lblUserNames
@@ -526,119 +642,10 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // commandBarRowElement1
-            // 
-            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
-            // 
-            // subMenu
-            // 
-            this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAsociarAreaDeTrabajo,
-            this.toolStripSeparator2,
-            this.btnVerDatosDelColaborador,
-            this.toolStripSeparator4,
-            this.btnResetearClave,
-            this.toolStripSeparator1,
-            this.btnSuspenderCuenta,
-            this.btnSuspenderTemporalmente,
-            this.toolStripSeparator3,
-            this.btnActivarCuenta,
-            this.toolStripSeparator8,
-            this.btnPrivilegiosDeAprobacion,
-            this.btnHeredarPrivilegiosDeOtroUsuario});
-            this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(257, 210);
-            // 
-            // btnAsociarAreaDeTrabajo
-            // 
-            this.btnAsociarAreaDeTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsociarAreaDeTrabajo.Image")));
-            this.btnAsociarAreaDeTrabajo.Name = "btnAsociarAreaDeTrabajo";
-            this.btnAsociarAreaDeTrabajo.Size = new System.Drawing.Size(256, 22);
-            this.btnAsociarAreaDeTrabajo.Text = "Asociar área de trabajo";
-            this.btnAsociarAreaDeTrabajo.Click += new System.EventHandler(this.btnAsociarAreaDeTrabajo_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(253, 6);
-            // 
-            // btnVerDatosDelColaborador
-            // 
-            this.btnVerDatosDelColaborador.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDatosDelColaborador.Image")));
-            this.btnVerDatosDelColaborador.Name = "btnVerDatosDelColaborador";
-            this.btnVerDatosDelColaborador.Size = new System.Drawing.Size(256, 22);
-            this.btnVerDatosDelColaborador.Text = "Ver datos del colaborador";
-            this.btnVerDatosDelColaborador.Click += new System.EventHandler(this.btnVerDatosDelColaborador_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(253, 6);
-            // 
-            // btnResetearClave
-            // 
-            this.btnResetearClave.Image = ((System.Drawing.Image)(resources.GetObject("btnResetearClave.Image")));
-            this.btnResetearClave.Name = "btnResetearClave";
-            this.btnResetearClave.Size = new System.Drawing.Size(256, 22);
-            this.btnResetearClave.Text = "Envia a reseteo de clave";
-            this.btnResetearClave.Click += new System.EventHandler(this.btnResetearClave_Click);
-            // 
-            // btnSuspenderTemporalmente
-            // 
-            this.btnSuspenderTemporalmente.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspenderTemporalmente.Image")));
-            this.btnSuspenderTemporalmente.Name = "btnSuspenderTemporalmente";
-            this.btnSuspenderTemporalmente.Size = new System.Drawing.Size(256, 22);
-            this.btnSuspenderTemporalmente.Text = "Suspender temporalmente";
-            this.btnSuspenderTemporalmente.Click += new System.EventHandler(this.btnSuspenderTemporalmente_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(253, 6);
-            // 
-            // btnActivarCuenta
-            // 
-            this.btnActivarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnActivarCuenta.Image")));
-            this.btnActivarCuenta.Name = "btnActivarCuenta";
-            this.btnActivarCuenta.Size = new System.Drawing.Size(256, 22);
-            this.btnActivarCuenta.Text = "Activar cuenta";
-            this.btnActivarCuenta.Click += new System.EventHandler(this.btnActivarCuenta_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(253, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(253, 6);
-            // 
-            // btnSuspenderCuenta
-            // 
-            this.btnSuspenderCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnSuspenderCuenta.Image")));
-            this.btnSuspenderCuenta.Name = "btnSuspenderCuenta";
-            this.btnSuspenderCuenta.Size = new System.Drawing.Size(256, 22);
-            this.btnSuspenderCuenta.Text = "Suspender cuenta";
-            // 
-            // btnPrivilegiosDeAprobacion
-            // 
-            this.btnPrivilegiosDeAprobacion.Image = ((System.Drawing.Image)(resources.GetObject("btnPrivilegiosDeAprobacion.Image")));
-            this.btnPrivilegiosDeAprobacion.Name = "btnPrivilegiosDeAprobacion";
-            this.btnPrivilegiosDeAprobacion.Size = new System.Drawing.Size(256, 22);
-            this.btnPrivilegiosDeAprobacion.Text = "Privilegios de Aprobación";
-            // 
-            // btnHeredarPrivilegiosDeOtroUsuario
-            // 
-            this.btnHeredarPrivilegiosDeOtroUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnHeredarPrivilegiosDeOtroUsuario.Image")));
-            this.btnHeredarPrivilegiosDeOtroUsuario.Name = "btnHeredarPrivilegiosDeOtroUsuario";
-            this.btnHeredarPrivilegiosDeOtroUsuario.Size = new System.Drawing.Size(256, 22);
-            this.btnHeredarPrivilegiosDeOtroUsuario.Text = "Heredar privilegios de otro usuario";
-            // 
             // CuentasERP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1276, 775);
+            this.ClientSize = new System.Drawing.Size(1125, 478);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.gbList);
             this.Controls.Add(this.btnMenu);
@@ -653,9 +660,9 @@
             this.gbList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
+            this.subMenu.ResumeLayout(false);
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();
-            this.subMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

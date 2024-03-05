@@ -18,7 +18,18 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                listado = Modelo.SAS_DispositivoTipoHardware.ToList();
+                listado = Modelo.SAS_DispositivoTipoHardwares.ToList();
+            }
+            return listado;
+        }
+
+        public List<SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult> GetTypeHardwaresAll(string conection)
+        {
+            List<SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult> listado = new List<SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                listado = Modelo.SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAll().ToList();
             }
             return listado;
         }
@@ -34,7 +45,7 @@ namespace Asistencia.Negocios
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
-                    var resultado = Modelo.SAS_DispositivoTipoHardware.Where(x => x.id == item.id).ToList();
+                    var resultado = Modelo.SAS_DispositivoTipoHardwares.Where(x => x.id == item.id).ToList();
                     if (resultado != null)
                     {
                         #region Registro | Actualizacion() 
@@ -47,22 +58,24 @@ namespace Asistencia.Negocios
                             oregistro.nombreCorto = item.nombreCorto;
                             oregistro.enFormatoSolicitud = item.enFormatoSolicitud != null ? item.enFormatoSolicitud : 0;
                             oregistro.observaciones = item.observaciones != string.Empty ? item.observaciones : string.Empty;
-                            oregistro.estado = item.estado;                                                                                  
-                            Modelo.SAS_DispositivoTipoHardware.InsertOnSubmit(oregistro);
+                            oregistro.estado = item.estado;
+                            oregistro.TipoHardwareID = item.TipoHardwareID;
+                            Modelo.SAS_DispositivoTipoHardwares.InsertOnSubmit(oregistro);
                             Modelo.SubmitChanges();
                             tipoResultadoOperacion = 0; // registrar
                             #endregion
                         }
-                        else if (resultado.ToList().Count == 1)
+                        else if (resultado.ToList().Count >= 1)
                         {
                             #region Actualizar()
                             SAS_DispositivoTipoHardware oregistro = new SAS_DispositivoTipoHardware();
-                            oregistro = resultado.Single();
+                            oregistro = resultado.ElementAt(0);
                             oregistro.descripcion = item.descripcion;
                             oregistro.nombreCorto = item.nombreCorto;
                             oregistro.enFormatoSolicitud = item.enFormatoSolicitud != null ? item.enFormatoSolicitud : 0;
                             oregistro.observaciones = item.observaciones != string.Empty ? item.observaciones : string.Empty;
-                            oregistro.estado = item.estado;
+                           // oregistro.estado = item.estado;
+                            oregistro.TipoHardwareID = item.TipoHardwareID;
 
                             Modelo.SubmitChanges();
                             #endregion
@@ -85,7 +98,42 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                var resultado = Modelo.SAS_DispositivoTipoHardware.Where(x => x.id == tipoSoftware.id).ToList();
+                var resultado = Modelo.SAS_DispositivoTipoHardwares.Where(x => x.id == tipoSoftware.id).ToList();
+                if (resultado != null)
+                {
+                    if (resultado.ToList().Count == 1)
+                    {
+                        #region Cambiar de estado()
+                        SAS_DispositivoTipoHardware oregistro = new SAS_DispositivoTipoHardware();
+                        oregistro = resultado.Single();
+
+                        if (oregistro.estado == 1)
+                        {
+                            oregistro.estado = 0;
+                            tipoResultadoOperacion = 2; // desactivar
+                        }
+                        else
+                        {
+                            oregistro.estado = 1;
+                            tipoResultadoOperacion = 3; // Activar
+                        }
+                        Modelo.SubmitChanges();
+                        #endregion                       
+                    }
+                }
+            }
+            return tipoResultadoOperacion;
+        }
+
+
+        public int ChangeState(string conection, int TipoHardwareID)
+        {
+
+            int tipoResultadoOperacion = 1; // 1 es registro , 0 es nuevo
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                var resultado = Modelo.SAS_DispositivoTipoHardwares.Where(x => x.id == TipoHardwareID).ToList();
                 if (resultado != null)
                 {
                     if (resultado.ToList().Count == 1)

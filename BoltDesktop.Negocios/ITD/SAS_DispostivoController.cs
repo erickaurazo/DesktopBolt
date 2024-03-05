@@ -109,7 +109,7 @@ namespace Asistencia.Negocios
 
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                 result2 = Modelo.SAS_ListadoDeDispositivosAll().ToList().Where(x => x.idClieprov.Trim() == proveedorCodigo && x.sedeCodigo.Trim() == sedeCodigo.Trim() && x.tipoDispositivoCodigo.Trim() == tipoDispositivoCodigo).ToList();
+                result2 = Modelo.SAS_ListadoDeDispositivosAll().ToList().Where(x => x.idClieprov.Trim() == proveedorCodigo && x.sedeCodigo.Trim() == sedeCodigo.Trim() && x.tipoDispositivoCodigo.Trim() == tipoDispositivoCodigo).ToList();
             }
 
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
@@ -4343,7 +4343,7 @@ namespace Asistencia.Negocios
                         }
                     }
 
-
+                    int UltimoItemRegistrado = 1;
                     //registrar Hardware
                     if (listadoHardware != null)
                     {
@@ -4354,7 +4354,15 @@ namespace Asistencia.Negocios
                             foreach (var detalle in listadoHardware)
                             {
                                 #region 
-                                var result1 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                var result0 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo).ToList();
+                                var nuevoResultado = result0.Max(x => x.item);
+
+                                if (nuevoResultado != null)
+                                {
+                                    UltimoItemRegistrado = Convert.ToInt32(nuevoResultado) + 1;
+                                }
+
+                                var result1 = result0.Where(x => x.item == detalle.item).ToList();
                                 if (result1 != null)
                                 {
                                     if (result1.ToList().Count == 0)
@@ -4362,7 +4370,7 @@ namespace Asistencia.Negocios
                                         #region Nuevo()
                                         SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
                                         oDetalle.codigoDispositivo = codigo;
-                                        oDetalle.item = detalle.item;
+                                        oDetalle.item = UltimoItemRegistrado.ToString().PadLeft(3, '0');
                                         oDetalle.codigoHardware = detalle.codigoHardware;
                                         oDetalle.serie = detalle.serie;
                                         oDetalle.capacidad = detalle.capacidad;
@@ -4395,6 +4403,7 @@ namespace Asistencia.Negocios
                                     }
                                 }
                                 #endregion
+                                UltimoItemRegistrado = +1;
                             }
 
                             #endregion
@@ -5328,7 +5337,7 @@ namespace Asistencia.Negocios
                         }
                     }
 
-
+                    int UltimoItemRegistrado = 1;
                     // Modificar y registrar Hardware
                     if (listadoHardware != null)
                     {
@@ -5339,7 +5348,18 @@ namespace Asistencia.Negocios
                             foreach (var detalle in listadoHardware)
                             {
                                 #region 
-                                var result1 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo && x.item == detalle.item).ToList();
+                                var result0 = Modelo.SAS_DispositivoHardware.Where(x => x.codigoDispositivo == codigo).ToList();
+                                var resultaItem = result0.Max(x => x.item);
+
+                                if (resultaItem != null)
+                                {
+                                    UltimoItemRegistrado = Convert.ToInt32(resultaItem) +1 ;
+                                }
+
+
+                                var result1 = result0.Where(x => x.item == detalle.item).ToList();
+
+
                                 if (result1 != null)
                                 {
                                     if (result1.ToList().Count == 0)
@@ -5347,7 +5367,7 @@ namespace Asistencia.Negocios
                                         #region Nuevo()
                                         SAS_DispositivoHardware oDetalle = new SAS_DispositivoHardware();
                                         oDetalle.codigoDispositivo = codigo;
-                                        oDetalle.item = detalle.item;
+                                        oDetalle.item = UltimoItemRegistrado.ToString().PadLeft(3, '0');
                                         oDetalle.codigoHardware = detalle.codigoHardware;
                                         oDetalle.serie = detalle.serie;
                                         oDetalle.capacidad = detalle.capacidad;
@@ -5382,6 +5402,7 @@ namespace Asistencia.Negocios
                                     }
                                 }
                                 #endregion
+                                UltimoItemRegistrado = +1;
                             }
 
                             #endregion
@@ -6101,7 +6122,7 @@ namespace Asistencia.Negocios
             cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                items = Modelo.SAS_DispositivoTipoHardware.ToList();
+                items = Modelo.SAS_DispositivoTipoHardwares.ToList();
                 listado = (from item in items
 
                            select new DFormatoSimple

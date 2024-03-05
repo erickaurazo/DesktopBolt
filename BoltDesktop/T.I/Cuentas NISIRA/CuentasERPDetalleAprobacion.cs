@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
 {
-    public partial class CuentasERPDetalle : Form
+    public partial class CuentasERPDetalleAprobacion : Form
     {
-        public CuentasERPDetalle()
+        public CuentasERPDetalleAprobacion()
         {
             InitializeComponent();
         }

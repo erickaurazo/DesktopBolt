@@ -45,6 +45,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
         object result;
         int oParImpar = 0;
         private int ClickFiltro = 0;
+        private string UsuarioID = string.Empty;
 
         public CuentasERP()
         {
@@ -53,7 +54,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
-           
+
             conection = "SAS";
             user2 = new SAS_USUARIOS();
             user2.IdUsuario = Environment.UserName;
@@ -102,12 +103,12 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             Nuevo();
         }
 
-     
+
         private void btnActualizarLista_Click(object sender, EventArgs e)
         {
             Actualizar();
         }
-      
+
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
@@ -171,17 +172,78 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
+            btnVerDatosDelColaborador.Enabled = !true;
+            btnAsociarAreaDeTrabajo.Enabled = !true;
+            UsuarioID = string.Empty;
+            try
+            {
+                #region 
+                odetalleSelecionado = new USUARIO();
+                if (dgvListado != null && dgvListado.Rows.Count > 0)
+                {
+                    if (dgvListado.CurrentRow != null)
+                    {
+                        if (dgvListado.CurrentRow.Cells["chIDUSUARIO"].Value != null)
+                        {
+                            if (dgvListado.CurrentRow.Cells["chIDUSUARIO"].Value.ToString() != string.Empty)
+                            {
+                                UsuarioID = (dgvListado.CurrentRow.Cells["chIDUSUARIO"].Value != null ? Convert.ToString(dgvListado.CurrentRow.Cells["chIDUSUARIO"].Value.ToString()) : string.Empty);
+                                var resultado = listado.Where(x => x.IDUSUARIO == UsuarioID).ToList();
+                                if (resultado.ToList().Count >= 1)
+                                {
+                                    odetalleSelecionado = resultado.ElementAt(0);
+                                    odetalleSelecionado.IDUSUARIO = UsuarioID;
 
+                                    if ((odetalleSelecionado.IDCODIGOGENERAL != null ? odetalleSelecionado.IDCODIGOGENERAL.Trim() : string.Empty) != string.Empty)
+                                    {
+                                        btnVerDatosDelColaborador.Enabled = true;
+                                        btnAsociarAreaDeTrabajo.Enabled = true;
+                                    }
+
+                                    btnResetearClave.Enabled = true;
+                                    btnSuspenderCuenta.Enabled = true;
+                                    btnSuspenderTemporalmente.Enabled = true;
+                                    btnActivarCuenta.Enabled = true;
+                                    btnPrivilegiosDeAprobacion.Enabled = true;
+                                    btnHeredarPrivilegiosDeOtroUsuario.Enabled = true;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistema");
+                return;
+            }
         }
 
         private void CuentasERP_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
@@ -189,7 +251,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             EjecutarConsulta();
         }
 
-       
+
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -332,7 +394,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
         private void Actualizar()
         {
             try
-            {                
+            {
                 btnMenu.Enabled = false;
                 progressBar1.Visible = true;
                 gbList.Enabled = false;
@@ -453,16 +515,54 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
         private void btnResetearClave_Click(object sender, EventArgs e)
         {
 
+            if (UsuarioID != string.Empty)
+            {
+                Modelo = new NISIRAERPCuentasController();
+                Modelo.EnviarAReseteo(UsuarioID, conection);
+                Actualizar();
+            }
+           
         }
 
         private void btnSuspenderTemporalmente_Click(object sender, EventArgs e)
         {
-
+            if (UsuarioID != string.Empty)
+            {
+                Modelo = new NISIRAERPCuentasController();
+                Modelo.SuspenderTemporalmenteCuenta(UsuarioID, conection);
+                Actualizar();
+            }
         }
 
         private void btnActivarCuenta_Click(object sender, EventArgs e)
         {
+            if (UsuarioID != string.Empty)
+            {
+                Modelo = new NISIRAERPCuentasController();
+                Modelo.ActivarCuenta(UsuarioID, conection);
+                Actualizar();
+            }
+        }
 
+        private void btnSuspenderCuenta_Click(object sender, EventArgs e)
+        {
+
+            if (UsuarioID != string.Empty)
+            {
+                Modelo = new NISIRAERPCuentasController();
+                Modelo.SuspenderDefiniticamenteLaCuenta(UsuarioID, conection);
+                Actualizar();
+            }
+        }
+
+        private void btnPrivilegiosDeAprobacion_Click(object sender, EventArgs e)
+        {
+            NoImplementado();
+        }
+
+        private void btnHeredarPrivilegiosDeOtroUsuario_Click(object sender, EventArgs e)
+        {
+            NoImplementado();
         }
     }
 }

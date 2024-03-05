@@ -54,9 +54,6 @@ namespace Asistencia.Datos
     partial void InsertSAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo(SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo instance);
     partial void UpdateSAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo(SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo instance);
     partial void DeleteSAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo(SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo instance);
-    partial void InsertSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
-    partial void UpdateSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
-    partial void DeleteSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
     partial void InsertSAS_OperadorTelefoniaMovil(SAS_OperadorTelefoniaMovil instance);
     partial void UpdateSAS_OperadorTelefoniaMovil(SAS_OperadorTelefoniaMovil instance);
     partial void DeleteSAS_OperadorTelefoniaMovil(SAS_OperadorTelefoniaMovil instance);
@@ -231,6 +228,9 @@ namespace Asistencia.Datos
     partial void InsertSAS_CuentasDominioDetalle(SAS_CuentasDominioDetalle instance);
     partial void UpdateSAS_CuentasDominioDetalle(SAS_CuentasDominioDetalle instance);
     partial void DeleteSAS_CuentasDominioDetalle(SAS_CuentasDominioDetalle instance);
+    partial void InsertSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
+    partial void UpdateSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
+    partial void DeleteSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
     #endregion
 		
 		public ITDContextDataContext() : 
@@ -348,14 +348,6 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<SAS_ListadoNumeroIPBySegmento>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SAS_DispositivoTipoHardware> SAS_DispositivoTipoHardware
-		{
-			get
-			{
-				return this.GetTable<SAS_DispositivoTipoHardware>();
 			}
 		}
 		
@@ -1143,6 +1135,14 @@ namespace Asistencia.Datos
 			}
 		}
 		
+		public System.Data.Linq.Table<SAS_DispositivoTipoHardware> SAS_DispositivoTipoHardwares
+		{
+			get
+			{
+				return this.GetTable<SAS_DispositivoTipoHardware>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EsPropioCBO")]
 		public ISingleResult<SAS_EsPropioCBOResult> SAS_EsPropioCBO()
 		{
@@ -1708,6 +1708,27 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), @int);
 			return ((ISingleResult<SAS_CuentasDominioDetalleByIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoCuentasERPALL")]
+		public ISingleResult<SAS_ListadoCuentasERPALLResult> SAS_ListadoCuentasERPALL()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_ListadoCuentasERPALLResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAll")]
+		public ISingleResult<SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult> SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAll()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_DispositivoHardwareByTipoDispositivoID")]
+		public ISingleResult<SAS_DispositivoHardwareByTipoDispositivoIDResult> SAS_DispositivoHardwareByTipoDispositivoID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TipoDispositivoID", DbType="Char(3)")] string tipoDispositivoID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DispositivoID", DbType="Int")] System.Nullable<int> dispositivoID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tipoDispositivoID, dispositivoID);
+			return ((ISingleResult<SAS_DispositivoHardwareByTipoDispositivoIDResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3874,188 +3895,6 @@ namespace Asistencia.Datos
 				{
 					this._numeroIP = value;
 				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_DispositivoTipoHardware")]
-	public partial class SAS_DispositivoTipoHardware : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _descripcion;
-		
-		private string _nombreCorto;
-		
-		private System.Nullable<decimal> _enFormatoSolicitud;
-		
-		private string _observaciones;
-		
-		private System.Nullable<decimal> _estado;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OndescripcionChanging(string value);
-    partial void OndescripcionChanged();
-    partial void OnnombreCortoChanging(string value);
-    partial void OnnombreCortoChanged();
-    partial void OnenFormatoSolicitudChanging(System.Nullable<decimal> value);
-    partial void OnenFormatoSolicitudChanged();
-    partial void OnobservacionesChanging(string value);
-    partial void OnobservacionesChanged();
-    partial void OnestadoChanging(System.Nullable<decimal> value);
-    partial void OnestadoChanged();
-    #endregion
-		
-		public SAS_DispositivoTipoHardware()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string descripcion
-		{
-			get
-			{
-				return this._descripcion;
-			}
-			set
-			{
-				if ((this._descripcion != value))
-				{
-					this.OndescripcionChanging(value);
-					this.SendPropertyChanging();
-					this._descripcion = value;
-					this.SendPropertyChanged("descripcion");
-					this.OndescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreCorto", DbType="VarChar(20)")]
-		public string nombreCorto
-		{
-			get
-			{
-				return this._nombreCorto;
-			}
-			set
-			{
-				if ((this._nombreCorto != value))
-				{
-					this.OnnombreCortoChanging(value);
-					this.SendPropertyChanging();
-					this._nombreCorto = value;
-					this.SendPropertyChanged("nombreCorto");
-					this.OnnombreCortoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enFormatoSolicitud", DbType="Decimal(1,0)")]
-		public System.Nullable<decimal> enFormatoSolicitud
-		{
-			get
-			{
-				return this._enFormatoSolicitud;
-			}
-			set
-			{
-				if ((this._enFormatoSolicitud != value))
-				{
-					this.OnenFormatoSolicitudChanging(value);
-					this.SendPropertyChanging();
-					this._enFormatoSolicitud = value;
-					this.SendPropertyChanged("enFormatoSolicitud");
-					this.OnenFormatoSolicitudChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_observaciones", DbType="VarChar(MAX)")]
-		public string observaciones
-		{
-			get
-			{
-				return this._observaciones;
-			}
-			set
-			{
-				if ((this._observaciones != value))
-				{
-					this.OnobservacionesChanging(value);
-					this.SendPropertyChanging();
-					this._observaciones = value;
-					this.SendPropertyChanged("observaciones");
-					this.OnobservacionesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0)")]
-		public System.Nullable<decimal> estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this.OnestadoChanging(value);
-					this.SendPropertyChanging();
-					this._estado = value;
-					this.SendPropertyChanged("estado");
-					this.OnestadoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -40062,6 +39901,212 @@ namespace Asistencia.Datos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_DispositivoTipoHardware")]
+	public partial class SAS_DispositivoTipoHardware : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _descripcion;
+		
+		private string _nombreCorto;
+		
+		private System.Nullable<decimal> _enFormatoSolicitud;
+		
+		private string _observaciones;
+		
+		private System.Nullable<decimal> _estado;
+		
+		private string _TipoHardwareID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OndescripcionChanging(string value);
+    partial void OndescripcionChanged();
+    partial void OnnombreCortoChanging(string value);
+    partial void OnnombreCortoChanged();
+    partial void OnenFormatoSolicitudChanging(System.Nullable<decimal> value);
+    partial void OnenFormatoSolicitudChanged();
+    partial void OnobservacionesChanging(string value);
+    partial void OnobservacionesChanged();
+    partial void OnestadoChanging(System.Nullable<decimal> value);
+    partial void OnestadoChanged();
+    partial void OnTipoHardwareIDChanging(string value);
+    partial void OnTipoHardwareIDChanged();
+    #endregion
+		
+		public SAS_DispositivoTipoHardware()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this.OndescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._descripcion = value;
+					this.SendPropertyChanged("descripcion");
+					this.OndescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreCorto", DbType="VarChar(20)")]
+		public string nombreCorto
+		{
+			get
+			{
+				return this._nombreCorto;
+			}
+			set
+			{
+				if ((this._nombreCorto != value))
+				{
+					this.OnnombreCortoChanging(value);
+					this.SendPropertyChanging();
+					this._nombreCorto = value;
+					this.SendPropertyChanged("nombreCorto");
+					this.OnnombreCortoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enFormatoSolicitud", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> enFormatoSolicitud
+		{
+			get
+			{
+				return this._enFormatoSolicitud;
+			}
+			set
+			{
+				if ((this._enFormatoSolicitud != value))
+				{
+					this.OnenFormatoSolicitudChanging(value);
+					this.SendPropertyChanging();
+					this._enFormatoSolicitud = value;
+					this.SendPropertyChanged("enFormatoSolicitud");
+					this.OnenFormatoSolicitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_observaciones", DbType="VarChar(MAX)")]
+		public string observaciones
+		{
+			get
+			{
+				return this._observaciones;
+			}
+			set
+			{
+				if ((this._observaciones != value))
+				{
+					this.OnobservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._observaciones = value;
+					this.SendPropertyChanged("observaciones");
+					this.OnobservacionesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoHardwareID", DbType="Char(3)")]
+		public string TipoHardwareID
+		{
+			get
+			{
+				return this._TipoHardwareID;
+			}
+			set
+			{
+				if ((this._TipoHardwareID != value))
+				{
+					this.OnTipoHardwareIDChanging(value);
+					this.SendPropertyChanging();
+					this._TipoHardwareID = value;
+					this.SendPropertyChanged("TipoHardwareID");
+					this.OnTipoHardwareIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class SAS_EsPropioCBOResult
 	{
 		
@@ -69425,6 +69470,768 @@ namespace Asistencia.Datos
 				if ((this._Hasta != value))
 				{
 					this._Hasta = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoCuentasERPALLResult
+	{
+		
+		private string _IDUSUARIO;
+		
+		private string _PASSWORD;
+		
+		private System.Nullable<int> _ESTADO;
+		
+		private string _USR_NOMBRES;
+		
+		private string _USR_INICIALES;
+		
+		private System.Nullable<System.DateTime> _FECHACREACION;
+		
+		private string _EMAIL;
+		
+		private string _IDCODIGOGENERAL;
+		
+		private string _DNI;
+		
+		private string _Nombres;
+		
+		private char _Sexo;
+		
+		private string _Situacion;
+		
+		private string _Cargo;
+		
+		private string _AreaAsignada;
+		
+		private string _Celular;
+		
+		private int _Edad;
+		
+		private System.DateTime _FechaActualizacion;
+		
+		public SAS_ListadoCuentasERPALLResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSUARIO", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string IDUSUARIO
+		{
+			get
+			{
+				return this._IDUSUARIO;
+			}
+			set
+			{
+				if ((this._IDUSUARIO != value))
+				{
+					this._IDUSUARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="VarChar(200)")]
+		public string PASSWORD
+		{
+			get
+			{
+				return this._PASSWORD;
+			}
+			set
+			{
+				if ((this._PASSWORD != value))
+				{
+					this._PASSWORD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="Int")]
+		public System.Nullable<int> ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USR_NOMBRES", DbType="VarChar(80)")]
+		public string USR_NOMBRES
+		{
+			get
+			{
+				return this._USR_NOMBRES;
+			}
+			set
+			{
+				if ((this._USR_NOMBRES != value))
+				{
+					this._USR_NOMBRES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USR_INICIALES", DbType="Char(4)")]
+		public string USR_INICIALES
+		{
+			get
+			{
+				return this._USR_INICIALES;
+			}
+			set
+			{
+				if ((this._USR_INICIALES != value))
+				{
+					this._USR_INICIALES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHACREACION", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHACREACION
+		{
+			get
+			{
+				return this._FECHACREACION;
+			}
+			set
+			{
+				if ((this._FECHACREACION != value))
+				{
+					this._FECHACREACION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(100)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCODIGOGENERAL", DbType="Char(8) NOT NULL", CanBeNull=false)]
+		public string IDCODIGOGENERAL
+		{
+			get
+			{
+				return this._IDCODIGOGENERAL;
+			}
+			set
+			{
+				if ((this._IDCODIGOGENERAL != value))
+				{
+					this._IDCODIGOGENERAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DNI", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string DNI
+		{
+			get
+			{
+				return this._DNI;
+			}
+			set
+			{
+				if ((this._DNI != value))
+				{
+					this._DNI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="VarChar(160) NOT NULL", CanBeNull=false)]
+		public string Nombres
+		{
+			get
+			{
+				return this._Nombres;
+			}
+			set
+			{
+				if ((this._Nombres != value))
+				{
+					this._Nombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="Char(1) NOT NULL")]
+		public char Sexo
+		{
+			get
+			{
+				return this._Sexo;
+			}
+			set
+			{
+				if ((this._Sexo != value))
+				{
+					this._Sexo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Situacion", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Situacion
+		{
+			get
+			{
+				return this._Situacion;
+			}
+			set
+			{
+				if ((this._Situacion != value))
+				{
+					this._Situacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Cargo
+		{
+			get
+			{
+				return this._Cargo;
+			}
+			set
+			{
+				if ((this._Cargo != value))
+				{
+					this._Cargo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaAsignada", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string AreaAsignada
+		{
+			get
+			{
+				return this._AreaAsignada;
+			}
+			set
+			{
+				if ((this._AreaAsignada != value))
+				{
+					this._AreaAsignada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Celular", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Celular
+		{
+			get
+			{
+				return this._Celular;
+			}
+			set
+			{
+				if ((this._Celular != value))
+				{
+					this._Celular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Edad", DbType="Int NOT NULL")]
+		public int Edad
+		{
+			get
+			{
+				return this._Edad;
+			}
+			set
+			{
+				if ((this._Edad != value))
+				{
+					this._Edad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaActualizacion", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaActualizacion
+		{
+			get
+			{
+				return this._FechaActualizacion;
+			}
+			set
+			{
+				if ((this._FechaActualizacion != value))
+				{
+					this._FechaActualizacion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult
+	{
+		
+		private int _id;
+		
+		private string _descripcion;
+		
+		private string _nombreCorto;
+		
+		private decimal _enFormatoSolicitud;
+		
+		private string _observaciones;
+		
+		private System.Nullable<decimal> _estado;
+		
+		private string _TipoHardwareID;
+		
+		private string _TipoHardware;
+		
+		private string _EstadoDescripcion;
+		
+		public SAS_ListadoDeDispositivoTipoDeCaracteristicaHardwareAllResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				if ((this._descripcion != value))
+				{
+					this._descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreCorto", DbType="VarChar(20)")]
+		public string nombreCorto
+		{
+			get
+			{
+				return this._nombreCorto;
+			}
+			set
+			{
+				if ((this._nombreCorto != value))
+				{
+					this._nombreCorto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enFormatoSolicitud", DbType="Decimal(1,0) NOT NULL")]
+		public decimal enFormatoSolicitud
+		{
+			get
+			{
+				return this._enFormatoSolicitud;
+			}
+			set
+			{
+				if ((this._enFormatoSolicitud != value))
+				{
+					this._enFormatoSolicitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_observaciones", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string observaciones
+		{
+			get
+			{
+				return this._observaciones;
+			}
+			set
+			{
+				if ((this._observaciones != value))
+				{
+					this._observaciones = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoHardwareID", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string TipoHardwareID
+		{
+			get
+			{
+				return this._TipoHardwareID;
+			}
+			set
+			{
+				if ((this._TipoHardwareID != value))
+				{
+					this._TipoHardwareID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoHardware", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string TipoHardware
+		{
+			get
+			{
+				return this._TipoHardware;
+			}
+			set
+			{
+				if ((this._TipoHardware != value))
+				{
+					this._TipoHardware = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoDescripcion", DbType="VarChar(7) NOT NULL", CanBeNull=false)]
+		public string EstadoDescripcion
+		{
+			get
+			{
+				return this._EstadoDescripcion;
+			}
+			set
+			{
+				if ((this._EstadoDescripcion != value))
+				{
+					this._EstadoDescripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_DispositivoHardwareByTipoDispositivoIDResult
+	{
+		
+		private System.Nullable<int> _codigoDispositivo;
+		
+		private string _item;
+		
+		private int _codigoHardware;
+		
+		private string _hardware;
+		
+		private string _serie;
+		
+		private System.Nullable<decimal> _capacidad;
+		
+		private string _unidadMedidaCapacidad;
+		
+		private string _numeroParte;
+		
+		private string _observacion;
+		
+		private System.Nullable<System.DateTime> _desde;
+		
+		private System.Nullable<System.DateTime> _hasta;
+		
+		private System.Nullable<decimal> _idestado;
+		
+		private string _Estado;
+		
+		private decimal _seVisualizaEnReportes;
+		
+		private string _IDUnico;
+		
+		public SAS_DispositivoHardwareByTipoDispositivoIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoDispositivo", DbType="Int")]
+		public System.Nullable<int> codigoDispositivo
+		{
+			get
+			{
+				return this._codigoDispositivo;
+			}
+			set
+			{
+				if ((this._codigoDispositivo != value))
+				{
+					this._codigoDispositivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_item", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string item
+		{
+			get
+			{
+				return this._item;
+			}
+			set
+			{
+				if ((this._item != value))
+				{
+					this._item = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoHardware", DbType="Int NOT NULL")]
+		public int codigoHardware
+		{
+			get
+			{
+				return this._codigoHardware;
+			}
+			set
+			{
+				if ((this._codigoHardware != value))
+				{
+					this._codigoHardware = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hardware", DbType="VarChar(150)")]
+		public string hardware
+		{
+			get
+			{
+				return this._hardware;
+			}
+			set
+			{
+				if ((this._hardware != value))
+				{
+					this._hardware = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_serie", DbType="VarChar(51)")]
+		public string serie
+		{
+			get
+			{
+				return this._serie;
+			}
+			set
+			{
+				if ((this._serie != value))
+				{
+					this._serie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_capacidad", DbType="Decimal(12,3)")]
+		public System.Nullable<decimal> capacidad
+		{
+			get
+			{
+				return this._capacidad;
+			}
+			set
+			{
+				if ((this._capacidad != value))
+				{
+					this._capacidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidadMedidaCapacidad", DbType="VarChar(20)")]
+		public string unidadMedidaCapacidad
+		{
+			get
+			{
+				return this._unidadMedidaCapacidad;
+			}
+			set
+			{
+				if ((this._unidadMedidaCapacidad != value))
+				{
+					this._unidadMedidaCapacidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroParte", DbType="VarChar(255)")]
+		public string numeroParte
+		{
+			get
+			{
+				return this._numeroParte;
+			}
+			set
+			{
+				if ((this._numeroParte != value))
+				{
+					this._numeroParte = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_observacion", DbType="VarChar(250)")]
+		public string observacion
+		{
+			get
+			{
+				return this._observacion;
+			}
+			set
+			{
+				if ((this._observacion != value))
+				{
+					this._observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_desde", DbType="DateTime")]
+		public System.Nullable<System.DateTime> desde
+		{
+			get
+			{
+				return this._desde;
+			}
+			set
+			{
+				if ((this._desde != value))
+				{
+					this._desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasta", DbType="DateTime")]
+		public System.Nullable<System.DateTime> hasta
+		{
+			get
+			{
+				return this._hasta;
+			}
+			set
+			{
+				if ((this._hasta != value))
+				{
+					this._hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idestado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> idestado
+		{
+			get
+			{
+				return this._idestado;
+			}
+			set
+			{
+				if ((this._idestado != value))
+				{
+					this._idestado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_seVisualizaEnReportes", DbType="Decimal(1,0) NOT NULL")]
+		public decimal seVisualizaEnReportes
+		{
+			get
+			{
+				return this._seVisualizaEnReportes;
+			}
+			set
+			{
+				if ((this._seVisualizaEnReportes != value))
+				{
+					this._seVisualizaEnReportes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUnico", DbType="VarChar(255)")]
+		public string IDUnico
+		{
+			get
+			{
+				return this._IDUnico;
+			}
+			set
+			{
+				if ((this._IDUnico != value))
+				{
+					this._IDUnico = value;
 				}
 			}
 		}

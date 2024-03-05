@@ -100,12 +100,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle185 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle186 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle187 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle179 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle180 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle181 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle182 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle183 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle184 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle188 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle189 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle193 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -146,6 +140,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle222 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle223 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle224 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle179 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle180 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle181 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle182 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle183 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle184 = new System.Windows.Forms.DataGridViewCellStyle();
             this.subMenuComponentes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnIrACatalogoDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImprimirEtiquetaComponente = new System.Windows.Forms.ToolStripMenuItem();
@@ -401,20 +401,6 @@
             this.btnImportarCaracteristicasHardwareDesdeOtroDispositivo = new Telerik.WinControls.UI.RadButton();
             this.btnHardwareCambiarEstado = new Telerik.WinControls.UI.RadButton();
             this.dgvHardware = new MyControlsDataBinding.Controles.MyDataGridViewDetails(this.components);
-            this.chcodigoDispositivoHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chitemHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chcodigoHardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chhardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chserieHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chcapacidadHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chunidadMedidaCapacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chnumeroParteHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chobservacionHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chdesdeHW = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
-            this.chhastaHW = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
-            this.chidestadoHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chEstadoHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chseVisualizaEnReportesHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHardwareRemove = new Telerik.WinControls.UI.RadButton();
             this.btnHardwareAdd = new Telerik.WinControls.UI.RadButton();
             this.TabImagenes = new Telerik.WinControls.UI.RadPageViewPage();
@@ -497,6 +483,20 @@
             this.bgwRegistrar = new System.ComponentModel.BackgroundWorker();
             this.bgwCambiarEstado = new System.ComponentModel.BackgroundWorker();
             this.ofdImagenes = new System.Windows.Forms.OpenFileDialog();
+            this.chcodigoDispositivoHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chitemHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chcodigoHardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chhardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chserieHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chcapacidadHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chunidadMedidaCapacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chnumeroParteHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chobservacionHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chdesdeHW = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chhastaHW = new MyDataGridViewColumns.MyDataGridViewMaskedTextColumn();
+            this.chidestadoHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chEstadoHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chseVisualizaEnReportesHW = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subMenuComponentes.SuspendLayout();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
@@ -2277,7 +2277,7 @@
             this.tabControl.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.tabControl.Location = new System.Drawing.Point(5, 21);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedPage = this.tabSoftware;
+            this.tabControl.SelectedPage = this.tabHardware;
             this.tabControl.Size = new System.Drawing.Size(1343, 411);
             this.tabControl.TabIndex = 0;
             this.tabControl.ThemeName = "Windows8";
@@ -4117,6 +4117,7 @@
             // 
             this.dgvHardware.AllowUserToAddRows = false;
             this.dgvHardware.AllowUserToDeleteRows = false;
+            this.dgvHardware.AllowUserToOrderColumns = true;
             dataGridViewCellStyle177.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle177.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle177.SelectionForeColor = System.Drawing.Color.Black;
@@ -4188,175 +4189,6 @@
             this.dgvHardware.Size = new System.Drawing.Size(1326, 339);
             this.dgvHardware.TabIndex = 179;
             this.dgvHardware.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvHardware_KeyUp);
-            // 
-            // chcodigoDispositivoHW
-            // 
-            this.chcodigoDispositivoHW.DataPropertyName = "codigoDispositivo";
-            this.chcodigoDispositivoHW.HeaderText = "dispositivoCodigo";
-            this.chcodigoDispositivoHW.Name = "chcodigoDispositivoHW";
-            this.chcodigoDispositivoHW.ReadOnly = true;
-            this.chcodigoDispositivoHW.Visible = false;
-            // 
-            // chitemHW
-            // 
-            this.chitemHW.DataPropertyName = "item";
-            this.chitemHW.HeaderText = "Item";
-            this.chitemHW.Name = "chitemHW";
-            this.chitemHW.ReadOnly = true;
-            this.chitemHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chitemHW.Width = 35;
-            // 
-            // chcodigoHardware
-            // 
-            this.chcodigoHardware.DataPropertyName = "codigoHardware";
-            this.chcodigoHardware.HeaderText = "Cod.";
-            this.chcodigoHardware.Name = "chcodigoHardware";
-            this.chcodigoHardware.ReadOnly = true;
-            this.chcodigoHardware.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chcodigoHardware.Visible = false;
-            this.chcodigoHardware.Width = 35;
-            // 
-            // chhardware
-            // 
-            this.chhardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chhardware.DataPropertyName = "hardware";
-            this.chhardware.HeaderText = "Tipo HW";
-            this.chhardware.Name = "chhardware";
-            this.chhardware.ReadOnly = true;
-            this.chhardware.ToolTipText = "Tipo de componente interno";
-            // 
-            // chserieHW
-            // 
-            this.chserieHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chserieHW.DataPropertyName = "serie";
-            dataGridViewCellStyle179.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle179.NullValue = null;
-            this.chserieHW.DefaultCellStyle = dataGridViewCellStyle179;
-            this.chserieHW.HeaderText = "S/N";
-            this.chserieHW.MaxInputLength = 50;
-            this.chserieHW.Name = "chserieHW";
-            this.chserieHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chserieHW.ToolTipText = "Número de serie";
-            // 
-            // chcapacidadHW
-            // 
-            this.chcapacidadHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.chcapacidadHW.DataPropertyName = "capacidad";
-            this.chcapacidadHW.HeaderText = "Capacidad";
-            this.chcapacidadHW.Name = "chcapacidadHW";
-            this.chcapacidadHW.ToolTipText = "Capacidad";
-            this.chcapacidadHW.Width = 86;
-            // 
-            // chunidadMedidaCapacidad
-            // 
-            this.chunidadMedidaCapacidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.chunidadMedidaCapacidad.DataPropertyName = "unidadMedidaCapacidad";
-            this.chunidadMedidaCapacidad.HeaderText = "UM";
-            this.chunidadMedidaCapacidad.MaxInputLength = 20;
-            this.chunidadMedidaCapacidad.Name = "chunidadMedidaCapacidad";
-            this.chunidadMedidaCapacidad.ToolTipText = "Unidad de medida";
-            this.chunidadMedidaCapacidad.Width = 50;
-            // 
-            // chnumeroParteHW
-            // 
-            this.chnumeroParteHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.chnumeroParteHW.DataPropertyName = "numeroParte";
-            this.chnumeroParteHW.HeaderText = "Info.";
-            this.chnumeroParteHW.MaxInputLength = 150;
-            this.chnumeroParteHW.Name = "chnumeroParteHW";
-            this.chnumeroParteHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chnumeroParteHW.ToolTipText = "Info.";
-            this.chnumeroParteHW.Width = 37;
-            // 
-            // chobservacionHW
-            // 
-            this.chobservacionHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.chobservacionHW.DataPropertyName = "Observacion";
-            dataGridViewCellStyle180.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle180.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle180.SelectionForeColor = System.Drawing.Color.Black;
-            this.chobservacionHW.DefaultCellStyle = dataGridViewCellStyle180;
-            this.chobservacionHW.HeaderText = "Observación";
-            this.chobservacionHW.MaxInputLength = 250;
-            this.chobservacionHW.Name = "chobservacionHW";
-            this.chobservacionHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chobservacionHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chobservacionHW.ToolTipText = "Observación";
-            // 
-            // chdesdeHW
-            // 
-            this.chdesdeHW.DataPropertyName = "desde";
-            dataGridViewCellStyle181.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle181.Format = "d";
-            this.chdesdeHW.DefaultCellStyle = dataGridViewCellStyle181;
-            this.chdesdeHW.HeaderText = "Desde";
-            this.chdesdeHW.Mask = "";
-            this.chdesdeHW.Name = "chdesdeHW";
-            this.chdesdeHW.P_EsEditable = false;
-            this.chdesdeHW.P_EsModificable = false;
-            this.chdesdeHW.P_EsPrimaryKey = false;
-            this.chdesdeHW.P_ExigeInformacion = false;
-            this.chdesdeHW.P_NombreColumna = null;
-            this.chdesdeHW.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.chdesdeHW.ToolTipText = "Desde";
-            this.chdesdeHW.Width = 75;
-            // 
-            // chhastaHW
-            // 
-            this.chhastaHW.DataPropertyName = "hasta";
-            dataGridViewCellStyle182.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle182.Format = "d";
-            dataGridViewCellStyle182.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle182.SelectionForeColor = System.Drawing.Color.Black;
-            this.chhastaHW.DefaultCellStyle = dataGridViewCellStyle182;
-            this.chhastaHW.HeaderText = "Hasta";
-            this.chhastaHW.Mask = "";
-            this.chhastaHW.Name = "chhastaHW";
-            this.chhastaHW.P_EsEditable = false;
-            this.chhastaHW.P_EsModificable = false;
-            this.chhastaHW.P_EsPrimaryKey = false;
-            this.chhastaHW.P_ExigeInformacion = false;
-            this.chhastaHW.P_NombreColumna = null;
-            this.chhastaHW.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.chhastaHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chhastaHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chhastaHW.ToolTipText = "Hasta";
-            this.chhastaHW.Width = 75;
-            // 
-            // chidestadoHW
-            // 
-            this.chidestadoHW.DataPropertyName = "idestado";
-            dataGridViewCellStyle183.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle183.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle183.SelectionForeColor = System.Drawing.Color.Black;
-            this.chidestadoHW.DefaultCellStyle = dataGridViewCellStyle183;
-            this.chidestadoHW.HeaderText = "IdEstado";
-            this.chidestadoHW.Name = "chidestadoHW";
-            this.chidestadoHW.ReadOnly = true;
-            this.chidestadoHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chidestadoHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chidestadoHW.Visible = false;
-            // 
-            // chEstadoHW
-            // 
-            this.chEstadoHW.DataPropertyName = "Estado";
-            dataGridViewCellStyle184.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle184.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle184.SelectionForeColor = System.Drawing.Color.Black;
-            this.chEstadoHW.DefaultCellStyle = dataGridViewCellStyle184;
-            this.chEstadoHW.HeaderText = "Estado";
-            this.chEstadoHW.Name = "chEstadoHW";
-            this.chEstadoHW.ReadOnly = true;
-            this.chEstadoHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chEstadoHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.chEstadoHW.Width = 60;
-            // 
-            // chseVisualizaEnReportesHW
-            // 
-            this.chseVisualizaEnReportesHW.DataPropertyName = "seVisualizaEnReportes";
-            this.chseVisualizaEnReportesHW.HeaderText = "En reporte";
-            this.chseVisualizaEnReportesHW.Name = "chseVisualizaEnReportesHW";
-            this.chseVisualizaEnReportesHW.Width = 50;
             // 
             // btnHardwareRemove
             // 
@@ -5256,6 +5088,7 @@
             // 
             this.dgvSoftware.AllowUserToAddRows = false;
             this.dgvSoftware.AllowUserToDeleteRows = false;
+            this.dgvSoftware.AllowUserToOrderColumns = true;
             dataGridViewCellStyle218.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle218.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle218.SelectionForeColor = System.Drawing.Color.Black;
@@ -5518,6 +5351,171 @@
             // ofdImagenes
             // 
             this.ofdImagenes.FileName = "Cargar Imagenes";
+            // 
+            // chcodigoDispositivoHW
+            // 
+            this.chcodigoDispositivoHW.DataPropertyName = "codigoDispositivo";
+            this.chcodigoDispositivoHW.HeaderText = "dispositivoCodigo";
+            this.chcodigoDispositivoHW.Name = "chcodigoDispositivoHW";
+            this.chcodigoDispositivoHW.ReadOnly = true;
+            this.chcodigoDispositivoHW.Visible = false;
+            // 
+            // chitemHW
+            // 
+            this.chitemHW.DataPropertyName = "item";
+            this.chitemHW.HeaderText = "Item";
+            this.chitemHW.Name = "chitemHW";
+            this.chitemHW.ReadOnly = true;
+            this.chitemHW.Width = 35;
+            // 
+            // chcodigoHardware
+            // 
+            this.chcodigoHardware.DataPropertyName = "codigoHardware";
+            this.chcodigoHardware.HeaderText = "Cod.";
+            this.chcodigoHardware.Name = "chcodigoHardware";
+            this.chcodigoHardware.ReadOnly = true;
+            this.chcodigoHardware.Visible = false;
+            this.chcodigoHardware.Width = 35;
+            // 
+            // chhardware
+            // 
+            this.chhardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chhardware.DataPropertyName = "hardware";
+            this.chhardware.HeaderText = "Tipo HW";
+            this.chhardware.Name = "chhardware";
+            this.chhardware.ReadOnly = true;
+            this.chhardware.ToolTipText = "Tipo de componente interno";
+            // 
+            // chserieHW
+            // 
+            this.chserieHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chserieHW.DataPropertyName = "serie";
+            dataGridViewCellStyle179.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle179.NullValue = null;
+            this.chserieHW.DefaultCellStyle = dataGridViewCellStyle179;
+            this.chserieHW.HeaderText = "S/N";
+            this.chserieHW.MaxInputLength = 50;
+            this.chserieHW.Name = "chserieHW";
+            this.chserieHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chserieHW.ToolTipText = "Número de serie";
+            // 
+            // chcapacidadHW
+            // 
+            this.chcapacidadHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.chcapacidadHW.DataPropertyName = "capacidad";
+            this.chcapacidadHW.HeaderText = "Capacidad";
+            this.chcapacidadHW.Name = "chcapacidadHW";
+            this.chcapacidadHW.ToolTipText = "Capacidad";
+            this.chcapacidadHW.Width = 86;
+            // 
+            // chunidadMedidaCapacidad
+            // 
+            this.chunidadMedidaCapacidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.chunidadMedidaCapacidad.DataPropertyName = "unidadMedidaCapacidad";
+            this.chunidadMedidaCapacidad.HeaderText = "UM";
+            this.chunidadMedidaCapacidad.MaxInputLength = 20;
+            this.chunidadMedidaCapacidad.Name = "chunidadMedidaCapacidad";
+            this.chunidadMedidaCapacidad.ToolTipText = "Unidad de medida";
+            this.chunidadMedidaCapacidad.Width = 50;
+            // 
+            // chnumeroParteHW
+            // 
+            this.chnumeroParteHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.chnumeroParteHW.DataPropertyName = "numeroParte";
+            this.chnumeroParteHW.HeaderText = "Info.";
+            this.chnumeroParteHW.MaxInputLength = 150;
+            this.chnumeroParteHW.Name = "chnumeroParteHW";
+            this.chnumeroParteHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chnumeroParteHW.ToolTipText = "Info.";
+            this.chnumeroParteHW.Width = 37;
+            // 
+            // chobservacionHW
+            // 
+            this.chobservacionHW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chobservacionHW.DataPropertyName = "Observacion";
+            dataGridViewCellStyle180.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle180.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle180.SelectionForeColor = System.Drawing.Color.Black;
+            this.chobservacionHW.DefaultCellStyle = dataGridViewCellStyle180;
+            this.chobservacionHW.HeaderText = "Observación";
+            this.chobservacionHW.MaxInputLength = 250;
+            this.chobservacionHW.Name = "chobservacionHW";
+            this.chobservacionHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chobservacionHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chobservacionHW.ToolTipText = "Observación";
+            // 
+            // chdesdeHW
+            // 
+            this.chdesdeHW.DataPropertyName = "desde";
+            dataGridViewCellStyle181.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle181.Format = "d";
+            this.chdesdeHW.DefaultCellStyle = dataGridViewCellStyle181;
+            this.chdesdeHW.HeaderText = "Desde";
+            this.chdesdeHW.Mask = "";
+            this.chdesdeHW.Name = "chdesdeHW";
+            this.chdesdeHW.P_EsEditable = false;
+            this.chdesdeHW.P_EsModificable = false;
+            this.chdesdeHW.P_EsPrimaryKey = false;
+            this.chdesdeHW.P_ExigeInformacion = false;
+            this.chdesdeHW.P_NombreColumna = null;
+            this.chdesdeHW.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chdesdeHW.ToolTipText = "Desde";
+            this.chdesdeHW.Width = 75;
+            // 
+            // chhastaHW
+            // 
+            this.chhastaHW.DataPropertyName = "hasta";
+            dataGridViewCellStyle182.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle182.Format = "d";
+            dataGridViewCellStyle182.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle182.SelectionForeColor = System.Drawing.Color.Black;
+            this.chhastaHW.DefaultCellStyle = dataGridViewCellStyle182;
+            this.chhastaHW.HeaderText = "Hasta";
+            this.chhastaHW.Mask = "";
+            this.chhastaHW.Name = "chhastaHW";
+            this.chhastaHW.P_EsEditable = false;
+            this.chhastaHW.P_EsModificable = false;
+            this.chhastaHW.P_EsPrimaryKey = false;
+            this.chhastaHW.P_ExigeInformacion = false;
+            this.chhastaHW.P_NombreColumna = null;
+            this.chhastaHW.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chhastaHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chhastaHW.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.chhastaHW.ToolTipText = "Hasta";
+            this.chhastaHW.Width = 75;
+            // 
+            // chidestadoHW
+            // 
+            this.chidestadoHW.DataPropertyName = "idestado";
+            dataGridViewCellStyle183.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle183.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle183.SelectionForeColor = System.Drawing.Color.Black;
+            this.chidestadoHW.DefaultCellStyle = dataGridViewCellStyle183;
+            this.chidestadoHW.HeaderText = "IdEstado";
+            this.chidestadoHW.Name = "chidestadoHW";
+            this.chidestadoHW.ReadOnly = true;
+            this.chidestadoHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chidestadoHW.Visible = false;
+            // 
+            // chEstadoHW
+            // 
+            this.chEstadoHW.DataPropertyName = "Estado";
+            dataGridViewCellStyle184.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle184.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle184.SelectionForeColor = System.Drawing.Color.Black;
+            this.chEstadoHW.DefaultCellStyle = dataGridViewCellStyle184;
+            this.chEstadoHW.HeaderText = "Estado";
+            this.chEstadoHW.Name = "chEstadoHW";
+            this.chEstadoHW.ReadOnly = true;
+            this.chEstadoHW.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chEstadoHW.Width = 60;
+            // 
+            // chseVisualizaEnReportesHW
+            // 
+            this.chseVisualizaEnReportesHW.DataPropertyName = "seVisualizaEnReportes";
+            this.chseVisualizaEnReportesHW.HeaderText = "En reporte";
+            this.chseVisualizaEnReportesHW.Name = "chseVisualizaEnReportesHW";
+            this.chseVisualizaEnReportesHW.Width = 50;
             // 
             // DispositivosEdicion
             // 
@@ -5887,20 +5885,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoContadores;
         private System.Windows.Forms.DataGridViewTextBoxColumn chseVisualizaEnReportesContadores;
         private System.Windows.Forms.DataGridViewTextBoxColumn chIdusuarioContadores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chcodigoDispositivoHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chitemHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chcodigoHardware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chhardware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chserieHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chcapacidadHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chunidadMedidaCapacidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chnumeroParteHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chobservacionHW;
-        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chdesdeHW;
-        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chhastaHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chidestadoHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoHW;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chseVisualizaEnReportesHW;
         private System.Windows.Forms.DataGridViewTextBoxColumn chcodigoDispositivoMantenimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn chItemMantenimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn chcodigoTipoMantenimiento;
@@ -5982,5 +5966,19 @@
         private System.Windows.Forms.ToolStripMenuItem btnProgramarSoporte;
         private System.Windows.Forms.ToolStripMenuItem btnGenerarInspeccion;
         private System.Windows.Forms.ToolStripMenuItem btnRegistrarInventario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chcodigoDispositivoHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chitemHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chcodigoHardware;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chhardware;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chserieHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chcapacidadHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chunidadMedidaCapacidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chnumeroParteHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chobservacionHW;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chdesdeHW;
+        private MyDataGridViewColumns.MyDataGridViewMaskedTextColumn chhastaHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chidestadoHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoHW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chseVisualizaEnReportesHW;
     }
 }

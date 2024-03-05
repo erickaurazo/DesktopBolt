@@ -3518,6 +3518,16 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void btnCompletarEspeficacionesHardware_Click(object sender, EventArgs e)
         {
+            hardwarePorDevice = new List<SAS_DispositivoHardwareByDeviceResult>(); // 
+            modelHardware = new SAS_DispositivoHardwareController();
+
+            int DispositivoId = Convert.ToInt32(txtCodigo.Text);
+            string TipoDispositivoID = Convert.ToString(cboTipoDispositivo.SelectedValue);
+
+            hardwarePorDevice = modelHardware.ObtenerListadoDeCaracteristicaHardwarePorTipoDispositivoID(conection, DispositivoId, TipoDispositivoID);
+            dgvHardware.CargarDatos(hardwarePorDevice.ToDataTable<SAS_DispositivoHardwareByDeviceResult>());
+            dgvHardware.Refresh();
+            MessageBox.Show("Listado actualizado correctamente", "Confirmación del sistema".ToUpper());
 
         }
 
@@ -3526,7 +3536,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
             try
             {
-                hardwarePorDevice = new List<SAS_DispositivoHardwareByDeviceResult>(); // Obtener listado de colaboradores() 
+                hardwarePorDevice = new List<SAS_DispositivoHardwareByDeviceResult>(); // 
                 hardwarePorDevice = modelHardware.GetDispositivoHardwareByDevice("SAS", oDispositivo);
                 dgvHardware.CargarDatos(hardwarePorDevice.ToDataTable<SAS_DispositivoHardwareByDeviceResult>());
                 dgvHardware.Refresh();
@@ -3886,7 +3896,28 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void dgvHardware_KeyUp(object sender, KeyEventArgs e)
         {
-
+            modelo = new SAS_DispostivoController();
+            if (((DataGridView)sender).RowCount > 0)
+            {
+                #region Tipo de HardWare() 
+                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chhardware")
+                {
+                    if (e.KeyCode == Keys.F3)
+                    {
+                        frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
+                        search.ListaGeneralResultado = modelo.GetHardwares("SAS");
+                        search.Text = "Buscar Tipo de Hardware";
+                        search.txtTextoFiltro.Text = "";
+                        if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            //idRetorno = busquedas.ObjetoRetorno.Codigo; 
+                            this.dgvHardware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chcodigoHardware"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvHardware.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chhardware"].Value = search.ObjetoRetorno.Descripcion;
+                        }
+                    }
+                }
+                #endregion 
+            }
         }
 
         private void btnGrillaImagenFavorito_Click(object sender, EventArgs e)
