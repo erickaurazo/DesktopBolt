@@ -237,7 +237,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                         txtFrecuencia.Text = selectedItem.FrecuenciaCapacitacion.ToDecimalPresentation();
                         model = new TemaACapacitarControllers();
                         ListadoDetalleSelecionado = model.ObtenerListadoTemasParaCapacitacionByTemaId(connection, selectedItem.TemaID).ToList();
-                        dgvDetalle.DataSource = ListadoDetalleSelecionado.ToDataTable<SAS_ListadoTemasParaCapacitacionByTemaIdResult>();
+                        dgvDetalle.CargarDatos(ListadoDetalleSelecionado.ToDataTable<SAS_ListadoTemasParaCapacitacionByTemaIdResult>());
                         dgvDetalle.Refresh();
                     }
                 }
@@ -251,14 +251,17 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         {
             modelExportToExcel = new ExportToExcelHelper();
             modelExportToExcel.LimpiarControlesEnGrupoBox(this, gbEdit);
-            txtTemaID.Text = "0";
+            txtTemaID.Text = "000";
             txtIdEstado.Text = "1";
             txtEstado.Text = "ACTIVO";
 
             ListadoDetalleSelecionado = new List<SAS_ListadoTemasParaCapacitacionByTemaIdResult>();
             ListadoDetalleSelecionado = model.ObtenerListadoTemasParaCapacitacionByTemaId(connection, "").ToList();
-            dgvDetalle.DataSource = ListadoDetalleSelecionado.ToDataTable<SAS_ListadoTemasParaCapacitacionByTemaIdResult>();
+            dgvDetalle.CargarDatos(ListadoDetalleSelecionado.ToDataTable<SAS_ListadoTemasParaCapacitacionByTemaIdResult>());
             dgvDetalle.Refresh();
+            ListadoDetalleAEliminar = new List<TemaArea>();
+            ListadoDetalleARegistrar = new List<TemaArea>();
+
             //txtDescripcion.Clear();
             //this.txtFormulario.Clear();
             //this.txtFormularioCodigo.Clear();
@@ -299,7 +302,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             btnNuevo.Enabled = true;
             btnActualizar.Enabled = true;
             btnAnular.Enabled = true;
-            btnEliminarRegistro.Enabled = true;
+            btnEliminarR.Enabled = true;
             btnRegistrar.Enabled = false;
             btnAtras.Enabled = false;
             pgBar.Visible = true;
@@ -322,7 +325,50 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                     oTemaARegistrar.TemaID = Convert.ToString(this.txtTemaID.Text);
                     oTemaARegistrar.Descripcion = this.txtDescripcion.Text.Trim();
                     oTemaARegistrar.Estado = this.txtIdEstado.Text.Trim() == "1" ? true : false;
-                    oTemaARegistrar.FrecuenciaCapacitacion = Convert.ToInt32(this.txtFrecuencia.Value.ToString().Trim());
+                    oTemaARegistrar.FrecuenciaCapacitacion = Convert.ToDecimal(this.txtFrecuencia.Value);
+
+                    #region Obtener listado Detalle()
+
+
+                    ListadoDetalleARegistrar = new List<TemaArea>();
+                    if (this.dgvDetalle != null)
+                    {
+                        if (this.dgvDetalle.Rows.Count > 0)
+                        {
+                            foreach (DataGridViewRow fila in this.dgvDetalle.Rows)
+                            {
+                                if (fila.Cells["chTemaAreaId"].Value.ToString().Trim() != String.Empty)
+                                {
+                                    if (fila.Cells["chTemaIDDetalle"].Value.ToString().Trim() != String.Empty)
+                                    {
+                                        if (fila.Cells["chAreaID"].Value.ToString().Trim() != String.Empty)
+                                        {
+                                            try
+                                            {
+                                                #region Obtener detalle por linea detalle() 
+                                                TemaArea oItem = new TemaArea();
+                                                oItem.TemaAreaId = fila.Cells["chTemaAreaId"].Value != null ? Convert.ToInt32(fila.Cells["chTemaAreaId"].Value.ToString().Trim()) : 0;
+                                                oItem.TemaID = fila.Cells["chTemaIDDetalle"].Value != null ? fila.Cells["chTemaIDDetalle"].Value.ToString().Trim() : string.Empty;
+                                                oItem.AreaID = fila.Cells["chAreaID"].Value != null ? Convert.ToString(fila.Cells["chAreaID"].Value) : string.Empty;
+                                                oItem.Estado = fila.Cells["chEstadoDetalle"].Value != null ?  Convert.ToByte( fila.Cells["chEstadoDetalle"].Value.ToString().Trim()) : Convert.ToByte(0);
+                                                #endregion
+                                                ListadoDetalleARegistrar.Add(oItem);
+                                            }
+                                            catch (Exception Ex)
+                                            {
+                                                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                                                return;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #endregion
+
+                  
+
                     model = new TemaACapacitarControllers();
                     if (model.Registrar(connection, oTemaARegistrar, ListadoDetalleAEliminar, ListadoDetalleARegistrar) > 0)
                     {
@@ -336,7 +382,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                         btnNuevo.Enabled = true;
                         btnActualizar.Enabled = true;
                         btnAnular.Enabled = true;
-                        btnEliminarRegistro.Enabled = true;
+                        btnEliminarR.Enabled = true;
                         btnGrabar.Enabled = true;
                         btnEditar.Enabled = true;
                         btnAtras.Enabled = false;
@@ -402,7 +448,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                         btnNuevo.Enabled = true;
                         btnActualizar.Enabled = true;
                         btnAnular.Enabled = true;
-                        btnEliminarRegistro.Enabled = true;
+                        btnEliminarR.Enabled = true;
                         btnGrabar.Enabled = true;
                         btnEditar.Enabled = true;
                         btnAtras.Enabled = false;
@@ -448,7 +494,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                         btnNuevo.Enabled = true;
                         btnActualizar.Enabled = true;
                         btnAnular.Enabled = true;
-                        btnEliminarRegistro.Enabled = true;
+                        btnEliminarR.Enabled = true;
                         btnGrabar.Enabled = true;
                         btnEditar.Enabled = true;
                         btnAtras.Enabled = false;
@@ -477,7 +523,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             btnNuevo.Enabled = true;
             btnActualizar.Enabled = true;
             btnAnular.Enabled = true;
-            btnEliminarRegistro.Enabled = true;
+            btnEliminarR.Enabled = true;
             btnRegistrar.Enabled = false;
             btnEditar.Enabled = true;
             btnAtras.Enabled = false;
@@ -538,7 +584,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                 btnActualizar.Enabled = true;
                 btnAnular.Enabled = true;
                 btnEditar.Enabled = true;
-                btnEliminarRegistro.Enabled = true;
+                btnEliminarR.Enabled = true;
                 btnRegistrar.Enabled = false;
                 btnAtras.Enabled = false;
                 pgBar.Visible = true;
@@ -594,7 +640,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                     btnEditar.Enabled = false;
                     btnActualizar.Enabled = false;
                     btnAnular.Enabled = false;
-                    btnEliminarRegistro.Enabled = false;
+                    btnEliminarR.Enabled = false;
                     btnRegistrar.Enabled = true;
                     btnAtras.Enabled = true;
                 }
@@ -615,7 +661,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             btnEditar.Enabled = false;
             btnActualizar.Enabled = false;
             btnAnular.Enabled = false;
-            btnEliminarRegistro.Enabled = false;
+            btnEliminarR.Enabled = false;
             btnRegistrar.Enabled = true;
             btnAtras.Enabled = true;
 
@@ -698,7 +744,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                     array.Add(string.Empty); // AreaID   
                     array.Add(string.Empty); // Area  
                     array.Add(string.Empty); // Tema
-                    array.Add(true); // Estado
+                    array.Add(Convert.ToInt32(1)); // Estado
 
 
                     dgvDetalle.AgregarFila(array);
@@ -720,14 +766,13 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             if (this.dgvDetalle != null)
             {
                 #region
-                if (dgvDetalle.CurrentRow != null && dgvDetalle.CurrentRow.Cells["ListadoDetalleAEliminar"].Value != null)
+                if (dgvDetalle.CurrentRow != null && dgvDetalle.CurrentRow.Cells["chTemaAreaId"].Value != null)
                 {
                     //if (MessageBox.Show(this, "¿Desea eliminar el elemento seleccionado?", "Confirmar Operación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     //{
                     try
                     {
-
-                        Int32 dispositivoCodigo = (dgvDetalle.CurrentRow.Cells["ListadoDetalleAEliminar"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetalle.CurrentRow.Cells["ListadoDetalleAEliminar"].Value) : 0);
+                        Int32 dispositivoCodigo = (dgvDetalle.CurrentRow.Cells["chTemaAreaId"].Value.ToString().Trim() != "" ? Convert.ToInt32(dgvDetalle.CurrentRow.Cells["chTemaAreaId"].Value) : 0);
                         if (dispositivoCodigo != 0)
                         {
 
@@ -737,7 +782,6 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                                 ListadoDetalleAEliminar.Add(new TemaArea
                                 {
                                     TemaAreaId = dispositivoCodigo,
-
                                 });
                             }
                         }

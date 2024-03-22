@@ -1668,6 +1668,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConformidadDeCargaDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitaciones.Designer.cs">
+      <DependentUpon>RegistroDeCapacitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="SIG\SST\RegistroDeCapacitacionesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3107,6 +3113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaVistaPrevia.resx">
       <DependentUpon>ConformacionDeCargaVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\RegistroDeCapacitaciones.resx">
+      <DependentUpon>RegistroDeCapacitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.resx">
       <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
