@@ -38,6 +38,14 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.btnMenu = new Telerik.WinControls.UI.RadCommandBar();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
             this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -426,7 +434,7 @@
             gridViewTextBoxColumn2.FieldName = "PASSWORD";
             gridViewTextBoxColumn2.HeaderText = "Password";
             gridViewTextBoxColumn2.Name = "chPASSWORD";
-            gridViewTextBoxColumn2.Width = 107;
+            gridViewTextBoxColumn2.Width = 108;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "USR_NOMBRES";
             gridViewTextBoxColumn3.HeaderText = "Usuario";
@@ -436,7 +444,7 @@
             gridViewTextBoxColumn4.FieldName = "USR_INICIALES";
             gridViewTextBoxColumn4.HeaderText = "Iniciales";
             gridViewTextBoxColumn4.Name = "chUSR_INICIALES";
-            gridViewTextBoxColumn4.Width = 66;
+            gridViewTextBoxColumn4.Width = 62;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "FECHACREACION";
             gridViewTextBoxColumn5.HeaderText = "Creacion";
@@ -446,17 +454,65 @@
             gridViewTextBoxColumn6.FieldName = "EMAIL";
             gridViewTextBoxColumn6.HeaderText = "Correo";
             gridViewTextBoxColumn6.Name = "chEMAIL";
-            gridViewTextBoxColumn6.Width = 292;
+            gridViewTextBoxColumn6.Width = 295;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "IDCODIGOGENERAL";
             gridViewTextBoxColumn7.HeaderText = "Cod. Trabajador";
             gridViewTextBoxColumn7.Name = "chIDCODIGOGENERAL";
-            gridViewTextBoxColumn7.Width = 86;
+            gridViewTextBoxColumn7.Width = 87;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "ESTADO";
             gridViewTextBoxColumn8.HeaderText = "Estado (0 Inactivo, 1 Activo)";
             gridViewTextBoxColumn8.Name = "chESTADO";
-            gridViewTextBoxColumn8.Width = 67;
+            gridViewTextBoxColumn8.Width = 66;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "DNI";
+            gridViewTextBoxColumn9.HeaderText = "DNI";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "chDNI";
+            gridViewTextBoxColumn9.Width = 27;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "Nombres";
+            gridViewTextBoxColumn10.HeaderText = "Nombres";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chNombres";
+            gridViewTextBoxColumn10.Width = 30;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Situacion";
+            gridViewTextBoxColumn11.HeaderText = "Situacion";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "chSituacion";
+            gridViewTextBoxColumn11.Width = 34;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "Cargo";
+            gridViewTextBoxColumn12.HeaderText = "Cargo";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "chCargo";
+            gridViewTextBoxColumn12.Width = 37;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "AreaAsignada";
+            gridViewTextBoxColumn13.HeaderText = "AreaAsignada";
+            gridViewTextBoxColumn13.IsVisible = false;
+            gridViewTextBoxColumn13.Name = "chAreaAsignada";
+            gridViewTextBoxColumn13.Width = 46;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "Celular";
+            gridViewTextBoxColumn14.HeaderText = "Celular";
+            gridViewTextBoxColumn14.IsVisible = false;
+            gridViewTextBoxColumn14.Name = "chCelular";
+            gridViewTextBoxColumn14.Width = 55;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "Edad";
+            gridViewTextBoxColumn15.HeaderText = "Edad";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "chEdad";
+            gridViewTextBoxColumn15.Width = 64;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "FechaActualizacion";
+            gridViewTextBoxColumn16.HeaderText = "FechaActualizacion";
+            gridViewTextBoxColumn16.IsVisible = false;
+            gridViewTextBoxColumn16.Name = "chFechaActualizacion";
+            gridViewTextBoxColumn16.Width = 80;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -465,7 +521,15 @@
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16});
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvListado.MasterTemplate.ShowGroupedColumns = true;

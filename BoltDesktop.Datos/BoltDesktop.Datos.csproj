@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BoltCoorpAD.dbml</DependentUpon>
     </Compile>
+    <Compile Include="BoltSST.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoltSST.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DBBDO.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,6 +159,11 @@
     <None Include="BoltCoorpAD.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>BoltCoorpAD.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BoltSST.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BoltSST.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="DBBDO.dbml">
@@ -250,6 +260,11 @@
   <ItemGroup>
     <None Include="PlaneamientoAgricolaDB.dbml.layout">
       <DependentUpon>PlaneamientoAgricolaDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BoltSST.dbml.layout">
+      <DependentUpon>BoltSST.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

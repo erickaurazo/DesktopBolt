@@ -30,22 +30,23 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
         private PrivilegesByUser privilege;
         private string companyId;
         private string conection;
-        private SAS_USUARIOS user2;
+        private SAS_USUARIOS UserLogin = new SAS_USUARIOS();
         private string fileName;
         private bool exportVisualSettings;
-        private List<USUARIO> listado;
+        private List<SAS_ListadoCuentasERPALLResult> listado;
         private NISIRAERPCuentasController Modelo;
-        private USUARIO odetalle;
-        private USUARIO odetalleSelecionado;
-        private List<USUARIO> listDetails;
+        private SAS_ListadoCuentasERPALLResult odetalle;
+        private SAS_ListadoCuentasERPALLResult odetalleSelecionado;
+        private List<SAS_ListadoCuentasERPALLResult> listDetails;
         private int lastItem;
         private string msgError;
-        private List<USUARIO> detalleEliminados = new List<USUARIO>();
-        private List<USUARIO> detalle = new List<USUARIO>();
+        private List<SAS_ListadoCuentasERPALLResult> detalleEliminados = new List<SAS_ListadoCuentasERPALLResult>();
+        private List<SAS_ListadoCuentasERPALLResult> detalle = new List<SAS_ListadoCuentasERPALLResult>();
         object result;
         int oParImpar = 0;
         private int ClickFiltro = 0;
         private string UsuarioID = string.Empty;
+        private int ClickResaltarResultados = 0;
 
         public CuentasERP()
         {
@@ -56,9 +57,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
 
             conection = "SAS";
-            user2 = new SAS_USUARIOS();
-            user2.IdUsuario = Environment.UserName;
-            user2.NombreCompleto = Environment.MachineName;
+            UserLogin = new SAS_USUARIOS();
+            UserLogin.IdUsuario = Environment.UserName;
+            UserLogin.NombreCompleto = Environment.MachineName;
             companyId = "001";
             privilege = new PrivilegesByUser();
             privilege.nuevo = 1;
@@ -66,8 +67,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             Inicio();
             Actualizar();
 
-            lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
-            lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+            lblCodeUser.Text = UserLogin.IdUsuario != null ? UserLogin.IdUsuario : Environment.UserName.ToString();
+            lblFullName.Text = UserLogin.NombreCompleto != null ? UserLogin.NombreCompleto : Environment.MachineName.ToString();
 
         }
 
@@ -82,11 +83,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
                 RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
                 Inicio();
                 conection = _conection;
-                user2 = _user2;
+                UserLogin = _user2;
                 companyId = _companyId;
                 privilege = _privilege;
-                lblCodeUser.Text = user2.IdUsuario != null ? user2.IdUsuario : Environment.UserName.ToString();
-                lblFullName.Text = user2.NombreCompleto != null ? user2.NombreCompleto : Environment.MachineName.ToString();
+                lblCodeUser.Text = UserLogin.IdUsuario != null ? UserLogin.IdUsuario : Environment.UserName.ToString();
+                lblFullName.Text = UserLogin.NombreCompleto != null ? UserLogin.NombreCompleto : Environment.MachineName.ToString();
 
                 Actualizar();
             }
@@ -103,7 +104,6 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             Nuevo();
         }
 
-
         private void btnActualizarLista_Click(object sender, EventArgs e)
         {
             Actualizar();
@@ -112,8 +112,29 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-
+            ClickResaltarResultados =+ 1;
+            ResaltarResultados();
         }
+
+        private void ResaltarResultados()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvListado.EnableFiltering = !true;
+                dgvListado.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvListado.EnableFiltering = true;
+                dgvListado.ShowHeaderCellButtons = true;
+                #endregion
+            }
+        }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -157,14 +178,16 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
 
         private void btnActivarDesactivarColumnas_Click(object sender, EventArgs e)
         {
-
+            this.dgvListado.ShowColumnChooser();
         }
 
         private void btnResaltarResultados_Click(object sender, EventArgs e)
         {
-
+            ClickResaltarResultados += 1;
+            ResaltarResultados();
         }
 
+         
         private void btnAdjuntar_Click(object sender, EventArgs e)
         {
 
@@ -192,7 +215,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             try
             {
                 #region 
-                odetalleSelecionado = new USUARIO();
+                odetalleSelecionado = new SAS_ListadoCuentasERPALLResult();
                 if (dgvListado != null && dgvListado.Rows.Count > 0)
                 {
                     if (dgvListado.CurrentRow != null)
@@ -415,7 +438,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
             //{
             try
             {
-                listado = new List<USUARIO>();
+                listado = new List<SAS_ListadoCuentasERPALLResult>();
                 Modelo = new NISIRAERPCuentasController();
                 listado = Modelo.ListarTodos(conection);
             }
@@ -435,7 +458,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I.Cuentas_NISIRA
         {
             try
             {
-                dgvListado.DataSource = listado.OrderBy(x => x.IDUSUARIO).ToList().ToDataTable<USUARIO>();
+                dgvListado.DataSource = listado.OrderBy(x => x.IDUSUARIO).ToList().ToDataTable<SAS_ListadoCuentasERPALLResult>();
                 dgvListado.Refresh();
                 progressBar1.Visible = false;
 

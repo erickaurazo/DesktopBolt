@@ -58,26 +58,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacen\SolicitudesDeRequerimientoInternoControllers.cs" />
-    <Compile Include="Calidad\ParametrosDeTemperaturaCampanaController.cs" />
-    <Compile Include="Calidad\SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoController.cs" />
-    <Compile Include="Calidad\TermoRegistroPorClienteCampanaController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\ParametrosDeTemperaturaCampanaController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\TermoRegistroPorClienteCampanaController.cs" />
     <Compile Include="ITD\Cuentas\NISIRAERPCuentasController.cs" />
     <Compile Include="Logistica\AreasController.cs" />
     <Compile Include="PlaneamientoAgricola\ProgramaSemanaController.cs" />
     <Compile Include="ProduccionPacking\SAS_CondormidadDeCargaController.cs" />
     <Compile Include="RRHH\AsistenciaController.cs" />
-    <Compile Include="Calidad\EvaluacionTrazabilidadFCLDespachoController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\EvaluacionTrazabilidadFCLDespachoController.cs" />
     <Compile Include="Almacen\CentroDeCostosController.cs" />
+    <Compile Include="SIG\SST\TemaACapacitarControllers.cs" />
     <Compile Include="Transportes\CompaniesController.cs" />
-    <Compile Include="Calidad\IncumplimientoBuenasPracticasHigieneController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\IncumplimientoBuenasPracticasHigieneController.cs" />
     <Compile Include="Almacen\MARCA_PRODUCTOSController.cs" />
     <Compile Include="Almacen\MODELOPRODUCTOSController.cs" />
     <Compile Include="Exportaciones\PackingListController.cs" />
     <Compile Include="Presupuestos\PresupuestoController.cs" />
     <Compile Include="Almacen\ProductoController.cs" />
-    <Compile Include="Calidad\SAS_AccionesCorrectivasRegistroController.cs" />
-    <Compile Include="Calidad\SAS_AreasAInspeccionarController.cs" />
-    <Compile Include="Calidad\SAS_CalidadFrutaVariedadController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_AccionesCorrectivasRegistroController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_AreasAInspeccionarController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_CalidadFrutaVariedadController.cs" />
     <Compile Include="ITD\SAS_ColaboradorGerenciaController.cs" />
     <Compile Include="ITD\SAS_CuentasCorreoController.cs" />
     <Compile Include="ITD\SAS_CuentasDominioController.cs" />
@@ -114,7 +115,7 @@
     <Compile Include="ITD\SAS_DispositivoTipoSoftwareController.cs" />
     <Compile Include="Configuracion\SAS_DispositivoUsuariosController.cs" />
     <Compile Include="Configuracion\SAS_DocumentosAdjuntosAlFormularioController.cs" />
-    <Compile Include="Calidad\SAS_FormatosDeInspeccionCalidadPacking.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_FormatosDeInspeccionCalidadPacking.cs" />
     <Compile Include="ITD\SAS_InfoPersonalController.cs" />
     <Compile Include="ITD\SAS_LicenciaCorreoController.cs" />
     <Compile Include="ITD\SAS_LineasCelularesCorporativasController.cs" />
@@ -122,20 +123,20 @@
     <Compile Include="ProduccionPacking\SAS_OrdenProduccionLineasController.cs" />
     <Compile Include="ITD\SAS_ParteDiariosDeDispositivosController.cs" />
     <Compile Include="ITD\SAS_PersonalExternoController.cs" />
-    <Compile Include="Calidad\SAS_PesoPromedioJabasCosechaExportablesController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_PesoPromedioJabasCosechaExportablesController.cs" />
     <Compile Include="MRP\SAS_PlanDeCosechaController.cs" />
     <Compile Include="ITD\SAS_PlanesDeTelefoniaMovilController.cs" />
     <Compile Include="Maquinaria\SAS_ProgramacionDetalleMaquinariaController.cs" />
     <Compile Include="ITD\SAS_RegistroCompraEquipoCelularController.cs" />
     <Compile Include="ProduccionPacking\SAS_RegistroDeAbastecimientoController.cs" />
-    <Compile Include="Calidad\SAS_RegistroGasificadoController.cs" />
-    <Compile Include="Calidad\SAS_RegistroTicketCamaraGasificadoExoneradosController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_RegistroGasificadoController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_RegistroTicketCamaraGasificadoExoneradosController.cs" />
     <Compile Include="ITD\SAS_SegmentoRedController.cs" />
     <Compile Include="ITD\SAS_SolicitudDeEquipamientoTecnologicoController.cs" />
     <Compile Include="ITD\SAS_SolicitudDeRenovacionTelefoniaCelularController.cs" />
     <Compile Include="ITD\SAS_SoporteCanalDeAtencionController.cs" />
     <Compile Include="ITD\SAS_TipoDeSistemaController.cs" />
-    <Compile Include="Calidad\SAS_TipoMaestroCalidadController.cs" />
+    <Compile Include="SIG\Calidad y Post Cosecha\SAS_TipoMaestroCalidadController.cs" />
     <Compile Include="ITD\SAS_UsuariosBoltController.cs" />
     <Compile Include="Almacen\SedesController.cs" />
     <Compile Include="Almacen\StockProductosController.cs" />
@@ -173,7 +174,10 @@
     <Content Include="fire_icon_138608.ico" />
     <Content Include="logo4.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SIG\Calidad Campo\" />
+    <Folder Include="SIG\Certificaciones\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -18,6 +18,7 @@ using ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola;
 using ComparativoHorasVisualSATNISIRA.Presupuestos;
 using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.RRHH;
+using ComparativoHorasVisualSATNISIRA.SIG.SST;
 using ComparativoHorasVisualSATNISIRA.T.I;
 using ComparativoHorasVisualSATNISIRA.T.I.Partes_Diarios;
 using System;
@@ -36,8 +37,8 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new ConformacionDeCarga());
-            //Application.Run(new ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna());
-            Application.Run(new Menu());
+            Application.Run(new TemaACapacitar());
+            // Application.Run(new Menu());
         }
     }
 }

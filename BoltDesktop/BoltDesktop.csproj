@@ -400,10 +400,10 @@
     <Compile Include="Almacen\ProductosGenerarCodigos.Designer.cs">
       <DependentUpon>ProductosGenerarCodigos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\ProductosImpresionCodigoQR.cs">
+    <Compile Include="Almacen\ProductosImpresionCodigoQR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\ProductosImpresionCodigoQR.Designer.cs">
+    <Compile Include="Almacen\ProductosImpresionCodigoQR.Designer.cs">
       <DependentUpon>ProductosImpresionCodigoQR.cs</DependentUpon>
     </Compile>
     <Compile Include="Almacen\ProductosImpresionCodigoBarCode.cs">
@@ -418,961 +418,961 @@
     <Compile Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.Designer.cs">
       <DependentUpon>ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\Calidad Campo\Calidades.cs">
+    <Compile Include="SIG\Calidad Campo\Calidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\Calidad Campo\Calidades.Designer.cs">
+    <Compile Include="SIG\Calidad Campo\Calidades.Designer.cs">
       <DependentUpon>Calidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.Designer.cs">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.Designer.cs">
       <DependentUpon>VerificacionLimpiezaDesinfeccionPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionLimpiezaDesinfeccionPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosReporte.Designer.cs">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.Designer.cs">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.Designer.cs">
       <DependentUpon>CheckListBuenasPractivasManufacturaReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckListBuenasPractivasManufacturaRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingReporte.Designer.cs">
       <DependentUpon>MonitoreoDetencionPlagasPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MonitoreoDetencionPlagasPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingReporte.Designer.cs">
       <DependentUpon>MonitoreoTrampasRoedoresPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MonitoreoTrampasRoedoresPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingReporte.Designer.cs">
       <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingReporte.Designer.cs">
       <DependentUpon>CalibracionInstrumentosCalidadPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CalibracionInstrumentosCalidadPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroReporte.Designer.cs">
       <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingReporte.Designer.cs">
       <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaReporte.Designer.cs">
       <DependentUpon>VerificacionInocuidadRecepcionFrutaReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionInocuidadRecepcionFrutaRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionReporte.Designer.cs">
       <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Reporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Reporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2Reporte.Designer.cs">
       <DependentUpon>CheckListProcesoAplicacionSO2Reporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2RPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2RPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckListProcesoAplicacionSO2RPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingReporte.Designer.cs">
       <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoReporte.Designer.cs">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachos.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachos.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachos.Designer.cs">
       <DependentUpon>TrazabilidadDeContenedorDespachos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosEdicion.Designer.cs">
       <DependentUpon>TrazabilidadDeContenedorDespachosEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.Designer.cs">
       <DependentUpon>TrazabilidadDeContenedorDespachosPreView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.Designer.cs">
       <DependentUpon>TrazabilidadDeContenedorDespachosReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrazabilidadDeContenedorDespachosRTP.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasReporte.Designer.cs">
       <DependentUpon>TemperaturaEnCamarasReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TemperaturaEnCamarasRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.Designer.cs">
       <DependentUpon>ChecklistRevisionDelContenedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChecklistRevisionDelContenedorRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorEdicion.Designer.cs">
       <DependentUpon>ChecklistRevisionDelContenedorEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.Designer.cs">
       <DependentUpon>ChecklistRevisionDelContenedorPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.Designer.cs">
       <DependentUpon>ChecklistRevisionDelContenedorReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ExpedientesFotograficoDespachoRTP.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ExpedientesFotograficoDespachoRTP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ExpedientesFotograficoDespachoRTP.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\AccionesCorrectivas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\AccionesCorrectivas.Designer.cs">
       <DependentUpon>AccionesCorrectivas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ActividadesAplicacionSO2.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ActividadesAplicacionSO2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ActividadesAplicacionSO2.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ActividadesAplicacionSO2.Designer.cs">
       <DependentUpon>ActividadesAplicacionSO2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\LimpiezaDesinfeccionItems.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\LimpiezaDesinfeccionItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\LimpiezaDesinfeccionItems.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\LimpiezaDesinfeccionItems.Designer.cs">
       <DependentUpon>LimpiezaDesinfeccionItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItemDetalle.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\VerificacionVidriosTipoItemDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItemDetalle.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\VerificacionVidriosTipoItemDetalle.Designer.cs">
       <DependentUpon>VerificacionVidriosTipoItemDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoTermoRegistroByCliente.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoTermoRegistroByCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoTermoRegistroByCliente.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoTermoRegistroByCliente.Designer.cs">
       <DependentUpon>TipoTermoRegistroByCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItem.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\VerificacionVidriosTipoItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItem.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\VerificacionVidriosTipoItem.Designer.cs">
       <DependentUpon>VerificacionVidriosTipoItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\InocuidadCriterios.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\InocuidadCriterios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\InocuidadCriterios.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\InocuidadCriterios.Designer.cs">
       <DependentUpon>InocuidadCriterios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ParametroTemperaturaCultivoCampana.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ParametroTemperaturaCultivoCampana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ParametroTemperaturaCultivoCampana.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ParametroTemperaturaCultivoCampana.Designer.cs">
       <DependentUpon>ParametroTemperaturaCultivoCampana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form5.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form5.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form6.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form6.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form6.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form7.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form7.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form7.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form7.Designer.cs">
       <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form8.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form8.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form8.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form9.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form9.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Form9.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Form9.Designer.cs">
       <DependentUpon>Form9.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ItemsDescarteUva.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ItemsDescarteUva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ItemsDescarteUva.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ItemsDescarteUva.Designer.cs">
       <DependentUpon>ItemsDescarteUva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\HerramientasDesinfeccion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\HerramientasDesinfeccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\HerramientasDesinfeccion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\HerramientasDesinfeccion.Designer.cs">
       <DependentUpon>HerramientasDesinfeccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\InstrumentosDeCalidad.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\InstrumentosDeCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\InstrumentosDeCalidad.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\InstrumentosDeCalidad.Designer.cs">
       <DependentUpon>InstrumentosDeCalidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ActividadLavadoDeManos.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ActividadLavadoDeManos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\ActividadLavadoDeManos.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\ActividadLavadoDeManos.Designer.cs">
       <DependentUpon>ActividadLavadoDeManos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AmbientesLuminariasVidriosPlasticos.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\AmbientesLuminariasVidriosPlasticos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AmbientesLuminariasVidriosPlasticos.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\AmbientesLuminariasVidriosPlasticos.Designer.cs">
       <DependentUpon>AmbientesLuminariasVidriosPlasticos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\CriteriosManufactura.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\CriteriosManufactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\CriteriosManufactura.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\CriteriosManufactura.Designer.cs">
       <DependentUpon>CriteriosManufactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\LiberacionDeLineas.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\LiberacionDeLineas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\LiberacionDeLineas.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\LiberacionDeLineas.Designer.cs">
       <DependentUpon>LiberacionDeLineas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Sensores.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Sensores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\Sensores.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\Sensores.Designer.cs">
       <DependentUpon>Sensores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\SubProcesoSo2.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\SubProcesoSo2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\SubProcesoSo2.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\SubProcesoSo2.Designer.cs">
       <DependentUpon>SubProcesoSo2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TurnosDeEvaluacion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TurnosDeEvaluacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TurnosDeEvaluacion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TurnosDeEvaluacion.Designer.cs">
       <DependentUpon>TurnosDeEvaluacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\FrecuenciaFormatoDeEvaluacionInspeccion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\FrecuenciaFormatoDeEvaluacionInspeccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\FrecuenciaFormatoDeEvaluacionInspeccion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\FrecuenciaFormatoDeEvaluacionInspeccion.Designer.cs">
       <DependentUpon>FrecuenciaFormatoDeEvaluacionInspeccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AreasInspeccionEvaluacion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\AreasInspeccionEvaluacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\AreasInspeccionEvaluacion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\AreasInspeccionEvaluacion.Designer.cs">
       <DependentUpon>AreasInspeccionEvaluacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoGrupoMaestrosDespacho.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoGrupoMaestrosDespacho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoGrupoMaestrosDespacho.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoGrupoMaestrosDespacho.Designer.cs">
       <DependentUpon>TipoGrupoMaestrosDespacho.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoGrupoMaestrosDespachoDetalle.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoGrupoMaestrosDespachoDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoGrupoMaestrosDespachoDetalle.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoGrupoMaestrosDespachoDetalle.Designer.cs">
       <DependentUpon>TipoGrupoMaestrosDespachoDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\FormatosDeEvaluacionInspeccion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\FormatosDeEvaluacionInspeccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\FormatosDeEvaluacionInspeccion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\FormatosDeEvaluacionInspeccion.Designer.cs">
       <DependentUpon>FormatosDeEvaluacionInspeccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoFormatoDeEvaluacionInspeccion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoFormatoDeEvaluacionInspeccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoFormatoDeEvaluacionInspeccion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoFormatoDeEvaluacionInspeccion.Designer.cs">
       <DependentUpon>TipoFormatoDeEvaluacionInspeccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaReporte.Designer.cs">
       <DependentUpon>CosechaControlCalidadRecepcionUvaReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaReporte.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCalidadDescarteUvaRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesReporte.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificado.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ExonerarTicketACamaraDeGasificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificado.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ExonerarTicketACamaraDeGasificado.Designer.cs">
       <DependentUpon>ExonerarTicketACamaraDeGasificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.Designer.cs">
       <DependentUpon>ExonerarTicketACamaraDeGasificadoEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.Designer.cs">
       <DependentUpon>MotivosDeExoneracionACamaraDeGasificados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificado.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificado.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificado.Designer.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.Designer.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistroDeIngresoSalidaGasificadoRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.Designer.cs">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoVistaPrevia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificado.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ReporteIngresoSalidaGasificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificado.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ReporteIngresoSalidaGasificado.Designer.cs">
       <DependentUpon>ReporteIngresoSalidaGasificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.Designer.cs">
       <DependentUpon>ReporteIngresoSalidaGasificadoLeidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigiene.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigiene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigiene.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigiene.Designer.cs">
       <DependentUpon>IncumplimientoBuenasPracticasHigiene.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneEdicion.Designer.cs">
       <DependentUpon>IncumplimientoBuenasPracticasHigieneEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManos.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManos.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManos.Designer.cs">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosEdicion.Designer.cs">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.Designer.cs">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosRPT.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosRPT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosRPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPacking.Designer.cs">
       <DependentUpon>VerificacionLimpiezaDesinfeccionPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingEdicion.Designer.cs">
       <DependentUpon>VerificacionLimpiezaDesinfeccionPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingPreview.Designer.cs">
       <DependentUpon>VerificacionLimpiezaDesinfeccionPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDuros.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDuros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDuros.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDuros.Designer.cs">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDuros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosEdicion.Designer.cs">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosPreview.Designer.cs">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.Designer.cs">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.Designer.cs">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.Designer.cs">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufactura.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufactura.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufactura.Designer.cs">
       <DependentUpon>CheckListBuenasPractivasManufactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaEdicion.Designer.cs">
       <DependentUpon>CheckListBuenasPractivasManufacturaEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.Designer.cs">
       <DependentUpon>CheckListBuenasPractivasManufacturaPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPacking.Designer.cs">
       <DependentUpon>MonitoreoDetencionPlagasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingEdicion.Designer.cs">
       <DependentUpon>MonitoreoDetencionPlagasPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingPreview.Designer.cs">
       <DependentUpon>MonitoreoDetencionPlagasPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPacking.Designer.cs">
       <DependentUpon>MonitoreoTrampasRoedoresPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingEdicion.Designer.cs">
       <DependentUpon>MonitoreoTrampasRoedoresPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingPreview.Designer.cs">
       <DependentUpon>MonitoreoTrampasRoedoresPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPacking.Designer.cs">
       <DependentUpon>VerificacionCalibracionDiarioBalanzasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingEdicion.Designer.cs">
       <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingPreview.Designer.cs">
       <DependentUpon>VerificacionCalibracionDiarioBalanzasPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPacking.Designer.cs">
       <DependentUpon>CalibracionInstrumentosCalidadPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingEdicion.Designer.cs">
       <DependentUpon>CalibracionInstrumentosCalidadPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingPreview.Designer.cs">
       <DependentUpon>CalibracionInstrumentosCalidadPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltro.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltro.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltro.Designer.cs">
       <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroEdicion.Designer.cs">
       <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroPreview.Designer.cs">
       <DependentUpon>VerificacionVidriosPlasticosDurosEnFiltroPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPacking.Designer.cs">
       <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingEdicion.Designer.cs">
       <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingPreview.Designer.cs">
       <DependentUpon>CumplimientoDiarioDesinfeccionHerramientasPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFruta.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFruta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFruta.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFruta.Designer.cs">
       <DependentUpon>VerificacionInocuidadRecepcionFruta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaEdicion.Designer.cs">
       <DependentUpon>VerificacionInocuidadRecepcionFrutaEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaPreview.Designer.cs">
       <DependentUpon>VerificacionInocuidadRecepcionFrutaPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccion.Designer.cs">
       <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionEdicion.Designer.cs">
       <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionPreview.Designer.cs">
       <DependentUpon>ValidacionLimpiezaLiberacionLineasProduccionPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2.Designer.cs">
       <DependentUpon>CheckListProcesoAplicacionSO2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Edicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2Edicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Edicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2Edicion.Designer.cs">
       <DependentUpon>CheckListProcesoAplicacionSO2Edicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Preview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2Preview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2Preview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2Preview.Designer.cs">
       <DependentUpon>CheckListProcesoAplicacionSO2Preview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPacking.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPacking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPacking.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPacking.Designer.cs">
       <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPacking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingEdicion.Designer.cs">
       <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingPreview.Designer.cs">
       <DependentUpon>VerificacionLimpiezaInocuidadMandielesFiltroPackingPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoEdicion.Designer.cs">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoPreview.Designer.cs">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TemperaturaEnCamarasDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasEdicion.Designer.cs">
       <DependentUpon>TemperaturaEnCamarasEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasPreview.Designer.cs">
       <DependentUpon>TemperaturaEnCamarasPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUva.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUva.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUva.Designer.cs">
       <DependentUpon>CosechaControlCalidadRecepcionUva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.Designer.cs">
       <DependentUpon>IncumplimientoBuenasPracticasHigieneReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneRTP.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneRTP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IncumplimientoBuenasPracticasHigieneRTP.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigienePreView.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigienePreView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigienePreView.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigienePreView.Designer.cs">
       <DependentUpon>IncumplimientoBuenasPracticasHigienePreView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamiento.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamiento.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamiento.Designer.cs">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamaras.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamaras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamaras.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamaras.Designer.cs">
       <DependentUpon>TemperaturaEnCamaras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CosechaControlCalidadRecepcionUvaDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaEdicion.Designer.cs">
       <DependentUpon>CosechaControlCalidadRecepcionUvaEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaPreview.Designer.cs">
       <DependentUpon>CosechaControlCalidadRecepcionUvaPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUva.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUva.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUva.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCalidadDescarteUvaDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaEdicion.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaPreview.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportables.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportables.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportables.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportables.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesEdicion.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesEdicion.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesEdicion.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesPreview.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesPreview.Designer.cs">
+    <Compile Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesPreview.Designer.cs">
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Cosecha\LiberarTicketALineaDeAbastecimiento.cs.cs">
@@ -1667,6 +1667,42 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConformidadDeCargaDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionesEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionesEdicion.Designer.cs">
+      <DependentUpon>RegistroDeCapacitacionesEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.Designer.cs">
+      <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionPorColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionPorColaborador.Designer.cs">
+      <DependentUpon>RegistroDeCapacitacionPorColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionPorTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\RegistroDeCapacitacionPorTema.Designer.cs">
+      <DependentUpon>RegistroDeCapacitacionPorTema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\TemaACapacitar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\TemaACapacitar.Designer.cs">
+      <DependentUpon>TemaACapacitar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\TipoDeCapacitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIG\SST\TipoDeCapacitacion.Designer.cs">
+      <DependentUpon>TipoDeCapacitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.cs">
       <SubType>Form</SubType>
@@ -2675,10 +2711,13 @@
     <EmbeddedResource Include="Almacen\ProductosGenerarCodigos.resx">
       <DependentUpon>ProductosGenerarCodigos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.resx">
+      <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.resx">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\ProductosImpresionCodigoQR.resx">
+    <EmbeddedResource Include="Almacen\ProductosImpresionCodigoQR.resx">
       <DependentUpon>ProductosImpresionCodigoQR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Almacen\ProductosImpresionCodigoBarCode.resx">
@@ -2687,247 +2726,247 @@
     <EmbeddedResource Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.resx">
       <DependentUpon>ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\Calidad Campo\Calidades.resx">
+    <EmbeddedResource Include="SIG\Calidad Campo\Calidades.resx">
       <DependentUpon>Calidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosPreview.resx">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosReporte.resx">
       <DependentUpon>CumplimientoDiarioDeLavadoDeManosReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingReporte.resx">
       <DependentUpon>VerificacionLimpiezaDesinfeccionPackingReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\011\VerificacionLimpiezaDesinfeccionPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionLimpiezaDesinfeccionPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosReporte.resx">
       <DependentUpon>VerificacionLuminariasVidriosPlasticosDurosReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\012\VerificacionLuminariasVidriosPlasticosDurosRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionLuminariasVidriosPlasticosDurosRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.resx">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.resx">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPackingReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmonestacionesIncumplimientoDeBuenasPracticasPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaPreview.resx">
       <DependentUpon>CheckListBuenasPractivasManufacturaPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaReporte.resx">
       <DependentUpon>CheckListBuenasPractivasManufacturaReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\014\CheckListBuenasPractivasManufacturaRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckListBuenasPractivasManufacturaRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\017\MonitoreoDetencionPlagasPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\017\MonitoreoDetencionPlagasPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MonitoreoDetencionPlagasPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\018\MonitoreoTrampasRoedoresPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\018\MonitoreoTrampasRoedoresPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MonitoreoTrampasRoedoresPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\032\VerificacionCalibracionDiarioBalanzasPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionCalibracionDiarioBalanzasPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\033\CalibracionInstrumentosCalidadPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\033\CalibracionInstrumentosCalidadPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CalibracionInstrumentosCalidadPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\038\VerificacionVidriosPlasticosDurosEnFiltroRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionVidriosPlasticosDurosEnFiltroRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\043\CumplimientoDiarioDesinfeccionHerramientasPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CumplimientoDiarioDesinfeccionHerramientasPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\089\VerificacionInocuidadRecepcionFrutaRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\089\VerificacionInocuidadRecepcionFrutaRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionInocuidadRecepcionFrutaRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\130\ValidacionLimpiezaLiberacionLineasProduccionRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ValidacionLimpiezaLiberacionLineasProduccionRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\146\CheckListProcesoAplicacionSO2RPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\146\CheckListProcesoAplicacionSO2RPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckListProcesoAplicacionSO2RPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\151\VerificacionLimpiezaInocuidadMandielesFiltroPackingRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionLimpiezaInocuidadMandielesFiltroPackingRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VerificacionCalibracionSensoresTunerlesEnfriamientoRTP.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosPreView.resx">
       <DependentUpon>TrazabilidadDeContenedorDespachosPreView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosReporte.resx">
       <DependentUpon>TrazabilidadDeContenedorDespachosReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\023\TrazabilidadDeContenedorDespachosRTP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TrazabilidadDeContenedorDespachosRTP.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TemperaturaEnCamarasRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedor.resx">
       <DependentUpon>ChecklistRevisionDelContenedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorPreview.resx">
       <DependentUpon>ChecklistRevisionDelContenedorPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorReporte.resx">
       <DependentUpon>ChecklistRevisionDelContenedorReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ChecklistRevisionDelContenedorRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ChecklistRevisionDelContenedorRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\045\ExpedientesFotograficoDespachoRTP.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\045\ExpedientesFotograficoDespachoRTP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ExpedientesFotograficoDespachoRTP.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\AccionesCorrectivas.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\AccionesCorrectivas.resx">
       <DependentUpon>AccionesCorrectivas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\ActividadesAplicacionSO2.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\ActividadesAplicacionSO2.resx">
       <DependentUpon>ActividadesAplicacionSO2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\ActividadLavadoDeManos.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\ActividadLavadoDeManos.resx">
       <DependentUpon>ActividadLavadoDeManos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\AmbientesLuminariasVidriosPlasticos.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\AmbientesLuminariasVidriosPlasticos.resx">
       <DependentUpon>AmbientesLuminariasVidriosPlasticos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\AreasInspeccionEvaluacion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\AreasInspeccionEvaluacion.resx">
       <DependentUpon>AreasInspeccionEvaluacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\CriteriosManufactura.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\CriteriosManufactura.resx">
       <DependentUpon>CriteriosManufactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\FrecuenciaFormatoDeEvaluacionInspeccion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\FrecuenciaFormatoDeEvaluacionInspeccion.resx">
       <DependentUpon>FrecuenciaFormatoDeEvaluacionInspeccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\HerramientasDesinfeccion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\HerramientasDesinfeccion.resx">
       <DependentUpon>HerramientasDesinfeccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\InocuidadCriterios.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\InocuidadCriterios.resx">
       <DependentUpon>InocuidadCriterios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\LimpiezaDesinfeccionItems.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\LimpiezaDesinfeccionItems.resx">
       <DependentUpon>LimpiezaDesinfeccionItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\ParametroTemperaturaCultivoCampana.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\ParametroTemperaturaCultivoCampana.resx">
       <DependentUpon>ParametroTemperaturaCultivoCampana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\SubProcesoSo2.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\SubProcesoSo2.resx">
       <DependentUpon>SubProcesoSo2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoTermoRegistroByCliente.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoTermoRegistroByCliente.resx">
       <DependentUpon>TipoTermoRegistroByCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TurnosDeEvaluacion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\TurnosDeEvaluacion.resx">
       <DependentUpon>TurnosDeEvaluacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\InstrumentosDeCalidad.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\InstrumentosDeCalidad.resx">
       <DependentUpon>InstrumentosDeCalidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\ItemsDescarteUva.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\ItemsDescarteUva.resx">
       <DependentUpon>ItemsDescarteUva.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\LiberacionDeLineas.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\LiberacionDeLineas.resx">
       <DependentUpon>LiberacionDeLineas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\Sensores.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\Sensores.resx">
       <DependentUpon>Sensores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoGrupoMaestrosDespacho.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoGrupoMaestrosDespacho.resx">
       <DependentUpon>TipoGrupoMaestrosDespacho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoGrupoMaestrosDespachoDetalle.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoGrupoMaestrosDespachoDetalle.resx">
       <DependentUpon>TipoGrupoMaestrosDespachoDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\FormatosDeEvaluacionInspeccion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\FormatosDeEvaluacionInspeccion.resx">
       <DependentUpon>FormatosDeEvaluacionInspeccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\TipoFormatoDeEvaluacionInspeccion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\TipoFormatoDeEvaluacionInspeccion.resx">
       <DependentUpon>TipoFormatoDeEvaluacionInspeccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItem.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\VerificacionVidriosTipoItem.resx">
       <DependentUpon>VerificacionVidriosTipoItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Maestros\VerificacionVidriosTipoItemDetalle.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Maestros\VerificacionVidriosTipoItemDetalle.resx">
       <DependentUpon>VerificacionVidriosTipoItemDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ControlCalidadDescarteUvaRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ControlCalidadDescarteUvaTrozosExportablesRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificado.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ExonerarTicketACamaraDeGasificado.resx">
       <DependentUpon>ExonerarTicketACamaraDeGasificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ExonerarTicketACamaraDeGasificadoEdicion.resx">
       <DependentUpon>ExonerarTicketACamaraDeGasificadoEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\MotivosDeExoneracionACamaraDeGasificados.resx">
       <DependentUpon>MotivosDeExoneracionACamaraDeGasificados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificado.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificado.resx">
       <DependentUpon>RegistroDeIngresoSalidaGasificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoEdicion.resx">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegistroDeIngresoSalidaGasificadoRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoVistaPrevia.resx">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoVistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificado.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ReporteIngresoSalidaGasificado.resx">
       <DependentUpon>ReporteIngresoSalidaGasificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Gasificado\ReporteIngresoSalidaGasificadoLeidos.resx">
       <DependentUpon>ReporteIngresoSalidaGasificadoLeidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneReporte.resx">
       <DependentUpon>IncumplimientoBuenasPracticasHigieneReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigieneRTP.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigieneRTP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>IncumplimientoBuenasPracticasHigieneRTP.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\008\IncumplimientoBuenasPracticasHigienePreView.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\008\IncumplimientoBuenasPracticasHigienePreView.resx">
       <DependentUpon>IncumplimientoBuenasPracticasHigienePreView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosRPT.rpt">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\010\CumplimientoDiarioDeLavadoDeManosRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CumplimientoDiarioDeLavadoDeManosRPT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamiento.resx">
+    <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamiento.resx">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cosecha\LiberarTicketALineaDeAbastecimiento.cs.resx">
@@ -3068,6 +3107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaVistaPrevia.resx">
       <DependentUpon>ConformacionDeCargaVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.resx">
+      <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\TemaACapacitar.resx">
+      <DependentUpon>TemaACapacitar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.resx">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
@@ -3566,70 +3611,70 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Asistencia_ClaveTemporal.pfx" />
-    <None Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xsc">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xsc">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xsd">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RegistroDeIngresoSalidaGasificadoDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xss">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Gasificado\RegistroDeIngresoSalidaGasificadoDS.xss">
       <DependentUpon>RegistroDeIngresoSalidaGasificadoDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsc">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsc">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsd">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>VerificacionCalibracionSensoresTunerlesEnfriamientoDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xss">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\015\VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xss">
       <DependentUpon>VerificacionCalibracionSensoresTunerlesEnfriamientoDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.xsc">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.xsc">
       <DependentUpon>TemperaturaEnCamarasDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.xsd">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TemperaturaEnCamarasDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.xss">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Frio y Despacho\034\TemperaturaEnCamarasDS.xss">
       <DependentUpon>TemperaturaEnCamarasDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.xsc">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.xsc">
       <DependentUpon>CosechaControlCalidadRecepcionUvaDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.xsd">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CosechaControlCalidadRecepcionUvaDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.xss">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\005\CosechaControlCalidadRecepcionUvaDS.xss">
       <DependentUpon>CosechaControlCalidadRecepcionUvaDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.xsc">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.xsc">
       <DependentUpon>ControlCalidadDescarteUvaDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.xsd">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ControlCalidadDescarteUvaDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.xss">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\072\ControlCalidadDescarteUvaDS.xss">
       <DependentUpon>ControlCalidadDescarteUvaDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.xsc">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.xsc">
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesDS.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.xsd">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ControlCalidadDescarteUvaTrozosExportablesDS.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Calidad\CalidadPackingPostCosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.xss">
+    <None Include="SIG\Calidad Packing Post-Cosecha\Producto Terminado\112\ControlCalidadDescarteUvaTrozosExportablesDS.xss">
       <DependentUpon>ControlCalidadDescarteUvaTrozosExportablesDS.xsd</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
@@ -3925,6 +3970,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fito\" />
+    <Folder Include="SIG\Certificaciones\" />
     <Folder Include="T.I\ReportesEntregaDevolucion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

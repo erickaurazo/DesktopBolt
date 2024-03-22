@@ -12,15 +12,15 @@ namespace Asistencia.Negocios.ITD.Cuentas
     {
 
 
-        public List<USUARIO> ListarTodos(string conection)
+        public List<SAS_ListadoCuentasERPALLResult> ListarTodos(string conection)
         {
-            List<USUARIO> ListadoRutas = new List<USUARIO>();
+            List<SAS_ListadoCuentasERPALLResult> ListadoRutas = new List<SAS_ListadoCuentasERPALLResult>();
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[conection].ToString();
 
-            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
             {
-                ListadoRutas = Modelo.USUARIOs.ToList();
+                ListadoRutas = Modelo.SAS_ListadoCuentasERPALL().ToList();
                 Modelo.Connection.Close();
             }
             return ListadoRutas;
