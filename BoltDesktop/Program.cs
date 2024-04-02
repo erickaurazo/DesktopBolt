@@ -37,7 +37,7 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new ConformacionDeCarga());
-            Application.Run(new TemaACapacitar());
+            Application.Run(new LineasCelulares());
             // Application.Run(new Menu());
         }
     }

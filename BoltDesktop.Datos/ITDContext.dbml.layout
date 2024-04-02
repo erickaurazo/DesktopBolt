@@ -662,5 +662,17 @@
         <elementListCompartment Id="3884d275-cc1a-4cc6-b241-2355d9e4b97f" absoluteBounds="15.89, 8.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="294bfba0-d8a4-4f32-a7e0-9344681f95e5" isExpanded="false" absoluteBounds="40.375, 4.625, 3, 0.45">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasCelularesCoporativasHistoricoPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d8c748e-8842-4c60-b4e7-0572a9d3f64d" absoluteBounds="40.39, 5.085, 2.9699999999999998, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d762ae62-7be7-49e9-9cd8-46751f263ff6" isExpanded="false" absoluteBounds="40.375, 4, 3, 0.45">
+      <DataClassMoniker Name="/ITDContextDataContext/SAS_LineasCelularesCoporativasHistoricoLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87b607f9-62e8-4b02-b9ff-d213522d9a74" absoluteBounds="40.39, 4.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

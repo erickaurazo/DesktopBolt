@@ -231,6 +231,12 @@ namespace Asistencia.Datos
     partial void InsertSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
     partial void UpdateSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
     partial void DeleteSAS_DispositivoTipoHardware(SAS_DispositivoTipoHardware instance);
+    partial void InsertSAS_LineasCelularesCoporativasHistoricoPlan(SAS_LineasCelularesCoporativasHistoricoPlan instance);
+    partial void UpdateSAS_LineasCelularesCoporativasHistoricoPlan(SAS_LineasCelularesCoporativasHistoricoPlan instance);
+    partial void DeleteSAS_LineasCelularesCoporativasHistoricoPlan(SAS_LineasCelularesCoporativasHistoricoPlan instance);
+    partial void InsertSAS_LineasCelularesCoporativasHistoricoLog(SAS_LineasCelularesCoporativasHistoricoLog instance);
+    partial void UpdateSAS_LineasCelularesCoporativasHistoricoLog(SAS_LineasCelularesCoporativasHistoricoLog instance);
+    partial void DeleteSAS_LineasCelularesCoporativasHistoricoLog(SAS_LineasCelularesCoporativasHistoricoLog instance);
     #endregion
 		
 		public ITDContextDataContext() : 
@@ -1143,6 +1149,22 @@ namespace Asistencia.Datos
 			}
 		}
 		
+		public System.Data.Linq.Table<SAS_LineasCelularesCoporativasHistoricoPlan> SAS_LineasCelularesCoporativasHistoricoPlans
+		{
+			get
+			{
+				return this.GetTable<SAS_LineasCelularesCoporativasHistoricoPlan>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_LineasCelularesCoporativasHistoricoLog> SAS_LineasCelularesCoporativasHistoricoLogs
+		{
+			get
+			{
+				return this.GetTable<SAS_LineasCelularesCoporativasHistoricoLog>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EsPropioCBO")]
 		public ISingleResult<SAS_EsPropioCBOResult> SAS_EsPropioCBO()
 		{
@@ -1729,6 +1751,20 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tipoDispositivoID, dispositivoID);
 			return ((ISingleResult<SAS_DispositivoHardwareByTipoDispositivoIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularID")]
+		public ISingleResult<SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularIDResult> SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LineaCelularID", DbType="Int")] System.Nullable<int> lineaCelularID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lineaCelularID);
+			return ((ISingleResult<SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularID")]
+		public ISingleResult<SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularIDResult> SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LineaCelularID", DbType="Int")] System.Nullable<int> lineaCelularID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lineaCelularID);
+			return ((ISingleResult<SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularIDResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -40107,6 +40143,802 @@ namespace Asistencia.Datos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_LineasCelularesCoporativasHistoricoPlan")]
+	public partial class SAS_LineasCelularesCoporativasHistoricoPlan : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LineasCelularesCoporativasHistoricoPlanID;
+		
+		private int _LineaCelularID;
+		
+		private int _PlanDeTelefoniaID;
+		
+		private System.DateTime _Desde;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		private string _Nota;
+		
+		private System.Nullable<decimal> _Estado;
+		
+		private System.Nullable<int> _ReferenciaSolicitudID;
+		
+		private System.Nullable<int> _ReferenciaID;
+		
+		private string _TablaReferencia;
+		
+		private string _TablaSolicitud;
+		
+		private string _UserID;
+		
+		private string _HostName;
+		
+		private System.Nullable<System.DateTime> _FechaRegistro;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLineasCelularesCoporativasHistoricoPlanIDChanging(int value);
+    partial void OnLineasCelularesCoporativasHistoricoPlanIDChanged();
+    partial void OnLineaCelularIDChanging(int value);
+    partial void OnLineaCelularIDChanged();
+    partial void OnPlanDeTelefoniaIDChanging(int value);
+    partial void OnPlanDeTelefoniaIDChanged();
+    partial void OnDesdeChanging(System.DateTime value);
+    partial void OnDesdeChanged();
+    partial void OnHastaChanging(System.Nullable<System.DateTime> value);
+    partial void OnHastaChanged();
+    partial void OnNotaChanging(string value);
+    partial void OnNotaChanged();
+    partial void OnEstadoChanging(System.Nullable<decimal> value);
+    partial void OnEstadoChanged();
+    partial void OnReferenciaSolicitudIDChanging(System.Nullable<int> value);
+    partial void OnReferenciaSolicitudIDChanged();
+    partial void OnReferenciaIDChanging(System.Nullable<int> value);
+    partial void OnReferenciaIDChanged();
+    partial void OnTablaReferenciaChanging(string value);
+    partial void OnTablaReferenciaChanged();
+    partial void OnTablaSolicitudChanging(string value);
+    partial void OnTablaSolicitudChanged();
+    partial void OnUserIDChanging(string value);
+    partial void OnUserIDChanged();
+    partial void OnHostNameChanging(string value);
+    partial void OnHostNameChanged();
+    partial void OnFechaRegistroChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaRegistroChanged();
+    #endregion
+		
+		public SAS_LineasCelularesCoporativasHistoricoPlan()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineasCelularesCoporativasHistoricoPlanID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LineasCelularesCoporativasHistoricoPlanID
+		{
+			get
+			{
+				return this._LineasCelularesCoporativasHistoricoPlanID;
+			}
+			set
+			{
+				if ((this._LineasCelularesCoporativasHistoricoPlanID != value))
+				{
+					this.OnLineasCelularesCoporativasHistoricoPlanIDChanging(value);
+					this.SendPropertyChanging();
+					this._LineasCelularesCoporativasHistoricoPlanID = value;
+					this.SendPropertyChanged("LineasCelularesCoporativasHistoricoPlanID");
+					this.OnLineasCelularesCoporativasHistoricoPlanIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineaCelularID", DbType="Int NOT NULL")]
+		public int LineaCelularID
+		{
+			get
+			{
+				return this._LineaCelularID;
+			}
+			set
+			{
+				if ((this._LineaCelularID != value))
+				{
+					this.OnLineaCelularIDChanging(value);
+					this.SendPropertyChanging();
+					this._LineaCelularID = value;
+					this.SendPropertyChanged("LineaCelularID");
+					this.OnLineaCelularIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanDeTelefoniaID", DbType="Int NOT NULL")]
+		public int PlanDeTelefoniaID
+		{
+			get
+			{
+				return this._PlanDeTelefoniaID;
+			}
+			set
+			{
+				if ((this._PlanDeTelefoniaID != value))
+				{
+					this.OnPlanDeTelefoniaIDChanging(value);
+					this.SendPropertyChanging();
+					this._PlanDeTelefoniaID = value;
+					this.SendPropertyChanged("PlanDeTelefoniaID");
+					this.OnPlanDeTelefoniaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this.OnDesdeChanging(value);
+					this.SendPropertyChanging();
+					this._Desde = value;
+					this.SendPropertyChanged("Desde");
+					this.OnDesdeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this.OnHastaChanging(value);
+					this.SendPropertyChanging();
+					this._Hasta = value;
+					this.SendPropertyChanged("Hasta");
+					this.OnHastaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nota", DbType="VarChar(1500)")]
+		public string Nota
+		{
+			get
+			{
+				return this._Nota;
+			}
+			set
+			{
+				if ((this._Nota != value))
+				{
+					this.OnNotaChanging(value);
+					this.SendPropertyChanging();
+					this._Nota = value;
+					this.SendPropertyChanged("Nota");
+					this.OnNotaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaSolicitudID", DbType="Int")]
+		public System.Nullable<int> ReferenciaSolicitudID
+		{
+			get
+			{
+				return this._ReferenciaSolicitudID;
+			}
+			set
+			{
+				if ((this._ReferenciaSolicitudID != value))
+				{
+					this.OnReferenciaSolicitudIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReferenciaSolicitudID = value;
+					this.SendPropertyChanged("ReferenciaSolicitudID");
+					this.OnReferenciaSolicitudIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaID", DbType="Int")]
+		public System.Nullable<int> ReferenciaID
+		{
+			get
+			{
+				return this._ReferenciaID;
+			}
+			set
+			{
+				if ((this._ReferenciaID != value))
+				{
+					this.OnReferenciaIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReferenciaID = value;
+					this.SendPropertyChanged("ReferenciaID");
+					this.OnReferenciaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaReferencia", DbType="VarChar(50)")]
+		public string TablaReferencia
+		{
+			get
+			{
+				return this._TablaReferencia;
+			}
+			set
+			{
+				if ((this._TablaReferencia != value))
+				{
+					this.OnTablaReferenciaChanging(value);
+					this.SendPropertyChanging();
+					this._TablaReferencia = value;
+					this.SendPropertyChanged("TablaReferencia");
+					this.OnTablaReferenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaSolicitud", DbType="VarChar(50)")]
+		public string TablaSolicitud
+		{
+			get
+			{
+				return this._TablaSolicitud;
+			}
+			set
+			{
+				if ((this._TablaSolicitud != value))
+				{
+					this.OnTablaSolicitudChanging(value);
+					this.SendPropertyChanging();
+					this._TablaSolicitud = value;
+					this.SendPropertyChanged("TablaSolicitud");
+					this.OnTablaSolicitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50)")]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HostName", DbType="VarChar(70)")]
+		public string HostName
+		{
+			get
+			{
+				return this._HostName;
+			}
+			set
+			{
+				if ((this._HostName != value))
+				{
+					this.OnHostNameChanging(value);
+					this.SendPropertyChanging();
+					this._HostName = value;
+					this.SendPropertyChanged("HostName");
+					this.OnHostNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this.OnFechaRegistroChanging(value);
+					this.SendPropertyChanging();
+					this._FechaRegistro = value;
+					this.SendPropertyChanged("FechaRegistro");
+					this.OnFechaRegistroChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_LineasCelularesCoporativasHistoricoLog")]
+	public partial class SAS_LineasCelularesCoporativasHistoricoLog : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LineasCelularesCoporativasHistoricoLogID;
+		
+		private int _LineaCelularID;
+		
+		private int _TipoLogID;
+		
+		private string _Link;
+		
+		private string _Descripcion;
+		
+		private string _CreadoPor;
+		
+		private System.Nullable<System.DateTime> _FechaRegistro;
+		
+		private string _Hostname;
+		
+		private string _UserID;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private decimal _estado;
+		
+		private System.Nullable<int> _ReferenciaSolicitudID;
+		
+		private System.Nullable<int> _ReferenciaID;
+		
+		private string _TablaReferencia;
+		
+		private string _TablaSolicitud;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLineasCelularesCoporativasHistoricoLogIDChanging(int value);
+    partial void OnLineasCelularesCoporativasHistoricoLogIDChanged();
+    partial void OnLineaCelularIDChanging(int value);
+    partial void OnLineaCelularIDChanged();
+    partial void OnTipoLogIDChanging(int value);
+    partial void OnTipoLogIDChanged();
+    partial void OnLinkChanging(string value);
+    partial void OnLinkChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnCreadoPorChanging(string value);
+    partial void OnCreadoPorChanged();
+    partial void OnFechaRegistroChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaRegistroChanged();
+    partial void OnHostnameChanging(string value);
+    partial void OnHostnameChanged();
+    partial void OnUserIDChanging(string value);
+    partial void OnUserIDChanged();
+    partial void OnHastaChanging(System.Nullable<System.DateTime> value);
+    partial void OnHastaChanged();
+    partial void OnDesdeChanging(System.Nullable<System.DateTime> value);
+    partial void OnDesdeChanged();
+    partial void OnestadoChanging(decimal value);
+    partial void OnestadoChanged();
+    partial void OnReferenciaSolicitudIDChanging(System.Nullable<int> value);
+    partial void OnReferenciaSolicitudIDChanged();
+    partial void OnReferenciaIDChanging(System.Nullable<int> value);
+    partial void OnReferenciaIDChanged();
+    partial void OnTablaReferenciaChanging(string value);
+    partial void OnTablaReferenciaChanged();
+    partial void OnTablaSolicitudChanging(string value);
+    partial void OnTablaSolicitudChanged();
+    #endregion
+		
+		public SAS_LineasCelularesCoporativasHistoricoLog()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineasCelularesCoporativasHistoricoLogID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LineasCelularesCoporativasHistoricoLogID
+		{
+			get
+			{
+				return this._LineasCelularesCoporativasHistoricoLogID;
+			}
+			set
+			{
+				if ((this._LineasCelularesCoporativasHistoricoLogID != value))
+				{
+					this.OnLineasCelularesCoporativasHistoricoLogIDChanging(value);
+					this.SendPropertyChanging();
+					this._LineasCelularesCoporativasHistoricoLogID = value;
+					this.SendPropertyChanged("LineasCelularesCoporativasHistoricoLogID");
+					this.OnLineasCelularesCoporativasHistoricoLogIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineaCelularID", DbType="Int NOT NULL")]
+		public int LineaCelularID
+		{
+			get
+			{
+				return this._LineaCelularID;
+			}
+			set
+			{
+				if ((this._LineaCelularID != value))
+				{
+					this.OnLineaCelularIDChanging(value);
+					this.SendPropertyChanging();
+					this._LineaCelularID = value;
+					this.SendPropertyChanged("LineaCelularID");
+					this.OnLineaCelularIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoLogID", DbType="Int NOT NULL")]
+		public int TipoLogID
+		{
+			get
+			{
+				return this._TipoLogID;
+			}
+			set
+			{
+				if ((this._TipoLogID != value))
+				{
+					this.OnTipoLogIDChanging(value);
+					this.SendPropertyChanging();
+					this._TipoLogID = value;
+					this.SendPropertyChanged("TipoLogID");
+					this.OnTipoLogIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="VarChar(MAX)")]
+		public string Link
+		{
+			get
+			{
+				return this._Link;
+			}
+			set
+			{
+				if ((this._Link != value))
+				{
+					this.OnLinkChanging(value);
+					this.SendPropertyChanging();
+					this._Link = value;
+					this.SendPropertyChanged("Link");
+					this.OnLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreadoPor", DbType="VarChar(50)")]
+		public string CreadoPor
+		{
+			get
+			{
+				return this._CreadoPor;
+			}
+			set
+			{
+				if ((this._CreadoPor != value))
+				{
+					this.OnCreadoPorChanging(value);
+					this.SendPropertyChanging();
+					this._CreadoPor = value;
+					this.SendPropertyChanged("CreadoPor");
+					this.OnCreadoPorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this.OnFechaRegistroChanging(value);
+					this.SendPropertyChanging();
+					this._FechaRegistro = value;
+					this.SendPropertyChanged("FechaRegistro");
+					this.OnFechaRegistroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hostname", DbType="VarChar(80)")]
+		public string Hostname
+		{
+			get
+			{
+				return this._Hostname;
+			}
+			set
+			{
+				if ((this._Hostname != value))
+				{
+					this.OnHostnameChanging(value);
+					this.SendPropertyChanging();
+					this._Hostname = value;
+					this.SendPropertyChanged("Hostname");
+					this.OnHostnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50)")]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this.OnHastaChanging(value);
+					this.SendPropertyChanging();
+					this._Hasta = value;
+					this.SendPropertyChanged("Hasta");
+					this.OnHastaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this.OnDesdeChanging(value);
+					this.SendPropertyChanging();
+					this._Desde = value;
+					this.SendPropertyChanged("Desde");
+					this.OnDesdeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0) NOT NULL")]
+		public decimal estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaSolicitudID", DbType="Int")]
+		public System.Nullable<int> ReferenciaSolicitudID
+		{
+			get
+			{
+				return this._ReferenciaSolicitudID;
+			}
+			set
+			{
+				if ((this._ReferenciaSolicitudID != value))
+				{
+					this.OnReferenciaSolicitudIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReferenciaSolicitudID = value;
+					this.SendPropertyChanged("ReferenciaSolicitudID");
+					this.OnReferenciaSolicitudIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaID", DbType="Int")]
+		public System.Nullable<int> ReferenciaID
+		{
+			get
+			{
+				return this._ReferenciaID;
+			}
+			set
+			{
+				if ((this._ReferenciaID != value))
+				{
+					this.OnReferenciaIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReferenciaID = value;
+					this.SendPropertyChanged("ReferenciaID");
+					this.OnReferenciaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaReferencia", DbType="VarChar(50)")]
+		public string TablaReferencia
+		{
+			get
+			{
+				return this._TablaReferencia;
+			}
+			set
+			{
+				if ((this._TablaReferencia != value))
+				{
+					this.OnTablaReferenciaChanging(value);
+					this.SendPropertyChanging();
+					this._TablaReferencia = value;
+					this.SendPropertyChanged("TablaReferencia");
+					this.OnTablaReferenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaSolicitud", DbType="VarChar(50)")]
+		public string TablaSolicitud
+		{
+			get
+			{
+				return this._TablaSolicitud;
+			}
+			set
+			{
+				if ((this._TablaSolicitud != value))
+				{
+					this.OnTablaSolicitudChanging(value);
+					this.SendPropertyChanging();
+					this._TablaSolicitud = value;
+					this.SendPropertyChanged("TablaSolicitud");
+					this.OnTablaSolicitudChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class SAS_EsPropioCBOResult
 	{
 		
@@ -70232,6 +71064,634 @@ namespace Asistencia.Datos
 				if ((this._IDUnico != value))
 				{
 					this._IDUnico = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularIDResult
+	{
+		
+		private int _LineasCelularesCoporativasHistoricoLogID;
+		
+		private int _LineaCelularID;
+		
+		private int _TipoLogID;
+		
+		private string _Link;
+		
+		private string _Descripcion;
+		
+		private string _CreadoPor;
+		
+		private System.Nullable<System.DateTime> _FechaRegistro;
+		
+		private string _Hostname;
+		
+		private string _UserID;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private System.Nullable<int> _ReferenciaSolicitudID;
+		
+		private System.Nullable<int> _ReferenciaID;
+		
+		private string _TablaReferencia;
+		
+		private string _TablaSolicitud;
+		
+		private decimal _estado;
+		
+		private string _lineaCelular;
+		
+		private string _TipoLog;
+		
+		public SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineasCelularesCoporativasHistoricoLogID", DbType="Int NOT NULL")]
+		public int LineasCelularesCoporativasHistoricoLogID
+		{
+			get
+			{
+				return this._LineasCelularesCoporativasHistoricoLogID;
+			}
+			set
+			{
+				if ((this._LineasCelularesCoporativasHistoricoLogID != value))
+				{
+					this._LineasCelularesCoporativasHistoricoLogID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineaCelularID", DbType="Int NOT NULL")]
+		public int LineaCelularID
+		{
+			get
+			{
+				return this._LineaCelularID;
+			}
+			set
+			{
+				if ((this._LineaCelularID != value))
+				{
+					this._LineaCelularID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoLogID", DbType="Int NOT NULL")]
+		public int TipoLogID
+		{
+			get
+			{
+				return this._TipoLogID;
+			}
+			set
+			{
+				if ((this._TipoLogID != value))
+				{
+					this._TipoLogID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="VarChar(MAX)")]
+		public string Link
+		{
+			get
+			{
+				return this._Link;
+			}
+			set
+			{
+				if ((this._Link != value))
+				{
+					this._Link = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreadoPor", DbType="VarChar(50)")]
+		public string CreadoPor
+		{
+			get
+			{
+				return this._CreadoPor;
+			}
+			set
+			{
+				if ((this._CreadoPor != value))
+				{
+					this._CreadoPor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this._FechaRegistro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hostname", DbType="VarChar(80)")]
+		public string Hostname
+		{
+			get
+			{
+				return this._Hostname;
+			}
+			set
+			{
+				if ((this._Hostname != value))
+				{
+					this._Hostname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50)")]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaSolicitudID", DbType="Int")]
+		public System.Nullable<int> ReferenciaSolicitudID
+		{
+			get
+			{
+				return this._ReferenciaSolicitudID;
+			}
+			set
+			{
+				if ((this._ReferenciaSolicitudID != value))
+				{
+					this._ReferenciaSolicitudID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaID", DbType="Int")]
+		public System.Nullable<int> ReferenciaID
+		{
+			get
+			{
+				return this._ReferenciaID;
+			}
+			set
+			{
+				if ((this._ReferenciaID != value))
+				{
+					this._ReferenciaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaReferencia", DbType="VarChar(50)")]
+		public string TablaReferencia
+		{
+			get
+			{
+				return this._TablaReferencia;
+			}
+			set
+			{
+				if ((this._TablaReferencia != value))
+				{
+					this._TablaReferencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaSolicitud", DbType="VarChar(50)")]
+		public string TablaSolicitud
+		{
+			get
+			{
+				return this._TablaSolicitud;
+			}
+			set
+			{
+				if ((this._TablaSolicitud != value))
+				{
+					this._TablaSolicitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0) NOT NULL")]
+		public decimal estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lineaCelular", DbType="VarChar(12)")]
+		public string lineaCelular
+		{
+			get
+			{
+				return this._lineaCelular;
+			}
+			set
+			{
+				if ((this._lineaCelular != value))
+				{
+					this._lineaCelular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoLog", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string TipoLog
+		{
+			get
+			{
+				return this._TipoLog;
+			}
+			set
+			{
+				if ((this._TipoLog != value))
+				{
+					this._TipoLog = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularIDResult
+	{
+		
+		private int _LineasCelularesCoporativasHistoricoPlanID;
+		
+		private int _LineaCelularID;
+		
+		private int _PlanDeTelefoniaID;
+		
+		private System.DateTime _Desde;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		private string _Nota;
+		
+		private System.Nullable<decimal> _Estado;
+		
+		private System.Nullable<int> _ReferenciaSolicitudID;
+		
+		private System.Nullable<int> _ReferenciaID;
+		
+		private string _TablaReferencia;
+		
+		private string _TablaSolicitud;
+		
+		private string _UserID;
+		
+		private string _HostName;
+		
+		private System.Nullable<System.DateTime> _FechaRegistro;
+		
+		private string _lineaCelular;
+		
+		private string _PlanDeTelefonia;
+		
+		public SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineasCelularesCoporativasHistoricoPlanID", DbType="Int NOT NULL")]
+		public int LineasCelularesCoporativasHistoricoPlanID
+		{
+			get
+			{
+				return this._LineasCelularesCoporativasHistoricoPlanID;
+			}
+			set
+			{
+				if ((this._LineasCelularesCoporativasHistoricoPlanID != value))
+				{
+					this._LineasCelularesCoporativasHistoricoPlanID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineaCelularID", DbType="Int NOT NULL")]
+		public int LineaCelularID
+		{
+			get
+			{
+				return this._LineaCelularID;
+			}
+			set
+			{
+				if ((this._LineaCelularID != value))
+				{
+					this._LineaCelularID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanDeTelefoniaID", DbType="Int NOT NULL")]
+		public int PlanDeTelefoniaID
+		{
+			get
+			{
+				return this._PlanDeTelefoniaID;
+			}
+			set
+			{
+				if ((this._PlanDeTelefoniaID != value))
+				{
+					this._PlanDeTelefoniaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nota", DbType="VarChar(1500)")]
+		public string Nota
+		{
+			get
+			{
+				return this._Nota;
+			}
+			set
+			{
+				if ((this._Nota != value))
+				{
+					this._Nota = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaSolicitudID", DbType="Int")]
+		public System.Nullable<int> ReferenciaSolicitudID
+		{
+			get
+			{
+				return this._ReferenciaSolicitudID;
+			}
+			set
+			{
+				if ((this._ReferenciaSolicitudID != value))
+				{
+					this._ReferenciaSolicitudID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaID", DbType="Int")]
+		public System.Nullable<int> ReferenciaID
+		{
+			get
+			{
+				return this._ReferenciaID;
+			}
+			set
+			{
+				if ((this._ReferenciaID != value))
+				{
+					this._ReferenciaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaReferencia", DbType="VarChar(50)")]
+		public string TablaReferencia
+		{
+			get
+			{
+				return this._TablaReferencia;
+			}
+			set
+			{
+				if ((this._TablaReferencia != value))
+				{
+					this._TablaReferencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TablaSolicitud", DbType="VarChar(50)")]
+		public string TablaSolicitud
+		{
+			get
+			{
+				return this._TablaSolicitud;
+			}
+			set
+			{
+				if ((this._TablaSolicitud != value))
+				{
+					this._TablaSolicitud = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(50)")]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HostName", DbType="VarChar(70)")]
+		public string HostName
+		{
+			get
+			{
+				return this._HostName;
+			}
+			set
+			{
+				if ((this._HostName != value))
+				{
+					this._HostName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this._FechaRegistro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lineaCelular", DbType="VarChar(12)")]
+		public string lineaCelular
+		{
+			get
+			{
+				return this._lineaCelular;
+			}
+			set
+			{
+				if ((this._lineaCelular != value))
+				{
+					this._lineaCelular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanDeTelefonia", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string PlanDeTelefonia
+		{
+			get
+			{
+				return this._PlanDeTelefonia;
+			}
+			set
+			{
+				if ((this._PlanDeTelefonia != value))
+				{
+					this._PlanDeTelefonia = value;
 				}
 			}
 		}

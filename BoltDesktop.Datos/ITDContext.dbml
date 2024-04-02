@@ -2147,6 +2147,44 @@
       <Column Name="TipoHardwareID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.SAS_LineasCelularesCoporativasHistoricoPlan" Member="SAS_LineasCelularesCoporativasHistoricoPlans">
+    <Type Name="SAS_LineasCelularesCoporativasHistoricoPlan">
+      <Column Name="LineasCelularesCoporativasHistoricoPlanID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LineaCelularID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanDeTelefoniaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_LineasCelularesCoporativasHistoricoLog" Member="SAS_LineasCelularesCoporativasHistoricoLogs">
+    <Type Name="SAS_LineasCelularesCoporativasHistoricoLog">
+      <Column Name="LineasCelularesCoporativasHistoricoLogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LineaCelularID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoLogID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SAS_EsPropioCBO" Method="SAS_EsPropioCBO">
     <ElementType Name="SAS_EsPropioCBOResult">
       <Column Name="codigo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
@@ -4202,6 +4240,50 @@
       <Column Name="Estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="seVisualizaEnReportes" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
       <Column Name="IDUnico" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularID" Method="SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularID">
+    <Parameter Name="LineaCelularID" Parameter="lineaCelularID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ListadoDeLineasCelularesCoporativasHistoricoLogByLineaCelularIDResult">
+      <Column Name="LineasCelularesCoporativasHistoricoLogID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LineaCelularID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoLogID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Hostname" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="lineaCelular" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="TipoLog" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularID" Method="SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularID">
+    <Parameter Name="LineaCelularID" Parameter="lineaCelularID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularIDResult">
+      <Column Name="LineasCelularesCoporativasHistoricoPlanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LineaCelularID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanDeTelefoniaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ReferenciaSolicitudID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferenciaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TablaReferencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TablaSolicitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HostName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="lineaCelular" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PlanDeTelefonia" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
