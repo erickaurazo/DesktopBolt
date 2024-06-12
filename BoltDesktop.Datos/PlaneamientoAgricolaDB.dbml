@@ -349,9 +349,11 @@
       <Column Name="Actividad" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="LaborID" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
       <Column Name="Labor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="RendimientoUnidadMedida" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RendimientoUnidadMedidaID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RendimientoUnidadMedida" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
       <Column Name="VisibleEnAplicativo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="EmpresaID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

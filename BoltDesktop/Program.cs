@@ -38,8 +38,8 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new ConformacionDeCarga());
-            Application.Run(new ActividadesYLaboresFiltroApp());
-           //  Application.Run(new Menu());
+          //  Application.Run(new ActividadesYLaboresFiltroApp());
+             Application.Run(new Menu());
         }
     }
 }

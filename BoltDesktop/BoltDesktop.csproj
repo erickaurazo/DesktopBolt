@@ -430,6 +430,18 @@
     <Compile Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.Designer.cs">
       <DependentUpon>CentrosDeCostosFiltroApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadListado.Designer.cs">
+      <DependentUpon>RegistroDeProductividadListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadEdicion.Designer.cs">
+      <DependentUpon>RegistroDeProductividadEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="SIG\Calidad Campo\Calidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2734,6 +2746,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.resx">
       <DependentUpon>CentrosDeCostosFiltroApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeamiento Agricola\Productividad\RegistroDeProductividadListado.resx">
+      <DependentUpon>RegistroDeProductividadListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeamiento Agricola\Productividad\RegistroDeProductividadEdicion.resx">
+      <DependentUpon>RegistroDeProductividadEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.resx">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs</DependentUpon>

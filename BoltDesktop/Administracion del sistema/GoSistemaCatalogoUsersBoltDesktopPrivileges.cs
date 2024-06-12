@@ -80,18 +80,43 @@ namespace Asistencia
 
         private void RefreshList()
         {
-            DesactivarControles();
-
+            DesactivarControles(false);
 
             bgwHilo.RunWorkerAsync();
         }
 
-        private void DesactivarControles()
+        private void DesactivarControles(bool flag)
         {
-            gbEdition.Enabled = false;
-            gbList.Enabled = false;
-            pbForm.Visible = true;
-            BarraPrincipal.Enabled = false;
+
+
+            try
+            {
+
+                if (flag == false)
+                {
+                    gbEdition.Enabled = false;
+                    gbList.Enabled = false;
+                    pbForm.Visible = true;
+                    BarraPrincipal.Enabled = false;
+                }
+                else
+                {
+                    gbEdition.Enabled = !false;
+                    gbList.Enabled = !false;
+                    pbForm.Visible = !true;
+                    BarraPrincipal.Enabled = !false;
+                }
+
+               
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "Error en el sistema");
+                return;
+            }
+
+            
         }
 
         private void Privileges_Load(object sender, EventArgs e)
@@ -113,8 +138,7 @@ namespace Asistencia
             {
 
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
-
-                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;                
             }
         }
 
@@ -134,18 +158,14 @@ namespace Asistencia
             {
                 dgvList.DataSource = privileges;
                 dgvList.Refresh();
-                gbEdition.Enabled = !false;
-                gbList.Enabled = !false;
-                pbForm.Visible = !true;
-                BarraPrincipal.Enabled = !false;
+
+                DesactivarControles(true);
+
             }
             catch (Exception Ex)
             {
 
-                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
-                gbEdition.Enabled = !false;
-                gbList.Enabled = !false;
-                pbForm.Visible = !true;
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");               
                 return;
             }
           
@@ -241,6 +261,7 @@ namespace Asistencia
         {
             try
             {
+                DesactivarControles(false);
                 if (fullName != string.Empty && userId != string.Empty)
                 {
                     #region Obtener listado()
@@ -264,7 +285,7 @@ namespace Asistencia
                             });
                         }
 
-                        DesactivarControles();
+                       
                         bgwActualizarPrivilegios.RunWorkerAsync();
 
                     }

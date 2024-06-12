@@ -7179,11 +7179,15 @@ namespace Asistencia.Datos
 		
 		private string _Labor;
 		
+		private string _RendimientoUnidadMedidaID;
+		
 		private string _RendimientoUnidadMedida;
 		
 		private byte _VisibleEnAplicativo;
 		
 		private string _EmpresaID;
+		
+		private string _Empresa;
 		
 		public SAS_ListadoLaboresFiltroProductividadResult()
 		{
@@ -7269,7 +7273,23 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RendimientoUnidadMedida", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RendimientoUnidadMedidaID", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string RendimientoUnidadMedidaID
+		{
+			get
+			{
+				return this._RendimientoUnidadMedidaID;
+			}
+			set
+			{
+				if ((this._RendimientoUnidadMedidaID != value))
+				{
+					this._RendimientoUnidadMedidaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RendimientoUnidadMedida", DbType="VarChar(17)")]
 		public string RendimientoUnidadMedida
 		{
 			get
@@ -7313,6 +7333,22 @@ namespace Asistencia.Datos
 				if ((this._EmpresaID != value))
 				{
 					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empresa", DbType="VarChar(200)")]
+		public string Empresa
+		{
+			get
+			{
+				return this._Empresa;
+			}
+			set
+			{
+				if ((this._Empresa != value))
+				{
+					this._Empresa = value;
 				}
 			}
 		}

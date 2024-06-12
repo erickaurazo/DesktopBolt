@@ -112,7 +112,6 @@
             this.GoAsegCalCerCatalogoFormatosInspeccionGrupoInspeccion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccionFrecuenciaEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoFormatosInspeccionTurnoDeEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoTransportesCatalogoTransportista = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSistemaCatalogoFormularios = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTransportesCatalogoParadero = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTransportesCatalogoParaderos = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,7 +120,6 @@
             this.GoPlanillasMaestrosPersonalBloqueado = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSistemaCatalogoUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSistemaCatalogoModulos = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoPlanillasCatalogoClasificacionDeBloqueo = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador02 = new System.Windows.Forms.ToolStripSeparator();
             this.GoTIMaestroColaboradores = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroColaboradoresEmpresa = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,26 +145,18 @@
             this.GoTIMaestroModeloProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroTipoDeDispositivo = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroColores = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoTIMaestroNumeroDeIP = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador07 = new System.Windows.Forms.ToolStripSeparator();
-            this.GoTIMaestroSegmentos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador08 = new System.Windows.Forms.ToolStripSeparator();
             this.GoTIMaestroPlanDeMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroPlanMantenimientoTipoSoporteFuncional = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroPlanMantenimientoTipoSoporteTecnico = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroPlanMantenimientoTipoDePlan = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador09 = new System.Windows.Forms.ToolStripSeparator();
-            this.GoTIMaestroProveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador10 = new System.Windows.Forms.ToolStripSeparator();
-            this.GoTiMaestroProyectos = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMaestroSeparador11 = new System.Windows.Forms.ToolStripSeparator();
             this.GoAcopioMaestroTicket = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAcopioMaestroTicketReservado = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAlmacenCatalogoProductos = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAlmacenCatalogoProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoMotivosDeExoneracion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSistemaCatalogoCuentasBoltWeb = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSistemaCatalogoCuentasBoltWebWeb = new System.Windows.Forms.ToolStripMenuItem();
             this.GoSistemaCatalogoCuentasBoltWebDesktop = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,22 +167,14 @@
             this.GoSistemaCatalogoCuentasBoltWebMRP = new System.Windows.Forms.ToolStripMenuItem();
             this.GoEvaluacionAgricolaCatalogoLotes = new System.Windows.Forms.ToolStripMenuItem();
             this.GoPRESUPUESTOSCatalogoPresupuestos = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoAsegCalCerCatalogoGrupoItemEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
             this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTransportesMovimientoAsistenciaBuses = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.GoTIMovimientoParteDiarioDeEquipamientoTecnologico = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMovimientoSolicitudDeRenovaciónDeEquipoCelular = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoTIMovimientoDevolucionEquipos = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoTIMovimientoFormatoDeEntregaDeEquipamiento = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoTIMovimientoFormatoDeActivoFijo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-            this.GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros = new System.Windows.Forms.ToolStripMenuItem();
             this.GoTIMovimientoSolicitudAccesoYEquipamiento = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.GoTIMovimientoProgramaciónDeMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
@@ -317,6 +299,19 @@
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
+            this.GoTIMaestroNumeroDeIP = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillasCatalogoClasificacionDeBloqueo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.GoAsegCalCerCatalogoGrupoItemEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoMotivosDeExoneracion = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTIMaestroSegmentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricolaCatalogoProductividad = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricolaCatalogoProductividadLabores = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -612,16 +607,15 @@
             // editMenu
             // 
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GoAsegCalCerCatalogoMaestrosByForm,
             this.GoTIMaestroCuentas,
             this.GoTIMaestroSeparador01,
-            this.GoAsegCalCerCatalogoMaestrosByForm,
             this.GoAsegCalCerCatalogoFormatosInspeccion,
-            this.GoTransportesCatalogoTransportista,
+            this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion,
             this.GoSistemaCatalogoFormularios,
             this.GoTransportesCatalogoParadero,
             this.GoSistemaCatalogoUsers,
             this.GoSistemaCatalogoModulos,
-            this.GoPlanillasCatalogoClasificacionDeBloqueo,
             this.GoTIMaestroSeparador02,
             this.GoTIMaestroColaboradores,
             this.GoTIMaestroSeparador03,
@@ -630,28 +624,18 @@
             this.GoTITipoYClasificacionesHardwareYSoftware,
             this.GoTIMaestroSeparador06,
             this.GoTIMaestroProductos,
-            this.GoTIMaestroNumeroDeIP,
             this.GoTIMaestroSeparador07,
-            this.GoTIMaestroSegmentos,
             this.GoTIMaestroSeparador08,
             this.GoTIMaestroPlanDeMantenimiento,
             this.GoTIMaestroSeparador09,
-            this.GoTIMaestroProveedores,
             this.GoTIMaestroSeparador10,
-            this.GoTiMaestroProyectos,
             this.GoTIMaestroSeparador11,
             this.GoAcopioMaestroTicket,
-            this.GoAlmacenCatalogoProductos,
             this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad,
-            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad,
-            this.GoAsegCalCerCatalogoMotivosDeExoneracion,
             this.GoSistemaCatalogoCuentasBoltWeb,
             this.GoEvaluacionAgricolaCatalogoLotes,
             this.GoPRESUPUESTOSCatalogoPresupuestos,
-            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones,
-            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion,
-            this.GoAsegCalCerCatalogoGrupoItemEvaluacion,
-            this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion});
+            this.GoPlaneamientoAgricolaCatalogoProductividad});
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(51, 20);
             this.editMenu.Text = "Tablas";
@@ -677,7 +661,7 @@
             this.toolStripSeparator14,
             this.GoTIpersonalExterno});
             this.GoTIMaestroCuentas.Name = "GoTIMaestroCuentas";
-            this.GoTIMaestroCuentas.Size = new System.Drawing.Size(293, 22);
+            this.GoTIMaestroCuentas.Size = new System.Drawing.Size(279, 22);
             this.GoTIMaestroCuentas.Text = "Cuentas";
             // 
             // GoTICorreoElectrónicoDeRespaldo
@@ -776,7 +760,7 @@
             // GoTIcuentaNisiraERP
             // 
             this.GoTIcuentaNisiraERP.Name = "GoTIcuentaNisiraERP";
-            this.GoTIcuentaNisiraERP.Size = new System.Drawing.Size(152, 22);
+            this.GoTIcuentaNisiraERP.Size = new System.Drawing.Size(135, 22);
             this.GoTIcuentaNisiraERP.Text = "ERP";
             this.GoTIcuentaNisiraERP.Click += new System.EventHandler(this.GoTIcuentaNisiraERP_Click);
             // 
@@ -784,21 +768,21 @@
             // 
             this.GoTIcuentaNisiraMRP.Enabled = false;
             this.GoTIcuentaNisiraMRP.Name = "GoTIcuentaNisiraMRP";
-            this.GoTIcuentaNisiraMRP.Size = new System.Drawing.Size(152, 22);
+            this.GoTIcuentaNisiraMRP.Size = new System.Drawing.Size(135, 22);
             this.GoTIcuentaNisiraMRP.Text = "MRP";
             // 
             // GoTIcuentaNisiraEDoc
             // 
             this.GoTIcuentaNisiraEDoc.Enabled = false;
             this.GoTIcuentaNisiraEDoc.Name = "GoTIcuentaNisiraEDoc";
-            this.GoTIcuentaNisiraEDoc.Size = new System.Drawing.Size(152, 22);
+            this.GoTIcuentaNisiraEDoc.Size = new System.Drawing.Size(135, 22);
             this.GoTIcuentaNisiraEDoc.Text = "eDoc";
             // 
             // GoTIcuentaTareoMovil
             // 
             this.GoTIcuentaTareoMovil.Enabled = false;
             this.GoTIcuentaTareoMovil.Name = "GoTIcuentaTareoMovil";
-            this.GoTIcuentaTareoMovil.Size = new System.Drawing.Size(152, 22);
+            this.GoTIcuentaTareoMovil.Size = new System.Drawing.Size(135, 22);
             this.GoTIcuentaTareoMovil.Text = "Tareo Movil";
             // 
             // GoTIcuentaFitoSoft
@@ -823,7 +807,7 @@
             // GoTIMaestroSeparador01
             // 
             this.GoTIMaestroSeparador01.Name = "GoTIMaestroSeparador01";
-            this.GoTIMaestroSeparador01.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador01.Size = new System.Drawing.Size(276, 6);
             // 
             // GoAsegCalCerCatalogoMaestrosByForm
             // 
@@ -845,9 +829,15 @@
             this.GoAsegCalCerCatalogoMaestrosBySeparator2,
             this.GoAsegCalCerCatalogoMaestrosByFormTermoregistroPorCliente,
             this.GoAsegCalCerCatalogoMaestrosByFormParametrosDeTemperaturaPorCampaña,
-            this.GoAsegCalCerCatalogoMaestrosBySeparator1});
+            this.GoAsegCalCerCatalogoMaestrosBySeparator1,
+            this.toolStripSeparator1,
+            this.GoAsegCalCerCatalogoGrupoItemEvaluacion,
+            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion,
+            this.GoAsegCalCerCatalogoMotivosDeExoneracion,
+            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones,
+            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad});
             this.GoAsegCalCerCatalogoMaestrosByForm.Name = "GoAsegCalCerCatalogoMaestrosByForm";
-            this.GoAsegCalCerCatalogoMaestrosByForm.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoMaestrosByForm.Size = new System.Drawing.Size(279, 22);
             this.GoAsegCalCerCatalogoMaestrosByForm.Text = "Maestro de items por formulario";
             // 
             // GoAsegCalCerCatalogoMaestrosByFormLiberacionLineas
@@ -980,7 +970,7 @@
             this.GoAsegCalCerCatalogoFormatosInspeccionFrecuenciaEvaluacion,
             this.GoAsegCalCerCatalogoFormatosInspeccionTurnoDeEvaluacion});
             this.GoAsegCalCerCatalogoFormatosInspeccion.Name = "GoAsegCalCerCatalogoFormatosInspeccion";
-            this.GoAsegCalCerCatalogoFormatosInspeccion.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoFormatosInspeccion.Size = new System.Drawing.Size(279, 22);
             this.GoAsegCalCerCatalogoFormatosInspeccion.Text = "Formatos de Inspeccion y Evaluación";
             // 
             // GoAsegCalCerCatalogoFormatosInspeccionListado
@@ -1011,20 +1001,11 @@
             this.GoAsegCalCerCatalogoFormatosInspeccionTurnoDeEvaluacion.Text = "Turnos de evaluación";
             this.GoAsegCalCerCatalogoFormatosInspeccionTurnoDeEvaluacion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoFormatosInspeccionTurnoDeEvaluacion_Click);
             // 
-            // GoTransportesCatalogoTransportista
-            // 
-            this.GoTransportesCatalogoTransportista.Enabled = false;
-            this.GoTransportesCatalogoTransportista.Name = "GoTransportesCatalogoTransportista";
-            this.GoTransportesCatalogoTransportista.Size = new System.Drawing.Size(293, 22);
-            this.GoTransportesCatalogoTransportista.Text = "Empresa de transportes";
-            this.GoTransportesCatalogoTransportista.Visible = false;
-            this.GoTransportesCatalogoTransportista.Click += new System.EventHandler(this.transportistaToolStripMenuItem_Click);
-            // 
             // GoSistemaCatalogoFormularios
             // 
             this.GoSistemaCatalogoFormularios.Enabled = false;
             this.GoSistemaCatalogoFormularios.Name = "GoSistemaCatalogoFormularios";
-            this.GoSistemaCatalogoFormularios.Size = new System.Drawing.Size(293, 22);
+            this.GoSistemaCatalogoFormularios.Size = new System.Drawing.Size(279, 22);
             this.GoSistemaCatalogoFormularios.Text = "Formulario de Sistema";
             this.GoSistemaCatalogoFormularios.Visible = false;
             this.GoSistemaCatalogoFormularios.Click += new System.EventHandler(this.RRHHformularioDeSistema_Click);
@@ -1035,10 +1016,11 @@
             this.GoTransportesCatalogoParaderos,
             this.GoPlanillasMaestrosPersonalPorParadero,
             this.GoTransportesCatalogoRutas,
-            this.GoPlanillasMaestrosPersonalBloqueado});
+            this.GoPlanillasMaestrosPersonalBloqueado,
+            this.GoPlanillasCatalogoClasificacionDeBloqueo});
             this.GoTransportesCatalogoParadero.Enabled = false;
             this.GoTransportesCatalogoParadero.Name = "GoTransportesCatalogoParadero";
-            this.GoTransportesCatalogoParadero.Size = new System.Drawing.Size(293, 22);
+            this.GoTransportesCatalogoParadero.Size = new System.Drawing.Size(279, 22);
             this.GoTransportesCatalogoParadero.Text = "Paraderos";
             this.GoTransportesCatalogoParadero.Visible = false;
             this.GoTransportesCatalogoParadero.Click += new System.EventHandler(this.RRHHparaderos_Click);
@@ -1075,7 +1057,7 @@
             // 
             this.GoSistemaCatalogoUsers.Enabled = false;
             this.GoSistemaCatalogoUsers.Name = "GoSistemaCatalogoUsers";
-            this.GoSistemaCatalogoUsers.Size = new System.Drawing.Size(293, 22);
+            this.GoSistemaCatalogoUsers.Size = new System.Drawing.Size(279, 22);
             this.GoSistemaCatalogoUsers.Text = "Privilegios y accesos";
             this.GoSistemaCatalogoUsers.Visible = false;
             this.GoSistemaCatalogoUsers.Click += new System.EventHandler(this.GoSistemaCatalogoPrivilegios_Click);
@@ -1084,24 +1066,15 @@
             // 
             this.GoSistemaCatalogoModulos.Enabled = false;
             this.GoSistemaCatalogoModulos.Name = "GoSistemaCatalogoModulos";
-            this.GoSistemaCatalogoModulos.Size = new System.Drawing.Size(293, 22);
+            this.GoSistemaCatalogoModulos.Size = new System.Drawing.Size(279, 22);
             this.GoSistemaCatalogoModulos.Text = "Modulo de sistema";
             this.GoSistemaCatalogoModulos.Visible = false;
             this.GoSistemaCatalogoModulos.Click += new System.EventHandler(this.RRHHmenu_Click);
             // 
-            // GoPlanillasCatalogoClasificacionDeBloqueo
-            // 
-            this.GoPlanillasCatalogoClasificacionDeBloqueo.Enabled = false;
-            this.GoPlanillasCatalogoClasificacionDeBloqueo.Name = "GoPlanillasCatalogoClasificacionDeBloqueo";
-            this.GoPlanillasCatalogoClasificacionDeBloqueo.Size = new System.Drawing.Size(293, 22);
-            this.GoPlanillasCatalogoClasificacionDeBloqueo.Text = "Bloqueo para asistencia";
-            this.GoPlanillasCatalogoClasificacionDeBloqueo.Visible = false;
-            this.GoPlanillasCatalogoClasificacionDeBloqueo.Click += new System.EventHandler(this.tipoDeBloqueoToolStripMenuItem_Click);
-            // 
             // GoTIMaestroSeparador02
             // 
             this.GoTIMaestroSeparador02.Name = "GoTIMaestroSeparador02";
-            this.GoTIMaestroSeparador02.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador02.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroColaboradores
             // 
@@ -1111,7 +1084,7 @@
             this.GoTIMaestroAreaDeTrabajo,
             this.GoTIMaestroPersonalExterno});
             this.GoTIMaestroColaboradores.Name = "GoTIMaestroColaboradores";
-            this.GoTIMaestroColaboradores.Size = new System.Drawing.Size(293, 22);
+            this.GoTIMaestroColaboradores.Size = new System.Drawing.Size(279, 22);
             this.GoTIMaestroColaboradores.Text = "Colaboradores";
             // 
             // GoTIMaestroColaboradoresEmpresa
@@ -1145,19 +1118,22 @@
             // GoTIMaestroSeparador03
             // 
             this.GoTIMaestroSeparador03.Name = "GoTIMaestroSeparador03";
-            this.GoTIMaestroSeparador03.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador03.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroDeequipos
             // 
+            this.GoTIMaestroDeequipos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GoTIMaestroNumeroDeIP,
+            this.GoTIMaestroSegmentos});
             this.GoTIMaestroDeequipos.Name = "GoTIMaestroDeequipos";
-            this.GoTIMaestroDeequipos.Size = new System.Drawing.Size(293, 22);
+            this.GoTIMaestroDeequipos.Size = new System.Drawing.Size(279, 22);
             this.GoTIMaestroDeequipos.Text = "Dispositivos";
             this.GoTIMaestroDeequipos.Click += new System.EventHandler(this.GoTIMaestroDeequipos_Click);
             // 
             // GoTIMaestroSeparador04
             // 
             this.GoTIMaestroSeparador04.Name = "GoTIMaestroSeparador04";
-            this.GoTIMaestroSeparador04.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador04.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTITipoYClasificacionesHardwareYSoftware
             // 
@@ -1171,7 +1147,7 @@
             this.GoTIMaestroEquipamientoTecnologico,
             this.GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico});
             this.GoTITipoYClasificacionesHardwareYSoftware.Name = "GoTITipoYClasificacionesHardwareYSoftware";
-            this.GoTITipoYClasificacionesHardwareYSoftware.Size = new System.Drawing.Size(293, 22);
+            this.GoTITipoYClasificacionesHardwareYSoftware.Size = new System.Drawing.Size(279, 22);
             this.GoTITipoYClasificacionesHardwareYSoftware.Text = "Tipos y clasificaciones";
             // 
             // GoTIMaestroTipoHardware
@@ -1233,7 +1209,7 @@
             // GoTIMaestroSeparador06
             // 
             this.GoTIMaestroSeparador06.Name = "GoTIMaestroSeparador06";
-            this.GoTIMaestroSeparador06.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador06.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroProductos
             // 
@@ -1244,7 +1220,7 @@
             this.GoTIMaestroTipoDeDispositivo,
             this.GoTIMaestroColores});
             this.GoTIMaestroProductos.Name = "GoTIMaestroProductos";
-            this.GoTIMaestroProductos.Size = new System.Drawing.Size(293, 22);
+            this.GoTIMaestroProductos.Size = new System.Drawing.Size(279, 22);
             this.GoTIMaestroProductos.Text = "Productos";
             // 
             // GoTIProductosCatalogo
@@ -1281,30 +1257,15 @@
             this.GoTIMaestroColores.Text = "Colores";
             this.GoTIMaestroColores.Click += new System.EventHandler(this.GoTIMaestroColores_Click_1);
             // 
-            // GoTIMaestroNumeroDeIP
-            // 
-            this.GoTIMaestroNumeroDeIP.Enabled = false;
-            this.GoTIMaestroNumeroDeIP.Name = "GoTIMaestroNumeroDeIP";
-            this.GoTIMaestroNumeroDeIP.Size = new System.Drawing.Size(293, 22);
-            this.GoTIMaestroNumeroDeIP.Text = "Número de IP";
-            this.GoTIMaestroNumeroDeIP.Click += new System.EventHandler(this.GoTIMaestroNumeroDeIP_Click);
-            // 
             // GoTIMaestroSeparador07
             // 
             this.GoTIMaestroSeparador07.Name = "GoTIMaestroSeparador07";
-            this.GoTIMaestroSeparador07.Size = new System.Drawing.Size(290, 6);
-            // 
-            // GoTIMaestroSegmentos
-            // 
-            this.GoTIMaestroSegmentos.Name = "GoTIMaestroSegmentos";
-            this.GoTIMaestroSegmentos.Size = new System.Drawing.Size(293, 22);
-            this.GoTIMaestroSegmentos.Text = "Segmentos de red";
-            this.GoTIMaestroSegmentos.Click += new System.EventHandler(this.GoTIMaestroSegmentos_Click);
+            this.GoTIMaestroSeparador07.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroSeparador08
             // 
             this.GoTIMaestroSeparador08.Name = "GoTIMaestroSeparador08";
-            this.GoTIMaestroSeparador08.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador08.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroPlanDeMantenimiento
             // 
@@ -1313,7 +1274,7 @@
             this.GoTIMaestroPlanMantenimientoTipoSoporteTecnico,
             this.GoTIMaestroPlanMantenimientoTipoDePlan});
             this.GoTIMaestroPlanDeMantenimiento.Name = "GoTIMaestroPlanDeMantenimiento";
-            this.GoTIMaestroPlanDeMantenimiento.Size = new System.Drawing.Size(293, 22);
+            this.GoTIMaestroPlanDeMantenimiento.Size = new System.Drawing.Size(279, 22);
             this.GoTIMaestroPlanDeMantenimiento.Text = "Tipo de mantenimiento";
             // 
             // GoTIMaestroPlanMantenimientoTipoSoporteFuncional
@@ -1340,36 +1301,24 @@
             // GoTIMaestroSeparador09
             // 
             this.GoTIMaestroSeparador09.Name = "GoTIMaestroSeparador09";
-            this.GoTIMaestroSeparador09.Size = new System.Drawing.Size(290, 6);
-            // 
-            // GoTIMaestroProveedores
-            // 
-            this.GoTIMaestroProveedores.Name = "GoTIMaestroProveedores";
-            this.GoTIMaestroProveedores.Size = new System.Drawing.Size(293, 22);
-            this.GoTIMaestroProveedores.Text = "Proveedores";
+            this.GoTIMaestroSeparador09.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroSeparador10
             // 
             this.GoTIMaestroSeparador10.Name = "GoTIMaestroSeparador10";
-            this.GoTIMaestroSeparador10.Size = new System.Drawing.Size(290, 6);
-            // 
-            // GoTiMaestroProyectos
-            // 
-            this.GoTiMaestroProyectos.Name = "GoTiMaestroProyectos";
-            this.GoTiMaestroProyectos.Size = new System.Drawing.Size(293, 22);
-            this.GoTiMaestroProyectos.Text = "Proyectos";
+            this.GoTIMaestroSeparador10.Size = new System.Drawing.Size(276, 6);
             // 
             // GoTIMaestroSeparador11
             // 
             this.GoTIMaestroSeparador11.Name = "GoTIMaestroSeparador11";
-            this.GoTIMaestroSeparador11.Size = new System.Drawing.Size(290, 6);
+            this.GoTIMaestroSeparador11.Size = new System.Drawing.Size(276, 6);
             // 
             // GoAcopioMaestroTicket
             // 
             this.GoAcopioMaestroTicket.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GoAcopioMaestroTicketReservado});
             this.GoAcopioMaestroTicket.Name = "GoAcopioMaestroTicket";
-            this.GoAcopioMaestroTicket.Size = new System.Drawing.Size(293, 22);
+            this.GoAcopioMaestroTicket.Size = new System.Drawing.Size(279, 22);
             this.GoAcopioMaestroTicket.Text = "Tickets";
             // 
             // GoAcopioMaestroTicketReservado
@@ -1379,41 +1328,12 @@
             this.GoAcopioMaestroTicketReservado.Text = "Tickets Reservados";
             this.GoAcopioMaestroTicketReservado.Click += new System.EventHandler(this.GoAcopioMaestroTicketReservado_Click);
             // 
-            // GoAlmacenCatalogoProductos
-            // 
-            this.GoAlmacenCatalogoProductos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GoAlmacenCatalogoProducto});
-            this.GoAlmacenCatalogoProductos.Name = "GoAlmacenCatalogoProductos";
-            this.GoAlmacenCatalogoProductos.Size = new System.Drawing.Size(293, 22);
-            this.GoAlmacenCatalogoProductos.Text = "Productos";
-            // 
-            // GoAlmacenCatalogoProducto
-            // 
-            this.GoAlmacenCatalogoProducto.Name = "GoAlmacenCatalogoProducto";
-            this.GoAlmacenCatalogoProducto.Size = new System.Drawing.Size(128, 22);
-            this.GoAlmacenCatalogoProducto.Text = "Productos";
-            this.GoAlmacenCatalogoProducto.Click += new System.EventHandler(this.GoAlmacenCatalogoProducto_Click);
-            // 
             // GoAcopioMaestroPesoPromedioDeJabaPorVariedad
             // 
             this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad.Name = "GoAcopioMaestroPesoPromedioDeJabaPorVariedad";
-            this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad.Size = new System.Drawing.Size(293, 22);
+            this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad.Size = new System.Drawing.Size(279, 22);
             this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad.Text = "Pesos promedios de jabas por variedad";
             this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad.Click += new System.EventHandler(this.GoAcopioMaestroPesoPromedioDeJabaPorVariedad_Click);
-            // 
-            // GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad
-            // 
-            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Name = "GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad";
-            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Text = "Calidades de fruta por variedad";
-            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Click += new System.EventHandler(this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad_Click);
-            // 
-            // GoAsegCalCerCatalogoMotivosDeExoneracion
-            // 
-            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Name = "GoAsegCalCerCatalogoMotivosDeExoneracion";
-            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Text = "Motivos para exonerar gasificado de fruta";
-            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMotivosDeExoneracion_Click);
             // 
             // GoSistemaCatalogoCuentasBoltWeb
             // 
@@ -1426,94 +1346,73 @@
             this.GoSistemaCatalogoCuentasBoltWebEDoc,
             this.GoSistemaCatalogoCuentasBoltWebMRP});
             this.GoSistemaCatalogoCuentasBoltWeb.Name = "GoSistemaCatalogoCuentasBoltWeb";
-            this.GoSistemaCatalogoCuentasBoltWeb.Size = new System.Drawing.Size(293, 22);
+            this.GoSistemaCatalogoCuentasBoltWeb.Size = new System.Drawing.Size(279, 22);
             this.GoSistemaCatalogoCuentasBoltWeb.Text = "Cuentas de usuarios";
             this.GoSistemaCatalogoCuentasBoltWeb.Click += new System.EventHandler(this.GoSistemaCatalogoCuentasBoltWeb_Click);
             // 
             // GoSistemaCatalogoCuentasBoltWebWeb
             // 
             this.GoSistemaCatalogoCuentasBoltWebWeb.Name = "GoSistemaCatalogoCuentasBoltWebWeb";
-            this.GoSistemaCatalogoCuentasBoltWebWeb.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebWeb.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebWeb.Text = "Web";
             this.GoSistemaCatalogoCuentasBoltWebWeb.Click += new System.EventHandler(this.GoSistemaCatalogoCuentasBoltWebWeb_Click);
             // 
             // GoSistemaCatalogoCuentasBoltWebDesktop
             // 
             this.GoSistemaCatalogoCuentasBoltWebDesktop.Name = "GoSistemaCatalogoCuentasBoltWebDesktop";
-            this.GoSistemaCatalogoCuentasBoltWebDesktop.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebDesktop.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebDesktop.Text = "Desktop";
             this.GoSistemaCatalogoCuentasBoltWebDesktop.Click += new System.EventHandler(this.GoSistemaCatalogoCuentasBoltWebDesktop_Click);
             // 
             // GoSistemaCatalogoCuentasBoltWebRendimiento
             // 
             this.GoSistemaCatalogoCuentasBoltWebRendimiento.Name = "GoSistemaCatalogoCuentasBoltWebRendimiento";
-            this.GoSistemaCatalogoCuentasBoltWebRendimiento.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebRendimiento.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebRendimiento.Text = "Rendimiento";
             this.GoSistemaCatalogoCuentasBoltWebRendimiento.Click += new System.EventHandler(this.GoSistemaCatalogoCuentasBoltWebRendimiento_Click);
             // 
             // GoSistemaCatalogoCuentasBoltWebFitoSoft
             // 
             this.GoSistemaCatalogoCuentasBoltWebFitoSoft.Name = "GoSistemaCatalogoCuentasBoltWebFitoSoft";
-            this.GoSistemaCatalogoCuentasBoltWebFitoSoft.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebFitoSoft.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebFitoSoft.Text = "FitoSoft";
             // 
             // GoSistemaCatalogoCuentasBoltWebNISIRA
             // 
             this.GoSistemaCatalogoCuentasBoltWebNISIRA.Name = "GoSistemaCatalogoCuentasBoltWebNISIRA";
-            this.GoSistemaCatalogoCuentasBoltWebNISIRA.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebNISIRA.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebNISIRA.Text = "NISIRA";
             // 
             // GoSistemaCatalogoCuentasBoltWebEDoc
             // 
             this.GoSistemaCatalogoCuentasBoltWebEDoc.Name = "GoSistemaCatalogoCuentasBoltWebEDoc";
-            this.GoSistemaCatalogoCuentasBoltWebEDoc.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebEDoc.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebEDoc.Text = "eDoc";
             // 
             // GoSistemaCatalogoCuentasBoltWebMRP
             // 
             this.GoSistemaCatalogoCuentasBoltWebMRP.Name = "GoSistemaCatalogoCuentasBoltWebMRP";
-            this.GoSistemaCatalogoCuentasBoltWebMRP.Size = new System.Drawing.Size(142, 22);
+            this.GoSistemaCatalogoCuentasBoltWebMRP.Size = new System.Drawing.Size(152, 22);
             this.GoSistemaCatalogoCuentasBoltWebMRP.Text = "MRP";
             // 
             // GoEvaluacionAgricolaCatalogoLotes
             // 
             this.GoEvaluacionAgricolaCatalogoLotes.Name = "GoEvaluacionAgricolaCatalogoLotes";
-            this.GoEvaluacionAgricolaCatalogoLotes.Size = new System.Drawing.Size(293, 22);
+            this.GoEvaluacionAgricolaCatalogoLotes.Size = new System.Drawing.Size(279, 22);
             this.GoEvaluacionAgricolaCatalogoLotes.Text = "Centro de costos";
             this.GoEvaluacionAgricolaCatalogoLotes.Click += new System.EventHandler(this.GoEvaluacionAgricolaCatalogoLotes_Click);
             // 
             // GoPRESUPUESTOSCatalogoPresupuestos
             // 
             this.GoPRESUPUESTOSCatalogoPresupuestos.Name = "GoPRESUPUESTOSCatalogoPresupuestos";
-            this.GoPRESUPUESTOSCatalogoPresupuestos.Size = new System.Drawing.Size(293, 22);
+            this.GoPRESUPUESTOSCatalogoPresupuestos.Size = new System.Drawing.Size(279, 22);
             this.GoPRESUPUESTOSCatalogoPresupuestos.Text = "Presupuestos";
             this.GoPRESUPUESTOSCatalogoPresupuestos.Click += new System.EventHandler(this.GoPRESUPUESTOSCatalogoPresupuestos_Click);
-            // 
-            // GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones
-            // 
-            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Name = "GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones";
-            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Text = "Acciones correctivas";
-            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Click += new System.EventHandler(this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones_Click);
-            // 
-            // GoAsegCalCerCatalogoGrupoTipoItemEvaluacion
-            // 
-            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Name = "GoAsegCalCerCatalogoGrupoTipoItemEvaluacion";
-            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Text = "Tipo Despacho Grupo Item";
-            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion_Click);
-            // 
-            // GoAsegCalCerCatalogoGrupoItemEvaluacion
-            // 
-            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Name = "GoAsegCalCerCatalogoGrupoItemEvaluacion";
-            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Size = new System.Drawing.Size(293, 22);
-            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Text = "Tipo Despacho Item";
-            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoGrupoItemEvaluacion_Click);
             // 
             // GoAsegCalCerCatalogoAreasInspeccionEvaluacion
             // 
             this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion.Name = "GoAsegCalCerCatalogoAreasInspeccionEvaluacion";
-            this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion.Size = new System.Drawing.Size(279, 22);
             this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion.Text = "Areas de inspeccion y Evaluacion";
             this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoAreasInspeccionEvaluacion_Click);
             // 
@@ -1524,13 +1423,8 @@
             this.toolStripSeparator17,
             this.GoTIMovimientoParteDiarioDeEquipamientoTecnologico,
             this.GoTIMovimientoSolicitudDeRenovaciónDeEquipoCelular,
-            this.GoTIMovimientoDevolucionEquipos,
-            this.GoTIMovimientoFormatoDeEntregaDeEquipamiento,
-            this.GoTIMovimientoFormatoDeActivoFijo,
             this.toolStripSeparator18,
-            this.GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros,
             this.GoTIMovimientoSolicitudAccesoYEquipamiento,
-            this.GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario,
             this.toolStripSeparator20,
             this.toolStripSeparator22,
             this.GoTIMovimientoProgramaciónDeMantenimiento,
@@ -1552,7 +1446,8 @@
             this.GoExportacionesMovimientoDistribuirPaletasEnContenedor,
             this.GoCCostosMovimientoActualizarFecha,
             this.GoProduccionMovimientoConformidadDeCarga,
-            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal});
+            this.GoPlaneamientoAgricolaMovimientoProgramaSemanal,
+            this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(84, 20);
             this.viewMenu.Text = "Movimiento";
@@ -1584,38 +1479,10 @@
             this.GoTIMovimientoSolicitudDeRenovaciónDeEquipoCelular.Text = "Solicitud de renovación de equipos celulares";
             this.GoTIMovimientoSolicitudDeRenovaciónDeEquipoCelular.Click += new System.EventHandler(this.GoTIMovimientoSolicitudDeRenovaciónDeEquipoCelular_Click);
             // 
-            // GoTIMovimientoDevolucionEquipos
-            // 
-            this.GoTIMovimientoDevolucionEquipos.Enabled = false;
-            this.GoTIMovimientoDevolucionEquipos.Name = "GoTIMovimientoDevolucionEquipos";
-            this.GoTIMovimientoDevolucionEquipos.Size = new System.Drawing.Size(354, 22);
-            this.GoTIMovimientoDevolucionEquipos.Text = "Solicitud de devolución de equipo";
-            // 
-            // GoTIMovimientoFormatoDeEntregaDeEquipamiento
-            // 
-            this.GoTIMovimientoFormatoDeEntregaDeEquipamiento.Enabled = false;
-            this.GoTIMovimientoFormatoDeEntregaDeEquipamiento.Name = "GoTIMovimientoFormatoDeEntregaDeEquipamiento";
-            this.GoTIMovimientoFormatoDeEntregaDeEquipamiento.Size = new System.Drawing.Size(354, 22);
-            this.GoTIMovimientoFormatoDeEntregaDeEquipamiento.Text = "Solicitud de entrega de equipamiento";
-            // 
-            // GoTIMovimientoFormatoDeActivoFijo
-            // 
-            this.GoTIMovimientoFormatoDeActivoFijo.Enabled = false;
-            this.GoTIMovimientoFormatoDeActivoFijo.Name = "GoTIMovimientoFormatoDeActivoFijo";
-            this.GoTIMovimientoFormatoDeActivoFijo.Size = new System.Drawing.Size(354, 22);
-            this.GoTIMovimientoFormatoDeActivoFijo.Text = "Formato de activo Fijo";
-            // 
             // toolStripSeparator18
             // 
             this.toolStripSeparator18.Name = "toolStripSeparator18";
             this.toolStripSeparator18.Size = new System.Drawing.Size(351, 6);
-            // 
-            // GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros
-            // 
-            this.GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros.Enabled = false;
-            this.GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros.Name = "GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros";
-            this.GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros.Size = new System.Drawing.Size(354, 22);
-            this.GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros.Text = "Solicitud de autorización de uso de equipos terceros";
             // 
             // GoTIMovimientoSolicitudAccesoYEquipamiento
             // 
@@ -1623,13 +1490,6 @@
             this.GoTIMovimientoSolicitudAccesoYEquipamiento.Size = new System.Drawing.Size(354, 22);
             this.GoTIMovimientoSolicitudAccesoYEquipamiento.Text = "Solicitud de equipamiento tecnológico";
             this.GoTIMovimientoSolicitudAccesoYEquipamiento.Click += new System.EventHandler(this.GoTIMovimientoSolicitudAccesoYEquipamiento_Click);
-            // 
-            // GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario
-            // 
-            this.GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario.Enabled = false;
-            this.GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario.Name = "GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario";
-            this.GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario.Size = new System.Drawing.Size(354, 22);
-            this.GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario.Text = "Solicitud de alta, modificación de baja de usuario";
             // 
             // toolStripSeparator20
             // 
@@ -2555,6 +2415,97 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
+            // GoTIMaestroNumeroDeIP
+            // 
+            this.GoTIMaestroNumeroDeIP.Name = "GoTIMaestroNumeroDeIP";
+            this.GoTIMaestroNumeroDeIP.Size = new System.Drawing.Size(167, 22);
+            this.GoTIMaestroNumeroDeIP.Text = "Número de IP";
+            this.GoTIMaestroNumeroDeIP.Click += new System.EventHandler(this.GoTIMaestroNumeroDeIP_Click_1);
+            // 
+            // GoPlanillasCatalogoClasificacionDeBloqueo
+            // 
+            this.GoPlanillasCatalogoClasificacionDeBloqueo.Name = "GoPlanillasCatalogoClasificacionDeBloqueo";
+            this.GoPlanillasCatalogoClasificacionDeBloqueo.Size = new System.Drawing.Size(190, 22);
+            this.GoPlanillasCatalogoClasificacionDeBloqueo.Text = "Bloqueo de asistencia";
+            this.GoPlanillasCatalogoClasificacionDeBloqueo.Click += new System.EventHandler(this.GoPlanillasCatalogoClasificacionDeBloqueo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(290, 6);
+            // 
+            // GoAsegCalCerCatalogoGrupoItemEvaluacion
+            // 
+            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Name = "GoAsegCalCerCatalogoGrupoItemEvaluacion";
+            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Text = "Tipo Despacho Item";
+            this.GoAsegCalCerCatalogoGrupoItemEvaluacion.Click += new System.EventHandler(this.tipoDespachoItemToolStripMenuItem_Click);
+            // 
+            // GoAsegCalCerCatalogoGrupoTipoItemEvaluacion
+            // 
+            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Name = "GoAsegCalCerCatalogoGrupoTipoItemEvaluacion";
+            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Text = "Tipo Despacho Grupo Item";
+            this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoGrupoTipoItemEvaluacion_Click_1);
+            // 
+            // GoAsegCalCerCatalogoMotivosDeExoneracion
+            // 
+            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Name = "GoAsegCalCerCatalogoMotivosDeExoneracion";
+            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Text = "Motivos para exonerar gasificado de fruta";
+            this.GoAsegCalCerCatalogoMotivosDeExoneracion.Click += new System.EventHandler(this.GoAsegCalCerCatalogoMotivosDeExoneracion_Click_1);
+            // 
+            // GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones
+            // 
+            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Name = "GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones";
+            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Text = "Acciones correctivas";
+            this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Click += new System.EventHandler(this.GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones_Click_1);
+            // 
+            // GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad
+            // 
+            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Name = "GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad";
+            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Size = new System.Drawing.Size(293, 22);
+            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Text = "Calidades de fruta por variedad";
+            this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Click += new System.EventHandler(this.GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad_Click_1);
+            // 
+            // GoTIMaestroSegmentos
+            // 
+            this.GoTIMaestroSegmentos.Name = "GoTIMaestroSegmentos";
+            this.GoTIMaestroSegmentos.Size = new System.Drawing.Size(167, 22);
+            this.GoTIMaestroSegmentos.Text = "Segmendo de red";
+            this.GoTIMaestroSegmentos.Click += new System.EventHandler(this.GoTIMaestroSegmentos_Click_1);
+            // 
+            // GoPlaneamientoAgricolaCatalogoProductividad
+            // 
+            this.GoPlaneamientoAgricolaCatalogoProductividad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos,
+            this.GoPlaneamientoAgricolaCatalogoProductividadLabores});
+            this.GoPlaneamientoAgricolaCatalogoProductividad.Name = "GoPlaneamientoAgricolaCatalogoProductividad";
+            this.GoPlaneamientoAgricolaCatalogoProductividad.Size = new System.Drawing.Size(279, 22);
+            this.GoPlaneamientoAgricolaCatalogoProductividad.Text = "Filtros de productividad para app";
+            // 
+            // GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos
+            // 
+            this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos.Name = "GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos";
+            this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos.Size = new System.Drawing.Size(152, 22);
+            this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos.Text = "Consumidores";
+            this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos.Click += new System.EventHandler(this.GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos_Click);
+            // 
+            // GoPlaneamientoAgricolaCatalogoProductividadLabores
+            // 
+            this.GoPlaneamientoAgricolaCatalogoProductividadLabores.Name = "GoPlaneamientoAgricolaCatalogoProductividadLabores";
+            this.GoPlaneamientoAgricolaCatalogoProductividadLabores.Size = new System.Drawing.Size(152, 22);
+            this.GoPlaneamientoAgricolaCatalogoProductividadLabores.Text = "Labores";
+            this.GoPlaneamientoAgricolaCatalogoProductividadLabores.Click += new System.EventHandler(this.GoPlaneamientoAgricolaCatalogoProductividadLabores_Click);
+            // 
+            // GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad
+            // 
+            this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad.Name = "GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad";
+            this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad.Size = new System.Drawing.Size(354, 22);
+            this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad.Text = "Evaluación de cartillas de productividad";
+            this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad.Click += new System.EventHandler(this.GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad_Click);
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2588,14 +2539,12 @@
         private System.Windows.Forms.ToolStripMenuItem toolsMenu;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem GoTransportesCatalogoTransportista;
         private System.Windows.Forms.ToolStripMenuItem procesoToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblNombreDescripcion;
-        private System.Windows.Forms.ToolStripMenuItem GoPlanillasCatalogoClasificacionDeBloqueo;
         private System.Windows.Forms.ToolStripMenuItem GoTransportesMovimientoAsistenciaBuses;
         private System.Windows.Forms.ToolStripMenuItem GoTransportesCatalogoParadero;
         private System.Windows.Forms.ToolStripMenuItem GoPlanillaProcesoActualizarListaSincronizacionATablets;
@@ -2609,14 +2558,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblConexión;
         private System.Windows.Forms.ToolStripStatusLabel lblConexionDescripcion;
         private System.Windows.Forms.ToolStripMenuItem GoTIMaestroDeequipos;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMaestroNumeroDeIP;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMaestroSegmentos;
         private System.Windows.Forms.ToolStripMenuItem GoTIMaestroColaboradores;
         private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoSolicitudAccesoYEquipamiento;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoDevolucionEquipos;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoFormatoDeEntregaDeEquipamiento;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoFormatoDeActivoFijo;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoSolicitudDeAutorizaciónDeUsoDeEquiposTerceros;
         private System.Windows.Forms.ToolStripMenuItem GoTIReporteDeInventantario;
         private System.Windows.Forms.ToolStripMenuItem GoTIMaestroPlanDeMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem GoTITipoYClasificacionesHardwareYSoftware;
@@ -2657,7 +2600,6 @@
         private System.Windows.Forms.ToolStripMenuItem GoTICorreoElectrónicoDeRespaldo;
         private System.Windows.Forms.ToolStripMenuItem GoTIOperadorDeServiciosMoviles;
         private System.Windows.Forms.ToolStripMenuItem GoTIReportesDeLineasTelefonicas;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoSolicitudDeAltaModificaciónDeBajaDeUsuario;
         private System.Windows.Forms.ToolStripMenuItem GoTIMovimientoProgramaciónDeMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem GoTICategoriaDeCuentasDeCorreos;
         private System.Windows.Forms.ToolStripSeparator GoTIMaestroSeparador01;
@@ -2685,9 +2627,7 @@
         private System.Windows.Forms.ToolStripMenuItem GoTIMaestroClasificacionSoftware;
         private System.Windows.Forms.ToolStripMenuItem GoTIMaestroLicenciasSoftware;
         private System.Windows.Forms.ToolStripSeparator GoTIMaestroSeparador09;
-        private System.Windows.Forms.ToolStripMenuItem GoTIMaestroProveedores;
         private System.Windows.Forms.ToolStripSeparator GoTIMaestroSeparador10;
-        private System.Windows.Forms.ToolStripMenuItem GoTiMaestroProyectos;
         private System.Windows.Forms.ToolStripSeparator GoTIMaestroSeparador11;
         private System.Windows.Forms.ToolStripMenuItem GoAcopioMovimientoRegistroDeTicketsParaAbastecimiento;
         private System.Windows.Forms.ToolStripMenuItem GoAcopioMovimientoAsociarTicketsConAcopioCampoERP;
@@ -2750,8 +2690,6 @@
         private System.Windows.Forms.ToolStripSeparator GoSeparador08;
         private System.Windows.Forms.ToolStripMenuItem GoHidraulicaYFertilizacion;
         private System.Windows.Forms.ToolStripMenuItem GoTIReportesFormatosGenericos;
-        private System.Windows.Forms.ToolStripMenuItem GoAlmacenCatalogoProductos;
-        private System.Windows.Forms.ToolStripMenuItem GoAlmacenCatalogoProducto;
         private System.Windows.Forms.ToolStripMenuItem GoLogisticaReporteSeguimientoLogistico;
         private System.Windows.Forms.ToolStripMenuItem GoLogisticaReporteSeguimientoLogisticoPedidoCompras;
         private System.Windows.Forms.ToolStripMenuItem GoLogisticaReporteSeguimientoLogisticoPedidoServicios;
@@ -2780,13 +2718,11 @@
         private System.Windows.Forms.ToolStripMenuItem GoMAQUINARIAMovimientoProgramacionSemanalDeMaquinaria;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCer;
         private System.Windows.Forms.ToolStripSeparator GoSeparador09;
-        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad;
         private System.Windows.Forms.ToolStripMenuItem GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerMovimientoRegistroDeGasificado;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteRegistroDeGasificado;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteRegistroDeGasificadoIngresoSalida;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteRegistroDeGasificadoTicketLeidos;
-        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoMotivosDeExoneracion;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerMovimientoRegistroDeGasificadoExonerado;
         private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoCuentasBoltWeb;
         private System.Windows.Forms.ToolStripMenuItem GoExportacionesMovimientoDistribuirPaletasEnContenedor;
@@ -2813,7 +2749,6 @@
         private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoCuentasBoltWebNISIRA;
         private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoCuentasBoltWebEDoc;
         private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoCuentasBoltWebMRP;
-        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteBPMCumplimientoDiarioDeLavadoDeManos;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteBPMVerificacionDeLimpiezaYDesinfeccionPacking;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteBPMVerificacionDeLuminariasVidriosYplasticosDurosPacking;
@@ -2834,8 +2769,6 @@
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteProductoTerminadoCosechaControlDeCalidadRecepcionUva;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUva;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerReporteProductoTerminadoControlDeCalidadEnDescarteUvaTrozosExportables;
-        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoGrupoTipoItemEvaluacion;
-        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoGrupoItemEvaluacion;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoAreasInspeccionEvaluacion;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoFormatosInspeccion;
         private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoFormatosInspeccionListado;
@@ -2869,5 +2802,18 @@
         private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaMovimientoProgramaSemanal;
         private System.Windows.Forms.ToolStripMenuItem GoAlmacenReporteSolicitudRequerimientoInternoConProgramaSemanal;
         private System.Windows.Forms.ToolStripMenuItem GoTITipoYClasificacionesHardwareYSoftwareTipoCuentaLogCorreoElectronico;
+        private System.Windows.Forms.ToolStripMenuItem GoTIMaestroNumeroDeIP;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillasCatalogoClasificacionDeBloqueo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoGrupoItemEvaluacion;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoGrupoTipoItemEvaluacion;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoMotivosDeExoneracion;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones;
+        private System.Windows.Forms.ToolStripMenuItem GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad;
+        private System.Windows.Forms.ToolStripMenuItem GoTIMaestroSegmentos;
+        private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaCatalogoProductividad;
+        private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos;
+        private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaCatalogoProductividadLabores;
+        private System.Windows.Forms.ToolStripMenuItem GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad;
     }
 }

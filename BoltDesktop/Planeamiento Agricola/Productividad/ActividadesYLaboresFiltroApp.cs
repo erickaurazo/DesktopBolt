@@ -87,7 +87,7 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
         }
 
 
-       
+
 
         private void Consultar()
         {
@@ -158,6 +158,72 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
 
 
         #region Metodos()
+
+
+        private void EdicionDesdeTeclado(object sender, KeyEventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.G)
+            {
+                Grabar();
+            }
+            if (e.KeyData == (Keys.Control | Keys.E))
+            {
+                Editar(true);
+            }
+            if (e.KeyData == (Keys.Escape))
+            {
+                Atras();
+            }
+            if (Control.ModifierKeys == Keys.Alt && e.KeyCode == Keys.A)
+            {
+               Anular();
+            }
+
+        }
+
+        private void AsignarSeleccionarAControlesDeEdicion(SAS_ListadoLaboresFiltroProductividadResult selectedItem)
+        {
+            try
+            {
+                txtActividad.Text = selectedItem.Actividad != null ? selectedItem.Actividad.Trim() : string.Empty;
+                txtActividadID.Text = selectedItem.ActividadID != null ? selectedItem.ActividadID.Trim() : string.Empty;
+                txtCodigoActividadLabor.Text = selectedItem.ActividadLaborCodigo != null ? selectedItem.ActividadLaborCodigo.Trim() : string.Empty;
+                txtEmpresa.Text = selectedItem.Empresa != null ? selectedItem.Empresa.Trim() : string.Empty;
+                txtEmpresaCodigo.Text = selectedItem.EmpresaID != null ? selectedItem.EmpresaID.Trim() : string.Empty;
+
+
+                txtEstado.Text = "INACTIVO";
+                txtIdEstado.Text = "AN";
+                if (selectedItem.VisibleEnAplicativo == 1)
+                {
+                    txtEstado.Text = "ACTIVO";
+                    txtIdEstado.Text = "AC";
+                }
+
+               
+                txtLabor.Text = selectedItem.Labor != null ? selectedItem.Labor.Trim() : string.Empty;
+                txtLaborID.Text = selectedItem.LaborID != null ? selectedItem.LaborID.Trim() : string.Empty;
+
+
+                txtUM.Text = selectedItem.RendimientoUnidadMedidaID != null ? selectedItem.RendimientoUnidadMedidaID.Trim() : string.Empty;
+                txtUMID.Text = selectedItem.RendimientoUnidadMedidaID != null ? selectedItem.RendimientoUnidadMedidaID.Trim() : string.Empty;
+
+
+               chkVisibleEnAplicativo.Checked = false;
+                if (selectedItem.VisibleEnAplicativo == 1)
+                {
+                    chkVisibleEnAplicativo.Checked = true;
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistems");
+                return;
+            }
+        }
 
         private void EjecutarConsulta()
         {
@@ -410,7 +476,7 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
                         ItemRegistro = new SAS_ActividadLaborProductividadEmpleado();
                         ItemRegistro.ActividadLaborID = selectedItem.ActividadLaborCodigo;
                         ItemRegistro.EmpresaID = selectedItem.EmpresaID;
-                        ItemRegistro.Estado = selectedItem.VisibleEnAplicativo != (byte?)null ? selectedItem.VisibleEnAplicativo : Convert.ToByte(0) ;
+                        ItemRegistro.Estado = selectedItem.VisibleEnAplicativo != (byte?)null ? selectedItem.VisibleEnAplicativo : Convert.ToByte(0);
                         int resultadoOpercion = 0;
                         model = new LaboresFiltro();
                         resultadoOpercion = model.ToRegister(connection, ItemRegistro);
@@ -731,7 +797,7 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-
+            Grabar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -761,7 +827,87 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
+            try
+            {
+                #region
+                selectedItem = new SAS_ListadoLaboresFiltroProductividadResult();
+                selectedItem.EmpresaID = string.Empty;
+                selectedItem.Empresa = string.Empty;
+                selectedItem.ActividadLaborCodigo = string.Empty;
+                selectedItem.ActividadID = string.Empty;
+                selectedItem.VisibleEnAplicativo = 0;
+                selectedItem.Actividad = string.Empty;
+                selectedItem.Labor = string.Empty;
+                selectedItem.RendimientoUnidadMedida = string.Empty;
+                selectedItem.RendimientoUnidadMedidaID = string.Empty;
+                if (dgvListado != null && dgvListado.Rows.Count > 0)
+                {
+                    if (dgvListado.CurrentRow != null)
+                    {
+                        if (dgvListado.CurrentRow.Cells["chActividadLaborCodigo"].Value != null)
+                        {
+                            string CodigoSelecionado = (dgvListado.CurrentRow.Cells["chActividadLaborCodigo"].Value != null ? dgvListado.CurrentRow.Cells["chActividadLaborCodigo"].Value.ToString().Trim() : string.Empty);
 
+                            
+                            var resultadoDeSelección = resultList.Where(x => x.ActividadLaborCodigo.Trim() == CodigoSelecionado.Trim() ).ToList();
+
+                            if (resultadoDeSelección.ToList().Count > 0)
+                            {
+                                selectedItem = resultadoDeSelección.ElementAt(0);
+                                AsignarSeleccionarAControlesDeEdicion(selectedItem);
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                }
+                #endregion
+            }
+
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistems");
+                return;
+            }
+        }
+
+        private void btnAnularD_Click(object sender, EventArgs e)
+        {
+            Anular();
+        }
+
+        private void btnEditarD_Click(object sender, EventArgs e)
+        {
+            Editar(true);
+        }
+
+        private void dgvListado_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void gbEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+
+        }
+
+        private void btnCancelar_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void btnRegistrar_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void ActividadesYLaboresFiltroApp_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
         }
     }
 }

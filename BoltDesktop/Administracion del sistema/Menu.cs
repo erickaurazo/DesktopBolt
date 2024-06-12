@@ -18,6 +18,8 @@ using ComparativoHorasVisualSATNISIRA.Exportaciones;
 using ComparativoHorasVisualSATNISIRA.Maquinaria;
 using ComparativoHorasVisualSATNISIRA.MRP;
 using ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola;
+using ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad;
+using ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Productividad;
 using ComparativoHorasVisualSATNISIRA.Presupuestos;
 using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.T.I;
@@ -1326,21 +1328,21 @@ namespace Asistencia
         //, List<PrivilegesByUser> privilegesByUserByModule
         private void transportistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string form2 = GoTransportesCatalogoTransportista.Name.ToString().Trim().ToUpper();
+            //string form2 = GoTransportesCatalogoTransportista.Name.ToString().Trim().ToUpper();
 
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
+            //var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            //PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            //if (result != null && result.ToList().Count > 0)
+            //{
+            //    privilege = result.FirstOrDefault();
+            //}
 
-            CatalogoEmpresaDeServicioDeTransporteDePersonal frmHijo = new CatalogoEmpresaDeServicioDeTransporteDePersonal(_conection, _user, _companyId, privilege);
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //CatalogoEmpresaDeServicioDeTransporteDePersonal frmHijo = new CatalogoEmpresaDeServicioDeTransporteDePersonal(_conection, _user, _companyId, privilege);
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void rutaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1380,12 +1382,7 @@ namespace Asistencia
 
         private void tipoDeBloqueoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GoPlanillasCatalogoTiposDeBloqueo frmHijo = new GoPlanillasCatalogoTiposDeBloqueo(_conection, _user, _companyId);
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            
         }
 
         private void RRHHpersonalBloqueado_Click(object sender, EventArgs e)
@@ -1869,29 +1866,7 @@ namespace Asistencia
 
         private void GoTIMaestroSegmentos_Click(object sender, EventArgs e)
         {
-            string form2 = GoTIMaestroSegmentos.Name.ToString().Trim().ToUpper();
-
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
-            if (privilege.consultar == 1)
-            {
-                SegmentoDeRed frmHijo = new SegmentoDeRed(_conection, _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+           
 
         }
 
@@ -3380,29 +3355,29 @@ namespace Asistencia
 
         private void GoAlmacenCatalogoProducto_Click(object sender, EventArgs e)
         {
-            string form2 = GoAlmacenCatalogoProducto.Name.ToString().Trim().ToUpper();
+            //string form2 = GoAlmacenCatalogoProducto.Name.ToString().Trim().ToUpper();
 
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
+            //var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            //PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            //if (result != null && result.ToList().Count > 0)
+            //{
+            //    privilege = result.FirstOrDefault();
+            //}
 
-            if (privilege.consultar == 1)
-            {
-                Productos frmHijo = new Productos(_conection, _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+            //if (privilege.consultar == 1)
+            //{
+            //    Productos frmHijo = new Productos(_conection, _user2, _companyId, privilege);
+            //    frmHijo.MdiParent = this;
+            //    frmHijo.Show();
+            //    frmHijo.WindowState = FormWindowState.Maximized;
+            //    frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //    statusStrip.Visible = false;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+            //    return;
+            //}
         }
 
         private void GoLogisticaReporteSeguimientoLogisticoPedidoCompras_Click(object sender, EventArgs e)
@@ -3822,28 +3797,7 @@ namespace Asistencia
 
         private void GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad_Click(object sender, EventArgs e)
         {
-            string form2 = GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Name.ToString().Trim().ToUpper();
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
-
-            if (privilege.consultar == 1)
-            {
-                Calidades frmHijo = new Calidades(_conection, _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+            
         }
 
         private void GoAcopioReporteRegistroDeTicketsVsLecturasAAbastecimiento_Click(object sender, EventArgs e)
@@ -3956,29 +3910,7 @@ namespace Asistencia
 
         private void GoAsegCalCerCatalogoMotivosDeExoneracion_Click(object sender, EventArgs e)
         {
-            //GoAsegCalCerCatalogoMotivosDeExoneracion | MotivosDeExoneracionACamaraDeGasificados
-            string form2 = GoAsegCalCerCatalogoMotivosDeExoneracion.Name.ToString().Trim().ToUpper();
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
-
-            if (privilege.consultar == 1)
-            {
-                MotivosDeExoneracionACamaraDeGasificados frmHijo = new MotivosDeExoneracionACamaraDeGasificados("NSFAJAS", _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+            
         }
 
         private void GoAsegCalCerMovimientoRegistroDeGasificadoExonerado_Click(object sender, EventArgs e)
@@ -4294,28 +4226,7 @@ namespace Asistencia
 
         private void GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones_Click(object sender, EventArgs e)
         {
-            string form2 = GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Name.ToString().Trim().ToUpper();
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
-
-            if (privilege.consultar == 1)
-            {
-                AccionesCorrectivas frmHijo = new AccionesCorrectivas("SAS", _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+           
         }
 
         private void GoAsegCalCerReporteBPMincumplimientoYPracticasHigiene_Click(object sender, EventArgs e)
@@ -4536,54 +4447,12 @@ namespace Asistencia
 
         private void GoAsegCalCerCatalogoGrupoTipoItemEvaluacion_Click(object sender, EventArgs e)
         {
-            string form2 = GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Name.ToString().Trim().ToUpper();
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
-
-            if (privilege.consultar == 1)
-            {
-                TipoGrupoMaestrosDespacho frmHijo = new TipoGrupoMaestrosDespacho("SAS", _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+            
         }
 
         private void GoAsegCalCerCatalogoGrupoItemEvaluacion_Click(object sender, EventArgs e)
         {
-            string form2 = GoAsegCalCerCatalogoGrupoItemEvaluacion.Name.ToString().Trim().ToUpper();
-            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
-            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
-            if (result != null && result.ToList().Count > 0)
-            {
-                privilege = result.FirstOrDefault();
-            }
-
-            if (privilege.consultar == 1)
-            {
-                TipoGrupoMaestrosDespachoDetalle frmHijo = new TipoGrupoMaestrosDespachoDetalle("SAS", _user2, _companyId, privilege);
-                frmHijo.MdiParent = this;
-                frmHijo.Show();
-                frmHijo.WindowState = FormWindowState.Maximized;
-                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-                statusStrip.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
-                return;
-            }
+            
         }
 
         private void GoAsegCalCerCatalogoAreasInspeccionEvaluacion_Click(object sender, EventArgs e)
@@ -5360,6 +5229,295 @@ namespace Asistencia
                 return;
             }
             
+        }
+
+        private void GoTiMaestroProyectos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GoAlmacenCatalogoProductos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GoTIMaestroNumeroDeIP_Click_1(object sender, EventArgs e)
+        {
+            string form2 = GoTIMaestroNumeroDeIP.Name.ToString().Trim().ToUpper();
+
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+            if (privilege.consultar == 1)
+            {
+                NumeroIP frmHijo = new NumeroIP(_conection, _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoPlanillasCatalogoClasificacionDeBloqueo_Click(object sender, EventArgs e)
+        {
+            GoPlanillasCatalogoTiposDeBloqueo frmHijo = new GoPlanillasCatalogoTiposDeBloqueo(_conection, _user, _companyId);
+            frmHijo.MdiParent = this;
+            frmHijo.Show();
+            frmHijo.WindowState = FormWindowState.Maximized;
+            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            statusStrip.Visible = false;
+        }
+
+        private void tipoDespachoItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoGrupoItemEvaluacion.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                TipoGrupoMaestrosDespachoDetalle frmHijo = new TipoGrupoMaestrosDespachoDetalle("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoAsegCalCerCatalogoGrupoTipoItemEvaluacion_Click_1(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoGrupoTipoItemEvaluacion.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                TipoGrupoMaestrosDespacho frmHijo = new TipoGrupoMaestrosDespacho("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void GoAsegCalCerCatalogoMotivosDeExoneracion_Click_1(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoMotivosDeExoneracion.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                MotivosDeExoneracionACamaraDeGasificados frmHijo = new MotivosDeExoneracionACamaraDeGasificados("NSFAJAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones_Click_1(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoAccionesCorrectivasEvaluacionesInspecciones.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                AccionesCorrectivas frmHijo = new AccionesCorrectivas("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void GoTIMaestroProveedores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad_Click_1(object sender, EventArgs e)
+        {
+            string form2 = GoAsegCalCerCatalogoCalidadesDeFrutaPorVariedad.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                Calidades frmHijo = new Calidades(_conection, _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoTIMaestroSegmentos_Click_1(object sender, EventArgs e)
+        {
+            string form2 = GoTIMaestroSegmentos.Name.ToString().Trim().ToUpper();
+
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+            if (privilege.consultar == 1)
+            {
+                SegmentoDeRed frmHijo = new SegmentoDeRed(_conection, _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos_Click(object sender, EventArgs e)
+        {
+            string form2 = GoPlaneamientoAgricolaCatalogoProductividadCentrosDeCostos.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                CentrosDeCostosFiltroApp frmHijo = new CentrosDeCostosFiltroApp("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoPlaneamientoAgricolaCatalogoProductividadLabores_Click(object sender, EventArgs e)
+        {
+            string form2 = GoPlaneamientoAgricolaCatalogoProductividadLabores.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                ActividadesYLaboresFiltroApp frmHijo = new ActividadesYLaboresFiltroApp("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad_Click(object sender, EventArgs e)
+        {
+            string form2 = GoPlaneamientoAgricolaMovimientoEvaluacionesProductividad.Name.ToString().Trim().ToUpper();
+            var result = privilegesByUser.Where(x => x.nombreEnElSistema.Trim().ToUpper() == form2).ToList();
+            PrivilegesByUser privilege = new PrivilegesByUser { anular = 0, consultar = 0, eliminar = 0, imprimir = 0, nuevo = 0, ninguno = 1, editar = 0 };
+            if (result != null && result.ToList().Count > 0)
+            {
+                privilege = result.FirstOrDefault();
+            }
+
+            if (privilege.consultar == 1)
+            {
+                RegistroDeProductividadListado frmHijo = new RegistroDeProductividadListado("SAS", _user2, _companyId, privilege);
+                frmHijo.MdiParent = this;
+                frmHijo.Show();
+                frmHijo.WindowState = FormWindowState.Maximized;
+                frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No tiene privilegios para realizar esta acción", "MENSAJE DEL SISTEMA");
+                return;
+            }
         }
     }
 }

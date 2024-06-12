@@ -39,6 +39,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblUserNames = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCodeUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,14 +48,11 @@
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sspSubMenu01 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAnularPrograma = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEditarPrograma = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEditarProgramaHectareaPorDosis = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEditarProgramaConcentracionPorDosis = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAnularD = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditarD = new System.Windows.Forms.ToolStripMenuItem();
             this.sspSubMenu02 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEliminarPrograma = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEliminarD = new System.Windows.Forms.ToolStripMenuItem();
             this.sspSubMenu03 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnVerPrograma = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
@@ -62,22 +60,26 @@
             this.gbListado = new System.Windows.Forms.GroupBox();
             this.dgvListado = new Telerik.WinControls.UI.RadGridView();
             this.gbEdit = new Telerik.WinControls.UI.RadGroupBox();
-            this.myTextBoxSearchSimple3 = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
-            this.myTextBoxSearchSimple4 = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
-            this.myButtonSearchSimple2 = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
+            this.txtUM = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.txtUMID = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.btnUM = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
+            this.lblUM = new System.Windows.Forms.Label();
+            this.txtLabor = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.txtLaborID = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.btnLabor = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.myTextBoxSearchSimple1 = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
-            this.myTextBoxSearchSimple2 = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
-            this.myButtonSearchSimple1 = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
+            this.txtActividad = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.txtActividadID = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.btnActividad = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmpresa = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.txtEmpresaCodigo = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.btnEmpresa = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
             this.lblMarca = new System.Windows.Forms.Label();
-            this.chkVisibleEnReportes = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
+            this.chkVisibleEnAplicativo = new MyControlsDataBinding.Controles.MyCheckBox(this.components);
             this.lblCodigo = new Telerik.WinControls.UI.RadLabel();
-            this.txtCodigo = new Telerik.WinControls.UI.RadTextBox();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.txtCodigoActividadLabor = new Telerik.WinControls.UI.RadTextBox();
+            this.btnRegistrar = new Telerik.WinControls.UI.RadButton();
             this.btnCancelar = new Telerik.WinControls.UI.RadButton();
             this.txtIdEstado = new Telerik.WinControls.UI.RadTextBox();
             this.lblEstadoRegistroCodigo = new Telerik.WinControls.UI.RadLabel();
@@ -112,8 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbEdit)).BeginInit();
             this.gbEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblCodigo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoActividadLabor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblEstadoRegistroCodigo)).BeginInit();
@@ -168,75 +170,52 @@
             // 
             this.subMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sspSubMenu01,
-            this.btnAnularPrograma,
-            this.btnEditarPrograma,
+            this.btnAnularD,
+            this.btnEditarD,
             this.sspSubMenu02,
-            this.btnEliminarPrograma,
-            this.sspSubMenu03,
-            this.btnVerPrograma});
+            this.btnEliminarD,
+            this.sspSubMenu03});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(173, 110);
+            this.subMenu.Size = new System.Drawing.Size(118, 88);
             // 
             // sspSubMenu01
             // 
             this.sspSubMenu01.Name = "sspSubMenu01";
-            this.sspSubMenu01.Size = new System.Drawing.Size(169, 6);
+            this.sspSubMenu01.Size = new System.Drawing.Size(114, 6);
             // 
-            // btnAnularPrograma
+            // btnAnularD
             // 
-            this.btnAnularPrograma.Image = ((System.Drawing.Image)(resources.GetObject("btnAnularPrograma.Image")));
-            this.btnAnularPrograma.Name = "btnAnularPrograma";
-            this.btnAnularPrograma.Size = new System.Drawing.Size(172, 22);
-            this.btnAnularPrograma.Text = "Anular programa";
+            this.btnAnularD.Image = ((System.Drawing.Image)(resources.GetObject("btnAnularD.Image")));
+            this.btnAnularD.Name = "btnAnularD";
+            this.btnAnularD.Size = new System.Drawing.Size(117, 22);
+            this.btnAnularD.Text = "Anular";
+            this.btnAnularD.Click += new System.EventHandler(this.btnAnularD_Click);
             // 
-            // btnEditarPrograma
+            // btnEditarD
             // 
-            this.btnEditarPrograma.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEditarProgramaHectareaPorDosis,
-            this.btnEditarProgramaConcentracionPorDosis});
-            this.btnEditarPrograma.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarPrograma.Image")));
-            this.btnEditarPrograma.Name = "btnEditarPrograma";
-            this.btnEditarPrograma.Size = new System.Drawing.Size(172, 22);
-            this.btnEditarPrograma.Text = "Editar programa";
-            // 
-            // btnEditarProgramaHectareaPorDosis
-            // 
-            this.btnEditarProgramaHectareaPorDosis.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProgramaHectareaPorDosis.Image")));
-            this.btnEditarProgramaHectareaPorDosis.Name = "btnEditarProgramaHectareaPorDosis";
-            this.btnEditarProgramaHectareaPorDosis.Size = new System.Drawing.Size(254, 22);
-            this.btnEditarProgramaHectareaPorDosis.Text = "Cambiar Hectarea para dosis";
-            // 
-            // btnEditarProgramaConcentracionPorDosis
-            // 
-            this.btnEditarProgramaConcentracionPorDosis.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProgramaConcentracionPorDosis.Image")));
-            this.btnEditarProgramaConcentracionPorDosis.Name = "btnEditarProgramaConcentracionPorDosis";
-            this.btnEditarProgramaConcentracionPorDosis.Size = new System.Drawing.Size(254, 22);
-            this.btnEditarProgramaConcentracionPorDosis.Text = "Cambiar concentración para dosis";
+            this.btnEditarD.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarD.Image")));
+            this.btnEditarD.Name = "btnEditarD";
+            this.btnEditarD.Size = new System.Drawing.Size(117, 22);
+            this.btnEditarD.Text = "Editar";
+            this.btnEditarD.Click += new System.EventHandler(this.btnEditarD_Click);
             // 
             // sspSubMenu02
             // 
             this.sspSubMenu02.Name = "sspSubMenu02";
-            this.sspSubMenu02.Size = new System.Drawing.Size(169, 6);
+            this.sspSubMenu02.Size = new System.Drawing.Size(114, 6);
             // 
-            // btnEliminarPrograma
+            // btnEliminarD
             // 
-            this.btnEliminarPrograma.Enabled = false;
-            this.btnEliminarPrograma.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarPrograma.Image")));
-            this.btnEliminarPrograma.Name = "btnEliminarPrograma";
-            this.btnEliminarPrograma.Size = new System.Drawing.Size(172, 22);
-            this.btnEliminarPrograma.Text = "Eliminar programa";
+            this.btnEliminarD.Enabled = false;
+            this.btnEliminarD.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarD.Image")));
+            this.btnEliminarD.Name = "btnEliminarD";
+            this.btnEliminarD.Size = new System.Drawing.Size(117, 22);
+            this.btnEliminarD.Text = "Eliminar";
             // 
             // sspSubMenu03
             // 
             this.sspSubMenu03.Name = "sspSubMenu03";
-            this.sspSubMenu03.Size = new System.Drawing.Size(169, 6);
-            // 
-            // btnVerPrograma
-            // 
-            this.btnVerPrograma.Image = ((System.Drawing.Image)(resources.GetObject("btnVerPrograma.Image")));
-            this.btnVerPrograma.Name = "btnVerPrograma";
-            this.btnVerPrograma.Size = new System.Drawing.Size(172, 22);
-            this.btnVerPrograma.Text = "Ver programa";
+            this.sspSubMenu03.Size = new System.Drawing.Size(114, 6);
             // 
             // bgwHilo
             // 
@@ -289,7 +268,7 @@
             gridViewTextBoxColumn3.FieldName = "Actividad";
             gridViewTextBoxColumn3.HeaderText = "Actividad";
             gridViewTextBoxColumn3.Name = "chActividad";
-            gridViewTextBoxColumn3.Width = 275;
+            gridViewTextBoxColumn3.Width = 279;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "LaborID";
             gridViewTextBoxColumn4.HeaderText = "LaborID";
@@ -300,28 +279,34 @@
             gridViewTextBoxColumn5.FieldName = "Labor";
             gridViewTextBoxColumn5.HeaderText = "Labor";
             gridViewTextBoxColumn5.Name = "chLabor";
-            gridViewTextBoxColumn5.Width = 349;
+            gridViewTextBoxColumn5.Width = 341;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "RendimientoUnidadMedida";
-            gridViewTextBoxColumn6.HeaderText = "UM";
-            gridViewTextBoxColumn6.Name = "chRendimientoUnidadMedida";
-            gridViewTextBoxColumn6.Width = 72;
+            gridViewTextBoxColumn6.FieldName = "RendimientoUnidadMedidaID";
+            gridViewTextBoxColumn6.HeaderText = "RendimientoUnidadMedidaID";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "chRendimientoUnidadMedidaID";
+            gridViewTextBoxColumn6.Width = 42;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "VisibleEnAplicativo";
-            gridViewTextBoxColumn7.HeaderText = "Visible en app";
-            gridViewTextBoxColumn7.Name = "chVisibleEnAplicativo";
-            gridViewTextBoxColumn7.Width = 52;
+            gridViewTextBoxColumn7.FieldName = "RendimientoUnidadMedida";
+            gridViewTextBoxColumn7.HeaderText = "UM";
+            gridViewTextBoxColumn7.Name = "chRendimientoUnidadMedida";
+            gridViewTextBoxColumn7.Width = 96;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "EmpresaID";
-            gridViewTextBoxColumn8.HeaderText = "EmpresaID";
-            gridViewTextBoxColumn8.IsVisible = false;
-            gridViewTextBoxColumn8.Name = "chEmpresaID";
-            gridViewTextBoxColumn8.Width = 43;
+            gridViewTextBoxColumn8.FieldName = "VisibleEnAplicativo";
+            gridViewTextBoxColumn8.HeaderText = "Visible en app";
+            gridViewTextBoxColumn8.Name = "chVisibleEnAplicativo";
+            gridViewTextBoxColumn8.Width = 32;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "Empresa";
-            gridViewTextBoxColumn9.HeaderText = "Empresa";
+            gridViewTextBoxColumn9.FieldName = "EmpresaID";
+            gridViewTextBoxColumn9.HeaderText = "EmpresaID";
             gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "chEmpresa";
+            gridViewTextBoxColumn9.Name = "chEmpresaID";
+            gridViewTextBoxColumn9.Width = 43;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "Empresa";
+            gridViewTextBoxColumn10.HeaderText = "Empresa";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chEmpresa";
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -331,7 +316,8 @@
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.MultiSelect = true;
@@ -347,28 +333,33 @@
             this.dgvListado.TabIndex = 196;
             this.dgvListado.ThemeName = "VisualStudio2012Light";
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
+            this.dgvListado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvListado_KeyDown);
             // 
             // gbEdit
             // 
             this.gbEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEdit.Controls.Add(this.myTextBoxSearchSimple3);
-            this.gbEdit.Controls.Add(this.myTextBoxSearchSimple4);
-            this.gbEdit.Controls.Add(this.myButtonSearchSimple2);
+            this.gbEdit.Controls.Add(this.txtUM);
+            this.gbEdit.Controls.Add(this.txtUMID);
+            this.gbEdit.Controls.Add(this.btnUM);
+            this.gbEdit.Controls.Add(this.lblUM);
+            this.gbEdit.Controls.Add(this.txtLabor);
+            this.gbEdit.Controls.Add(this.txtLaborID);
+            this.gbEdit.Controls.Add(this.btnLabor);
             this.gbEdit.Controls.Add(this.label2);
-            this.gbEdit.Controls.Add(this.myTextBoxSearchSimple1);
-            this.gbEdit.Controls.Add(this.myTextBoxSearchSimple2);
-            this.gbEdit.Controls.Add(this.myButtonSearchSimple1);
+            this.gbEdit.Controls.Add(this.txtActividad);
+            this.gbEdit.Controls.Add(this.txtActividadID);
+            this.gbEdit.Controls.Add(this.btnActividad);
             this.gbEdit.Controls.Add(this.label1);
             this.gbEdit.Controls.Add(this.txtEmpresa);
             this.gbEdit.Controls.Add(this.txtEmpresaCodigo);
             this.gbEdit.Controls.Add(this.btnEmpresa);
             this.gbEdit.Controls.Add(this.lblMarca);
-            this.gbEdit.Controls.Add(this.chkVisibleEnReportes);
+            this.gbEdit.Controls.Add(this.chkVisibleEnAplicativo);
             this.gbEdit.Controls.Add(this.lblCodigo);
-            this.gbEdit.Controls.Add(this.txtCodigo);
-            this.gbEdit.Controls.Add(this.radButton1);
+            this.gbEdit.Controls.Add(this.txtCodigoActividadLabor);
+            this.gbEdit.Controls.Add(this.btnRegistrar);
             this.gbEdit.Controls.Add(this.btnCancelar);
             this.gbEdit.Controls.Add(this.txtIdEstado);
             this.gbEdit.Controls.Add(this.lblEstadoRegistroCodigo);
@@ -384,70 +375,147 @@
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
             this.gbEdit.ThemeName = "Windows8";
+            this.gbEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gbEdit_KeyDown);
             // 
-            // myTextBoxSearchSimple3
+            // txtUM
             // 
-            this.myTextBoxSearchSimple3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myTextBoxSearchSimple3.BackColor = System.Drawing.Color.White;
-            this.myTextBoxSearchSimple3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.myTextBoxSearchSimple3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.myTextBoxSearchSimple3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.myTextBoxSearchSimple3.Location = new System.Drawing.Point(161, 142);
-            this.myTextBoxSearchSimple3.Name = "myTextBoxSearchSimple3";
-            this.myTextBoxSearchSimple3.P_BotonEnlace = null;
-            this.myTextBoxSearchSimple3.P_BuscarSoloCodigoExacto = false;
-            this.myTextBoxSearchSimple3.P_EsEditable = false;
-            this.myTextBoxSearchSimple3.P_EsModificable = false;
-            this.myTextBoxSearchSimple3.P_EsPrimaryKey = false;
-            this.myTextBoxSearchSimple3.P_ExigeInformacion = false;
-            this.myTextBoxSearchSimple3.P_NombreColumna = null;
-            this.myTextBoxSearchSimple3.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.myTextBoxSearchSimple3.ReadOnly = true;
-            this.myTextBoxSearchSimple3.Size = new System.Drawing.Size(281, 20);
-            this.myTextBoxSearchSimple3.TabIndex = 259;
-            this.myTextBoxSearchSimple3.Text = "RALEO - PRODUCCION";
+            this.txtUM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUM.BackColor = System.Drawing.Color.White;
+            this.txtUM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtUM.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtUM.Location = new System.Drawing.Point(161, 168);
+            this.txtUM.Name = "txtUM";
+            this.txtUM.P_BotonEnlace = null;
+            this.txtUM.P_BuscarSoloCodigoExacto = false;
+            this.txtUM.P_EsEditable = false;
+            this.txtUM.P_EsModificable = false;
+            this.txtUM.P_EsPrimaryKey = false;
+            this.txtUM.P_ExigeInformacion = false;
+            this.txtUM.P_NombreColumna = null;
+            this.txtUM.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtUM.ReadOnly = true;
+            this.txtUM.Size = new System.Drawing.Size(281, 20);
+            this.txtUM.TabIndex = 263;
+            this.txtUM.Text = "PLANTA";
             // 
-            // myTextBoxSearchSimple4
+            // txtUMID
             // 
-            this.myTextBoxSearchSimple4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myTextBoxSearchSimple4.BackColor = System.Drawing.Color.White;
-            this.myTextBoxSearchSimple4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.myTextBoxSearchSimple4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.myTextBoxSearchSimple4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.myTextBoxSearchSimple4.Location = new System.Drawing.Point(97, 142);
-            this.myTextBoxSearchSimple4.MaxLength = 6;
-            this.myTextBoxSearchSimple4.Name = "myTextBoxSearchSimple4";
-            this.myTextBoxSearchSimple4.P_BotonEnlace = this.myButtonSearchSimple2;
-            this.myTextBoxSearchSimple4.P_BuscarSoloCodigoExacto = false;
-            this.myTextBoxSearchSimple4.P_EsEditable = true;
-            this.myTextBoxSearchSimple4.P_EsModificable = true;
-            this.myTextBoxSearchSimple4.P_EsPrimaryKey = false;
-            this.myTextBoxSearchSimple4.P_ExigeInformacion = false;
-            this.myTextBoxSearchSimple4.P_NombreColumna = null;
-            this.myTextBoxSearchSimple4.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.myTextBoxSearchSimple4.Size = new System.Drawing.Size(58, 20);
-            this.myTextBoxSearchSimple4.TabIndex = 258;
-            this.myTextBoxSearchSimple4.Text = "000002";
-            this.myTextBoxSearchSimple4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtUMID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUMID.BackColor = System.Drawing.Color.White;
+            this.txtUMID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUMID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtUMID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtUMID.Location = new System.Drawing.Point(97, 168);
+            this.txtUMID.MaxLength = 6;
+            this.txtUMID.Name = "txtUMID";
+            this.txtUMID.P_BotonEnlace = this.btnUM;
+            this.txtUMID.P_BuscarSoloCodigoExacto = false;
+            this.txtUMID.P_EsEditable = false;
+            this.txtUMID.P_EsModificable = false;
+            this.txtUMID.P_EsPrimaryKey = false;
+            this.txtUMID.P_ExigeInformacion = false;
+            this.txtUMID.P_NombreColumna = null;
+            this.txtUMID.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtUMID.ReadOnly = true;
+            this.txtUMID.Size = new System.Drawing.Size(58, 20);
+            this.txtUMID.TabIndex = 262;
+            this.txtUMID.Text = "PL";
+            this.txtUMID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myButtonSearchSimple2
+            // btnUM
             // 
-            this.myButtonSearchSimple2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myButtonSearchSimple2.Image = ((System.Drawing.Image)(resources.GetObject("myButtonSearchSimple2.Image")));
-            this.myButtonSearchSimple2.Location = new System.Drawing.Point(67, 141);
-            this.myButtonSearchSimple2.Name = "myButtonSearchSimple2";
-            this.myButtonSearchSimple2.P_CampoCodigo = "rtrim(idEMPRESA)";
-            this.myButtonSearchSimple2.P_CampoDescripcion = "rtrim(RAZON_SOCIAL)";
-            this.myButtonSearchSimple2.P_EsEditable = true;
-            this.myButtonSearchSimple2.P_EsModificable = true;
-            this.myButtonSearchSimple2.P_FilterByTextBox = null;
-            this.myButtonSearchSimple2.P_TablaConsulta = "EMPRESAS";
-            this.myButtonSearchSimple2.P_TextBoxCodigo = this.myTextBoxSearchSimple4;
-            this.myButtonSearchSimple2.P_TextBoxDescripcion = this.myTextBoxSearchSimple3;
-            this.myButtonSearchSimple2.P_TituloFormulario = "... Empresa";
-            this.myButtonSearchSimple2.Size = new System.Drawing.Size(24, 23);
-            this.myButtonSearchSimple2.TabIndex = 260;
-            this.myButtonSearchSimple2.UseVisualStyleBackColor = true;
+            this.btnUM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUM.Image = ((System.Drawing.Image)(resources.GetObject("btnUM.Image")));
+            this.btnUM.Location = new System.Drawing.Point(67, 167);
+            this.btnUM.Name = "btnUM";
+            this.btnUM.P_CampoCodigo = "";
+            this.btnUM.P_CampoDescripcion = "";
+            this.btnUM.P_EsEditable = false;
+            this.btnUM.P_EsModificable = false;
+            this.btnUM.P_FilterByTextBox = null;
+            this.btnUM.P_TablaConsulta = "";
+            this.btnUM.P_TextBoxCodigo = null;
+            this.btnUM.P_TextBoxDescripcion = null;
+            this.btnUM.P_TituloFormulario = "";
+            this.btnUM.Size = new System.Drawing.Size(24, 23);
+            this.btnUM.TabIndex = 264;
+            this.btnUM.UseVisualStyleBackColor = true;
+            // 
+            // lblUM
+            // 
+            this.lblUM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUM.AutoSize = true;
+            this.lblUM.Location = new System.Drawing.Point(7, 170);
+            this.lblUM.Name = "lblUM";
+            this.lblUM.Size = new System.Drawing.Size(31, 13);
+            this.lblUM.TabIndex = 261;
+            this.lblUM.Text = "UM :";
+            // 
+            // txtLabor
+            // 
+            this.txtLabor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLabor.BackColor = System.Drawing.Color.White;
+            this.txtLabor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLabor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtLabor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtLabor.Location = new System.Drawing.Point(161, 142);
+            this.txtLabor.Name = "txtLabor";
+            this.txtLabor.P_BotonEnlace = null;
+            this.txtLabor.P_BuscarSoloCodigoExacto = false;
+            this.txtLabor.P_EsEditable = false;
+            this.txtLabor.P_EsModificable = false;
+            this.txtLabor.P_EsPrimaryKey = false;
+            this.txtLabor.P_ExigeInformacion = false;
+            this.txtLabor.P_NombreColumna = null;
+            this.txtLabor.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtLabor.ReadOnly = true;
+            this.txtLabor.Size = new System.Drawing.Size(281, 20);
+            this.txtLabor.TabIndex = 259;
+            this.txtLabor.Text = "RALEO - PRODUCCION";
+            // 
+            // txtLaborID
+            // 
+            this.txtLaborID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLaborID.BackColor = System.Drawing.Color.White;
+            this.txtLaborID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLaborID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtLaborID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtLaborID.Location = new System.Drawing.Point(97, 142);
+            this.txtLaborID.MaxLength = 6;
+            this.txtLaborID.Name = "txtLaborID";
+            this.txtLaborID.P_BotonEnlace = this.btnLabor;
+            this.txtLaborID.P_BuscarSoloCodigoExacto = false;
+            this.txtLaborID.P_EsEditable = false;
+            this.txtLaborID.P_EsModificable = false;
+            this.txtLaborID.P_EsPrimaryKey = false;
+            this.txtLaborID.P_ExigeInformacion = false;
+            this.txtLaborID.P_NombreColumna = null;
+            this.txtLaborID.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtLaborID.ReadOnly = true;
+            this.txtLaborID.Size = new System.Drawing.Size(58, 20);
+            this.txtLaborID.TabIndex = 258;
+            this.txtLaborID.Text = "000002";
+            this.txtLaborID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnLabor
+            // 
+            this.btnLabor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLabor.Image = ((System.Drawing.Image)(resources.GetObject("btnLabor.Image")));
+            this.btnLabor.Location = new System.Drawing.Point(67, 141);
+            this.btnLabor.Name = "btnLabor";
+            this.btnLabor.P_CampoCodigo = "";
+            this.btnLabor.P_CampoDescripcion = "";
+            this.btnLabor.P_EsEditable = false;
+            this.btnLabor.P_EsModificable = false;
+            this.btnLabor.P_FilterByTextBox = null;
+            this.btnLabor.P_TablaConsulta = "";
+            this.btnLabor.P_TextBoxCodigo = null;
+            this.btnLabor.P_TextBoxDescripcion = null;
+            this.btnLabor.P_TituloFormulario = "... Empresa";
+            this.btnLabor.Size = new System.Drawing.Size(24, 23);
+            this.btnLabor.TabIndex = 260;
+            this.btnLabor.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -459,69 +527,70 @@
             this.label2.TabIndex = 257;
             this.label2.Text = "Labor :";
             // 
-            // myTextBoxSearchSimple1
+            // txtActividad
             // 
-            this.myTextBoxSearchSimple1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myTextBoxSearchSimple1.BackColor = System.Drawing.Color.White;
-            this.myTextBoxSearchSimple1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.myTextBoxSearchSimple1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.myTextBoxSearchSimple1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.myTextBoxSearchSimple1.Location = new System.Drawing.Point(161, 116);
-            this.myTextBoxSearchSimple1.Name = "myTextBoxSearchSimple1";
-            this.myTextBoxSearchSimple1.P_BotonEnlace = null;
-            this.myTextBoxSearchSimple1.P_BuscarSoloCodigoExacto = false;
-            this.myTextBoxSearchSimple1.P_EsEditable = false;
-            this.myTextBoxSearchSimple1.P_EsModificable = false;
-            this.myTextBoxSearchSimple1.P_EsPrimaryKey = false;
-            this.myTextBoxSearchSimple1.P_ExigeInformacion = false;
-            this.myTextBoxSearchSimple1.P_NombreColumna = null;
-            this.myTextBoxSearchSimple1.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.myTextBoxSearchSimple1.ReadOnly = true;
-            this.myTextBoxSearchSimple1.Size = new System.Drawing.Size(281, 20);
-            this.myTextBoxSearchSimple1.TabIndex = 255;
-            this.myTextBoxSearchSimple1.Text = "RALEO PRODUCCION VID";
+            this.txtActividad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtActividad.BackColor = System.Drawing.Color.White;
+            this.txtActividad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtActividad.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtActividad.Location = new System.Drawing.Point(161, 116);
+            this.txtActividad.Name = "txtActividad";
+            this.txtActividad.P_BotonEnlace = null;
+            this.txtActividad.P_BuscarSoloCodigoExacto = false;
+            this.txtActividad.P_EsEditable = false;
+            this.txtActividad.P_EsModificable = false;
+            this.txtActividad.P_EsPrimaryKey = false;
+            this.txtActividad.P_ExigeInformacion = false;
+            this.txtActividad.P_NombreColumna = null;
+            this.txtActividad.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtActividad.ReadOnly = true;
+            this.txtActividad.Size = new System.Drawing.Size(281, 20);
+            this.txtActividad.TabIndex = 255;
+            this.txtActividad.Text = "RALEO PRODUCCION VID";
             // 
-            // myTextBoxSearchSimple2
+            // txtActividadID
             // 
-            this.myTextBoxSearchSimple2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myTextBoxSearchSimple2.BackColor = System.Drawing.Color.White;
-            this.myTextBoxSearchSimple2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.myTextBoxSearchSimple2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.myTextBoxSearchSimple2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.myTextBoxSearchSimple2.Location = new System.Drawing.Point(97, 116);
-            this.myTextBoxSearchSimple2.MaxLength = 3;
-            this.myTextBoxSearchSimple2.Name = "myTextBoxSearchSimple2";
-            this.myTextBoxSearchSimple2.P_BotonEnlace = this.myButtonSearchSimple1;
-            this.myTextBoxSearchSimple2.P_BuscarSoloCodigoExacto = false;
-            this.myTextBoxSearchSimple2.P_EsEditable = true;
-            this.myTextBoxSearchSimple2.P_EsModificable = true;
-            this.myTextBoxSearchSimple2.P_EsPrimaryKey = false;
-            this.myTextBoxSearchSimple2.P_ExigeInformacion = false;
-            this.myTextBoxSearchSimple2.P_NombreColumna = null;
-            this.myTextBoxSearchSimple2.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.myTextBoxSearchSimple2.Size = new System.Drawing.Size(58, 20);
-            this.myTextBoxSearchSimple2.TabIndex = 254;
-            this.myTextBoxSearchSimple2.Text = "158";
-            this.myTextBoxSearchSimple2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtActividadID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtActividadID.BackColor = System.Drawing.Color.White;
+            this.txtActividadID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtActividadID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtActividadID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtActividadID.Location = new System.Drawing.Point(97, 116);
+            this.txtActividadID.MaxLength = 3;
+            this.txtActividadID.Name = "txtActividadID";
+            this.txtActividadID.P_BotonEnlace = this.btnActividad;
+            this.txtActividadID.P_BuscarSoloCodigoExacto = false;
+            this.txtActividadID.P_EsEditable = false;
+            this.txtActividadID.P_EsModificable = false;
+            this.txtActividadID.P_EsPrimaryKey = false;
+            this.txtActividadID.P_ExigeInformacion = false;
+            this.txtActividadID.P_NombreColumna = null;
+            this.txtActividadID.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtActividadID.ReadOnly = true;
+            this.txtActividadID.Size = new System.Drawing.Size(58, 20);
+            this.txtActividadID.TabIndex = 254;
+            this.txtActividadID.Text = "158";
+            this.txtActividadID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myButtonSearchSimple1
+            // btnActividad
             // 
-            this.myButtonSearchSimple1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.myButtonSearchSimple1.Image = ((System.Drawing.Image)(resources.GetObject("myButtonSearchSimple1.Image")));
-            this.myButtonSearchSimple1.Location = new System.Drawing.Point(67, 115);
-            this.myButtonSearchSimple1.Name = "myButtonSearchSimple1";
-            this.myButtonSearchSimple1.P_CampoCodigo = "rtrim(idEMPRESA)";
-            this.myButtonSearchSimple1.P_CampoDescripcion = "rtrim(RAZON_SOCIAL)";
-            this.myButtonSearchSimple1.P_EsEditable = true;
-            this.myButtonSearchSimple1.P_EsModificable = true;
-            this.myButtonSearchSimple1.P_FilterByTextBox = null;
-            this.myButtonSearchSimple1.P_TablaConsulta = "EMPRESAS";
-            this.myButtonSearchSimple1.P_TextBoxCodigo = this.myTextBoxSearchSimple2;
-            this.myButtonSearchSimple1.P_TextBoxDescripcion = this.myTextBoxSearchSimple1;
-            this.myButtonSearchSimple1.P_TituloFormulario = "... Empresa";
-            this.myButtonSearchSimple1.Size = new System.Drawing.Size(24, 23);
-            this.myButtonSearchSimple1.TabIndex = 256;
-            this.myButtonSearchSimple1.UseVisualStyleBackColor = true;
+            this.btnActividad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActividad.Image = ((System.Drawing.Image)(resources.GetObject("btnActividad.Image")));
+            this.btnActividad.Location = new System.Drawing.Point(67, 115);
+            this.btnActividad.Name = "btnActividad";
+            this.btnActividad.P_CampoCodigo = "";
+            this.btnActividad.P_CampoDescripcion = "";
+            this.btnActividad.P_EsEditable = false;
+            this.btnActividad.P_EsModificable = false;
+            this.btnActividad.P_FilterByTextBox = null;
+            this.btnActividad.P_TablaConsulta = "";
+            this.btnActividad.P_TextBoxCodigo = null;
+            this.btnActividad.P_TextBoxDescripcion = null;
+            this.btnActividad.P_TituloFormulario = "";
+            this.btnActividad.Size = new System.Drawing.Size(24, 23);
+            this.btnActividad.TabIndex = 256;
+            this.btnActividad.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -567,12 +636,13 @@
             this.txtEmpresaCodigo.Name = "txtEmpresaCodigo";
             this.txtEmpresaCodigo.P_BotonEnlace = this.btnEmpresa;
             this.txtEmpresaCodigo.P_BuscarSoloCodigoExacto = false;
-            this.txtEmpresaCodigo.P_EsEditable = true;
-            this.txtEmpresaCodigo.P_EsModificable = true;
+            this.txtEmpresaCodigo.P_EsEditable = false;
+            this.txtEmpresaCodigo.P_EsModificable = false;
             this.txtEmpresaCodigo.P_EsPrimaryKey = false;
             this.txtEmpresaCodigo.P_ExigeInformacion = false;
             this.txtEmpresaCodigo.P_NombreColumna = null;
             this.txtEmpresaCodigo.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtEmpresaCodigo.ReadOnly = true;
             this.txtEmpresaCodigo.Size = new System.Drawing.Size(58, 20);
             this.txtEmpresaCodigo.TabIndex = 250;
             this.txtEmpresaCodigo.Text = "001";
@@ -584,15 +654,15 @@
             this.btnEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresa.Image")));
             this.btnEmpresa.Location = new System.Drawing.Point(67, 89);
             this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.P_CampoCodigo = "rtrim(idEMPRESA)";
-            this.btnEmpresa.P_CampoDescripcion = "rtrim(RAZON_SOCIAL)";
-            this.btnEmpresa.P_EsEditable = true;
-            this.btnEmpresa.P_EsModificable = true;
+            this.btnEmpresa.P_CampoCodigo = "";
+            this.btnEmpresa.P_CampoDescripcion = "";
+            this.btnEmpresa.P_EsEditable = false;
+            this.btnEmpresa.P_EsModificable = false;
             this.btnEmpresa.P_FilterByTextBox = null;
-            this.btnEmpresa.P_TablaConsulta = "EMPRESAS";
-            this.btnEmpresa.P_TextBoxCodigo = this.txtEmpresaCodigo;
-            this.btnEmpresa.P_TextBoxDescripcion = this.txtEmpresa;
-            this.btnEmpresa.P_TituloFormulario = "... Empresa";
+            this.btnEmpresa.P_TablaConsulta = "";
+            this.btnEmpresa.P_TextBoxCodigo = null;
+            this.btnEmpresa.P_TextBoxDescripcion = null;
+            this.btnEmpresa.P_TituloFormulario = "";
             this.btnEmpresa.Size = new System.Drawing.Size(24, 23);
             this.btnEmpresa.TabIndex = 252;
             this.btnEmpresa.UseVisualStyleBackColor = true;
@@ -607,25 +677,25 @@
             this.lblMarca.TabIndex = 249;
             this.lblMarca.Text = "Empresa :";
             // 
-            // chkVisibleEnReportes
+            // chkVisibleEnAplicativo
             // 
-            this.chkVisibleEnReportes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkVisibleEnReportes.AutoSize = true;
-            this.chkVisibleEnReportes.Checked = true;
-            this.chkVisibleEnReportes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkVisibleEnReportes.Location = new System.Drawing.Point(76, 189);
-            this.chkVisibleEnReportes.Name = "chkVisibleEnReportes";
-            this.chkVisibleEnReportes.P_EsEditable = false;
-            this.chkVisibleEnReportes.P_EsModificable = false;
-            this.chkVisibleEnReportes.P_ExigeInformacion = false;
-            this.chkVisibleEnReportes.P_NombreColumna = null;
-            this.chkVisibleEnReportes.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.chkVisibleEnReportes.P_ValorFalse = null;
-            this.chkVisibleEnReportes.P_ValorTrue = null;
-            this.chkVisibleEnReportes.Size = new System.Drawing.Size(221, 17);
-            this.chkVisibleEnReportes.TabIndex = 227;
-            this.chkVisibleEnReportes.Text = " Visible en aplicativo de Productividad";
-            this.chkVisibleEnReportes.UseVisualStyleBackColor = true;
+            this.chkVisibleEnAplicativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkVisibleEnAplicativo.AutoSize = true;
+            this.chkVisibleEnAplicativo.Checked = true;
+            this.chkVisibleEnAplicativo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkVisibleEnAplicativo.Location = new System.Drawing.Point(97, 207);
+            this.chkVisibleEnAplicativo.Name = "chkVisibleEnAplicativo";
+            this.chkVisibleEnAplicativo.P_EsEditable = false;
+            this.chkVisibleEnAplicativo.P_EsModificable = false;
+            this.chkVisibleEnAplicativo.P_ExigeInformacion = false;
+            this.chkVisibleEnAplicativo.P_NombreColumna = null;
+            this.chkVisibleEnAplicativo.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.chkVisibleEnAplicativo.P_ValorFalse = null;
+            this.chkVisibleEnAplicativo.P_ValorTrue = null;
+            this.chkVisibleEnAplicativo.Size = new System.Drawing.Size(221, 17);
+            this.chkVisibleEnAplicativo.TabIndex = 227;
+            this.chkVisibleEnAplicativo.Text = " Visible en aplicativo de Productividad";
+            this.chkVisibleEnAplicativo.UseVisualStyleBackColor = true;
             // 
             // lblCodigo
             // 
@@ -637,29 +707,30 @@
             this.lblCodigo.Text = "Código :";
             this.lblCodigo.Visible = false;
             // 
-            // txtCodigo
+            // txtCodigoActividadLabor
             // 
-            this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCodigo.Location = new System.Drawing.Point(76, 55);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(366, 20);
-            this.txtCodigo.TabIndex = 41;
-            this.txtCodigo.TabStop = false;
-            this.txtCodigo.ThemeName = "VisualStudio2012Light";
-            this.txtCodigo.Visible = false;
+            this.txtCodigoActividadLabor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCodigoActividadLabor.Location = new System.Drawing.Point(76, 55);
+            this.txtCodigoActividadLabor.Name = "txtCodigoActividadLabor";
+            this.txtCodigoActividadLabor.Size = new System.Drawing.Size(366, 20);
+            this.txtCodigoActividadLabor.TabIndex = 41;
+            this.txtCodigoActividadLabor.TabStop = false;
+            this.txtCodigoActividadLabor.ThemeName = "VisualStudio2012Light";
+            this.txtCodigoActividadLabor.Visible = false;
             // 
-            // radButton1
+            // btnRegistrar
             // 
-            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.radButton1.Image = ((System.Drawing.Image)(resources.GetObject("radButton1.Image")));
-            this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radButton1.Location = new System.Drawing.Point(228, 303);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(102, 24);
-            this.radButton1.TabIndex = 40;
-            this.radButton1.Text = "Grabar";
-            this.radButton1.ThemeName = "Windows8";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
+            this.btnRegistrar.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrar.Location = new System.Drawing.Point(228, 303);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(102, 24);
+            this.btnRegistrar.TabIndex = 40;
+            this.btnRegistrar.Text = "Grabar";
+            this.btnRegistrar.ThemeName = "Windows8";
+            this.btnRegistrar.Click += new System.EventHandler(this.radButton1_Click);
+            this.btnRegistrar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnRegistrar_KeyDown);
             // 
             // btnCancelar
             // 
@@ -672,6 +743,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.ThemeName = "Windows8";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnCancelar_KeyDown);
             // 
             // txtIdEstado
             // 
@@ -1043,6 +1115,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActividadesYLaboresFiltroApp_FormClosing);
             this.Load += new System.EventHandler(this.ActividadesYLaboresFiltroApp_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ActividadesYLaboresFiltroApp_KeyDown);
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();
             this.subMenu.ResumeLayout(false);
@@ -1053,8 +1126,8 @@
             this.gbEdit.ResumeLayout(false);
             this.gbEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblCodigo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoActividadLabor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblEstadoRegistroCodigo)).EndInit();
@@ -1076,14 +1149,11 @@
         private System.Windows.Forms.ToolStripProgressBar progressBar1;
         private System.Windows.Forms.ContextMenuStrip subMenu;
         private System.Windows.Forms.ToolStripSeparator sspSubMenu01;
-        private System.Windows.Forms.ToolStripMenuItem btnAnularPrograma;
-        private System.Windows.Forms.ToolStripMenuItem btnEditarPrograma;
-        private System.Windows.Forms.ToolStripMenuItem btnEditarProgramaHectareaPorDosis;
-        private System.Windows.Forms.ToolStripMenuItem btnEditarProgramaConcentracionPorDosis;
+        private System.Windows.Forms.ToolStripMenuItem btnAnularD;
+        private System.Windows.Forms.ToolStripMenuItem btnEditarD;
         private System.Windows.Forms.ToolStripSeparator sspSubMenu02;
-        private System.Windows.Forms.ToolStripMenuItem btnEliminarPrograma;
+        private System.Windows.Forms.ToolStripMenuItem btnEliminarD;
         private System.Windows.Forms.ToolStripSeparator sspSubMenu03;
-        private System.Windows.Forms.ToolStripMenuItem btnVerPrograma;
         private System.ComponentModel.BackgroundWorker bgwHilo;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
@@ -1091,22 +1161,22 @@
         private System.Windows.Forms.GroupBox gbListado;
         private Telerik.WinControls.UI.RadGridView dgvListado;
         private Telerik.WinControls.UI.RadGroupBox gbEdit;
-        private MyControlsDataBinding.Controles.MyCheckBox chkVisibleEnReportes;
+        private MyControlsDataBinding.Controles.MyCheckBox chkVisibleEnAplicativo;
         private Telerik.WinControls.UI.RadLabel lblCodigo;
-        private Telerik.WinControls.UI.RadTextBox txtCodigo;
-        private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.UI.RadTextBox txtCodigoActividadLabor;
+        private Telerik.WinControls.UI.RadButton btnRegistrar;
         private Telerik.WinControls.UI.RadButton btnCancelar;
         private Telerik.WinControls.UI.RadTextBox txtIdEstado;
         private Telerik.WinControls.UI.RadLabel lblEstadoRegistroCodigo;
         private Telerik.WinControls.UI.RadTextBox txtEstado;
         private Telerik.WinControls.UI.RadLabel radLabel2;
-        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple myTextBoxSearchSimple3;
-        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple myTextBoxSearchSimple4;
-        private MyControlsDataBinding.Controles.MyButtonSearchSimple myButtonSearchSimple2;
+        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtLabor;
+        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtLaborID;
+        private MyControlsDataBinding.Controles.MyButtonSearchSimple btnLabor;
         private System.Windows.Forms.Label label2;
-        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple myTextBoxSearchSimple1;
-        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple myTextBoxSearchSimple2;
-        private MyControlsDataBinding.Controles.MyButtonSearchSimple myButtonSearchSimple1;
+        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtActividad;
+        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtActividadID;
+        private MyControlsDataBinding.Controles.MyButtonSearchSimple btnActividad;
         private System.Windows.Forms.Label label1;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtEmpresa;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtEmpresaCodigo;
@@ -1133,5 +1203,9 @@
         private Telerik.WinControls.UI.CommandBarButton btnGenerarFormatosPDF;
         private Telerik.WinControls.UI.CommandBarButton btnElegirColumna;
         private Telerik.WinControls.UI.CommandBarButton btnCerrar;
+        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtUM;
+        private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtUMID;
+        private MyControlsDataBinding.Controles.MyButtonSearchSimple btnUM;
+        private System.Windows.Forms.Label lblUM;
     }
 }

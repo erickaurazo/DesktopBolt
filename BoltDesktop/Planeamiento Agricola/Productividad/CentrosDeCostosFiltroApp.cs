@@ -60,7 +60,6 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
             Consultar();
         }
 
-
         public CentrosDeCostosFiltroApp()
         {
             InitializeComponent();
@@ -117,8 +116,6 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
             }
         }
 
-
-
         protected override void OnLoad(EventArgs e)
         {
             this.dgvListado.TableElement.BeginUpdate();
@@ -138,9 +135,6 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
             items1.Add(new GridViewSummaryItem("chConsumidor", "Count : {0:N2}; ", GridAggregateFunction.Count));
             this.dgvListado.MasterTemplate.SummaryRowsTop.Add(items1);
         }
-
-
-
 
         private void CentrosDeCostosFiltroApp_Load(object sender, EventArgs e)
         {
@@ -195,27 +189,20 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
             Nuevo();
         }
 
-
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar(true);
         }
-
-
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             Grabar();
         }
 
-
         private void btnAtras_Click(object sender, EventArgs e)
         {
             Editar(false);
         }
-
-
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
@@ -239,40 +226,30 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
             ExportToExcel();
         }
 
-
         private void btnAdjuntar_Click(object sender, EventArgs e)
         {
             Adjuntar();
         }
-
-
 
         private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
         {
             CambiarEstadoDispositivo();
         }
 
-
-
         private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
         {
             GenerarFormatosPDF();
         }
-
-
-
 
         private void btnElegirColumna_Click(object sender, EventArgs e)
         {
             ElegirColumna();
         }
 
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Cerrar();
         }
-
 
         private void radButton1_Click(object sender, EventArgs e)
         {
@@ -538,6 +515,26 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
 
         }
 
+        private void EdicionDesdeTeclado(object sender, KeyEventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.G)
+            {
+                Grabar();
+            }
+            if (e.KeyData == (Keys.Control | Keys.E))
+            {
+                Editar(true);
+            }
+            if (e.KeyData == (Keys.Escape))
+            {
+                Atras();
+            }
+            if (Control.ModifierKeys == Keys.Alt && e.KeyCode == Keys.A)
+            {
+                Anular();
+            }
+
+        }
 
         private void Grabar()
         {
@@ -840,6 +837,36 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Producitivdad
                 #endregion
             }
 
+        }
+
+        private void btnCancelar_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void radButton1_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void BarraPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void dgvListado_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void gbEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
+        }
+
+        private void stsBarraEstado_KeyDown(object sender, KeyEventArgs e)
+        {
+            EdicionDesdeTeclado(sender, e);
         }
     }
 }
