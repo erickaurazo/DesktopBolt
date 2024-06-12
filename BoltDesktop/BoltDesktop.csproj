@@ -418,6 +418,18 @@
     <Compile Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.Designer.cs">
       <DependentUpon>ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\ActividadesYLaboresFiltroApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\ActividadesYLaboresFiltroApp.Designer.cs">
+      <DependentUpon>ActividadesYLaboresFiltroApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.Designer.cs">
+      <DependentUpon>CentrosDeCostosFiltroApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="SIG\Calidad Campo\Calidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2716,6 +2728,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Almacen\ProductosGenerarCodigos.resx">
       <DependentUpon>ProductosGenerarCodigos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeamiento Agricola\Productividad\ActividadesYLaboresFiltroApp.resx">
+      <DependentUpon>ActividadesYLaboresFiltroApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.resx">
+      <DependentUpon>CentrosDeCostosFiltroApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.resx">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs</DependentUpon>

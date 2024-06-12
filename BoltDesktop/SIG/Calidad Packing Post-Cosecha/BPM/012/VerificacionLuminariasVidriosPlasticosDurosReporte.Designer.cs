@@ -116,7 +116,7 @@
             this.progressBar1});
             this.stsBarraEstado.Location = new System.Drawing.Point(0, 667);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1414, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(1370, 22);
             this.stsBarraEstado.TabIndex = 232;
             // 
             // lblUserNames
@@ -158,7 +158,7 @@
             this.gbList.HeaderText = "Listado";
             this.gbList.Location = new System.Drawing.Point(0, 110);
             this.gbList.Name = "gbList";
-            this.gbList.Size = new System.Drawing.Size(1310, 443);
+            this.gbList.Size = new System.Drawing.Size(1266, 443);
             this.gbList.TabIndex = 231;
             this.gbList.Text = "Listado";
             this.gbList.ThemeName = "Windows8";
@@ -191,7 +191,7 @@
             gridViewTextBoxColumn2.FieldName = "semana";
             gridViewTextBoxColumn2.HeaderText = "Semana";
             gridViewTextBoxColumn2.Name = "chsemana";
-            gridViewTextBoxColumn2.Width = 68;
+            gridViewTextBoxColumn2.Width = 66;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewTextBoxColumn3.FieldName = "fechaCabecera";
@@ -199,13 +199,13 @@
             gridViewTextBoxColumn3.HeaderText = "Fecha";
             gridViewTextBoxColumn3.Name = "chfecha";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn3.Width = 111;
+            gridViewTextBoxColumn3.Width = 107;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "turno";
             gridViewTextBoxColumn4.HeaderText = "Turno";
             gridViewTextBoxColumn4.Name = "chturno";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 126;
+            gridViewTextBoxColumn4.Width = 122;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "sede";
             gridViewTextBoxColumn5.HeaderText = "Sede";
@@ -216,12 +216,12 @@
             gridViewTextBoxColumn6.FieldName = "responsable";
             gridViewTextBoxColumn6.HeaderText = "Responsable";
             gridViewTextBoxColumn6.Name = "chresponsable";
-            gridViewTextBoxColumn6.Width = 255;
+            gridViewTextBoxColumn6.Width = 246;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "evaluador";
             gridViewTextBoxColumn7.HeaderText = "Evaluador";
             gridViewTextBoxColumn7.Name = "chevaluador";
-            gridViewTextBoxColumn7.Width = 240;
+            gridViewTextBoxColumn7.Width = 232;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "codigo";
             gridViewTextBoxColumn8.HeaderText = "Cod. Formato";
@@ -250,19 +250,19 @@
             gridViewTextBoxColumn12.FieldName = "observaciones";
             gridViewTextBoxColumn12.HeaderText = "Observaciones";
             gridViewTextBoxColumn12.Name = "chobservaciones";
-            gridViewTextBoxColumn12.Width = 310;
+            gridViewTextBoxColumn12.Width = 299;
             gridViewTextBoxColumn13.EnableExpressionEditor = false;
             gridViewTextBoxColumn13.FieldName = "numeroEmpleados";
             gridViewTextBoxColumn13.HeaderText = "# Personal Evaluado";
             gridViewTextBoxColumn13.Name = "chnumeroEmpleados";
             gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn13.Width = 77;
+            gridViewTextBoxColumn13.Width = 74;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "estado";
             gridViewTextBoxColumn14.HeaderText = "Estado";
             gridViewTextBoxColumn14.Name = "chestado1";
             gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn14.Width = 108;
+            gridViewTextBoxColumn14.Width = 105;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -285,7 +285,7 @@
             this.dgvRegistro.Name = "dgvRegistro";
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvRegistro.Size = new System.Drawing.Size(1306, 423);
+            this.dgvRegistro.Size = new System.Drawing.Size(1262, 423);
             this.dgvRegistro.TabIndex = 3;
             this.dgvRegistro.Text = "GrillaTransportistas";
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
@@ -374,7 +374,7 @@
             this.gbCabecera.Controls.Add(this.btnConsultar);
             this.gbCabecera.Location = new System.Drawing.Point(2, 41);
             this.gbCabecera.Name = "gbCabecera";
-            this.gbCabecera.Size = new System.Drawing.Size(1306, 68);
+            this.gbCabecera.Size = new System.Drawing.Size(1262, 68);
             this.gbCabecera.TabIndex = 230;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Consulta";
@@ -523,7 +523,7 @@
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(1198, 33);
+            this.btnConsultar.Location = new System.Drawing.Point(1154, 33);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(102, 28);
             this.btnConsultar.TabIndex = 0;
@@ -539,7 +539,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1414, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1370, 37);
             this.BarraPrincipal.TabIndex = 229;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -790,7 +790,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1414, 689);
+            this.ClientSize = new System.Drawing.Size(1370, 689);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.gbList);
             this.Controls.Add(this.gbCabecera);

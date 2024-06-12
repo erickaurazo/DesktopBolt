@@ -45,6 +45,12 @@ namespace Asistencia.Datos
     partial void InsertTipoRecursoProgramaSemanal(TipoRecursoProgramaSemanal instance);
     partial void UpdateTipoRecursoProgramaSemanal(TipoRecursoProgramaSemanal instance);
     partial void DeleteTipoRecursoProgramaSemanal(TipoRecursoProgramaSemanal instance);
+    partial void InsertSAS_ConsumidorProductividadEmpleado(SAS_ConsumidorProductividadEmpleado instance);
+    partial void UpdateSAS_ConsumidorProductividadEmpleado(SAS_ConsumidorProductividadEmpleado instance);
+    partial void DeleteSAS_ConsumidorProductividadEmpleado(SAS_ConsumidorProductividadEmpleado instance);
+    partial void InsertSAS_ActividadLaborProductividadEmpleado(SAS_ActividadLaborProductividadEmpleado instance);
+    partial void UpdateSAS_ActividadLaborProductividadEmpleado(SAS_ActividadLaborProductividadEmpleado instance);
+    partial void DeleteSAS_ActividadLaborProductividadEmpleado(SAS_ActividadLaborProductividadEmpleado instance);
     #endregion
 		
 		public PlaneamientoAgricolaDBDataContext() : 
@@ -117,6 +123,22 @@ namespace Asistencia.Datos
 			}
 		}
 		
+		public System.Data.Linq.Table<SAS_ConsumidorProductividadEmpleado> SAS_ConsumidorProductividadEmpleados
+		{
+			get
+			{
+				return this.GetTable<SAS_ConsumidorProductividadEmpleado>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_ActividadLaborProductividadEmpleado> SAS_ActividadLaborProductividadEmpleados
+		{
+			get
+			{
+				return this.GetTable<SAS_ActividadLaborProductividadEmpleado>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ProgramaSemanalListadoByID")]
 		public ISingleResult<SAS_ProgramaSemanalListadoByIDResult> SAS_ProgramaSemanalListadoByID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(16)")] string iD)
 		{
@@ -129,6 +151,20 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
 			return ((ISingleResult<SAS_ProgramaSemanalListadoByPeriodoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoConsumidoresFiltroProductividad")]
+		public ISingleResult<SAS_ListadoConsumidoresFiltroProductividadResult> SAS_ListadoConsumidoresFiltroProductividad()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_ListadoConsumidoresFiltroProductividadResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_ListadoLaboresFiltroProductividad")]
+		public ISingleResult<SAS_ListadoLaboresFiltroProductividadResult> SAS_ListadoLaboresFiltroProductividad()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SAS_ListadoLaboresFiltroProductividadResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -5482,6 +5518,226 @@ namespace Asistencia.Datos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ConsumidorProductividadEmpleado")]
+	public partial class SAS_ConsumidorProductividadEmpleado : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _EmpresaID;
+		
+		private string _ConsumidorID;
+		
+		private System.Nullable<byte> _Estado;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmpresaIDChanging(string value);
+    partial void OnEmpresaIDChanged();
+    partial void OnConsumidorIDChanging(string value);
+    partial void OnConsumidorIDChanged();
+    partial void OnEstadoChanging(System.Nullable<byte> value);
+    partial void OnEstadoChanged();
+    #endregion
+		
+		public SAS_ConsumidorProductividadEmpleado()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumidorID", DbType="Char(12) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ConsumidorID
+		{
+			get
+			{
+				return this._ConsumidorID;
+			}
+			set
+			{
+				if ((this._ConsumidorID != value))
+				{
+					this.OnConsumidorIDChanging(value);
+					this.SendPropertyChanging();
+					this._ConsumidorID = value;
+					this.SendPropertyChanged("ConsumidorID");
+					this.OnConsumidorIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
+		public System.Nullable<byte> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ActividadLaborProductividadEmpleado")]
+	public partial class SAS_ActividadLaborProductividadEmpleado : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _EmpresaID;
+		
+		private string _ActividadLaborID;
+		
+		private System.Nullable<byte> _Estado;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmpresaIDChanging(string value);
+    partial void OnEmpresaIDChanged();
+    partial void OnActividadLaborIDChanging(string value);
+    partial void OnActividadLaborIDChanged();
+    partial void OnEstadoChanging(System.Nullable<byte> value);
+    partial void OnEstadoChanged();
+    #endregion
+		
+		public SAS_ActividadLaborProductividadEmpleado()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadLaborID", DbType="Char(9) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ActividadLaborID
+		{
+			get
+			{
+				return this._ActividadLaborID;
+			}
+			set
+			{
+				if ((this._ActividadLaborID != value))
+				{
+					this.OnActividadLaborIDChanging(value);
+					this.SendPropertyChanging();
+					this._ActividadLaborID = value;
+					this.SendPropertyChanged("ActividadLaborID");
+					this.OnActividadLaborIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
+		public System.Nullable<byte> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class SAS_ProgramaSemanalListadoByIDResult
 	{
 		
@@ -6753,6 +7009,310 @@ namespace Asistencia.Datos
 				if ((this._ProductoUM != value))
 				{
 					this._ProductoUM = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoConsumidoresFiltroProductividadResult
+	{
+		
+		private string _EmpresaID;
+		
+		private string _Empresa;
+		
+		private string _ConsumidorID;
+		
+		private string _Consumidor;
+		
+		private string _EstadoID;
+		
+		private string _EstadoDescripcion;
+		
+		private byte _VisibleEnAplicativo;
+		
+		private string _Jerarquia;
+		
+		public SAS_ListadoConsumidoresFiltroProductividadResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Char(3)")]
+		public string EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empresa", DbType="VarChar(200)")]
+		public string Empresa
+		{
+			get
+			{
+				return this._Empresa;
+			}
+			set
+			{
+				if ((this._Empresa != value))
+				{
+					this._Empresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumidorID", DbType="Char(12)")]
+		public string ConsumidorID
+		{
+			get
+			{
+				return this._ConsumidorID;
+			}
+			set
+			{
+				if ((this._ConsumidorID != value))
+				{
+					this._ConsumidorID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumidor", DbType="VarChar(200)")]
+		public string Consumidor
+		{
+			get
+			{
+				return this._Consumidor;
+			}
+			set
+			{
+				if ((this._Consumidor != value))
+				{
+					this._Consumidor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string EstadoID
+		{
+			get
+			{
+				return this._EstadoID;
+			}
+			set
+			{
+				if ((this._EstadoID != value))
+				{
+					this._EstadoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoDescripcion", DbType="VarChar(7) NOT NULL", CanBeNull=false)]
+		public string EstadoDescripcion
+		{
+			get
+			{
+				return this._EstadoDescripcion;
+			}
+			set
+			{
+				if ((this._EstadoDescripcion != value))
+				{
+					this._EstadoDescripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisibleEnAplicativo", DbType="TinyInt NOT NULL")]
+		public byte VisibleEnAplicativo
+		{
+			get
+			{
+				return this._VisibleEnAplicativo;
+			}
+			set
+			{
+				if ((this._VisibleEnAplicativo != value))
+				{
+					this._VisibleEnAplicativo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Jerarquia", DbType="VarChar(150)")]
+		public string Jerarquia
+		{
+			get
+			{
+				return this._Jerarquia;
+			}
+			set
+			{
+				if ((this._Jerarquia != value))
+				{
+					this._Jerarquia = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_ListadoLaboresFiltroProductividadResult
+	{
+		
+		private string _ActividadLaborCodigo;
+		
+		private string _ActividadID;
+		
+		private string _Actividad;
+		
+		private string _LaborID;
+		
+		private string _Labor;
+		
+		private string _RendimientoUnidadMedida;
+		
+		private byte _VisibleEnAplicativo;
+		
+		private string _EmpresaID;
+		
+		public SAS_ListadoLaboresFiltroProductividadResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadLaborCodigo", DbType="VarChar(9)")]
+		public string ActividadLaborCodigo
+		{
+			get
+			{
+				return this._ActividadLaborCodigo;
+			}
+			set
+			{
+				if ((this._ActividadLaborCodigo != value))
+				{
+					this._ActividadLaborCodigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="VarChar(3)")]
+		public string ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Actividad", DbType="VarChar(200)")]
+		public string Actividad
+		{
+			get
+			{
+				return this._Actividad;
+			}
+			set
+			{
+				if ((this._Actividad != value))
+				{
+					this._Actividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LaborID", DbType="VarChar(6)")]
+		public string LaborID
+		{
+			get
+			{
+				return this._LaborID;
+			}
+			set
+			{
+				if ((this._LaborID != value))
+				{
+					this._LaborID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Labor", DbType="VarChar(200)")]
+		public string Labor
+		{
+			get
+			{
+				return this._Labor;
+			}
+			set
+			{
+				if ((this._Labor != value))
+				{
+					this._Labor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RendimientoUnidadMedida", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string RendimientoUnidadMedida
+		{
+			get
+			{
+				return this._RendimientoUnidadMedida;
+			}
+			set
+			{
+				if ((this._RendimientoUnidadMedida != value))
+				{
+					this._RendimientoUnidadMedida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisibleEnAplicativo", DbType="TinyInt NOT NULL")]
+		public byte VisibleEnAplicativo
+		{
+			get
+			{
+				return this._VisibleEnAplicativo;
+			}
+			set
+			{
+				if ((this._VisibleEnAplicativo != value))
+				{
+					this._VisibleEnAplicativo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="VarChar(3)")]
+		public string EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
 				}
 			}
 		}

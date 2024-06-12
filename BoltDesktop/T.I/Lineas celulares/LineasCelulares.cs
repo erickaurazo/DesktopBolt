@@ -799,7 +799,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                                 SAS_LineasCelularesCoporativasHistoricoPlan oDetail = new SAS_LineasCelularesCoporativasHistoricoPlan();
                                 oDetail.LineasCelularesCoporativasHistoricoPlanID = fila.Cells["chLineasCelularesCoporativasHistoricoPlanID"].Value != null ? Convert.ToInt32(fila.Cells["chLineasCelularesCoporativasHistoricoPlanID"].Value.ToString().Trim()) : 0;
                                 oDetail.LineaCelularID = fila.Cells["chLineaCelularIDDPlan"].Value != null ? Convert.ToInt32(fila.Cells["chLineaCelularIDDPlan"].Value.ToString().Trim()) : (this.txtCodigo.Text != string.Empty ? Convert.ToInt32(txtCodigo.Text.Trim()) : 0);
-                                oDetail.PlanDeTelefoniaID = fila.Cells["chPlanDeTelefoniaIDDPlan"].Value != null ? Convert.ToInt32(fila.Cells["chPlanDeTelefoniaIDDPlan"].Value.ToString().Trim()) : 0);
+                                oDetail.PlanDeTelefoniaID = fila.Cells["chPlanDeTelefoniaIDDPlan"].Value != null ? Convert.ToInt32(fila.Cells["chPlanDeTelefoniaIDDPlan"].Value.ToString().Trim()) : 0;
                                 oDetail.Desde = (fila.Cells["chDesdeDPlan"].Value != null && fila.Cells["chDesdeDPlan"].Value.ToString().Trim() != "" && fila.Cells["chDesdeDPlan"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chDesdeDPlan"].Value.ToString().Trim()) : DateTime.Now;
                                 oDetail.Hasta = (fila.Cells["chHastaDPlan"].Value != null && fila.Cells["chHastaDPlan"].Value.ToString().Trim() != "" && fila.Cells["chHastaDPlan"].Value.ToString().Trim() != string.Empty) ? Convert.ToDateTime(fila.Cells["chHastaDPlan"].Value.ToString().Trim()) : (DateTime?)null;
                                 oDetail.Nota = fila.Cells["chNotaDPlan"].Value != null ? fila.Cells["chNotaDPlan"].Value.ToString().Trim() : string.Empty;
@@ -2878,19 +2878,19 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             if (((DataGridView)sender).RowCount > 0)
             {
                 #region Tipo de plan() 
-                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chPlanDeTelefoniaIDDPlan" || ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chPlanDeTelefoniadPlan")
+                if (((DataGridView)sender).CurrentCell.OwningColumn.Name == "chTipoLogDLog" || ((DataGridView)sender).CurrentCell.OwningColumn.Name == "chTipoLogIDDLog")
                 {
                     if (e.KeyCode == Keys.F3)
                     {
                         frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
                         search.ListaGeneralResultado = Modelo.ObtenerListadoDeLog(conection);
-                        search.Text = "Buscar planes de telefonia";
+                        search.Text = "Buscar tipo de log";
                         search.txtTextoFiltro.Text = "";
                         if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                         {
                             //idRetorno = busquedas.ObjetoRetorno.Codigo; 
-                            this.dgvLog.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPlanDeTelefoniaIDDPlan"].Value = search.ObjetoRetorno.Codigo;
-                            this.dgvLog.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chPlanDeTelefoniadPlan"].Value = search.ObjetoRetorno.Descripcion;
+                            this.dgvLog.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chTipoLogIDDLog"].Value = search.ObjetoRetorno.Codigo;
+                            this.dgvLog.Rows[((DataGridView)sender).CurrentRow.Index].Cells["chTipoLogDLog"].Value = search.ObjetoRetorno.Descripcion;
 
                         }
                     }

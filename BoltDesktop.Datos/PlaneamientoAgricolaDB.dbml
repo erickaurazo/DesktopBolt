@@ -235,6 +235,20 @@
       <Column Name="ES_FERTILIZANTE" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.SAS_ConsumidorProductividadEmpleado" Member="SAS_ConsumidorProductividadEmpleados">
+    <Type Name="SAS_ConsumidorProductividadEmpleado">
+      <Column Name="EmpresaID" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConsumidorID" Type="System.String" DbType="Char(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SAS_ActividadLaborProductividadEmpleado" Member="SAS_ActividadLaborProductividadEmpleados">
+    <Type Name="SAS_ActividadLaborProductividadEmpleado">
+      <Column Name="EmpresaID" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ActividadLaborID" Type="System.String" DbType="Char(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SAS_ProgramaSemanalListadoByID" Method="SAS_ProgramaSemanalListadoByID">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(16)" />
     <ElementType Name="SAS_ProgramaSemanalListadoByIDResult">
@@ -314,6 +328,30 @@
       <Column Name="ProductoID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Producto" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
       <Column Name="ProductoUM" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoConsumidoresFiltroProductividad" Method="SAS_ListadoConsumidoresFiltroProductividad">
+    <ElementType Name="SAS_ListadoConsumidoresFiltroProductividadResult">
+      <Column Name="EmpresaID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ConsumidorID" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="Consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="EstadoID" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoDescripcion" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="VisibleEnAplicativo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Jerarquia" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_ListadoLaboresFiltroProductividad" Method="SAS_ListadoLaboresFiltroProductividad">
+    <ElementType Name="SAS_ListadoLaboresFiltroProductividadResult">
+      <Column Name="ActividadLaborCodigo" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="ActividadID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Actividad" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LaborID" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Labor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RendimientoUnidadMedida" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="VisibleEnAplicativo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

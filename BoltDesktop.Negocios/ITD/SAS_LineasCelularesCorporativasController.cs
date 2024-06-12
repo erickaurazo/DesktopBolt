@@ -282,7 +282,7 @@ namespace Asistencia.Negocios
 
         }
 
-
+        // 01.04.2024
         public int ToRegister(string conection, SAS_LineasCelularesCoporativa item, List<SAS_LineasCelularesCoporativasPersonalAsignado> DetalleEliminado, List<SAS_LineasCelularesCoporativasPersonalAsignado> ListadoRegistrar, List<SAS_LineasCelularesCoporativasHistoricoPlan> ListadoDetallePlanEliminar, List<SAS_LineasCelularesCoporativasHistoricoPlan> ListadoDetallePlanRegistrar, List<SAS_LineasCelularesCoporativasHistoricoLog> ListadoDetalleLogEliminar, List<SAS_LineasCelularesCoporativasHistoricoLog> ListadoDetalleLogRegistrar)
         {
             //SAS_DispositivoTipoSoftware oregistro = new SAS_DispositivoTipoSoftware();
@@ -301,7 +301,7 @@ namespace Asistencia.Negocios
                         {
                             #region Nuevo() 
                             //int ObtenerUltimoItem = Modelo.AREAS.ToList().Count > 0 ? Convert.ToInt32(Modelo.AREAS.ToList().Max(x => x.IDAREA)) + 1 : 0;
-                            #region Cabecera() 
+                            #region Registrar Cabecera() 
                             SAS_LineasCelularesCoporativa oregistro = new SAS_LineasCelularesCoporativa();
                             //oregistro.id = item.id != null ? item.id : 0;
                             oregistro.idOperador = item.idOperador != null ? item.idOperador : (int?)null;
@@ -327,6 +327,8 @@ namespace Asistencia.Negocios
                             Modelo.SubmitChanges();
                             tipoResultadoOperacion = 0; // registrar
                             #endregion
+
+                            #region Registrar listas Detalles()
 
                             #region Listado detalle Personal Asignado()
                             if (ListadoRegistrar != null && ListadoRegistrar.ToList().Count > 0)
@@ -404,11 +406,12 @@ namespace Asistencia.Negocios
                             #endregion
 
                             #endregion
+                            #endregion
                         }
                         else if (resultado.ToList().Count == 1)
                         {
                             #region Actualizar() 
-                            #region Actualizar() 
+                            #region Actualizar Cabecera() 
                             SAS_LineasCelularesCoporativa oregistro = new SAS_LineasCelularesCoporativa();
                             oregistro = resultado.Single();
                             oregistro.idOperador = item.idOperador != null ? item.idOperador : (int?)null;
@@ -433,7 +436,9 @@ namespace Asistencia.Negocios
                             Modelo.SubmitChanges();
                             #endregion
 
-                            #region Eliminar Detalles()
+                            #region Eliminar listas Detalles()
+
+                            #region Asignaciones()
                             if (DetalleEliminado != null && DetalleEliminado.ToList().Count > 0)
                             {
                                 foreach (var itemDetalleRegistro in DetalleEliminado)
@@ -450,7 +455,152 @@ namespace Asistencia.Negocios
                             }
                             #endregion
 
-                            #region Registrar Y/o Actualizar()
+
+                            #region Planes()
+                            if (ListadoDetallePlanEliminar != null && ListadoDetallePlanEliminar.ToList().Count > 0)
+                            {
+                                foreach (var itemDetalleRegistro in ListadoDetallePlanEliminar)
+                                {
+                                    var result001 = Modelo.SAS_LineasCelularesCoporativasHistoricoPlans.Where(x => x.LineasCelularesCoporativasHistoricoPlanID == itemDetalleRegistro.LineasCelularesCoporativasHistoricoPlanID).ToList();
+                                    if (result001 != null && result001.ToList().Count > 0)
+                                    {
+                                        SAS_LineasCelularesCoporativasHistoricoPlan detalle = new SAS_LineasCelularesCoporativasHistoricoPlan();
+                                        detalle = result001.ElementAt(0);
+                                        Modelo.SAS_LineasCelularesCoporativasHistoricoPlans.DeleteOnSubmit(detalle);
+                                        Modelo.SubmitChanges();
+                                    }
+                                }
+                            }
+                            #endregion
+
+                           
+                            #region Log()
+                            if (ListadoDetalleLogEliminar != null && ListadoDetalleLogEliminar.ToList().Count > 0)
+                            {
+                                foreach (var itemDetalleRegistro in ListadoDetalleLogEliminar)
+                                {
+                                    var result001 = Modelo.SAS_LineasCelularesCoporativasHistoricoLogs.Where(x => x.LineasCelularesCoporativasHistoricoLogID == itemDetalleRegistro.LineasCelularesCoporativasHistoricoLogID).ToList();
+                                    if (result001 != null && result001.ToList().Count > 0)
+                                    {
+                                        SAS_LineasCelularesCoporativasHistoricoLog detalle = new SAS_LineasCelularesCoporativasHistoricoLog();
+                                        detalle = result001.ElementAt(0);
+                                        Modelo.SAS_LineasCelularesCoporativasHistoricoLogs.DeleteOnSubmit(detalle);
+                                        Modelo.SubmitChanges();
+                                    }
+                                }
+                            }
+                            #endregion
+
+                            #endregion
+
+                            #region Registrar Y/o Actualizar listas detalles() 
+
+                            #region Asignacion() 
+                            if (ListadoRegistrar != null && ListadoRegistrar.ToList().Count > 0)
+                            {
+                                foreach (var itemDetalleRegistro in ListadoRegistrar)
+                                {
+
+                                    var result001 = Modelo.SAS_LineasCelularesCoporativasPersonalAsignados.Where(x => x.LineaCelularPersonalID == itemDetalleRegistro.LineaCelularPersonalID).ToList();
+                                    if (result001 != null && result001.ToList().Count == 1)
+                                    {
+                                        SAS_LineasCelularesCoporativasPersonalAsignado detalle = new SAS_LineasCelularesCoporativasPersonalAsignado();
+                                        detalle = result001.ElementAt(0);
+                                        //detalle.LineaCelularPersonalID = itemDetalleRegistro.LineaCelularPersonalID != null ? itemDetalleRegistro.LineaCelularPersonalID : 0;
+                                        // detalle.LineaCelularID = itemDetalleRegistro.LineaCelularID != null ? itemDetalleRegistro.LineaCelularID : 0;
+                                        detalle.PersonalID = itemDetalleRegistro.PersonalID != null ? itemDetalleRegistro.PersonalID : string.Empty;
+                                        detalle.Desde = itemDetalleRegistro.Desde != null ? itemDetalleRegistro.Desde : DateTime.Now;
+                                        detalle.Hasta = itemDetalleRegistro.Hasta != null ? itemDetalleRegistro.Hasta : DateTime.Now;
+                                        detalle.ReferenciaID = itemDetalleRegistro.ReferenciaID != null ? itemDetalleRegistro.ReferenciaID : (int?)null;
+                                        detalle.ReferenciaSolicitudID = itemDetalleRegistro.ReferenciaSolicitudID != null ? itemDetalleRegistro.ReferenciaSolicitudID : (int?)null;
+                                        detalle.Glosa = itemDetalleRegistro.Glosa != null ? itemDetalleRegistro.Glosa : string.Empty;
+                                        detalle.Estado = itemDetalleRegistro.Estado != null ? itemDetalleRegistro.Estado : 1;
+                                        Modelo.SubmitChanges();
+                                    }
+                                    else if (result001 != null && result001.ToList().Count == 0)
+                                    {
+                                        SAS_LineasCelularesCoporativasPersonalAsignado detalle = new SAS_LineasCelularesCoporativasPersonalAsignado();
+                                        //detalle.LineaCelularPersonalID = itemDetalleRegistro.LineaCelularPersonalID != null ? itemDetalleRegistro.LineaCelularPersonalID : 0;
+                                        detalle.LineaCelularID = oregistro.id != null ? oregistro.id : 0;
+                                        detalle.PersonalID = itemDetalleRegistro.PersonalID != null ? itemDetalleRegistro.PersonalID : string.Empty;
+                                        detalle.Desde = itemDetalleRegistro.Desde != null ? itemDetalleRegistro.Desde : DateTime.Now;
+                                        detalle.Hasta = itemDetalleRegistro.Hasta != null ? itemDetalleRegistro.Hasta : DateTime.Now;
+                                        detalle.ReferenciaID = itemDetalleRegistro.ReferenciaID != null ? itemDetalleRegistro.ReferenciaID : (int?)null;
+                                        detalle.ReferenciaSolicitudID = itemDetalleRegistro.ReferenciaSolicitudID != null ? itemDetalleRegistro.ReferenciaSolicitudID : (int?)null;
+                                        detalle.Glosa = itemDetalleRegistro.Glosa != null ? itemDetalleRegistro.Glosa : string.Empty;
+                                        detalle.Estado = itemDetalleRegistro.Estado != null ? itemDetalleRegistro.Estado : 1;
+                                        Modelo.SAS_LineasCelularesCoporativasPersonalAsignados.InsertOnSubmit(detalle);
+                                        Modelo.SubmitChanges();
+                                    }
+
+
+                                }
+                            }
+                            #endregion
+
+                            // List<SAS_LineasCelularesCoporativasHistoricoPlan> ListadoDetallePlanRegistrar
+                            #region Planes() 
+                            if (ListadoDetallePlanRegistrar != null && ListadoDetallePlanRegistrar.ToList().Count > 0)
+                            {
+                                foreach (var itemDetalleRegistro in ListadoDetallePlanRegistrar)
+                                {
+
+                                    var result001 = Modelo.SAS_LineasCelularesCoporativasHistoricoPlans.Where(x => x.LineasCelularesCoporativasHistoricoPlanID == itemDetalleRegistro.LineasCelularesCoporativasHistoricoPlanID).ToList();
+                                    if (result001 != null && result001.ToList().Count == 1)
+                                    {
+                                        #region Actualizar()
+                                        SAS_LineasCelularesCoporativasHistoricoPlan detalle = new SAS_LineasCelularesCoporativasHistoricoPlan();
+                                        detalle = result001.ElementAt(0);
+                                        //detalle.LineasCelularesCoporativasHistoricoPlanID = itemDetalleRegistro.LineasCelularesCoporativasHistoricoPlanID != null ? itemDetalleRegistro.LineasCelularesCoporativasHistoricoPlanID : 0;
+                                        // detalle.LineaCelularID = itemDetalleRegistro.LineaCelularID != null ? itemDetalleRegistro.LineaCelularID : 0;
+                                        detalle.PlanDeTelefoniaID = itemDetalleRegistro.PlanDeTelefoniaID != null ? itemDetalleRegistro.PlanDeTelefoniaID : 0;
+                                        detalle.Desde = itemDetalleRegistro.Desde != null ? itemDetalleRegistro.Desde : DateTime.Now;
+                                        detalle.Hasta = itemDetalleRegistro.Hasta != null ? itemDetalleRegistro.Hasta : DateTime.Now;
+                                        detalle.Nota = itemDetalleRegistro.Nota != null ? itemDetalleRegistro.Nota : string.Empty;
+                                        detalle.Estado = itemDetalleRegistro.Estado != null ? itemDetalleRegistro.Estado : 1;
+                                        detalle.ReferenciaSolicitudID = itemDetalleRegistro.ReferenciaSolicitudID != null ? itemDetalleRegistro.ReferenciaSolicitudID : (int?)null;
+                                        detalle.ReferenciaID = itemDetalleRegistro.ReferenciaID != null ? itemDetalleRegistro.ReferenciaID : (int?)null;
+                                        detalle.TablaReferencia = itemDetalleRegistro.TablaReferencia != null ? itemDetalleRegistro.TablaReferencia : string.Empty;
+                                        detalle.TablaSolicitud = itemDetalleRegistro.TablaSolicitud != null ? itemDetalleRegistro.TablaSolicitud : string.Empty;
+                                        detalle.UserID = itemDetalleRegistro.UserID != null ? itemDetalleRegistro.UserID : string.Empty;
+                                        detalle.HostName = itemDetalleRegistro.HostName != null ? itemDetalleRegistro.HostName : string.Empty;
+                                        detalle.FechaRegistro = itemDetalleRegistro.FechaRegistro != null ? itemDetalleRegistro.FechaRegistro : DateTime.Now;
+
+
+                                        Modelo.SubmitChanges();
+                                        #endregion
+                                    }
+                                    else if (result001 != null && result001.ToList().Count == 0)
+                                    {
+                                        #region  Nuevo Registro()
+                                        SAS_LineasCelularesCoporativasHistoricoPlan detalle = new SAS_LineasCelularesCoporativasHistoricoPlan();
+                                        //detalle.LineasCelularesCoporativasHistoricoPlanID = itemDetalleRegistro.LineasCelularesCoporativasHistoricoPlanID != null ? itemDetalleRegistro.LineasCelularesCoporativasHistoricoPlanID : 0;
+                                        detalle.LineaCelularID = oregistro.id != null ? oregistro.id : 0;
+                                        detalle.PlanDeTelefoniaID = itemDetalleRegistro.PlanDeTelefoniaID != null ? itemDetalleRegistro.PlanDeTelefoniaID : 0;
+                                        detalle.Desde = itemDetalleRegistro.Desde != null ? itemDetalleRegistro.Desde : DateTime.Now;
+                                        detalle.Hasta = itemDetalleRegistro.Hasta != null ? itemDetalleRegistro.Hasta : DateTime.Now;
+                                        detalle.Nota = itemDetalleRegistro.Nota != null ? itemDetalleRegistro.Nota : string.Empty;
+                                        detalle.Estado = itemDetalleRegistro.Estado != null ? itemDetalleRegistro.Estado : 1;
+                                        detalle.ReferenciaSolicitudID = itemDetalleRegistro.ReferenciaSolicitudID != null ? itemDetalleRegistro.ReferenciaSolicitudID : (int?)null;
+                                        detalle.ReferenciaID = itemDetalleRegistro.ReferenciaID != null ? itemDetalleRegistro.ReferenciaID : (int?)null;
+                                        detalle.TablaReferencia = itemDetalleRegistro.TablaReferencia != null ? itemDetalleRegistro.TablaReferencia : string.Empty;
+                                        detalle.TablaSolicitud = itemDetalleRegistro.TablaSolicitud != null ? itemDetalleRegistro.TablaSolicitud : string.Empty;
+                                        detalle.UserID = itemDetalleRegistro.UserID != null ? itemDetalleRegistro.UserID : string.Empty;
+                                        detalle.HostName = itemDetalleRegistro.HostName != null ? itemDetalleRegistro.HostName : string.Empty;
+                                        detalle.FechaRegistro = itemDetalleRegistro.FechaRegistro != null ? itemDetalleRegistro.FechaRegistro : DateTime.Now;
+                                        Modelo.SAS_LineasCelularesCoporativasHistoricoPlans.InsertOnSubmit(detalle);
+                                        Modelo.SubmitChanges();
+                                        #endregion
+
+                                    }
+
+
+                                }
+                            }
+                            #endregion
+
+                            // List<SAS_LineasCelularesCoporativasHistoricoLog> ListadoDetalleLogRegistrar
+                            #region Log() 
                             if (ListadoRegistrar != null && ListadoRegistrar.ToList().Count > 0)
                             {
                                 foreach (var itemDetalleRegistro in ListadoRegistrar)
@@ -493,6 +643,7 @@ namespace Asistencia.Negocios
                             }
                             #endregion
 
+                            #endregion
                             tipoResultadoOperacion = 1; // modificar
                             #endregion
                         }

@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacen\SolicitudesDeRequerimientoInternoControllers.cs" />
+    <Compile Include="PlaneamientoAgricola\ConsumidorFiltros.cs" />
+    <Compile Include="PlaneamientoAgricola\LaboresFiltro.cs" />
     <Compile Include="SIG\Calidad y Post Cosecha\ParametrosDeTemperaturaCampanaController.cs" />
     <Compile Include="SIG\Calidad y Post Cosecha\SAS_Calidad_Form_CheckListTrazabilidadFCLDespachoController.cs" />
     <Compile Include="SIG\Calidad y Post Cosecha\TermoRegistroPorClienteCampanaController.cs" />

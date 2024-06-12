@@ -127,6 +127,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RRHHModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RRHHModel.dbml</DependentUpon>
+    </Compile>
     <Compile Include="TablaComparativaHorasVSNISIRA.cs" />
     <Compile Include="TipoMovilidad.cs" />
     <Compile Include="TractorExcluido.cs" />
@@ -200,6 +205,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="RRHHModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RRHHModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -265,6 +275,11 @@
   <ItemGroup>
     <None Include="BoltSST.dbml.layout">
       <DependentUpon>BoltSST.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RRHHModel.dbml.layout">
+      <DependentUpon>RRHHModel.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

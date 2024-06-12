@@ -32,5 +32,17 @@
         <elementListCompartment Id="ae490f09-d3fa-4fa2-99e9-b097573dd5f2" absoluteBounds="4.0150000000000006, 5.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="cc069b6f-75eb-4a37-9739-3b7221f00688" isExpanded="false" absoluteBounds="1, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/SAS_ConsumidorProductividadEmpleado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c09ec9f-b680-423b-982d-50663d147daf" absoluteBounds="1.0150000000000001, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19d1adcb-815e-445d-8378-5a62a82de6ec" isExpanded="false" absoluteBounds="1, 7, 2, 0.45">
+      <DataClassMoniker Name="/PlaneamientoAgricolaDBDataContext/SAS_ActividadLaborProductividadEmpleado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc432728-a135-464f-ba2b-bfb70871841b" absoluteBounds="1.0150000000000001, 7.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
