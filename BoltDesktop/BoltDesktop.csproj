@@ -418,6 +418,12 @@
     <Compile Include="Almacen\ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.Designer.cs">
       <DependentUpon>ReporteSeguimientoDeSolicitudesDeRequerimientoProgramaSemanalSalidaInterna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Almacen\ReporteStockEPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\ReporteStockEPP.Designer.cs">
+      <DependentUpon>ReporteStockEPP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Planeamiento Agricola\Productividad\ActividadesYLaboresFiltroApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2740,6 +2746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Almacen\ProductosGenerarCodigos.resx">
       <DependentUpon>ProductosGenerarCodigos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\ReporteStockEPP.resx">
+      <DependentUpon>ReporteStockEPP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Planeamiento Agricola\Productividad\ActividadesYLaboresFiltroApp.resx">
       <DependentUpon>ActividadesYLaboresFiltroApp.cs</DependentUpon>

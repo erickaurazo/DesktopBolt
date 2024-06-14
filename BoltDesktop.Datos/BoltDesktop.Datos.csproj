@@ -50,6 +50,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AgroSaturno.dbml</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlmacenModel.dbml</DependentUpon>
+    </Compile>
     <Compile Include="AsistenciaBusByDia.cs" />
     <Compile Include="BDAsistencia.designer.cs">
       <AutoGen>True</AutoGen>
@@ -140,6 +145,11 @@
     <None Include="AgroSaturno.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>AgroSaturno.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AlmacenModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>AlmacenModel.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="app.config" />
@@ -280,6 +290,11 @@
   <ItemGroup>
     <None Include="RRHHModel.dbml.layout">
       <DependentUpon>RRHHModel.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AlmacenModel.dbml.layout">
+      <DependentUpon>AlmacenModel.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

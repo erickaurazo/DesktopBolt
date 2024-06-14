@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacen\SolicitudesDeRequerimientoInternoControllers.cs" />
+    <Compile Include="Almacen\StockEPPController.cs" />
     <Compile Include="PlaneamientoAgricola\ConsumidorFiltros.cs" />
     <Compile Include="PlaneamientoAgricola\LaboresFiltro.cs" />
     <Compile Include="SIG\Calidad y Post Cosecha\ParametrosDeTemperaturaCampanaController.cs" />

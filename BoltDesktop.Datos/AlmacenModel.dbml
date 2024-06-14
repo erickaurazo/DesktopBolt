@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SATURNO" Class="AlmacenModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.140.7;Initial Catalog=SATURNO;Persist Security Info=True;User ID=eaurazo" SettingsObjectName="Asistencia.Datos.Properties.Settings" SettingsPropertyName="SATURNOConnectionString8" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.SAS_ListadoEPP" Method="SAS_ListadoEPP">
+    <ElementType Name="SAS_ListadoEPPResult">
+      <Column Name="EmpresaID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SucursalID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Sucursal" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AlmacenID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductoId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="producto" Type="System.String" DbType="VarChar(258)" CanBeNull="true" />
+      <Column Name="UM" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="cantidadFactor" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_EnvioNotificacionesStockEPP" Method="SAS_EnvioNotificacionesStockEPP">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
