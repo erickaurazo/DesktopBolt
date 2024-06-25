@@ -120,11 +120,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnSistemas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAADBSURBVDhPtc49DkFBFIbhoVCRIH4aGgm1iE5rAyQ2orAF
-        0SlsQWIVdCqlRKJDSWEHvN/NjFwykXtv+JInOXNmzsyYfyaHhqU6djZ4WGs1oiSLCTLYwl2gWj3t6Yw3
-        LZyhgTE+L1BP9QlNvKWAC9zAHcfQWrV6bq2HNPPKDG4zqimCpHGD79A3V6RgyraRRAmmHmrEVYOpYpdQ
-        BaaPUUKaNSv4vhfFEkF6WOAA38GwPebowpsiOtD3hhjYuo08fhljnv50gCJeQqr0AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAMFJREFUOE+1zj0OQUEUhuGhUJEgfhoaCbWITmsDJDaisAXRKWxBYhV0KqVEokNJ
+        YQe8382MXDKRe2/4kic5c2bOzJh/JoeGpTp2NnhYazWiJIsJMtjCXaBaPe3pjDctnKGBMT4vUE/1CU28
+        pYAL3MAdx9BatXpurYc088oMbjOqKYKkcYPv0DdXpGDKtpFECaYeasRVg6lil1AFpo9RQpo1K/i+F8US
+        QXpY4ADfwbA95ujCmyI60PeGGNi6jTx+GWOe/nSAIl5CqvQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -312,18 +312,17 @@
   </data>
   <data name="aprobaciónDeJefaturaToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAABlSURBVDhPYxieYCYQVwJxKxB3AXETEFcAcRYQNwIxIxDj
-        BQ1QGhlwALEIEIMMI8sAGADJ0d6AZiCWBWIlIGYGCSABogzYCcSRQBwLxPVA3ALEnUAM0rwBiCnyAlFg
-        GBgwpAADAwBvnA6bfzFgtwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAGVJREFUOE9jGJ5gJhBXAnErEHcBcRMQVwBxFhA3AjEjEOMFDVAaGXAAsQgQgwwj
+        ywAYAMnR3oBmIJYFYiUgZgYJIAGiDNgJxJFAHAvE9UDcAsSdQAzSvAGIKfICUWAYGDCkAAMDAG+cDpt/
+        MWC3AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="arobaciónDeGerenciaToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAABPSURBVDhPYxie4BgQvwfi70B8E4iXAXEFEGcBcSMQMwIx
-        XvAPiP/jwSPBgJ1AHAnEsUDcC8QngPgDEP8B4udATNCABihNNhgGBgwpwMAAAKYALQgNTLB8AAAAAElF
-        TkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAE9JREFUOE9jGJ7gGBC/B+LvQHwTiJcBcQUQZwFxIxAzAjFe8A+I/+PBI8GAnUAc
+        CcSxQNwLxCeA+AMQ/wHi50BM0IAGKE02GAYGDCnAwAAApgAtCA1MsHwAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="bgwHilo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

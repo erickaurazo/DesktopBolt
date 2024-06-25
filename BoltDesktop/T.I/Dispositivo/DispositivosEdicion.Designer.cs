@@ -2831,7 +2831,7 @@
             this.tabContadores.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabContadores.Location = new System.Drawing.Point(5, 5);
             this.tabContadores.Name = "tabContadores";
-            this.tabContadores.Size = new System.Drawing.Size(1675, 381);
+            this.tabContadores.Size = new System.Drawing.Size(1333, 377);
             this.tabContadores.Text = "Contadores";
             // 
             // btnCambiarEstadoDetalleContadores
@@ -2839,7 +2839,7 @@
             this.btnCambiarEstadoDetalleContadores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCambiarEstadoDetalleContadores.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarEstadoDetalleContadores.Image")));
             this.btnCambiarEstadoDetalleContadores.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCambiarEstadoDetalleContadores.Location = new System.Drawing.Point(1584, 3);
+            this.btnCambiarEstadoDetalleContadores.Location = new System.Drawing.Point(1242, 3);
             this.btnCambiarEstadoDetalleContadores.Name = "btnCambiarEstadoDetalleContadores";
             this.btnCambiarEstadoDetalleContadores.Size = new System.Drawing.Size(25, 26);
             this.btnCambiarEstadoDetalleContadores.TabIndex = 184;
@@ -2920,7 +2920,7 @@
             this.dgvContadores.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvContadores.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvContadores.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvContadores.Size = new System.Drawing.Size(1668, 343);
+            this.dgvContadores.Size = new System.Drawing.Size(1326, 339);
             this.dgvContadores.TabIndex = 183;
             this.dgvContadores.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvContadores_KeyUp);
             // 
@@ -3102,7 +3102,7 @@
             // 
             this.btnQuitarDetalleContadores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuitarDetalleContadores.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarDetalleContadores.Image")));
-            this.btnQuitarDetalleContadores.Location = new System.Drawing.Point(1646, 3);
+            this.btnQuitarDetalleContadores.Location = new System.Drawing.Point(1304, 3);
             this.btnQuitarDetalleContadores.Name = "btnQuitarDetalleContadores";
             this.btnQuitarDetalleContadores.Size = new System.Drawing.Size(25, 26);
             this.btnQuitarDetalleContadores.TabIndex = 182;
@@ -3113,7 +3113,7 @@
             // 
             this.btnAgregarDetalleContadores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarDetalleContadores.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDetalleContadores.Image")));
-            this.btnAgregarDetalleContadores.Location = new System.Drawing.Point(1615, 3);
+            this.btnAgregarDetalleContadores.Location = new System.Drawing.Point(1273, 3);
             this.btnAgregarDetalleContadores.Name = "btnAgregarDetalleContadores";
             this.btnAgregarDetalleContadores.Size = new System.Drawing.Size(25, 26);
             this.btnAgregarDetalleContadores.TabIndex = 181;
@@ -3372,7 +3372,7 @@
             this.tabCuentaUsuario.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabCuentaUsuario.Location = new System.Drawing.Point(5, 5);
             this.tabCuentaUsuario.Name = "tabCuentaUsuario";
-            this.tabCuentaUsuario.Size = new System.Drawing.Size(1675, 381);
+            this.tabCuentaUsuario.Size = new System.Drawing.Size(1333, 377);
             this.tabCuentaUsuario.Text = "Cuentas de usuario";
             // 
             // btnCuentaUsuarioChangeState
@@ -3380,7 +3380,7 @@
             this.btnCuentaUsuarioChangeState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCuentaUsuarioChangeState.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaUsuarioChangeState.Image")));
             this.btnCuentaUsuarioChangeState.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCuentaUsuarioChangeState.Location = new System.Drawing.Point(1584, 3);
+            this.btnCuentaUsuarioChangeState.Location = new System.Drawing.Point(1242, 3);
             this.btnCuentaUsuarioChangeState.Name = "btnCuentaUsuarioChangeState";
             this.btnCuentaUsuarioChangeState.Size = new System.Drawing.Size(25, 26);
             this.btnCuentaUsuarioChangeState.TabIndex = 180;
@@ -3459,7 +3459,7 @@
             this.dgvCuentaDeUsuario.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvCuentaDeUsuario.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvCuentaDeUsuario.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvCuentaDeUsuario.Size = new System.Drawing.Size(1668, 343);
+            this.dgvCuentaDeUsuario.Size = new System.Drawing.Size(1326, 339);
             this.dgvCuentaDeUsuario.TabIndex = 179;
             this.dgvCuentaDeUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvCuentaDeUsuario_KeyUp);
             // 
@@ -3626,7 +3626,7 @@
             // 
             this.btnCuentaUsuarioRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCuentaUsuarioRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaUsuarioRemove.Image")));
-            this.btnCuentaUsuarioRemove.Location = new System.Drawing.Point(1646, 3);
+            this.btnCuentaUsuarioRemove.Location = new System.Drawing.Point(1304, 3);
             this.btnCuentaUsuarioRemove.Name = "btnCuentaUsuarioRemove";
             this.btnCuentaUsuarioRemove.Size = new System.Drawing.Size(25, 26);
             this.btnCuentaUsuarioRemove.TabIndex = 178;
@@ -3637,7 +3637,7 @@
             // 
             this.btnCuentaUsuarioAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCuentaUsuarioAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaUsuarioAdd.Image")));
-            this.btnCuentaUsuarioAdd.Location = new System.Drawing.Point(1615, 3);
+            this.btnCuentaUsuarioAdd.Location = new System.Drawing.Point(1273, 3);
             this.btnCuentaUsuarioAdd.Name = "btnCuentaUsuarioAdd";
             this.btnCuentaUsuarioAdd.Size = new System.Drawing.Size(25, 26);
             this.btnCuentaUsuarioAdd.TabIndex = 177;
@@ -3653,7 +3653,7 @@
             this.tabDocumentacion.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabDocumentacion.Location = new System.Drawing.Point(5, 5);
             this.tabDocumentacion.Name = "tabDocumentacion";
-            this.tabDocumentacion.Size = new System.Drawing.Size(1675, 381);
+            this.tabDocumentacion.Size = new System.Drawing.Size(1333, 377);
             this.tabDocumentacion.Text = "Documentación";
             // 
             // btnDocumentosStateChange
@@ -3661,7 +3661,7 @@
             this.btnDocumentosStateChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDocumentosStateChange.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentosStateChange.Image")));
             this.btnDocumentosStateChange.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDocumentosStateChange.Location = new System.Drawing.Point(1584, 3);
+            this.btnDocumentosStateChange.Location = new System.Drawing.Point(1242, 3);
             this.btnDocumentosStateChange.Name = "btnDocumentosStateChange";
             this.btnDocumentosStateChange.Size = new System.Drawing.Size(25, 26);
             this.btnDocumentosStateChange.TabIndex = 180;
@@ -3746,7 +3746,7 @@
             this.dgvDocumento.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvDocumento.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvDocumento.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDocumento.Size = new System.Drawing.Size(1668, 343);
+            this.dgvDocumento.Size = new System.Drawing.Size(1326, 339);
             this.dgvDocumento.TabIndex = 179;
             this.dgvDocumento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDocumento_KeyUp);
             // 
@@ -3973,7 +3973,7 @@
             // 
             this.btnDocumentosRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDocumentosRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentosRemove.Image")));
-            this.btnDocumentosRemove.Location = new System.Drawing.Point(1646, 3);
+            this.btnDocumentosRemove.Location = new System.Drawing.Point(1304, 3);
             this.btnDocumentosRemove.Name = "btnDocumentosRemove";
             this.btnDocumentosRemove.Size = new System.Drawing.Size(25, 26);
             this.btnDocumentosRemove.TabIndex = 178;
@@ -3984,7 +3984,7 @@
             // 
             this.btnDocumentosAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDocumentosAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentosAdd.Image")));
-            this.btnDocumentosAdd.Location = new System.Drawing.Point(1615, 3);
+            this.btnDocumentosAdd.Location = new System.Drawing.Point(1273, 3);
             this.btnDocumentosAdd.Name = "btnDocumentosAdd";
             this.btnDocumentosAdd.Size = new System.Drawing.Size(25, 26);
             this.btnDocumentosAdd.TabIndex = 177;
@@ -4610,7 +4610,7 @@
             this.tabMantenimientos.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabMantenimientos.Location = new System.Drawing.Point(5, 5);
             this.tabMantenimientos.Name = "tabMantenimientos";
-            this.tabMantenimientos.Size = new System.Drawing.Size(1675, 381);
+            this.tabMantenimientos.Size = new System.Drawing.Size(1333, 377);
             this.tabMantenimientos.Text = "Mantenimientos";
             // 
             // btnCambiarEstadoDetalleMantenimiento
@@ -4618,7 +4618,7 @@
             this.btnCambiarEstadoDetalleMantenimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCambiarEstadoDetalleMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarEstadoDetalleMantenimiento.Image")));
             this.btnCambiarEstadoDetalleMantenimiento.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCambiarEstadoDetalleMantenimiento.Location = new System.Drawing.Point(1584, 3);
+            this.btnCambiarEstadoDetalleMantenimiento.Location = new System.Drawing.Point(1242, 3);
             this.btnCambiarEstadoDetalleMantenimiento.Name = "btnCambiarEstadoDetalleMantenimiento";
             this.btnCambiarEstadoDetalleMantenimiento.Size = new System.Drawing.Size(25, 26);
             this.btnCambiarEstadoDetalleMantenimiento.TabIndex = 184;
@@ -4698,7 +4698,7 @@
             this.dgvMantenimiento.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvMantenimiento.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvMantenimiento.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvMantenimiento.Size = new System.Drawing.Size(1668, 343);
+            this.dgvMantenimiento.Size = new System.Drawing.Size(1326, 339);
             this.dgvMantenimiento.TabIndex = 183;
             this.dgvMantenimiento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvMantenimiento_KeyUp);
             // 
@@ -4898,7 +4898,7 @@
             // 
             this.btnQuitarDetalleMantenimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuitarDetalleMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarDetalleMantenimiento.Image")));
-            this.btnQuitarDetalleMantenimiento.Location = new System.Drawing.Point(1646, 3);
+            this.btnQuitarDetalleMantenimiento.Location = new System.Drawing.Point(1304, 3);
             this.btnQuitarDetalleMantenimiento.Name = "btnQuitarDetalleMantenimiento";
             this.btnQuitarDetalleMantenimiento.Size = new System.Drawing.Size(25, 26);
             this.btnQuitarDetalleMantenimiento.TabIndex = 182;
@@ -4909,7 +4909,7 @@
             // 
             this.btnAgregarDetalleMantenimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarDetalleMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDetalleMantenimiento.Image")));
-            this.btnAgregarDetalleMantenimiento.Location = new System.Drawing.Point(1615, 3);
+            this.btnAgregarDetalleMantenimiento.Location = new System.Drawing.Point(1273, 3);
             this.btnAgregarDetalleMantenimiento.Name = "btnAgregarDetalleMantenimiento";
             this.btnAgregarDetalleMantenimiento.Size = new System.Drawing.Size(25, 26);
             this.btnAgregarDetalleMantenimiento.TabIndex = 181;
@@ -4925,7 +4925,7 @@
             this.tabMovAlmacen.ItemSize = new System.Drawing.SizeF(111F, 26F);
             this.tabMovAlmacen.Location = new System.Drawing.Point(5, 5);
             this.tabMovAlmacen.Name = "tabMovAlmacen";
-            this.tabMovAlmacen.Size = new System.Drawing.Size(1675, 381);
+            this.tabMovAlmacen.Size = new System.Drawing.Size(1333, 377);
             this.tabMovAlmacen.Text = "Mov. Almacén";
             // 
             // btnCambiarEstadoDetalleMovimientoAlmacen
@@ -4933,7 +4933,7 @@
             this.btnCambiarEstadoDetalleMovimientoAlmacen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCambiarEstadoDetalleMovimientoAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarEstadoDetalleMovimientoAlmacen.Image")));
             this.btnCambiarEstadoDetalleMovimientoAlmacen.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCambiarEstadoDetalleMovimientoAlmacen.Location = new System.Drawing.Point(1584, 3);
+            this.btnCambiarEstadoDetalleMovimientoAlmacen.Location = new System.Drawing.Point(1242, 3);
             this.btnCambiarEstadoDetalleMovimientoAlmacen.Name = "btnCambiarEstadoDetalleMovimientoAlmacen";
             this.btnCambiarEstadoDetalleMovimientoAlmacen.Size = new System.Drawing.Size(25, 26);
             this.btnCambiarEstadoDetalleMovimientoAlmacen.TabIndex = 184;
@@ -5014,7 +5014,7 @@
             this.dgvMovimientoAlmacen.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvMovimientoAlmacen.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvMovimientoAlmacen.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvMovimientoAlmacen.Size = new System.Drawing.Size(1668, 343);
+            this.dgvMovimientoAlmacen.Size = new System.Drawing.Size(1326, 339);
             this.dgvMovimientoAlmacen.TabIndex = 183;
             // 
             // codigoDispositivoMovAlmacen
@@ -5181,7 +5181,7 @@
             // 
             this.btnQuitarDetalleMovAlmacen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuitarDetalleMovAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarDetalleMovAlmacen.Image")));
-            this.btnQuitarDetalleMovAlmacen.Location = new System.Drawing.Point(1646, 3);
+            this.btnQuitarDetalleMovAlmacen.Location = new System.Drawing.Point(1304, 3);
             this.btnQuitarDetalleMovAlmacen.Name = "btnQuitarDetalleMovAlmacen";
             this.btnQuitarDetalleMovAlmacen.Size = new System.Drawing.Size(25, 26);
             this.btnQuitarDetalleMovAlmacen.TabIndex = 182;
@@ -5192,7 +5192,7 @@
             // 
             this.btnAgregarDetalleMovAlmacen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarDetalleMovAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDetalleMovAlmacen.Image")));
-            this.btnAgregarDetalleMovAlmacen.Location = new System.Drawing.Point(1615, 3);
+            this.btnAgregarDetalleMovAlmacen.Location = new System.Drawing.Point(1273, 3);
             this.btnAgregarDetalleMovAlmacen.Name = "btnAgregarDetalleMovAlmacen";
             this.btnAgregarDetalleMovAlmacen.Size = new System.Drawing.Size(25, 26);
             this.btnAgregarDetalleMovAlmacen.TabIndex = 181;

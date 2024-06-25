@@ -1,1 +1,24 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RRHHModel">
+  <DataContextMoniker Name="/RRHHModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d14a7f26-2f8d-4c10-9949-c1eb199a5b9b" isExpanded="false" absoluteBounds="0.625, 2, 2, 0.45">
+      <DataClassMoniker Name="/RRHHModelDataContext/TG10TAR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95fb5749-896a-462e-8590-5b65e4bcfe4a" absoluteBounds="0.64, 2.46, 1.9700000000000002, 11.595174153645832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fdb9d1e-ab17-45df-b090-17a1a117d8d8" isExpanded="false" absoluteBounds="0.625, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/RRHHModelDataContext/TG20TAR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7af7a1c5-a239-4a1e-891f-e2f2f602fad7" absoluteBounds="0.64, 3.335, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d91996a-ca50-40af-a13b-0a7c2c8d3cfb" isExpanded="false" absoluteBounds="0.625, 1, 2, 0.45">
+      <DataClassMoniker Name="/RRHHModelDataContext/TGTAREO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12e849a6-bd1b-4b60-bb61-fa7181f3e515" absoluteBounds="0.64000000000000012, 1.46, 1.9700000000000002, 10.825968424479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

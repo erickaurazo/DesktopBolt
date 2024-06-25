@@ -436,17 +436,29 @@
     <Compile Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.Designer.cs">
       <DependentUpon>CentrosDeCostosFiltroApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadListado.cs">
+    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadListado.Designer.cs">
-      <DependentUpon>RegistroDeProductividadListado.cs</DependentUpon>
+    <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividad.Designer.cs">
+      <DependentUpon>RegistroDeProductividad.cs</DependentUpon>
     </Compile>
     <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Planeamiento Agricola\Productividad\RegistroDeProductividadEdicion.Designer.cs">
       <DependentUpon>RegistroDeProductividadEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\Tareo Movil\TareoMovil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRHH\Tareo Movil\TareoMovil.Designer.cs">
+      <DependentUpon>TareoMovil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\Tareo Movil\TareoMovilEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRHH\Tareo Movil\TareoMovilEdicion.Designer.cs">
+      <DependentUpon>TareoMovilEdicion.cs</DependentUpon>
     </Compile>
     <Compile Include="SIG\Calidad Campo\Calidades.cs">
       <SubType>Form</SubType>
@@ -2756,11 +2768,17 @@
     <EmbeddedResource Include="Planeamiento Agricola\Productividad\CentrosDeCostosFiltroApp.resx">
       <DependentUpon>CentrosDeCostosFiltroApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planeamiento Agricola\Productividad\RegistroDeProductividadListado.resx">
-      <DependentUpon>RegistroDeProductividadListado.cs</DependentUpon>
+    <EmbeddedResource Include="Planeamiento Agricola\Productividad\RegistroDeProductividad.resx">
+      <DependentUpon>RegistroDeProductividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Planeamiento Agricola\Productividad\RegistroDeProductividadEdicion.resx">
       <DependentUpon>RegistroDeProductividadEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRHH\Tareo Movil\TareoMovil.resx">
+      <DependentUpon>TareoMovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRHH\Tareo Movil\TareoMovilEdicion.resx">
+      <DependentUpon>TareoMovilEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\Calidad Packing Post-Cosecha\BPM\013\AmonestacionesIncumplimientoDeBuenasPracticasPacking.resx">
       <DependentUpon>AmonestacionesIncumplimientoDeBuenasPracticasPacking.cs</DependentUpon>
@@ -3161,6 +3179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\SST\RegistroDeCapacitaciones.resx">
       <DependentUpon>RegistroDeCapacitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\RegistroDeCapacitacionesEdicion.resx">
+      <DependentUpon>RegistroDeCapacitacionesEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.resx">
       <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>

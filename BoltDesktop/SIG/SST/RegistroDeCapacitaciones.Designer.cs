@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroDeCapacitaciones));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.BarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
             this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
@@ -64,6 +71,17 @@
             this.btnEliminarPrograma = new System.Windows.Forms.ToolStripMenuItem();
             this.sspSubMenu03 = new System.Windows.Forms.ToolStripSeparator();
             this.btnVerPrograma = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.vistaPreviaFormato001ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirFormato001ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.duplicarRegistroDeCapacitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asociarRegistroDeCapacitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desvincularRegistroDeCapacitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.aprobaciónDeJefaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arobaciónDeGerenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
@@ -80,17 +98,6 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.gbListado = new System.Windows.Forms.GroupBox();
             this.dgvListado = new Telerik.WinControls.UI.RadGridView();
-            this.vistaPreviaFormato001ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirFormato001ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.duplicarRegistroDeCapacitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asociarRegistroDeCapacitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.desvincularRegistroDeCapacitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aprobaciónDeJefaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.arobaciónDeGerenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.stsBarraEstado.SuspendLayout();
             this.subMenu.SuspendLayout();
@@ -109,7 +116,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1110, 35);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1110, 37);
             this.BarraPrincipal.TabIndex = 231;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -432,12 +439,12 @@
             this.arobaciónDeGerenciaToolStripMenuItem,
             this.toolStripSeparator3});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(265, 310);
+            this.subMenu.Size = new System.Drawing.Size(265, 288);
             // 
             // sspSubMenu01
             // 
             this.sspSubMenu01.Name = "sspSubMenu01";
-            this.sspSubMenu01.Size = new System.Drawing.Size(169, 6);
+            this.sspSubMenu01.Size = new System.Drawing.Size(261, 6);
             // 
             // btnAnularPrograma
             // 
@@ -473,7 +480,7 @@
             // sspSubMenu02
             // 
             this.sspSubMenu02.Name = "sspSubMenu02";
-            this.sspSubMenu02.Size = new System.Drawing.Size(169, 6);
+            this.sspSubMenu02.Size = new System.Drawing.Size(261, 6);
             // 
             // btnEliminarPrograma
             // 
@@ -486,7 +493,7 @@
             // sspSubMenu03
             // 
             this.sspSubMenu03.Name = "sspSubMenu03";
-            this.sspSubMenu03.Size = new System.Drawing.Size(169, 6);
+            this.sspSubMenu03.Size = new System.Drawing.Size(261, 6);
             // 
             // btnVerPrograma
             // 
@@ -494,6 +501,71 @@
             this.btnVerPrograma.Name = "btnVerPrograma";
             this.btnVerPrograma.Size = new System.Drawing.Size(264, 22);
             this.btnVerPrograma.Text = "Ver registro";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(261, 6);
+            // 
+            // vistaPreviaFormato001ToolStripMenuItem
+            // 
+            this.vistaPreviaFormato001ToolStripMenuItem.Name = "vistaPreviaFormato001ToolStripMenuItem";
+            this.vistaPreviaFormato001ToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.vistaPreviaFormato001ToolStripMenuItem.Text = "Vista Previa Formato 001";
+            // 
+            // imprimirFormato001ToolStripMenuItem
+            // 
+            this.imprimirFormato001ToolStripMenuItem.Name = "imprimirFormato001ToolStripMenuItem";
+            this.imprimirFormato001ToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.imprimirFormato001ToolStripMenuItem.Text = "Imprimir formato 001";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
+            // 
+            // duplicarRegistroDeCapacitaciónToolStripMenuItem
+            // 
+            this.duplicarRegistroDeCapacitaciónToolStripMenuItem.Name = "duplicarRegistroDeCapacitaciónToolStripMenuItem";
+            this.duplicarRegistroDeCapacitaciónToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.duplicarRegistroDeCapacitaciónToolStripMenuItem.Text = "Duplicar registro de capacitación";
+            // 
+            // asociarRegistroDeCapacitaciónToolStripMenuItem
+            // 
+            this.asociarRegistroDeCapacitaciónToolStripMenuItem.Name = "asociarRegistroDeCapacitaciónToolStripMenuItem";
+            this.asociarRegistroDeCapacitaciónToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.asociarRegistroDeCapacitaciónToolStripMenuItem.Text = "Asociar Registro de capacitación";
+            // 
+            // desvincularRegistroDeCapacitaciónToolStripMenuItem
+            // 
+            this.desvincularRegistroDeCapacitaciónToolStripMenuItem.Name = "desvincularRegistroDeCapacitaciónToolStripMenuItem";
+            this.desvincularRegistroDeCapacitaciónToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.desvincularRegistroDeCapacitaciónToolStripMenuItem.Text = "Desvincular registro de capacitación";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(261, 6);
+            // 
+            // aprobaciónDeJefaturaToolStripMenuItem
+            // 
+            this.aprobaciónDeJefaturaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aprobaciónDeJefaturaToolStripMenuItem.Image")));
+            this.aprobaciónDeJefaturaToolStripMenuItem.Name = "aprobaciónDeJefaturaToolStripMenuItem";
+            this.aprobaciónDeJefaturaToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.aprobaciónDeJefaturaToolStripMenuItem.Text = "Aprobación de Jefatura";
+            // 
+            // arobaciónDeGerenciaToolStripMenuItem
+            // 
+            this.arobaciónDeGerenciaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("arobaciónDeGerenciaToolStripMenuItem.Image")));
+            this.arobaciónDeGerenciaToolStripMenuItem.Name = "arobaciónDeGerenciaToolStripMenuItem";
+            this.arobaciónDeGerenciaToolStripMenuItem.ShowShortcutKeys = false;
+            this.arobaciónDeGerenciaToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.arobaciónDeGerenciaToolStripMenuItem.Text = "Arobación de Gerencia";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(261, 6);
             // 
             // bgwHilo
             // 
@@ -686,6 +758,49 @@
             this.dgvListado.MasterTemplate.AutoExpandGroups = true;
             this.dgvListado.MasterTemplate.AutoGenerateColumns = false;
             this.dgvListado.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "chID";
+            gridViewTextBoxColumn1.Width = 160;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Tema";
+            gridViewTextBoxColumn2.HeaderText = "Tema";
+            gridViewTextBoxColumn2.Name = "chTema";
+            gridViewTextBoxColumn2.Width = 215;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Fecha";
+            gridViewTextBoxColumn3.HeaderText = "Fecha";
+            gridViewTextBoxColumn3.Name = "chFecha";
+            gridViewTextBoxColumn3.Width = 239;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Capacitador";
+            gridViewTextBoxColumn4.HeaderText = "Capacitador";
+            gridViewTextBoxColumn4.Name = "chCapacitador";
+            gridViewTextBoxColumn4.Width = 144;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Duracion";
+            gridViewTextBoxColumn5.HeaderText = "Duracion";
+            gridViewTextBoxColumn5.Name = "chDuracion";
+            gridViewTextBoxColumn5.Width = 151;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "NumeroCapacitaciones";
+            gridViewTextBoxColumn6.HeaderText = "NumeroCapacitaciones";
+            gridViewTextBoxColumn6.Name = "chNumeroCapacitaciones";
+            gridViewTextBoxColumn6.Width = 81;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Estado";
+            gridViewTextBoxColumn7.HeaderText = "Estado";
+            gridViewTextBoxColumn7.Name = "chEstado";
+            gridViewTextBoxColumn7.Width = 76;
+            this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.MultiSelect = true;
@@ -700,71 +815,6 @@
             this.dgvListado.Size = new System.Drawing.Size(1080, 216);
             this.dgvListado.TabIndex = 196;
             this.dgvListado.ThemeName = "VisualStudio2012Light";
-            // 
-            // vistaPreviaFormato001ToolStripMenuItem
-            // 
-            this.vistaPreviaFormato001ToolStripMenuItem.Name = "vistaPreviaFormato001ToolStripMenuItem";
-            this.vistaPreviaFormato001ToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.vistaPreviaFormato001ToolStripMenuItem.Text = "Vista Previa Formato 001";
-            // 
-            // imprimirFormato001ToolStripMenuItem
-            // 
-            this.imprimirFormato001ToolStripMenuItem.Name = "imprimirFormato001ToolStripMenuItem";
-            this.imprimirFormato001ToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.imprimirFormato001ToolStripMenuItem.Text = "Imprimir formato 001";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(261, 6);
-            // 
-            // duplicarRegistroDeCapacitaciónToolStripMenuItem
-            // 
-            this.duplicarRegistroDeCapacitaciónToolStripMenuItem.Name = "duplicarRegistroDeCapacitaciónToolStripMenuItem";
-            this.duplicarRegistroDeCapacitaciónToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.duplicarRegistroDeCapacitaciónToolStripMenuItem.Text = "Duplicar registro de capacitación";
-            // 
-            // asociarRegistroDeCapacitaciónToolStripMenuItem
-            // 
-            this.asociarRegistroDeCapacitaciónToolStripMenuItem.Name = "asociarRegistroDeCapacitaciónToolStripMenuItem";
-            this.asociarRegistroDeCapacitaciónToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.asociarRegistroDeCapacitaciónToolStripMenuItem.Text = "Asociar Registro de capacitación";
-            // 
-            // desvincularRegistroDeCapacitaciónToolStripMenuItem
-            // 
-            this.desvincularRegistroDeCapacitaciónToolStripMenuItem.Name = "desvincularRegistroDeCapacitaciónToolStripMenuItem";
-            this.desvincularRegistroDeCapacitaciónToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.desvincularRegistroDeCapacitaciónToolStripMenuItem.Text = "Desvincular registro de capacitación";
-            // 
-            // aprobaciónDeJefaturaToolStripMenuItem
-            // 
-            this.aprobaciónDeJefaturaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aprobaciónDeJefaturaToolStripMenuItem.Image")));
-            this.aprobaciónDeJefaturaToolStripMenuItem.Name = "aprobaciónDeJefaturaToolStripMenuItem";
-            this.aprobaciónDeJefaturaToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.aprobaciónDeJefaturaToolStripMenuItem.Text = "Aprobación de Jefatura";
-            // 
-            // arobaciónDeGerenciaToolStripMenuItem
-            // 
-            this.arobaciónDeGerenciaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("arobaciónDeGerenciaToolStripMenuItem.Image")));
-            this.arobaciónDeGerenciaToolStripMenuItem.Name = "arobaciónDeGerenciaToolStripMenuItem";
-            this.arobaciónDeGerenciaToolStripMenuItem.ShowShortcutKeys = false;
-            this.arobaciónDeGerenciaToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.arobaciónDeGerenciaToolStripMenuItem.Text = "Arobación de Gerencia";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(261, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(261, 6);
             // 
             // RegistroDeCapacitaciones
             // 

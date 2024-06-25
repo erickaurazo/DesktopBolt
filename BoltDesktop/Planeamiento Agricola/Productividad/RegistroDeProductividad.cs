@@ -21,7 +21,7 @@ using Asistencia.Negocios.PlaneamientoAgricola;
 
 namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Productividad
 {
-    public partial class RegistroDeProductividadListado : Form
+    public partial class RegistroDeProductividad : Form
     {
 
         #region Variables() 
@@ -49,7 +49,7 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Productividad
         #endregion
 
 
-        public RegistroDeProductividadListado()
+        public RegistroDeProductividad()
         {
             InitializeComponent();
             connection = "SAS";
@@ -72,7 +72,7 @@ namespace ComparativoHorasVisualSATNISIRA.Planeamiento_Agricola.Productividad
         }
 
 
-        public RegistroDeProductividadListado(string _connection, SAS_USUARIOS _userLogin, string _companyId, PrivilegesByUser _privilege)
+        public RegistroDeProductividad(string _connection, SAS_USUARIOS _userLogin, string _companyId, PrivilegesByUser _privilege)
         {
             InitializeComponent();
 

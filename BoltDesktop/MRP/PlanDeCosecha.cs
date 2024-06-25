@@ -31,6 +31,7 @@ namespace ComparativoHorasVisualSATNISIRA.MRP
     public partial class PlanDeCosecha : Form
     {
 
+        #region Variables() 
         private PrivilegesByUser privilege;
         private string _companyId;
         private string _conection;
@@ -46,6 +47,8 @@ namespace ComparativoHorasVisualSATNISIRA.MRP
         private List<SAS_PlanDeCosechaListadoFull> listing; //Listado
         private List<SAS_PlanDeCosechaListadoFull> selectedList; // ListaSelecionada
         private SAS_PlanDeCosechaListadoFull selectedItem; // Item Selecionado
+
+        #endregion
 
         public PlanDeCosecha()
         {

@@ -5506,7 +5506,7 @@ namespace Asistencia
 
             if (privilege.consultar == 1)
             {
-                RegistroDeProductividadListado frmHijo = new RegistroDeProductividadListado("SAS", _user2, _companyId, privilege);
+                RegistroDeProductividad frmHijo = new RegistroDeProductividad("SAS", _user2, _companyId, privilege);
                 frmHijo.MdiParent = this;
                 frmHijo.Show();
                 frmHijo.WindowState = FormWindowState.Maximized;

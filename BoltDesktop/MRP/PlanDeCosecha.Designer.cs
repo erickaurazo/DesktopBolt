@@ -182,7 +182,7 @@
             this.txtPeriodo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPeriodo.ThemeName = "Windows8";
             this.txtPeriodo.Value = new decimal(new int[] {
-            2022,
+            2024,
             0,
             0,
             0});
@@ -259,7 +259,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1102, 62);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1102, 37);
             this.BarraPrincipal.TabIndex = 204;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 

@@ -395,7 +395,7 @@
             this.dgvListado.Padding = new System.Windows.Forms.Padding(1);
             this.dgvListado.ReadOnly = true;
             this.dgvListado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvListado.Size = new System.Drawing.Size(1274, 358);
+            this.dgvListado.Size = new System.Drawing.Size(1274, 299);
             this.dgvListado.TabIndex = 196;
             this.dgvListado.ThemeName = "VisualStudio2012Light";
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
@@ -734,7 +734,7 @@
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 471);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 412);
             this.stsBarraEstado.Name = "stsBarraEstado";
             this.stsBarraEstado.Size = new System.Drawing.Size(1304, 22);
             this.stsBarraEstado.TabIndex = 194;
@@ -752,7 +752,7 @@
             this.gbListado.Controls.Add(this.dgvListado);
             this.gbListado.Location = new System.Drawing.Point(12, 91);
             this.gbListado.Name = "gbListado";
-            this.gbListado.Size = new System.Drawing.Size(1280, 377);
+            this.gbListado.Size = new System.Drawing.Size(1280, 318);
             this.gbListado.TabIndex = 198;
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado";
@@ -799,7 +799,7 @@
             // ColaboradoresListado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1304, 493);
+            this.ClientSize = new System.Drawing.Size(1304, 434);
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.gbCabecera);
             this.Controls.Add(this.BarraPrincipal);

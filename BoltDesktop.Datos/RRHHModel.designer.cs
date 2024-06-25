@@ -22,6 +22,7 @@ namespace Asistencia.Datos
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SATURNO")]
 	public partial class RRHHModelDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,22 @@ namespace Asistencia.Datos
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTG10TAR(TG10TAR instance);
+    partial void UpdateTG10TAR(TG10TAR instance);
+    partial void DeleteTG10TAR(TG10TAR instance);
+    partial void InsertTG20TAR(TG20TAR instance);
+    partial void UpdateTG20TAR(TG20TAR instance);
+    partial void DeleteTG20TAR(TG20TAR instance);
+    partial void InsertTGTAREO(TGTAREO instance);
+    partial void UpdateTGTAREO(TGTAREO instance);
+    partial void DeleteTGTAREO(TGTAREO instance);
     #endregion
+		
+		public RRHHModelDataContext() : 
+				base(global::Asistencia.Datos.Properties.Settings.Default.SATURNOConnectionString8, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public RRHHModelDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +69,4275 @@ namespace Asistencia.Datos
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<TG10TAR> TG10TARs
+		{
+			get
+			{
+				return this.GetTable<TG10TAR>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TG20TAR> TG20TARs
+		{
+			get
+			{
+				return this.GetTable<TG20TAR>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TGTAREO> TGTAREOs
+		{
+			get
+			{
+				return this.GetTable<TGTAREO>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_TareoMovilListadoByFechas")]
+		public ISingleResult<SAS_TareoMovilListadoByFechasResult> SAS_TareoMovilListadoByFechas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string hasta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
+			return ((ISingleResult<SAS_TareoMovilListadoByFechasResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TG10TAR")]
+	public partial class TG10TAR : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _CTG30EMPID;
+		
+		private string _CTG20TARID;
+		
+		private string _CITEMID;
+		
+		private string _CITEM;
+		
+		private string _CTG30TRABID;
+		
+		private System.Nullable<System.DateTime> _DFECHA;
+		
+		private string _DHORAINICIO;
+		
+		private string _DHORAFIN;
+		
+		private System.Nullable<decimal> _IHORAS;
+		
+		private System.Nullable<int> _vienedenisira;
+		
+		private System.Nullable<decimal> _IRENDIMIENTO;
+		
+		private System.Nullable<decimal> _IHABILITADO;
+		
+		private System.Nullable<decimal> _iavance;
+		
+		private string _IDBASEDATOS;
+		
+		private System.Nullable<double> _ilatitud;
+		
+		private System.Nullable<double> _ilongitud;
+		
+		private string _DHORAINICIOASISTENCIA;
+		
+		private string _DHORAFINASISTENCIA;
+		
+		private System.Nullable<decimal> _ITOTALHORASASISTENCIA;
+		
+		private string _CITEMREFASISTENCIA;
+		
+		private string _CIDMOTIVOFINTAREO;
+		
+		private string _CDESCRIPCIONMOTIVOFINTAREO;
+		
+		private decimal _IHORASNOCTURNAS;
+		
+		private decimal _IRENDIMIENTONOCTURNO;
+		
+		private decimal _IAVANCENOCTURNO;
+		
+		private decimal _iMarcadiasiguienteHoraInicio;
+		
+		private decimal _iMarcadiasiguienteHoraFin;
+		
+		private string _DHORAINICIONOCTURNO;
+		
+		private string _DHORAFINNOCTURNO;
+		
+		private System.Nullable<decimal> _IUSAREFDIURNO;
+		
+		private string _DHORAINICIOREFDIURNO;
+		
+		private string _DHORAFINREFDIURNO;
+		
+		private System.Nullable<decimal> _IHORASREFDIURNO;
+		
+		private System.Nullable<decimal> _IUSAREFNOCTURNO;
+		
+		private string _DHORAINICIOREFNOCTURNO;
+		
+		private string _DHORAFINREFNOCTURNO;
+		
+		private System.Nullable<decimal> _IHORASREFNOCTURNO;
+		
+		private System.Nullable<decimal> _ITOTALHORASASISTENCIAREAL;
+		
+		private System.Nullable<decimal> _ITOTALHORASASISTENCIANOCTURNA;
+		
+		private System.Nullable<decimal> _ITOTALHORASASISTENCIANOCTURNAREAL;
+		
+		private System.Nullable<decimal> _iMarcadiasiguienteHoraInicioRefr;
+		
+		private System.Nullable<decimal> _iMarcadiasiguienteHoraFinRefr;
+		
+		private string _CNRODOCUMENTO;
+		
+		private System.Nullable<decimal> _irendimientodiurnobruto;
+		
+		private System.Nullable<decimal> _irendimientodiurnodestare;
+		
+		private System.Nullable<decimal> _irendimientonocturnobruto;
+		
+		private System.Nullable<decimal> _irendimientonocturnodestare;
+		
+		private System.Nullable<decimal> _iavancediurnobruto;
+		
+		private System.Nullable<decimal> _iavancediurnodestare;
+		
+		private System.Nullable<decimal> _iavancenocturnobruto;
+		
+		private System.Nullable<decimal> _iavancenocturnodestare;
+		
+		private string _cidreferencia;
+		
+		private string _citemref;
+		
+		private System.Nullable<decimal> _vienedepretareo;
+		
+		private string _citemidref;
+		
+		private System.Nullable<System.DateTime> _dfechacreacion;
+		
+		private System.Nullable<decimal> _iconexcepciondetareo;
+		
+		private string _cdescexcepciontareo;
+		
+		private System.Nullable<decimal> _validado;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCTG30EMPIDChanging(string value);
+    partial void OnCTG30EMPIDChanged();
+    partial void OnCTG20TARIDChanging(string value);
+    partial void OnCTG20TARIDChanged();
+    partial void OnCITEMIDChanging(string value);
+    partial void OnCITEMIDChanged();
+    partial void OnCITEMChanging(string value);
+    partial void OnCITEMChanged();
+    partial void OnCTG30TRABIDChanging(string value);
+    partial void OnCTG30TRABIDChanged();
+    partial void OnDFECHAChanging(System.Nullable<System.DateTime> value);
+    partial void OnDFECHAChanged();
+    partial void OnDHORAINICIOChanging(string value);
+    partial void OnDHORAINICIOChanged();
+    partial void OnDHORAFINChanging(string value);
+    partial void OnDHORAFINChanged();
+    partial void OnIHORASChanging(System.Nullable<decimal> value);
+    partial void OnIHORASChanged();
+    partial void OnvienedenisiraChanging(System.Nullable<int> value);
+    partial void OnvienedenisiraChanged();
+    partial void OnIRENDIMIENTOChanging(System.Nullable<decimal> value);
+    partial void OnIRENDIMIENTOChanged();
+    partial void OnIHABILITADOChanging(System.Nullable<decimal> value);
+    partial void OnIHABILITADOChanged();
+    partial void OniavanceChanging(System.Nullable<decimal> value);
+    partial void OniavanceChanged();
+    partial void OnIDBASEDATOSChanging(string value);
+    partial void OnIDBASEDATOSChanged();
+    partial void OnilatitudChanging(System.Nullable<double> value);
+    partial void OnilatitudChanged();
+    partial void OnilongitudChanging(System.Nullable<double> value);
+    partial void OnilongitudChanged();
+    partial void OnDHORAINICIOASISTENCIAChanging(string value);
+    partial void OnDHORAINICIOASISTENCIAChanged();
+    partial void OnDHORAFINASISTENCIAChanging(string value);
+    partial void OnDHORAFINASISTENCIAChanged();
+    partial void OnITOTALHORASASISTENCIAChanging(System.Nullable<decimal> value);
+    partial void OnITOTALHORASASISTENCIAChanged();
+    partial void OnCITEMREFASISTENCIAChanging(string value);
+    partial void OnCITEMREFASISTENCIAChanged();
+    partial void OnCIDMOTIVOFINTAREOChanging(string value);
+    partial void OnCIDMOTIVOFINTAREOChanged();
+    partial void OnCDESCRIPCIONMOTIVOFINTAREOChanging(string value);
+    partial void OnCDESCRIPCIONMOTIVOFINTAREOChanged();
+    partial void OnIHORASNOCTURNASChanging(decimal value);
+    partial void OnIHORASNOCTURNASChanged();
+    partial void OnIRENDIMIENTONOCTURNOChanging(decimal value);
+    partial void OnIRENDIMIENTONOCTURNOChanged();
+    partial void OnIAVANCENOCTURNOChanging(decimal value);
+    partial void OnIAVANCENOCTURNOChanged();
+    partial void OniMarcadiasiguienteHoraInicioChanging(decimal value);
+    partial void OniMarcadiasiguienteHoraInicioChanged();
+    partial void OniMarcadiasiguienteHoraFinChanging(decimal value);
+    partial void OniMarcadiasiguienteHoraFinChanged();
+    partial void OnDHORAINICIONOCTURNOChanging(string value);
+    partial void OnDHORAINICIONOCTURNOChanged();
+    partial void OnDHORAFINNOCTURNOChanging(string value);
+    partial void OnDHORAFINNOCTURNOChanged();
+    partial void OnIUSAREFDIURNOChanging(System.Nullable<decimal> value);
+    partial void OnIUSAREFDIURNOChanged();
+    partial void OnDHORAINICIOREFDIURNOChanging(string value);
+    partial void OnDHORAINICIOREFDIURNOChanged();
+    partial void OnDHORAFINREFDIURNOChanging(string value);
+    partial void OnDHORAFINREFDIURNOChanged();
+    partial void OnIHORASREFDIURNOChanging(System.Nullable<decimal> value);
+    partial void OnIHORASREFDIURNOChanged();
+    partial void OnIUSAREFNOCTURNOChanging(System.Nullable<decimal> value);
+    partial void OnIUSAREFNOCTURNOChanged();
+    partial void OnDHORAINICIOREFNOCTURNOChanging(string value);
+    partial void OnDHORAINICIOREFNOCTURNOChanged();
+    partial void OnDHORAFINREFNOCTURNOChanging(string value);
+    partial void OnDHORAFINREFNOCTURNOChanged();
+    partial void OnIHORASREFNOCTURNOChanging(System.Nullable<decimal> value);
+    partial void OnIHORASREFNOCTURNOChanged();
+    partial void OnITOTALHORASASISTENCIAREALChanging(System.Nullable<decimal> value);
+    partial void OnITOTALHORASASISTENCIAREALChanged();
+    partial void OnITOTALHORASASISTENCIANOCTURNAChanging(System.Nullable<decimal> value);
+    partial void OnITOTALHORASASISTENCIANOCTURNAChanged();
+    partial void OnITOTALHORASASISTENCIANOCTURNAREALChanging(System.Nullable<decimal> value);
+    partial void OnITOTALHORASASISTENCIANOCTURNAREALChanged();
+    partial void OniMarcadiasiguienteHoraInicioRefrChanging(System.Nullable<decimal> value);
+    partial void OniMarcadiasiguienteHoraInicioRefrChanged();
+    partial void OniMarcadiasiguienteHoraFinRefrChanging(System.Nullable<decimal> value);
+    partial void OniMarcadiasiguienteHoraFinRefrChanged();
+    partial void OnCNRODOCUMENTOChanging(string value);
+    partial void OnCNRODOCUMENTOChanged();
+    partial void OnirendimientodiurnobrutoChanging(System.Nullable<decimal> value);
+    partial void OnirendimientodiurnobrutoChanged();
+    partial void OnirendimientodiurnodestareChanging(System.Nullable<decimal> value);
+    partial void OnirendimientodiurnodestareChanged();
+    partial void OnirendimientonocturnobrutoChanging(System.Nullable<decimal> value);
+    partial void OnirendimientonocturnobrutoChanged();
+    partial void OnirendimientonocturnodestareChanging(System.Nullable<decimal> value);
+    partial void OnirendimientonocturnodestareChanged();
+    partial void OniavancediurnobrutoChanging(System.Nullable<decimal> value);
+    partial void OniavancediurnobrutoChanged();
+    partial void OniavancediurnodestareChanging(System.Nullable<decimal> value);
+    partial void OniavancediurnodestareChanged();
+    partial void OniavancenocturnobrutoChanging(System.Nullable<decimal> value);
+    partial void OniavancenocturnobrutoChanged();
+    partial void OniavancenocturnodestareChanging(System.Nullable<decimal> value);
+    partial void OniavancenocturnodestareChanged();
+    partial void OncidreferenciaChanging(string value);
+    partial void OncidreferenciaChanged();
+    partial void OncitemrefChanging(string value);
+    partial void OncitemrefChanged();
+    partial void OnvienedepretareoChanging(System.Nullable<decimal> value);
+    partial void OnvienedepretareoChanged();
+    partial void OncitemidrefChanging(string value);
+    partial void OncitemidrefChanged();
+    partial void OndfechacreacionChanging(System.Nullable<System.DateTime> value);
+    partial void OndfechacreacionChanged();
+    partial void OniconexcepciondetareoChanging(System.Nullable<decimal> value);
+    partial void OniconexcepciondetareoChanged();
+    partial void OncdescexcepciontareoChanging(string value);
+    partial void OncdescexcepciontareoChanged();
+    partial void OnvalidadoChanging(System.Nullable<decimal> value);
+    partial void OnvalidadoChanged();
+    #endregion
+		
+		public TG10TAR()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30EMPID", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG30EMPID
+		{
+			get
+			{
+				return this._CTG30EMPID;
+			}
+			set
+			{
+				if ((this._CTG30EMPID != value))
+				{
+					this.OnCTG30EMPIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30EMPID = value;
+					this.SendPropertyChanged("CTG30EMPID");
+					this.OnCTG30EMPIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG20TARID", DbType="Char(15) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG20TARID
+		{
+			get
+			{
+				return this._CTG20TARID;
+			}
+			set
+			{
+				if ((this._CTG20TARID != value))
+				{
+					this.OnCTG20TARIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG20TARID = value;
+					this.SendPropertyChanged("CTG20TARID");
+					this.OnCTG20TARIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CITEMID", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CITEMID
+		{
+			get
+			{
+				return this._CITEMID;
+			}
+			set
+			{
+				if ((this._CITEMID != value))
+				{
+					this.OnCITEMIDChanging(value);
+					this.SendPropertyChanging();
+					this._CITEMID = value;
+					this.SendPropertyChanged("CITEMID");
+					this.OnCITEMIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CITEM", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CITEM
+		{
+			get
+			{
+				return this._CITEM;
+			}
+			set
+			{
+				if ((this._CITEM != value))
+				{
+					this.OnCITEMChanging(value);
+					this.SendPropertyChanging();
+					this._CITEM = value;
+					this.SendPropertyChanged("CITEM");
+					this.OnCITEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30TRABID", DbType="Char(8)")]
+		public string CTG30TRABID
+		{
+			get
+			{
+				return this._CTG30TRABID;
+			}
+			set
+			{
+				if ((this._CTG30TRABID != value))
+				{
+					this.OnCTG30TRABIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30TRABID = value;
+					this.SendPropertyChanged("CTG30TRABID");
+					this.OnCTG30TRABIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DFECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DFECHA
+		{
+			get
+			{
+				return this._DFECHA;
+			}
+			set
+			{
+				if ((this._DFECHA != value))
+				{
+					this.OnDFECHAChanging(value);
+					this.SendPropertyChanging();
+					this._DFECHA = value;
+					this.SendPropertyChanged("DFECHA");
+					this.OnDFECHAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAINICIO", DbType="Char(4)")]
+		public string DHORAINICIO
+		{
+			get
+			{
+				return this._DHORAINICIO;
+			}
+			set
+			{
+				if ((this._DHORAINICIO != value))
+				{
+					this.OnDHORAINICIOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAINICIO = value;
+					this.SendPropertyChanged("DHORAINICIO");
+					this.OnDHORAINICIOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAFIN", DbType="Char(4)")]
+		public string DHORAFIN
+		{
+			get
+			{
+				return this._DHORAFIN;
+			}
+			set
+			{
+				if ((this._DHORAFIN != value))
+				{
+					this.OnDHORAFINChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAFIN = value;
+					this.SendPropertyChanged("DHORAFIN");
+					this.OnDHORAFINChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHORAS", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> IHORAS
+		{
+			get
+			{
+				return this._IHORAS;
+			}
+			set
+			{
+				if ((this._IHORAS != value))
+				{
+					this.OnIHORASChanging(value);
+					this.SendPropertyChanging();
+					this._IHORAS = value;
+					this.SendPropertyChanged("IHORAS");
+					this.OnIHORASChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vienedenisira", DbType="Int")]
+		public System.Nullable<int> vienedenisira
+		{
+			get
+			{
+				return this._vienedenisira;
+			}
+			set
+			{
+				if ((this._vienedenisira != value))
+				{
+					this.OnvienedenisiraChanging(value);
+					this.SendPropertyChanging();
+					this._vienedenisira = value;
+					this.SendPropertyChanged("vienedenisira");
+					this.OnvienedenisiraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IRENDIMIENTO", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> IRENDIMIENTO
+		{
+			get
+			{
+				return this._IRENDIMIENTO;
+			}
+			set
+			{
+				if ((this._IRENDIMIENTO != value))
+				{
+					this.OnIRENDIMIENTOChanging(value);
+					this.SendPropertyChanging();
+					this._IRENDIMIENTO = value;
+					this.SendPropertyChanged("IRENDIMIENTO");
+					this.OnIRENDIMIENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHABILITADO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> IHABILITADO
+		{
+			get
+			{
+				return this._IHABILITADO;
+			}
+			set
+			{
+				if ((this._IHABILITADO != value))
+				{
+					this.OnIHABILITADOChanging(value);
+					this.SendPropertyChanging();
+					this._IHABILITADO = value;
+					this.SendPropertyChanged("IHABILITADO");
+					this.OnIHABILITADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iavance", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> iavance
+		{
+			get
+			{
+				return this._iavance;
+			}
+			set
+			{
+				if ((this._iavance != value))
+				{
+					this.OniavanceChanging(value);
+					this.SendPropertyChanging();
+					this._iavance = value;
+					this.SendPropertyChanged("iavance");
+					this.OniavanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBASEDATOS", DbType="VarChar(100)")]
+		public string IDBASEDATOS
+		{
+			get
+			{
+				return this._IDBASEDATOS;
+			}
+			set
+			{
+				if ((this._IDBASEDATOS != value))
+				{
+					this.OnIDBASEDATOSChanging(value);
+					this.SendPropertyChanging();
+					this._IDBASEDATOS = value;
+					this.SendPropertyChanged("IDBASEDATOS");
+					this.OnIDBASEDATOSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilatitud", DbType="Float")]
+		public System.Nullable<double> ilatitud
+		{
+			get
+			{
+				return this._ilatitud;
+			}
+			set
+			{
+				if ((this._ilatitud != value))
+				{
+					this.OnilatitudChanging(value);
+					this.SendPropertyChanging();
+					this._ilatitud = value;
+					this.SendPropertyChanged("ilatitud");
+					this.OnilatitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilongitud", DbType="Float")]
+		public System.Nullable<double> ilongitud
+		{
+			get
+			{
+				return this._ilongitud;
+			}
+			set
+			{
+				if ((this._ilongitud != value))
+				{
+					this.OnilongitudChanging(value);
+					this.SendPropertyChanging();
+					this._ilongitud = value;
+					this.SendPropertyChanged("ilongitud");
+					this.OnilongitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAINICIOASISTENCIA", DbType="Char(4)")]
+		public string DHORAINICIOASISTENCIA
+		{
+			get
+			{
+				return this._DHORAINICIOASISTENCIA;
+			}
+			set
+			{
+				if ((this._DHORAINICIOASISTENCIA != value))
+				{
+					this.OnDHORAINICIOASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAINICIOASISTENCIA = value;
+					this.SendPropertyChanged("DHORAINICIOASISTENCIA");
+					this.OnDHORAINICIOASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAFINASISTENCIA", DbType="Char(4)")]
+		public string DHORAFINASISTENCIA
+		{
+			get
+			{
+				return this._DHORAFINASISTENCIA;
+			}
+			set
+			{
+				if ((this._DHORAFINASISTENCIA != value))
+				{
+					this.OnDHORAFINASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAFINASISTENCIA = value;
+					this.SendPropertyChanged("DHORAFINASISTENCIA");
+					this.OnDHORAFINASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITOTALHORASASISTENCIA", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> ITOTALHORASASISTENCIA
+		{
+			get
+			{
+				return this._ITOTALHORASASISTENCIA;
+			}
+			set
+			{
+				if ((this._ITOTALHORASASISTENCIA != value))
+				{
+					this.OnITOTALHORASASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._ITOTALHORASASISTENCIA = value;
+					this.SendPropertyChanged("ITOTALHORASASISTENCIA");
+					this.OnITOTALHORASASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CITEMREFASISTENCIA", DbType="Char(3)")]
+		public string CITEMREFASISTENCIA
+		{
+			get
+			{
+				return this._CITEMREFASISTENCIA;
+			}
+			set
+			{
+				if ((this._CITEMREFASISTENCIA != value))
+				{
+					this.OnCITEMREFASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._CITEMREFASISTENCIA = value;
+					this.SendPropertyChanged("CITEMREFASISTENCIA");
+					this.OnCITEMREFASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDMOTIVOFINTAREO", DbType="Char(3)")]
+		public string CIDMOTIVOFINTAREO
+		{
+			get
+			{
+				return this._CIDMOTIVOFINTAREO;
+			}
+			set
+			{
+				if ((this._CIDMOTIVOFINTAREO != value))
+				{
+					this.OnCIDMOTIVOFINTAREOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDMOTIVOFINTAREO = value;
+					this.SendPropertyChanged("CIDMOTIVOFINTAREO");
+					this.OnCIDMOTIVOFINTAREOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDESCRIPCIONMOTIVOFINTAREO", DbType="VarChar(100)")]
+		public string CDESCRIPCIONMOTIVOFINTAREO
+		{
+			get
+			{
+				return this._CDESCRIPCIONMOTIVOFINTAREO;
+			}
+			set
+			{
+				if ((this._CDESCRIPCIONMOTIVOFINTAREO != value))
+				{
+					this.OnCDESCRIPCIONMOTIVOFINTAREOChanging(value);
+					this.SendPropertyChanging();
+					this._CDESCRIPCIONMOTIVOFINTAREO = value;
+					this.SendPropertyChanged("CDESCRIPCIONMOTIVOFINTAREO");
+					this.OnCDESCRIPCIONMOTIVOFINTAREOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHORASNOCTURNAS", DbType="Decimal(5,2) NOT NULL")]
+		public decimal IHORASNOCTURNAS
+		{
+			get
+			{
+				return this._IHORASNOCTURNAS;
+			}
+			set
+			{
+				if ((this._IHORASNOCTURNAS != value))
+				{
+					this.OnIHORASNOCTURNASChanging(value);
+					this.SendPropertyChanging();
+					this._IHORASNOCTURNAS = value;
+					this.SendPropertyChanged("IHORASNOCTURNAS");
+					this.OnIHORASNOCTURNASChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IRENDIMIENTONOCTURNO", DbType="Decimal(17,2) NOT NULL")]
+		public decimal IRENDIMIENTONOCTURNO
+		{
+			get
+			{
+				return this._IRENDIMIENTONOCTURNO;
+			}
+			set
+			{
+				if ((this._IRENDIMIENTONOCTURNO != value))
+				{
+					this.OnIRENDIMIENTONOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._IRENDIMIENTONOCTURNO = value;
+					this.SendPropertyChanged("IRENDIMIENTONOCTURNO");
+					this.OnIRENDIMIENTONOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IAVANCENOCTURNO", DbType="Decimal(17,2) NOT NULL")]
+		public decimal IAVANCENOCTURNO
+		{
+			get
+			{
+				return this._IAVANCENOCTURNO;
+			}
+			set
+			{
+				if ((this._IAVANCENOCTURNO != value))
+				{
+					this.OnIAVANCENOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._IAVANCENOCTURNO = value;
+					this.SendPropertyChanged("IAVANCENOCTURNO");
+					this.OnIAVANCENOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iMarcadiasiguienteHoraInicio", DbType="Decimal(1,0) NOT NULL")]
+		public decimal iMarcadiasiguienteHoraInicio
+		{
+			get
+			{
+				return this._iMarcadiasiguienteHoraInicio;
+			}
+			set
+			{
+				if ((this._iMarcadiasiguienteHoraInicio != value))
+				{
+					this.OniMarcadiasiguienteHoraInicioChanging(value);
+					this.SendPropertyChanging();
+					this._iMarcadiasiguienteHoraInicio = value;
+					this.SendPropertyChanged("iMarcadiasiguienteHoraInicio");
+					this.OniMarcadiasiguienteHoraInicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iMarcadiasiguienteHoraFin", DbType="Decimal(1,0) NOT NULL")]
+		public decimal iMarcadiasiguienteHoraFin
+		{
+			get
+			{
+				return this._iMarcadiasiguienteHoraFin;
+			}
+			set
+			{
+				if ((this._iMarcadiasiguienteHoraFin != value))
+				{
+					this.OniMarcadiasiguienteHoraFinChanging(value);
+					this.SendPropertyChanging();
+					this._iMarcadiasiguienteHoraFin = value;
+					this.SendPropertyChanged("iMarcadiasiguienteHoraFin");
+					this.OniMarcadiasiguienteHoraFinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAINICIONOCTURNO", DbType="Char(4)")]
+		public string DHORAINICIONOCTURNO
+		{
+			get
+			{
+				return this._DHORAINICIONOCTURNO;
+			}
+			set
+			{
+				if ((this._DHORAINICIONOCTURNO != value))
+				{
+					this.OnDHORAINICIONOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAINICIONOCTURNO = value;
+					this.SendPropertyChanged("DHORAINICIONOCTURNO");
+					this.OnDHORAINICIONOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAFINNOCTURNO", DbType="Char(4)")]
+		public string DHORAFINNOCTURNO
+		{
+			get
+			{
+				return this._DHORAFINNOCTURNO;
+			}
+			set
+			{
+				if ((this._DHORAFINNOCTURNO != value))
+				{
+					this.OnDHORAFINNOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAFINNOCTURNO = value;
+					this.SendPropertyChanged("DHORAFINNOCTURNO");
+					this.OnDHORAFINNOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IUSAREFDIURNO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> IUSAREFDIURNO
+		{
+			get
+			{
+				return this._IUSAREFDIURNO;
+			}
+			set
+			{
+				if ((this._IUSAREFDIURNO != value))
+				{
+					this.OnIUSAREFDIURNOChanging(value);
+					this.SendPropertyChanging();
+					this._IUSAREFDIURNO = value;
+					this.SendPropertyChanged("IUSAREFDIURNO");
+					this.OnIUSAREFDIURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAINICIOREFDIURNO", DbType="Char(4)")]
+		public string DHORAINICIOREFDIURNO
+		{
+			get
+			{
+				return this._DHORAINICIOREFDIURNO;
+			}
+			set
+			{
+				if ((this._DHORAINICIOREFDIURNO != value))
+				{
+					this.OnDHORAINICIOREFDIURNOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAINICIOREFDIURNO = value;
+					this.SendPropertyChanged("DHORAINICIOREFDIURNO");
+					this.OnDHORAINICIOREFDIURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAFINREFDIURNO", DbType="Char(4)")]
+		public string DHORAFINREFDIURNO
+		{
+			get
+			{
+				return this._DHORAFINREFDIURNO;
+			}
+			set
+			{
+				if ((this._DHORAFINREFDIURNO != value))
+				{
+					this.OnDHORAFINREFDIURNOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAFINREFDIURNO = value;
+					this.SendPropertyChanged("DHORAFINREFDIURNO");
+					this.OnDHORAFINREFDIURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHORASREFDIURNO", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> IHORASREFDIURNO
+		{
+			get
+			{
+				return this._IHORASREFDIURNO;
+			}
+			set
+			{
+				if ((this._IHORASREFDIURNO != value))
+				{
+					this.OnIHORASREFDIURNOChanging(value);
+					this.SendPropertyChanging();
+					this._IHORASREFDIURNO = value;
+					this.SendPropertyChanged("IHORASREFDIURNO");
+					this.OnIHORASREFDIURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IUSAREFNOCTURNO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> IUSAREFNOCTURNO
+		{
+			get
+			{
+				return this._IUSAREFNOCTURNO;
+			}
+			set
+			{
+				if ((this._IUSAREFNOCTURNO != value))
+				{
+					this.OnIUSAREFNOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._IUSAREFNOCTURNO = value;
+					this.SendPropertyChanged("IUSAREFNOCTURNO");
+					this.OnIUSAREFNOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAINICIOREFNOCTURNO", DbType="Char(4)")]
+		public string DHORAINICIOREFNOCTURNO
+		{
+			get
+			{
+				return this._DHORAINICIOREFNOCTURNO;
+			}
+			set
+			{
+				if ((this._DHORAINICIOREFNOCTURNO != value))
+				{
+					this.OnDHORAINICIOREFNOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAINICIOREFNOCTURNO = value;
+					this.SendPropertyChanged("DHORAINICIOREFNOCTURNO");
+					this.OnDHORAINICIOREFNOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAFINREFNOCTURNO", DbType="Char(4)")]
+		public string DHORAFINREFNOCTURNO
+		{
+			get
+			{
+				return this._DHORAFINREFNOCTURNO;
+			}
+			set
+			{
+				if ((this._DHORAFINREFNOCTURNO != value))
+				{
+					this.OnDHORAFINREFNOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAFINREFNOCTURNO = value;
+					this.SendPropertyChanged("DHORAFINREFNOCTURNO");
+					this.OnDHORAFINREFNOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHORASREFNOCTURNO", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> IHORASREFNOCTURNO
+		{
+			get
+			{
+				return this._IHORASREFNOCTURNO;
+			}
+			set
+			{
+				if ((this._IHORASREFNOCTURNO != value))
+				{
+					this.OnIHORASREFNOCTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._IHORASREFNOCTURNO = value;
+					this.SendPropertyChanged("IHORASREFNOCTURNO");
+					this.OnIHORASREFNOCTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITOTALHORASASISTENCIAREAL", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> ITOTALHORASASISTENCIAREAL
+		{
+			get
+			{
+				return this._ITOTALHORASASISTENCIAREAL;
+			}
+			set
+			{
+				if ((this._ITOTALHORASASISTENCIAREAL != value))
+				{
+					this.OnITOTALHORASASISTENCIAREALChanging(value);
+					this.SendPropertyChanging();
+					this._ITOTALHORASASISTENCIAREAL = value;
+					this.SendPropertyChanged("ITOTALHORASASISTENCIAREAL");
+					this.OnITOTALHORASASISTENCIAREALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITOTALHORASASISTENCIANOCTURNA", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> ITOTALHORASASISTENCIANOCTURNA
+		{
+			get
+			{
+				return this._ITOTALHORASASISTENCIANOCTURNA;
+			}
+			set
+			{
+				if ((this._ITOTALHORASASISTENCIANOCTURNA != value))
+				{
+					this.OnITOTALHORASASISTENCIANOCTURNAChanging(value);
+					this.SendPropertyChanging();
+					this._ITOTALHORASASISTENCIANOCTURNA = value;
+					this.SendPropertyChanged("ITOTALHORASASISTENCIANOCTURNA");
+					this.OnITOTALHORASASISTENCIANOCTURNAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITOTALHORASASISTENCIANOCTURNAREAL", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> ITOTALHORASASISTENCIANOCTURNAREAL
+		{
+			get
+			{
+				return this._ITOTALHORASASISTENCIANOCTURNAREAL;
+			}
+			set
+			{
+				if ((this._ITOTALHORASASISTENCIANOCTURNAREAL != value))
+				{
+					this.OnITOTALHORASASISTENCIANOCTURNAREALChanging(value);
+					this.SendPropertyChanging();
+					this._ITOTALHORASASISTENCIANOCTURNAREAL = value;
+					this.SendPropertyChanged("ITOTALHORASASISTENCIANOCTURNAREAL");
+					this.OnITOTALHORASASISTENCIANOCTURNAREALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iMarcadiasiguienteHoraInicioRefr", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> iMarcadiasiguienteHoraInicioRefr
+		{
+			get
+			{
+				return this._iMarcadiasiguienteHoraInicioRefr;
+			}
+			set
+			{
+				if ((this._iMarcadiasiguienteHoraInicioRefr != value))
+				{
+					this.OniMarcadiasiguienteHoraInicioRefrChanging(value);
+					this.SendPropertyChanging();
+					this._iMarcadiasiguienteHoraInicioRefr = value;
+					this.SendPropertyChanged("iMarcadiasiguienteHoraInicioRefr");
+					this.OniMarcadiasiguienteHoraInicioRefrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iMarcadiasiguienteHoraFinRefr", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> iMarcadiasiguienteHoraFinRefr
+		{
+			get
+			{
+				return this._iMarcadiasiguienteHoraFinRefr;
+			}
+			set
+			{
+				if ((this._iMarcadiasiguienteHoraFinRefr != value))
+				{
+					this.OniMarcadiasiguienteHoraFinRefrChanging(value);
+					this.SendPropertyChanging();
+					this._iMarcadiasiguienteHoraFinRefr = value;
+					this.SendPropertyChanged("iMarcadiasiguienteHoraFinRefr");
+					this.OniMarcadiasiguienteHoraFinRefrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNRODOCUMENTO", DbType="VarChar(20)")]
+		public string CNRODOCUMENTO
+		{
+			get
+			{
+				return this._CNRODOCUMENTO;
+			}
+			set
+			{
+				if ((this._CNRODOCUMENTO != value))
+				{
+					this.OnCNRODOCUMENTOChanging(value);
+					this.SendPropertyChanging();
+					this._CNRODOCUMENTO = value;
+					this.SendPropertyChanged("CNRODOCUMENTO");
+					this.OnCNRODOCUMENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_irendimientodiurnobruto", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> irendimientodiurnobruto
+		{
+			get
+			{
+				return this._irendimientodiurnobruto;
+			}
+			set
+			{
+				if ((this._irendimientodiurnobruto != value))
+				{
+					this.OnirendimientodiurnobrutoChanging(value);
+					this.SendPropertyChanging();
+					this._irendimientodiurnobruto = value;
+					this.SendPropertyChanged("irendimientodiurnobruto");
+					this.OnirendimientodiurnobrutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_irendimientodiurnodestare", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> irendimientodiurnodestare
+		{
+			get
+			{
+				return this._irendimientodiurnodestare;
+			}
+			set
+			{
+				if ((this._irendimientodiurnodestare != value))
+				{
+					this.OnirendimientodiurnodestareChanging(value);
+					this.SendPropertyChanging();
+					this._irendimientodiurnodestare = value;
+					this.SendPropertyChanged("irendimientodiurnodestare");
+					this.OnirendimientodiurnodestareChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_irendimientonocturnobruto", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> irendimientonocturnobruto
+		{
+			get
+			{
+				return this._irendimientonocturnobruto;
+			}
+			set
+			{
+				if ((this._irendimientonocturnobruto != value))
+				{
+					this.OnirendimientonocturnobrutoChanging(value);
+					this.SendPropertyChanging();
+					this._irendimientonocturnobruto = value;
+					this.SendPropertyChanged("irendimientonocturnobruto");
+					this.OnirendimientonocturnobrutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_irendimientonocturnodestare", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> irendimientonocturnodestare
+		{
+			get
+			{
+				return this._irendimientonocturnodestare;
+			}
+			set
+			{
+				if ((this._irendimientonocturnodestare != value))
+				{
+					this.OnirendimientonocturnodestareChanging(value);
+					this.SendPropertyChanging();
+					this._irendimientonocturnodestare = value;
+					this.SendPropertyChanged("irendimientonocturnodestare");
+					this.OnirendimientonocturnodestareChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iavancediurnobruto", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> iavancediurnobruto
+		{
+			get
+			{
+				return this._iavancediurnobruto;
+			}
+			set
+			{
+				if ((this._iavancediurnobruto != value))
+				{
+					this.OniavancediurnobrutoChanging(value);
+					this.SendPropertyChanging();
+					this._iavancediurnobruto = value;
+					this.SendPropertyChanged("iavancediurnobruto");
+					this.OniavancediurnobrutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iavancediurnodestare", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> iavancediurnodestare
+		{
+			get
+			{
+				return this._iavancediurnodestare;
+			}
+			set
+			{
+				if ((this._iavancediurnodestare != value))
+				{
+					this.OniavancediurnodestareChanging(value);
+					this.SendPropertyChanging();
+					this._iavancediurnodestare = value;
+					this.SendPropertyChanged("iavancediurnodestare");
+					this.OniavancediurnodestareChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iavancenocturnobruto", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> iavancenocturnobruto
+		{
+			get
+			{
+				return this._iavancenocturnobruto;
+			}
+			set
+			{
+				if ((this._iavancenocturnobruto != value))
+				{
+					this.OniavancenocturnobrutoChanging(value);
+					this.SendPropertyChanging();
+					this._iavancenocturnobruto = value;
+					this.SendPropertyChanged("iavancenocturnobruto");
+					this.OniavancenocturnobrutoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iavancenocturnodestare", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> iavancenocturnodestare
+		{
+			get
+			{
+				return this._iavancenocturnodestare;
+			}
+			set
+			{
+				if ((this._iavancenocturnodestare != value))
+				{
+					this.OniavancenocturnodestareChanging(value);
+					this.SendPropertyChanging();
+					this._iavancenocturnodestare = value;
+					this.SendPropertyChanged("iavancenocturnodestare");
+					this.OniavancenocturnodestareChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cidreferencia", DbType="VarChar(15)")]
+		public string cidreferencia
+		{
+			get
+			{
+				return this._cidreferencia;
+			}
+			set
+			{
+				if ((this._cidreferencia != value))
+				{
+					this.OncidreferenciaChanging(value);
+					this.SendPropertyChanging();
+					this._cidreferencia = value;
+					this.SendPropertyChanged("cidreferencia");
+					this.OncidreferenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_citemref", DbType="Char(3)")]
+		public string citemref
+		{
+			get
+			{
+				return this._citemref;
+			}
+			set
+			{
+				if ((this._citemref != value))
+				{
+					this.OncitemrefChanging(value);
+					this.SendPropertyChanging();
+					this._citemref = value;
+					this.SendPropertyChanged("citemref");
+					this.OncitemrefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vienedepretareo", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> vienedepretareo
+		{
+			get
+			{
+				return this._vienedepretareo;
+			}
+			set
+			{
+				if ((this._vienedepretareo != value))
+				{
+					this.OnvienedepretareoChanging(value);
+					this.SendPropertyChanging();
+					this._vienedepretareo = value;
+					this.SendPropertyChanged("vienedepretareo");
+					this.OnvienedepretareoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_citemidref", DbType="Char(3)")]
+		public string citemidref
+		{
+			get
+			{
+				return this._citemidref;
+			}
+			set
+			{
+				if ((this._citemidref != value))
+				{
+					this.OncitemidrefChanging(value);
+					this.SendPropertyChanging();
+					this._citemidref = value;
+					this.SendPropertyChanged("citemidref");
+					this.OncitemidrefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dfechacreacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dfechacreacion
+		{
+			get
+			{
+				return this._dfechacreacion;
+			}
+			set
+			{
+				if ((this._dfechacreacion != value))
+				{
+					this.OndfechacreacionChanging(value);
+					this.SendPropertyChanging();
+					this._dfechacreacion = value;
+					this.SendPropertyChanged("dfechacreacion");
+					this.OndfechacreacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iconexcepciondetareo", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> iconexcepciondetareo
+		{
+			get
+			{
+				return this._iconexcepciondetareo;
+			}
+			set
+			{
+				if ((this._iconexcepciondetareo != value))
+				{
+					this.OniconexcepciondetareoChanging(value);
+					this.SendPropertyChanging();
+					this._iconexcepciondetareo = value;
+					this.SendPropertyChanged("iconexcepciondetareo");
+					this.OniconexcepciondetareoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cdescexcepciontareo", DbType="VarChar(250)")]
+		public string cdescexcepciontareo
+		{
+			get
+			{
+				return this._cdescexcepciontareo;
+			}
+			set
+			{
+				if ((this._cdescexcepciontareo != value))
+				{
+					this.OncdescexcepciontareoChanging(value);
+					this.SendPropertyChanging();
+					this._cdescexcepciontareo = value;
+					this.SendPropertyChanged("cdescexcepciontareo");
+					this.OncdescexcepciontareoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_validado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> validado
+		{
+			get
+			{
+				return this._validado;
+			}
+			set
+			{
+				if ((this._validado != value))
+				{
+					this.OnvalidadoChanging(value);
+					this.SendPropertyChanging();
+					this._validado = value;
+					this.SendPropertyChanged("validado");
+					this.OnvalidadoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TG20TAR")]
+	public partial class TG20TAR : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _CTG30EMPID;
+		
+		private string _CTG30TARID;
+		
+		private string _CITEM;
+		
+		private string _CTG30ACTID;
+		
+		private string _CTG30LABID;
+		
+		private string _CTG30CONSID;
+		
+		private System.Nullable<System.DateTime> _DFECHA;
+		
+		private string _DHORAINICIO;
+		
+		private string _DHORAFIN;
+		
+		private System.Nullable<decimal> _IHABILITADO;
+		
+		private string _CESTADO;
+		
+		private System.Nullable<char> _CRENDIMIENTO;
+		
+		private string _CIDASISTENCIA;
+		
+		private string _IDBASEDATOS;
+		
+		private string _CCLAVEELIMINACION;
+		
+		private string _CMOTIVOELIMINACION;
+		
+		private string _CIDSUPERVISOR;
+		
+		private string _CIDSUBSECTOR;
+		
+		private System.Nullable<decimal> _DPARAMETRO;
+		
+		private string _CNUMEROCARTILLA;
+		
+		private System.Nullable<decimal> _DEQUIVALEHORAS;
+		
+		private string _CIDTURNO;
+		
+		private string _CIDTIPOGENASISTENCIA;
+		
+		private string _CDESCTIPOGENASISTENCIA;
+		
+		private string _CIDPROYECTO;
+		
+		private string _CDESCPROYECTO;
+		
+		private string _CIDRESPONSABLE;
+		
+		private string _CDESCRESPONSABLE;
+		
+		private string _CIDGRUPO;
+		
+		private string _CDESCGRUPO;
+		
+		private System.Nullable<decimal> _condestare;
+		
+		private System.Nullable<decimal> _generarasistencia;
+		
+		private string _cidreferencia;
+		
+		private string _citemref;
+		
+		private string _ctablaref;
+		
+		private System.Nullable<decimal> _vienedepretareo;
+		
+		private System.Nullable<decimal> _genero_tareo;
+		
+		private System.Nullable<System.DateTime> _dfechacreacion;
+		
+		private System.Nullable<decimal> _iavanceporarea;
+		
+		private System.Nullable<double> _ialtitud;
+		
+		private System.Nullable<double> _ilatitud;
+		
+		private System.Nullable<double> _ilongitud;
+		
+		private System.Nullable<decimal> _IDENSIDADPORAREA;
+		
+		private System.Nullable<decimal> _gendesdeconteoindividual;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCTG30EMPIDChanging(string value);
+    partial void OnCTG30EMPIDChanged();
+    partial void OnCTG30TARIDChanging(string value);
+    partial void OnCTG30TARIDChanged();
+    partial void OnCITEMChanging(string value);
+    partial void OnCITEMChanged();
+    partial void OnCTG30ACTIDChanging(string value);
+    partial void OnCTG30ACTIDChanged();
+    partial void OnCTG30LABIDChanging(string value);
+    partial void OnCTG30LABIDChanged();
+    partial void OnCTG30CONSIDChanging(string value);
+    partial void OnCTG30CONSIDChanged();
+    partial void OnDFECHAChanging(System.Nullable<System.DateTime> value);
+    partial void OnDFECHAChanged();
+    partial void OnDHORAINICIOChanging(string value);
+    partial void OnDHORAINICIOChanged();
+    partial void OnDHORAFINChanging(string value);
+    partial void OnDHORAFINChanged();
+    partial void OnIHABILITADOChanging(System.Nullable<decimal> value);
+    partial void OnIHABILITADOChanged();
+    partial void OnCESTADOChanging(string value);
+    partial void OnCESTADOChanged();
+    partial void OnCRENDIMIENTOChanging(System.Nullable<char> value);
+    partial void OnCRENDIMIENTOChanged();
+    partial void OnCIDASISTENCIAChanging(string value);
+    partial void OnCIDASISTENCIAChanged();
+    partial void OnIDBASEDATOSChanging(string value);
+    partial void OnIDBASEDATOSChanged();
+    partial void OnCCLAVEELIMINACIONChanging(string value);
+    partial void OnCCLAVEELIMINACIONChanged();
+    partial void OnCMOTIVOELIMINACIONChanging(string value);
+    partial void OnCMOTIVOELIMINACIONChanged();
+    partial void OnCIDSUPERVISORChanging(string value);
+    partial void OnCIDSUPERVISORChanged();
+    partial void OnCIDSUBSECTORChanging(string value);
+    partial void OnCIDSUBSECTORChanged();
+    partial void OnDPARAMETROChanging(System.Nullable<decimal> value);
+    partial void OnDPARAMETROChanged();
+    partial void OnCNUMEROCARTILLAChanging(string value);
+    partial void OnCNUMEROCARTILLAChanged();
+    partial void OnDEQUIVALEHORASChanging(System.Nullable<decimal> value);
+    partial void OnDEQUIVALEHORASChanged();
+    partial void OnCIDTURNOChanging(string value);
+    partial void OnCIDTURNOChanged();
+    partial void OnCIDTIPOGENASISTENCIAChanging(string value);
+    partial void OnCIDTIPOGENASISTENCIAChanged();
+    partial void OnCDESCTIPOGENASISTENCIAChanging(string value);
+    partial void OnCDESCTIPOGENASISTENCIAChanged();
+    partial void OnCIDPROYECTOChanging(string value);
+    partial void OnCIDPROYECTOChanged();
+    partial void OnCDESCPROYECTOChanging(string value);
+    partial void OnCDESCPROYECTOChanged();
+    partial void OnCIDRESPONSABLEChanging(string value);
+    partial void OnCIDRESPONSABLEChanged();
+    partial void OnCDESCRESPONSABLEChanging(string value);
+    partial void OnCDESCRESPONSABLEChanged();
+    partial void OnCIDGRUPOChanging(string value);
+    partial void OnCIDGRUPOChanged();
+    partial void OnCDESCGRUPOChanging(string value);
+    partial void OnCDESCGRUPOChanged();
+    partial void OncondestareChanging(System.Nullable<decimal> value);
+    partial void OncondestareChanged();
+    partial void OngenerarasistenciaChanging(System.Nullable<decimal> value);
+    partial void OngenerarasistenciaChanged();
+    partial void OncidreferenciaChanging(string value);
+    partial void OncidreferenciaChanged();
+    partial void OncitemrefChanging(string value);
+    partial void OncitemrefChanged();
+    partial void OnctablarefChanging(string value);
+    partial void OnctablarefChanged();
+    partial void OnvienedepretareoChanging(System.Nullable<decimal> value);
+    partial void OnvienedepretareoChanged();
+    partial void Ongenero_tareoChanging(System.Nullable<decimal> value);
+    partial void Ongenero_tareoChanged();
+    partial void OndfechacreacionChanging(System.Nullable<System.DateTime> value);
+    partial void OndfechacreacionChanged();
+    partial void OniavanceporareaChanging(System.Nullable<decimal> value);
+    partial void OniavanceporareaChanged();
+    partial void OnialtitudChanging(System.Nullable<double> value);
+    partial void OnialtitudChanged();
+    partial void OnilatitudChanging(System.Nullable<double> value);
+    partial void OnilatitudChanged();
+    partial void OnilongitudChanging(System.Nullable<double> value);
+    partial void OnilongitudChanged();
+    partial void OnIDENSIDADPORAREAChanging(System.Nullable<decimal> value);
+    partial void OnIDENSIDADPORAREAChanged();
+    partial void OngendesdeconteoindividualChanging(System.Nullable<decimal> value);
+    partial void OngendesdeconteoindividualChanged();
+    #endregion
+		
+		public TG20TAR()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30EMPID", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG30EMPID
+		{
+			get
+			{
+				return this._CTG30EMPID;
+			}
+			set
+			{
+				if ((this._CTG30EMPID != value))
+				{
+					this.OnCTG30EMPIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30EMPID = value;
+					this.SendPropertyChanged("CTG30EMPID");
+					this.OnCTG30EMPIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30TARID", DbType="Char(15) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG30TARID
+		{
+			get
+			{
+				return this._CTG30TARID;
+			}
+			set
+			{
+				if ((this._CTG30TARID != value))
+				{
+					this.OnCTG30TARIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30TARID = value;
+					this.SendPropertyChanged("CTG30TARID");
+					this.OnCTG30TARIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CITEM", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CITEM
+		{
+			get
+			{
+				return this._CITEM;
+			}
+			set
+			{
+				if ((this._CITEM != value))
+				{
+					this.OnCITEMChanging(value);
+					this.SendPropertyChanging();
+					this._CITEM = value;
+					this.SendPropertyChanged("CITEM");
+					this.OnCITEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30ACTID", DbType="Char(3)")]
+		public string CTG30ACTID
+		{
+			get
+			{
+				return this._CTG30ACTID;
+			}
+			set
+			{
+				if ((this._CTG30ACTID != value))
+				{
+					this.OnCTG30ACTIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30ACTID = value;
+					this.SendPropertyChanged("CTG30ACTID");
+					this.OnCTG30ACTIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30LABID", DbType="Char(6)")]
+		public string CTG30LABID
+		{
+			get
+			{
+				return this._CTG30LABID;
+			}
+			set
+			{
+				if ((this._CTG30LABID != value))
+				{
+					this.OnCTG30LABIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30LABID = value;
+					this.SendPropertyChanged("CTG30LABID");
+					this.OnCTG30LABIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30CONSID", DbType="Char(12)")]
+		public string CTG30CONSID
+		{
+			get
+			{
+				return this._CTG30CONSID;
+			}
+			set
+			{
+				if ((this._CTG30CONSID != value))
+				{
+					this.OnCTG30CONSIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30CONSID = value;
+					this.SendPropertyChanged("CTG30CONSID");
+					this.OnCTG30CONSIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DFECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DFECHA
+		{
+			get
+			{
+				return this._DFECHA;
+			}
+			set
+			{
+				if ((this._DFECHA != value))
+				{
+					this.OnDFECHAChanging(value);
+					this.SendPropertyChanging();
+					this._DFECHA = value;
+					this.SendPropertyChanged("DFECHA");
+					this.OnDFECHAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAINICIO", DbType="Char(4)")]
+		public string DHORAINICIO
+		{
+			get
+			{
+				return this._DHORAINICIO;
+			}
+			set
+			{
+				if ((this._DHORAINICIO != value))
+				{
+					this.OnDHORAINICIOChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAINICIO = value;
+					this.SendPropertyChanged("DHORAINICIO");
+					this.OnDHORAINICIOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DHORAFIN", DbType="Char(4)")]
+		public string DHORAFIN
+		{
+			get
+			{
+				return this._DHORAFIN;
+			}
+			set
+			{
+				if ((this._DHORAFIN != value))
+				{
+					this.OnDHORAFINChanging(value);
+					this.SendPropertyChanging();
+					this._DHORAFIN = value;
+					this.SendPropertyChanged("DHORAFIN");
+					this.OnDHORAFINChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHABILITADO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> IHABILITADO
+		{
+			get
+			{
+				return this._IHABILITADO;
+			}
+			set
+			{
+				if ((this._IHABILITADO != value))
+				{
+					this.OnIHABILITADOChanging(value);
+					this.SendPropertyChanging();
+					this._IHABILITADO = value;
+					this.SendPropertyChanged("IHABILITADO");
+					this.OnIHABILITADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CESTADO", DbType="Char(2)")]
+		public string CESTADO
+		{
+			get
+			{
+				return this._CESTADO;
+			}
+			set
+			{
+				if ((this._CESTADO != value))
+				{
+					this.OnCESTADOChanging(value);
+					this.SendPropertyChanging();
+					this._CESTADO = value;
+					this.SendPropertyChanged("CESTADO");
+					this.OnCESTADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRENDIMIENTO", DbType="Char(1)")]
+		public System.Nullable<char> CRENDIMIENTO
+		{
+			get
+			{
+				return this._CRENDIMIENTO;
+			}
+			set
+			{
+				if ((this._CRENDIMIENTO != value))
+				{
+					this.OnCRENDIMIENTOChanging(value);
+					this.SendPropertyChanging();
+					this._CRENDIMIENTO = value;
+					this.SendPropertyChanged("CRENDIMIENTO");
+					this.OnCRENDIMIENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDASISTENCIA", DbType="Char(15)")]
+		public string CIDASISTENCIA
+		{
+			get
+			{
+				return this._CIDASISTENCIA;
+			}
+			set
+			{
+				if ((this._CIDASISTENCIA != value))
+				{
+					this.OnCIDASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._CIDASISTENCIA = value;
+					this.SendPropertyChanged("CIDASISTENCIA");
+					this.OnCIDASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBASEDATOS", DbType="VarChar(100)")]
+		public string IDBASEDATOS
+		{
+			get
+			{
+				return this._IDBASEDATOS;
+			}
+			set
+			{
+				if ((this._IDBASEDATOS != value))
+				{
+					this.OnIDBASEDATOSChanging(value);
+					this.SendPropertyChanging();
+					this._IDBASEDATOS = value;
+					this.SendPropertyChanged("IDBASEDATOS");
+					this.OnIDBASEDATOSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CCLAVEELIMINACION", DbType="VarChar(5)")]
+		public string CCLAVEELIMINACION
+		{
+			get
+			{
+				return this._CCLAVEELIMINACION;
+			}
+			set
+			{
+				if ((this._CCLAVEELIMINACION != value))
+				{
+					this.OnCCLAVEELIMINACIONChanging(value);
+					this.SendPropertyChanging();
+					this._CCLAVEELIMINACION = value;
+					this.SendPropertyChanged("CCLAVEELIMINACION");
+					this.OnCCLAVEELIMINACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMOTIVOELIMINACION", DbType="VarChar(250)")]
+		public string CMOTIVOELIMINACION
+		{
+			get
+			{
+				return this._CMOTIVOELIMINACION;
+			}
+			set
+			{
+				if ((this._CMOTIVOELIMINACION != value))
+				{
+					this.OnCMOTIVOELIMINACIONChanging(value);
+					this.SendPropertyChanging();
+					this._CMOTIVOELIMINACION = value;
+					this.SendPropertyChanged("CMOTIVOELIMINACION");
+					this.OnCMOTIVOELIMINACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDSUPERVISOR", DbType="Char(6)")]
+		public string CIDSUPERVISOR
+		{
+			get
+			{
+				return this._CIDSUPERVISOR;
+			}
+			set
+			{
+				if ((this._CIDSUPERVISOR != value))
+				{
+					this.OnCIDSUPERVISORChanging(value);
+					this.SendPropertyChanging();
+					this._CIDSUPERVISOR = value;
+					this.SendPropertyChanged("CIDSUPERVISOR");
+					this.OnCIDSUPERVISORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDSUBSECTOR", DbType="Char(6)")]
+		public string CIDSUBSECTOR
+		{
+			get
+			{
+				return this._CIDSUBSECTOR;
+			}
+			set
+			{
+				if ((this._CIDSUBSECTOR != value))
+				{
+					this.OnCIDSUBSECTORChanging(value);
+					this.SendPropertyChanging();
+					this._CIDSUBSECTOR = value;
+					this.SendPropertyChanged("CIDSUBSECTOR");
+					this.OnCIDSUBSECTORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DPARAMETRO", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> DPARAMETRO
+		{
+			get
+			{
+				return this._DPARAMETRO;
+			}
+			set
+			{
+				if ((this._DPARAMETRO != value))
+				{
+					this.OnDPARAMETROChanging(value);
+					this.SendPropertyChanging();
+					this._DPARAMETRO = value;
+					this.SendPropertyChanged("DPARAMETRO");
+					this.OnDPARAMETROChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNUMEROCARTILLA", DbType="VarChar(35)")]
+		public string CNUMEROCARTILLA
+		{
+			get
+			{
+				return this._CNUMEROCARTILLA;
+			}
+			set
+			{
+				if ((this._CNUMEROCARTILLA != value))
+				{
+					this.OnCNUMEROCARTILLAChanging(value);
+					this.SendPropertyChanging();
+					this._CNUMEROCARTILLA = value;
+					this.SendPropertyChanged("CNUMEROCARTILLA");
+					this.OnCNUMEROCARTILLAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEQUIVALEHORAS", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> DEQUIVALEHORAS
+		{
+			get
+			{
+				return this._DEQUIVALEHORAS;
+			}
+			set
+			{
+				if ((this._DEQUIVALEHORAS != value))
+				{
+					this.OnDEQUIVALEHORASChanging(value);
+					this.SendPropertyChanging();
+					this._DEQUIVALEHORAS = value;
+					this.SendPropertyChanged("DEQUIVALEHORAS");
+					this.OnDEQUIVALEHORASChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDTURNO", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string CIDTURNO
+		{
+			get
+			{
+				return this._CIDTURNO;
+			}
+			set
+			{
+				if ((this._CIDTURNO != value))
+				{
+					this.OnCIDTURNOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDTURNO = value;
+					this.SendPropertyChanged("CIDTURNO");
+					this.OnCIDTURNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDTIPOGENASISTENCIA", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string CIDTIPOGENASISTENCIA
+		{
+			get
+			{
+				return this._CIDTIPOGENASISTENCIA;
+			}
+			set
+			{
+				if ((this._CIDTIPOGENASISTENCIA != value))
+				{
+					this.OnCIDTIPOGENASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._CIDTIPOGENASISTENCIA = value;
+					this.SendPropertyChanged("CIDTIPOGENASISTENCIA");
+					this.OnCIDTIPOGENASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDESCTIPOGENASISTENCIA", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string CDESCTIPOGENASISTENCIA
+		{
+			get
+			{
+				return this._CDESCTIPOGENASISTENCIA;
+			}
+			set
+			{
+				if ((this._CDESCTIPOGENASISTENCIA != value))
+				{
+					this.OnCDESCTIPOGENASISTENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._CDESCTIPOGENASISTENCIA = value;
+					this.SendPropertyChanged("CDESCTIPOGENASISTENCIA");
+					this.OnCDESCTIPOGENASISTENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDPROYECTO", DbType="VarChar(4)")]
+		public string CIDPROYECTO
+		{
+			get
+			{
+				return this._CIDPROYECTO;
+			}
+			set
+			{
+				if ((this._CIDPROYECTO != value))
+				{
+					this.OnCIDPROYECTOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDPROYECTO = value;
+					this.SendPropertyChanged("CIDPROYECTO");
+					this.OnCIDPROYECTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDESCPROYECTO", DbType="VarChar(240)")]
+		public string CDESCPROYECTO
+		{
+			get
+			{
+				return this._CDESCPROYECTO;
+			}
+			set
+			{
+				if ((this._CDESCPROYECTO != value))
+				{
+					this.OnCDESCPROYECTOChanging(value);
+					this.SendPropertyChanging();
+					this._CDESCPROYECTO = value;
+					this.SendPropertyChanged("CDESCPROYECTO");
+					this.OnCDESCPROYECTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDRESPONSABLE", DbType="Char(8)")]
+		public string CIDRESPONSABLE
+		{
+			get
+			{
+				return this._CIDRESPONSABLE;
+			}
+			set
+			{
+				if ((this._CIDRESPONSABLE != value))
+				{
+					this.OnCIDRESPONSABLEChanging(value);
+					this.SendPropertyChanging();
+					this._CIDRESPONSABLE = value;
+					this.SendPropertyChanged("CIDRESPONSABLE");
+					this.OnCIDRESPONSABLEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDESCRESPONSABLE", DbType="VarChar(200)")]
+		public string CDESCRESPONSABLE
+		{
+			get
+			{
+				return this._CDESCRESPONSABLE;
+			}
+			set
+			{
+				if ((this._CDESCRESPONSABLE != value))
+				{
+					this.OnCDESCRESPONSABLEChanging(value);
+					this.SendPropertyChanging();
+					this._CDESCRESPONSABLE = value;
+					this.SendPropertyChanged("CDESCRESPONSABLE");
+					this.OnCDESCRESPONSABLEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDGRUPO", DbType="VarChar(20)")]
+		public string CIDGRUPO
+		{
+			get
+			{
+				return this._CIDGRUPO;
+			}
+			set
+			{
+				if ((this._CIDGRUPO != value))
+				{
+					this.OnCIDGRUPOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDGRUPO = value;
+					this.SendPropertyChanged("CIDGRUPO");
+					this.OnCIDGRUPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CDESCGRUPO", DbType="VarChar(250)")]
+		public string CDESCGRUPO
+		{
+			get
+			{
+				return this._CDESCGRUPO;
+			}
+			set
+			{
+				if ((this._CDESCGRUPO != value))
+				{
+					this.OnCDESCGRUPOChanging(value);
+					this.SendPropertyChanging();
+					this._CDESCGRUPO = value;
+					this.SendPropertyChanged("CDESCGRUPO");
+					this.OnCDESCGRUPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_condestare", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> condestare
+		{
+			get
+			{
+				return this._condestare;
+			}
+			set
+			{
+				if ((this._condestare != value))
+				{
+					this.OncondestareChanging(value);
+					this.SendPropertyChanging();
+					this._condestare = value;
+					this.SendPropertyChanged("condestare");
+					this.OncondestareChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_generarasistencia", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> generarasistencia
+		{
+			get
+			{
+				return this._generarasistencia;
+			}
+			set
+			{
+				if ((this._generarasistencia != value))
+				{
+					this.OngenerarasistenciaChanging(value);
+					this.SendPropertyChanging();
+					this._generarasistencia = value;
+					this.SendPropertyChanged("generarasistencia");
+					this.OngenerarasistenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cidreferencia", DbType="VarChar(15)")]
+		public string cidreferencia
+		{
+			get
+			{
+				return this._cidreferencia;
+			}
+			set
+			{
+				if ((this._cidreferencia != value))
+				{
+					this.OncidreferenciaChanging(value);
+					this.SendPropertyChanging();
+					this._cidreferencia = value;
+					this.SendPropertyChanged("cidreferencia");
+					this.OncidreferenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_citemref", DbType="Char(3)")]
+		public string citemref
+		{
+			get
+			{
+				return this._citemref;
+			}
+			set
+			{
+				if ((this._citemref != value))
+				{
+					this.OncitemrefChanging(value);
+					this.SendPropertyChanging();
+					this._citemref = value;
+					this.SendPropertyChanged("citemref");
+					this.OncitemrefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctablaref", DbType="VarChar(20)")]
+		public string ctablaref
+		{
+			get
+			{
+				return this._ctablaref;
+			}
+			set
+			{
+				if ((this._ctablaref != value))
+				{
+					this.OnctablarefChanging(value);
+					this.SendPropertyChanging();
+					this._ctablaref = value;
+					this.SendPropertyChanged("ctablaref");
+					this.OnctablarefChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vienedepretareo", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> vienedepretareo
+		{
+			get
+			{
+				return this._vienedepretareo;
+			}
+			set
+			{
+				if ((this._vienedepretareo != value))
+				{
+					this.OnvienedepretareoChanging(value);
+					this.SendPropertyChanging();
+					this._vienedepretareo = value;
+					this.SendPropertyChanged("vienedepretareo");
+					this.OnvienedepretareoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_genero_tareo", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> genero_tareo
+		{
+			get
+			{
+				return this._genero_tareo;
+			}
+			set
+			{
+				if ((this._genero_tareo != value))
+				{
+					this.Ongenero_tareoChanging(value);
+					this.SendPropertyChanging();
+					this._genero_tareo = value;
+					this.SendPropertyChanged("genero_tareo");
+					this.Ongenero_tareoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dfechacreacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dfechacreacion
+		{
+			get
+			{
+				return this._dfechacreacion;
+			}
+			set
+			{
+				if ((this._dfechacreacion != value))
+				{
+					this.OndfechacreacionChanging(value);
+					this.SendPropertyChanging();
+					this._dfechacreacion = value;
+					this.SendPropertyChanged("dfechacreacion");
+					this.OndfechacreacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iavanceporarea", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> iavanceporarea
+		{
+			get
+			{
+				return this._iavanceporarea;
+			}
+			set
+			{
+				if ((this._iavanceporarea != value))
+				{
+					this.OniavanceporareaChanging(value);
+					this.SendPropertyChanging();
+					this._iavanceporarea = value;
+					this.SendPropertyChanged("iavanceporarea");
+					this.OniavanceporareaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ialtitud", DbType="Float")]
+		public System.Nullable<double> ialtitud
+		{
+			get
+			{
+				return this._ialtitud;
+			}
+			set
+			{
+				if ((this._ialtitud != value))
+				{
+					this.OnialtitudChanging(value);
+					this.SendPropertyChanging();
+					this._ialtitud = value;
+					this.SendPropertyChanged("ialtitud");
+					this.OnialtitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilatitud", DbType="Float")]
+		public System.Nullable<double> ilatitud
+		{
+			get
+			{
+				return this._ilatitud;
+			}
+			set
+			{
+				if ((this._ilatitud != value))
+				{
+					this.OnilatitudChanging(value);
+					this.SendPropertyChanging();
+					this._ilatitud = value;
+					this.SendPropertyChanged("ilatitud");
+					this.OnilatitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilongitud", DbType="Float")]
+		public System.Nullable<double> ilongitud
+		{
+			get
+			{
+				return this._ilongitud;
+			}
+			set
+			{
+				if ((this._ilongitud != value))
+				{
+					this.OnilongitudChanging(value);
+					this.SendPropertyChanging();
+					this._ilongitud = value;
+					this.SendPropertyChanged("ilongitud");
+					this.OnilongitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDENSIDADPORAREA", DbType="Decimal(17,2)")]
+		public System.Nullable<decimal> IDENSIDADPORAREA
+		{
+			get
+			{
+				return this._IDENSIDADPORAREA;
+			}
+			set
+			{
+				if ((this._IDENSIDADPORAREA != value))
+				{
+					this.OnIDENSIDADPORAREAChanging(value);
+					this.SendPropertyChanging();
+					this._IDENSIDADPORAREA = value;
+					this.SendPropertyChanged("IDENSIDADPORAREA");
+					this.OnIDENSIDADPORAREAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gendesdeconteoindividual", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> gendesdeconteoindividual
+		{
+			get
+			{
+				return this._gendesdeconteoindividual;
+			}
+			set
+			{
+				if ((this._gendesdeconteoindividual != value))
+				{
+					this.OngendesdeconteoindividualChanging(value);
+					this.SendPropertyChanging();
+					this._gendesdeconteoindividual = value;
+					this.SendPropertyChanged("gendesdeconteoindividual");
+					this.OngendesdeconteoindividualChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TGTAREO")]
+	public partial class TGTAREO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _CTG30EMPID;
+		
+		private string _CTG30TARID;
+		
+		private string _CTG30SUPID;
+		
+		private string _CIDPLANILLA;
+		
+		private string _CIDDOCUMENTO;
+		
+		private string _CSERIE;
+		
+		private string _CNUMERO;
+		
+		private string _CIDEMISOR;
+		
+		private string _CIDTURNOTRABAJO;
+		
+		private string _CIDGRUPOTRABAJO;
+		
+		private string _CIDPROYECTO;
+		
+		private string _CIDCONTRATA;
+		
+		private string _CPERIODO;
+		
+		private string _CPERIODO_PLANILLA;
+		
+		private string _CSEMANA;
+		
+		private string _CIDSUCURSAL;
+		
+		private System.Nullable<System.DateTime> _DFECHACREACION;
+		
+		private System.Nullable<System.DateTime> _DFECHAPROGR;
+		
+		private System.Nullable<decimal> _IHABILITADO;
+		
+		private string _CESTADO;
+		
+		private string _CIDASISTENCIA_RENDIMIENTO;
+		
+		private string _CIDASISTENCIA_PERSONAL;
+		
+		private System.Nullable<char> _CSINCRONIZA;
+		
+		private System.Nullable<decimal> _genero_asistencia;
+		
+		private string _IDBASEDATOS;
+		
+		private string _CCLAVEELIMINACION;
+		
+		private string _CMOTIVOELIMINACION;
+		
+		private string _IMEI;
+		
+		private decimal _gendesdedigitacion;
+		
+		private string _CTG30TARIDORIG;
+		
+		private string _CIMEI;
+		
+		private string _CIDPRETAREO;
+		
+		private System.Nullable<decimal> _genero_tareos;
+		
+		private System.Nullable<decimal> _es_pretareo;
+		
+		private string _ctg30pretareoid;
+		
+		private System.Nullable<decimal> _convertido;
+		
+		private System.Nullable<decimal> _valorConvertido;
+		
+		private string _CESTADOOLD;
+		
+		private string _idreferenciaexterno;
+		
+		private string _nrodocexterno;
+		
+		private string _sistemaexterno;
+		
+		private string _idarea;
+		
+		private string _IDEMPRESAEXTERNO;
+		
+		private System.Nullable<decimal> _GENDESDEPRETAREO;
+		
+		private System.Nullable<decimal> _icerrado;
+		
+		private string _cdescresponsablesuperior;
+		
+		private string _ctg30respsuperiorid;
+		
+		private System.Nullable<System.DateTime> _dfechaprimeraexportacion;
+		
+		private System.Nullable<System.DateTime> _dfechaultimaexportacion;
+		
+		private System.Nullable<double> _ialtitud;
+		
+		private System.Nullable<double> _ilatitud;
+		
+		private System.Nullable<double> _ilongitud;
+		
+		private string _ctg30trabrespid;
+		
+		private string _capenomtrabresp;
+		
+		private string _idzonaccosto;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCTG30EMPIDChanging(string value);
+    partial void OnCTG30EMPIDChanged();
+    partial void OnCTG30TARIDChanging(string value);
+    partial void OnCTG30TARIDChanged();
+    partial void OnCTG30SUPIDChanging(string value);
+    partial void OnCTG30SUPIDChanged();
+    partial void OnCIDPLANILLAChanging(string value);
+    partial void OnCIDPLANILLAChanged();
+    partial void OnCIDDOCUMENTOChanging(string value);
+    partial void OnCIDDOCUMENTOChanged();
+    partial void OnCSERIEChanging(string value);
+    partial void OnCSERIEChanged();
+    partial void OnCNUMEROChanging(string value);
+    partial void OnCNUMEROChanged();
+    partial void OnCIDEMISORChanging(string value);
+    partial void OnCIDEMISORChanged();
+    partial void OnCIDTURNOTRABAJOChanging(string value);
+    partial void OnCIDTURNOTRABAJOChanged();
+    partial void OnCIDGRUPOTRABAJOChanging(string value);
+    partial void OnCIDGRUPOTRABAJOChanged();
+    partial void OnCIDPROYECTOChanging(string value);
+    partial void OnCIDPROYECTOChanged();
+    partial void OnCIDCONTRATAChanging(string value);
+    partial void OnCIDCONTRATAChanged();
+    partial void OnCPERIODOChanging(string value);
+    partial void OnCPERIODOChanged();
+    partial void OnCPERIODO_PLANILLAChanging(string value);
+    partial void OnCPERIODO_PLANILLAChanged();
+    partial void OnCSEMANAChanging(string value);
+    partial void OnCSEMANAChanged();
+    partial void OnCIDSUCURSALChanging(string value);
+    partial void OnCIDSUCURSALChanged();
+    partial void OnDFECHACREACIONChanging(System.Nullable<System.DateTime> value);
+    partial void OnDFECHACREACIONChanged();
+    partial void OnDFECHAPROGRChanging(System.Nullable<System.DateTime> value);
+    partial void OnDFECHAPROGRChanged();
+    partial void OnIHABILITADOChanging(System.Nullable<decimal> value);
+    partial void OnIHABILITADOChanged();
+    partial void OnCESTADOChanging(string value);
+    partial void OnCESTADOChanged();
+    partial void OnCIDASISTENCIA_RENDIMIENTOChanging(string value);
+    partial void OnCIDASISTENCIA_RENDIMIENTOChanged();
+    partial void OnCIDASISTENCIA_PERSONALChanging(string value);
+    partial void OnCIDASISTENCIA_PERSONALChanged();
+    partial void OnCSINCRONIZAChanging(System.Nullable<char> value);
+    partial void OnCSINCRONIZAChanged();
+    partial void Ongenero_asistenciaChanging(System.Nullable<decimal> value);
+    partial void Ongenero_asistenciaChanged();
+    partial void OnIDBASEDATOSChanging(string value);
+    partial void OnIDBASEDATOSChanged();
+    partial void OnCCLAVEELIMINACIONChanging(string value);
+    partial void OnCCLAVEELIMINACIONChanged();
+    partial void OnCMOTIVOELIMINACIONChanging(string value);
+    partial void OnCMOTIVOELIMINACIONChanged();
+    partial void OnIMEIChanging(string value);
+    partial void OnIMEIChanged();
+    partial void OngendesdedigitacionChanging(decimal value);
+    partial void OngendesdedigitacionChanged();
+    partial void OnCTG30TARIDORIGChanging(string value);
+    partial void OnCTG30TARIDORIGChanged();
+    partial void OnCIMEIChanging(string value);
+    partial void OnCIMEIChanged();
+    partial void OnCIDPRETAREOChanging(string value);
+    partial void OnCIDPRETAREOChanged();
+    partial void Ongenero_tareosChanging(System.Nullable<decimal> value);
+    partial void Ongenero_tareosChanged();
+    partial void Ones_pretareoChanging(System.Nullable<decimal> value);
+    partial void Ones_pretareoChanged();
+    partial void Onctg30pretareoidChanging(string value);
+    partial void Onctg30pretareoidChanged();
+    partial void OnconvertidoChanging(System.Nullable<decimal> value);
+    partial void OnconvertidoChanged();
+    partial void OnvalorConvertidoChanging(System.Nullable<decimal> value);
+    partial void OnvalorConvertidoChanged();
+    partial void OnCESTADOOLDChanging(string value);
+    partial void OnCESTADOOLDChanged();
+    partial void OnidreferenciaexternoChanging(string value);
+    partial void OnidreferenciaexternoChanged();
+    partial void OnnrodocexternoChanging(string value);
+    partial void OnnrodocexternoChanged();
+    partial void OnsistemaexternoChanging(string value);
+    partial void OnsistemaexternoChanged();
+    partial void OnidareaChanging(string value);
+    partial void OnidareaChanged();
+    partial void OnIDEMPRESAEXTERNOChanging(string value);
+    partial void OnIDEMPRESAEXTERNOChanged();
+    partial void OnGENDESDEPRETAREOChanging(System.Nullable<decimal> value);
+    partial void OnGENDESDEPRETAREOChanged();
+    partial void OnicerradoChanging(System.Nullable<decimal> value);
+    partial void OnicerradoChanged();
+    partial void OncdescresponsablesuperiorChanging(string value);
+    partial void OncdescresponsablesuperiorChanged();
+    partial void Onctg30respsuperioridChanging(string value);
+    partial void Onctg30respsuperioridChanged();
+    partial void OndfechaprimeraexportacionChanging(System.Nullable<System.DateTime> value);
+    partial void OndfechaprimeraexportacionChanged();
+    partial void OndfechaultimaexportacionChanging(System.Nullable<System.DateTime> value);
+    partial void OndfechaultimaexportacionChanged();
+    partial void OnialtitudChanging(System.Nullable<double> value);
+    partial void OnialtitudChanged();
+    partial void OnilatitudChanging(System.Nullable<double> value);
+    partial void OnilatitudChanged();
+    partial void OnilongitudChanging(System.Nullable<double> value);
+    partial void OnilongitudChanged();
+    partial void Onctg30trabrespidChanging(string value);
+    partial void Onctg30trabrespidChanged();
+    partial void OncapenomtrabrespChanging(string value);
+    partial void OncapenomtrabrespChanged();
+    partial void OnidzonaccostoChanging(string value);
+    partial void OnidzonaccostoChanged();
+    #endregion
+		
+		public TGTAREO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30EMPID", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG30EMPID
+		{
+			get
+			{
+				return this._CTG30EMPID;
+			}
+			set
+			{
+				if ((this._CTG30EMPID != value))
+				{
+					this.OnCTG30EMPIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30EMPID = value;
+					this.SendPropertyChanged("CTG30EMPID");
+					this.OnCTG30EMPIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30TARID", DbType="Char(15) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG30TARID
+		{
+			get
+			{
+				return this._CTG30TARID;
+			}
+			set
+			{
+				if ((this._CTG30TARID != value))
+				{
+					this.OnCTG30TARIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30TARID = value;
+					this.SendPropertyChanged("CTG30TARID");
+					this.OnCTG30TARIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30SUPID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CTG30SUPID
+		{
+			get
+			{
+				return this._CTG30SUPID;
+			}
+			set
+			{
+				if ((this._CTG30SUPID != value))
+				{
+					this.OnCTG30SUPIDChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30SUPID = value;
+					this.SendPropertyChanged("CTG30SUPID");
+					this.OnCTG30SUPIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDPLANILLA", DbType="Char(3)")]
+		public string CIDPLANILLA
+		{
+			get
+			{
+				return this._CIDPLANILLA;
+			}
+			set
+			{
+				if ((this._CIDPLANILLA != value))
+				{
+					this.OnCIDPLANILLAChanging(value);
+					this.SendPropertyChanging();
+					this._CIDPLANILLA = value;
+					this.SendPropertyChanged("CIDPLANILLA");
+					this.OnCIDPLANILLAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDDOCUMENTO", DbType="Char(3)")]
+		public string CIDDOCUMENTO
+		{
+			get
+			{
+				return this._CIDDOCUMENTO;
+			}
+			set
+			{
+				if ((this._CIDDOCUMENTO != value))
+				{
+					this.OnCIDDOCUMENTOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDDOCUMENTO = value;
+					this.SendPropertyChanged("CIDDOCUMENTO");
+					this.OnCIDDOCUMENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CSERIE", DbType="Char(4)")]
+		public string CSERIE
+		{
+			get
+			{
+				return this._CSERIE;
+			}
+			set
+			{
+				if ((this._CSERIE != value))
+				{
+					this.OnCSERIEChanging(value);
+					this.SendPropertyChanging();
+					this._CSERIE = value;
+					this.SendPropertyChanged("CSERIE");
+					this.OnCSERIEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNUMERO", DbType="Char(7)")]
+		public string CNUMERO
+		{
+			get
+			{
+				return this._CNUMERO;
+			}
+			set
+			{
+				if ((this._CNUMERO != value))
+				{
+					this.OnCNUMEROChanging(value);
+					this.SendPropertyChanging();
+					this._CNUMERO = value;
+					this.SendPropertyChanged("CNUMERO");
+					this.OnCNUMEROChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDEMISOR", DbType="Char(3)")]
+		public string CIDEMISOR
+		{
+			get
+			{
+				return this._CIDEMISOR;
+			}
+			set
+			{
+				if ((this._CIDEMISOR != value))
+				{
+					this.OnCIDEMISORChanging(value);
+					this.SendPropertyChanging();
+					this._CIDEMISOR = value;
+					this.SendPropertyChanged("CIDEMISOR");
+					this.OnCIDEMISORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDTURNOTRABAJO", DbType="Char(2)")]
+		public string CIDTURNOTRABAJO
+		{
+			get
+			{
+				return this._CIDTURNOTRABAJO;
+			}
+			set
+			{
+				if ((this._CIDTURNOTRABAJO != value))
+				{
+					this.OnCIDTURNOTRABAJOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDTURNOTRABAJO = value;
+					this.SendPropertyChanged("CIDTURNOTRABAJO");
+					this.OnCIDTURNOTRABAJOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDGRUPOTRABAJO", DbType="Char(3)")]
+		public string CIDGRUPOTRABAJO
+		{
+			get
+			{
+				return this._CIDGRUPOTRABAJO;
+			}
+			set
+			{
+				if ((this._CIDGRUPOTRABAJO != value))
+				{
+					this.OnCIDGRUPOTRABAJOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDGRUPOTRABAJO = value;
+					this.SendPropertyChanged("CIDGRUPOTRABAJO");
+					this.OnCIDGRUPOTRABAJOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDPROYECTO", DbType="Char(4)")]
+		public string CIDPROYECTO
+		{
+			get
+			{
+				return this._CIDPROYECTO;
+			}
+			set
+			{
+				if ((this._CIDPROYECTO != value))
+				{
+					this.OnCIDPROYECTOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDPROYECTO = value;
+					this.SendPropertyChanged("CIDPROYECTO");
+					this.OnCIDPROYECTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDCONTRATA", DbType="Char(3)")]
+		public string CIDCONTRATA
+		{
+			get
+			{
+				return this._CIDCONTRATA;
+			}
+			set
+			{
+				if ((this._CIDCONTRATA != value))
+				{
+					this.OnCIDCONTRATAChanging(value);
+					this.SendPropertyChanging();
+					this._CIDCONTRATA = value;
+					this.SendPropertyChanged("CIDCONTRATA");
+					this.OnCIDCONTRATAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPERIODO", DbType="Char(6)")]
+		public string CPERIODO
+		{
+			get
+			{
+				return this._CPERIODO;
+			}
+			set
+			{
+				if ((this._CPERIODO != value))
+				{
+					this.OnCPERIODOChanging(value);
+					this.SendPropertyChanging();
+					this._CPERIODO = value;
+					this.SendPropertyChanged("CPERIODO");
+					this.OnCPERIODOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPERIODO_PLANILLA", DbType="Char(6)")]
+		public string CPERIODO_PLANILLA
+		{
+			get
+			{
+				return this._CPERIODO_PLANILLA;
+			}
+			set
+			{
+				if ((this._CPERIODO_PLANILLA != value))
+				{
+					this.OnCPERIODO_PLANILLAChanging(value);
+					this.SendPropertyChanging();
+					this._CPERIODO_PLANILLA = value;
+					this.SendPropertyChanged("CPERIODO_PLANILLA");
+					this.OnCPERIODO_PLANILLAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CSEMANA", DbType="Char(2)")]
+		public string CSEMANA
+		{
+			get
+			{
+				return this._CSEMANA;
+			}
+			set
+			{
+				if ((this._CSEMANA != value))
+				{
+					this.OnCSEMANAChanging(value);
+					this.SendPropertyChanging();
+					this._CSEMANA = value;
+					this.SendPropertyChanged("CSEMANA");
+					this.OnCSEMANAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDSUCURSAL", DbType="Char(3)")]
+		public string CIDSUCURSAL
+		{
+			get
+			{
+				return this._CIDSUCURSAL;
+			}
+			set
+			{
+				if ((this._CIDSUCURSAL != value))
+				{
+					this.OnCIDSUCURSALChanging(value);
+					this.SendPropertyChanging();
+					this._CIDSUCURSAL = value;
+					this.SendPropertyChanged("CIDSUCURSAL");
+					this.OnCIDSUCURSALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DFECHACREACION", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DFECHACREACION
+		{
+			get
+			{
+				return this._DFECHACREACION;
+			}
+			set
+			{
+				if ((this._DFECHACREACION != value))
+				{
+					this.OnDFECHACREACIONChanging(value);
+					this.SendPropertyChanging();
+					this._DFECHACREACION = value;
+					this.SendPropertyChanged("DFECHACREACION");
+					this.OnDFECHACREACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DFECHAPROGR", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DFECHAPROGR
+		{
+			get
+			{
+				return this._DFECHAPROGR;
+			}
+			set
+			{
+				if ((this._DFECHAPROGR != value))
+				{
+					this.OnDFECHAPROGRChanging(value);
+					this.SendPropertyChanging();
+					this._DFECHAPROGR = value;
+					this.SendPropertyChanged("DFECHAPROGR");
+					this.OnDFECHAPROGRChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IHABILITADO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> IHABILITADO
+		{
+			get
+			{
+				return this._IHABILITADO;
+			}
+			set
+			{
+				if ((this._IHABILITADO != value))
+				{
+					this.OnIHABILITADOChanging(value);
+					this.SendPropertyChanging();
+					this._IHABILITADO = value;
+					this.SendPropertyChanged("IHABILITADO");
+					this.OnIHABILITADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CESTADO", DbType="Char(2)")]
+		public string CESTADO
+		{
+			get
+			{
+				return this._CESTADO;
+			}
+			set
+			{
+				if ((this._CESTADO != value))
+				{
+					this.OnCESTADOChanging(value);
+					this.SendPropertyChanging();
+					this._CESTADO = value;
+					this.SendPropertyChanged("CESTADO");
+					this.OnCESTADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDASISTENCIA_RENDIMIENTO", DbType="Char(15)")]
+		public string CIDASISTENCIA_RENDIMIENTO
+		{
+			get
+			{
+				return this._CIDASISTENCIA_RENDIMIENTO;
+			}
+			set
+			{
+				if ((this._CIDASISTENCIA_RENDIMIENTO != value))
+				{
+					this.OnCIDASISTENCIA_RENDIMIENTOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDASISTENCIA_RENDIMIENTO = value;
+					this.SendPropertyChanged("CIDASISTENCIA_RENDIMIENTO");
+					this.OnCIDASISTENCIA_RENDIMIENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDASISTENCIA_PERSONAL", DbType="Char(15)")]
+		public string CIDASISTENCIA_PERSONAL
+		{
+			get
+			{
+				return this._CIDASISTENCIA_PERSONAL;
+			}
+			set
+			{
+				if ((this._CIDASISTENCIA_PERSONAL != value))
+				{
+					this.OnCIDASISTENCIA_PERSONALChanging(value);
+					this.SendPropertyChanging();
+					this._CIDASISTENCIA_PERSONAL = value;
+					this.SendPropertyChanged("CIDASISTENCIA_PERSONAL");
+					this.OnCIDASISTENCIA_PERSONALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CSINCRONIZA", DbType="Char(1)")]
+		public System.Nullable<char> CSINCRONIZA
+		{
+			get
+			{
+				return this._CSINCRONIZA;
+			}
+			set
+			{
+				if ((this._CSINCRONIZA != value))
+				{
+					this.OnCSINCRONIZAChanging(value);
+					this.SendPropertyChanging();
+					this._CSINCRONIZA = value;
+					this.SendPropertyChanged("CSINCRONIZA");
+					this.OnCSINCRONIZAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_genero_asistencia", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> genero_asistencia
+		{
+			get
+			{
+				return this._genero_asistencia;
+			}
+			set
+			{
+				if ((this._genero_asistencia != value))
+				{
+					this.Ongenero_asistenciaChanging(value);
+					this.SendPropertyChanging();
+					this._genero_asistencia = value;
+					this.SendPropertyChanged("genero_asistencia");
+					this.Ongenero_asistenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBASEDATOS", DbType="VarChar(100)")]
+		public string IDBASEDATOS
+		{
+			get
+			{
+				return this._IDBASEDATOS;
+			}
+			set
+			{
+				if ((this._IDBASEDATOS != value))
+				{
+					this.OnIDBASEDATOSChanging(value);
+					this.SendPropertyChanging();
+					this._IDBASEDATOS = value;
+					this.SendPropertyChanged("IDBASEDATOS");
+					this.OnIDBASEDATOSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CCLAVEELIMINACION", DbType="VarChar(5)")]
+		public string CCLAVEELIMINACION
+		{
+			get
+			{
+				return this._CCLAVEELIMINACION;
+			}
+			set
+			{
+				if ((this._CCLAVEELIMINACION != value))
+				{
+					this.OnCCLAVEELIMINACIONChanging(value);
+					this.SendPropertyChanging();
+					this._CCLAVEELIMINACION = value;
+					this.SendPropertyChanged("CCLAVEELIMINACION");
+					this.OnCCLAVEELIMINACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMOTIVOELIMINACION", DbType="VarChar(250)")]
+		public string CMOTIVOELIMINACION
+		{
+			get
+			{
+				return this._CMOTIVOELIMINACION;
+			}
+			set
+			{
+				if ((this._CMOTIVOELIMINACION != value))
+				{
+					this.OnCMOTIVOELIMINACIONChanging(value);
+					this.SendPropertyChanging();
+					this._CMOTIVOELIMINACION = value;
+					this.SendPropertyChanged("CMOTIVOELIMINACION");
+					this.OnCMOTIVOELIMINACIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMEI", DbType="Char(15)")]
+		public string IMEI
+		{
+			get
+			{
+				return this._IMEI;
+			}
+			set
+			{
+				if ((this._IMEI != value))
+				{
+					this.OnIMEIChanging(value);
+					this.SendPropertyChanging();
+					this._IMEI = value;
+					this.SendPropertyChanged("IMEI");
+					this.OnIMEIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gendesdedigitacion", DbType="Decimal(1,0) NOT NULL")]
+		public decimal gendesdedigitacion
+		{
+			get
+			{
+				return this._gendesdedigitacion;
+			}
+			set
+			{
+				if ((this._gendesdedigitacion != value))
+				{
+					this.OngendesdedigitacionChanging(value);
+					this.SendPropertyChanging();
+					this._gendesdedigitacion = value;
+					this.SendPropertyChanged("gendesdedigitacion");
+					this.OngendesdedigitacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTG30TARIDORIG", DbType="VarChar(15)")]
+		public string CTG30TARIDORIG
+		{
+			get
+			{
+				return this._CTG30TARIDORIG;
+			}
+			set
+			{
+				if ((this._CTG30TARIDORIG != value))
+				{
+					this.OnCTG30TARIDORIGChanging(value);
+					this.SendPropertyChanging();
+					this._CTG30TARIDORIG = value;
+					this.SendPropertyChanged("CTG30TARIDORIG");
+					this.OnCTG30TARIDORIGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIMEI", DbType="VarChar(100)")]
+		public string CIMEI
+		{
+			get
+			{
+				return this._CIMEI;
+			}
+			set
+			{
+				if ((this._CIMEI != value))
+				{
+					this.OnCIMEIChanging(value);
+					this.SendPropertyChanging();
+					this._CIMEI = value;
+					this.SendPropertyChanged("CIMEI");
+					this.OnCIMEIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIDPRETAREO", DbType="VarChar(15)")]
+		public string CIDPRETAREO
+		{
+			get
+			{
+				return this._CIDPRETAREO;
+			}
+			set
+			{
+				if ((this._CIDPRETAREO != value))
+				{
+					this.OnCIDPRETAREOChanging(value);
+					this.SendPropertyChanging();
+					this._CIDPRETAREO = value;
+					this.SendPropertyChanged("CIDPRETAREO");
+					this.OnCIDPRETAREOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_genero_tareos", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> genero_tareos
+		{
+			get
+			{
+				return this._genero_tareos;
+			}
+			set
+			{
+				if ((this._genero_tareos != value))
+				{
+					this.Ongenero_tareosChanging(value);
+					this.SendPropertyChanging();
+					this._genero_tareos = value;
+					this.SendPropertyChanged("genero_tareos");
+					this.Ongenero_tareosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_pretareo", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> es_pretareo
+		{
+			get
+			{
+				return this._es_pretareo;
+			}
+			set
+			{
+				if ((this._es_pretareo != value))
+				{
+					this.Ones_pretareoChanging(value);
+					this.SendPropertyChanging();
+					this._es_pretareo = value;
+					this.SendPropertyChanged("es_pretareo");
+					this.Ones_pretareoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctg30pretareoid", DbType="Char(15)")]
+		public string ctg30pretareoid
+		{
+			get
+			{
+				return this._ctg30pretareoid;
+			}
+			set
+			{
+				if ((this._ctg30pretareoid != value))
+				{
+					this.Onctg30pretareoidChanging(value);
+					this.SendPropertyChanging();
+					this._ctg30pretareoid = value;
+					this.SendPropertyChanged("ctg30pretareoid");
+					this.Onctg30pretareoidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_convertido", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> convertido
+		{
+			get
+			{
+				return this._convertido;
+			}
+			set
+			{
+				if ((this._convertido != value))
+				{
+					this.OnconvertidoChanging(value);
+					this.SendPropertyChanging();
+					this._convertido = value;
+					this.SendPropertyChanged("convertido");
+					this.OnconvertidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valorConvertido", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> valorConvertido
+		{
+			get
+			{
+				return this._valorConvertido;
+			}
+			set
+			{
+				if ((this._valorConvertido != value))
+				{
+					this.OnvalorConvertidoChanging(value);
+					this.SendPropertyChanging();
+					this._valorConvertido = value;
+					this.SendPropertyChanged("valorConvertido");
+					this.OnvalorConvertidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CESTADOOLD", DbType="Char(2)")]
+		public string CESTADOOLD
+		{
+			get
+			{
+				return this._CESTADOOLD;
+			}
+			set
+			{
+				if ((this._CESTADOOLD != value))
+				{
+					this.OnCESTADOOLDChanging(value);
+					this.SendPropertyChanging();
+					this._CESTADOOLD = value;
+					this.SendPropertyChanged("CESTADOOLD");
+					this.OnCESTADOOLDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idreferenciaexterno", DbType="VarChar(15)")]
+		public string idreferenciaexterno
+		{
+			get
+			{
+				return this._idreferenciaexterno;
+			}
+			set
+			{
+				if ((this._idreferenciaexterno != value))
+				{
+					this.OnidreferenciaexternoChanging(value);
+					this.SendPropertyChanging();
+					this._idreferenciaexterno = value;
+					this.SendPropertyChanged("idreferenciaexterno");
+					this.OnidreferenciaexternoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nrodocexterno", DbType="VarChar(20)")]
+		public string nrodocexterno
+		{
+			get
+			{
+				return this._nrodocexterno;
+			}
+			set
+			{
+				if ((this._nrodocexterno != value))
+				{
+					this.OnnrodocexternoChanging(value);
+					this.SendPropertyChanging();
+					this._nrodocexterno = value;
+					this.SendPropertyChanged("nrodocexterno");
+					this.OnnrodocexternoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sistemaexterno", DbType="VarChar(20)")]
+		public string sistemaexterno
+		{
+			get
+			{
+				return this._sistemaexterno;
+			}
+			set
+			{
+				if ((this._sistemaexterno != value))
+				{
+					this.OnsistemaexternoChanging(value);
+					this.SendPropertyChanging();
+					this._sistemaexterno = value;
+					this.SendPropertyChanged("sistemaexterno");
+					this.OnsistemaexternoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idarea", DbType="Char(10)")]
+		public string idarea
+		{
+			get
+			{
+				return this._idarea;
+			}
+			set
+			{
+				if ((this._idarea != value))
+				{
+					this.OnidareaChanging(value);
+					this.SendPropertyChanging();
+					this._idarea = value;
+					this.SendPropertyChanged("idarea");
+					this.OnidareaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEMPRESAEXTERNO", DbType="VarChar(20)")]
+		public string IDEMPRESAEXTERNO
+		{
+			get
+			{
+				return this._IDEMPRESAEXTERNO;
+			}
+			set
+			{
+				if ((this._IDEMPRESAEXTERNO != value))
+				{
+					this.OnIDEMPRESAEXTERNOChanging(value);
+					this.SendPropertyChanging();
+					this._IDEMPRESAEXTERNO = value;
+					this.SendPropertyChanged("IDEMPRESAEXTERNO");
+					this.OnIDEMPRESAEXTERNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GENDESDEPRETAREO", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> GENDESDEPRETAREO
+		{
+			get
+			{
+				return this._GENDESDEPRETAREO;
+			}
+			set
+			{
+				if ((this._GENDESDEPRETAREO != value))
+				{
+					this.OnGENDESDEPRETAREOChanging(value);
+					this.SendPropertyChanging();
+					this._GENDESDEPRETAREO = value;
+					this.SendPropertyChanged("GENDESDEPRETAREO");
+					this.OnGENDESDEPRETAREOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_icerrado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> icerrado
+		{
+			get
+			{
+				return this._icerrado;
+			}
+			set
+			{
+				if ((this._icerrado != value))
+				{
+					this.OnicerradoChanging(value);
+					this.SendPropertyChanging();
+					this._icerrado = value;
+					this.SendPropertyChanged("icerrado");
+					this.OnicerradoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cdescresponsablesuperior", DbType="VarChar(200)")]
+		public string cdescresponsablesuperior
+		{
+			get
+			{
+				return this._cdescresponsablesuperior;
+			}
+			set
+			{
+				if ((this._cdescresponsablesuperior != value))
+				{
+					this.OncdescresponsablesuperiorChanging(value);
+					this.SendPropertyChanging();
+					this._cdescresponsablesuperior = value;
+					this.SendPropertyChanged("cdescresponsablesuperior");
+					this.OncdescresponsablesuperiorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctg30respsuperiorid", DbType="VarChar(6)")]
+		public string ctg30respsuperiorid
+		{
+			get
+			{
+				return this._ctg30respsuperiorid;
+			}
+			set
+			{
+				if ((this._ctg30respsuperiorid != value))
+				{
+					this.Onctg30respsuperioridChanging(value);
+					this.SendPropertyChanging();
+					this._ctg30respsuperiorid = value;
+					this.SendPropertyChanged("ctg30respsuperiorid");
+					this.Onctg30respsuperioridChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dfechaprimeraexportacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dfechaprimeraexportacion
+		{
+			get
+			{
+				return this._dfechaprimeraexportacion;
+			}
+			set
+			{
+				if ((this._dfechaprimeraexportacion != value))
+				{
+					this.OndfechaprimeraexportacionChanging(value);
+					this.SendPropertyChanging();
+					this._dfechaprimeraexportacion = value;
+					this.SendPropertyChanged("dfechaprimeraexportacion");
+					this.OndfechaprimeraexportacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dfechaultimaexportacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dfechaultimaexportacion
+		{
+			get
+			{
+				return this._dfechaultimaexportacion;
+			}
+			set
+			{
+				if ((this._dfechaultimaexportacion != value))
+				{
+					this.OndfechaultimaexportacionChanging(value);
+					this.SendPropertyChanging();
+					this._dfechaultimaexportacion = value;
+					this.SendPropertyChanged("dfechaultimaexportacion");
+					this.OndfechaultimaexportacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ialtitud", DbType="Float")]
+		public System.Nullable<double> ialtitud
+		{
+			get
+			{
+				return this._ialtitud;
+			}
+			set
+			{
+				if ((this._ialtitud != value))
+				{
+					this.OnialtitudChanging(value);
+					this.SendPropertyChanging();
+					this._ialtitud = value;
+					this.SendPropertyChanged("ialtitud");
+					this.OnialtitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilatitud", DbType="Float")]
+		public System.Nullable<double> ilatitud
+		{
+			get
+			{
+				return this._ilatitud;
+			}
+			set
+			{
+				if ((this._ilatitud != value))
+				{
+					this.OnilatitudChanging(value);
+					this.SendPropertyChanging();
+					this._ilatitud = value;
+					this.SendPropertyChanged("ilatitud");
+					this.OnilatitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilongitud", DbType="Float")]
+		public System.Nullable<double> ilongitud
+		{
+			get
+			{
+				return this._ilongitud;
+			}
+			set
+			{
+				if ((this._ilongitud != value))
+				{
+					this.OnilongitudChanging(value);
+					this.SendPropertyChanging();
+					this._ilongitud = value;
+					this.SendPropertyChanged("ilongitud");
+					this.OnilongitudChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctg30trabrespid", DbType="Char(8)")]
+		public string ctg30trabrespid
+		{
+			get
+			{
+				return this._ctg30trabrespid;
+			}
+			set
+			{
+				if ((this._ctg30trabrespid != value))
+				{
+					this.Onctg30trabrespidChanging(value);
+					this.SendPropertyChanging();
+					this._ctg30trabrespid = value;
+					this.SendPropertyChanged("ctg30trabrespid");
+					this.Onctg30trabrespidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_capenomtrabresp", DbType="VarChar(250)")]
+		public string capenomtrabresp
+		{
+			get
+			{
+				return this._capenomtrabresp;
+			}
+			set
+			{
+				if ((this._capenomtrabresp != value))
+				{
+					this.OncapenomtrabrespChanging(value);
+					this.SendPropertyChanging();
+					this._capenomtrabresp = value;
+					this.SendPropertyChanged("capenomtrabresp");
+					this.OncapenomtrabrespChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idzonaccosto", DbType="Char(12)")]
+		public string idzonaccosto
+		{
+			get
+			{
+				return this._idzonaccosto;
+			}
+			set
+			{
+				if ((this._idzonaccosto != value))
+				{
+					this.OnidzonaccostoChanging(value);
+					this.SendPropertyChanging();
+					this._idzonaccosto = value;
+					this.SendPropertyChanged("idzonaccosto");
+					this.OnidzonaccostoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class SAS_TareoMovilListadoByFechasResult
+	{
+		
+		private string _EmpresaID;
+		
+		private string _ID;
+		
+		private string _TareadorID;
+		
+		private string _Tareador;
+		
+		private string _PlanilaID;
+		
+		private string _Documento;
+		
+		private string _TurnoTrabajoID;
+		
+		private string _TurnoTrabajo;
+		
+		private string _Periodo;
+		
+		private string _PlanilaPeriodo;
+		
+		private string _PlanillaSemana;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		private string _EstadoDocumentoID;
+		
+		private string _EstadoDocumento;
+		
+		private int _Actividades;
+		
+		private int _Labores;
+		
+		private int _Consumidores;
+		
+		private decimal _PromedioRendimiento;
+		
+		public SAS_TareoMovilListadoByFechasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="VarChar(3)")]
+		public string EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(15)")]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TareadorID", DbType="VarChar(6)")]
+		public string TareadorID
+		{
+			get
+			{
+				return this._TareadorID;
+			}
+			set
+			{
+				if ((this._TareadorID != value))
+				{
+					this._TareadorID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tareador", DbType="VarChar(80)")]
+		public string Tareador
+		{
+			get
+			{
+				return this._Tareador;
+			}
+			set
+			{
+				if ((this._Tareador != value))
+				{
+					this._Tareador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanilaID", DbType="Char(3)")]
+		public string PlanilaID
+		{
+			get
+			{
+				return this._PlanilaID;
+			}
+			set
+			{
+				if ((this._PlanilaID != value))
+				{
+					this._PlanilaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Documento", DbType="VarChar(18)")]
+		public string Documento
+		{
+			get
+			{
+				return this._Documento;
+			}
+			set
+			{
+				if ((this._Documento != value))
+				{
+					this._Documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TurnoTrabajoID", DbType="Char(2)")]
+		public string TurnoTrabajoID
+		{
+			get
+			{
+				return this._TurnoTrabajoID;
+			}
+			set
+			{
+				if ((this._TurnoTrabajoID != value))
+				{
+					this._TurnoTrabajoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TurnoTrabajo", DbType="VarChar(50)")]
+		public string TurnoTrabajo
+		{
+			get
+			{
+				return this._TurnoTrabajo;
+			}
+			set
+			{
+				if ((this._TurnoTrabajo != value))
+				{
+					this._TurnoTrabajo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Periodo", DbType="Char(6)")]
+		public string Periodo
+		{
+			get
+			{
+				return this._Periodo;
+			}
+			set
+			{
+				if ((this._Periodo != value))
+				{
+					this._Periodo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanilaPeriodo", DbType="Char(6)")]
+		public string PlanilaPeriodo
+		{
+			get
+			{
+				return this._PlanilaPeriodo;
+			}
+			set
+			{
+				if ((this._PlanilaPeriodo != value))
+				{
+					this._PlanilaPeriodo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaSemana", DbType="Char(2)")]
+		public string PlanillaSemana
+		{
+			get
+			{
+				return this._PlanillaSemana;
+			}
+			set
+			{
+				if ((this._PlanillaSemana != value))
+				{
+					this._PlanillaSemana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoDocumentoID", DbType="Char(2)")]
+		public string EstadoDocumentoID
+		{
+			get
+			{
+				return this._EstadoDocumentoID;
+			}
+			set
+			{
+				if ((this._EstadoDocumentoID != value))
+				{
+					this._EstadoDocumentoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoDocumento", DbType="VarChar(30)")]
+		public string EstadoDocumento
+		{
+			get
+			{
+				return this._EstadoDocumento;
+			}
+			set
+			{
+				if ((this._EstadoDocumento != value))
+				{
+					this._EstadoDocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Actividades", DbType="Int NOT NULL")]
+		public int Actividades
+		{
+			get
+			{
+				return this._Actividades;
+			}
+			set
+			{
+				if ((this._Actividades != value))
+				{
+					this._Actividades = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Labores", DbType="Int NOT NULL")]
+		public int Labores
+		{
+			get
+			{
+				return this._Labores;
+			}
+			set
+			{
+				if ((this._Labores != value))
+				{
+					this._Labores = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consumidores", DbType="Int NOT NULL")]
+		public int Consumidores
+		{
+			get
+			{
+				return this._Consumidores;
+			}
+			set
+			{
+				if ((this._Consumidores != value))
+				{
+					this._Consumidores = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PromedioRendimiento", DbType="Decimal(2,2) NOT NULL")]
+		public decimal PromedioRendimiento
+		{
+			get
+			{
+				return this._PromedioRendimiento;
+			}
+			set
+			{
+				if ((this._PromedioRendimiento != value))
+				{
+					this._PromedioRendimiento = value;
+				}
+			}
 		}
 	}
 }
