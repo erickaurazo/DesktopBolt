@@ -414,7 +414,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if (txtPersonalID.Text.Trim() != string.Empty || txtPersonal.Text.Trim() != string.Empty)
             {
-                btnBuscarPlanilla.P_TablaConsulta = "personal where idcodigogeneral = """;
+                btnBuscarPlanilla.P_TablaConsulta = ("personal where idcodigogeneral = 'aaa'");
                 btnBuscarPlanilla.Enabled = false;
                 txtPlanilla.ReadOnly = true;
                 txtPlanillaID.ReadOnly = true;

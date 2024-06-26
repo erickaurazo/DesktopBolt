@@ -39,7 +39,7 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new ConformacionDeCarga());
-            Application.Run(new TareoMovil());
+            Application.Run(new RegistroDeCapacitaciones());
             //Application.Run(new Menu());
 
         }

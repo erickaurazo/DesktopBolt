@@ -1710,46 +1710,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConformidadDeCargaDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitaciones.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitaciones.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitaciones.Designer.cs">
       <DependentUpon>RegistroDeCapacitaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionesEdicion.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionesEdicion.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesEdicion.Designer.cs">
       <DependentUpon>RegistroDeCapacitacionesEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPrevia.Designer.cs">
       <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionPorColaborador.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionPorColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionPorColaborador.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionPorColaborador.Designer.cs">
       <DependentUpon>RegistroDeCapacitacionPorColaborador.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionPorTema.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionPorTema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\RegistroDeCapacitacionPorTema.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionPorTema.Designer.cs">
       <DependentUpon>RegistroDeCapacitacionPorTema.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\TemaACapacitar.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\TemaACapacitar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\TemaACapacitar.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\TemaACapacitar.Designer.cs">
       <DependentUpon>TemaACapacitar.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\TipoDeCapacitacion.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\TipoDeCapacitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\TipoDeCapacitacion.Designer.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\TipoDeCapacitacion.Designer.cs">
       <DependentUpon>TipoDeCapacitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.cs">
@@ -3177,17 +3177,20 @@
     <EmbeddedResource Include="Produccion\Conformacion de carga\ConformacionDeCargaVistaPrevia.resx">
       <DependentUpon>ConformacionDeCargaVistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SIG\SST\RegistroDeCapacitaciones.resx">
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitaciones.resx">
       <DependentUpon>RegistroDeCapacitaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SIG\SST\RegistroDeCapacitacionesEdicion.resx">
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesEdicion.resx">
       <DependentUpon>RegistroDeCapacitacionesEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SIG\SST\RegistroDeCapacitacionesVistaPrevia.resx">
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPrevia.resx">
       <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SIG\SST\TemaACapacitar.resx">
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\TemaACapacitar.resx">
       <DependentUpon>TemaACapacitar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\TipoDeCapacitacion.resx">
+      <DependentUpon>TipoDeCapacitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="T.I\Correos electronicos\CuentaDeCorreosEdicionEstado.resx">
       <DependentUpon>CuentaDeCorreosEdicionEstado.cs</DependentUpon>
