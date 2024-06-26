@@ -507,7 +507,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             {
                 model = new RegistroDeCapacitacionesController();
                 Listado = new List<ListadoRegistroCapacitacionesPorPeriodoResult>();
-                Listado = model.GetListByDate(conection, desde, hasta);
+                Listado = model.ObtenerListaDeCapacitacionesPorPeriodos(conection, desde, hasta);
 
             }
             catch (Exception Ex)

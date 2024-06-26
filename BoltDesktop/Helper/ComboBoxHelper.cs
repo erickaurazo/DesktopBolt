@@ -75,8 +75,18 @@ namespace Asistencia.Helper
                     result.Add(new Grupo { Codigo = "0001", Descripcion = "0001" });
                 }
 
+                if (formulario.ToUpper() == "RegistroDeCapacitaciones".ToUpper())
+                {
+                    result.Add(new Grupo { Codigo = "2019", Descripcion = "2019" });
+                    result.Add(new Grupo { Codigo = "2020", Descripcion = "2020" });
+                    result.Add(new Grupo { Codigo = "2021", Descripcion = "2021" });
+                    result.Add(new Grupo { Codigo = "2022", Descripcion = "2022" });
+                    result.Add(new Grupo { Codigo = "2023", Descripcion = "2023" });
+                    result.Add(new Grupo { Codigo = "2024", Descripcion = "2024" });
+                    result.Add(new Grupo { Codigo = "2025", Descripcion = "2025" });
+                }
 
-
+                
             }
             //    if (formulario.ToUpper() == " TIPO ESTADO DISPOSITIVOS".ToUpper())
             //    {
@@ -179,7 +189,10 @@ namespace Asistencia.Helper
                 result.Add(new Grupo { Codigo = "PET", Descripcion = "PET" });
             }
 
-
+            if (formulario.ToUpper() == "RegistroDeCapacitaciones".ToUpper())
+            {
+                result.Add(new Grupo { Codigo = "CAP", Descripcion = "CAP" });
+            }
 
 
 

@@ -292,6 +292,13 @@ namespace Asistencia.Datos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
 			return ((ISingleResult<ListadoRegistroCapacitacionesPorPeriodoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListadoRegistroCapacitacionesPorID")]
+		public ISingleResult<ListadoRegistroCapacitacionesPorIDResult> ListadoRegistroCapacitacionesPorID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CapacitacionID", DbType="VarChar(17)")] string capacitacionID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), capacitacionID);
+			return ((ISingleResult<ListadoRegistroCapacitacionesPorIDResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tema")]
@@ -3227,8 +3234,6 @@ namespace Asistencia.Datos
 		
 		private EntitySet<CapacitacionArea> _CapacitacionAreas;
 		
-		private EntitySet<CapacitacionArea1> _CapacitacionArea1s;
-		
 		private EntitySet<CapacitacionCapacitador> _CapacitacionCapacitadors;
 		
 		private EntitySet<CapacitacionDetalle> _CapacitacionDetalles;
@@ -3236,6 +3241,8 @@ namespace Asistencia.Datos
 		private EntitySet<CapacitacionFotografia> _CapacitacionFotografias;
 		
 		private EntitySet<CapacitacionTema> _CapacitacionTemas;
+		
+		private EntitySet<CapacitacionArea1> _CapacitacionArea1s;
 		
 		private EntitySet<CapacitacionCapacitador1> _CapacitacionCapacitador1s;
 		
@@ -3282,11 +3289,11 @@ namespace Asistencia.Datos
 		public CapacitacionCabecera1()
 		{
 			this._CapacitacionAreas = new EntitySet<CapacitacionArea>(new Action<CapacitacionArea>(this.attach_CapacitacionAreas), new Action<CapacitacionArea>(this.detach_CapacitacionAreas));
-			this._CapacitacionArea1s = new EntitySet<CapacitacionArea1>(new Action<CapacitacionArea1>(this.attach_CapacitacionArea1s), new Action<CapacitacionArea1>(this.detach_CapacitacionArea1s));
 			this._CapacitacionCapacitadors = new EntitySet<CapacitacionCapacitador>(new Action<CapacitacionCapacitador>(this.attach_CapacitacionCapacitadors), new Action<CapacitacionCapacitador>(this.detach_CapacitacionCapacitadors));
 			this._CapacitacionDetalles = new EntitySet<CapacitacionDetalle>(new Action<CapacitacionDetalle>(this.attach_CapacitacionDetalles), new Action<CapacitacionDetalle>(this.detach_CapacitacionDetalles));
 			this._CapacitacionFotografias = new EntitySet<CapacitacionFotografia>(new Action<CapacitacionFotografia>(this.attach_CapacitacionFotografias), new Action<CapacitacionFotografia>(this.detach_CapacitacionFotografias));
 			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
+			this._CapacitacionArea1s = new EntitySet<CapacitacionArea1>(new Action<CapacitacionArea1>(this.attach_CapacitacionArea1s), new Action<CapacitacionArea1>(this.detach_CapacitacionArea1s));
 			this._CapacitacionCapacitador1s = new EntitySet<CapacitacionCapacitador1>(new Action<CapacitacionCapacitador1>(this.attach_CapacitacionCapacitador1s), new Action<CapacitacionCapacitador1>(this.detach_CapacitacionCapacitador1s));
 			this._CapacitacionDetalle1s = new EntitySet<CapacitacionDetalle1>(new Action<CapacitacionDetalle1>(this.attach_CapacitacionDetalle1s), new Action<CapacitacionDetalle1>(this.detach_CapacitacionDetalle1s));
 			this._CapacitacionFotografia1s = new EntitySet<CapacitacionFotografia1>(new Action<CapacitacionFotografia1>(this.attach_CapacitacionFotografia1s), new Action<CapacitacionFotografia1>(this.detach_CapacitacionFotografia1s));
@@ -3553,19 +3560,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionArea1", Storage="_CapacitacionArea1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionArea1> CapacitacionArea1s
-		{
-			get
-			{
-				return this._CapacitacionArea1s;
-			}
-			set
-			{
-				this._CapacitacionArea1s.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionCapacitador", Storage="_CapacitacionCapacitadors", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
 		public EntitySet<CapacitacionCapacitador> CapacitacionCapacitadors
 		{
@@ -3615,6 +3609,19 @@ namespace Asistencia.Datos
 			set
 			{
 				this._CapacitacionTemas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionArea1", Storage="_CapacitacionArea1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
+		public EntitySet<CapacitacionArea1> CapacitacionArea1s
+		{
+			get
+			{
+				return this._CapacitacionArea1s;
+			}
+			set
+			{
+				this._CapacitacionArea1s.Assign(value);
 			}
 		}
 		
@@ -3770,18 +3777,6 @@ namespace Asistencia.Datos
 			entity.CapacitacionCabecera1 = null;
 		}
 		
-		private void attach_CapacitacionArea1s(CapacitacionArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
-		}
-		
-		private void detach_CapacitacionArea1s(CapacitacionArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-		
 		private void attach_CapacitacionCapacitadors(CapacitacionCapacitador entity)
 		{
 			this.SendPropertyChanging();
@@ -3825,6 +3820,18 @@ namespace Asistencia.Datos
 		}
 		
 		private void detach_CapacitacionTemas(CapacitacionTema entity)
+		{
+			this.SendPropertyChanging();
+			entity.CapacitacionCabecera1 = null;
+		}
+		
+		private void attach_CapacitacionArea1s(CapacitacionArea1 entity)
+		{
+			this.SendPropertyChanging();
+			entity.CapacitacionCabecera1 = this;
+		}
+		
+		private void detach_CapacitacionArea1s(CapacitacionArea1 entity)
 		{
 			this.SendPropertyChanging();
 			entity.CapacitacionCabecera1 = null;
@@ -5409,9 +5416,9 @@ namespace Asistencia.Datos
 		
 		private EntitySet<TemaArea> _TemaAreas;
 		
-		private EntitySet<TemaArea1> _TemaArea1s;
-		
 		private EntitySet<CapacitacionTema> _CapacitacionTemas;
+		
+		private EntitySet<TemaArea1> _TemaArea1s;
 		
 		private EntitySet<CapacitacionTema1> _CapacitacionTema1s;
 		
@@ -5432,8 +5439,8 @@ namespace Asistencia.Datos
 		public Tema1()
 		{
 			this._TemaAreas = new EntitySet<TemaArea>(new Action<TemaArea>(this.attach_TemaAreas), new Action<TemaArea>(this.detach_TemaAreas));
-			this._TemaArea1s = new EntitySet<TemaArea1>(new Action<TemaArea1>(this.attach_TemaArea1s), new Action<TemaArea1>(this.detach_TemaArea1s));
 			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
+			this._TemaArea1s = new EntitySet<TemaArea1>(new Action<TemaArea1>(this.attach_TemaArea1s), new Action<TemaArea1>(this.detach_TemaArea1s));
 			this._CapacitacionTema1s = new EntitySet<CapacitacionTema1>(new Action<CapacitacionTema1>(this.attach_CapacitacionTema1s), new Action<CapacitacionTema1>(this.detach_CapacitacionTema1s));
 			OnCreated();
 		}
@@ -5531,19 +5538,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_TemaArea1", Storage="_TemaArea1s", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<TemaArea1> TemaArea1s
-		{
-			get
-			{
-				return this._TemaArea1s;
-			}
-			set
-			{
-				this._TemaArea1s.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="TemaID", OtherKey="TemaID")]
 		public EntitySet<CapacitacionTema> CapacitacionTemas
 		{
@@ -5554,6 +5548,19 @@ namespace Asistencia.Datos
 			set
 			{
 				this._CapacitacionTemas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_TemaArea1", Storage="_TemaArea1s", ThisKey="TemaID", OtherKey="TemaID")]
+		public EntitySet<TemaArea1> TemaArea1s
+		{
+			get
+			{
+				return this._TemaArea1s;
+			}
+			set
+			{
+				this._TemaArea1s.Assign(value);
 			}
 		}
 		
@@ -5602,18 +5609,6 @@ namespace Asistencia.Datos
 			entity.Tema1 = null;
 		}
 		
-		private void attach_TemaArea1s(TemaArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = this;
-		}
-		
-		private void detach_TemaArea1s(TemaArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = null;
-		}
-		
 		private void attach_CapacitacionTemas(CapacitacionTema entity)
 		{
 			this.SendPropertyChanging();
@@ -5621,6 +5616,18 @@ namespace Asistencia.Datos
 		}
 		
 		private void detach_CapacitacionTemas(CapacitacionTema entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tema1 = null;
+		}
+		
+		private void attach_TemaArea1s(TemaArea1 entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tema1 = this;
+		}
+		
+		private void detach_TemaArea1s(TemaArea1 entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tema1 = null;
@@ -6219,6 +6226,302 @@ namespace Asistencia.Datos
 				if ((this._Capacitadores != value))
 				{
 					this._Capacitadores = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duracion", DbType="Int")]
+		public System.Nullable<int> Duracion
+		{
+			get
+			{
+				return this._Duracion;
+			}
+			set
+			{
+				if ((this._Duracion != value))
+				{
+					this._Duracion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ListadoRegistroCapacitacionesPorIDResult
+	{
+		
+		private string _Folio;
+		
+		private string _CapacitacionID;
+		
+		private string _CapacitacionTipoID;
+		
+		private string _Capacitacion;
+		
+		private System.DateTime _FechaCapacitacion;
+		
+		private string _Ubicación;
+		
+		private string _LatLong;
+		
+		private System.Nullable<System.DateTime> _HoraInicio;
+		
+		private System.Nullable<System.DateTime> _HoraFin;
+		
+		private string _Observacion;
+		
+		private System.DateTime _FechaRegistro;
+		
+		private string _PDFRuta;
+		
+		private System.Nullable<int> _PDFPrint;
+		
+		private string _EstadoID;
+		
+		private string _Estado;
+		
+		private System.Nullable<int> _Duracion;
+		
+		public ListadoRegistroCapacitacionesPorIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Folio", DbType="VarChar(7)")]
+		public string Folio
+		{
+			get
+			{
+				return this._Folio;
+			}
+			set
+			{
+				if ((this._Folio != value))
+				{
+					this._Folio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionID
+		{
+			get
+			{
+				return this._CapacitacionID;
+			}
+			set
+			{
+				if ((this._CapacitacionID != value))
+				{
+					this._CapacitacionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTipoID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionTipoID
+		{
+			get
+			{
+				return this._CapacitacionTipoID;
+			}
+			set
+			{
+				if ((this._CapacitacionTipoID != value))
+				{
+					this._CapacitacionTipoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitacion", DbType="VarChar(150)")]
+		public string Capacitacion
+		{
+			get
+			{
+				return this._Capacitacion;
+			}
+			set
+			{
+				if ((this._Capacitacion != value))
+				{
+					this._Capacitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCapacitacion", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaCapacitacion
+		{
+			get
+			{
+				return this._FechaCapacitacion;
+			}
+			set
+			{
+				if ((this._FechaCapacitacion != value))
+				{
+					this._FechaCapacitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicación", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Ubicación
+		{
+			get
+			{
+				return this._Ubicación;
+			}
+			set
+			{
+				if ((this._Ubicación != value))
+				{
+					this._Ubicación = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LatLong", DbType="VarChar(150)")]
+		public string LatLong
+		{
+			get
+			{
+				return this._LatLong;
+			}
+			set
+			{
+				if ((this._LatLong != value))
+				{
+					this._LatLong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraInicio", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> HoraInicio
+		{
+			get
+			{
+				return this._HoraInicio;
+			}
+			set
+			{
+				if ((this._HoraInicio != value))
+				{
+					this._HoraInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraFin", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> HoraFin
+		{
+			get
+			{
+				return this._HoraFin;
+			}
+			set
+			{
+				if ((this._HoraFin != value))
+				{
+					this._HoraFin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(MAX)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this._FechaRegistro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFRuta", DbType="VarChar(MAX)")]
+		public string PDFRuta
+		{
+			get
+			{
+				return this._PDFRuta;
+			}
+			set
+			{
+				if ((this._PDFRuta != value))
+				{
+					this._PDFRuta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPrint", DbType="Int")]
+		public System.Nullable<int> PDFPrint
+		{
+			get
+			{
+				return this._PDFPrint;
+			}
+			set
+			{
+				if ((this._PDFPrint != value))
+				{
+					this._PDFPrint = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="Char(2)")]
+		public string EstadoID
+		{
+			get
+			{
+				return this._EstadoID;
+			}
+			set
+			{
+				if ((this._EstadoID != value))
+				{
+					this._EstadoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(30)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
 				}
 			}
 		}
