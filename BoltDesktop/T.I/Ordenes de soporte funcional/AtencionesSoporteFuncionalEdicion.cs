@@ -404,7 +404,16 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnDetalleCambiarEstado_Click(object sender, EventArgs e)
@@ -1427,9 +1436,124 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             }
         }
 
+        private void AtencionesSoporteFuncionalEdicion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void AtencionesSoporteFuncionalEdicion_Load(object sender, EventArgs e)
         {
 
         }
+
+        #region Metodos()
+
+        private void AperturarFormulario()
+        {
+            BarraPrincipal.Enabled = false;
+            gbDatosPersonal.Enabled = false;
+            gbDetale.Enabled = false;
+            gbDocumento.Enabled = false;
+            progressBar1.Visible = true;
+
+            bgwHilo.RunWorkerAsync();
+        }
+
+        private void CargarCombos()
+        {
+            try
+            {
+                comboHelper = new ComboBoxHelper();
+                documentos = new List<Grupo>();
+                series = new List<Grupo>();
+                tipoSolicitudes = new List<Grupo>();
+                tipoDePrioridades = new List<Grupo>();
+
+                documentos = comboHelper.GetDocumentTypeForForm("SAS", "Soporte funcional");
+                cboDocumento.DisplayMember = "Descripcion";
+                cboDocumento.ValueMember = "Codigo";
+                cboDocumento.DataSource = documentos.ToList();
+
+                series = comboHelper.GetDocumentSeriesForForm("SAS", "Soporte funcional");
+                cboSerie.DisplayMember = "Descripcion";
+                cboSerie.ValueMember = "Codigo";
+                cboSerie.DataSource = series.ToList();
+
+
+                canalesDeAtencion = new List<Grupo>();
+                tiempoProgramados = new List<Grupo>();
+                tiempoEjecutados = new List<Grupo>();
+
+
+                //tipoSolicitudes = comboHelper.TypesOfFunctionalCare("SAS", "Equipamiento tecnologico");
+                //cboMantenimientoTipo.DisplayMember = "Descripcion";
+                //cboMantenimientoTipo.ValueMember = "Codigo";
+                //cboMantenimientoTipo.DataSource = tipoSolicitudes.OrderBy(x => x.Descripcion).ToList();
+                //cboMantenimientoTipo.SelectedValue = "000";
+
+                tipoDePrioridades = comboHelper.GetPriorityList("SAS", "Equipamiento tecnologico");
+                cboPrioridad.DisplayMember = "Descripcion";
+                cboPrioridad.ValueMember = "Codigo";
+                cboPrioridad.DataSource = tipoDePrioridades.OrderBy(x => x.Id).ToList();
+                cboPrioridad.SelectedValue = "3";
+
+
+                canalesDeAtencion = comboHelper.GetCanalesDeATencion("SAS");
+                cboCanalDeAtencion.DisplayMember = "Descripcion";
+                cboCanalDeAtencion.ValueMember = "Codigo";
+                cboCanalDeAtencion.DataSource = canalesDeAtencion.OrderBy(x => x.Id).ToList();
+                cboCanalDeAtencion.SelectedValue = "0";
+
+                tiempoProgramados = comboHelper.TiempoProgramado("SAS");
+                cboTiempoProgramado.DisplayMember = "Descripcion";
+                cboTiempoProgramado.ValueMember = "Codigo";
+                cboTiempoProgramado.DataSource = tiempoProgramados.ToList();
+                cboTiempoProgramado.SelectedValue = "0";
+
+                tiempoEjecutados = comboHelper.TiempoEjecutado("SAS");
+                cboTiempoEjecutado.DisplayMember = "Descripcion";
+                cboTiempoEjecutado.ValueMember = "Codigo";
+                cboTiempoEjecutado.DataSource = tiempoEjecutados.ToList();
+                cboTiempoEjecutado.SelectedValue = "0";
+
+
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "Mensajes del sistema");
+                return;
+            }
+        }
+
+        public void Inicio()
+        {
+            try
+            {
+                Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
+                Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings["SAS"].ToString();
+                Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
+                Globales.IdEmpresa = "001";
+                Globales.Empresa = "SOCIEDAD AGRICOLA SATURNO";
+                Globales.UsuarioSistema = "EAURAZO";
+                Globales.NombreUsuarioSistema = "ERICK AURAZO";
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+
+        #endregion
+
     }
 }

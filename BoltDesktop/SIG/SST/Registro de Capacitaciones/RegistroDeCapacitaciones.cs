@@ -24,13 +24,16 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
     {
 
         #region Variables() 
-
+        string nombreformulario = "RegistroDeCapacitaciones";
         private int periodo;
-        private PrivilegesByUser privilege;
-        private SAS_USUARIOS user;
-        private string companyId, desde, hasta = string.Empty;
-        private string conection;
+        private PrivilegesByUser PrivilegiosDeUsuarioEnSesion;
+        private SAS_USUARIOS UsuarioEnSesion;
+        private string CompaniaID = "001";
+        private string Desde = string.Empty;
+        private string Hasta = string.Empty;
+        private string ConexionABaseDeDatos;
         private ListadoRegistroCapacitacionesPorPeriodoResult ItemSelecionado;
+
         public MesController MesesNeg;
         private List<ListadoRegistroCapacitacionesPorPeriodoResult> Listado;
         RegistroDeCapacitacionesController model;
@@ -38,6 +41,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         private bool exportVisualSettings = true;
         private GlobalesHelper globalHelper;
         private ListadoRegistroCapacitacionesPorPeriodoResult selectItemById;
+        string ID = string.Empty;
 
         #endregion
 
@@ -47,28 +51,30 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         {
             InitializeComponent();
             ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();
-            ItemSelecionado.CapacitacionID = string.Empty;
+
+            ItemSelecionado = GenerarObjetoenBlanco(ItemSelecionado);
+            
 
             CargarMeses();
             ObtenerFechasIniciales();
-            conection = "SSOMA";
-            user = new SAS_USUARIOS();
-            user.IdUsuario = "EAURAZO";
-            user.NombreCompleto = "Erick Aurazo Carhuatanta";
-            user.IdCodigoGeneral = "100369";
-            companyId = "001";
-            privilege = new PrivilegesByUser();
-            privilege.nuevo = 1;
+            ConexionABaseDeDatos = "SSOMA";
+            UsuarioEnSesion = new SAS_USUARIOS();
+            UsuarioEnSesion.IdUsuario = "EAURAZO";
+            UsuarioEnSesion.NombreCompleto = "Erick Aurazo Carhuatanta";
+            UsuarioEnSesion.IdCodigoGeneral = "100369";
+            CompaniaID = "001";
+            PrivilegiosDeUsuarioEnSesion = new PrivilegesByUser();
+            PrivilegiosDeUsuarioEnSesion.nuevo = 1;
             Inicio();
-            lblCodeUser.Text = user.IdUsuario;
-            lblFullName.Text = user.NombreCompleto;
+            lblCodeUser.Text = UsuarioEnSesion.IdUsuario;
+            lblFullName.Text = UsuarioEnSesion.NombreCompleto;
 
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             btnNuevo.Enabled = true;
-            
+
             btnEditar.Enabled = true;
             btnGrabar.Enabled = true;
             btnAtras.Enabled = false;
@@ -76,12 +82,42 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             btnEliminarPrograma.Enabled = true;
             btnHistorial.Enabled = true;
             //btnFlujoAprobacion.Enabled = false;
-            btnAdjuntar.Enabled = true;            
+            btnAdjuntar.Enabled = true;
             btnCerrar.Enabled = true;
-            gbCabecera.Enabled = false;            
+            gbCabecera.Enabled = false;
             RealizarConsulta();
         }
 
+        private ListadoRegistroCapacitacionesPorPeriodoResult GenerarObjetoenBlanco(ListadoRegistroCapacitacionesPorPeriodoResult itemSelecionado)
+        {
+            DateTime FechaActual = DateTime.Now;
+            ListadoRegistroCapacitacionesPorPeriodoResult item = new ListadoRegistroCapacitacionesPorPeriodoResult();
+            item.CapacitacionID = string.Empty;
+            item.Area = string.Empty;
+            item.AreaId = string.Empty;
+            item.Asistentes = 0;
+            item.Capacitacion = string.Empty;
+            item.CapacitacionID1 = string.Empty;
+            item.CapacitacionTipoID = string.Empty;
+            item.Capacitadores = 0;
+            item.Duracion = 0;
+            item.Estado = "PENDIENTE";
+            item.EstadoID = "PE";
+            item.FechaCapacitacion = FechaActual;
+            item.FechaRegistro = FechaActual;
+            item.Folio = "0".PadLeft(7, '0');
+            item.HoraFin = FechaActual;
+            item.HoraInicio = FechaActual;
+            item.LatLong = string.Empty;
+            item.Observacion = string.Empty;
+            item.PDFPrint = 0;
+            item.PDFRuta = string.Empty;
+            item.TemaEstado = 0;
+            item.TemaI = string.Empty;
+            item.TemaID = string.Empty;
+            item.Ubicación = string.Empty;              
+            return item;
+        }
 
         public void Inicio()
         {
@@ -105,28 +141,25 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         }
 
 
-        public RegistroDeCapacitaciones(string _conection, SAS_USUARIOS _user, string _companyId, PrivilegesByUser _privilege)
+        public RegistroDeCapacitaciones(string _ConexionABaseDeDatos, SAS_USUARIOS _UsuarioEnSesion, string _CompaniaID, PrivilegesByUser _PrivilegiosDeUsuarioEnSesion)
         {
             InitializeComponent();
             ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();
             ItemSelecionado.CapacitacionID = string.Empty;
-
             CargarMeses();
             ObtenerFechasIniciales();
-            conection = _conection;
-            user = _user;
-            companyId = _companyId;
-            privilege = _privilege;
+            ConexionABaseDeDatos = _ConexionABaseDeDatos;
+            UsuarioEnSesion = _UsuarioEnSesion;
+            CompaniaID = _CompaniaID;
+            PrivilegiosDeUsuarioEnSesion = _PrivilegiosDeUsuarioEnSesion;
             Inicio();
-            lblCodeUser.Text = user.IdUsuario;
-            lblFullName.Text = user.NombreCompleto;
-
+            lblCodeUser.Text = UsuarioEnSesion.IdUsuario;
+            lblFullName.Text = UsuarioEnSesion.NombreCompleto;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             btnNuevo.Enabled = true;
-            
             btnEditar.Enabled = true;
             btnGrabar.Enabled = true;
             btnAtras.Enabled = false;
@@ -134,11 +167,10 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             btnEliminar.Enabled = true;
             btnHistorial.Enabled = true;
             //btnFlujoAprobacion.Enabled = false;
-            btnAdjuntar.Enabled = true;            
+            btnAdjuntar.Enabled = true;
             btnCerrar.Enabled = true;
-            gbCabecera.Enabled = false;           
+            gbCabecera.Enabled = false;
             RealizarConsulta();
-
         }
 
 
@@ -157,7 +189,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             this.dgvListado.GroupDescriptors.Clear();
             this.dgvListado.GroupDescriptors.Add(new GridGroupByExpression("CustomerID Group By CustomerID"));
             GridViewSummaryRowItem items1 = new GridViewSummaryRowItem();
-            items1.Add(new GridViewSummaryItem("chCapacitacionID", "COUNT : {0:N2}; ", GridAggregateFunction.Count));            
+            items1.Add(new GridViewSummaryItem("chCapacitacionID", "COUNT : {0:N2}; ", GridAggregateFunction.Count));
             this.dgvListado.MasterTemplate.SummaryRowsTop.Add(items1);
 
         }
@@ -166,13 +198,13 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         {
             if (chkVisualizacionPorDia.Checked == true)
             {
-                desde = DateTime.Now.ToPresentationDate();
-                hasta = DateTime.Now.ToPresentationDate();
+                Desde = DateTime.Now.ToPresentationDate();
+                Hasta = DateTime.Now.ToPresentationDate();
             }
             else
             {
-                desde = this.txtFechaDesde.Text;
-                hasta = this.txtFechaHasta.Text;
+                Desde = this.txtFechaDesde.Text;
+                Hasta = this.txtFechaHasta.Text;
             }
 
             btnConsultar.Enabled = false;
@@ -246,17 +278,20 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            ID = string.Empty;
+            RegistroDeCapacitacionesEdicion ofrm = new RegistroDeCapacitacionesEdicion(ConexionABaseDeDatos, UsuarioEnSesion, CompaniaID, PrivilegiosDeUsuarioEnSesion, ID);
+            ofrm.Show();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            RegistroDeCapacitacionesEdicion ofrm = new RegistroDeCapacitacionesEdicion(ConexionABaseDeDatos, UsuarioEnSesion, CompaniaID, PrivilegiosDeUsuarioEnSesion, ID);
+            ofrm.Show();
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -313,12 +348,26 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void RegistroDeCapacitaciones_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
@@ -326,14 +375,14 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             EjecutarConsulta();
         }
 
-      
+
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             PresentarConsultar();
         }
 
-      
+
         private void txtPeriodo_ValueChanged(object sender, EventArgs e)
         {
             if (cboMes.SelectedIndex >= 0)
@@ -500,14 +549,14 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void EjecutarConsulta()
         {
-           
+
 
 
             try
             {
                 model = new RegistroDeCapacitacionesController();
                 Listado = new List<ListadoRegistroCapacitacionesPorPeriodoResult>();
-                Listado = model.ObtenerListaDeCapacitacionesPorPeriodos(conection, desde, hasta);
+                Listado = model.ObtenerListaDeCapacitacionesDesdePeriodos(ConexionABaseDeDatos, Desde, Hasta);
 
             }
             catch (Exception Ex)
@@ -521,5 +570,34 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         #endregion
 
+        private void dgvListado_SelectionChanged(object sender, EventArgs e)
+        {
+            ID = string.Empty;
+            ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();        
+            ItemSelecionado = GenerarObjetoenBlanco(ItemSelecionado);
+
+            if (dgvListado != null && dgvListado.Rows.Count > 0)
+            {
+                if (dgvListado.CurrentRow != null)
+                {
+                    if (dgvListado.CurrentRow.Cells["chID"].Value != null)
+                    {
+                        if (dgvListado.CurrentRow.Cells["chID"].Value.ToString() != string.Empty)
+                        {
+                            ID = dgvListado.CurrentRow.Cells["chID"].Value != null ? dgvListado.CurrentRow.Cells["chID"].Value.ToString().Trim() : string.Empty;
+
+                            var result01 = Listado.Where(x => x.CapacitacionID.Trim() == ID).ToList();
+                            if (result01 != null && result01.ToList().Count > 0)
+                            {
+                                ItemSelecionado = Listado.Where(x => x.CapacitacionID.Trim() == ID).ToList().ElementAt(0);
+                            }
+
+                            
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }

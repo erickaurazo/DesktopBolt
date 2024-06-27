@@ -68,6 +68,7 @@
             this.btnAdjuntar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnNotificar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnCerrar = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.gbDocumento = new System.Windows.Forms.GroupBox();
             this.cboPrioridad = new System.Windows.Forms.ComboBox();
             this.lblPrioridad = new System.Windows.Forms.Label();
@@ -156,7 +157,6 @@
             this.chValorUSDAccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bgwRegistrar = new System.ComponentModel.BackgroundWorker();
             this.bgwNotify = new System.ComponentModel.BackgroundWorker();
-            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.stsBarraEstado.SuspendLayout();
             this.subMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
@@ -274,7 +274,7 @@
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior,
             this.commandBarRowElement1});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1288, 92);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1288, 62);
             this.BarraPrincipal.TabIndex = 202;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -479,6 +479,10 @@
             this.btnCerrar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnCerrar.ToolTipText = "Salir";
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // commandBarRowElement1
+            // 
+            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             // 
             // gbDocumento
             // 
@@ -1735,10 +1739,6 @@
             this.bgwNotify.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwNotify_DoWork);
             this.bgwNotify.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwNotify_RunWorkerCompleted);
             // 
-            // commandBarRowElement1
-            // 
-            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
-            // 
             // AtencionesSoporteFuncionalEdicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1752,6 +1752,7 @@
             this.Name = "AtencionesSoporteFuncionalEdicion";
             this.Text = "Solicitude de atención por soporte funcional | Mantenimiento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AtencionesSoporteFuncionalEdicion_FormClosing);
             this.Load += new System.EventHandler(this.AtencionesSoporteFuncionalEdicion_Load);
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();

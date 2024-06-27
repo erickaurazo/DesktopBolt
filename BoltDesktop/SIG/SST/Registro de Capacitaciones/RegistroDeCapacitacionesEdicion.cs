@@ -25,6 +25,8 @@ using Telerik.WinControls.Data;
 using System.Threading;
 using Telerik.WinControls.UI.Localization;
 using ComparativoHorasVisualSATNISIRA.Administracion_del_sistema;
+using Asistencia.Negocios.SIG.SST.Registro_de_Capacitaciones;
+using System.Device.Location;
 
 namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 {
@@ -32,41 +34,28 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
     {
 
         #region Variables()
-        string nombreformulario = "AtencionesSoporteFuncional";
+        string nombreformulario = "RegistroDeCapacitaciones";
+        private ListadoRegistroCapacitacionesPorIDResult ItemAEdicion;
         private PrivilegesByUser privilegiosDeUsuarioEnSesion;
         private ComboBoxHelper comboHelper;
         private List<Grupo> documentos, series, tipoSolicitudes, tipoDePrioridades;
-        private string CompaniaID;
-        private string ConexionABaseDeDatos;
+        private string CompaniaID = "001";
+        private string ConexionABaseDeDatos = "SSOMA";
         private SAS_USUARIOS UsuarioEnSesion;
         private GlobalesHelper globalHelper;
         private string result;
-        private string CodigoSelecionado = string.Empty;
+        private string ID = string.Empty;
         private string fileName = "DEFAULT";
         private bool exportVisualSettings = true;
         private MesController MesesNeg;
         private string desde;
         private string hasta;
-        private SAS_DispositivoSoporteFuncionalController model;
-        private List<SAS_ListadoDeAtencionesDeSoporteFuncionalByPeriodosResult> listing; //Listado
-        private List<SAS_DispositivoSoporteFuncionalDetalle> listadoDetalleEliminado = new List<SAS_DispositivoSoporteFuncionalDetalle>();
-        private List<SAS_DispositivoSoporteFuncionalDetalle> listadoDetalle = new List<SAS_DispositivoSoporteFuncionalDetalle>();
-        private SAS_ListadoDeAtencionesDeSoporteFuncionalByCodigoResult selectedItem; // Item Selecionado
-        private SAS_ListadoDeAtencionesDeSoporteFuncionalByCodigoResult item;
-        private SAS_DispositivoSoporteFuncional ordenTrabajo;
-        List<SAS_ListadoDeDetalleDeAtencionesDeSoporteFuncionalByCodigoResult> listDetalleByCodigoMantenimiento;
-        private int ultimoItemEnListaDetalle = 0;
-        private int codigoDispositivo;
-        private SAS_DispositivoUsuariosController modeloDispositivo;
-        private List<SAS_DispositivoTipoSoporteFuncionalDetalle> listadoDetalleByItem;
-        private SAS_DispositivoTipoSoporteFuncionalController modelo;
-        private List<Grupo> canalesDeAtencion;
-        private List<Grupo> tiempoProgramados, tiempoEjecutados;
+        private RegistroDeCapacitacionesController Model;
         #endregion
 
 
 
-       
+
 
         public RegistroDeCapacitacionesEdicion()
         {
@@ -81,14 +70,14 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             privilegiosDeUsuarioEnSesion.nuevo = 1;
             privilegiosDeUsuarioEnSesion.editar = 1;
             privilegiosDeUsuarioEnSesion.eliminar = 1;
-            CodigoSelecionado = string.Empty ;
+            ID = string.Empty;
             Inicio();
             CargarCombos();
             // btnGenerarReprogramacion.Enabled = false;
             AperturarFormulario();
         }
 
-        public RegistroDeCapacitacionesEdicion(string _ConexionABaseDeDatos, SAS_USUARIOS _UsuarioEnSesion, string _CompaniaID, PrivilegesByUser _privilegiosDeUsuarioEnSesion, string _CodigoSelecionado)
+        public RegistroDeCapacitacionesEdicion(string _ConexionABaseDeDatos, SAS_USUARIOS _UsuarioEnSesion, string _CompaniaID, PrivilegesByUser _privilegiosDeUsuarioEnSesion, string _ID)
         {
             InitializeComponent();
             nombreformulario = "RegistroDeCapacitaciones";
@@ -96,10 +85,9 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             UsuarioEnSesion = _UsuarioEnSesion;
             CompaniaID = _CompaniaID;
             privilegiosDeUsuarioEnSesion = _privilegiosDeUsuarioEnSesion;
-            CodigoSelecionado = _CodigoSelecionado;
+            ID = _ID;
             Inicio();
             CargarCombos();
-            // btnGenerarReprogramacion.Enabled = false;
             AperturarFormulario();
 
         }
@@ -109,16 +97,268 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         }
 
+        private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
+        {
+            RealizarConsultas();
+        }
+
+        private void RealizarConsultas()
+        {
+            try
+            {
+                Model = new RegistroDeCapacitacionesController();
+                ItemAEdicion = new ListadoRegistroCapacitacionesPorIDResult();
+                ItemAEdicion = Model.ObtenerRegistroDeCapacitacionesDesdeID(ConexionABaseDeDatos, ID);
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+        }
+
+
+        private void PresentarResultados()
+        {
+
+            try
+            {
+                if (ItemAEdicion != null)
+                {
+                    txtCodigo.Text = ItemAEdicion.CapacitacionID;
+                    txtFolio.Text = ItemAEdicion.Folio;
+                    //txtValidar.Text = string.Empty;
+                    txtEstadoID.Text = ItemAEdicion.EstadoID;
+                    txtEstado.Text = ItemAEdicion.Estado;
+                    txtTipoDeCapacitacionID.Text = ItemAEdicion.CapacitacionTipoID;
+                    txtTipoDeCapacitacion.Text = ItemAEdicion.Capacitacion;
+                    //cboDocumento.Text = string.Empty;
+                    //cboSerie.Text = string.Empty;
+                    txtCorrelativo.Text = ItemAEdicion.Folio;
+                    txtFecha.Text = ItemAEdicion.FechaCapacitacion.ToPresentationDate();
+                    txtUbicacion.Text = ItemAEdicion.Ubicación;
+                    txtLatitudLongitud.Text = ItemAEdicion.LatLong;
+                    txtObservacion.Text = ItemAEdicion.Observacion;
+                    txtInicio.Text = ItemAEdicion.HoraInicio.Value.ToPresentationDateTime();
+                    txtFin.Text = ItemAEdicion.HoraFin.Value.ToPresentationDateTime();
+                    txtDuracion.Text = ItemAEdicion.Duracion.Value.ToString();
+                    BarraPrincipal.Enabled = !false;
+                    gbCabecera.Enabled = !false;
+                    gbDetalle.Enabled = !false;
+                    progressBar1.Visible = !true;
+
+                    if (ItemAEdicion.CapacitacionID == string.Empty)
+                    {
+                        ActivarControlesParaEdicion(true);
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+
+
+        }
+
+        private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            PresentarResultados();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (this.txtEstadoID.Text.Trim() == "PE")
+            {
+                ActivarControlesParaEdicion(true);
+            }
+            else
+            {
+                MessageBox.Show("El documento no tiene el estado para su edición");
+            }
+        }
+
+        private void ActivarControlesParaEdicion(bool Accion)
+        {
+            if (Accion == true)
+            {
+                #region Editable()
+                txtCodigo.ReadOnly = Accion;
+                txtFolio.ReadOnly = Accion;
+                txtValidar.ReadOnly = Accion;
+                txtEstadoID.ReadOnly = Accion;
+                txtEstado.ReadOnly = Accion;
+                txtTipoDeCapacitacionID.ReadOnly = !Accion;
+                txtTipoDeCapacitacion.ReadOnly = Accion;
+                txtTipoDeCapacitacionID.Enabled = Accion;
+                txtTipoDeCapacitacion.Enabled = Accion;
+
+                txtCorrelativo.ReadOnly = Accion;
+                txtFecha.ReadOnly = !Accion;
+                txtUbicacion.ReadOnly = !Accion;
+                txtLatitudLongitud.ReadOnly = !Accion;
+                txtObservacion.ReadOnly = !Accion;
+                txtObservacion.Enabled = Accion;
+                txtInicio.ReadOnly = !Accion;
+                txtFin.ReadOnly = !Accion;
+                txtDuracion.ReadOnly = Accion;
+                btnBuscarTipoDeCapacitacion.Enabled = Accion;
+                #endregion
+
+            }
+            else
+            {
+                #region No editable()
+                txtCodigo.ReadOnly = !Accion;
+                txtFolio.ReadOnly = !Accion;
+                txtValidar.ReadOnly = !Accion;
+                txtEstadoID.ReadOnly = !Accion;
+                txtEstado.ReadOnly = !Accion;
+                txtTipoDeCapacitacionID.ReadOnly = !Accion;
+                txtTipoDeCapacitacion.ReadOnly = !Accion;
+                txtCorrelativo.ReadOnly = !Accion;
+                txtFecha.ReadOnly = !Accion;
+                txtUbicacion.ReadOnly = !Accion;
+                txtLatitudLongitud.ReadOnly = !Accion;
+                txtObservacion.ReadOnly = !Accion;
+                txtObservacion.Enabled = Accion;
+                txtInicio.ReadOnly = !Accion;
+                txtFin.ReadOnly = !Accion;
+                txtDuracion.ReadOnly = !Accion;
+                btnBuscarTipoDeCapacitacion.Enabled = !Accion;
+                txtTipoDeCapacitacionID.Enabled = Accion;
+                txtTipoDeCapacitacion.Enabled = Accion;
+
+                #endregion
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ActivarControlesParaEdicion(true);
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            ActivarControlesParaEdicion(false);
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            ActivarControlesParaEdicion(false);
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            ActivarControlesParaEdicion(false);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ActivarControlesParaEdicion(false);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void btnAdjuntar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                #region Attach()
+                if (this.txtCodigo.Text != string.Empty)
+                {
+                    if (this.txtCodigo.Text != "0")
+                    {
+                       string codigoSelecionado = Convert.ToString(this.txtCodigo.Text);
+                        AdjuntarArchivos ofrm = new AdjuntarArchivos("SAS", UsuarioEnSesion, CompaniaID, privilegiosDeUsuarioEnSesion, codigoSelecionado.ToString(), nombreformulario);
+                        ofrm.Show();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El registro no se encuentra asociado en el sistema", "MENSAJE DEL SISTEMA");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El registro no se encuentra asociado en el sistema", "MENSAJE DEL SISTEMA");
+                }
+                #endregion
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void RegistroDeCapacitacionesEdicion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnElegirColumna_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLatLong_Click(object sender, EventArgs e)
+        {
+            GetGeolocation();
+        }
+
+        private void GetGeolocation()
+        {
+            GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+            watcher.PositionChanged += (s, ev) =>
+            {
+                double latitude = ev.Position.Location.Latitude;
+                double longitude = ev.Position.Location.Longitude;
+
+                // Actualiza los labels
+                txtLatitudLongitud.Text = "Latitude: " + latitude;
+                txtObservacion.Text = "Longitude: " + longitude;
+
+                // Deja de observar después de obtener la primera ubicación
+                watcher.Stop();
+            };
+
+            watcher.Start();
+        }
 
 
         #region Métodos()
-
-
         private void AperturarFormulario()
         {
             BarraPrincipal.Enabled = false;
             gbCabecera.Enabled = false;
-            gbDetalle.Enabled = false;            
+            gbDetalle.Enabled = false;
             progressBar1.Visible = true;
 
             bgwHilo.RunWorkerAsync();
