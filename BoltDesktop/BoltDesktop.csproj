@@ -1723,11 +1723,22 @@
     <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesEdicion.Designer.cs">
       <DependentUpon>RegistroDeCapacitacionesEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPrevia.cs">
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPrevia.Designer.cs">
-      <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupado.Designer.cs">
+      <DependentUpon>RegistroDeCapacitacionesVistaPreviaAgrupado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupadoDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistroDeCapacitacionesVistaPreviaAgrupadoDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupadoRPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistroDeCapacitacionesVistaPreviaAgrupadoRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionPorColaborador.cs">
       <SubType>Form</SubType>
@@ -3184,8 +3195,12 @@
     <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesEdicion.resx">
       <DependentUpon>RegistroDeCapacitacionesEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPrevia.resx">
-      <DependentUpon>RegistroDeCapacitacionesVistaPrevia.cs</DependentUpon>
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupado.resx">
+      <DependentUpon>RegistroDeCapacitacionesVistaPreviaAgrupado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupadoRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegistroDeCapacitacionesVistaPreviaAgrupadoRPT.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\TemaACapacitar.resx">
       <DependentUpon>TemaACapacitar.cs</DependentUpon>
@@ -3825,6 +3840,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupadoDS.xsc">
+      <DependentUpon>RegistroDeCapacitacionesVistaPreviaAgrupadoDS.xsd</DependentUpon>
+    </None>
+    <None Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupadoDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistroDeCapacitacionesVistaPreviaAgrupadoDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionesVistaPreviaAgrupadoDS.xss">
+      <DependentUpon>RegistroDeCapacitacionesVistaPreviaAgrupadoDS.xsd</DependentUpon>
+    </None>
     <None Include="T.I\Dispositivo\DispositivosEdicionImprimirEtiquetasQRDS.xsc">
       <DependentUpon>DispositivosEdicionImprimirEtiquetasQRDS.xsd</DependentUpon>
     </None>

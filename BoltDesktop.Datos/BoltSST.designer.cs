@@ -30,15 +30,12 @@ namespace Asistencia.Datos
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTema(Tema instance);
-    partial void UpdateTema(Tema instance);
-    partial void DeleteTema(Tema instance);
-    partial void InsertTemaArea(TemaArea instance);
-    partial void UpdateTemaArea(TemaArea instance);
-    partial void DeleteTemaArea(TemaArea instance);
     partial void InsertCapacitacionArea(CapacitacionArea instance);
     partial void UpdateCapacitacionArea(CapacitacionArea instance);
     partial void DeleteCapacitacionArea(CapacitacionArea instance);
+    partial void InsertTemaArea(TemaArea instance);
+    partial void UpdateTemaArea(TemaArea instance);
+    partial void DeleteTemaArea(TemaArea instance);
     partial void InsertCapacitacionCapacitador(CapacitacionCapacitador instance);
     partial void UpdateCapacitacionCapacitador(CapacitacionCapacitador instance);
     partial void DeleteCapacitacionCapacitador(CapacitacionCapacitador instance);
@@ -54,39 +51,15 @@ namespace Asistencia.Datos
     partial void InsertCapacitacionTipo(CapacitacionTipo instance);
     partial void UpdateCapacitacionTipo(CapacitacionTipo instance);
     partial void DeleteCapacitacionTipo(CapacitacionTipo instance);
-    partial void InsertCapacitacionCabecera(CapacitacionCabecera instance);
-    partial void UpdateCapacitacionCabecera(CapacitacionCabecera instance);
-    partial void DeleteCapacitacionCabecera(CapacitacionCabecera instance);
-    partial void InsertCapacitacionArea1(CapacitacionArea1 instance);
-    partial void UpdateCapacitacionArea1(CapacitacionArea1 instance);
-    partial void DeleteCapacitacionArea1(CapacitacionArea1 instance);
-    partial void InsertTemaArea1(TemaArea1 instance);
-    partial void UpdateTemaArea1(TemaArea1 instance);
-    partial void DeleteTemaArea1(TemaArea1 instance);
-    partial void InsertCapacitacionCabecera1(CapacitacionCabecera1 instance);
-    partial void UpdateCapacitacionCabecera1(CapacitacionCabecera1 instance);
-    partial void DeleteCapacitacionCabecera1(CapacitacionCabecera1 instance);
-    partial void InsertCapacitacionCapacitador1(CapacitacionCapacitador1 instance);
-    partial void UpdateCapacitacionCapacitador1(CapacitacionCapacitador1 instance);
-    partial void DeleteCapacitacionCapacitador1(CapacitacionCapacitador1 instance);
-    partial void InsertCapacitacionDetalle1(CapacitacionDetalle1 instance);
-    partial void UpdateCapacitacionDetalle1(CapacitacionDetalle1 instance);
-    partial void DeleteCapacitacionDetalle1(CapacitacionDetalle1 instance);
-    partial void InsertCapacitacionFotografia1(CapacitacionFotografia1 instance);
-    partial void UpdateCapacitacionFotografia1(CapacitacionFotografia1 instance);
-    partial void DeleteCapacitacionFotografia1(CapacitacionFotografia1 instance);
-    partial void InsertCapacitacionTema1(CapacitacionTema1 instance);
-    partial void UpdateCapacitacionTema1(CapacitacionTema1 instance);
-    partial void DeleteCapacitacionTema1(CapacitacionTema1 instance);
-    partial void InsertCapacitacionTipo1(CapacitacionTipo1 instance);
-    partial void UpdateCapacitacionTipo1(CapacitacionTipo1 instance);
-    partial void DeleteCapacitacionTipo1(CapacitacionTipo1 instance);
     partial void InsertPersonalNuevo(PersonalNuevo instance);
     partial void UpdatePersonalNuevo(PersonalNuevo instance);
     partial void DeletePersonalNuevo(PersonalNuevo instance);
-    partial void InsertTema1(Tema1 instance);
-    partial void UpdateTema1(Tema1 instance);
-    partial void DeleteTema1(Tema1 instance);
+    partial void InsertTema(Tema instance);
+    partial void UpdateTema(Tema instance);
+    partial void DeleteTema(Tema instance);
+    partial void InsertCapacitacionCabecera(CapacitacionCabecera instance);
+    partial void UpdateCapacitacionCabecera(CapacitacionCabecera instance);
+    partial void DeleteCapacitacionCabecera(CapacitacionCabecera instance);
     #endregion
 		
 		public BoltSSTDataContext() : 
@@ -119,19 +92,11 @@ namespace Asistencia.Datos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Tema> Temas
+		public System.Data.Linq.Table<ListadoAsistenciaPorCapacitacion> ListadoAsistenciaPorCapacitacions
 		{
 			get
 			{
-				return this.GetTable<Tema>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TemaArea> TemaAreas
-		{
-			get
-			{
-				return this.GetTable<TemaArea>();
+				return this.GetTable<ListadoAsistenciaPorCapacitacion>();
 			}
 		}
 		
@@ -140,6 +105,14 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<CapacitacionArea>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TemaArea> TemaAreas
+		{
+			get
+			{
+				return this.GetTable<TemaArea>();
 			}
 		}
 		
@@ -183,78 +156,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<CapacitacionCabecera> CapacitacionCabeceras
-		{
-			get
-			{
-				return this.GetTable<CapacitacionCabecera>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionArea1> CapacitacionArea1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionArea1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TemaArea1> TemaArea1s
-		{
-			get
-			{
-				return this.GetTable<TemaArea1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionCabecera1> CapacitacionCabecera1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionCabecera1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionCapacitador1> CapacitacionCapacitador1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionCapacitador1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionDetalle1> CapacitacionDetalle1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionDetalle1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionFotografia1> CapacitacionFotografia1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionFotografia1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionTema1> CapacitacionTema1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionTema1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CapacitacionTipo1> CapacitacionTipo1s
-		{
-			get
-			{
-				return this.GetTable<CapacitacionTipo1>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PersonalNuevo> PersonalNuevos
 		{
 			get
@@ -263,19 +164,19 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tema1> Tema1s
+		public System.Data.Linq.Table<Tema> Temas
 		{
 			get
 			{
-				return this.GetTable<Tema1>();
+				return this.GetTable<Tema>();
 			}
 		}
 		
-		public System.Data.Linq.Table<ListadoAsistenciaPorCapacitacion> ListadoAsistenciaPorCapacitacions
+		public System.Data.Linq.Table<CapacitacionCabecera> CapacitacionCabeceras
 		{
 			get
 			{
-				return this.GetTable<ListadoAsistenciaPorCapacitacion>();
+				return this.GetTable<CapacitacionCabecera>();
 			}
 		}
 		
@@ -301,180 +202,178 @@ namespace Asistencia.Datos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tema")]
-	public partial class Tema : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ListadoAsistenciaPorCapacitacion")]
+	public partial class ListadoAsistenciaPorCapacitacion
+	{
+		
+		private string _CapacitacionID;
+		
+		private System.Nullable<int> _Asistentes;
+		
+		public ListadoAsistenciaPorCapacitacion()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionID
+		{
+			get
+			{
+				return this._CapacitacionID;
+			}
+			set
+			{
+				if ((this._CapacitacionID != value))
+				{
+					this._CapacitacionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asistentes", DbType="Int")]
+		public System.Nullable<int> Asistentes
+		{
+			get
+			{
+				return this._Asistentes;
+			}
+			set
+			{
+				if ((this._Asistentes != value))
+				{
+					this._Asistentes = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionArea")]
+	public partial class CapacitacionArea : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _TemaID;
+		private string _CapacitacionAreaID;
 		
-		private string _Descripcion;
+		private string _CapacitacionID;
 		
-		private decimal _FrecuenciaCapacitacion;
+		private string _AreaId;
 		
-		private bool _Estado;
-		
-		private EntitySet<TemaArea> _TemaAreas;
-		
-		private EntitySet<CapacitacionTema> _CapacitacionTemas;
-		
-		private EntitySet<TemaArea1> _TemaArea1s;
-		
-		private EntitySet<CapacitacionTema1> _CapacitacionTema1s;
+		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnTemaIDChanging(string value);
-    partial void OnTemaIDChanged();
-    partial void OnDescripcionChanging(string value);
-    partial void OnDescripcionChanged();
-    partial void OnFrecuenciaCapacitacionChanging(decimal value);
-    partial void OnFrecuenciaCapacitacionChanged();
-    partial void OnEstadoChanging(bool value);
-    partial void OnEstadoChanged();
+    partial void OnCapacitacionAreaIDChanging(string value);
+    partial void OnCapacitacionAreaIDChanged();
+    partial void OnCapacitacionIDChanging(string value);
+    partial void OnCapacitacionIDChanged();
+    partial void OnAreaIdChanging(string value);
+    partial void OnAreaIdChanged();
     #endregion
 		
-		public Tema()
+		public CapacitacionArea()
 		{
-			this._TemaAreas = new EntitySet<TemaArea>(new Action<TemaArea>(this.attach_TemaAreas), new Action<TemaArea>(this.detach_TemaAreas));
-			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
-			this._TemaArea1s = new EntitySet<TemaArea1>(new Action<TemaArea1>(this.attach_TemaArea1s), new Action<TemaArea1>(this.detach_TemaArea1s));
-			this._CapacitacionTema1s = new EntitySet<CapacitacionTema1>(new Action<CapacitacionTema1>(this.attach_CapacitacionTema1s), new Action<CapacitacionTema1>(this.detach_CapacitacionTema1s));
+			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TemaID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionAreaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CapacitacionAreaID
 		{
 			get
 			{
-				return this._TemaID;
+				return this._CapacitacionAreaID;
 			}
 			set
 			{
-				if ((this._TemaID != value))
+				if ((this._CapacitacionAreaID != value))
 				{
-					this.OnTemaIDChanging(value);
+					this.OnCapacitacionAreaIDChanging(value);
 					this.SendPropertyChanging();
-					this._TemaID = value;
-					this.SendPropertyChanged("TemaID");
-					this.OnTemaIDChanged();
+					this._CapacitacionAreaID = value;
+					this.SendPropertyChanged("CapacitacionAreaID");
+					this.OnCapacitacionAreaIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Descripcion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionID
 		{
 			get
 			{
-				return this._Descripcion;
+				return this._CapacitacionID;
 			}
 			set
 			{
-				if ((this._Descripcion != value))
+				if ((this._CapacitacionID != value))
 				{
-					this.OnDescripcionChanging(value);
+					if (this._CapacitacionCabecera.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCapacitacionIDChanging(value);
 					this.SendPropertyChanging();
-					this._Descripcion = value;
-					this.SendPropertyChanged("Descripcion");
-					this.OnDescripcionChanged();
+					this._CapacitacionID = value;
+					this.SendPropertyChanged("CapacitacionID");
+					this.OnCapacitacionIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrecuenciaCapacitacion", DbType="Decimal(6,2) NOT NULL")]
-		public decimal FrecuenciaCapacitacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaId", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string AreaId
 		{
 			get
 			{
-				return this._FrecuenciaCapacitacion;
+				return this._AreaId;
 			}
 			set
 			{
-				if ((this._FrecuenciaCapacitacion != value))
+				if ((this._AreaId != value))
 				{
-					this.OnFrecuenciaCapacitacionChanging(value);
+					this.OnAreaIdChanging(value);
 					this.SendPropertyChanging();
-					this._FrecuenciaCapacitacion = value;
-					this.SendPropertyChanged("FrecuenciaCapacitacion");
-					this.OnFrecuenciaCapacitacionChanged();
+					this._AreaId = value;
+					this.SendPropertyChanged("AreaId");
+					this.OnAreaIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
-		public bool Estado
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionArea", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
+		public CapacitacionCabecera CapacitacionCabecera
 		{
 			get
 			{
-				return this._Estado;
+				return this._CapacitacionCabecera.Entity;
 			}
 			set
 			{
-				if ((this._Estado != value))
+				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
+				if (((previousValue != value) 
+							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnEstadoChanging(value);
 					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
+					if ((previousValue != null))
+					{
+						this._CapacitacionCabecera.Entity = null;
+						previousValue.CapacitacionAreas.Remove(this);
+					}
+					this._CapacitacionCabecera.Entity = value;
+					if ((value != null))
+					{
+						value.CapacitacionAreas.Add(this);
+						this._CapacitacionID = value.CapacitacionID;
+					}
+					else
+					{
+						this._CapacitacionID = default(string);
+					}
+					this.SendPropertyChanged("CapacitacionCabecera");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_TemaArea", Storage="_TemaAreas", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<TemaArea> TemaAreas
-		{
-			get
-			{
-				return this._TemaAreas;
-			}
-			set
-			{
-				this._TemaAreas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<CapacitacionTema> CapacitacionTemas
-		{
-			get
-			{
-				return this._CapacitacionTemas;
-			}
-			set
-			{
-				this._CapacitacionTemas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_TemaArea1", Storage="_TemaArea1s", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<TemaArea1> TemaArea1s
-		{
-			get
-			{
-				return this._TemaArea1s;
-			}
-			set
-			{
-				this._TemaArea1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_CapacitacionTema1", Storage="_CapacitacionTema1s", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<CapacitacionTema1> CapacitacionTema1s
-		{
-			get
-			{
-				return this._CapacitacionTema1s;
-			}
-			set
-			{
-				this._CapacitacionTema1s.Assign(value);
 			}
 		}
 		
@@ -497,54 +396,6 @@ namespace Asistencia.Datos
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_TemaAreas(TemaArea entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = this;
-		}
-		
-		private void detach_TemaAreas(TemaArea entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = null;
-		}
-		
-		private void attach_CapacitacionTemas(CapacitacionTema entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = this;
-		}
-		
-		private void detach_CapacitacionTemas(CapacitacionTema entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = null;
-		}
-		
-		private void attach_TemaArea1s(TemaArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = this;
-		}
-		
-		private void detach_TemaArea1s(TemaArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = null;
-		}
-		
-		private void attach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = this;
-		}
-		
-		private void detach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TemaArea")]
@@ -563,8 +414,6 @@ namespace Asistencia.Datos
 		
 		private EntityRef<Tema> _Tema;
 		
-		private EntityRef<Tema1> _Tema1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -582,7 +431,6 @@ namespace Asistencia.Datos
 		public TemaArea()
 		{
 			this._Tema = default(EntityRef<Tema>);
-			this._Tema1 = default(EntityRef<Tema1>);
 			OnCreated();
 		}
 		
@@ -617,7 +465,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._TemaID != value))
 				{
-					if ((this._Tema.HasLoadedOrAssignedValue || this._Tema1.HasLoadedOrAssignedValue))
+					if (this._Tema.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -704,228 +552,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_TemaArea", Storage="_Tema1", ThisKey="TemaID", OtherKey="TemaID", IsForeignKey=true)]
-		public Tema1 Tema1
-		{
-			get
-			{
-				return this._Tema1.Entity;
-			}
-			set
-			{
-				Tema1 previousValue = this._Tema1.Entity;
-				if (((previousValue != value) 
-							|| (this._Tema1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tema1.Entity = null;
-						previousValue.TemaAreas.Remove(this);
-					}
-					this._Tema1.Entity = value;
-					if ((value != null))
-					{
-						value.TemaAreas.Add(this);
-						this._TemaID = value.TemaID;
-					}
-					else
-					{
-						this._TemaID = default(string);
-					}
-					this.SendPropertyChanged("Tema1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionArea")]
-	public partial class CapacitacionArea : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionAreaID;
-		
-		private string _CapacitacionID;
-		
-		private string _AreaId;
-		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionAreaIDChanging(string value);
-    partial void OnCapacitacionAreaIDChanged();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnAreaIdChanging(string value);
-    partial void OnAreaIdChanged();
-    #endregion
-		
-		public CapacitacionArea()
-		{
-			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionAreaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionAreaID
-		{
-			get
-			{
-				return this._CapacitacionAreaID;
-			}
-			set
-			{
-				if ((this._CapacitacionAreaID != value))
-				{
-					this.OnCapacitacionAreaIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionAreaID = value;
-					this.SendPropertyChanged("CapacitacionAreaID");
-					this.OnCapacitacionAreaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaId", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string AreaId
-		{
-			get
-			{
-				return this._AreaId;
-			}
-			set
-			{
-				if ((this._AreaId != value))
-				{
-					this.OnAreaIdChanging(value);
-					this.SendPropertyChanging();
-					this._AreaId = value;
-					this.SendPropertyChanged("AreaId");
-					this.OnAreaIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionArea", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera CapacitacionCabecera
-		{
-			get
-			{
-				return this._CapacitacionCabecera.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera.Entity = null;
-						previousValue.CapacitacionAreas.Remove(this);
-					}
-					this._CapacitacionCabecera.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionAreas.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionArea", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionAreas.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionAreas.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -963,8 +589,6 @@ namespace Asistencia.Datos
 		
 		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
 		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -982,7 +606,6 @@ namespace Asistencia.Datos
 		public CapacitacionCapacitador()
 		{
 			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
 			OnCreated();
 		}
 		
@@ -1037,7 +660,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._CapacitacionID != value))
 				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
+					if (this._CapacitacionCabecera.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1104,40 +727,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionCapacitador", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionCapacitadors.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionCapacitadors.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1187,9 +776,9 @@ namespace Asistencia.Datos
 		
 		private string _DNI;
 		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
+		private System.Nullable<byte> _Estado;
 		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
+		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1217,12 +806,13 @@ namespace Asistencia.Datos
     partial void OnFirmaChanged();
     partial void OnDNIChanging(string value);
     partial void OnDNIChanged();
+    partial void OnEstadoChanging(System.Nullable<byte> value);
+    partial void OnEstadoChanged();
     #endregion
 		
 		public CapacitacionDetalle()
 		{
 			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
 			OnCreated();
 		}
 		
@@ -1257,7 +847,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._CapacitacionID != value))
 				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
+					if (this._CapacitacionCabecera.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1450,6 +1040,26 @@ namespace Asistencia.Datos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
+		public System.Nullable<byte> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionDetalle", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
 		public CapacitacionCabecera CapacitacionCabecera
 		{
@@ -1480,40 +1090,6 @@ namespace Asistencia.Datos
 						this._CapacitacionID = default(string);
 					}
 					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionDetalle", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionDetalles.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionDetalles.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
 				}
 			}
 		}
@@ -1555,7 +1131,9 @@ namespace Asistencia.Datos
 		
 		private string _Fotografia3;
 		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
+		private System.Nullable<byte> _Estado;
+		
+		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1571,11 +1149,13 @@ namespace Asistencia.Datos
     partial void OnFotografia2Changed();
     partial void OnFotografia3Changing(string value);
     partial void OnFotografia3Changed();
+    partial void OnEstadoChanging(System.Nullable<byte> value);
+    partial void OnEstadoChanged();
     #endregion
 		
 		public CapacitacionFotografia()
 		{
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
+			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
 			OnCreated();
 		}
 		
@@ -1610,7 +1190,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._CapacitacionID != value))
 				{
-					if (this._CapacitacionCabecera1.HasLoadedOrAssignedValue)
+					if (this._CapacitacionCabecera.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1683,26 +1263,46 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionFotografia", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
+		public System.Nullable<byte> Estado
 		{
 			get
 			{
-				return this._CapacitacionCabecera1.Entity;
+				return this._Estado;
 			}
 			set
 			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionFotografia", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
+		public CapacitacionCabecera CapacitacionCabecera
+		{
+			get
+			{
+				return this._CapacitacionCabecera.Entity;
+			}
+			set
+			{
+				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
 				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
+							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._CapacitacionCabecera1.Entity = null;
+						this._CapacitacionCabecera.Entity = null;
 						previousValue.CapacitacionFotografias.Remove(this);
 					}
-					this._CapacitacionCabecera1.Entity = value;
+					this._CapacitacionCabecera.Entity = value;
 					if ((value != null))
 					{
 						value.CapacitacionFotografias.Add(this);
@@ -1712,7 +1312,7 @@ namespace Asistencia.Datos
 					{
 						this._CapacitacionID = default(string);
 					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
+					this.SendPropertyChanged("CapacitacionCabecera");
 				}
 			}
 		}
@@ -1750,13 +1350,11 @@ namespace Asistencia.Datos
 		
 		private string _TemaID;
 		
+		private System.Nullable<byte> _Estado;
+		
 		private EntityRef<Tema> _Tema;
 		
 		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-		private EntityRef<Tema1> _Tema1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1768,14 +1366,14 @@ namespace Asistencia.Datos
     partial void OnCapacitacionIDChanged();
     partial void OnTemaIDChanging(string value);
     partial void OnTemaIDChanged();
+    partial void OnEstadoChanging(System.Nullable<byte> value);
+    partial void OnEstadoChanged();
     #endregion
 		
 		public CapacitacionTema()
 		{
 			this._Tema = default(EntityRef<Tema>);
 			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			this._Tema1 = default(EntityRef<Tema1>);
 			OnCreated();
 		}
 		
@@ -1810,7 +1408,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._CapacitacionID != value))
 				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
+					if (this._CapacitacionCabecera.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1834,7 +1432,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._TemaID != value))
 				{
-					if ((this._Tema.HasLoadedOrAssignedValue || this._Tema1.HasLoadedOrAssignedValue))
+					if (this._Tema.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1843,6 +1441,26 @@ namespace Asistencia.Datos
 					this._TemaID = value;
 					this.SendPropertyChanged("TemaID");
 					this.OnTemaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
+		public System.Nullable<byte> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
 				}
 			}
 		}
@@ -1915,74 +1533,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionTema", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionTemas.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionTemas.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_CapacitacionTema", Storage="_Tema1", ThisKey="TemaID", OtherKey="TemaID", IsForeignKey=true)]
-		public Tema1 Tema1
-		{
-			get
-			{
-				return this._Tema1.Entity;
-			}
-			set
-			{
-				Tema1 previousValue = this._Tema1.Entity;
-				if (((previousValue != value) 
-							|| (this._Tema1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tema1.Entity = null;
-						previousValue.CapacitacionTemas.Remove(this);
-					}
-					this._Tema1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionTemas.Add(this);
-						this._TemaID = value.TemaID;
-					}
-					else
-					{
-						this._TemaID = default(string);
-					}
-					this.SendPropertyChanged("Tema1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2018,8 +1568,6 @@ namespace Asistencia.Datos
 		
 		private EntitySet<CapacitacionCabecera> _CapacitacionCabeceras;
 		
-		private EntitySet<CapacitacionCabecera1> _CapacitacionCabecera1s;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2035,7 +1583,6 @@ namespace Asistencia.Datos
 		public CapacitacionTipo()
 		{
 			this._CapacitacionCabeceras = new EntitySet<CapacitacionCabecera>(new Action<CapacitacionCabecera>(this.attach_CapacitacionCabeceras), new Action<CapacitacionCabecera>(this.detach_CapacitacionCabeceras));
-			this._CapacitacionCabecera1s = new EntitySet<CapacitacionCabecera1>(new Action<CapacitacionCabecera1>(this.attach_CapacitacionCabecera1s), new Action<CapacitacionCabecera1>(this.detach_CapacitacionCabecera1s));
 			OnCreated();
 		}
 		
@@ -2112,19 +1659,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo_CapacitacionCabecera1", Storage="_CapacitacionCabecera1s", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID")]
-		public EntitySet<CapacitacionCabecera1> CapacitacionCabecera1s
-		{
-			get
-			{
-				return this._CapacitacionCabecera1s;
-			}
-			set
-			{
-				this._CapacitacionCabecera1s.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2156,17 +1690,377 @@ namespace Asistencia.Datos
 			this.SendPropertyChanging();
 			entity.CapacitacionTipo = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PersonalNuevo")]
+	public partial class PersonalNuevo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_CapacitacionCabecera1s(CapacitacionCabecera1 entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _PersonalNuevoID;
+		
+		private string _DNI;
+		
+		private string _Nombres;
+		
+		private string _Area;
+		
+		private string _Gerencia;
+		
+		private string _Cargo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPersonalNuevoIDChanging(string value);
+    partial void OnPersonalNuevoIDChanged();
+    partial void OnDNIChanging(string value);
+    partial void OnDNIChanged();
+    partial void OnNombresChanging(string value);
+    partial void OnNombresChanged();
+    partial void OnAreaChanging(string value);
+    partial void OnAreaChanged();
+    partial void OnGerenciaChanging(string value);
+    partial void OnGerenciaChanged();
+    partial void OnCargoChanging(string value);
+    partial void OnCargoChanged();
+    #endregion
+		
+		public PersonalNuevo()
 		{
-			this.SendPropertyChanging();
-			entity.CapacitacionTipo = this;
+			OnCreated();
 		}
 		
-		private void detach_CapacitacionCabecera1s(CapacitacionCabecera1 entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalNuevoID", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+		public string PersonalNuevoID
+		{
+			get
+			{
+				return this._PersonalNuevoID;
+			}
+			set
+			{
+				if ((this._PersonalNuevoID != value))
+				{
+					this.OnPersonalNuevoIDChanging(value);
+					this.SendPropertyChanging();
+					this._PersonalNuevoID = value;
+					this.SendPropertyChanged("PersonalNuevoID");
+					this.OnPersonalNuevoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DNI", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string DNI
+		{
+			get
+			{
+				return this._DNI;
+			}
+			set
+			{
+				if ((this._DNI != value))
+				{
+					this.OnDNIChanging(value);
+					this.SendPropertyChanging();
+					this._DNI = value;
+					this.SendPropertyChanged("DNI");
+					this.OnDNIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="VarChar(150)")]
+		public string Nombres
+		{
+			get
+			{
+				return this._Nombres;
+			}
+			set
+			{
+				if ((this._Nombres != value))
+				{
+					this.OnNombresChanging(value);
+					this.SendPropertyChanging();
+					this._Nombres = value;
+					this.SendPropertyChanged("Nombres");
+					this.OnNombresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="VarChar(150)")]
+		public string Area
+		{
+			get
+			{
+				return this._Area;
+			}
+			set
+			{
+				if ((this._Area != value))
+				{
+					this.OnAreaChanging(value);
+					this.SendPropertyChanging();
+					this._Area = value;
+					this.SendPropertyChanged("Area");
+					this.OnAreaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gerencia", DbType="VarChar(150)")]
+		public string Gerencia
+		{
+			get
+			{
+				return this._Gerencia;
+			}
+			set
+			{
+				if ((this._Gerencia != value))
+				{
+					this.OnGerenciaChanging(value);
+					this.SendPropertyChanging();
+					this._Gerencia = value;
+					this.SendPropertyChanged("Gerencia");
+					this.OnGerenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(150)")]
+		public string Cargo
+		{
+			get
+			{
+				return this._Cargo;
+			}
+			set
+			{
+				if ((this._Cargo != value))
+				{
+					this.OnCargoChanging(value);
+					this.SendPropertyChanging();
+					this._Cargo = value;
+					this.SendPropertyChanged("Cargo");
+					this.OnCargoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tema")]
+	public partial class Tema : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TemaID;
+		
+		private string _Descripcion;
+		
+		private decimal _FrecuenciaCapacitacion;
+		
+		private bool _Estado;
+		
+		private EntitySet<TemaArea> _TemaAreas;
+		
+		private EntitySet<CapacitacionTema> _CapacitacionTemas;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTemaIDChanging(string value);
+    partial void OnTemaIDChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnFrecuenciaCapacitacionChanging(decimal value);
+    partial void OnFrecuenciaCapacitacionChanged();
+    partial void OnEstadoChanging(bool value);
+    partial void OnEstadoChanged();
+    #endregion
+		
+		public Tema()
+		{
+			this._TemaAreas = new EntitySet<TemaArea>(new Action<TemaArea>(this.attach_TemaAreas), new Action<TemaArea>(this.detach_TemaAreas));
+			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TemaID
+		{
+			get
+			{
+				return this._TemaID;
+			}
+			set
+			{
+				if ((this._TemaID != value))
+				{
+					this.OnTemaIDChanging(value);
+					this.SendPropertyChanging();
+					this._TemaID = value;
+					this.SendPropertyChanged("TemaID");
+					this.OnTemaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrecuenciaCapacitacion", DbType="Decimal(6,2) NOT NULL")]
+		public decimal FrecuenciaCapacitacion
+		{
+			get
+			{
+				return this._FrecuenciaCapacitacion;
+			}
+			set
+			{
+				if ((this._FrecuenciaCapacitacion != value))
+				{
+					this.OnFrecuenciaCapacitacionChanging(value);
+					this.SendPropertyChanging();
+					this._FrecuenciaCapacitacion = value;
+					this.SendPropertyChanged("FrecuenciaCapacitacion");
+					this.OnFrecuenciaCapacitacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
+		public bool Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_TemaArea", Storage="_TemaAreas", ThisKey="TemaID", OtherKey="TemaID")]
+		public EntitySet<TemaArea> TemaAreas
+		{
+			get
+			{
+				return this._TemaAreas;
+			}
+			set
+			{
+				this._TemaAreas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="TemaID", OtherKey="TemaID")]
+		public EntitySet<CapacitacionTema> CapacitacionTemas
+		{
+			get
+			{
+				return this._CapacitacionTemas;
+			}
+			set
+			{
+				this._CapacitacionTemas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TemaAreas(TemaArea entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionTipo = null;
+			entity.Tema = this;
+		}
+		
+		private void detach_TemaAreas(TemaArea entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tema = null;
+		}
+		
+		private void attach_CapacitacionTemas(CapacitacionTema entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tema = this;
+		}
+		
+		private void detach_CapacitacionTemas(CapacitacionTema entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tema = null;
 		}
 	}
 	
@@ -2198,1039 +2092,11 @@ namespace Asistencia.Datos
 		
 		private System.Nullable<int> _PDFPrint;
 		
-		private EntitySet<CapacitacionArea> _CapacitacionAreas;
-		
-		private EntitySet<CapacitacionCapacitador> _CapacitacionCapacitadors;
-		
-		private EntitySet<CapacitacionDetalle> _CapacitacionDetalles;
-		
-		private EntitySet<CapacitacionTema> _CapacitacionTemas;
-		
-		private EntitySet<CapacitacionArea1> _CapacitacionArea1s;
-		
-		private EntitySet<CapacitacionCapacitador1> _CapacitacionCapacitador1s;
-		
-		private EntitySet<CapacitacionDetalle1> _CapacitacionDetalle1s;
-		
-		private EntitySet<CapacitacionFotografia1> _CapacitacionFotografia1s;
-		
-		private EntitySet<CapacitacionTema1> _CapacitacionTema1s;
-		
-		private EntityRef<CapacitacionTipo> _CapacitacionTipo;
-		
-		private EntityRef<CapacitacionTipo1> _CapacitacionTipo1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnCapacitacionTipoIDChanging(string value);
-    partial void OnCapacitacionTipoIDChanged();
-    partial void OnFechaCapacitacionChanging(System.DateTime value);
-    partial void OnFechaCapacitacionChanged();
-    partial void OnUbicaciónChanging(string value);
-    partial void OnUbicaciónChanged();
-    partial void OnLatLongChanging(string value);
-    partial void OnLatLongChanged();
-    partial void OnHoraInicioChanging(System.Nullable<System.DateTime> value);
-    partial void OnHoraInicioChanged();
-    partial void OnHoraFinChanging(System.Nullable<System.DateTime> value);
-    partial void OnHoraFinChanged();
-    partial void OnObservacionChanging(string value);
-    partial void OnObservacionChanged();
-    partial void OnFechaRegistroChanging(System.DateTime value);
-    partial void OnFechaRegistroChanged();
-    partial void OnPDFRutaChanging(string value);
-    partial void OnPDFRutaChanged();
-    partial void OnPDFPrintChanging(System.Nullable<int> value);
-    partial void OnPDFPrintChanged();
-    #endregion
-		
-		public CapacitacionCabecera()
-		{
-			this._CapacitacionAreas = new EntitySet<CapacitacionArea>(new Action<CapacitacionArea>(this.attach_CapacitacionAreas), new Action<CapacitacionArea>(this.detach_CapacitacionAreas));
-			this._CapacitacionCapacitadors = new EntitySet<CapacitacionCapacitador>(new Action<CapacitacionCapacitador>(this.attach_CapacitacionCapacitadors), new Action<CapacitacionCapacitador>(this.detach_CapacitacionCapacitadors));
-			this._CapacitacionDetalles = new EntitySet<CapacitacionDetalle>(new Action<CapacitacionDetalle>(this.attach_CapacitacionDetalles), new Action<CapacitacionDetalle>(this.detach_CapacitacionDetalles));
-			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
-			this._CapacitacionArea1s = new EntitySet<CapacitacionArea1>(new Action<CapacitacionArea1>(this.attach_CapacitacionArea1s), new Action<CapacitacionArea1>(this.detach_CapacitacionArea1s));
-			this._CapacitacionCapacitador1s = new EntitySet<CapacitacionCapacitador1>(new Action<CapacitacionCapacitador1>(this.attach_CapacitacionCapacitador1s), new Action<CapacitacionCapacitador1>(this.detach_CapacitacionCapacitador1s));
-			this._CapacitacionDetalle1s = new EntitySet<CapacitacionDetalle1>(new Action<CapacitacionDetalle1>(this.attach_CapacitacionDetalle1s), new Action<CapacitacionDetalle1>(this.detach_CapacitacionDetalle1s));
-			this._CapacitacionFotografia1s = new EntitySet<CapacitacionFotografia1>(new Action<CapacitacionFotografia1>(this.attach_CapacitacionFotografia1s), new Action<CapacitacionFotografia1>(this.detach_CapacitacionFotografia1s));
-			this._CapacitacionTema1s = new EntitySet<CapacitacionTema1>(new Action<CapacitacionTema1>(this.attach_CapacitacionTema1s), new Action<CapacitacionTema1>(this.detach_CapacitacionTema1s));
-			this._CapacitacionTipo = default(EntityRef<CapacitacionTipo>);
-			this._CapacitacionTipo1 = default(EntityRef<CapacitacionTipo1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTipoID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionTipoID
-		{
-			get
-			{
-				return this._CapacitacionTipoID;
-			}
-			set
-			{
-				if ((this._CapacitacionTipoID != value))
-				{
-					if ((this._CapacitacionTipo.HasLoadedOrAssignedValue || this._CapacitacionTipo1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionTipoIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionTipoID = value;
-					this.SendPropertyChanged("CapacitacionTipoID");
-					this.OnCapacitacionTipoIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCapacitacion", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime FechaCapacitacion
-		{
-			get
-			{
-				return this._FechaCapacitacion;
-			}
-			set
-			{
-				if ((this._FechaCapacitacion != value))
-				{
-					this.OnFechaCapacitacionChanging(value);
-					this.SendPropertyChanging();
-					this._FechaCapacitacion = value;
-					this.SendPropertyChanged("FechaCapacitacion");
-					this.OnFechaCapacitacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicación", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Ubicación
-		{
-			get
-			{
-				return this._Ubicación;
-			}
-			set
-			{
-				if ((this._Ubicación != value))
-				{
-					this.OnUbicaciónChanging(value);
-					this.SendPropertyChanging();
-					this._Ubicación = value;
-					this.SendPropertyChanged("Ubicación");
-					this.OnUbicaciónChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LatLong", DbType="VarChar(150)")]
-		public string LatLong
-		{
-			get
-			{
-				return this._LatLong;
-			}
-			set
-			{
-				if ((this._LatLong != value))
-				{
-					this.OnLatLongChanging(value);
-					this.SendPropertyChanging();
-					this._LatLong = value;
-					this.SendPropertyChanged("LatLong");
-					this.OnLatLongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraInicio", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> HoraInicio
-		{
-			get
-			{
-				return this._HoraInicio;
-			}
-			set
-			{
-				if ((this._HoraInicio != value))
-				{
-					this.OnHoraInicioChanging(value);
-					this.SendPropertyChanging();
-					this._HoraInicio = value;
-					this.SendPropertyChanged("HoraInicio");
-					this.OnHoraInicioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraFin", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> HoraFin
-		{
-			get
-			{
-				return this._HoraFin;
-			}
-			set
-			{
-				if ((this._HoraFin != value))
-				{
-					this.OnHoraFinChanging(value);
-					this.SendPropertyChanging();
-					this._HoraFin = value;
-					this.SendPropertyChanged("HoraFin");
-					this.OnHoraFinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(MAX)")]
-		public string Observacion
-		{
-			get
-			{
-				return this._Observacion;
-			}
-			set
-			{
-				if ((this._Observacion != value))
-				{
-					this.OnObservacionChanging(value);
-					this.SendPropertyChanging();
-					this._Observacion = value;
-					this.SendPropertyChanged("Observacion");
-					this.OnObservacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime FechaRegistro
-		{
-			get
-			{
-				return this._FechaRegistro;
-			}
-			set
-			{
-				if ((this._FechaRegistro != value))
-				{
-					this.OnFechaRegistroChanging(value);
-					this.SendPropertyChanging();
-					this._FechaRegistro = value;
-					this.SendPropertyChanged("FechaRegistro");
-					this.OnFechaRegistroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFRuta", DbType="VarChar(MAX)")]
-		public string PDFRuta
-		{
-			get
-			{
-				return this._PDFRuta;
-			}
-			set
-			{
-				if ((this._PDFRuta != value))
-				{
-					this.OnPDFRutaChanging(value);
-					this.SendPropertyChanging();
-					this._PDFRuta = value;
-					this.SendPropertyChanged("PDFRuta");
-					this.OnPDFRutaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPrint", DbType="Int")]
-		public System.Nullable<int> PDFPrint
-		{
-			get
-			{
-				return this._PDFPrint;
-			}
-			set
-			{
-				if ((this._PDFPrint != value))
-				{
-					this.OnPDFPrintChanging(value);
-					this.SendPropertyChanging();
-					this._PDFPrint = value;
-					this.SendPropertyChanged("PDFPrint");
-					this.OnPDFPrintChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionArea", Storage="_CapacitacionAreas", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionArea> CapacitacionAreas
-		{
-			get
-			{
-				return this._CapacitacionAreas;
-			}
-			set
-			{
-				this._CapacitacionAreas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionCapacitador", Storage="_CapacitacionCapacitadors", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionCapacitador> CapacitacionCapacitadors
-		{
-			get
-			{
-				return this._CapacitacionCapacitadors;
-			}
-			set
-			{
-				this._CapacitacionCapacitadors.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionDetalle", Storage="_CapacitacionDetalles", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionDetalle> CapacitacionDetalles
-		{
-			get
-			{
-				return this._CapacitacionDetalles;
-			}
-			set
-			{
-				this._CapacitacionDetalles.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionTema> CapacitacionTemas
-		{
-			get
-			{
-				return this._CapacitacionTemas;
-			}
-			set
-			{
-				this._CapacitacionTemas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionArea1", Storage="_CapacitacionArea1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionArea1> CapacitacionArea1s
-		{
-			get
-			{
-				return this._CapacitacionArea1s;
-			}
-			set
-			{
-				this._CapacitacionArea1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionCapacitador1", Storage="_CapacitacionCapacitador1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionCapacitador1> CapacitacionCapacitador1s
-		{
-			get
-			{
-				return this._CapacitacionCapacitador1s;
-			}
-			set
-			{
-				this._CapacitacionCapacitador1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionDetalle1", Storage="_CapacitacionDetalle1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionDetalle1> CapacitacionDetalle1s
-		{
-			get
-			{
-				return this._CapacitacionDetalle1s;
-			}
-			set
-			{
-				this._CapacitacionDetalle1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionFotografia1", Storage="_CapacitacionFotografia1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionFotografia1> CapacitacionFotografia1s
-		{
-			get
-			{
-				return this._CapacitacionFotografia1s;
-			}
-			set
-			{
-				this._CapacitacionFotografia1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionTema1", Storage="_CapacitacionTema1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionTema1> CapacitacionTema1s
-		{
-			get
-			{
-				return this._CapacitacionTema1s;
-			}
-			set
-			{
-				this._CapacitacionTema1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo_CapacitacionCabecera", Storage="_CapacitacionTipo", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID", IsForeignKey=true)]
-		public CapacitacionTipo CapacitacionTipo
-		{
-			get
-			{
-				return this._CapacitacionTipo.Entity;
-			}
-			set
-			{
-				CapacitacionTipo previousValue = this._CapacitacionTipo.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionTipo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionTipo.Entity = null;
-						previousValue.CapacitacionCabeceras.Remove(this);
-					}
-					this._CapacitacionTipo.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionCabeceras.Add(this);
-						this._CapacitacionTipoID = value.CapacitacionTipoID;
-					}
-					else
-					{
-						this._CapacitacionTipoID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionTipo");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo1_CapacitacionCabecera", Storage="_CapacitacionTipo1", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID", IsForeignKey=true)]
-		public CapacitacionTipo1 CapacitacionTipo1
-		{
-			get
-			{
-				return this._CapacitacionTipo1.Entity;
-			}
-			set
-			{
-				CapacitacionTipo1 previousValue = this._CapacitacionTipo1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionTipo1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionTipo1.Entity = null;
-						previousValue.CapacitacionCabeceras.Remove(this);
-					}
-					this._CapacitacionTipo1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionCabeceras.Add(this);
-						this._CapacitacionTipoID = value.CapacitacionTipoID;
-					}
-					else
-					{
-						this._CapacitacionTipoID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionTipo1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CapacitacionAreas(CapacitacionArea entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionAreas(CapacitacionArea entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionCapacitadors(CapacitacionCapacitador entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionCapacitadors(CapacitacionCapacitador entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionDetalles(CapacitacionDetalle entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionDetalles(CapacitacionDetalle entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionTemas(CapacitacionTema entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionTemas(CapacitacionTema entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionArea1s(CapacitacionArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionArea1s(CapacitacionArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionCapacitador1s(CapacitacionCapacitador1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionCapacitador1s(CapacitacionCapacitador1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionDetalle1s(CapacitacionDetalle1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionDetalle1s(CapacitacionDetalle1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionFotografia1s(CapacitacionFotografia1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionFotografia1s(CapacitacionFotografia1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-		
-		private void attach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = this;
-		}
-		
-		private void detach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionArea")]
-	public partial class CapacitacionArea1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionAreaID;
-		
-		private string _CapacitacionID;
-		
-		private string _AreaId;
-		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionAreaIDChanging(string value);
-    partial void OnCapacitacionAreaIDChanged();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnAreaIdChanging(string value);
-    partial void OnAreaIdChanged();
-    #endregion
-		
-		public CapacitacionArea1()
-		{
-			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionAreaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionAreaID
-		{
-			get
-			{
-				return this._CapacitacionAreaID;
-			}
-			set
-			{
-				if ((this._CapacitacionAreaID != value))
-				{
-					this.OnCapacitacionAreaIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionAreaID = value;
-					this.SendPropertyChanged("CapacitacionAreaID");
-					this.OnCapacitacionAreaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaId", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string AreaId
-		{
-			get
-			{
-				return this._AreaId;
-			}
-			set
-			{
-				if ((this._AreaId != value))
-				{
-					this.OnAreaIdChanging(value);
-					this.SendPropertyChanging();
-					this._AreaId = value;
-					this.SendPropertyChanged("AreaId");
-					this.OnAreaIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionArea1", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera CapacitacionCabecera
-		{
-			get
-			{
-				return this._CapacitacionCabecera.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera.Entity = null;
-						previousValue.CapacitacionArea1s.Remove(this);
-					}
-					this._CapacitacionCabecera.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionArea1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionArea1", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionArea1s.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionArea1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TemaArea")]
-	public partial class TemaArea1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TemaAreaId;
-		
-		private string _TemaID;
-		
-		private string _AreaID;
-		
-		private byte _Estado;
-		
-		private EntityRef<Tema> _Tema;
-		
-		private EntityRef<Tema1> _Tema1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTemaAreaIdChanging(int value);
-    partial void OnTemaAreaIdChanged();
-    partial void OnTemaIDChanging(string value);
-    partial void OnTemaIDChanged();
-    partial void OnAreaIDChanging(string value);
-    partial void OnAreaIDChanged();
-    partial void OnEstadoChanging(byte value);
-    partial void OnEstadoChanged();
-    #endregion
-		
-		public TemaArea1()
-		{
-			this._Tema = default(EntityRef<Tema>);
-			this._Tema1 = default(EntityRef<Tema1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaAreaId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TemaAreaId
-		{
-			get
-			{
-				return this._TemaAreaId;
-			}
-			set
-			{
-				if ((this._TemaAreaId != value))
-				{
-					this.OnTemaAreaIdChanging(value);
-					this.SendPropertyChanging();
-					this._TemaAreaId = value;
-					this.SendPropertyChanged("TemaAreaId");
-					this.OnTemaAreaIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string TemaID
-		{
-			get
-			{
-				return this._TemaID;
-			}
-			set
-			{
-				if ((this._TemaID != value))
-				{
-					if ((this._Tema.HasLoadedOrAssignedValue || this._Tema1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTemaIDChanging(value);
-					this.SendPropertyChanging();
-					this._TemaID = value;
-					this.SendPropertyChanged("TemaID");
-					this.OnTemaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaID", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string AreaID
-		{
-			get
-			{
-				return this._AreaID;
-			}
-			set
-			{
-				if ((this._AreaID != value))
-				{
-					this.OnAreaIDChanging(value);
-					this.SendPropertyChanging();
-					this._AreaID = value;
-					this.SendPropertyChanged("AreaID");
-					this.OnAreaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt NOT NULL")]
-		public byte Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_TemaArea1", Storage="_Tema", ThisKey="TemaID", OtherKey="TemaID", IsForeignKey=true)]
-		public Tema Tema
-		{
-			get
-			{
-				return this._Tema.Entity;
-			}
-			set
-			{
-				Tema previousValue = this._Tema.Entity;
-				if (((previousValue != value) 
-							|| (this._Tema.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tema.Entity = null;
-						previousValue.TemaArea1s.Remove(this);
-					}
-					this._Tema.Entity = value;
-					if ((value != null))
-					{
-						value.TemaArea1s.Add(this);
-						this._TemaID = value.TemaID;
-					}
-					else
-					{
-						this._TemaID = default(string);
-					}
-					this.SendPropertyChanged("Tema");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_TemaArea1", Storage="_Tema1", ThisKey="TemaID", OtherKey="TemaID", IsForeignKey=true)]
-		public Tema1 Tema1
-		{
-			get
-			{
-				return this._Tema1.Entity;
-			}
-			set
-			{
-				Tema1 previousValue = this._Tema1.Entity;
-				if (((previousValue != value) 
-							|| (this._Tema1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tema1.Entity = null;
-						previousValue.TemaArea1s.Remove(this);
-					}
-					this._Tema1.Entity = value;
-					if ((value != null))
-					{
-						value.TemaArea1s.Add(this);
-						this._TemaID = value.TemaID;
-					}
-					else
-					{
-						this._TemaID = default(string);
-					}
-					this.SendPropertyChanged("Tema1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionCabecera")]
-	public partial class CapacitacionCabecera1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionID;
-		
-		private string _CapacitacionTipoID;
-		
-		private System.DateTime _FechaCapacitacion;
-		
-		private string _Ubicación;
-		
-		private string _LatLong;
-		
-		private System.Nullable<System.DateTime> _HoraInicio;
-		
-		private System.Nullable<System.DateTime> _HoraFin;
-		
-		private string _Observacion;
-		
-		private System.DateTime _FechaRegistro;
-		
-		private string _PDFRuta;
-		
-		private System.Nullable<int> _PDFPrint;
-		
 		private string _EstadoID;
+		
+		private int _Correlativo;
+		
+		private string _IdReferencia;
 		
 		private EntitySet<CapacitacionArea> _CapacitacionAreas;
 		
@@ -3242,19 +2108,7 @@ namespace Asistencia.Datos
 		
 		private EntitySet<CapacitacionTema> _CapacitacionTemas;
 		
-		private EntitySet<CapacitacionArea1> _CapacitacionArea1s;
-		
-		private EntitySet<CapacitacionCapacitador1> _CapacitacionCapacitador1s;
-		
-		private EntitySet<CapacitacionDetalle1> _CapacitacionDetalle1s;
-		
-		private EntitySet<CapacitacionFotografia1> _CapacitacionFotografia1s;
-		
-		private EntitySet<CapacitacionTema1> _CapacitacionTema1s;
-		
 		private EntityRef<CapacitacionTipo> _CapacitacionTipo;
-		
-		private EntityRef<CapacitacionTipo1> _CapacitacionTipo1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3284,22 +2138,20 @@ namespace Asistencia.Datos
     partial void OnPDFPrintChanged();
     partial void OnEstadoIDChanging(string value);
     partial void OnEstadoIDChanged();
+    partial void OnCorrelativoChanging(int value);
+    partial void OnCorrelativoChanged();
+    partial void OnIdReferenciaChanging(string value);
+    partial void OnIdReferenciaChanged();
     #endregion
 		
-		public CapacitacionCabecera1()
+		public CapacitacionCabecera()
 		{
 			this._CapacitacionAreas = new EntitySet<CapacitacionArea>(new Action<CapacitacionArea>(this.attach_CapacitacionAreas), new Action<CapacitacionArea>(this.detach_CapacitacionAreas));
 			this._CapacitacionCapacitadors = new EntitySet<CapacitacionCapacitador>(new Action<CapacitacionCapacitador>(this.attach_CapacitacionCapacitadors), new Action<CapacitacionCapacitador>(this.detach_CapacitacionCapacitadors));
 			this._CapacitacionDetalles = new EntitySet<CapacitacionDetalle>(new Action<CapacitacionDetalle>(this.attach_CapacitacionDetalles), new Action<CapacitacionDetalle>(this.detach_CapacitacionDetalles));
 			this._CapacitacionFotografias = new EntitySet<CapacitacionFotografia>(new Action<CapacitacionFotografia>(this.attach_CapacitacionFotografias), new Action<CapacitacionFotografia>(this.detach_CapacitacionFotografias));
 			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
-			this._CapacitacionArea1s = new EntitySet<CapacitacionArea1>(new Action<CapacitacionArea1>(this.attach_CapacitacionArea1s), new Action<CapacitacionArea1>(this.detach_CapacitacionArea1s));
-			this._CapacitacionCapacitador1s = new EntitySet<CapacitacionCapacitador1>(new Action<CapacitacionCapacitador1>(this.attach_CapacitacionCapacitador1s), new Action<CapacitacionCapacitador1>(this.detach_CapacitacionCapacitador1s));
-			this._CapacitacionDetalle1s = new EntitySet<CapacitacionDetalle1>(new Action<CapacitacionDetalle1>(this.attach_CapacitacionDetalle1s), new Action<CapacitacionDetalle1>(this.detach_CapacitacionDetalle1s));
-			this._CapacitacionFotografia1s = new EntitySet<CapacitacionFotografia1>(new Action<CapacitacionFotografia1>(this.attach_CapacitacionFotografia1s), new Action<CapacitacionFotografia1>(this.detach_CapacitacionFotografia1s));
-			this._CapacitacionTema1s = new EntitySet<CapacitacionTema1>(new Action<CapacitacionTema1>(this.attach_CapacitacionTema1s), new Action<CapacitacionTema1>(this.detach_CapacitacionTema1s));
 			this._CapacitacionTipo = default(EntityRef<CapacitacionTipo>);
-			this._CapacitacionTipo1 = default(EntityRef<CapacitacionTipo1>);
 			OnCreated();
 		}
 		
@@ -3334,7 +2186,7 @@ namespace Asistencia.Datos
 			{
 				if ((this._CapacitacionTipoID != value))
 				{
-					if ((this._CapacitacionTipo.HasLoadedOrAssignedValue || this._CapacitacionTipo1.HasLoadedOrAssignedValue))
+					if (this._CapacitacionTipo.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -3547,7 +2399,47 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionArea", Storage="_CapacitacionAreas", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correlativo", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Correlativo
+		{
+			get
+			{
+				return this._Correlativo;
+			}
+			set
+			{
+				if ((this._Correlativo != value))
+				{
+					this.OnCorrelativoChanging(value);
+					this.SendPropertyChanging();
+					this._Correlativo = value;
+					this.SendPropertyChanged("Correlativo");
+					this.OnCorrelativoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdReferencia", DbType="VarChar(17)")]
+		public string IdReferencia
+		{
+			get
+			{
+				return this._IdReferencia;
+			}
+			set
+			{
+				if ((this._IdReferencia != value))
+				{
+					this.OnIdReferenciaChanging(value);
+					this.SendPropertyChanging();
+					this._IdReferencia = value;
+					this.SendPropertyChanged("IdReferencia");
+					this.OnIdReferenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionArea", Storage="_CapacitacionAreas", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
 		public EntitySet<CapacitacionArea> CapacitacionAreas
 		{
 			get
@@ -3560,7 +2452,7 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionCapacitador", Storage="_CapacitacionCapacitadors", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionCapacitador", Storage="_CapacitacionCapacitadors", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
 		public EntitySet<CapacitacionCapacitador> CapacitacionCapacitadors
 		{
 			get
@@ -3573,7 +2465,7 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionDetalle", Storage="_CapacitacionDetalles", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionDetalle", Storage="_CapacitacionDetalles", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
 		public EntitySet<CapacitacionDetalle> CapacitacionDetalles
 		{
 			get
@@ -3586,7 +2478,7 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionFotografia", Storage="_CapacitacionFotografias", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionFotografia", Storage="_CapacitacionFotografias", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
 		public EntitySet<CapacitacionFotografia> CapacitacionFotografias
 		{
 			get
@@ -3599,7 +2491,7 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
 		public EntitySet<CapacitacionTema> CapacitacionTemas
 		{
 			get
@@ -3612,72 +2504,7 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionArea1", Storage="_CapacitacionArea1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionArea1> CapacitacionArea1s
-		{
-			get
-			{
-				return this._CapacitacionArea1s;
-			}
-			set
-			{
-				this._CapacitacionArea1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionCapacitador1", Storage="_CapacitacionCapacitador1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionCapacitador1> CapacitacionCapacitador1s
-		{
-			get
-			{
-				return this._CapacitacionCapacitador1s;
-			}
-			set
-			{
-				this._CapacitacionCapacitador1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionDetalle1", Storage="_CapacitacionDetalle1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionDetalle1> CapacitacionDetalle1s
-		{
-			get
-			{
-				return this._CapacitacionDetalle1s;
-			}
-			set
-			{
-				this._CapacitacionDetalle1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionFotografia1", Storage="_CapacitacionFotografia1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionFotografia1> CapacitacionFotografia1s
-		{
-			get
-			{
-				return this._CapacitacionFotografia1s;
-			}
-			set
-			{
-				this._CapacitacionFotografia1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionTema1", Storage="_CapacitacionTema1s", ThisKey="CapacitacionID", OtherKey="CapacitacionID")]
-		public EntitySet<CapacitacionTema1> CapacitacionTema1s
-		{
-			get
-			{
-				return this._CapacitacionTema1s;
-			}
-			set
-			{
-				this._CapacitacionTema1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo_CapacitacionCabecera1", Storage="_CapacitacionTipo", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo_CapacitacionCabecera", Storage="_CapacitacionTipo", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID", IsForeignKey=true)]
 		public CapacitacionTipo CapacitacionTipo
 		{
 			get
@@ -3694,12 +2521,12 @@ namespace Asistencia.Datos
 					if ((previousValue != null))
 					{
 						this._CapacitacionTipo.Entity = null;
-						previousValue.CapacitacionCabecera1s.Remove(this);
+						previousValue.CapacitacionCabeceras.Remove(this);
 					}
 					this._CapacitacionTipo.Entity = value;
 					if ((value != null))
 					{
-						value.CapacitacionCabecera1s.Add(this);
+						value.CapacitacionCabeceras.Add(this);
 						this._CapacitacionTipoID = value.CapacitacionTipoID;
 					}
 					else
@@ -3707,40 +2534,6 @@ namespace Asistencia.Datos
 						this._CapacitacionTipoID = default(string);
 					}
 					this.SendPropertyChanged("CapacitacionTipo");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo1_CapacitacionCabecera1", Storage="_CapacitacionTipo1", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID", IsForeignKey=true)]
-		public CapacitacionTipo1 CapacitacionTipo1
-		{
-			get
-			{
-				return this._CapacitacionTipo1.Entity;
-			}
-			set
-			{
-				CapacitacionTipo1 previousValue = this._CapacitacionTipo1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionTipo1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionTipo1.Entity = null;
-						previousValue.CapacitacionCabecera1s.Remove(this);
-					}
-					this._CapacitacionTipo1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionCabecera1s.Add(this);
-						this._CapacitacionTipoID = value.CapacitacionTipoID;
-					}
-					else
-					{
-						this._CapacitacionTipoID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionTipo1");
 				}
 			}
 		}
@@ -3768,1926 +2561,61 @@ namespace Asistencia.Datos
 		private void attach_CapacitacionAreas(CapacitacionArea entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
+			entity.CapacitacionCabecera = this;
 		}
 		
 		private void detach_CapacitacionAreas(CapacitacionArea entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
+			entity.CapacitacionCabecera = null;
 		}
 		
 		private void attach_CapacitacionCapacitadors(CapacitacionCapacitador entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
+			entity.CapacitacionCabecera = this;
 		}
 		
 		private void detach_CapacitacionCapacitadors(CapacitacionCapacitador entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
+			entity.CapacitacionCabecera = null;
 		}
 		
 		private void attach_CapacitacionDetalles(CapacitacionDetalle entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
+			entity.CapacitacionCabecera = this;
 		}
 		
 		private void detach_CapacitacionDetalles(CapacitacionDetalle entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
+			entity.CapacitacionCabecera = null;
 		}
 		
 		private void attach_CapacitacionFotografias(CapacitacionFotografia entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
+			entity.CapacitacionCabecera = this;
 		}
 		
 		private void detach_CapacitacionFotografias(CapacitacionFotografia entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
+			entity.CapacitacionCabecera = null;
 		}
 		
 		private void attach_CapacitacionTemas(CapacitacionTema entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
+			entity.CapacitacionCabecera = this;
 		}
 		
 		private void detach_CapacitacionTemas(CapacitacionTema entity)
 		{
 			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-		
-		private void attach_CapacitacionArea1s(CapacitacionArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
-		}
-		
-		private void detach_CapacitacionArea1s(CapacitacionArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-		
-		private void attach_CapacitacionCapacitador1s(CapacitacionCapacitador1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
-		}
-		
-		private void detach_CapacitacionCapacitador1s(CapacitacionCapacitador1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-		
-		private void attach_CapacitacionDetalle1s(CapacitacionDetalle1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
-		}
-		
-		private void detach_CapacitacionDetalle1s(CapacitacionDetalle1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-		
-		private void attach_CapacitacionFotografia1s(CapacitacionFotografia1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
-		}
-		
-		private void detach_CapacitacionFotografia1s(CapacitacionFotografia1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-		
-		private void attach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = this;
-		}
-		
-		private void detach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionCabecera1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionCapacitador")]
-	public partial class CapacitacionCapacitador1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionCapacitadorID;
-		
-		private string _ResponsableID;
-		
-		private string _CapacitacionID;
-		
-		private string _Firma;
-		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionCapacitadorIDChanging(string value);
-    partial void OnCapacitacionCapacitadorIDChanged();
-    partial void OnResponsableIDChanging(string value);
-    partial void OnResponsableIDChanged();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnFirmaChanging(string value);
-    partial void OnFirmaChanged();
-    #endregion
-		
-		public CapacitacionCapacitador1()
-		{
-			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionCapacitadorID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionCapacitadorID
-		{
-			get
-			{
-				return this._CapacitacionCapacitadorID;
-			}
-			set
-			{
-				if ((this._CapacitacionCapacitadorID != value))
-				{
-					this.OnCapacitacionCapacitadorIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionCapacitadorID = value;
-					this.SendPropertyChanged("CapacitacionCapacitadorID");
-					this.OnCapacitacionCapacitadorIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsableID", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
-		public string ResponsableID
-		{
-			get
-			{
-				return this._ResponsableID;
-			}
-			set
-			{
-				if ((this._ResponsableID != value))
-				{
-					this.OnResponsableIDChanging(value);
-					this.SendPropertyChanging();
-					this._ResponsableID = value;
-					this.SendPropertyChanged("ResponsableID");
-					this.OnResponsableIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firma", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Firma
-		{
-			get
-			{
-				return this._Firma;
-			}
-			set
-			{
-				if ((this._Firma != value))
-				{
-					this.OnFirmaChanging(value);
-					this.SendPropertyChanging();
-					this._Firma = value;
-					this.SendPropertyChanged("Firma");
-					this.OnFirmaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionCapacitador1", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera CapacitacionCabecera
-		{
-			get
-			{
-				return this._CapacitacionCabecera.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera.Entity = null;
-						previousValue.CapacitacionCapacitador1s.Remove(this);
-					}
-					this._CapacitacionCabecera.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionCapacitador1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionCapacitador1", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionCapacitador1s.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionCapacitador1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionDetalle")]
-	public partial class CapacitacionDetalle1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionDetalleID;
-		
-		private string _CapacitacionID;
-		
-		private string _PersonalID;
-		
-		private string _NumeroDocumento;
-		
-		private string _Nombres;
-		
-		private string _Cargo;
-		
-		private string _Area;
-		
-		private string _NumeroCelular;
-		
-		private System.Nullable<System.DateTime> _FechaRegistro;
-		
-		private string _Firma;
-		
-		private string _DNI;
-		
-		private System.Nullable<byte> _Estado;
-		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionDetalleIDChanging(string value);
-    partial void OnCapacitacionDetalleIDChanged();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnPersonalIDChanging(string value);
-    partial void OnPersonalIDChanged();
-    partial void OnNumeroDocumentoChanging(string value);
-    partial void OnNumeroDocumentoChanged();
-    partial void OnNombresChanging(string value);
-    partial void OnNombresChanged();
-    partial void OnCargoChanging(string value);
-    partial void OnCargoChanged();
-    partial void OnAreaChanging(string value);
-    partial void OnAreaChanged();
-    partial void OnNumeroCelularChanging(string value);
-    partial void OnNumeroCelularChanged();
-    partial void OnFechaRegistroChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaRegistroChanged();
-    partial void OnFirmaChanging(string value);
-    partial void OnFirmaChanged();
-    partial void OnDNIChanging(string value);
-    partial void OnDNIChanged();
-    partial void OnEstadoChanging(System.Nullable<byte> value);
-    partial void OnEstadoChanged();
-    #endregion
-		
-		public CapacitacionDetalle1()
-		{
-			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionDetalleID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionDetalleID
-		{
-			get
-			{
-				return this._CapacitacionDetalleID;
-			}
-			set
-			{
-				if ((this._CapacitacionDetalleID != value))
-				{
-					this.OnCapacitacionDetalleIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionDetalleID = value;
-					this.SendPropertyChanged("CapacitacionDetalleID");
-					this.OnCapacitacionDetalleIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalID", DbType="VarChar(12)")]
-		public string PersonalID
-		{
-			get
-			{
-				return this._PersonalID;
-			}
-			set
-			{
-				if ((this._PersonalID != value))
-				{
-					this.OnPersonalIDChanging(value);
-					this.SendPropertyChanging();
-					this._PersonalID = value;
-					this.SendPropertyChanged("PersonalID");
-					this.OnPersonalIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumeroDocumento", DbType="VarChar(12)")]
-		public string NumeroDocumento
-		{
-			get
-			{
-				return this._NumeroDocumento;
-			}
-			set
-			{
-				if ((this._NumeroDocumento != value))
-				{
-					this.OnNumeroDocumentoChanging(value);
-					this.SendPropertyChanging();
-					this._NumeroDocumento = value;
-					this.SendPropertyChanged("NumeroDocumento");
-					this.OnNumeroDocumentoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="NChar(250)")]
-		public string Nombres
-		{
-			get
-			{
-				return this._Nombres;
-			}
-			set
-			{
-				if ((this._Nombres != value))
-				{
-					this.OnNombresChanging(value);
-					this.SendPropertyChanging();
-					this._Nombres = value;
-					this.SendPropertyChanged("Nombres");
-					this.OnNombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="NChar(250)")]
-		public string Cargo
-		{
-			get
-			{
-				return this._Cargo;
-			}
-			set
-			{
-				if ((this._Cargo != value))
-				{
-					this.OnCargoChanging(value);
-					this.SendPropertyChanging();
-					this._Cargo = value;
-					this.SendPropertyChanged("Cargo");
-					this.OnCargoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="NChar(250)")]
-		public string Area
-		{
-			get
-			{
-				return this._Area;
-			}
-			set
-			{
-				if ((this._Area != value))
-				{
-					this.OnAreaChanging(value);
-					this.SendPropertyChanging();
-					this._Area = value;
-					this.SendPropertyChanged("Area");
-					this.OnAreaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumeroCelular", DbType="VarChar(12)")]
-		public string NumeroCelular
-		{
-			get
-			{
-				return this._NumeroCelular;
-			}
-			set
-			{
-				if ((this._NumeroCelular != value))
-				{
-					this.OnNumeroCelularChanging(value);
-					this.SendPropertyChanging();
-					this._NumeroCelular = value;
-					this.SendPropertyChanged("NumeroCelular");
-					this.OnNumeroCelularChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> FechaRegistro
-		{
-			get
-			{
-				return this._FechaRegistro;
-			}
-			set
-			{
-				if ((this._FechaRegistro != value))
-				{
-					this.OnFechaRegistroChanging(value);
-					this.SendPropertyChanging();
-					this._FechaRegistro = value;
-					this.SendPropertyChanged("FechaRegistro");
-					this.OnFechaRegistroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firma", DbType="VarChar(MAX)")]
-		public string Firma
-		{
-			get
-			{
-				return this._Firma;
-			}
-			set
-			{
-				if ((this._Firma != value))
-				{
-					this.OnFirmaChanging(value);
-					this.SendPropertyChanging();
-					this._Firma = value;
-					this.SendPropertyChanged("Firma");
-					this.OnFirmaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DNI", DbType="VarChar(12)")]
-		public string DNI
-		{
-			get
-			{
-				return this._DNI;
-			}
-			set
-			{
-				if ((this._DNI != value))
-				{
-					this.OnDNIChanging(value);
-					this.SendPropertyChanging();
-					this._DNI = value;
-					this.SendPropertyChanged("DNI");
-					this.OnDNIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
-		public System.Nullable<byte> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionDetalle1", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera CapacitacionCabecera
-		{
-			get
-			{
-				return this._CapacitacionCabecera.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera.Entity = null;
-						previousValue.CapacitacionDetalle1s.Remove(this);
-					}
-					this._CapacitacionCabecera.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionDetalle1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionDetalle1", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionDetalle1s.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionDetalle1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionFotografia")]
-	public partial class CapacitacionFotografia1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionFotografiaID;
-		
-		private string _CapacitacionID;
-		
-		private string _Fotografia;
-		
-		private string _Fotografia2;
-		
-		private string _Fotografia3;
-		
-		private System.Nullable<byte> _Estado;
-		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionFotografiaIDChanging(string value);
-    partial void OnCapacitacionFotografiaIDChanged();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnFotografiaChanging(string value);
-    partial void OnFotografiaChanged();
-    partial void OnFotografia2Changing(string value);
-    partial void OnFotografia2Changed();
-    partial void OnFotografia3Changing(string value);
-    partial void OnFotografia3Changed();
-    partial void OnEstadoChanging(System.Nullable<byte> value);
-    partial void OnEstadoChanged();
-    #endregion
-		
-		public CapacitacionFotografia1()
-		{
-			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionFotografiaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionFotografiaID
-		{
-			get
-			{
-				return this._CapacitacionFotografiaID;
-			}
-			set
-			{
-				if ((this._CapacitacionFotografiaID != value))
-				{
-					this.OnCapacitacionFotografiaIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionFotografiaID = value;
-					this.SendPropertyChanged("CapacitacionFotografiaID");
-					this.OnCapacitacionFotografiaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fotografia", DbType="VarChar(MAX)")]
-		public string Fotografia
-		{
-			get
-			{
-				return this._Fotografia;
-			}
-			set
-			{
-				if ((this._Fotografia != value))
-				{
-					this.OnFotografiaChanging(value);
-					this.SendPropertyChanging();
-					this._Fotografia = value;
-					this.SendPropertyChanged("Fotografia");
-					this.OnFotografiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fotografia2", DbType="VarChar(MAX)")]
-		public string Fotografia2
-		{
-			get
-			{
-				return this._Fotografia2;
-			}
-			set
-			{
-				if ((this._Fotografia2 != value))
-				{
-					this.OnFotografia2Changing(value);
-					this.SendPropertyChanging();
-					this._Fotografia2 = value;
-					this.SendPropertyChanged("Fotografia2");
-					this.OnFotografia2Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fotografia3", DbType="VarChar(MAX)")]
-		public string Fotografia3
-		{
-			get
-			{
-				return this._Fotografia3;
-			}
-			set
-			{
-				if ((this._Fotografia3 != value))
-				{
-					this.OnFotografia3Changing(value);
-					this.SendPropertyChanging();
-					this._Fotografia3 = value;
-					this.SendPropertyChanged("Fotografia3");
-					this.OnFotografia3Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
-		public System.Nullable<byte> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionFotografia1", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera CapacitacionCabecera
-		{
-			get
-			{
-				return this._CapacitacionCabecera.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera.Entity = null;
-						previousValue.CapacitacionFotografia1s.Remove(this);
-					}
-					this._CapacitacionCabecera.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionFotografia1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionFotografia1", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionFotografia1s.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionFotografia1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionTema")]
-	public partial class CapacitacionTema1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionTemaID;
-		
-		private string _CapacitacionID;
-		
-		private string _TemaID;
-		
-		private System.Nullable<byte> _Estado;
-		
-		private EntityRef<CapacitacionCabecera> _CapacitacionCabecera;
-		
-		private EntityRef<CapacitacionCabecera1> _CapacitacionCabecera1;
-		
-		private EntityRef<Tema> _Tema;
-		
-		private EntityRef<Tema1> _Tema1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionTemaIDChanging(string value);
-    partial void OnCapacitacionTemaIDChanged();
-    partial void OnCapacitacionIDChanging(string value);
-    partial void OnCapacitacionIDChanged();
-    partial void OnTemaIDChanging(string value);
-    partial void OnTemaIDChanged();
-    partial void OnEstadoChanging(System.Nullable<byte> value);
-    partial void OnEstadoChanged();
-    #endregion
-		
-		public CapacitacionTema1()
-		{
-			this._CapacitacionCabecera = default(EntityRef<CapacitacionCabecera>);
-			this._CapacitacionCabecera1 = default(EntityRef<CapacitacionCabecera1>);
-			this._Tema = default(EntityRef<Tema>);
-			this._Tema1 = default(EntityRef<Tema1>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionTemaID
-		{
-			get
-			{
-				return this._CapacitacionTemaID;
-			}
-			set
-			{
-				if ((this._CapacitacionTemaID != value))
-				{
-					this.OnCapacitacionTemaIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionTemaID = value;
-					this.SendPropertyChanged("CapacitacionTemaID");
-					this.OnCapacitacionTemaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					if ((this._CapacitacionCabecera.HasLoadedOrAssignedValue || this._CapacitacionCabecera1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCapacitacionIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionID = value;
-					this.SendPropertyChanged("CapacitacionID");
-					this.OnCapacitacionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string TemaID
-		{
-			get
-			{
-				return this._TemaID;
-			}
-			set
-			{
-				if ((this._TemaID != value))
-				{
-					if ((this._Tema.HasLoadedOrAssignedValue || this._Tema1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTemaIDChanging(value);
-					this.SendPropertyChanging();
-					this._TemaID = value;
-					this.SendPropertyChanged("TemaID");
-					this.OnTemaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="TinyInt")]
-		public System.Nullable<byte> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera_CapacitacionTema1", Storage="_CapacitacionCabecera", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera CapacitacionCabecera
-		{
-			get
-			{
-				return this._CapacitacionCabecera.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera previousValue = this._CapacitacionCabecera.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera.Entity = null;
-						previousValue.CapacitacionTema1s.Remove(this);
-					}
-					this._CapacitacionCabecera.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionTema1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionCabecera1_CapacitacionTema1", Storage="_CapacitacionCabecera1", ThisKey="CapacitacionID", OtherKey="CapacitacionID", IsForeignKey=true)]
-		public CapacitacionCabecera1 CapacitacionCabecera1
-		{
-			get
-			{
-				return this._CapacitacionCabecera1.Entity;
-			}
-			set
-			{
-				CapacitacionCabecera1 previousValue = this._CapacitacionCabecera1.Entity;
-				if (((previousValue != value) 
-							|| (this._CapacitacionCabecera1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CapacitacionCabecera1.Entity = null;
-						previousValue.CapacitacionTema1s.Remove(this);
-					}
-					this._CapacitacionCabecera1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionTema1s.Add(this);
-						this._CapacitacionID = value.CapacitacionID;
-					}
-					else
-					{
-						this._CapacitacionID = default(string);
-					}
-					this.SendPropertyChanged("CapacitacionCabecera1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema_CapacitacionTema1", Storage="_Tema", ThisKey="TemaID", OtherKey="TemaID", IsForeignKey=true)]
-		public Tema Tema
-		{
-			get
-			{
-				return this._Tema.Entity;
-			}
-			set
-			{
-				Tema previousValue = this._Tema.Entity;
-				if (((previousValue != value) 
-							|| (this._Tema.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tema.Entity = null;
-						previousValue.CapacitacionTema1s.Remove(this);
-					}
-					this._Tema.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionTema1s.Add(this);
-						this._TemaID = value.TemaID;
-					}
-					else
-					{
-						this._TemaID = default(string);
-					}
-					this.SendPropertyChanged("Tema");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_CapacitacionTema1", Storage="_Tema1", ThisKey="TemaID", OtherKey="TemaID", IsForeignKey=true)]
-		public Tema1 Tema1
-		{
-			get
-			{
-				return this._Tema1.Entity;
-			}
-			set
-			{
-				Tema1 previousValue = this._Tema1.Entity;
-				if (((previousValue != value) 
-							|| (this._Tema1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tema1.Entity = null;
-						previousValue.CapacitacionTema1s.Remove(this);
-					}
-					this._Tema1.Entity = value;
-					if ((value != null))
-					{
-						value.CapacitacionTema1s.Add(this);
-						this._TemaID = value.TemaID;
-					}
-					else
-					{
-						this._TemaID = default(string);
-					}
-					this.SendPropertyChanged("Tema1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CapacitacionTipo")]
-	public partial class CapacitacionTipo1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _CapacitacionTipoID;
-		
-		private string _Descripcion;
-		
-		private bool _Estado;
-		
-		private EntitySet<CapacitacionCabecera> _CapacitacionCabeceras;
-		
-		private EntitySet<CapacitacionCabecera1> _CapacitacionCabecera1s;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCapacitacionTipoIDChanging(string value);
-    partial void OnCapacitacionTipoIDChanged();
-    partial void OnDescripcionChanging(string value);
-    partial void OnDescripcionChanged();
-    partial void OnEstadoChanging(bool value);
-    partial void OnEstadoChanged();
-    #endregion
-		
-		public CapacitacionTipo1()
-		{
-			this._CapacitacionCabeceras = new EntitySet<CapacitacionCabecera>(new Action<CapacitacionCabecera>(this.attach_CapacitacionCabeceras), new Action<CapacitacionCabecera>(this.detach_CapacitacionCabeceras));
-			this._CapacitacionCabecera1s = new EntitySet<CapacitacionCabecera1>(new Action<CapacitacionCabecera1>(this.attach_CapacitacionCabecera1s), new Action<CapacitacionCabecera1>(this.detach_CapacitacionCabecera1s));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTipoID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string CapacitacionTipoID
-		{
-			get
-			{
-				return this._CapacitacionTipoID;
-			}
-			set
-			{
-				if ((this._CapacitacionTipoID != value))
-				{
-					this.OnCapacitacionTipoIDChanging(value);
-					this.SendPropertyChanging();
-					this._CapacitacionTipoID = value;
-					this.SendPropertyChanged("CapacitacionTipoID");
-					this.OnCapacitacionTipoIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this.OnDescripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Descripcion = value;
-					this.SendPropertyChanged("Descripcion");
-					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
-		public bool Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo1_CapacitacionCabecera", Storage="_CapacitacionCabeceras", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID")]
-		public EntitySet<CapacitacionCabecera> CapacitacionCabeceras
-		{
-			get
-			{
-				return this._CapacitacionCabeceras;
-			}
-			set
-			{
-				this._CapacitacionCabeceras.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CapacitacionTipo1_CapacitacionCabecera1", Storage="_CapacitacionCabecera1s", ThisKey="CapacitacionTipoID", OtherKey="CapacitacionTipoID")]
-		public EntitySet<CapacitacionCabecera1> CapacitacionCabecera1s
-		{
-			get
-			{
-				return this._CapacitacionCabecera1s;
-			}
-			set
-			{
-				this._CapacitacionCabecera1s.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CapacitacionCabeceras(CapacitacionCabecera entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionTipo1 = this;
-		}
-		
-		private void detach_CapacitacionCabeceras(CapacitacionCabecera entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionTipo1 = null;
-		}
-		
-		private void attach_CapacitacionCabecera1s(CapacitacionCabecera1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionTipo1 = this;
-		}
-		
-		private void detach_CapacitacionCabecera1s(CapacitacionCabecera1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.CapacitacionTipo1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PersonalNuevo")]
-	public partial class PersonalNuevo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _PersonalNuevoID;
-		
-		private string _DNI;
-		
-		private string _Nombres;
-		
-		private string _Area;
-		
-		private string _Gerencia;
-		
-		private string _Cargo;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPersonalNuevoIDChanging(string value);
-    partial void OnPersonalNuevoIDChanged();
-    partial void OnDNIChanging(string value);
-    partial void OnDNIChanged();
-    partial void OnNombresChanging(string value);
-    partial void OnNombresChanged();
-    partial void OnAreaChanging(string value);
-    partial void OnAreaChanged();
-    partial void OnGerenciaChanging(string value);
-    partial void OnGerenciaChanged();
-    partial void OnCargoChanging(string value);
-    partial void OnCargoChanged();
-    #endregion
-		
-		public PersonalNuevo()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalNuevoID", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
-		public string PersonalNuevoID
-		{
-			get
-			{
-				return this._PersonalNuevoID;
-			}
-			set
-			{
-				if ((this._PersonalNuevoID != value))
-				{
-					this.OnPersonalNuevoIDChanging(value);
-					this.SendPropertyChanging();
-					this._PersonalNuevoID = value;
-					this.SendPropertyChanged("PersonalNuevoID");
-					this.OnPersonalNuevoIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DNI", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string DNI
-		{
-			get
-			{
-				return this._DNI;
-			}
-			set
-			{
-				if ((this._DNI != value))
-				{
-					this.OnDNIChanging(value);
-					this.SendPropertyChanging();
-					this._DNI = value;
-					this.SendPropertyChanged("DNI");
-					this.OnDNIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="VarChar(150)")]
-		public string Nombres
-		{
-			get
-			{
-				return this._Nombres;
-			}
-			set
-			{
-				if ((this._Nombres != value))
-				{
-					this.OnNombresChanging(value);
-					this.SendPropertyChanging();
-					this._Nombres = value;
-					this.SendPropertyChanged("Nombres");
-					this.OnNombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="VarChar(150)")]
-		public string Area
-		{
-			get
-			{
-				return this._Area;
-			}
-			set
-			{
-				if ((this._Area != value))
-				{
-					this.OnAreaChanging(value);
-					this.SendPropertyChanging();
-					this._Area = value;
-					this.SendPropertyChanged("Area");
-					this.OnAreaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gerencia", DbType="VarChar(150)")]
-		public string Gerencia
-		{
-			get
-			{
-				return this._Gerencia;
-			}
-			set
-			{
-				if ((this._Gerencia != value))
-				{
-					this.OnGerenciaChanging(value);
-					this.SendPropertyChanging();
-					this._Gerencia = value;
-					this.SendPropertyChanged("Gerencia");
-					this.OnGerenciaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(150)")]
-		public string Cargo
-		{
-			get
-			{
-				return this._Cargo;
-			}
-			set
-			{
-				if ((this._Cargo != value))
-				{
-					this.OnCargoChanging(value);
-					this.SendPropertyChanging();
-					this._Cargo = value;
-					this.SendPropertyChanged("Cargo");
-					this.OnCargoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tema")]
-	public partial class Tema1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TemaID;
-		
-		private string _Descripcion;
-		
-		private decimal _FrecuenciaCapacitacion;
-		
-		private bool _Estado;
-		
-		private EntitySet<TemaArea> _TemaAreas;
-		
-		private EntitySet<CapacitacionTema> _CapacitacionTemas;
-		
-		private EntitySet<TemaArea1> _TemaArea1s;
-		
-		private EntitySet<CapacitacionTema1> _CapacitacionTema1s;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTemaIDChanging(string value);
-    partial void OnTemaIDChanged();
-    partial void OnDescripcionChanging(string value);
-    partial void OnDescripcionChanged();
-    partial void OnFrecuenciaCapacitacionChanging(decimal value);
-    partial void OnFrecuenciaCapacitacionChanged();
-    partial void OnEstadoChanging(bool value);
-    partial void OnEstadoChanged();
-    #endregion
-		
-		public Tema1()
-		{
-			this._TemaAreas = new EntitySet<TemaArea>(new Action<TemaArea>(this.attach_TemaAreas), new Action<TemaArea>(this.detach_TemaAreas));
-			this._CapacitacionTemas = new EntitySet<CapacitacionTema>(new Action<CapacitacionTema>(this.attach_CapacitacionTemas), new Action<CapacitacionTema>(this.detach_CapacitacionTemas));
-			this._TemaArea1s = new EntitySet<TemaArea1>(new Action<TemaArea1>(this.attach_TemaArea1s), new Action<TemaArea1>(this.detach_TemaArea1s));
-			this._CapacitacionTema1s = new EntitySet<CapacitacionTema1>(new Action<CapacitacionTema1>(this.attach_CapacitacionTema1s), new Action<CapacitacionTema1>(this.detach_CapacitacionTema1s));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TemaID
-		{
-			get
-			{
-				return this._TemaID;
-			}
-			set
-			{
-				if ((this._TemaID != value))
-				{
-					this.OnTemaIDChanging(value);
-					this.SendPropertyChanging();
-					this._TemaID = value;
-					this.SendPropertyChanged("TemaID");
-					this.OnTemaIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this.OnDescripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Descripcion = value;
-					this.SendPropertyChanged("Descripcion");
-					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrecuenciaCapacitacion", DbType="Decimal(6,2) NOT NULL")]
-		public decimal FrecuenciaCapacitacion
-		{
-			get
-			{
-				return this._FrecuenciaCapacitacion;
-			}
-			set
-			{
-				if ((this._FrecuenciaCapacitacion != value))
-				{
-					this.OnFrecuenciaCapacitacionChanging(value);
-					this.SendPropertyChanging();
-					this._FrecuenciaCapacitacion = value;
-					this.SendPropertyChanged("FrecuenciaCapacitacion");
-					this.OnFrecuenciaCapacitacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
-		public bool Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_TemaArea", Storage="_TemaAreas", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<TemaArea> TemaAreas
-		{
-			get
-			{
-				return this._TemaAreas;
-			}
-			set
-			{
-				this._TemaAreas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_CapacitacionTema", Storage="_CapacitacionTemas", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<CapacitacionTema> CapacitacionTemas
-		{
-			get
-			{
-				return this._CapacitacionTemas;
-			}
-			set
-			{
-				this._CapacitacionTemas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_TemaArea1", Storage="_TemaArea1s", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<TemaArea1> TemaArea1s
-		{
-			get
-			{
-				return this._TemaArea1s;
-			}
-			set
-			{
-				this._TemaArea1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tema1_CapacitacionTema1", Storage="_CapacitacionTema1s", ThisKey="TemaID", OtherKey="TemaID")]
-		public EntitySet<CapacitacionTema1> CapacitacionTema1s
-		{
-			get
-			{
-				return this._CapacitacionTema1s;
-			}
-			set
-			{
-				this._CapacitacionTema1s.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TemaAreas(TemaArea entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = this;
-		}
-		
-		private void detach_TemaAreas(TemaArea entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = null;
-		}
-		
-		private void attach_CapacitacionTemas(CapacitacionTema entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = this;
-		}
-		
-		private void detach_CapacitacionTemas(CapacitacionTema entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = null;
-		}
-		
-		private void attach_TemaArea1s(TemaArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = this;
-		}
-		
-		private void detach_TemaArea1s(TemaArea1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = null;
-		}
-		
-		private void attach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = this;
-		}
-		
-		private void detach_CapacitacionTema1s(CapacitacionTema1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tema1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ListadoAsistenciaPorCapacitacion")]
-	public partial class ListadoAsistenciaPorCapacitacion
-	{
-		
-		private string _CapacitacionID;
-		
-		private System.Nullable<int> _Asistentes;
-		
-		public ListadoAsistenciaPorCapacitacion()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					this._CapacitacionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asistentes", DbType="Int")]
-		public System.Nullable<int> Asistentes
-		{
-			get
-			{
-				return this._Asistentes;
-			}
-			set
-			{
-				if ((this._Asistentes != value))
-				{
-					this._Asistentes = value;
-				}
-			}
+			entity.CapacitacionCabecera = null;
 		}
 	}
 	
@@ -6282,6 +3210,8 @@ namespace Asistencia.Datos
 		
 		private System.Nullable<int> _Duracion;
 		
+		private string _ReferenciaID;
+		
 		public ListadoRegistroCapacitacionesPorIDResult()
 		{
 		}
@@ -6538,6 +3468,22 @@ namespace Asistencia.Datos
 				if ((this._Duracion != value))
 				{
 					this._Duracion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReferenciaID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string ReferenciaID
+		{
+			get
+			{
+				return this._ReferenciaID;
+			}
+			set
+			{
+				if ((this._ReferenciaID != value))
+				{
+					this._ReferenciaID = value;
 				}
 			}
 		}

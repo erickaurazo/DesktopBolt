@@ -599,5 +599,15 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             }
 
         }
+
+        private void agrupadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void individualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,6 +51,10 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         private string desde;
         private string hasta;
         private RegistroDeCapacitacionesController Model;
+        private bool Validacion;
+        private CapacitacionCabecera CapacitacionARegistrar;
+
+        public string mensajeError { get; private set; }
         #endregion
 
 
@@ -144,6 +148,9 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                     txtInicio.Text = ItemAEdicion.HoraInicio.Value.ToPresentationDateTime();
                     txtFin.Text = ItemAEdicion.HoraFin.Value.ToPresentationDateTime();
                     txtDuracion.Text = ItemAEdicion.Duracion.Value.ToString();
+                    txtReferencia.Text = ItemAEdicion.ReferenciaID != null ? ItemAEdicion.ReferenciaID.Trim() : string.Empty;
+                    txtpdfRuta.Text = ItemAEdicion.PDFRuta != null ? ItemAEdicion.PDFRuta.Trim() : string.Empty;
+
                     BarraPrincipal.Enabled = !false;
                     gbCabecera.Enabled = !false;
                     gbDetalle.Enabled = !false;
@@ -239,11 +246,110 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ActivarControlesParaEdicion(true);
+            Limpiar();
+
+        }
+
+        private void Limpiar()
+        {
+            ID = string.Empty;
+            AperturarFormulario();
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            ActivarControlesParaEdicion(false);
+            if (ValidacionRegistro() == true)
+            {
+                CapacitacionARegistrar = new CapacitacionCabecera();
+                CapacitacionARegistrar = ObtenerObjetoCabecera();
+                Model = new RegistroDeCapacitacionesController();
+                ID = Model.Registrar(ConexionABaseDeDatos, CapacitacionARegistrar);
+                AperturarFormulario();
+                ActivarControlesParaEdicion(false);
+            }
+            else
+            {
+                MessageBox.Show(mensajeError, "MENSAJES DE VALIDACION DEL SISTEMA");
+            }
+
+
+        }
+
+        private CapacitacionCabecera ObtenerObjetoCabecera()
+        {
+            CapacitacionCabecera Objeto = new CapacitacionCabecera();
+            try
+            {
+                Objeto.CapacitacionID = txtCodigo.Text.Trim();
+                Objeto.CapacitacionTipoID = txtTipoDeCapacitacionID.Text.Trim();
+                Objeto.FechaCapacitacion = Convert.ToDateTime( txtFecha.Text.Trim());
+                Objeto.Ubicación = txtUbicacion.Text.Trim();
+                Objeto.LatLong = txtLatitudLongitud.Text.Trim();
+                Objeto.HoraInicio = Convert.ToDateTime(txtInicio.Text.Trim());
+                Objeto.HoraFin = Convert.ToDateTime(txtFin.Text.Trim());
+                Objeto.Observacion = txtObservacion.Text.Trim();
+                Objeto.FechaRegistro = DateTime.Now;
+                Objeto.PDFRuta = this.txtpdfRuta.Text.Trim();
+                Objeto.PDFPrint = 0;
+                Objeto.EstadoID = txtEstadoID.Text.Trim();
+                //Capacitacion.Correlativo = txtTipoDeCapacitacionID.Text.Trim();
+                Objeto.IdReferencia = txtReferencia.Text.Trim();
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+
+            }
+
+            return Objeto;
+
+        }
+
+        private bool ValidacionRegistro()
+        {
+            Validacion = true;
+            mensajeError = string.Empty;
+
+            if (this.txtTipoDeCapacitacionID.Text.Trim() == string.Empty)
+            {
+                Validacion = false;
+                mensajeError += "\n Debe ingresar un código de tipo de capacitacion válida";
+            }
+
+            if (this.txtTipoDeCapacitacion.Text.Trim() == string.Empty)
+            {
+                Validacion = false;
+                mensajeError += "\n Debe ingresar un tipo de capacitación válida";
+            }
+
+
+            string ASCD = this.txtValidar.Text.ToString().Trim();
+            if (this.txtFecha.Text.ToString().Trim() == ASCD)
+            {
+                mensajeError += "\n Debe ingresar una fecha en el formato validado dd/MM/yyyy";
+
+                Validacion = false;
+            }
+
+
+            if (this.txtInicio.Text.ToString().Trim() == ASCD)
+            {
+                mensajeError += "\n Debe Inicio una fecha en el formato validado dd/MM/yyyy";
+
+                Validacion = false;
+            }
+
+            if (this.txtFin.Text.ToString().Trim() == ASCD)
+            {
+                mensajeError += "\n Debe Inicio una fecha en el formato validado dd/MM/yyyy";
+
+                Validacion = false;
+            }
+
+
+            return Validacion;
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -284,7 +390,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                 {
                     if (this.txtCodigo.Text != "0")
                     {
-                       string codigoSelecionado = Convert.ToString(this.txtCodigo.Text);
+                        string codigoSelecionado = Convert.ToString(this.txtCodigo.Text);
                         AdjuntarArchivos ofrm = new AdjuntarArchivos("SAS", UsuarioEnSesion, CompaniaID, privilegiosDeUsuarioEnSesion, codigoSelecionado.ToString(), nombreformulario);
                         ofrm.Show();
 
@@ -352,6 +458,11 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             watcher.Start();
         }
 
+        private void radLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         #region Métodos()
         private void AperturarFormulario()
@@ -381,7 +492,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                 series = comboHelper.GetDocumentSeriesForForm("SAS", "RegistroDeCapacitaciones");
                 cboSerie.DisplayMember = "Descripcion";
                 cboSerie.ValueMember = "Codigo";
-                cboSerie.DataSource = series.ToList();
+                cboSerie.DataSource = series.Where(x => x.Codigo == DateTime.Now.Year.ToString()).ToList();
 
                 //this.txtCorrelativo.Text = "0".PadLeft(7, '0');
 
