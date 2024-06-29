@@ -17,6 +17,7 @@ using Asistencia.Helper;
 using MyDataGridViewColumns;
 using System.Drawing;
 using Asistencia.Negocios.SIG.SST.Registro_de_Capacitaciones;
+using ComparativoHorasVisualSATNISIRA.SIG.SST.Registro_de_Capacitaciones;
 
 namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 {
@@ -53,7 +54,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();
 
             ItemSelecionado = GenerarObjetoenBlanco(ItemSelecionado);
-            
+
 
             CargarMeses();
             ObtenerFechasIniciales();
@@ -115,7 +116,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             item.TemaEstado = 0;
             item.TemaI = string.Empty;
             item.TemaID = string.Empty;
-            item.Ubicación = string.Empty;              
+            item.Ubicación = string.Empty;
             return item;
         }
 
@@ -291,7 +292,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -573,7 +574,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
             ID = string.Empty;
-            ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();        
+            ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();
             ItemSelecionado = GenerarObjetoenBlanco(ItemSelecionado);
 
             if (dgvListado != null && dgvListado.Rows.Count > 0)
@@ -592,7 +593,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                                 ItemSelecionado = Listado.Where(x => x.CapacitacionID.Trim() == ID).ToList().ElementAt(0);
                             }
 
-                            
+
                         }
                     }
                 }
@@ -602,12 +603,26 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void agrupadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (ID != null)
+            {
+                if (ID.Trim() != string.Empty)
+                {
+                    RegistroDeCapacitacionesVistaPrevia ofrm = new RegistroDeCapacitacionesVistaPrevia(ConexionABaseDeDatos, ID);
+                    ofrm.Show();
+                }
+            }
 
         }
 
         private void individualToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConvertirImagenes_Click(object sender, EventArgs e)
+        {
+            ConvertirImagenesPGNtoJPG ofrm = new ConvertirImagenesPGNtoJPG();
+            ofrm.Show();
         }
     }
 }

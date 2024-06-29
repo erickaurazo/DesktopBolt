@@ -21,6 +21,7 @@ using ComparativoHorasVisualSATNISIRA.Produccion.Conformacion_de_carga;
 using ComparativoHorasVisualSATNISIRA.RRHH;
 using ComparativoHorasVisualSATNISIRA.RRHH.Tareo_Movil;
 using ComparativoHorasVisualSATNISIRA.SIG.SST;
+using ComparativoHorasVisualSATNISIRA.SIG.SST.Registro_de_Capacitaciones;
 using ComparativoHorasVisualSATNISIRA.T.I;
 using ComparativoHorasVisualSATNISIRA.T.I.Partes_Diarios;
 using System;
@@ -38,7 +39,7 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new ConformacionDeCarga());
+            //Application.Run(new ConvertirImagenesPGNtoJPG());
             Application.Run(new RegistroDeCapacitaciones());
             //Application.Run(new Menu());
 

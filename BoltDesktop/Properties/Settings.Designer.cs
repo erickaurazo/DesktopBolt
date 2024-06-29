@@ -77,5 +77,15 @@ namespace ComparativoHorasVisualSATNISIRA.Properties {
                 return ((string)(this["SATURNOConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.140.7;Initial Catalog=SSOMA;User ID=tmovil;Password=admin")]
+        public string SSOMAConnectionString {
+            get {
+                return ((string)(this["SSOMAConnectionString"]));
+            }
+        }
     }
 }
