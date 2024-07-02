@@ -85,10 +85,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRutaDestino.Location = new System.Drawing.Point(56, 40);
             this.txtRutaDestino.Name = "txtRutaDestino";
-            this.txtRutaDestino.ReadOnly = true;
             this.txtRutaDestino.Size = new System.Drawing.Size(652, 20);
             this.txtRutaDestino.TabIndex = 7;
-            this.txtRutaDestino.Text = "C:\\CapacitacionCapacitador_Images";
+            this.txtRutaDestino.Text = "G:\\Mi unidad\\appsheet\\data\\CAPACITACIONE-252296585\\CapacitacionCapacitador_Images" +
+    "";
             // 
             // label1
             // 
@@ -115,10 +115,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRutaOrigen.Location = new System.Drawing.Point(56, 17);
             this.txtRutaOrigen.Name = "txtRutaOrigen";
-            this.txtRutaOrigen.ReadOnly = true;
             this.txtRutaOrigen.Size = new System.Drawing.Size(652, 20);
             this.txtRutaOrigen.TabIndex = 0;
-            this.txtRutaOrigen.Text = "C:\\CapacitacionCapacitador_Images";
+            this.txtRutaOrigen.Text = "G:\\Mi unidad\\appsheet\\data\\CAPACITACIONE-252296585\\CapacitacionCapacitador_Images" +
+    "";
             // 
             // lblRuta
             // 
