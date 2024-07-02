@@ -43,6 +43,8 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         private GlobalesHelper globalHelper;
         private ListadoRegistroCapacitacionesPorPeriodoResult selectItemById;
         string ID = string.Empty;
+        private string TemaID;
+        private string EstadoId;
 
         #endregion
 
@@ -98,7 +100,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             item.AreaId = string.Empty;
             item.Asistentes = 0;
             item.Capacitacion = string.Empty;
-            item.CapacitacionID1 = string.Empty;
+            
             item.CapacitacionTipoID = string.Empty;
             item.Capacitadores = 0;
             item.Duracion = 0;
@@ -114,7 +116,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             item.PDFPrint = 0;
             item.PDFRuta = string.Empty;
             item.TemaEstado = 0;
-            item.TemaI = string.Empty;
+            item.Tema = string.Empty;
             item.TemaID = string.Empty;
             item.Ubicación = string.Empty;
             return item;
@@ -286,8 +288,22 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            RegistroDeCapacitacionesEdicion ofrm = new RegistroDeCapacitacionesEdicion(ConexionABaseDeDatos, UsuarioEnSesion, CompaniaID, PrivilegiosDeUsuarioEnSesion, ID);
-            ofrm.Show();
+            Editar();
+
+            
+        }
+
+        private void Editar()
+        {
+            if (EstadoId == "PE")
+            {
+                RegistroDeCapacitacionesEdicion ofrm = new RegistroDeCapacitacionesEdicion(ConexionABaseDeDatos, UsuarioEnSesion, CompaniaID, PrivilegiosDeUsuarioEnSesion, ID);
+                ofrm.Show();
+            }
+            else
+            {
+                MessageBox.Show("El documento no tiene el estado para Edición", "Edición del documento");
+            }
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -302,12 +318,39 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
+            if (UsuarioEnSesion != null)
+            {
+                if (UsuarioEnSesion.IdUsuario == "EAURAZO" || UsuarioEnSesion.IdUsuario == "FCERNA" || UsuarioEnSesion.IdUsuario == "YCORDOVA" || UsuarioEnSesion.IdUsuario == "KGRANDA")
+                {
+                    if (EstadoId == "AN" || EstadoId == "PE")
+                    {
+                        model = new RegistroDeCapacitacionesController();
+                        model.CambiarDeEStado(ConexionABaseDeDatos, ID);
+                        MessageBox.Show("Acción realizada correctamente", "Confirmación de Cambio de estado");
+                        RealizarConsulta();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El documento no tiene el estado para cambiar estado", "Negación de Cambio de estado");
+                    }
 
+                }
+            }
         }
 
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
+            if (UsuarioEnSesion != null)
+            {
+                if (UsuarioEnSesion.IdUsuario == "EAURAZO" || UsuarioEnSesion.IdUsuario == "FCERNA")
+                {
+                    model = new RegistroDeCapacitacionesController();
+                    model.Eliminar(ConexionABaseDeDatos, ID);
+                    MessageBox.Show("Acción realizada correctamente", "Confirmación de eliminación");
+                    RealizarConsulta();
 
+                }
+            }
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
@@ -334,8 +377,11 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnCambiarEstadoDispositivo_Click(object sender, EventArgs e)
         {
-
+            AprobacionPorGerencia();
         }
+
+
+
 
         private void btnGenerarFormatosPDF_Click(object sender, EventArgs e)
         {
@@ -459,7 +505,29 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void arobaciónDeGerenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AprobacionPorGerencia();
+        }
 
+        private void AprobacionPorGerencia()
+        {
+            if (UsuarioEnSesion != null)
+            {
+                if (UsuarioEnSesion.IdUsuario == "EAURAZO" || UsuarioEnSesion.IdUsuario == "FCERNA" || UsuarioEnSesion.IdUsuario == "YCORDOVA")
+                {
+                    if (EstadoId == "AN" || EstadoId == "PE")
+                    {
+                        model = new RegistroDeCapacitacionesController();
+                        model.Aprobar(ConexionABaseDeDatos, ID);
+                        MessageBox.Show("Acción realizada correctamente", "Confirmación de Cambio de estado");
+                        RealizarConsulta();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El documento no tiene el estado para cambiar estado", "Negación de Cambio de estado");
+                    }
+
+                }
+            }
         }
 
         private void RegistroDeCapacitaciones_Load(object sender, EventArgs e)
@@ -573,9 +641,11 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
+            EstadoId = string.Empty;
             ID = string.Empty;
             ItemSelecionado = new ListadoRegistroCapacitacionesPorPeriodoResult();
             ItemSelecionado = GenerarObjetoenBlanco(ItemSelecionado);
+            TemaID = string.Empty;
 
             if (dgvListado != null && dgvListado.Rows.Count > 0)
             {
@@ -586,7 +656,8 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
                         if (dgvListado.CurrentRow.Cells["chID"].Value.ToString() != string.Empty)
                         {
                             ID = dgvListado.CurrentRow.Cells["chID"].Value != null ? dgvListado.CurrentRow.Cells["chID"].Value.ToString().Trim() : string.Empty;
-
+                            TemaID = dgvListado.CurrentRow.Cells["chTemaID"].Value != null ? dgvListado.CurrentRow.Cells["chTemaID"].Value.ToString().Trim() : string.Empty;
+                            EstadoId = dgvListado.CurrentRow.Cells["chEstadoID"].Value != null ? dgvListado.CurrentRow.Cells["chEstadoID"].Value.ToString().Trim() : string.Empty;
                             var result01 = Listado.Where(x => x.CapacitacionID.Trim() == ID).ToList();
                             if (result01 != null && result01.ToList().Count > 0)
                             {
@@ -617,6 +688,18 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
         private void individualToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            if (ID != null || TemaID != null)
+            {
+                if (ID.Trim() != string.Empty)
+                {
+                    if (TemaID.Trim() != string.Empty)
+                    {
+                        RegistroDeCapacitacionesVistaPreviaIndividual ofrm = new RegistroDeCapacitacionesVistaPreviaIndividual(ConexionABaseDeDatos, ID, TemaID);
+                        ofrm.Show();
+                    }
+                    
+                }
+            }
         }
 
         private void btnConvertirImagenes_Click(object sender, EventArgs e)
@@ -624,5 +707,45 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
             ConvertirImagenesPGNtoJPG ofrm = new ConvertirImagenesPGNtoJPG();
             ofrm.Show();
         }
+
+        private void dgvListado_DoubleClick(object sender, EventArgs e)
+        {
+
+            if (ItemSelecionado != null)
+            {
+                Editar();
+            }
+
+           
+        }
+
+        private void btnSLiberarAprobacion_Click(object sender, EventArgs e)
+        {
+            LiberarAprobacion();
+        }
+
+
+        private void LiberarAprobacion()
+        {
+            if (UsuarioEnSesion != null)
+            {
+                if (UsuarioEnSesion.IdUsuario == "EAURAZO" || UsuarioEnSesion.IdUsuario == "FCERNA" || UsuarioEnSesion.IdUsuario == "YCORDOVA")
+                {
+                    if (EstadoId == "AP")
+                    {
+                        model = new RegistroDeCapacitacionesController();
+                        model.LiberarAprobacion(ConexionABaseDeDatos, ID);
+                        MessageBox.Show("Acción realizada correctamente", "Confirmación de Cambio de estado");
+                        RealizarConsulta();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El documento no tiene el estado para cambiar estado", "Negación de Cambio de estado");
+                    }
+
+                }
+            }
+        }
+
     }
 }

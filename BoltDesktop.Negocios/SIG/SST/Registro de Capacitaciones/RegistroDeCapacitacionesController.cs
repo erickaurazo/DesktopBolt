@@ -151,5 +151,162 @@ namespace Asistencia.Negocios.SIG.SST.Registro_de_Capacitaciones
 
             return result.ToString();
         }
+
+        public void Eliminar(string conexionABaseDeDatos, string ID)
+        {
+            #region Eliminar()
+            CapacitacionCabecera Capacitacion = new CapacitacionCabecera();
+            string cnx = ConfigurationManager.AppSettings[conexionABaseDeDatos].ToString();
+            using (BoltSSTDataContext Modelo = new BoltSSTDataContext(cnx))
+            {
+                var Listado = Modelo.CapacitacionCabeceras.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+
+                if (Listado != null)
+                {
+                    if (Listado.Count() > 0)
+                    {
+                        Capacitacion = new CapacitacionCabecera();
+                        Capacitacion = Listado.ElementAt(0);
+
+                        /*Eliminar Detalle*/
+                        List< CapacitacionDetalle> ListadoDetalle = Modelo.CapacitacionDetalles.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+                        if (ListadoDetalle.ToList().Count > 0)
+                        {
+                            Modelo.CapacitacionDetalles.DeleteAllOnSubmit(ListadoDetalle);
+                            Modelo.SubmitChanges();
+                        }
+
+                        /*Eliminar capacitadores*/
+                        List<CapacitacionCapacitador> ListadoCapacitadores = Modelo.CapacitacionCapacitadors.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+                        if (ListadoCapacitadores.ToList().Count > 0)
+                        {
+                            Modelo.CapacitacionCapacitadors.DeleteAllOnSubmit(ListadoCapacitadores);
+                            Modelo.SubmitChanges();
+                        }
+
+                        /*Eliminar Areas*/
+                        List<CapacitacionArea> ListadoAreas = Modelo.CapacitacionAreas.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+                        if (ListadoAreas.ToList().Count > 0)
+                        {
+                            Modelo.CapacitacionAreas.DeleteAllOnSubmit(ListadoAreas);
+                            Modelo.SubmitChanges();
+                        }
+
+                        /*Eliminar fotos*/
+                        List<CapacitacionFotografia> ListadoFotos = Modelo.CapacitacionFotografias.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+                        if (ListadoFotos.ToList().Count > 0)
+                        {
+                            Modelo.CapacitacionFotografias.DeleteAllOnSubmit(ListadoFotos);
+                            Modelo.SubmitChanges();
+                        }
+
+                        /*Eliminar fotos*/
+                        List<CapacitacionTema> ListadoTemas = Modelo.CapacitacionTemas.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+                        if (ListadoTemas.ToList().Count > 0)
+                        {
+                            Modelo.CapacitacionTemas.DeleteAllOnSubmit(ListadoTemas);
+                            Modelo.SubmitChanges();
+                        }
+                       
+                        Modelo.CapacitacionCabeceras.DeleteOnSubmit(Capacitacion);
+                        Modelo.SubmitChanges();
+
+                    }
+                   
+                }
+
+            }
+            #endregion
+        }
+
+        public void CambiarDeEStado(string conexionABaseDeDatos, string ID)
+        {
+            #region Cambiar de estado()
+            CapacitacionCabecera Capacitacion = new CapacitacionCabecera();
+            string cnx = ConfigurationManager.AppSettings[conexionABaseDeDatos].ToString();
+            using (BoltSSTDataContext Modelo = new BoltSSTDataContext(cnx))
+            {
+                var Listado = Modelo.CapacitacionCabeceras.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+
+                if (Listado != null)
+                {
+                    if (Listado.Count() > 0)
+                    {
+                        Capacitacion = new CapacitacionCabecera();
+                        Capacitacion = Listado.ElementAt(0);
+
+                        if (Capacitacion.EstadoID == "PE")
+                        {
+                            Capacitacion.EstadoID = "AN";
+                        }
+
+                        if (Capacitacion.EstadoID == "AN")
+                        {
+                            Capacitacion.EstadoID = "PE";
+                        }
+
+                        Modelo.SubmitChanges();
+
+                    }
+
+                }
+
+            }
+            #endregion
+        }
+
+        public void Aprobar(string conexionABaseDeDatos, string ID)
+        {
+            #region Aprobar()
+            CapacitacionCabecera Capacitacion = new CapacitacionCabecera();
+            string cnx = ConfigurationManager.AppSettings[conexionABaseDeDatos].ToString();
+            using (BoltSSTDataContext Modelo = new BoltSSTDataContext(cnx))
+            {
+                var Listado = Modelo.CapacitacionCabeceras.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+
+                if (Listado != null)
+                {
+                    if (Listado.Count() > 0)
+                    {
+                        Capacitacion = new CapacitacionCabecera();
+                        Capacitacion = Listado.ElementAt(0);
+
+                        if (Capacitacion.EstadoID == "PE")
+                        {
+                            Capacitacion.EstadoID = "AP";
+                        }                       
+                        Modelo.SubmitChanges();
+                    }
+                }
+            }
+            #endregion
+        }
+
+        public void LiberarAprobacion(string conexionABaseDeDatos, string ID)
+        {
+            #region Liberar aprobacion()
+            CapacitacionCabecera Capacitacion = new CapacitacionCabecera();
+            string cnx = ConfigurationManager.AppSettings[conexionABaseDeDatos].ToString();
+            using (BoltSSTDataContext Modelo = new BoltSSTDataContext(cnx))
+            {
+                var Listado = Modelo.CapacitacionCabeceras.Where(x => x.CapacitacionID.Trim() == ID.Trim()).ToList();
+
+                if (Listado != null)
+                {
+                    if (Listado.Count() > 0)
+                    {
+                        Capacitacion = new CapacitacionCabecera();
+                        Capacitacion = Listado.ElementAt(0);
+
+                        if (Capacitacion.EstadoID == "AP")
+                        {
+                            Capacitacion.EstadoID = "PE";
+                        }
+                        Modelo.SubmitChanges();
+                    }
+                }
+            }
+            #endregion
+        }
     }
 }

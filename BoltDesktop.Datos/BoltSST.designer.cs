@@ -187,18 +187,25 @@ namespace Asistencia.Datos
 			return ((ISingleResult<SAS_ListadoTemasParaCapacitacionByTemaIdResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListadoRegistroCapacitacionesPorPeriodo")]
-		public ISingleResult<ListadoRegistroCapacitacionesPorPeriodoResult> ListadoRegistroCapacitacionesPorPeriodo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string hasta)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
-			return ((ISingleResult<ListadoRegistroCapacitacionesPorPeriodoResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListadoRegistroCapacitacionesPorID")]
 		public ISingleResult<ListadoRegistroCapacitacionesPorIDResult> ListadoRegistroCapacitacionesPorID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CapacitacionID", DbType="VarChar(17)")] string capacitacionID)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), capacitacionID);
 			return ((ISingleResult<ListadoRegistroCapacitacionesPorIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistroDeCapacitacionesVistaPreviaIndividualReporte")]
+		public ISingleResult<RegistroDeCapacitacionesVistaPreviaIndividualReporteResult> RegistroDeCapacitacionesVistaPreviaIndividualReporte([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(17)")] string iD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TemaID", DbType="VarChar(17)")] string temaID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, temaID);
+			return ((ISingleResult<RegistroDeCapacitacionesVistaPreviaIndividualReporteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListadoRegistroCapacitacionesPorPeriodo")]
+		public ISingleResult<ListadoRegistroCapacitacionesPorPeriodoResult> ListadoRegistroCapacitacionesPorPeriodo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string desde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string hasta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), desde, hasta);
+			return ((ISingleResult<ListadoRegistroCapacitacionesPorPeriodoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2735,446 +2742,6 @@ namespace Asistencia.Datos
 		}
 	}
 	
-	public partial class ListadoRegistroCapacitacionesPorPeriodoResult
-	{
-		
-		private string _Folio;
-		
-		private string _CapacitacionID;
-		
-		private string _CapacitacionTipoID;
-		
-		private string _Capacitacion;
-		
-		private System.DateTime _FechaCapacitacion;
-		
-		private string _Ubicación;
-		
-		private string _LatLong;
-		
-		private System.Nullable<System.DateTime> _HoraInicio;
-		
-		private System.Nullable<System.DateTime> _HoraFin;
-		
-		private string _Observacion;
-		
-		private System.DateTime _FechaRegistro;
-		
-		private string _PDFRuta;
-		
-		private System.Nullable<int> _PDFPrint;
-		
-		private string _EstadoID;
-		
-		private string _Estado;
-		
-		private string _CapacitacionID1;
-		
-		private string _TemaID;
-		
-		private string _TemaI;
-		
-		private System.Nullable<byte> _TemaEstado;
-		
-		private System.Nullable<int> _Asistentes;
-		
-		private string _AreaId;
-		
-		private string _Area;
-		
-		private System.Nullable<int> _Capacitadores;
-		
-		private System.Nullable<int> _Duracion;
-		
-		public ListadoRegistroCapacitacionesPorPeriodoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Folio", DbType="VarChar(7)")]
-		public string Folio
-		{
-			get
-			{
-				return this._Folio;
-			}
-			set
-			{
-				if ((this._Folio != value))
-				{
-					this._Folio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID
-		{
-			get
-			{
-				return this._CapacitacionID;
-			}
-			set
-			{
-				if ((this._CapacitacionID != value))
-				{
-					this._CapacitacionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTipoID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionTipoID
-		{
-			get
-			{
-				return this._CapacitacionTipoID;
-			}
-			set
-			{
-				if ((this._CapacitacionTipoID != value))
-				{
-					this._CapacitacionTipoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitacion", DbType="VarChar(150)")]
-		public string Capacitacion
-		{
-			get
-			{
-				return this._Capacitacion;
-			}
-			set
-			{
-				if ((this._Capacitacion != value))
-				{
-					this._Capacitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCapacitacion", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime FechaCapacitacion
-		{
-			get
-			{
-				return this._FechaCapacitacion;
-			}
-			set
-			{
-				if ((this._FechaCapacitacion != value))
-				{
-					this._FechaCapacitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicación", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Ubicación
-		{
-			get
-			{
-				return this._Ubicación;
-			}
-			set
-			{
-				if ((this._Ubicación != value))
-				{
-					this._Ubicación = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LatLong", DbType="VarChar(150)")]
-		public string LatLong
-		{
-			get
-			{
-				return this._LatLong;
-			}
-			set
-			{
-				if ((this._LatLong != value))
-				{
-					this._LatLong = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraInicio", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> HoraInicio
-		{
-			get
-			{
-				return this._HoraInicio;
-			}
-			set
-			{
-				if ((this._HoraInicio != value))
-				{
-					this._HoraInicio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraFin", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> HoraFin
-		{
-			get
-			{
-				return this._HoraFin;
-			}
-			set
-			{
-				if ((this._HoraFin != value))
-				{
-					this._HoraFin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(MAX)")]
-		public string Observacion
-		{
-			get
-			{
-				return this._Observacion;
-			}
-			set
-			{
-				if ((this._Observacion != value))
-				{
-					this._Observacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime FechaRegistro
-		{
-			get
-			{
-				return this._FechaRegistro;
-			}
-			set
-			{
-				if ((this._FechaRegistro != value))
-				{
-					this._FechaRegistro = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFRuta", DbType="VarChar(MAX)")]
-		public string PDFRuta
-		{
-			get
-			{
-				return this._PDFRuta;
-			}
-			set
-			{
-				if ((this._PDFRuta != value))
-				{
-					this._PDFRuta = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPrint", DbType="Int")]
-		public System.Nullable<int> PDFPrint
-		{
-			get
-			{
-				return this._PDFPrint;
-			}
-			set
-			{
-				if ((this._PDFPrint != value))
-				{
-					this._PDFPrint = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="Char(2)")]
-		public string EstadoID
-		{
-			get
-			{
-				return this._EstadoID;
-			}
-			set
-			{
-				if ((this._EstadoID != value))
-				{
-					this._EstadoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(30)")]
-		public string Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID1", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string CapacitacionID1
-		{
-			get
-			{
-				return this._CapacitacionID1;
-			}
-			set
-			{
-				if ((this._CapacitacionID1 != value))
-				{
-					this._CapacitacionID1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
-		public string TemaID
-		{
-			get
-			{
-				return this._TemaID;
-			}
-			set
-			{
-				if ((this._TemaID != value))
-				{
-					this._TemaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaI", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string TemaI
-		{
-			get
-			{
-				return this._TemaI;
-			}
-			set
-			{
-				if ((this._TemaI != value))
-				{
-					this._TemaI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaEstado", DbType="TinyInt")]
-		public System.Nullable<byte> TemaEstado
-		{
-			get
-			{
-				return this._TemaEstado;
-			}
-			set
-			{
-				if ((this._TemaEstado != value))
-				{
-					this._TemaEstado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asistentes", DbType="Int")]
-		public System.Nullable<int> Asistentes
-		{
-			get
-			{
-				return this._Asistentes;
-			}
-			set
-			{
-				if ((this._Asistentes != value))
-				{
-					this._Asistentes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaId", DbType="Char(3)")]
-		public string AreaId
-		{
-			get
-			{
-				return this._AreaId;
-			}
-			set
-			{
-				if ((this._AreaId != value))
-				{
-					this._AreaId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="VarChar(100)")]
-		public string Area
-		{
-			get
-			{
-				return this._Area;
-			}
-			set
-			{
-				if ((this._Area != value))
-				{
-					this._Area = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitadores", DbType="Int")]
-		public System.Nullable<int> Capacitadores
-		{
-			get
-			{
-				return this._Capacitadores;
-			}
-			set
-			{
-				if ((this._Capacitadores != value))
-				{
-					this._Capacitadores = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duracion", DbType="Int")]
-		public System.Nullable<int> Duracion
-		{
-			get
-			{
-				return this._Duracion;
-			}
-			set
-			{
-				if ((this._Duracion != value))
-				{
-					this._Duracion = value;
-				}
-			}
-		}
-	}
-	
 	public partial class ListadoRegistroCapacitacionesPorIDResult
 	{
 		
@@ -3484,6 +3051,940 @@ namespace Asistencia.Datos
 				if ((this._ReferenciaID != value))
 				{
 					this._ReferenciaID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class RegistroDeCapacitacionesVistaPreviaIndividualReporteResult
+	{
+		
+		private string _Folio;
+		
+		private string _CapacitacionID;
+		
+		private string _CapacitacionTipoID;
+		
+		private string _Capacitacion;
+		
+		private System.DateTime _FechaCapacitacion;
+		
+		private string _Ubicación;
+		
+		private string _LatLong;
+		
+		private System.Nullable<System.DateTime> _HoraInicio;
+		
+		private System.Nullable<System.DateTime> _HoraFin;
+		
+		private string _Observacion;
+		
+		private System.DateTime _FechaRegistro;
+		
+		private string _PDFRuta;
+		
+		private int _PDFPrint;
+		
+		private string _EstadoID;
+		
+		private string _Estado;
+		
+		private string _Temas;
+		
+		private int _Asistentes;
+		
+		private string _Areas;
+		
+		private int _Capacitadores;
+		
+		private System.Nullable<int> _Duracion;
+		
+		private string _PersonalID;
+		
+		private string _Nombres;
+		
+		private string _NumeroDocumento;
+		
+		private string _Cargo;
+		
+		private string _Area;
+		
+		private string _Firma;
+		
+		private string _FirmaRuta;
+		
+		private System.Nullable<long> _Fila;
+		
+		public RegistroDeCapacitacionesVistaPreviaIndividualReporteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Folio", DbType="VarChar(7)")]
+		public string Folio
+		{
+			get
+			{
+				return this._Folio;
+			}
+			set
+			{
+				if ((this._Folio != value))
+				{
+					this._Folio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionID
+		{
+			get
+			{
+				return this._CapacitacionID;
+			}
+			set
+			{
+				if ((this._CapacitacionID != value))
+				{
+					this._CapacitacionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTipoID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionTipoID
+		{
+			get
+			{
+				return this._CapacitacionTipoID;
+			}
+			set
+			{
+				if ((this._CapacitacionTipoID != value))
+				{
+					this._CapacitacionTipoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitacion", DbType="VarChar(150)")]
+		public string Capacitacion
+		{
+			get
+			{
+				return this._Capacitacion;
+			}
+			set
+			{
+				if ((this._Capacitacion != value))
+				{
+					this._Capacitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCapacitacion", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaCapacitacion
+		{
+			get
+			{
+				return this._FechaCapacitacion;
+			}
+			set
+			{
+				if ((this._FechaCapacitacion != value))
+				{
+					this._FechaCapacitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicación", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Ubicación
+		{
+			get
+			{
+				return this._Ubicación;
+			}
+			set
+			{
+				if ((this._Ubicación != value))
+				{
+					this._Ubicación = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LatLong", DbType="VarChar(150)")]
+		public string LatLong
+		{
+			get
+			{
+				return this._LatLong;
+			}
+			set
+			{
+				if ((this._LatLong != value))
+				{
+					this._LatLong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraInicio", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> HoraInicio
+		{
+			get
+			{
+				return this._HoraInicio;
+			}
+			set
+			{
+				if ((this._HoraInicio != value))
+				{
+					this._HoraInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraFin", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> HoraFin
+		{
+			get
+			{
+				return this._HoraFin;
+			}
+			set
+			{
+				if ((this._HoraFin != value))
+				{
+					this._HoraFin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(MAX)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this._FechaRegistro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFRuta", DbType="VarChar(MAX)")]
+		public string PDFRuta
+		{
+			get
+			{
+				return this._PDFRuta;
+			}
+			set
+			{
+				if ((this._PDFRuta != value))
+				{
+					this._PDFRuta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPrint", DbType="Int NOT NULL")]
+		public int PDFPrint
+		{
+			get
+			{
+				return this._PDFPrint;
+			}
+			set
+			{
+				if ((this._PDFPrint != value))
+				{
+					this._PDFPrint = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="Char(2)")]
+		public string EstadoID
+		{
+			get
+			{
+				return this._EstadoID;
+			}
+			set
+			{
+				if ((this._EstadoID != value))
+				{
+					this._EstadoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(30)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Temas", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Temas
+		{
+			get
+			{
+				return this._Temas;
+			}
+			set
+			{
+				if ((this._Temas != value))
+				{
+					this._Temas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asistentes", DbType="Int NOT NULL")]
+		public int Asistentes
+		{
+			get
+			{
+				return this._Asistentes;
+			}
+			set
+			{
+				if ((this._Asistentes != value))
+				{
+					this._Asistentes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Areas", DbType="VarChar(6059) NOT NULL", CanBeNull=false)]
+		public string Areas
+		{
+			get
+			{
+				return this._Areas;
+			}
+			set
+			{
+				if ((this._Areas != value))
+				{
+					this._Areas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitadores", DbType="Int NOT NULL")]
+		public int Capacitadores
+		{
+			get
+			{
+				return this._Capacitadores;
+			}
+			set
+			{
+				if ((this._Capacitadores != value))
+				{
+					this._Capacitadores = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duracion", DbType="Int")]
+		public System.Nullable<int> Duracion
+		{
+			get
+			{
+				return this._Duracion;
+			}
+			set
+			{
+				if ((this._Duracion != value))
+				{
+					this._Duracion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalID", DbType="VarChar(12)")]
+		public string PersonalID
+		{
+			get
+			{
+				return this._PersonalID;
+			}
+			set
+			{
+				if ((this._PersonalID != value))
+				{
+					this._PersonalID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="VarChar(153)")]
+		public string Nombres
+		{
+			get
+			{
+				return this._Nombres;
+			}
+			set
+			{
+				if ((this._Nombres != value))
+				{
+					this._Nombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumeroDocumento", DbType="VarChar(12)")]
+		public string NumeroDocumento
+		{
+			get
+			{
+				return this._NumeroDocumento;
+			}
+			set
+			{
+				if ((this._NumeroDocumento != value))
+				{
+					this._NumeroDocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Cargo
+		{
+			get
+			{
+				return this._Cargo;
+			}
+			set
+			{
+				if ((this._Cargo != value))
+				{
+					this._Cargo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Area
+		{
+			get
+			{
+				return this._Area;
+			}
+			set
+			{
+				if ((this._Area != value))
+				{
+					this._Area = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firma", DbType="VarChar(MAX)")]
+		public string Firma
+		{
+			get
+			{
+				return this._Firma;
+			}
+			set
+			{
+				if ((this._Firma != value))
+				{
+					this._Firma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirmaRuta", DbType="VarChar(MAX)")]
+		public string FirmaRuta
+		{
+			get
+			{
+				return this._FirmaRuta;
+			}
+			set
+			{
+				if ((this._FirmaRuta != value))
+				{
+					this._FirmaRuta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fila", DbType="BigInt")]
+		public System.Nullable<long> Fila
+		{
+			get
+			{
+				return this._Fila;
+			}
+			set
+			{
+				if ((this._Fila != value))
+				{
+					this._Fila = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ListadoRegistroCapacitacionesPorPeriodoResult
+	{
+		
+		private string _Folio;
+		
+		private string _CapacitacionID;
+		
+		private string _CapacitacionTipoID;
+		
+		private string _Capacitacion;
+		
+		private System.DateTime _FechaCapacitacion;
+		
+		private string _Ubicación;
+		
+		private string _LatLong;
+		
+		private System.Nullable<System.DateTime> _HoraInicio;
+		
+		private System.Nullable<System.DateTime> _HoraFin;
+		
+		private string _Observacion;
+		
+		private System.DateTime _FechaRegistro;
+		
+		private string _PDFRuta;
+		
+		private int _PDFPrint;
+		
+		private string _EstadoID;
+		
+		private string _Estado;
+		
+		private string _TemaID;
+		
+		private string _Tema;
+		
+		private byte _TemaEstado;
+		
+		private int _Asistentes;
+		
+		private string _AreaId;
+		
+		private string _Area;
+		
+		private int _Capacitadores;
+		
+		private System.Nullable<int> _Duracion;
+		
+		public ListadoRegistroCapacitacionesPorPeriodoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Folio", DbType="VarChar(7)")]
+		public string Folio
+		{
+			get
+			{
+				return this._Folio;
+			}
+			set
+			{
+				if ((this._Folio != value))
+				{
+					this._Folio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionID
+		{
+			get
+			{
+				return this._CapacitacionID;
+			}
+			set
+			{
+				if ((this._CapacitacionID != value))
+				{
+					this._CapacitacionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapacitacionTipoID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string CapacitacionTipoID
+		{
+			get
+			{
+				return this._CapacitacionTipoID;
+			}
+			set
+			{
+				if ((this._CapacitacionTipoID != value))
+				{
+					this._CapacitacionTipoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitacion", DbType="VarChar(150)")]
+		public string Capacitacion
+		{
+			get
+			{
+				return this._Capacitacion;
+			}
+			set
+			{
+				if ((this._Capacitacion != value))
+				{
+					this._Capacitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCapacitacion", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaCapacitacion
+		{
+			get
+			{
+				return this._FechaCapacitacion;
+			}
+			set
+			{
+				if ((this._FechaCapacitacion != value))
+				{
+					this._FechaCapacitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicación", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Ubicación
+		{
+			get
+			{
+				return this._Ubicación;
+			}
+			set
+			{
+				if ((this._Ubicación != value))
+				{
+					this._Ubicación = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LatLong", DbType="VarChar(150)")]
+		public string LatLong
+		{
+			get
+			{
+				return this._LatLong;
+			}
+			set
+			{
+				if ((this._LatLong != value))
+				{
+					this._LatLong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraInicio", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> HoraInicio
+		{
+			get
+			{
+				return this._HoraInicio;
+			}
+			set
+			{
+				if ((this._HoraInicio != value))
+				{
+					this._HoraInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoraFin", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> HoraFin
+		{
+			get
+			{
+				return this._HoraFin;
+			}
+			set
+			{
+				if ((this._HoraFin != value))
+				{
+					this._HoraFin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(MAX)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaRegistro", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime FechaRegistro
+		{
+			get
+			{
+				return this._FechaRegistro;
+			}
+			set
+			{
+				if ((this._FechaRegistro != value))
+				{
+					this._FechaRegistro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFRuta", DbType="VarChar(MAX)")]
+		public string PDFRuta
+		{
+			get
+			{
+				return this._PDFRuta;
+			}
+			set
+			{
+				if ((this._PDFRuta != value))
+				{
+					this._PDFRuta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PDFPrint", DbType="Int NOT NULL")]
+		public int PDFPrint
+		{
+			get
+			{
+				return this._PDFPrint;
+			}
+			set
+			{
+				if ((this._PDFPrint != value))
+				{
+					this._PDFPrint = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoID", DbType="Char(2)")]
+		public string EstadoID
+		{
+			get
+			{
+				return this._EstadoID;
+			}
+			set
+			{
+				if ((this._EstadoID != value))
+				{
+					this._EstadoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(30)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaID", DbType="VarChar(17) NOT NULL", CanBeNull=false)]
+		public string TemaID
+		{
+			get
+			{
+				return this._TemaID;
+			}
+			set
+			{
+				if ((this._TemaID != value))
+				{
+					this._TemaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tema", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Tema
+		{
+			get
+			{
+				return this._Tema;
+			}
+			set
+			{
+				if ((this._Tema != value))
+				{
+					this._Tema = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TemaEstado", DbType="TinyInt NOT NULL")]
+		public byte TemaEstado
+		{
+			get
+			{
+				return this._TemaEstado;
+			}
+			set
+			{
+				if ((this._TemaEstado != value))
+				{
+					this._TemaEstado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Asistentes", DbType="Int NOT NULL")]
+		public int Asistentes
+		{
+			get
+			{
+				return this._Asistentes;
+			}
+			set
+			{
+				if ((this._Asistentes != value))
+				{
+					this._Asistentes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AreaId", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string AreaId
+		{
+			get
+			{
+				return this._AreaId;
+			}
+			set
+			{
+				if ((this._AreaId != value))
+				{
+					this._AreaId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Area
+		{
+			get
+			{
+				return this._Area;
+			}
+			set
+			{
+				if ((this._Area != value))
+				{
+					this._Area = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacitadores", DbType="Int NOT NULL")]
+		public int Capacitadores
+		{
+			get
+			{
+				return this._Capacitadores;
+			}
+			set
+			{
+				if ((this._Capacitadores != value))
+				{
+					this._Capacitadores = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duracion", DbType="Int")]
+		public System.Nullable<int> Duracion
+		{
+			get
+			{
+				return this._Duracion;
+			}
+			set
+			{
+				if ((this._Duracion != value))
+				{
+					this._Duracion = value;
 				}
 			}
 		}

@@ -69,6 +69,7 @@
             this.btnExportToExcel = new Telerik.WinControls.UI.CommandBarButton();
             this.btnAdjuntar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnCambiarEstadoDispositivo = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnConvertirImagenes = new Telerik.WinControls.UI.CommandBarButton();
             this.btnGenerarFormatosPDF = new Telerik.WinControls.UI.CommandBarButton();
             this.btnElegirColumna = new Telerik.WinControls.UI.CommandBarButton();
             this.btnCerrar = new Telerik.WinControls.UI.CommandBarButton();
@@ -88,8 +89,8 @@
             this.btnVerPrograma = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.vistaPreviaFormato001ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agrupadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.individualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSVistaPreviaAgrupado = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSVistaPreviaIndividual = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirFormato001ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agrupadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.individualToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +120,7 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.gbListado = new System.Windows.Forms.GroupBox();
             this.dgvListado = new Telerik.WinControls.UI.RadGridView();
-            this.btnConvertirImagenes = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnSLiberarAprobacion = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.stsBarraEstado.SuspendLayout();
             this.subMenu.SuspendLayout();
@@ -138,7 +139,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1110, 62);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1110, 37);
             this.BarraPrincipal.TabIndex = 231;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -353,6 +354,20 @@
             this.btnCambiarEstadoDispositivo.ToolTipText = "Cambiar el estado del dispositivo";
             this.btnCambiarEstadoDispositivo.Click += new System.EventHandler(this.btnCambiarEstadoDispositivo_Click);
             // 
+            // btnConvertirImagenes
+            // 
+            this.btnConvertirImagenes.AccessibleDescription = "ConvertirImagenes";
+            this.btnConvertirImagenes.AccessibleName = "ConvertirImagenes";
+            this.btnConvertirImagenes.AutoSize = false;
+            this.btnConvertirImagenes.Bounds = new System.Drawing.Rectangle(0, 0, 50, 35);
+            this.btnConvertirImagenes.DisplayName = "ConvertirImagenes";
+            this.btnConvertirImagenes.Image = ((System.Drawing.Image)(resources.GetObject("btnConvertirImagenes.Image")));
+            this.btnConvertirImagenes.Name = "btnConvertirImagenes";
+            this.btnConvertirImagenes.Tag = "ConvertirImagenes";
+            this.btnConvertirImagenes.Text = "";
+            this.btnConvertirImagenes.ToolTipText = "ConvertirImagenes";
+            this.btnConvertirImagenes.Click += new System.EventHandler(this.btnConvertirImagenes_Click);
+            // 
             // btnGenerarFormatosPDF
             // 
             this.btnGenerarFormatosPDF.AccessibleDescription = "GenerarFormatosPDF";
@@ -461,9 +476,10 @@
             this.toolStripSeparator4,
             this.aprobaciónDeJefaturaToolStripMenuItem,
             this.arobaciónDeGerenciaToolStripMenuItem,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.btnSLiberarAprobacion});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(225, 310);
+            this.subMenu.Size = new System.Drawing.Size(225, 354);
             // 
             // sspSubMenu01
             // 
@@ -521,26 +537,26 @@
             // vistaPreviaFormato001ToolStripMenuItem
             // 
             this.vistaPreviaFormato001ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agrupadoToolStripMenuItem,
-            this.individualToolStripMenuItem});
+            this.btnSVistaPreviaAgrupado,
+            this.btnSVistaPreviaIndividual});
             this.vistaPreviaFormato001ToolStripMenuItem.Name = "vistaPreviaFormato001ToolStripMenuItem";
             this.vistaPreviaFormato001ToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.vistaPreviaFormato001ToolStripMenuItem.Text = "Vista Previa";
             this.vistaPreviaFormato001ToolStripMenuItem.Click += new System.EventHandler(this.vistaPreviaFormato001ToolStripMenuItem_Click);
             // 
-            // agrupadoToolStripMenuItem
+            // btnSVistaPreviaAgrupado
             // 
-            this.agrupadoToolStripMenuItem.Name = "agrupadoToolStripMenuItem";
-            this.agrupadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.agrupadoToolStripMenuItem.Text = "Agrupado";
-            this.agrupadoToolStripMenuItem.Click += new System.EventHandler(this.agrupadoToolStripMenuItem_Click);
+            this.btnSVistaPreviaAgrupado.Name = "btnSVistaPreviaAgrupado";
+            this.btnSVistaPreviaAgrupado.Size = new System.Drawing.Size(127, 22);
+            this.btnSVistaPreviaAgrupado.Text = "Agrupado";
+            this.btnSVistaPreviaAgrupado.Click += new System.EventHandler(this.agrupadoToolStripMenuItem_Click);
             // 
-            // individualToolStripMenuItem
+            // btnSVistaPreviaIndividual
             // 
-            this.individualToolStripMenuItem.Name = "individualToolStripMenuItem";
-            this.individualToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.individualToolStripMenuItem.Text = "Individual";
-            this.individualToolStripMenuItem.Click += new System.EventHandler(this.individualToolStripMenuItem_Click);
+            this.btnSVistaPreviaIndividual.Name = "btnSVistaPreviaIndividual";
+            this.btnSVistaPreviaIndividual.Size = new System.Drawing.Size(127, 22);
+            this.btnSVistaPreviaIndividual.Text = "Individual";
+            this.btnSVistaPreviaIndividual.Click += new System.EventHandler(this.individualToolStripMenuItem_Click);
             // 
             // imprimirFormato001ToolStripMenuItem
             // 
@@ -839,7 +855,7 @@
             gridViewTextBoxColumn49.FieldName = "Capacitacion";
             gridViewTextBoxColumn49.HeaderText = "Capacitacion";
             gridViewTextBoxColumn49.Name = "chCapacitacion";
-            gridViewTextBoxColumn49.Width = 140;
+            gridViewTextBoxColumn49.Width = 141;
             gridViewTextBoxColumn50.EnableExpressionEditor = false;
             gridViewTextBoxColumn50.FieldName = "Area";
             gridViewTextBoxColumn50.HeaderText = "Area";
@@ -849,7 +865,7 @@
             gridViewTextBoxColumn51.FieldName = "Folio";
             gridViewTextBoxColumn51.HeaderText = "Folio";
             gridViewTextBoxColumn51.Name = "chFolio";
-            gridViewTextBoxColumn51.Width = 66;
+            gridViewTextBoxColumn51.Width = 67;
             gridViewTextBoxColumn52.EnableExpressionEditor = false;
             gridViewTextBoxColumn52.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewTextBoxColumn52.FieldName = "FechaCapacitacion";
@@ -936,10 +952,10 @@
             gridViewTextBoxColumn65.Name = "chTemaID";
             gridViewTextBoxColumn65.Width = 32;
             gridViewTextBoxColumn66.EnableExpressionEditor = false;
-            gridViewTextBoxColumn66.FieldName = "TemaI";
+            gridViewTextBoxColumn66.FieldName = "Tema";
             gridViewTextBoxColumn66.HeaderText = "Tema";
-            gridViewTextBoxColumn66.Name = "chTemaI";
-            gridViewTextBoxColumn66.Width = 354;
+            gridViewTextBoxColumn66.Name = "chTema";
+            gridViewTextBoxColumn66.Width = 355;
             gridViewTextBoxColumn67.EnableExpressionEditor = false;
             gridViewTextBoxColumn67.FieldName = "TemaEstado";
             gridViewTextBoxColumn67.HeaderText = "TemaEstado";
@@ -962,7 +978,7 @@
             gridViewTextBoxColumn70.FieldName = "Capacitadores";
             gridViewTextBoxColumn70.HeaderText = "Capacitadores";
             gridViewTextBoxColumn70.Name = "chCapacitadores";
-            gridViewTextBoxColumn70.Width = 80;
+            gridViewTextBoxColumn70.Width = 81;
             gridViewTextBoxColumn71.EnableExpressionEditor = false;
             gridViewTextBoxColumn71.FieldName = "Duracion";
             gridViewTextBoxColumn71.HeaderText = "Duracion";
@@ -972,7 +988,7 @@
             gridViewTextBoxColumn72.FieldName = "Estado";
             gridViewTextBoxColumn72.HeaderText = "Estado";
             gridViewTextBoxColumn72.Name = "chEstado";
-            gridViewTextBoxColumn72.Width = 56;
+            gridViewTextBoxColumn72.Width = 52;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn49,
             gridViewTextBoxColumn50,
@@ -1013,20 +1029,15 @@
             this.dgvListado.TabIndex = 196;
             this.dgvListado.ThemeName = "VisualStudio2012Light";
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
+            this.dgvListado.DoubleClick += new System.EventHandler(this.dgvListado_DoubleClick);
             // 
-            // btnConvertirImagenes
+            // btnSLiberarAprobacion
             // 
-            this.btnConvertirImagenes.AccessibleDescription = "ConvertirImagenes";
-            this.btnConvertirImagenes.AccessibleName = "ConvertirImagenes";
-            this.btnConvertirImagenes.AutoSize = false;
-            this.btnConvertirImagenes.Bounds = new System.Drawing.Rectangle(0, 0, 50, 35);
-            this.btnConvertirImagenes.DisplayName = "ConvertirImagenes";
-            this.btnConvertirImagenes.Image = ((System.Drawing.Image)(resources.GetObject("btnConvertirImagenes.Image")));
-            this.btnConvertirImagenes.Name = "btnConvertirImagenes";
-            this.btnConvertirImagenes.Tag = "ConvertirImagenes";
-            this.btnConvertirImagenes.Text = "";
-            this.btnConvertirImagenes.ToolTipText = "ConvertirImagenes";
-            this.btnConvertirImagenes.Click += new System.EventHandler(this.btnConvertirImagenes_Click);
+            this.btnSLiberarAprobacion.Image = ((System.Drawing.Image)(resources.GetObject("btnSLiberarAprobacion.Image")));
+            this.btnSLiberarAprobacion.Name = "btnSLiberarAprobacion";
+            this.btnSLiberarAprobacion.Size = new System.Drawing.Size(224, 22);
+            this.btnSLiberarAprobacion.Text = "Liberar aprobación";
+            this.btnSLiberarAprobacion.Click += new System.EventHandler(this.btnSLiberarAprobacion_Click);
             // 
             // RegistroDeCapacitaciones
             // 
@@ -1120,11 +1131,12 @@
         private System.Windows.Forms.ToolStripMenuItem vistaPreviaFormato001ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imprimirFormato001ToolStripMenuItem;
         private MyControlsDataBinding.Controles.MyCheckBox chkVisualizacionPorDia;
-        private System.Windows.Forms.ToolStripMenuItem agrupadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem individualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnSVistaPreviaAgrupado;
+        private System.Windows.Forms.ToolStripMenuItem btnSVistaPreviaIndividual;
         private System.Windows.Forms.ToolStripMenuItem agrupadoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem individualToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem generarRegistroIndividualesToolStripMenuItem;
         private Telerik.WinControls.UI.CommandBarButton btnConvertirImagenes;
+        private System.Windows.Forms.ToolStripMenuItem btnSLiberarAprobacion;
     }
 }
