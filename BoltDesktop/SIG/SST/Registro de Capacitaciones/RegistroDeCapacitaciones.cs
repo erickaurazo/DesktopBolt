@@ -450,6 +450,7 @@ namespace ComparativoHorasVisualSATNISIRA.SIG.SST
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+
             RealizarConsulta();
         }
 

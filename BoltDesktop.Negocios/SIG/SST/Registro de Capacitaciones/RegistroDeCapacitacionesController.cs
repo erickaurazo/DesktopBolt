@@ -308,5 +308,20 @@ namespace Asistencia.Negocios.SIG.SST.Registro_de_Capacitaciones
             }
             #endregion
         }
+
+
+        public List<RegistroDeCapacitacionesPorTrabajadorIDResult> ObtenerListadoDeCapacitacionesPorPersonalID(string conection, string desde, string hasta, string PersonalID)
+        {
+            List<RegistroDeCapacitacionesPorTrabajadorIDResult> result = new List<RegistroDeCapacitacionesPorTrabajadorIDResult>();
+            string cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (BoltSSTDataContext Modelo = new BoltSSTDataContext(cnx))
+            {
+                result = Modelo.RegistroDeCapacitacionesPorTrabajadorID(desde, hasta, PersonalID).ToList();
+            }
+
+            return result;
+        }
+
+
     }
 }

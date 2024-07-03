@@ -3246,6 +3246,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegistroDeCapacitacionesVistaPreviaIndividualRPT.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\RegistroDeCapacitacionPorColaborador.resx">
+      <DependentUpon>RegistroDeCapacitacionPorColaborador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SIG\SST\Registro de Capacitaciones\TemaACapacitar.resx">
       <DependentUpon>TemaACapacitar.cs</DependentUpon>
     </EmbeddedResource>
