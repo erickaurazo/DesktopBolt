@@ -174,10 +174,10 @@
   </data>
   <data name="btnFiltro.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAB7SURBVDhPYxhUIBSI/xOJQWoxgCEQ/wVibBqQMUgNSC1W
-        0AvE2DQh4x4gxgnYgfgqEGPTCMI3gZgTiPECSyD+A8TomkFOtwViogA2r+B1OjpA9wpRTkcHcUAMMwDE
-        Jhkgpwus8U4IDB4D9gOxMkiAVGAExA4QJs0AAwMAqgdCVHyzZEwAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAHtJREFUOE9jGFQgFIj/E4lBajGAIRD/BWJsGpAxSA1ILVbQC8TYNCHjHiDGCdiB
+        +CoQY9MIwjeBmBOI8QJLIP4DxOiaQU63BWKiADav4HU6OkD3ClFORwdxQAwzAMQmGSCnC6zxTggMHgP2
+        A7EySIBUYATEDhAmzQADAwCqB0JUfLNkTAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnActualizarLista.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -230,12 +230,11 @@
   </data>
   <data name="btnResaltador.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAADGSURBVDhPvdC/CkFhHMbxN4NFWWxktEpJrsBmkUG5CRfg
-        ClyEYrWQOzijsshmZVBkUYry5/srb72dfu/rKHnqsxznefw65p/p4IAFCvLgm/Rwx/Ntg0QjaYxhi641
-        UvAmhwhaWchFWagpQc7UitYAaopo4QatKGZQz+/iCvlobWgjS2SgZgV56QFtZIs8vBnCvhwfOaMCb+TH
-        I+xAfKSJYEZwy+5IGcFUUcMcUrpgij36CEbKJ8j5dUzQQOLsYM/9+G8/jjEv3xdT59jYOLwAAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAMZJREFUOE+90L8KQWEcxvE3g0VZbGS0SkmuwGaRQbkJF+AKXIRitZA7OKOyyGZl
+        UGRRivLn+ytvvZ1+7+soeeqzHOd5/Drmn+nggAUK8uCb9HDH822DRCNpjGGLrjVS8CaHCFpZyEVZqClB
+        ztSK1gBqimjhBq0oZlDP7+IK+WhtaCNLZKBmBXnpAW1kizy8GcK+HB85owJv5Mcj7EB8pIlgRnDL7kgZ
+        wVRRwxxSumCKPfoIRsonyPl1TNBA4uxgz/34bz+OMS/fF1Pn2Ng4vAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnHistorial.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

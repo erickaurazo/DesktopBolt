@@ -130,11 +130,10 @@
   </data>
   <data name="btnLlenarFechas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAACLSURBVDhPtc0xDoJAEEDR9RBcAc8id5BaSisvYAilx4GC
-        ingdLDWx0D8J2+xMYEjgJy8hk9kh7FWGHt+JfMvMXY1f4g53D6QHZOauRHrgDHdHpAdyuDtgRHz8mmar
-        6hAPtDJY6on4YMkAlbU4R2UtzVF9YC1a3lAVaJxOUFW4OV2gusL6m0V2tyiEPxI1XuDZRBgAAAAAAElF
-        TkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAItJREFUOE+1zTEOgkAQQNH1EFwBzyJ3kFpKKy9gCKXHgYKKeB0sNbHQPwnb7Exg
+        SOAnLyGT2SHsVYYe34l8y8xdjV/iDncPpAdk5q5EeuAMd0ekB3K4O2BEfPyaZqvqEA+0MljqifhgyQCV
+        tThHZS3NUX1gLVreUBVonE5QVbg5XaC6wvqbRXa3KIQ/EjVe4NlEGAAAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnBuscarPlanilla.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -178,12 +177,12 @@
   </data>
   <data name="btnRegistrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAADeSURBVDhP1ZKxDsIgEIZZ1BG6CBvVdGri5Etp4uLk6ujm
-        ixjjoouOJj6ID6L/lWuEAk1X/+RP747jy0ERpMLYtdTljqx0ecT31jXVlZ5tRF2Pm02+lCk/ytgDWWr7
-        xIY3aq/WlFMd8UMae4kgBOBQoHFP5rTRr7YcYZIzgFdRVRNejgGY5I6m5khkl7dQB4FPLod8QDGdL9rj
-        +KY6t0CAeHsCwFBlAf4f6RprK27LAyhOHcE57OMwBnAY6Y8AqQskDwLgqW7TF4hnjjVuywOGKgKkRu5z
-        AOgbO2d3HCG+nAZ+Bo/yeEkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAN5JREFUOE/VkrEOwiAQhlnUEboIG9V0auLkS2ni4uTq6OaLGOOii44mPogPov+V
+        a4QCTVf/5E/vjuPLQRGkwti11OWOrHR5xPfWNdWVnm1EXY+bTb6UKT/K2ANZavvEhjdqr9aUUx3xQxp7
+        iSAE4FCgcU/mtNGvthxhkjOAV1FVE16OAZjkjqbmSGSXt1AHgU8uh3xAMZ0v2uP4pjq3QIB4ewLAUGUB
+        /h/pGmsrbssDKE4dwTns4zAGcBjpjwCpCyQPAuCpbtMXiGeONW7LA4YqAqRG7nMA6Bs7Z3ccIb6cBn4G
+        j/J4SQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="myButtonSearchSimple2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

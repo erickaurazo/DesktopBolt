@@ -38,11 +38,26 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.txtPersonalID = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.btnBuscarPersonal = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
             this.txtPersonal = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
-            this.gbPersonalArea = new System.Windows.Forms.GroupBox();
+            this.gbCabecera = new System.Windows.Forms.GroupBox();
+            this.btnLlenarFechas = new Telerik.WinControls.UI.RadButton();
             this.txtActivoHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.txtActivoDesde = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.lblActivoHasta = new Telerik.WinControls.UI.RadLabel();
@@ -82,7 +97,7 @@
             this.txtGerenciaCodigo = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            this.gbMovimientoEnAreas = new System.Windows.Forms.GroupBox();
+            this.gbDetalle = new System.Windows.Forms.GroupBox();
             this.dgvRegistro = new Telerik.WinControls.UI.RadGridView();
             this.BarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -105,9 +120,9 @@
             this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.btnLlenarFechas = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            this.gbPersonalArea.SuspendLayout();
+            this.gbCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLlenarFechas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblActivoHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblActivoDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -121,12 +136,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblSubGerencia)).BeginInit();
-            this.gbMovimientoEnAreas.SuspendLayout();
+            this.gbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).BeginInit();
             this.stsBarraEstado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLlenarFechas)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel4
@@ -199,61 +213,72 @@
             this.txtPersonal.P_NombreColumna = null;
             this.txtPersonal.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             this.txtPersonal.ReadOnly = true;
-            this.txtPersonal.Size = new System.Drawing.Size(478, 20);
+            this.txtPersonal.Size = new System.Drawing.Size(649, 20);
             this.txtPersonal.TabIndex = 237;
             this.txtPersonal.TextChanged += new System.EventHandler(this.txtPersonal_TextChanged);
             this.txtPersonal.Leave += new System.EventHandler(this.txtNombres_Leave);
             // 
-            // gbPersonalArea
+            // gbCabecera
             // 
-            this.gbPersonalArea.Controls.Add(this.btnLlenarFechas);
-            this.gbPersonalArea.Controls.Add(this.txtActivoHasta);
-            this.gbPersonalArea.Controls.Add(this.txtActivoDesde);
-            this.gbPersonalArea.Controls.Add(this.lblActivoHasta);
-            this.gbPersonalArea.Controls.Add(this.lblActivoDesde);
-            this.gbPersonalArea.Controls.Add(this.txtItemPlanilla);
-            this.gbPersonalArea.Controls.Add(this.txtItemPlanillaHasta);
-            this.gbPersonalArea.Controls.Add(this.txtItemPlanillaDesde);
-            this.gbPersonalArea.Controls.Add(this.radLabel1);
-            this.gbPersonalArea.Controls.Add(this.radLabel3);
-            this.gbPersonalArea.Controls.Add(this.txtPlanilla);
-            this.gbPersonalArea.Controls.Add(this.lblPlanilla);
-            this.gbPersonalArea.Controls.Add(this.btnBuscarPlanilla);
-            this.gbPersonalArea.Controls.Add(this.txtPlanillaID);
-            this.gbPersonalArea.Controls.Add(this.txtCargo);
-            this.gbPersonalArea.Controls.Add(this.lblCargo);
-            this.gbPersonalArea.Controls.Add(this.btnBuscarCargo);
-            this.gbPersonalArea.Controls.Add(this.txtCargoID);
-            this.gbPersonalArea.Controls.Add(this.btnBuscarItemPlanilla);
-            this.gbPersonalArea.Controls.Add(this.lblItem);
-            this.gbPersonalArea.Controls.Add(this.btnCancelar);
-            this.gbPersonalArea.Controls.Add(this.btnRegistrar);
-            this.gbPersonalArea.Controls.Add(this.txtPlanilaHasta);
-            this.gbPersonalArea.Controls.Add(this.txtValidar);
-            this.gbPersonalArea.Controls.Add(this.txtPlanilaDesde);
-            this.gbPersonalArea.Controls.Add(this.lblHasta);
-            this.gbPersonalArea.Controls.Add(this.lblDesde);
-            this.gbPersonalArea.Controls.Add(this.txtItemPlanillaID);
-            this.gbPersonalArea.Controls.Add(this.chkEsGerente);
-            this.gbPersonalArea.Controls.Add(this.chkEsJefe);
-            this.gbPersonalArea.Controls.Add(this.txtArea);
-            this.gbPersonalArea.Controls.Add(this.radLabel2);
-            this.gbPersonalArea.Controls.Add(this.myButtonSearchSimple2);
-            this.gbPersonalArea.Controls.Add(this.txtAreaCodigo);
-            this.gbPersonalArea.Controls.Add(this.txtGerencia);
-            this.gbPersonalArea.Controls.Add(this.lblSubGerencia);
-            this.gbPersonalArea.Controls.Add(this.myButtonSearchSimple1);
-            this.gbPersonalArea.Controls.Add(this.txtGerenciaCodigo);
-            this.gbPersonalArea.Controls.Add(this.txtPersonal);
-            this.gbPersonalArea.Controls.Add(this.radLabel4);
-            this.gbPersonalArea.Controls.Add(this.btnBuscarPersonal);
-            this.gbPersonalArea.Controls.Add(this.txtPersonalID);
-            this.gbPersonalArea.Location = new System.Drawing.Point(15, 34);
-            this.gbPersonalArea.Name = "gbPersonalArea";
-            this.gbPersonalArea.Size = new System.Drawing.Size(735, 256);
-            this.gbPersonalArea.TabIndex = 3;
-            this.gbPersonalArea.TabStop = false;
-            this.gbPersonalArea.Text = "Asociar colaborador con área de trabajo";
+            this.gbCabecera.Controls.Add(this.btnLlenarFechas);
+            this.gbCabecera.Controls.Add(this.txtActivoHasta);
+            this.gbCabecera.Controls.Add(this.txtActivoDesde);
+            this.gbCabecera.Controls.Add(this.lblActivoHasta);
+            this.gbCabecera.Controls.Add(this.lblActivoDesde);
+            this.gbCabecera.Controls.Add(this.txtItemPlanilla);
+            this.gbCabecera.Controls.Add(this.txtItemPlanillaHasta);
+            this.gbCabecera.Controls.Add(this.txtItemPlanillaDesde);
+            this.gbCabecera.Controls.Add(this.radLabel1);
+            this.gbCabecera.Controls.Add(this.radLabel3);
+            this.gbCabecera.Controls.Add(this.txtPlanilla);
+            this.gbCabecera.Controls.Add(this.lblPlanilla);
+            this.gbCabecera.Controls.Add(this.btnBuscarPlanilla);
+            this.gbCabecera.Controls.Add(this.txtPlanillaID);
+            this.gbCabecera.Controls.Add(this.txtCargo);
+            this.gbCabecera.Controls.Add(this.lblCargo);
+            this.gbCabecera.Controls.Add(this.btnBuscarCargo);
+            this.gbCabecera.Controls.Add(this.txtCargoID);
+            this.gbCabecera.Controls.Add(this.btnBuscarItemPlanilla);
+            this.gbCabecera.Controls.Add(this.lblItem);
+            this.gbCabecera.Controls.Add(this.btnCancelar);
+            this.gbCabecera.Controls.Add(this.btnRegistrar);
+            this.gbCabecera.Controls.Add(this.txtPlanilaHasta);
+            this.gbCabecera.Controls.Add(this.txtValidar);
+            this.gbCabecera.Controls.Add(this.txtPlanilaDesde);
+            this.gbCabecera.Controls.Add(this.lblHasta);
+            this.gbCabecera.Controls.Add(this.lblDesde);
+            this.gbCabecera.Controls.Add(this.txtItemPlanillaID);
+            this.gbCabecera.Controls.Add(this.chkEsGerente);
+            this.gbCabecera.Controls.Add(this.chkEsJefe);
+            this.gbCabecera.Controls.Add(this.txtArea);
+            this.gbCabecera.Controls.Add(this.radLabel2);
+            this.gbCabecera.Controls.Add(this.myButtonSearchSimple2);
+            this.gbCabecera.Controls.Add(this.txtAreaCodigo);
+            this.gbCabecera.Controls.Add(this.txtGerencia);
+            this.gbCabecera.Controls.Add(this.lblSubGerencia);
+            this.gbCabecera.Controls.Add(this.myButtonSearchSimple1);
+            this.gbCabecera.Controls.Add(this.txtGerenciaCodigo);
+            this.gbCabecera.Controls.Add(this.txtPersonal);
+            this.gbCabecera.Controls.Add(this.radLabel4);
+            this.gbCabecera.Controls.Add(this.btnBuscarPersonal);
+            this.gbCabecera.Controls.Add(this.txtPersonalID);
+            this.gbCabecera.Location = new System.Drawing.Point(15, 34);
+            this.gbCabecera.Name = "gbCabecera";
+            this.gbCabecera.Size = new System.Drawing.Size(906, 237);
+            this.gbCabecera.TabIndex = 3;
+            this.gbCabecera.TabStop = false;
+            this.gbCabecera.Text = "Asociar colaborador con área de trabajo";
+            // 
+            // btnLlenarFechas
+            // 
+            this.btnLlenarFechas.Image = ((System.Drawing.Image)(resources.GetObject("btnLlenarFechas.Image")));
+            this.btnLlenarFechas.Location = new System.Drawing.Point(150, 95);
+            this.btnLlenarFechas.Name = "btnLlenarFechas";
+            this.btnLlenarFechas.Size = new System.Drawing.Size(453, 24);
+            this.btnLlenarFechas.TabIndex = 277;
+            this.btnLlenarFechas.Text = "Validar con planilla";
+            this.btnLlenarFechas.ThemeName = "Windows8";
+            this.btnLlenarFechas.Click += new System.EventHandler(this.btnLlenarFechas_Click);
             // 
             // txtActivoHasta
             // 
@@ -262,7 +287,7 @@
             this.txtActivoHasta.EditingControlRowIndex = 0;
             this.txtActivoHasta.EditingControlValueChanged = true;
             this.txtActivoHasta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtActivoHasta.Location = new System.Drawing.Point(648, 203);
+            this.txtActivoHasta.Location = new System.Drawing.Point(470, 209);
             this.txtActivoHasta.Mask = "00/00/0000";
             this.txtActivoHasta.Name = "txtActivoHasta";
             this.txtActivoHasta.P_EsEditable = false;
@@ -283,7 +308,7 @@
             this.txtActivoDesde.EditingControlRowIndex = 0;
             this.txtActivoDesde.EditingControlValueChanged = true;
             this.txtActivoDesde.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtActivoDesde.Location = new System.Drawing.Point(512, 203);
+            this.txtActivoDesde.Location = new System.Drawing.Point(334, 209);
             this.txtActivoDesde.Mask = "00/00/0000";
             this.txtActivoDesde.Name = "txtActivoDesde";
             this.txtActivoDesde.P_EsEditable = false;
@@ -299,7 +324,7 @@
             // 
             // lblActivoHasta
             // 
-            this.lblActivoHasta.Location = new System.Drawing.Point(602, 205);
+            this.lblActivoHasta.Location = new System.Drawing.Point(424, 211);
             this.lblActivoHasta.Name = "lblActivoHasta";
             this.lblActivoHasta.Size = new System.Drawing.Size(40, 18);
             this.lblActivoHasta.TabIndex = 275;
@@ -307,7 +332,7 @@
             // 
             // lblActivoDesde
             // 
-            this.lblActivoDesde.Location = new System.Drawing.Point(458, 205);
+            this.lblActivoDesde.Location = new System.Drawing.Point(280, 211);
             this.lblActivoDesde.Name = "lblActivoDesde";
             this.lblActivoDesde.Size = new System.Drawing.Size(43, 18);
             this.lblActivoDesde.TabIndex = 273;
@@ -329,7 +354,7 @@
             this.txtItemPlanilla.P_ExigeInformacion = false;
             this.txtItemPlanilla.P_NombreColumna = null;
             this.txtItemPlanilla.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.txtItemPlanilla.Size = new System.Drawing.Size(202, 20);
+            this.txtItemPlanilla.Size = new System.Drawing.Size(352, 20);
             this.txtItemPlanilla.TabIndex = 272;
             this.txtItemPlanilla.TextChanged += new System.EventHandler(this.txtItemPlanilla_TextChanged);
             this.txtItemPlanilla.Leave += new System.EventHandler(this.txtItemPlanilla_Leave);
@@ -341,7 +366,7 @@
             this.txtItemPlanillaHasta.EditingControlRowIndex = 0;
             this.txtItemPlanillaHasta.EditingControlValueChanged = true;
             this.txtItemPlanillaHasta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtItemPlanillaHasta.Location = new System.Drawing.Point(648, 70);
+            this.txtItemPlanillaHasta.Location = new System.Drawing.Point(824, 68);
             this.txtItemPlanillaHasta.Mask = "00/00/0000";
             this.txtItemPlanillaHasta.Name = "txtItemPlanillaHasta";
             this.txtItemPlanillaHasta.P_EsEditable = true;
@@ -362,7 +387,7 @@
             this.txtItemPlanillaDesde.EditingControlRowIndex = 0;
             this.txtItemPlanillaDesde.EditingControlValueChanged = true;
             this.txtItemPlanillaDesde.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtItemPlanillaDesde.Location = new System.Drawing.Point(512, 71);
+            this.txtItemPlanillaDesde.Location = new System.Drawing.Point(688, 69);
             this.txtItemPlanillaDesde.Mask = "00/00/0000";
             this.txtItemPlanillaDesde.Name = "txtItemPlanillaDesde";
             this.txtItemPlanillaDesde.P_EsEditable = false;
@@ -379,7 +404,7 @@
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(602, 72);
+            this.radLabel1.Location = new System.Drawing.Point(778, 70);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(40, 18);
             this.radLabel1.TabIndex = 270;
@@ -387,7 +412,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(458, 73);
+            this.radLabel3.Location = new System.Drawing.Point(634, 71);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(43, 18);
             this.radLabel3.TabIndex = 268;
@@ -409,9 +434,10 @@
             this.txtPlanilla.P_ExigeInformacion = false;
             this.txtPlanilla.P_NombreColumna = null;
             this.txtPlanilla.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.txtPlanilla.Size = new System.Drawing.Size(202, 20);
+            this.txtPlanilla.Size = new System.Drawing.Size(352, 20);
             this.txtPlanilla.TabIndex = 266;
             this.txtPlanilla.TextChanged += new System.EventHandler(this.txtPlanilla_TextChanged);
+            this.txtPlanilla.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPlanilla_KeyUp);
             this.txtPlanilla.Leave += new System.EventHandler(this.txtPlanilla_Leave);
             // 
             // lblPlanilla
@@ -463,6 +489,7 @@
             this.txtPlanillaID.TabIndex = 265;
             this.txtPlanillaID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPlanillaID.TextChanged += new System.EventHandler(this.txtPlanillaID_TextChanged);
+            this.txtPlanillaID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPlanillaID_KeyUp);
             this.txtPlanillaID.Leave += new System.EventHandler(this.txtPlanillaCodigo_Leave);
             // 
             // txtCargo
@@ -482,7 +509,7 @@
             this.txtCargo.P_NombreColumna = null;
             this.txtCargo.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             this.txtCargo.ReadOnly = true;
-            this.txtCargo.Size = new System.Drawing.Size(478, 20);
+            this.txtCargo.Size = new System.Drawing.Size(653, 20);
             this.txtCargo.TabIndex = 260;
             // 
             // lblCargo
@@ -538,14 +565,14 @@
             this.btnBuscarItemPlanilla.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarItemPlanilla.Image")));
             this.btnBuscarItemPlanilla.Location = new System.Drawing.Point(123, 72);
             this.btnBuscarItemPlanilla.Name = "btnBuscarItemPlanilla";
-            this.btnBuscarItemPlanilla.P_CampoCodigo = "rtrim(codigo)";
-            this.btnBuscarItemPlanilla.P_CampoDescripcion = "rtrim(nombres)";
+            this.btnBuscarItemPlanilla.P_CampoCodigo = "rtrim(ITEM)";
+            this.btnBuscarItemPlanilla.P_CampoDescripcion = "rtrim(Descripcion)";
             this.btnBuscarItemPlanilla.P_EsEditable = true;
             this.btnBuscarItemPlanilla.P_EsModificable = true;
             this.btnBuscarItemPlanilla.P_FilterByTextBox = null;
-            this.btnBuscarItemPlanilla.P_TablaConsulta = "personal_empresa";
-            this.btnBuscarItemPlanilla.P_TextBoxCodigo = this.txtPersonalID;
-            this.btnBuscarItemPlanilla.P_TextBoxDescripcion = this.txtPersonal;
+            this.btnBuscarItemPlanilla.P_TablaConsulta = "SAS_ListadoItemPorTrabajadores";
+            this.btnBuscarItemPlanilla.P_TextBoxCodigo = this.txtItemPlanillaID;
+            this.btnBuscarItemPlanilla.P_TextBoxDescripcion = this.txtItemPlanilla;
             this.btnBuscarItemPlanilla.P_TituloFormulario = ".. Buscar item planilla";
             this.btnBuscarItemPlanilla.Size = new System.Drawing.Size(25, 23);
             this.btnBuscarItemPlanilla.TabIndex = 257;
@@ -563,7 +590,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(519, 229);
+            this.btnCancelar.Location = new System.Drawing.Point(693, 205);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 247;
@@ -575,7 +602,7 @@
             // 
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(627, 229);
+            this.btnRegistrar.Location = new System.Drawing.Point(799, 205);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(102, 24);
             this.btnRegistrar.TabIndex = 248;
@@ -590,7 +617,7 @@
             this.txtPlanilaHasta.EditingControlRowIndex = 0;
             this.txtPlanilaHasta.EditingControlValueChanged = true;
             this.txtPlanilaHasta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtPlanilaHasta.Location = new System.Drawing.Point(648, 44);
+            this.txtPlanilaHasta.Location = new System.Drawing.Point(824, 42);
             this.txtPlanilaHasta.Mask = "00/00/0000";
             this.txtPlanilaHasta.Name = "txtPlanilaHasta";
             this.txtPlanilaHasta.P_EsEditable = true;
@@ -633,7 +660,7 @@
             this.txtPlanilaDesde.EditingControlRowIndex = 0;
             this.txtPlanilaDesde.EditingControlValueChanged = true;
             this.txtPlanilaDesde.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtPlanilaDesde.Location = new System.Drawing.Point(512, 45);
+            this.txtPlanilaDesde.Location = new System.Drawing.Point(688, 43);
             this.txtPlanilaDesde.Mask = "00/00/0000";
             this.txtPlanilaDesde.Name = "txtPlanilaDesde";
             this.txtPlanilaDesde.P_EsEditable = false;
@@ -650,7 +677,7 @@
             // 
             // lblHasta
             // 
-            this.lblHasta.Location = new System.Drawing.Point(602, 46);
+            this.lblHasta.Location = new System.Drawing.Point(778, 44);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(40, 18);
             this.lblHasta.TabIndex = 254;
@@ -658,7 +685,7 @@
             // 
             // lblDesde
             // 
-            this.lblDesde.Location = new System.Drawing.Point(458, 47);
+            this.lblDesde.Location = new System.Drawing.Point(634, 45);
             this.lblDesde.Name = "lblDesde";
             this.lblDesde.Size = new System.Drawing.Size(43, 18);
             this.lblDesde.TabIndex = 252;
@@ -682,13 +709,14 @@
             this.txtItemPlanillaID.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             this.txtItemPlanillaID.Size = new System.Drawing.Size(91, 20);
             this.txtItemPlanillaID.TabIndex = 251;
+            this.txtItemPlanillaID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtItemPlanillaID.TextChanged += new System.EventHandler(this.txtItemPlanillaID_TextChanged);
             this.txtItemPlanillaID.Leave += new System.EventHandler(this.txtItemPlanillaID_Leave);
             // 
             // chkEsGerente
             // 
             this.chkEsGerente.AutoSize = true;
-            this.chkEsGerente.Location = new System.Drawing.Point(458, 102);
+            this.chkEsGerente.Location = new System.Drawing.Point(634, 100);
             this.chkEsGerente.Name = "chkEsGerente";
             this.chkEsGerente.Size = new System.Drawing.Size(161, 17);
             this.chkEsGerente.TabIndex = 250;
@@ -698,7 +726,7 @@
             // chkEsJefe
             // 
             this.chkEsJefe.AutoSize = true;
-            this.chkEsJefe.Location = new System.Drawing.Point(664, 102);
+            this.chkEsJefe.Location = new System.Drawing.Point(840, 100);
             this.chkEsJefe.Name = "chkEsJefe";
             this.chkEsJefe.Size = new System.Drawing.Size(61, 17);
             this.chkEsJefe.TabIndex = 249;
@@ -722,7 +750,7 @@
             this.txtArea.P_NombreColumna = null;
             this.txtArea.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             this.txtArea.ReadOnly = true;
-            this.txtArea.Size = new System.Drawing.Size(478, 20);
+            this.txtArea.Size = new System.Drawing.Size(653, 20);
             this.txtArea.TabIndex = 245;
             // 
             // radLabel2
@@ -790,7 +818,7 @@
             this.txtGerencia.P_NombreColumna = null;
             this.txtGerencia.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             this.txtGerencia.ReadOnly = true;
-            this.txtGerencia.Size = new System.Drawing.Size(478, 20);
+            this.txtGerencia.Size = new System.Drawing.Size(653, 20);
             this.txtGerencia.TabIndex = 241;
             // 
             // lblSubGerencia
@@ -846,18 +874,18 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // gbMovimientoEnAreas
+            // gbDetalle
             // 
-            this.gbMovimientoEnAreas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbMovimientoEnAreas.Controls.Add(this.dgvRegistro);
-            this.gbMovimientoEnAreas.Location = new System.Drawing.Point(12, 293);
-            this.gbMovimientoEnAreas.Name = "gbMovimientoEnAreas";
-            this.gbMovimientoEnAreas.Size = new System.Drawing.Size(738, 211);
-            this.gbMovimientoEnAreas.TabIndex = 240;
-            this.gbMovimientoEnAreas.TabStop = false;
-            this.gbMovimientoEnAreas.Text = "Movimiento en Áreas";
+            this.gbDetalle.Controls.Add(this.dgvRegistro);
+            this.gbDetalle.Location = new System.Drawing.Point(12, 277);
+            this.gbDetalle.Name = "gbDetalle";
+            this.gbDetalle.Size = new System.Drawing.Size(912, 292);
+            this.gbDetalle.TabIndex = 240;
+            this.gbDetalle.TabStop = false;
+            this.gbDetalle.Text = "Movimiento en Áreas";
             // 
             // dgvRegistro
             // 
@@ -875,44 +903,131 @@
             this.dgvRegistro.MasterTemplate.AutoGenerateColumns = false;
             this.dgvRegistro.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Item";
-            gridViewTextBoxColumn1.HeaderText = "Item";
-            gridViewTextBoxColumn1.Name = "chItem";
-            gridViewTextBoxColumn1.Width = 45;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "chID";
+            gridViewTextBoxColumn1.Width = 20;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Gerencia";
-            gridViewTextBoxColumn2.HeaderText = "Gerencia";
-            gridViewTextBoxColumn2.Name = "chGerencia";
-            gridViewTextBoxColumn2.Width = 190;
+            gridViewTextBoxColumn2.FieldName = "idcodigoGeneral";
+            gridViewTextBoxColumn2.HeaderText = "idcodigoGeneral";
+            gridViewTextBoxColumn2.IsVisible = false;
+            gridViewTextBoxColumn2.Name = "chidcodigoGeneral";
+            gridViewTextBoxColumn2.Width = 118;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "AreaTrabajo";
-            gridViewTextBoxColumn3.HeaderText = "AreaTrabajo";
-            gridViewTextBoxColumn3.Name = "chAreaTrabajo";
-            gridViewTextBoxColumn3.Width = 202;
+            gridViewTextBoxColumn3.FieldName = "nombresCompletos";
+            gridViewTextBoxColumn3.HeaderText = "nombresCompletos";
+            gridViewTextBoxColumn3.IsVisible = false;
+            gridViewTextBoxColumn3.Name = "chnombresCompletos";
+            gridViewTextBoxColumn3.Width = 31;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Desde";
-            gridViewTextBoxColumn4.HeaderText = "Desde";
-            gridViewTextBoxColumn4.Name = "chDesde";
-            gridViewTextBoxColumn4.Width = 83;
+            gridViewTextBoxColumn4.FieldName = "idGerencia";
+            gridViewTextBoxColumn4.HeaderText = "idGerencia";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "chidGerencia";
+            gridViewTextBoxColumn4.Width = 32;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "Hasta";
-            gridViewTextBoxColumn5.HeaderText = "Hasta";
-            gridViewTextBoxColumn5.Name = "chHasta";
-            gridViewTextBoxColumn5.Width = 69;
+            gridViewTextBoxColumn5.FieldName = "PlanillaID";
+            gridViewTextBoxColumn5.HeaderText = "PlanillaID";
+            gridViewTextBoxColumn5.Name = "chPlanillaID";
+            gridViewTextBoxColumn5.Width = 67;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Estado";
-            gridViewTextBoxColumn6.HeaderText = "Estado";
-            gridViewTextBoxColumn6.Name = "chEstado";
-            gridViewTextBoxColumn6.Width = 27;
+            gridViewTextBoxColumn6.FieldName = "gerencia";
+            gridViewTextBoxColumn6.HeaderText = "Gerencia";
+            gridViewTextBoxColumn6.Name = "chgerencia";
+            gridViewTextBoxColumn6.Width = 237;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "Cargo";
-            gridViewTextBoxColumn7.HeaderText = "Cargo";
-            gridViewTextBoxColumn7.Name = "chCargo";
+            gridViewTextBoxColumn7.FieldName = "idArea";
+            gridViewTextBoxColumn7.HeaderText = "idArea";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "chidArea";
+            gridViewTextBoxColumn7.Width = 53;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Planilla";
-            gridViewTextBoxColumn8.HeaderText = "Planilla";
-            gridViewTextBoxColumn8.Name = "chPlanilla";
-            gridViewTextBoxColumn8.Width = 55;
+            gridViewTextBoxColumn8.FieldName = "area";
+            gridViewTextBoxColumn8.HeaderText = "Area";
+            gridViewTextBoxColumn8.Name = "charea";
+            gridViewTextBoxColumn8.Width = 238;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "EsJefe";
+            gridViewTextBoxColumn9.HeaderText = "EsJefe";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "chEsJefe";
+            gridViewTextBoxColumn9.Width = 67;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "EsGerente";
+            gridViewTextBoxColumn10.HeaderText = "EsGerente";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chEsGerente";
+            gridViewTextBoxColumn10.Width = 83;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Estado";
+            gridViewTextBoxColumn11.HeaderText = "Estado";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "chEstado";
+            gridViewTextBoxColumn11.Width = 103;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "Cargo";
+            gridViewTextBoxColumn12.HeaderText = "Cargo";
+            gridViewTextBoxColumn12.Name = "chCargo";
+            gridViewTextBoxColumn12.Width = 209;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "Desde";
+            gridViewTextBoxColumn13.HeaderText = "Desde";
+            gridViewTextBoxColumn13.Name = "chDesde";
+            gridViewTextBoxColumn13.Width = 74;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "hasta";
+            gridViewTextBoxColumn14.HeaderText = "Hasta";
+            gridViewTextBoxColumn14.Name = "chhasta";
+            gridViewTextBoxColumn14.Width = 68;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "Item";
+            gridViewTextBoxColumn15.HeaderText = "Item";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "chItem";
+            gridViewTextBoxColumn15.Width = 151;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "CargoID";
+            gridViewTextBoxColumn16.HeaderText = "CargoID";
+            gridViewTextBoxColumn16.IsVisible = false;
+            gridViewTextBoxColumn16.Name = "chCargoID";
+            gridViewTextBoxColumn16.Width = 14;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "Planilla";
+            gridViewTextBoxColumn17.HeaderText = "Planilla";
+            gridViewTextBoxColumn17.IsVisible = false;
+            gridViewTextBoxColumn17.Name = "chPlanilla";
+            gridViewTextBoxColumn17.Width = 19;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "PlanillaInicio";
+            gridViewTextBoxColumn18.HeaderText = "PlanillaInicio";
+            gridViewTextBoxColumn18.IsVisible = false;
+            gridViewTextBoxColumn18.Name = "chPlanillaInicio";
+            gridViewTextBoxColumn18.Width = 21;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "PlanillaFin";
+            gridViewTextBoxColumn19.HeaderText = "PlanillaFin";
+            gridViewTextBoxColumn19.IsVisible = false;
+            gridViewTextBoxColumn19.Name = "chPlanillaFin";
+            gridViewTextBoxColumn19.Width = 24;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.FieldName = "ItemPlanilla";
+            gridViewTextBoxColumn20.HeaderText = "ItemPlanilla";
+            gridViewTextBoxColumn20.IsVisible = false;
+            gridViewTextBoxColumn20.Name = "chItemPlanilla";
+            gridViewTextBoxColumn20.Width = 28;
+            gridViewTextBoxColumn21.EnableExpressionEditor = false;
+            gridViewTextBoxColumn21.FieldName = "ItemPlanillaInicio";
+            gridViewTextBoxColumn21.HeaderText = "ItemPlanillaInicio";
+            gridViewTextBoxColumn21.IsVisible = false;
+            gridViewTextBoxColumn21.Name = "chItemPlanillaInicio";
+            gridViewTextBoxColumn21.Width = 32;
+            gridViewTextBoxColumn22.EnableExpressionEditor = false;
+            gridViewTextBoxColumn22.FieldName = "ItemPlanillaFinsas";
+            gridViewTextBoxColumn22.HeaderText = "column1";
+            gridViewTextBoxColumn22.IsVisible = false;
+            gridViewTextBoxColumn22.Name = "chItemPlanillaFinsas";
+            gridViewTextBoxColumn22.Width = 40;
             this.dgvRegistro.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -921,7 +1036,21 @@
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20,
+            gridViewTextBoxColumn21,
+            gridViewTextBoxColumn22});
             this.dgvRegistro.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRegistro.MasterTemplate.EnableFiltering = true;
             this.dgvRegistro.MasterTemplate.MultiSelect = true;
@@ -930,7 +1059,7 @@
             this.dgvRegistro.Name = "dgvRegistro";
             this.dgvRegistro.ReadOnly = true;
             this.dgvRegistro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvRegistro.Size = new System.Drawing.Size(732, 192);
+            this.dgvRegistro.Size = new System.Drawing.Size(906, 273);
             this.dgvRegistro.TabIndex = 6;
             this.dgvRegistro.ThemeName = "VisualStudio2012Light";
             // 
@@ -941,7 +1070,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(763, 37);
+            this.BarraPrincipal.Size = new System.Drawing.Size(937, 37);
             this.BarraPrincipal.TabIndex = 247;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -1030,6 +1159,7 @@
             this.btnActualizarLista.Text = "";
             this.btnActualizarLista.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnActualizarLista.ToolTipText = "Actualizar Lista";
+            this.btnActualizarLista.Click += new System.EventHandler(this.btnActualizarLista_Click);
             // 
             // btnAtras
             // 
@@ -1175,35 +1305,27 @@
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar});
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 507);
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 572);
             this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(763, 22);
+            this.stsBarraEstado.Size = new System.Drawing.Size(937, 22);
             this.stsBarraEstado.TabIndex = 249;
             // 
             // progressBar
             // 
+            this.progressBar.ForeColor = System.Drawing.SystemColors.Info;
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 16);
-            // 
-            // btnLlenarFechas
-            // 
-            this.btnLlenarFechas.Image = ((System.Drawing.Image)(resources.GetObject("btnLlenarFechas.Image")));
-            this.btnLlenarFechas.Location = new System.Drawing.Point(150, 95);
-            this.btnLlenarFechas.Name = "btnLlenarFechas";
-            this.btnLlenarFechas.Size = new System.Drawing.Size(302, 24);
-            this.btnLlenarFechas.TabIndex = 277;
-            this.btnLlenarFechas.Text = "Validar con planilla";
-            this.btnLlenarFechas.ThemeName = "Windows8";
-            this.btnLlenarFechas.Click += new System.EventHandler(this.btnLlenarFechas_Click);
+            this.progressBar.Size = new System.Drawing.Size(900, 16);
+            this.progressBar.Step = 25;
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // ColaboradorAsociarConAreaDeTrabajo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(763, 529);
+            this.ClientSize = new System.Drawing.Size(937, 594);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.BarraPrincipal);
-            this.Controls.Add(this.gbMovimientoEnAreas);
-            this.Controls.Add(this.gbPersonalArea);
+            this.Controls.Add(this.gbDetalle);
+            this.Controls.Add(this.gbCabecera);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1211,8 +1333,9 @@
             this.Text = "Colabolador | Asociar a trabajar con Gerencia y con Área de trabajo";
             this.Load += new System.EventHandler(this.ColaboradorAsociarConAreaDeTrabajo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            this.gbPersonalArea.ResumeLayout(false);
-            this.gbPersonalArea.PerformLayout();
+            this.gbCabecera.ResumeLayout(false);
+            this.gbCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLlenarFechas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblActivoHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblActivoDesde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
@@ -1226,13 +1349,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblDesde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblSubGerencia)).EndInit();
-            this.gbMovimientoEnAreas.ResumeLayout(false);
+            this.gbDetalle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarraPrincipal)).EndInit();
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLlenarFechas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1244,7 +1366,7 @@
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtPersonalID;
         private MyControlsDataBinding.Controles.MyButtonSearchSimple btnBuscarPersonal;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtPersonal;
-        private System.Windows.Forms.GroupBox gbPersonalArea;
+        private System.Windows.Forms.GroupBox gbCabecera;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtArea;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private MyControlsDataBinding.Controles.MyButtonSearchSimple myButtonSearchSimple2;
@@ -1259,7 +1381,7 @@
         private System.Windows.Forms.CheckBox chkEsJefe;
         private System.ComponentModel.BackgroundWorker bgwHilo;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
-        private System.Windows.Forms.GroupBox gbMovimientoEnAreas;
+        private System.Windows.Forms.GroupBox gbDetalle;
         private MyControlsDataBinding.Controles.MyTextBoxSearchSimple txtItemPlanillaID;
         private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtValidar;
         private MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtPlanilaHasta;

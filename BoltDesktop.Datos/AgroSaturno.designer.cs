@@ -789,19 +789,19 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<SAS_ListadoPlanillasPorTrabajadore> SAS_ListadoPlanillasPorTrabajadores
-		{
-			get
-			{
-				return this.GetTable<SAS_ListadoPlanillasPorTrabajadore>();
-			}
-		}
-		
 		public System.Data.Linq.Table<SAS_ListadoItemPorTrabajadore> SAS_ListadoItemPorTrabajadores
 		{
 			get
 			{
 				return this.GetTable<SAS_ListadoItemPorTrabajadore>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_ListadoPlanillasPorTrabajadore> SAS_ListadoPlanillasPorTrabajadores
+		{
+			get
+			{
+				return this.GetTable<SAS_ListadoPlanillasPorTrabajadore>();
 			}
 		}
 		
@@ -46924,6 +46924,105 @@ namespace Asistencia.Datos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ListadoItemPorTrabajadores")]
+	public partial class SAS_ListadoItemPorTrabajadore
+	{
+		
+		private string _PersonalID;
+		
+		private string _ITEM;
+		
+		private string _Desde;
+		
+		private string _Hasta;
+		
+		private string _Descripcion;
+		
+		public SAS_ListadoItemPorTrabajadore()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalID", DbType="VarChar(8)")]
+		public string PersonalID
+		{
+			get
+			{
+				return this._PersonalID;
+			}
+			set
+			{
+				if ((this._PersonalID != value))
+				{
+					this._PersonalID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITEM", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string ITEM
+		{
+			get
+			{
+				return this._ITEM;
+			}
+			set
+			{
+				if ((this._ITEM != value))
+				{
+					this._ITEM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="VarChar(10)")]
+		public string Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="NVarChar(4000)")]
+		public string Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="NVarChar(4000)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ListadoPlanillasPorTrabajadores")]
 	public partial class SAS_ListadoPlanillasPorTrabajadore
 	{
@@ -46934,9 +47033,9 @@ namespace Asistencia.Datos
 		
 		private string _PersonalID;
 		
-		private System.Nullable<System.DateTime> _FECHA_INICIOPLANILLA;
+		private string _FECHA_INICIOPLANILLA;
 		
-		private System.Nullable<System.DateTime> _FECHA_FINPLANILLA;
+		private string _FECHA_FINPLANILLA;
 		
 		public SAS_ListadoPlanillasPorTrabajadore()
 		{
@@ -46990,8 +47089,8 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_INICIOPLANILLA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA_INICIOPLANILLA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_INICIOPLANILLA", DbType="NVarChar(4000)")]
+		public string FECHA_INICIOPLANILLA
 		{
 			get
 			{
@@ -47006,8 +47105,8 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_FINPLANILLA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FECHA_FINPLANILLA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_FINPLANILLA", DbType="NVarChar(4000)")]
+		public string FECHA_FINPLANILLA
 		{
 			get
 			{
@@ -47018,87 +47117,6 @@ namespace Asistencia.Datos
 				if ((this._FECHA_FINPLANILLA != value))
 				{
 					this._FECHA_FINPLANILLA = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ListadoItemPorTrabajadores")]
-	public partial class SAS_ListadoItemPorTrabajadore
-	{
-		
-		private string _PersonalID;
-		
-		private string _ITEM;
-		
-		private System.DateTime _Desde;
-		
-		private System.Nullable<System.DateTime> _Hasta;
-		
-		public SAS_ListadoItemPorTrabajadore()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalID", DbType="VarChar(8)")]
-		public string PersonalID
-		{
-			get
-			{
-				return this._PersonalID;
-			}
-			set
-			{
-				if ((this._PersonalID != value))
-				{
-					this._PersonalID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITEM", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string ITEM
-		{
-			get
-			{
-				return this._ITEM;
-			}
-			set
-			{
-				if ((this._ITEM != value))
-				{
-					this._ITEM = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="DateTime NOT NULL")]
-		public System.DateTime Desde
-		{
-			get
-			{
-				return this._Desde;
-			}
-			set
-			{
-				if ((this._Desde != value))
-				{
-					this._Desde = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Hasta
-		{
-			get
-			{
-				return this._Hasta;
-			}
-			set
-			{
-				if ((this._Hasta != value))
-				{
-					this._Hasta = value;
 				}
 			}
 		}

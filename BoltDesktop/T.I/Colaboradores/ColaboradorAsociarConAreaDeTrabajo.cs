@@ -38,6 +38,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private string PlanillaID;
         private string ItemFechaPlanillaID;
 
+        public string mensaje { get; private set; }
+
         public ColaboradorAsociarConAreaDeTrabajo()
         {
             InitializeComponent();
@@ -60,10 +62,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             odetalleSelecionadoByFormularioEmail.idcodigoGeneral = PersonalID;
             odetalleSelecionadoByFormularioEmail.nombresCompleto = string.Empty;
 
-           item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
+            item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = odetalleSelecionadoByFormularioEmail.idcodigoGeneral != null ? odetalleSelecionadoByFormularioEmail.idcodigoGeneral.Trim() : string.Empty;
             item.nombresCompletos = odetalleSelecionadoByFormularioEmail.nombresCompleto != null ? odetalleSelecionadoByFormularioEmail.nombresCompleto.Trim() : string.Empty;
-            gbPersonalArea.Enabled = true;
+            gbCabecera.Enabled = true;
             bgwHilo.RunWorkerAsync();
         }
 
@@ -81,7 +83,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = odetalleSelecionadoByFormularioEmail.idcodigoGeneral != null ? odetalleSelecionadoByFormularioEmail.idcodigoGeneral.Trim() : string.Empty;
             item.nombresCompletos = odetalleSelecionadoByFormularioEmail.nombresCompleto != null ? odetalleSelecionadoByFormularioEmail.nombresCompleto.Trim() : string.Empty;
-            gbPersonalArea.Enabled = true;
+            gbCabecera.Enabled = true;
             bgwHilo.RunWorkerAsync();
             //this.txtIdCodigoGeneral.Text = odetalleSelecionadoByFormularioEmail.idcodigoGeneral != null ? odetalleSelecionadoByFormularioEmail.idcodigoGeneral.Trim() : string.Empty;
             //this.txtNombres.Text = odetalleSelecionadoByFormularioEmail.nombresCompleto != null ? odetalleSelecionadoByFormularioEmail.nombresCompleto.Trim() : string.Empty;
@@ -107,7 +109,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = this.detalle.idcodigoGeneral != null ? detalle.idcodigoGeneral.Trim() : string.Empty;
             item.nombresCompletos = this.detalle.nombres != null ? detalle.nombres.Trim() : string.Empty;
-            gbPersonalArea.Enabled = true;
+            gbCabecera.Enabled = true;
             bgwHilo.RunWorkerAsync();
 
             //this.txtIdCodigoGeneral.Text = detalle.idcodigoGeneral != null ? detalle.idcodigoGeneral.Trim() : string.Empty;
@@ -136,7 +138,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = this.odetalleSelecionado.idcodigogeneral != null ? odetalleSelecionado.idcodigogeneral.Trim() : string.Empty;
             item.nombresCompletos = this.odetalleSelecionado.apenom != null ? odetalleSelecionado.apenom.Trim() : string.Empty;
-            gbPersonalArea.Enabled = true;
+            gbCabecera.Enabled = true;
 
 
             //this.txtIdCodigoGeneral.Text = this.odetalleSelecionado.idcodigogeneral != null ? odetalleSelecionado.idcodigogeneral.Trim() : string.Empty;
@@ -165,12 +167,17 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = idCodigoGeneral;
             item.nombresCompletos = idCodigoGeneral;
-            gbPersonalArea.Enabled = true;
-            bgwHilo.RunWorkerAsync();
+            Consultar();
 
         }
 
-
+        private void Consultar()
+        {
+            gbCabecera.Enabled = false;
+            gbDetalle.Enabled = false;
+            BarraPrincipal.Enabled = false;
+            bgwHilo.RunWorkerAsync();
+        }
 
         public ColaboradorAsociarConAreaDeTrabajo(string _conection, SAS_USUARIOS _user2, string _companyId, PrivilegesByUser privilege, SAS_ColaboradorAreaTrabajo oColaboradorPorAreaDetrabajo)
         {
@@ -184,7 +191,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = odetalleSelecionado.idcodigogeneral != null ? odetalleSelecionado.idcodigogeneral.Trim() : string.Empty;
             item.nombresCompletos = odetalleSelecionado.apenom != null ? odetalleSelecionado.apenom.Trim() : string.Empty;
-            gbPersonalArea.Enabled = true;
+            gbCabecera.Enabled = true;
             bgwHilo.RunWorkerAsync();
 
         }
@@ -201,7 +208,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = oColaboradorPorAreaDetrabajo.idcodigoGeneral != null ? oColaboradorPorAreaDetrabajo.idcodigoGeneral.Trim() : string.Empty;
             item.nombresCompletos = oColaboradorPorAreaDetrabajo.nombresCompletos != null ? oColaboradorPorAreaDetrabajo.nombresCompletos.Trim() : string.Empty;
-            gbPersonalArea.Enabled = true;
+            gbCabecera.Enabled = true;
             bgwHilo.RunWorkerAsync();
 
         }
@@ -219,7 +226,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 Globales.UsuarioSistema = "EAURAZO";
                 Globales.NombreUsuarioSistema = "ERICK AURAZO";
 
-               
+
 
 
 
@@ -238,9 +245,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             if (this.txtPersonal.Text.Trim() != string.Empty && this.txtPersonalID.Text.Trim() != string.Empty)
             {
                 PersonalID = txtPersonalID.Text.Trim();
-                btnBuscarPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoPlanillasPorTrabajadores where PersonalID = '", PersonalID,"'");
+                btnBuscarPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoPlanillasPorTrabajadores where PersonalID = '", PersonalID, "'");
             }
-            
+
 
         }
 
@@ -271,14 +278,36 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 {
                     item.EsJefe = 1;
                 }
+                string ASCD = this.txtValidar.Text.ToString().Trim();
+
+                item.Desde = (DateTime?)null;
+                item.Hasta = (DateTime?)null;
+                if (this.txtActivoDesde.Text.ToString().Trim() != ASCD)
+                {
+                    item.Desde = Convert.ToDateTime(txtActivoDesde.Text.Trim());
+                }
+
+                if (this.txtActivoHasta.Text.ToString().Trim() != ASCD  )
+                {
+                    if (this.txtActivoHasta.Text.ToString().Trim() != string.Empty)
+                    {
+                        item.Hasta = Convert.ToDateTime(txtActivoHasta.Text.Trim());
+                    }
+                    
+                }                
+                item.Item = 0;
+                item.CargoID = this.txtCargoID.Text;
+                item.PlanillaID = this.txtPlanillaID.Text;
+                item.ItemPlanilla = this.txtItemPlanillaID.Text;
+
 
                 modelo.AsociarAAreaDeTrabajo("SAS", item);
-                MessageBox.Show("Reigstro actualizado correctamente", "MENSAJE DEL SISTEMA");
+                MessageBox.Show("Confirmación de la operción exitosa" , "MENSAJE DEL SISTEMA");
 
             }
             else
             {
-
+                MessageBox.Show("La información registrada no se puede procesar, revisar los items ingresados y selecionados" + mensaje, "MENSAJE DEL SISTEMA");
             }
 
 
@@ -288,18 +317,18 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private string ValidarRegistroParaGrabar()
         {
-            string mensaje = "OK";
+            mensaje = "OK";
             string ASCD = this.txtValidar.Text.ToString().Trim();
 
 
             /*Validar caja de texto de personal*/
-            if (this.txtPersonalID.Text != String.Empty || (this.txtPersonal.Text != String.Empty))
+            if (this.txtPersonalID.Text == String.Empty || (this.txtPersonal.Text == String.Empty))
             {
                 mensaje += "\n Debe Ingresar código de Empleado con sus nombres correctos";
             }
 
             /*Validar caja de texto de Planilla*/
-            if (this.txtPlanillaID.Text != String.Empty || (this.txtPlanilla.Text != String.Empty))
+            if (this.txtPlanillaID.Text == String.Empty || (this.txtPlanilla.Text == String.Empty))
             {
                 mensaje += "\n Debe Ingresar ingresar una planilla para el colaborador";
             }
@@ -308,16 +337,20 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (this.txtPlanilaDesde.Text != null)
                 {
-                    if (this.txtPlanilaDesde.Text.ToString().Trim() != string.Empty)
+                    if (this.txtPlanilaDesde.Text.ToString().Trim() == string.Empty)
                     {
                         mensaje += "\n Las fechas de activación de está planilla deben estar en un rango válido";
                     }
                 }
             }
+            else
+            {
+                mensaje += "\n Las fechas de activación de está planilla deben estar en un rango válido";
+            }
 
 
             /*Validar caja de texto de ItemPlanilla*/
-            if (this.txtItemPlanillaID.Text != String.Empty || (this.txtItemPlanilla.Text != String.Empty))
+            if (this.txtItemPlanillaID.Text == String.Empty || (this.txtItemPlanilla.Text == String.Empty))
             {
                 mensaje += "\n la planilla seleccionada debe tener un item de planilla válido";
             }
@@ -326,70 +359,45 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             {
                 if (this.txtItemPlanillaDesde.Text != null)
                 {
-                    if (this.txtItemPlanillaDesde.Text.ToString().Trim() != string.Empty)
+                    if (this.txtItemPlanillaDesde.Text.ToString().Trim() == string.Empty)
                     {
                         mensaje += "\n Las fechas de activación del item planilla deben estar en un rango válido";
                     }
                 }
+            }
+            else
+            {
+                mensaje += "\n Las fechas de activación del item planilla deben estar en un rango válido";
             }
 
 
 
 
             /*Validar caja de texto de Gerencia*/
-            if (this.txtGerenciaCodigo.Text != String.Empty || (this.txtGerencia.Text != String.Empty))
+            if (this.txtGerenciaCodigo.Text == String.Empty || (this.txtGerencia.Text == String.Empty))
             {
                 mensaje += "\n Debe ingresar una gerencia válida";
             }
 
             /*Validar caja de texto de Area*/
-            if (this.txtAreaCodigo.Text != String.Empty || (this.txtArea.Text != String.Empty))
+            if (this.txtAreaCodigo.Text == String.Empty || (this.txtArea.Text == String.Empty))
             {
                 mensaje += "\n Debe ingresar un área de trabajo válida";
             }
 
             /*Validar caja de texto de Cargo*/
-            if (this.txtCargoID.Text != String.Empty || (this.txtCargo.Text != String.Empty))
+            if (this.txtCargoID.Text == String.Empty || (this.txtCargo.Text == String.Empty))
             {
                 mensaje += "\n Debe ingresar un cargo válido";
             }
 
 
-            
-
-
-
-
-
-            if (this.txtItemPlanillaDesde.Text != String.Empty /*|| (this.txtItemPlanillaHasta.Text != String.Empty)*/)
-            {
-                mensaje += "\n la planilla seleccionada debe tener una fecha de inicio válida";
-            }
-
-            
-
-
-            
-
-
-
-            
-
-
-            if (this.txtActivoDesde.Text != String.Empty || (this.txtActivoHasta.Text != String.Empty))
-            {
-                mensaje += "\n Las fechas de activación de está planilla deben estar en un rango válido";
-            }
-
-
-
-            
 
             if (this.txtActivoDesde.Text.ToString().Trim() != ASCD)
             {
                 if (this.txtActivoDesde.Text != null)
                 {
-                    if (this.txtActivoDesde.Text.ToString().Trim() != string.Empty)
+                    if (this.txtActivoDesde.Text.ToString().Trim() == string.Empty)
                     {
                         mensaje += "\n Las fechas de activación de está planilla deben estar en un rango válido";
                     }
@@ -482,7 +490,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 btnBuscarPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoPlanillasPorTrabajadores where PersonalID = '", PersonalID, "'");
             }
 
-            gbPersonalArea.Enabled = true;
+            dgvRegistro.DataSource = ListaHistorico.ToDataTable<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult>();
+            dgvRegistro.Refresh();
+
+            gbCabecera.Enabled = true;
+            gbDetalle.Enabled = true;
+            BarraPrincipal.Enabled = true;
+            progressBar.Visible = true;
             txtActivoHasta.Focus();
 
         }
@@ -495,7 +509,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         {
             if (txtPersonalID.Text.Trim() != string.Empty || txtPersonal.Text.Trim() != string.Empty)
             {
-                btnBuscarPlanilla.P_TablaConsulta = ("personal where idcodigogeneral = 'aaa'");
+                btnBuscarPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoPlanillasPorTrabajadores where PersonalID = '", PersonalID, "'");
                 btnBuscarPlanilla.Enabled = false;
                 txtPlanilla.ReadOnly = true;
                 txtPlanillaID.ReadOnly = true;
@@ -527,12 +541,13 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void txtPlanillaCodigo_Leave(object sender, EventArgs e)
         {
+            AsignarTablaDeBusquedaParaItemPlanilla();
 
         }
 
         private void txtPlanilla_Leave(object sender, EventArgs e)
         {
-
+            AsignarTablaDeBusquedaParaItemPlanilla();
         }
 
         private void txtItemPlanillaID_Leave(object sender, EventArgs e)
@@ -569,7 +584,8 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void LlenarCampoDeItemPlanilla()
         {
-
+            string FechaDeItemPlanilla = modelo.ObtenerFechaItemPlanillaDesdePersonalID(cadenaDeConexion, PersonalID);
+            txtItemPlanillaDesde.Text = FechaDeItemPlanilla;
         }
 
         private void txtGerenciaCodigo_TextChanged(object sender, EventArgs e)
@@ -613,6 +629,30 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         }
 
         private void btnBuscarPlanilla_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPlanillaID_KeyUp(object sender, KeyEventArgs e)
+        {
+            AsignarTablaDeBusquedaParaItemPlanilla();
+        }
+
+        private void AsignarTablaDeBusquedaParaItemPlanilla()
+        {
+            btnBuscarItemPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoItemPorTrabajadores where PersonalID = ''");
+            if (txtPersonalID.Text.Trim() != string.Empty && txtPersonal.Text.Trim() != string.Empty && txtPlanillaID.Text.Trim() != string.Empty && txtPlanilla.Text.Trim() != string.Empty)
+            {
+                btnBuscarItemPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoItemPorTrabajadores where PersonalID = '", PersonalID, "'");
+            }
+        }
+
+        private void txtPlanilla_KeyUp(object sender, KeyEventArgs e)
+        {
+            AsignarTablaDeBusquedaParaItemPlanilla();
+        }
+
+        private void btnActualizarLista_Click(object sender, EventArgs e)
         {
 
         }

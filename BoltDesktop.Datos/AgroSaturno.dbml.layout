@@ -551,16 +551,16 @@
         <elementListCompartment Id="ee23074d-8e19-4dab-aa6a-2b2c669dfdc4" absoluteBounds="15.515, 11.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3e7c61b0-b88c-4ab0-b942-bf9d00a94797" absoluteBounds="0.75, 6.75, 2, 1.7708968098958327">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoPlanillasPorTrabajadore" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a408032b-c4e3-4c5b-bb48-de74c702276c" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d2184a04-c179-41d0-ab82-611a78fbd335" absoluteBounds="3.75, 6.75, 2, 1.5785953776041666">
+    <classShape Id="a2093000-ffa8-4359-a4b5-372fb5f4ef7c" absoluteBounds="8.125, 7.875, 2, 1.7708968098958331">
       <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoItemPorTrabajadore" />
       <nestedChildShapes>
-        <elementListCompartment Id="3a3cb546-cd17-4a08-b8b3-ded78b32f6c9" absoluteBounds="3.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9a4fa492-3bcd-4026-b9f3-1f9443d23966" absoluteBounds="8.14, 8.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9ac4e25-96f4-45be-8f06-04a6473da183" absoluteBounds="3.375, 7.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoPlanillasPorTrabajadore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0fa231f-9a5a-41ce-8973-651b5404e96f" absoluteBounds="3.3899999999999997, 8.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

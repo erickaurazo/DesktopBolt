@@ -408,6 +408,25 @@ namespace Asistencia.Negocios
             return tipoRegistro;
         }
 
+        public string ObtenerFechaItemPlanillaDesdePersonalID(string cadenaDeConexion, string personalID)
+        {
+            string FechaItemPlanillaDesdePersonalID = string.Empty;
+            string cnx = ConfigurationManager.AppSettings[cadenaDeConexion].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                var Listado = Modelo.SAS_ListadoItemPorTrabajadores.Where(x => x.PersonalID == personalID).ToList();
+                if (Listado != null)
+                {
+                    if (Listado.ToList().Count > 0)
+                    {
+                        FechaItemPlanillaDesdePersonalID = Listado.ElementAt(0).Desde != null ? Listado.ElementAt(0).Desde : string.Empty;
+                    }
+                }
+            }
+
+            return FechaItemPlanillaDesdePersonalID;
+        }
+
         public string ObtenerFechaDePlanillaDesdePlanilla(string cadenaDeConexion, string personalID, string planillaID)
         {
             string FechaDePlanillaDesdePlanilla = string.Empty;
@@ -419,7 +438,7 @@ namespace Asistencia.Negocios
                 {
                     if (Listado.ToList().Count > 0)
                     {
-                        FechaDePlanillaDesdePlanilla = Listado.ElementAt(0).FECHA_INICIOPLANILLA != null ? Listado.ElementAt(0).FECHA_INICIOPLANILLA.Value.ToShortDateString() : string.Empty;
+                        FechaDePlanillaDesdePlanilla = Listado.ElementAt(0).FECHA_INICIOPLANILLA != null ? Listado.ElementAt(0).FECHA_INICIOPLANILLA : string.Empty;
                     }
                 }
             }
