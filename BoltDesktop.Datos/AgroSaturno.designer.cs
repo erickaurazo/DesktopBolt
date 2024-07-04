@@ -93,9 +93,6 @@ namespace Asistencia.Datos
     partial void InsertAREAS(AREAS instance);
     partial void UpdateAREAS(AREAS instance);
     partial void DeleteAREAS(AREAS instance);
-    partial void InsertSAS_ColaboradorAreaTrabajo(SAS_ColaboradorAreaTrabajo instance);
-    partial void UpdateSAS_ColaboradorAreaTrabajo(SAS_ColaboradorAreaTrabajo instance);
-    partial void DeleteSAS_ColaboradorAreaTrabajo(SAS_ColaboradorAreaTrabajo instance);
     partial void InsertSAS_ColaboradorGerencia(SAS_ColaboradorGerencia instance);
     partial void UpdateSAS_ColaboradorGerencia(SAS_ColaboradorGerencia instance);
     partial void DeleteSAS_ColaboradorGerencia(SAS_ColaboradorGerencia instance);
@@ -165,6 +162,9 @@ namespace Asistencia.Datos
     partial void InsertUSUARIO(USUARIO instance);
     partial void UpdateUSUARIO(USUARIO instance);
     partial void DeleteUSUARIO(USUARIO instance);
+    partial void InsertSAS_ColaboradorAreaTrabajo(SAS_ColaboradorAreaTrabajo instance);
+    partial void UpdateSAS_ColaboradorAreaTrabajo(SAS_ColaboradorAreaTrabajo instance);
+    partial void DeleteSAS_ColaboradorAreaTrabajo(SAS_ColaboradorAreaTrabajo instance);
     #endregion
 		
 		public AgroSaturnoDataContext() : 
@@ -402,14 +402,6 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<AREAS>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SAS_ColaboradorAreaTrabajo> SAS_ColaboradorAreaTrabajo
-		{
-			get
-			{
-				return this.GetTable<SAS_ColaboradorAreaTrabajo>();
 			}
 		}
 		
@@ -778,6 +770,38 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<USUARIO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_ColaboradorAreaTrabajo> SAS_ColaboradorAreaTrabajos
+		{
+			get
+			{
+				return this.GetTable<SAS_ColaboradorAreaTrabajo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_ColaboradorAreaTrabajoHistorico> SAS_ColaboradorAreaTrabajoHistoricos
+		{
+			get
+			{
+				return this.GetTable<SAS_ColaboradorAreaTrabajoHistorico>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_ListadoPlanillasPorTrabajadore> SAS_ListadoPlanillasPorTrabajadores
+		{
+			get
+			{
+				return this.GetTable<SAS_ListadoPlanillasPorTrabajadore>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SAS_ListadoItemPorTrabajadore> SAS_ListadoItemPorTrabajadores
+		{
+			get
+			{
+				return this.GetTable<SAS_ListadoItemPorTrabajadore>();
 			}
 		}
 		
@@ -23352,188 +23376,6 @@ namespace Asistencia.Datos
 		{
 			this.SendPropertyChanging();
 			entity.AREAS = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ColaboradorAreaTrabajo")]
-	public partial class SAS_ColaboradorAreaTrabajo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _idCodigoGeneral;
-		
-		private int _idGerencia;
-		
-		private string _idArea;
-		
-		private decimal _EsJefe;
-		
-		private decimal _EsGerente;
-		
-		private decimal _estado;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidCodigoGeneralChanging(string value);
-    partial void OnidCodigoGeneralChanged();
-    partial void OnidGerenciaChanging(int value);
-    partial void OnidGerenciaChanged();
-    partial void OnidAreaChanging(string value);
-    partial void OnidAreaChanged();
-    partial void OnEsJefeChanging(decimal value);
-    partial void OnEsJefeChanged();
-    partial void OnEsGerenteChanging(decimal value);
-    partial void OnEsGerenteChanged();
-    partial void OnestadoChanging(decimal value);
-    partial void OnestadoChanged();
-    #endregion
-		
-		public SAS_ColaboradorAreaTrabajo()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCodigoGeneral", DbType="Char(12) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string idCodigoGeneral
-		{
-			get
-			{
-				return this._idCodigoGeneral;
-			}
-			set
-			{
-				if ((this._idCodigoGeneral != value))
-				{
-					this.OnidCodigoGeneralChanging(value);
-					this.SendPropertyChanging();
-					this._idCodigoGeneral = value;
-					this.SendPropertyChanged("idCodigoGeneral");
-					this.OnidCodigoGeneralChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="Int NOT NULL")]
-		public int idGerencia
-		{
-			get
-			{
-				return this._idGerencia;
-			}
-			set
-			{
-				if ((this._idGerencia != value))
-				{
-					this.OnidGerenciaChanging(value);
-					this.SendPropertyChanging();
-					this._idGerencia = value;
-					this.SendPropertyChanged("idGerencia");
-					this.OnidGerenciaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string idArea
-		{
-			get
-			{
-				return this._idArea;
-			}
-			set
-			{
-				if ((this._idArea != value))
-				{
-					this.OnidAreaChanging(value);
-					this.SendPropertyChanging();
-					this._idArea = value;
-					this.SendPropertyChanged("idArea");
-					this.OnidAreaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsJefe", DbType="Decimal(1,0) NOT NULL")]
-		public decimal EsJefe
-		{
-			get
-			{
-				return this._EsJefe;
-			}
-			set
-			{
-				if ((this._EsJefe != value))
-				{
-					this.OnEsJefeChanging(value);
-					this.SendPropertyChanging();
-					this._EsJefe = value;
-					this.SendPropertyChanged("EsJefe");
-					this.OnEsJefeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsGerente", DbType="Decimal(1,0) NOT NULL")]
-		public decimal EsGerente
-		{
-			get
-			{
-				return this._EsGerente;
-			}
-			set
-			{
-				if ((this._EsGerente != value))
-				{
-					this.OnEsGerenteChanging(value);
-					this.SendPropertyChanging();
-					this._EsGerente = value;
-					this.SendPropertyChanged("EsGerente");
-					this.OnEsGerenteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0) NOT NULL")]
-		public decimal estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this.OnestadoChanging(value);
-					this.SendPropertyChanging();
-					this._estado = value;
-					this.SendPropertyChanged("estado");
-					this.OnestadoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -46485,6 +46327,779 @@ namespace Asistencia.Datos
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ColaboradorAreaTrabajo")]
+	public partial class SAS_ColaboradorAreaTrabajo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _idCodigoGeneral;
+		
+		private int _idGerencia;
+		
+		private string _idArea;
+		
+		private decimal _EsJefe;
+		
+		private decimal _EsGerente;
+		
+		private decimal _estado;
+		
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		private int _Item;
+		
+		private string _CargoID;
+		
+		private string _PlanillaID;
+		
+		private string _ItemPlanilla;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnidCodigoGeneralChanging(string value);
+    partial void OnidCodigoGeneralChanged();
+    partial void OnidGerenciaChanging(int value);
+    partial void OnidGerenciaChanged();
+    partial void OnidAreaChanging(string value);
+    partial void OnidAreaChanged();
+    partial void OnEsJefeChanging(decimal value);
+    partial void OnEsJefeChanged();
+    partial void OnEsGerenteChanging(decimal value);
+    partial void OnEsGerenteChanged();
+    partial void OnestadoChanging(decimal value);
+    partial void OnestadoChanged();
+    partial void OnDesdeChanging(System.Nullable<System.DateTime> value);
+    partial void OnDesdeChanged();
+    partial void OnHastaChanging(System.Nullable<System.DateTime> value);
+    partial void OnHastaChanged();
+    partial void OnItemChanging(int value);
+    partial void OnItemChanged();
+    partial void OnCargoIDChanging(string value);
+    partial void OnCargoIDChanged();
+    partial void OnPlanillaIDChanging(string value);
+    partial void OnPlanillaIDChanged();
+    partial void OnItemPlanillaChanging(string value);
+    partial void OnItemPlanillaChanged();
+    #endregion
+		
+		public SAS_ColaboradorAreaTrabajo()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCodigoGeneral", DbType="Char(12) NOT NULL", CanBeNull=false)]
+		public string idCodigoGeneral
+		{
+			get
+			{
+				return this._idCodigoGeneral;
+			}
+			set
+			{
+				if ((this._idCodigoGeneral != value))
+				{
+					this.OnidCodigoGeneralChanging(value);
+					this.SendPropertyChanging();
+					this._idCodigoGeneral = value;
+					this.SendPropertyChanged("idCodigoGeneral");
+					this.OnidCodigoGeneralChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="Int NOT NULL")]
+		public int idGerencia
+		{
+			get
+			{
+				return this._idGerencia;
+			}
+			set
+			{
+				if ((this._idGerencia != value))
+				{
+					this.OnidGerenciaChanging(value);
+					this.SendPropertyChanging();
+					this._idGerencia = value;
+					this.SendPropertyChanged("idGerencia");
+					this.OnidGerenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string idArea
+		{
+			get
+			{
+				return this._idArea;
+			}
+			set
+			{
+				if ((this._idArea != value))
+				{
+					this.OnidAreaChanging(value);
+					this.SendPropertyChanging();
+					this._idArea = value;
+					this.SendPropertyChanged("idArea");
+					this.OnidAreaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsJefe", DbType="Decimal(1,0) NOT NULL")]
+		public decimal EsJefe
+		{
+			get
+			{
+				return this._EsJefe;
+			}
+			set
+			{
+				if ((this._EsJefe != value))
+				{
+					this.OnEsJefeChanging(value);
+					this.SendPropertyChanging();
+					this._EsJefe = value;
+					this.SendPropertyChanged("EsJefe");
+					this.OnEsJefeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsGerente", DbType="Decimal(1,0) NOT NULL")]
+		public decimal EsGerente
+		{
+			get
+			{
+				return this._EsGerente;
+			}
+			set
+			{
+				if ((this._EsGerente != value))
+				{
+					this.OnEsGerenteChanging(value);
+					this.SendPropertyChanging();
+					this._EsGerente = value;
+					this.SendPropertyChanged("EsGerente");
+					this.OnEsGerenteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0) NOT NULL")]
+		public decimal estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this.OnDesdeChanging(value);
+					this.SendPropertyChanging();
+					this._Desde = value;
+					this.SendPropertyChanged("Desde");
+					this.OnDesdeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this.OnHastaChanging(value);
+					this.SendPropertyChanging();
+					this._Hasta = value;
+					this.SendPropertyChanged("Hasta");
+					this.OnHastaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Item
+		{
+			get
+			{
+				return this._Item;
+			}
+			set
+			{
+				if ((this._Item != value))
+				{
+					this.OnItemChanging(value);
+					this.SendPropertyChanging();
+					this._Item = value;
+					this.SendPropertyChanged("Item");
+					this.OnItemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoID", DbType="Char(3)")]
+		public string CargoID
+		{
+			get
+			{
+				return this._CargoID;
+			}
+			set
+			{
+				if ((this._CargoID != value))
+				{
+					this.OnCargoIDChanging(value);
+					this.SendPropertyChanging();
+					this._CargoID = value;
+					this.SendPropertyChanged("CargoID");
+					this.OnCargoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Char(3)")]
+		public string PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this.OnPlanillaIDChanging(value);
+					this.SendPropertyChanging();
+					this._PlanillaID = value;
+					this.SendPropertyChanged("PlanillaID");
+					this.OnPlanillaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanilla", DbType="Char(3)")]
+		public string ItemPlanilla
+		{
+			get
+			{
+				return this._ItemPlanilla;
+			}
+			set
+			{
+				if ((this._ItemPlanilla != value))
+				{
+					this.OnItemPlanillaChanging(value);
+					this.SendPropertyChanging();
+					this._ItemPlanilla = value;
+					this.SendPropertyChanged("ItemPlanilla");
+					this.OnItemPlanillaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ColaboradorAreaTrabajoHistorico")]
+	public partial class SAS_ColaboradorAreaTrabajoHistorico
+	{
+		
+		private int _ID;
+		
+		private string _idCodigoGeneral;
+		
+		private System.Nullable<int> _idGerencia;
+		
+		private string _idArea;
+		
+		private System.Nullable<decimal> _EsJefe;
+		
+		private System.Nullable<decimal> _EsGerente;
+		
+		private System.Nullable<decimal> _estado;
+		
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		private System.Nullable<int> _Item;
+		
+		private string _CargoID;
+		
+		private string _PlanillaID;
+		
+		private string _ItemPlanilla;
+		
+		public SAS_ColaboradorAreaTrabajoHistorico()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCodigoGeneral", DbType="Char(12) NOT NULL", CanBeNull=false)]
+		public string idCodigoGeneral
+		{
+			get
+			{
+				return this._idCodigoGeneral;
+			}
+			set
+			{
+				if ((this._idCodigoGeneral != value))
+				{
+					this._idCodigoGeneral = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="Int")]
+		public System.Nullable<int> idGerencia
+		{
+			get
+			{
+				return this._idGerencia;
+			}
+			set
+			{
+				if ((this._idGerencia != value))
+				{
+					this._idGerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="Char(3)")]
+		public string idArea
+		{
+			get
+			{
+				return this._idArea;
+			}
+			set
+			{
+				if ((this._idArea != value))
+				{
+					this._idArea = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsJefe", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> EsJefe
+		{
+			get
+			{
+				return this._EsJefe;
+			}
+			set
+			{
+				if ((this._EsJefe != value))
+				{
+					this._EsJefe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsGerente", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> EsGerente
+		{
+			get
+			{
+				return this._EsGerente;
+			}
+			set
+			{
+				if ((this._EsGerente != value))
+				{
+					this._EsGerente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0)")]
+		public System.Nullable<decimal> estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item", DbType="Int")]
+		public System.Nullable<int> Item
+		{
+			get
+			{
+				return this._Item;
+			}
+			set
+			{
+				if ((this._Item != value))
+				{
+					this._Item = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoID", DbType="Char(3)")]
+		public string CargoID
+		{
+			get
+			{
+				return this._CargoID;
+			}
+			set
+			{
+				if ((this._CargoID != value))
+				{
+					this._CargoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Char(3)")]
+		public string PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanilla", DbType="Char(3)")]
+		public string ItemPlanilla
+		{
+			get
+			{
+				return this._ItemPlanilla;
+			}
+			set
+			{
+				if ((this._ItemPlanilla != value))
+				{
+					this._ItemPlanilla = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ListadoPlanillasPorTrabajadores")]
+	public partial class SAS_ListadoPlanillasPorTrabajadore
+	{
+		
+		private string _PlanillaID;
+		
+		private string _Descripcion;
+		
+		private string _PersonalID;
+		
+		private System.Nullable<System.DateTime> _FECHA_INICIOPLANILLA;
+		
+		private System.Nullable<System.DateTime> _FECHA_FINPLANILLA;
+		
+		public SAS_ListadoPlanillasPorTrabajadore()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="VarChar(3)")]
+		public string PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(80)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalID", DbType="VarChar(8)")]
+		public string PersonalID
+		{
+			get
+			{
+				return this._PersonalID;
+			}
+			set
+			{
+				if ((this._PersonalID != value))
+				{
+					this._PersonalID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_INICIOPLANILLA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA_INICIOPLANILLA
+		{
+			get
+			{
+				return this._FECHA_INICIOPLANILLA;
+			}
+			set
+			{
+				if ((this._FECHA_INICIOPLANILLA != value))
+				{
+					this._FECHA_INICIOPLANILLA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_FINPLANILLA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA_FINPLANILLA
+		{
+			get
+			{
+				return this._FECHA_FINPLANILLA;
+			}
+			set
+			{
+				if ((this._FECHA_FINPLANILLA != value))
+				{
+					this._FECHA_FINPLANILLA = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SAS_ListadoItemPorTrabajadores")]
+	public partial class SAS_ListadoItemPorTrabajadore
+	{
+		
+		private string _PersonalID;
+		
+		private string _ITEM;
+		
+		private System.DateTime _Desde;
+		
+		private System.Nullable<System.DateTime> _Hasta;
+		
+		public SAS_ListadoItemPorTrabajadore()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalID", DbType="VarChar(8)")]
+		public string PersonalID
+		{
+			get
+			{
+				return this._PersonalID;
+			}
+			set
+			{
+				if ((this._PersonalID != value))
+				{
+					this._PersonalID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITEM", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string ITEM
+		{
+			get
+			{
+				return this._ITEM;
+			}
+			set
+			{
+				if ((this._ITEM != value))
+				{
+					this._ITEM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="DateTime NOT NULL")]
+		public System.DateTime Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
 			}
 		}
 	}

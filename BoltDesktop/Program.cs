@@ -40,7 +40,7 @@ namespace Asistencia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new ConvertirImagenesPGNtoJPG());
-            Application.Run(new RegistroDeCapacitacionPorColaborador());
+            Application.Run(new ColaboradoresListado());
             //Application.Run(new Menu());
 
         }

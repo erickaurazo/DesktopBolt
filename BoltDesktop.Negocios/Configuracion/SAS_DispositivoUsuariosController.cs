@@ -245,6 +245,19 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
+        public List<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult> ObtenerListadoHistoricoEnPlanillas(string cadenaDeConexion, string personalID)
+        {
+            List<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult> listaHistorico = new List<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult>();
+            string cnx = ConfigurationManager.AppSettings[cadenaDeConexion].ToString();
+            using (ITDContextDataContext Modelo = new ITDContextDataContext(cnx))
+            {
+                listaHistorico = Modelo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistorico(personalID).ToList();
+            }
+
+            return listaHistorico;
+
+        }
+
         public List<SAS_ListadoColaboradoresByDispositivoByCodigoResult> ListadoColaboradoresByDispositivoByCodigo(string conection, int codigo)
         {
             List<SAS_ListadoColaboradoresByDispositivoByCodigoResult> resultado = new List<SAS_ListadoColaboradoresByDispositivoByCodigoResult>();
@@ -395,6 +408,25 @@ namespace Asistencia.Negocios
             return tipoRegistro;
         }
 
+        public string ObtenerFechaDePlanillaDesdePlanilla(string cadenaDeConexion, string personalID, string planillaID)
+        {
+            string FechaDePlanillaDesdePlanilla = string.Empty;
+            string cnx = ConfigurationManager.AppSettings[cadenaDeConexion].ToString();
+            using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
+            {
+                var Listado = Modelo.SAS_ListadoPlanillasPorTrabajadores.Where(x => x.PersonalID == personalID && x.PlanillaID == planillaID).ToList();
+                if (Listado != null)
+                {
+                    if (Listado.ToList().Count > 0)
+                    {
+                        FechaDePlanillaDesdePlanilla = Listado.ElementAt(0).FECHA_INICIOPLANILLA != null ? Listado.ElementAt(0).FECHA_INICIOPLANILLA.Value.ToShortDateString() : string.Empty;
+                    }
+                }
+            }
+
+            return FechaDePlanillaDesdePlanilla;
+        }
+
         public void AsociarAAreaDeTrabajo(string conection, SAS_ColaboradorAreaTrabajo item)
         {
             string cnx = ConfigurationManager.AppSettings[conection].ToString();
@@ -402,7 +434,7 @@ namespace Asistencia.Negocios
             {
                 using (TransactionScope Scope = new TransactionScope())
                 {
-                    var resultado = Modelo.SAS_ColaboradorAreaTrabajo.Where(x => x.idCodigoGeneral == item.idCodigoGeneral).ToList();
+                    var resultado = Modelo.SAS_ColaboradorAreaTrabajos.Where(x => x.idCodigoGeneral == item.idCodigoGeneral).ToList();
                     if (resultado != null)
                     {
                         if (resultado.ToList().Count == 0)
@@ -415,8 +447,13 @@ namespace Asistencia.Negocios
                             oRegistro.idGerencia = item.idGerencia;
                             oRegistro.EsJefe = item.EsJefe;
                             oRegistro.EsGerente = item.EsGerente;
+                            oRegistro.PlanillaID = item.PlanillaID;
+                            oRegistro.ItemPlanilla = item.ItemPlanilla;
+                            oRegistro.CargoID = item.CargoID;
+                            oRegistro.Desde = item.Desde;
+                            oRegistro.Hasta = item.Hasta;
 
-                            Modelo.SAS_ColaboradorAreaTrabajo.InsertOnSubmit(oRegistro);
+                            Modelo.SAS_ColaboradorAreaTrabajos.InsertOnSubmit(oRegistro);
                             Modelo.SubmitChanges();
                             #endregion
                         }
@@ -432,6 +469,11 @@ namespace Asistencia.Negocios
                             oRegistro.idGerencia = item.idGerencia;
                             oRegistro.EsJefe = item.EsJefe;
                             oRegistro.EsGerente = item.EsGerente;
+                            oRegistro.PlanillaID = item.PlanillaID;
+                            oRegistro.ItemPlanilla = item.ItemPlanilla;
+                            oRegistro.CargoID = item.CargoID;
+                            oRegistro.Desde = item.Desde;
+                            oRegistro.Hasta = item.Hasta;
                             Modelo.SubmitChanges();
                             #endregion
                         }
@@ -450,7 +492,7 @@ namespace Asistencia.Negocios
             string cnx = ConfigurationManager.AppSettings[conection != null ? conection : "SAS"].ToString();
             using (AgroSaturnoDataContext Modelo = new AgroSaturnoDataContext(cnx))
             {
-                var resultQuery = Modelo.SAS_ColaboradorAreaTrabajo.Where(x => x.idCodigoGeneral.Trim().ToUpper() == item.idCodigoGeneral).ToList();
+                var resultQuery = Modelo.SAS_ColaboradorAreaTrabajos.Where(x => x.idCodigoGeneral.Trim().ToUpper() == item.idCodigoGeneral).ToList();
 
                 if (resultQuery != null)
                 {

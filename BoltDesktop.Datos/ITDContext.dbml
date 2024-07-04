@@ -3940,20 +3940,6 @@
       <Column Name="frecuencia" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal" Method="SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal">
-    <Parameter Name="idcodigoGeneral" Type="System.String" DbType="VarChar(14)" />
-    <ElementType Name="SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult">
-      <Column Name="idcodigoGeneral" Type="System.String" DbType="Char(12)" CanBeNull="true" />
-      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(160) NOT NULL" CanBeNull="false" />
-      <Column Name="idGerencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="gerencia" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="idArea" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="area" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="EsJefe" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="EsGerente" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-      <Column Name="estado" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SAS_PersonalExternoDetalleById" Method="SAS_PersonalExternoDetalleById">
     <Parameter Name="int" Type="System.Int32" DbType="Int" />
     <ElementType Name="SAS_PersonalExternoDetalleByIdResult">
@@ -4284,6 +4270,59 @@
       <Column Name="FechaRegistro" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="lineaCelular" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="PlanDeTelefonia" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal" Method="SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal">
+    <Parameter Name="idcodigoGeneral" Type="System.String" DbType="VarChar(14)" />
+    <ElementType Name="SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult">
+      <Column Name="idcodigoGeneral" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(160) NOT NULL" CanBeNull="false" />
+      <Column Name="idGerencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gerencia" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EsJefe" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EsGerente" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CargoID" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanillaID" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Planilla" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanillaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PlanillaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ItemPlanilla" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemPlanillaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ItemPlanillaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistorico" Method="SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistorico">
+    <Parameter Name="idcodigoGeneral" Type="System.String" DbType="VarChar(14)" />
+    <ElementType Name="SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idcodigoGeneral" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(151) NOT NULL" CanBeNull="false" />
+      <Column Name="idGerencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gerencia" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="idArea" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EsJefe" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EsGerente" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CargoID" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanillaID" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Planilla" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanillaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PlanillaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ItemPlanilla" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemPlanillaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ItemPlanillaFinsas" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

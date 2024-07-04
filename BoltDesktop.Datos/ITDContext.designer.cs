@@ -1669,13 +1669,6 @@ namespace Asistencia.Datos
 			return ((ISingleResult<SAS_DispositivoDocumentoByDeviceResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal")]
-		public ISingleResult<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult> SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(14)")] string idcodigoGeneral)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idcodigoGeneral);
-			return ((ISingleResult<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_PersonalExternoDetalleById")]
 		public ISingleResult<SAS_PersonalExternoDetalleByIdResult> SAS_PersonalExternoDetalleById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="int", DbType="Int")] System.Nullable<int> @int)
 		{
@@ -1765,6 +1758,20 @@ namespace Asistencia.Datos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lineaCelularID);
 			return ((ISingleResult<SAS_ListadoDeLineasCelularesCoporativasHistoricoPlanByLineaCelularIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal")]
+		public ISingleResult<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult> SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(14)")] string idcodigoGeneral)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idcodigoGeneral);
+			return ((ISingleResult<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistorico")]
+		public ISingleResult<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult> SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistorico([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(14)")] string idcodigoGeneral)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idcodigoGeneral);
+			return ((ISingleResult<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -66617,176 +66624,6 @@ namespace Asistencia.Datos
 		}
 	}
 	
-	public partial class SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult
-	{
-		
-		private string _idcodigoGeneral;
-		
-		private string _nombresCompletos;
-		
-		private int _idGerencia;
-		
-		private string _gerencia;
-		
-		private string _idArea;
-		
-		private string _area;
-		
-		private System.Nullable<decimal> _EsJefe;
-		
-		private System.Nullable<decimal> _EsGerente;
-		
-		private System.Nullable<decimal> _estado;
-		
-		public SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idcodigoGeneral", DbType="Char(12)")]
-		public string idcodigoGeneral
-		{
-			get
-			{
-				return this._idcodigoGeneral;
-			}
-			set
-			{
-				if ((this._idcodigoGeneral != value))
-				{
-					this._idcodigoGeneral = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombresCompletos", DbType="VarChar(160) NOT NULL", CanBeNull=false)]
-		public string nombresCompletos
-		{
-			get
-			{
-				return this._nombresCompletos;
-			}
-			set
-			{
-				if ((this._nombresCompletos != value))
-				{
-					this._nombresCompletos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="Int NOT NULL")]
-		public int idGerencia
-		{
-			get
-			{
-				return this._idGerencia;
-			}
-			set
-			{
-				if ((this._idGerencia != value))
-				{
-					this._idGerencia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gerencia", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string gerencia
-		{
-			get
-			{
-				return this._gerencia;
-			}
-			set
-			{
-				if ((this._gerencia != value))
-				{
-					this._gerencia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string idArea
-		{
-			get
-			{
-				return this._idArea;
-			}
-			set
-			{
-				if ((this._idArea != value))
-				{
-					this._idArea = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_area", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string area
-		{
-			get
-			{
-				return this._area;
-			}
-			set
-			{
-				if ((this._area != value))
-				{
-					this._area = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsJefe", DbType="Decimal(1,0)")]
-		public System.Nullable<decimal> EsJefe
-		{
-			get
-			{
-				return this._EsJefe;
-			}
-			set
-			{
-				if ((this._EsJefe != value))
-				{
-					this._EsJefe = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsGerente", DbType="Decimal(1,0)")]
-		public System.Nullable<decimal> EsGerente
-		{
-			get
-			{
-				return this._EsGerente;
-			}
-			set
-			{
-				if ((this._EsGerente != value))
-				{
-					this._EsGerente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Decimal(1,0)")]
-		public System.Nullable<decimal> estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this._estado = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SAS_PersonalExternoDetalleByIdResult
 	{
 		
@@ -71692,6 +71529,796 @@ namespace Asistencia.Datos
 				if ((this._PlanDeTelefonia != value))
 				{
 					this._PlanDeTelefonia = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult
+	{
+		
+		private string _idcodigoGeneral;
+		
+		private string _nombresCompletos;
+		
+		private int _idGerencia;
+		
+		private string _gerencia;
+		
+		private string _idArea;
+		
+		private string _area;
+		
+		private decimal _EsJefe;
+		
+		private decimal _EsGerente;
+		
+		private decimal _Estado;
+		
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private System.Nullable<System.DateTime> _hasta;
+		
+		private int _Item;
+		
+		private string _CargoID;
+		
+		private string _Cargo;
+		
+		private string _PlanillaID;
+		
+		private string _Planilla;
+		
+		private System.Nullable<System.DateTime> _PlanillaInicio;
+		
+		private System.Nullable<System.DateTime> _PlanillaFin;
+		
+		private string _ItemPlanilla;
+		
+		private System.Nullable<System.DateTime> _ItemPlanillaInicio;
+		
+		private System.Nullable<System.DateTime> _ItemPlanillaFin;
+		
+		public SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idcodigoGeneral", DbType="VarChar(12)")]
+		public string idcodigoGeneral
+		{
+			get
+			{
+				return this._idcodigoGeneral;
+			}
+			set
+			{
+				if ((this._idcodigoGeneral != value))
+				{
+					this._idcodigoGeneral = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombresCompletos", DbType="VarChar(160) NOT NULL", CanBeNull=false)]
+		public string nombresCompletos
+		{
+			get
+			{
+				return this._nombresCompletos;
+			}
+			set
+			{
+				if ((this._nombresCompletos != value))
+				{
+					this._nombresCompletos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="Int NOT NULL")]
+		public int idGerencia
+		{
+			get
+			{
+				return this._idGerencia;
+			}
+			set
+			{
+				if ((this._idGerencia != value))
+				{
+					this._idGerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gerencia", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string gerencia
+		{
+			get
+			{
+				return this._gerencia;
+			}
+			set
+			{
+				if ((this._gerencia != value))
+				{
+					this._gerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string idArea
+		{
+			get
+			{
+				return this._idArea;
+			}
+			set
+			{
+				if ((this._idArea != value))
+				{
+					this._idArea = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_area", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string area
+		{
+			get
+			{
+				return this._area;
+			}
+			set
+			{
+				if ((this._area != value))
+				{
+					this._area = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsJefe", DbType="Decimal(1,0) NOT NULL")]
+		public decimal EsJefe
+		{
+			get
+			{
+				return this._EsJefe;
+			}
+			set
+			{
+				if ((this._EsJefe != value))
+				{
+					this._EsJefe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsGerente", DbType="Decimal(1,0) NOT NULL")]
+		public decimal EsGerente
+		{
+			get
+			{
+				return this._EsGerente;
+			}
+			set
+			{
+				if ((this._EsGerente != value))
+				{
+					this._EsGerente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Decimal(1,0) NOT NULL")]
+		public decimal Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> hasta
+		{
+			get
+			{
+				return this._hasta;
+			}
+			set
+			{
+				if ((this._hasta != value))
+				{
+					this._hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item", DbType="Int NOT NULL")]
+		public int Item
+		{
+			get
+			{
+				return this._Item;
+			}
+			set
+			{
+				if ((this._Item != value))
+				{
+					this._Item = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoID", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string CargoID
+		{
+			get
+			{
+				return this._CargoID;
+			}
+			set
+			{
+				if ((this._CargoID != value))
+				{
+					this._CargoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Cargo
+		{
+			get
+			{
+				return this._Cargo;
+			}
+			set
+			{
+				if ((this._Cargo != value))
+				{
+					this._Cargo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Planilla", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Planilla
+		{
+			get
+			{
+				return this._Planilla;
+			}
+			set
+			{
+				if ((this._Planilla != value))
+				{
+					this._Planilla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaInicio", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PlanillaInicio
+		{
+			get
+			{
+				return this._PlanillaInicio;
+			}
+			set
+			{
+				if ((this._PlanillaInicio != value))
+				{
+					this._PlanillaInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaFin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PlanillaFin
+		{
+			get
+			{
+				return this._PlanillaFin;
+			}
+			set
+			{
+				if ((this._PlanillaFin != value))
+				{
+					this._PlanillaFin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanilla", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string ItemPlanilla
+		{
+			get
+			{
+				return this._ItemPlanilla;
+			}
+			set
+			{
+				if ((this._ItemPlanilla != value))
+				{
+					this._ItemPlanilla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanillaInicio", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ItemPlanillaInicio
+		{
+			get
+			{
+				return this._ItemPlanillaInicio;
+			}
+			set
+			{
+				if ((this._ItemPlanillaInicio != value))
+				{
+					this._ItemPlanillaInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanillaFin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ItemPlanillaFin
+		{
+			get
+			{
+				return this._ItemPlanillaFin;
+			}
+			set
+			{
+				if ((this._ItemPlanillaFin != value))
+				{
+					this._ItemPlanillaFin = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult
+	{
+		
+		private int _ID;
+		
+		private string _idcodigoGeneral;
+		
+		private string _nombresCompletos;
+		
+		private int _idGerencia;
+		
+		private string _gerencia;
+		
+		private string _idArea;
+		
+		private string _area;
+		
+		private decimal _EsJefe;
+		
+		private decimal _EsGerente;
+		
+		private decimal _Estado;
+		
+		private System.Nullable<System.DateTime> _Desde;
+		
+		private System.Nullable<System.DateTime> _hasta;
+		
+		private int _Item;
+		
+		private string _CargoID;
+		
+		private string _Cargo;
+		
+		private string _PlanillaID;
+		
+		private string _Planilla;
+		
+		private System.Nullable<System.DateTime> _PlanillaInicio;
+		
+		private System.Nullable<System.DateTime> _PlanillaFin;
+		
+		private string _ItemPlanilla;
+		
+		private System.Nullable<System.DateTime> _ItemPlanillaInicio;
+		
+		private System.Nullable<System.DateTime> _ItemPlanillaFinsas;
+		
+		public SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idcodigoGeneral", DbType="VarChar(12)")]
+		public string idcodigoGeneral
+		{
+			get
+			{
+				return this._idcodigoGeneral;
+			}
+			set
+			{
+				if ((this._idcodigoGeneral != value))
+				{
+					this._idcodigoGeneral = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombresCompletos", DbType="VarChar(151) NOT NULL", CanBeNull=false)]
+		public string nombresCompletos
+		{
+			get
+			{
+				return this._nombresCompletos;
+			}
+			set
+			{
+				if ((this._nombresCompletos != value))
+				{
+					this._nombresCompletos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGerencia", DbType="Int NOT NULL")]
+		public int idGerencia
+		{
+			get
+			{
+				return this._idGerencia;
+			}
+			set
+			{
+				if ((this._idGerencia != value))
+				{
+					this._idGerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gerencia", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string gerencia
+		{
+			get
+			{
+				return this._gerencia;
+			}
+			set
+			{
+				if ((this._gerencia != value))
+				{
+					this._gerencia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArea", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string idArea
+		{
+			get
+			{
+				return this._idArea;
+			}
+			set
+			{
+				if ((this._idArea != value))
+				{
+					this._idArea = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_area", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string area
+		{
+			get
+			{
+				return this._area;
+			}
+			set
+			{
+				if ((this._area != value))
+				{
+					this._area = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsJefe", DbType="Decimal(1,0) NOT NULL")]
+		public decimal EsJefe
+		{
+			get
+			{
+				return this._EsJefe;
+			}
+			set
+			{
+				if ((this._EsJefe != value))
+				{
+					this._EsJefe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsGerente", DbType="Decimal(1,0) NOT NULL")]
+		public decimal EsGerente
+		{
+			get
+			{
+				return this._EsGerente;
+			}
+			set
+			{
+				if ((this._EsGerente != value))
+				{
+					this._EsGerente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Decimal(1,0) NOT NULL")]
+		public decimal Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Desde", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> Desde
+		{
+			get
+			{
+				return this._Desde;
+			}
+			set
+			{
+				if ((this._Desde != value))
+				{
+					this._Desde = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasta", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> hasta
+		{
+			get
+			{
+				return this._hasta;
+			}
+			set
+			{
+				if ((this._hasta != value))
+				{
+					this._hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item", DbType="Int NOT NULL")]
+		public int Item
+		{
+			get
+			{
+				return this._Item;
+			}
+			set
+			{
+				if ((this._Item != value))
+				{
+					this._Item = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CargoID", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string CargoID
+		{
+			get
+			{
+				return this._CargoID;
+			}
+			set
+			{
+				if ((this._CargoID != value))
+				{
+					this._CargoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Cargo
+		{
+			get
+			{
+				return this._Cargo;
+			}
+			set
+			{
+				if ((this._Cargo != value))
+				{
+					this._Cargo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Planilla", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Planilla
+		{
+			get
+			{
+				return this._Planilla;
+			}
+			set
+			{
+				if ((this._Planilla != value))
+				{
+					this._Planilla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaInicio", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PlanillaInicio
+		{
+			get
+			{
+				return this._PlanillaInicio;
+			}
+			set
+			{
+				if ((this._PlanillaInicio != value))
+				{
+					this._PlanillaInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaFin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PlanillaFin
+		{
+			get
+			{
+				return this._PlanillaFin;
+			}
+			set
+			{
+				if ((this._PlanillaFin != value))
+				{
+					this._PlanillaFin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanilla", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string ItemPlanilla
+		{
+			get
+			{
+				return this._ItemPlanilla;
+			}
+			set
+			{
+				if ((this._ItemPlanilla != value))
+				{
+					this._ItemPlanilla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanillaInicio", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ItemPlanillaInicio
+		{
+			get
+			{
+				return this._ItemPlanillaInicio;
+			}
+			set
+			{
+				if ((this._ItemPlanillaInicio != value))
+				{
+					this._ItemPlanillaInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPlanillaFinsas", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ItemPlanillaFinsas
+		{
+			get
+			{
+				return this._ItemPlanillaFinsas;
+			}
+			set
+			{
+				if ((this._ItemPlanillaFinsas != value))
+				{
+					this._ItemPlanillaFinsas = value;
 				}
 			}
 		}

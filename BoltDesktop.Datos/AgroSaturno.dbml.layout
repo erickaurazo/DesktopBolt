@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 32.875, 8.5" name="AgroSaturno">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 32.875, 12.25" name="AgroSaturno">
   <DataContextMoniker Name="/AgroSaturnoDataContext" />
   <nestedChildShapes>
     <classShape Id="e444da1b-1807-427d-9edd-e09e247658e5" isExpanded="false" absoluteBounds="8.75, 1.5, 2.625, 0.44999999999999929">
@@ -156,12 +156,6 @@
       <DataClassMoniker Name="/AgroSaturnoDataContext/AREAS" />
       <nestedChildShapes>
         <elementListCompartment Id="77cdf787-d857-48be-95c8-9db33f3e276d" absoluteBounds="0.51500000059604645, 1.3350000008940697, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="94e8ade6-455e-442d-a1af-42addc6b0ba0" isExpanded="false" absoluteBounds="15.375, 1.625, 3.5, 0.44999999999999929">
-      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ColaboradorAreaTrabajo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6dd475c6-d8af-414a-a0c4-7fb79438b6eb" absoluteBounds="15.39, 2.0850000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="2c0ee279-fdb2-4a5c-833f-b29994bf37cf" isExpanded="false" absoluteBounds="19.625, 1.625, 3.25, 0.44999999999999929">
@@ -543,6 +537,30 @@
       <DataClassMoniker Name="/AgroSaturnoDataContext/USUARIO" />
       <nestedChildShapes>
         <elementListCompartment Id="a4cfe5f4-fb80-483a-8378-ed5ab9ff84fe" absoluteBounds="5.89, 5.71, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1131ff66-7d7f-4373-a29c-60ed8dbbbdc4" isExpanded="false" absoluteBounds="15.5, 9.875, 2.625, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ColaboradorAreaTrabajo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6288be1-d664-49bf-b2af-6187b7baeac2" absoluteBounds="15.515, 10.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c75a7bcf-d121-4c8e-9794-c8eceb3b8608" isExpanded="false" absoluteBounds="15.5, 11.5, 2.625, 0.45">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ColaboradorAreaTrabajoHistorico" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee23074d-8e19-4dab-aa6a-2b2c669dfdc4" absoluteBounds="15.515, 11.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e7c61b0-b88c-4ab0-b942-bf9d00a94797" absoluteBounds="0.75, 6.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoPlanillasPorTrabajadore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a408032b-c4e3-4c5b-bb48-de74c702276c" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2184a04-c179-41d0-ab82-611a78fbd335" absoluteBounds="3.75, 6.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AgroSaturnoDataContext/SAS_ListadoItemPorTrabajadore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a3cb546-cd17-4a08-b8b3-ded78b32f6c9" absoluteBounds="3.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

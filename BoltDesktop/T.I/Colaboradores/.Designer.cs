@@ -95,8 +95,8 @@
             this.btnVistaPrevia01 = new Telerik.WinControls.UI.CommandBarButton();
             this.btnImprimir = new Telerik.WinControls.UI.CommandBarButton();
             this.btnElegirColumnas = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnFiltro = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnResaltador = new Telerik.WinControls.UI.CommandBarButton();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
@@ -134,17 +134,17 @@
             gridViewTextBoxColumn1.FieldName = "idcodigogeneral";
             gridViewTextBoxColumn1.HeaderText = "Código";
             gridViewTextBoxColumn1.Name = "chidcodigogeneral";
-            gridViewTextBoxColumn1.Width = 49;
+            gridViewTextBoxColumn1.Width = 64;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "nrodocumento";
             gridViewTextBoxColumn2.HeaderText = "Nro. Doc.";
             gridViewTextBoxColumn2.Name = "chnrodocumento";
-            gridViewTextBoxColumn2.Width = 67;
+            gridViewTextBoxColumn2.Width = 87;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "apenom";
             gridViewTextBoxColumn3.HeaderText = "Colaborador";
             gridViewTextBoxColumn3.Name = "chapenom";
-            gridViewTextBoxColumn3.Width = 234;
+            gridViewTextBoxColumn3.Width = 305;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "a_paterno";
             gridViewTextBoxColumn4.HeaderText = "a_paterno";
@@ -167,7 +167,7 @@
             gridViewTextBoxColumn7.FieldName = "sexo";
             gridViewTextBoxColumn7.HeaderText = "Sexo";
             gridViewTextBoxColumn7.Name = "chsexo";
-            gridViewTextBoxColumn7.Width = 39;
+            gridViewTextBoxColumn7.Width = 52;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "afp_dsc";
             gridViewTextBoxColumn8.HeaderText = "afp_dsc";
@@ -202,7 +202,7 @@
             gridViewTextBoxColumn13.FieldName = "dsc_planilla";
             gridViewTextBoxColumn13.HeaderText = "Planilla";
             gridViewTextBoxColumn13.Name = "chdsc_planilla";
-            gridViewTextBoxColumn13.Width = 99;
+            gridViewTextBoxColumn13.Width = 131;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "NroPlanAct";
             gridViewTextBoxColumn14.HeaderText = "NroPlanAct";
@@ -219,17 +219,17 @@
             gridViewTextBoxColumn16.FieldName = "gerencia";
             gridViewTextBoxColumn16.HeaderText = "Gerencia";
             gridViewTextBoxColumn16.Name = "chgerencia";
-            gridViewTextBoxColumn16.Width = 135;
+            gridViewTextBoxColumn16.Width = 174;
             gridViewTextBoxColumn17.EnableExpressionEditor = false;
             gridViewTextBoxColumn17.FieldName = "area";
             gridViewTextBoxColumn17.HeaderText = "Área";
             gridViewTextBoxColumn17.Name = "charea";
-            gridViewTextBoxColumn17.Width = 125;
+            gridViewTextBoxColumn17.Width = 162;
             gridViewTextBoxColumn18.EnableExpressionEditor = false;
             gridViewTextBoxColumn18.FieldName = "cargo";
             gridViewTextBoxColumn18.HeaderText = "Cargo";
             gridViewTextBoxColumn18.Name = "chcargo";
-            gridViewTextBoxColumn18.Width = 128;
+            gridViewTextBoxColumn18.Width = 166;
             gridViewTextBoxColumn19.EnableExpressionEditor = false;
             gridViewTextBoxColumn19.FieldName = "personalexterno";
             gridViewTextBoxColumn19.HeaderText = "Es externo";
@@ -323,13 +323,15 @@
             gridViewTextBoxColumn34.EnableExpressionEditor = false;
             gridViewTextBoxColumn34.FieldName = "lineaCorporativo";
             gridViewTextBoxColumn34.HeaderText = "Línea Corp.";
+            gridViewTextBoxColumn34.IsVisible = false;
             gridViewTextBoxColumn34.Name = "chlineaCorporativo";
-            gridViewTextBoxColumn34.Width = 67;
+            gridViewTextBoxColumn34.Width = 32;
             gridViewTextBoxColumn35.EnableExpressionEditor = false;
             gridViewTextBoxColumn35.FieldName = "correcorporativo";
             gridViewTextBoxColumn35.HeaderText = "Email Corp.";
+            gridViewTextBoxColumn35.IsVisible = false;
             gridViewTextBoxColumn35.Name = "chcorrecorporativo";
-            gridViewTextBoxColumn35.Width = 229;
+            gridViewTextBoxColumn35.Width = 117;
             gridViewTextBoxColumn36.EnableExpressionEditor = false;
             gridViewTextBoxColumn36.FieldName = "lineaCelular";
             gridViewTextBoxColumn36.HeaderText = "lineaCelular";
@@ -340,7 +342,7 @@
             gridViewTextBoxColumn37.FieldName = "estado";
             gridViewTextBoxColumn37.HeaderText = "Estado";
             gridViewTextBoxColumn37.Name = "chestado";
-            gridViewTextBoxColumn37.Width = 92;
+            gridViewTextBoxColumn37.Width = 121;
             gridViewTextBoxColumn38.EnableExpressionEditor = false;
             gridViewTextBoxColumn38.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.Standard;
             gridViewTextBoxColumn38.FieldName = "valor1";
@@ -389,7 +391,6 @@
             gridViewTextBoxColumn36,
             gridViewTextBoxColumn37,
             gridViewTextBoxColumn38});
-            this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.Padding = new System.Windows.Forms.Padding(1);
@@ -523,19 +524,19 @@
             this.commandBarStripElement3.DisplayName = "commandBarStripElement3";
             this.commandBarStripElement3.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.btnNuevo,
+            this.btnFiltro,
             this.btnActualizarLista,
             this.btnAtras,
             this.btnEditar,
             this.btnAnular,
             this.btnEliminarRegistro,
+            this.btnResaltador,
             this.btnHistorial,
             this.btnExportToExcel,
-            this.btnCerrar,
             this.btnVistaPrevia01,
             this.btnImprimir,
             this.btnElegirColumnas,
-            this.commandBarButton4,
-            this.commandBarButton5});
+            this.btnCerrar});
             this.commandBarStripElement3.Name = "commandBarStripElement3";
             this.commandBarStripElement3.Text = "";
             this.commandBarStripElement3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -703,27 +704,30 @@
             this.btnElegirColumnas.Text = "";
             this.btnElegirColumnas.Click += new System.EventHandler(this.btnElegirColumnas_Click);
             // 
-            // commandBarButton4
+            // btnFiltro
             // 
-            this.commandBarButton4.AccessibleDescription = "commandBarButton4";
-            this.commandBarButton4.AccessibleName = "commandBarButton4";
-            this.commandBarButton4.AutoSize = false;
-            this.commandBarButton4.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
-            this.commandBarButton4.DisplayName = "commandBarButton4";
-            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
-            this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "commandBarButton4";
+            this.btnFiltro.AccessibleDescription = "Filtro";
+            this.btnFiltro.AccessibleName = "Filtro";
+            this.btnFiltro.AutoSize = false;
+            this.btnFiltro.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnFiltro.DisplayName = "Filtro";
+            this.btnFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltro.Image")));
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Tag = "Filtro";
+            this.btnFiltro.Text = "";
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
-            // commandBarButton5
+            // btnResaltador
             // 
-            this.commandBarButton5.AccessibleDescription = "commandBarButton5";
-            this.commandBarButton5.AccessibleName = "commandBarButton5";
-            this.commandBarButton5.AutoSize = false;
-            this.commandBarButton5.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
-            this.commandBarButton5.DisplayName = "commandBarButton5";
-            this.commandBarButton5.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton5.Image")));
-            this.commandBarButton5.Name = "commandBarButton5";
-            this.commandBarButton5.Text = "commandBarButton5";
+            this.btnResaltador.AccessibleDescription = "Resaltador";
+            this.btnResaltador.AccessibleName = "Resaltador";
+            this.btnResaltador.AutoSize = false;
+            this.btnResaltador.Bounds = new System.Drawing.Rectangle(0, 0, 65, 35);
+            this.btnResaltador.DisplayName = "Resaltador";
+            this.btnResaltador.Image = ((System.Drawing.Image)(resources.GetObject("btnResaltador.Image")));
+            this.btnResaltador.Name = "btnResaltador";
+            this.btnResaltador.Tag = "Resaltador";
+            this.btnResaltador.Text = "";
             // 
             // bgwHilo
             // 
@@ -855,8 +859,8 @@
         private Telerik.WinControls.UI.CommandBarButton btnVistaPrevia01;
         private Telerik.WinControls.UI.CommandBarButton btnImprimir;
         private Telerik.WinControls.UI.CommandBarButton btnElegirColumnas;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton5;
+        private Telerik.WinControls.UI.CommandBarButton btnFiltro;
+        private Telerik.WinControls.UI.CommandBarButton btnResaltador;
         private System.Windows.Forms.ToolStripMenuItem btnDetalleDispositivosPorColaborador;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;

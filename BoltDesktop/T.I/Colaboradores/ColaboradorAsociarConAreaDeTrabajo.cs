@@ -33,12 +33,16 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private SAS_ColaboradorAreaTrabajo oColaboradorPorAreaDetrabajo;
         private SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult oColaboradorPorAreaDetrabajoResult;
 
-        private string _idCodigoGeneral;
+        private string PersonalID;
+        private List<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult> ListaHistorico;
+        private string PlanillaID;
+        private string ItemFechaPlanillaID;
 
         public ColaboradorAsociarConAreaDeTrabajo()
         {
             InitializeComponent();
             Inicio();
+            PersonalID = "405993";
             cadenaDeConexion = "SAS";
             usuarioAutenticado = new SAS_USUARIOS();
             usuarioAutenticado.IdUsuario = "EAURAZO";
@@ -53,7 +57,10 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
 
             odetalleSelecionadoByFormularioEmail = new SAS_CuentasCorreoListado();
-            item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
+            odetalleSelecionadoByFormularioEmail.idcodigoGeneral = PersonalID;
+            odetalleSelecionadoByFormularioEmail.nombresCompleto = string.Empty;
+
+           item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = odetalleSelecionadoByFormularioEmail.idcodigoGeneral != null ? odetalleSelecionadoByFormularioEmail.idcodigoGeneral.Trim() : string.Empty;
             item.nombresCompletos = odetalleSelecionadoByFormularioEmail.nombresCompleto != null ? odetalleSelecionadoByFormularioEmail.nombresCompleto.Trim() : string.Empty;
             gbPersonalArea.Enabled = true;
@@ -154,7 +161,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             this.usuarioAutenticado = _user2;
             this.EmpresaID = _companyId;
             this.privilegioDeUsuario = privilege;
-            _idCodigoGeneral = idCodigoGeneral;
+            PersonalID = idCodigoGeneral;
             item = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             item.idcodigoGeneral = idCodigoGeneral;
             item.nombresCompletos = idCodigoGeneral;
@@ -211,6 +218,11 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 Globales.Empresa = "SOCIEDAD AGRICOLA SATURNO";
                 Globales.UsuarioSistema = "EAURAZO";
                 Globales.NombreUsuarioSistema = "ERICK AURAZO";
+
+               
+
+
+
             }
             catch (Exception Ex)
             {
@@ -223,6 +235,12 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
         private void ColaboradorAsociarConAreaDeTrabajo_Load(object sender, EventArgs e)
         {
+            if (this.txtPersonal.Text.Trim() != string.Empty && this.txtPersonalID.Text.Trim() != string.Empty)
+            {
+                PersonalID = txtPersonalID.Text.Trim();
+                btnBuscarPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoPlanillasPorTrabajadores where PersonalID = '", PersonalID,"'");
+            }
+            
 
         }
 
@@ -271,31 +289,76 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         private string ValidarRegistroParaGrabar()
         {
             string mensaje = "OK";
+            string ASCD = this.txtValidar.Text.ToString().Trim();
 
+
+            /*Validar caja de texto de personal*/
             if (this.txtPersonalID.Text != String.Empty || (this.txtPersonal.Text != String.Empty))
             {
                 mensaje += "\n Debe Ingresar código de Empleado con sus nombres correctos";
             }
 
-
+            /*Validar caja de texto de Planilla*/
             if (this.txtPlanillaID.Text != String.Empty || (this.txtPlanilla.Text != String.Empty))
             {
                 mensaje += "\n Debe Ingresar ingresar una planilla para el colaborador";
             }
 
-
-
-
-            if (this.txtPlanilaDesde.Text != String.Empty /*|| (this.txtPlanilaHasta.Text != String.Empty)*/)
+            if (this.txtPlanilaDesde.Text.ToString().Trim() != ASCD)
             {
-                mensaje += "\n la planilla seleccionada debe tener una fecha de inicio válida";
+                if (this.txtPlanilaDesde.Text != null)
+                {
+                    if (this.txtPlanilaDesde.Text.ToString().Trim() != string.Empty)
+                    {
+                        mensaje += "\n Las fechas de activación de está planilla deben estar en un rango válido";
+                    }
+                }
             }
 
 
+            /*Validar caja de texto de ItemPlanilla*/
             if (this.txtItemPlanillaID.Text != String.Empty || (this.txtItemPlanilla.Text != String.Empty))
             {
                 mensaje += "\n la planilla seleccionada debe tener un item de planilla válido";
             }
+
+            if (this.txtItemPlanillaDesde.Text.ToString().Trim() != ASCD)
+            {
+                if (this.txtItemPlanillaDesde.Text != null)
+                {
+                    if (this.txtItemPlanillaDesde.Text.ToString().Trim() != string.Empty)
+                    {
+                        mensaje += "\n Las fechas de activación del item planilla deben estar en un rango válido";
+                    }
+                }
+            }
+
+
+
+
+            /*Validar caja de texto de Gerencia*/
+            if (this.txtGerenciaCodigo.Text != String.Empty || (this.txtGerencia.Text != String.Empty))
+            {
+                mensaje += "\n Debe ingresar una gerencia válida";
+            }
+
+            /*Validar caja de texto de Area*/
+            if (this.txtAreaCodigo.Text != String.Empty || (this.txtArea.Text != String.Empty))
+            {
+                mensaje += "\n Debe ingresar un área de trabajo válida";
+            }
+
+            /*Validar caja de texto de Cargo*/
+            if (this.txtCargoID.Text != String.Empty || (this.txtCargo.Text != String.Empty))
+            {
+                mensaje += "\n Debe ingresar un cargo válido";
+            }
+
+
+            
+
+
+
 
 
             if (this.txtItemPlanillaDesde.Text != String.Empty /*|| (this.txtItemPlanillaHasta.Text != String.Empty)*/)
@@ -303,23 +366,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 mensaje += "\n la planilla seleccionada debe tener una fecha de inicio válida";
             }
 
-            if (this.txtGerenciaCodigo.Text != String.Empty || (this.txtGerencia.Text != String.Empty))
-            {
-                mensaje += "\n Debe ingresar una gerencia válida";
-            }
+            
 
 
-            if (this.txtAreaCodigo.Text != String.Empty || (this.txtArea.Text != String.Empty))
-            {
-                mensaje += "\n Debe ingresar un área de trabajo válida";
-            }
+            
 
 
 
-            if (this.txtCargo.Text != String.Empty || (this.txtCargo.Text != String.Empty))
-            {
-                mensaje += "\n Debe ingresar un cargo válido";
-            }
+            
 
 
             if (this.txtActivoDesde.Text != String.Empty || (this.txtActivoHasta.Text != String.Empty))
@@ -329,7 +383,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
 
 
 
-            string ASCD = this.txtValidar.Text.ToString().Trim();
+            
 
             if (this.txtActivoDesde.Text.ToString().Trim() != ASCD)
             {
@@ -354,6 +408,9 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
             oItem = new SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalResult();
             modelo = new SAS_DispositivoUsuariosController();
             oItem = modelo.ObtenerDatosDeAsignacionPorAreayGerenciaDeColaboradorPorCodigoEmpleado("SAS", item);
+
+            ListaHistorico = new List<SAS_EquipamientoObtenerDatosGerenciaAreaByCodigoPersonalHistoricoResult>();
+            ListaHistorico = modelo.ObtenerListadoHistoricoEnPlanillas(cadenaDeConexion, PersonalID);
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -381,8 +438,25 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                     txtAreaCodigo.Text = oItem.idArea != null ? oItem.idArea.Trim() : string.Empty;
                     txtArea.Text = oItem.area != null ? oItem.area.Trim() : string.Empty;
 
+                    this.txtPlanilaDesde.Text = oItem.PlanillaInicio != null ? oItem.PlanillaInicio.Value.ToShortDateString() : string.Empty;
+                    this.txtPlanilaHasta.Text = oItem.PlanillaFin != null ? oItem.PlanillaFin.Value.ToShortDateString() : string.Empty;
 
-                    if (oItem.EsGerente != null)
+                    this.txtPlanillaID.Text = oItem.PlanillaID != null ? oItem.PlanillaID.Trim() : string.Empty;
+                    this.txtPlanilla.Text = oItem.Planilla != null ? oItem.Planilla.Trim() : string.Empty;
+
+                    this.txtItemPlanillaDesde.Text = oItem.ItemPlanillaInicio != null ? oItem.ItemPlanillaInicio.Value.ToShortDateString() : string.Empty;
+                    this.txtItemPlanillaHasta.Text = oItem.ItemPlanillaFin != null ? oItem.ItemPlanillaFin.Value.ToShortDateString() : string.Empty;
+
+                    txtItemPlanillaID.Text = oItem.ItemPlanilla != null ? oItem.ItemPlanilla.Trim() : string.Empty;
+                    txtItemPlanilla.Text = oItem.ItemPlanilla != null ? "Item: " + oItem.ItemPlanilla.Trim() : string.Empty;
+
+                    this.txtCargoID.Text = oItem.CargoID != null ? oItem.CargoID.Trim() : string.Empty;
+                    this.txtCargo.Text = oItem.Cargo != null ? oItem.Cargo.Trim() : string.Empty;
+
+                    this.txtActivoDesde.Text = oItem.Desde != null ? oItem.Desde.Value.ToShortDateString() : string.Empty;
+                    this.txtActivoHasta.Text = oItem.hasta != null ? oItem.hasta.Value.ToShortDateString() : string.Empty;
+
+                    if (oItem.EsGerente != (decimal?)null)
                     {
                         if (oItem.EsGerente == 1)
                         {
@@ -390,7 +464,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                         }
 
                     }
-                    if (oItem.EsJefe != null)
+                    if (oItem.EsJefe != (decimal?)null)
                     {
                         if (oItem.EsJefe == 1)
                         {
@@ -402,7 +476,14 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 }
             }
 
+            if (this.txtPersonal.Text.Trim() != string.Empty && this.txtPersonalID.Text.Trim() != string.Empty)
+            {
+                PersonalID = txtPersonalID.Text.Trim();
+                btnBuscarPlanilla.P_TablaConsulta = string.Concat("SAS_ListadoPlanillasPorTrabajadores where PersonalID = '", PersonalID, "'");
+            }
+
             gbPersonalArea.Enabled = true;
+            txtActivoHasta.Focus();
 
         }
 
@@ -460,6 +541,78 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
         }
 
         private void txtItemPlanilla_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLlenarFechas_Click(object sender, EventArgs e)
+        {
+            if (this.txtPlanillaID.Text != string.Empty && this.txtPlanilla.Text.Trim() != string.Empty)
+            {
+                PlanillaID = this.txtPlanillaID.Text.Trim();
+                LlenarCampoDeFechas();
+            }
+
+            if (this.txtItemPlanillaID.Text != string.Empty && this.txtItemPlanilla.Text.Trim() != string.Empty)
+            {
+                ItemFechaPlanillaID = this.txtPlanillaID.Text.Trim();
+                LlenarCampoDeItemPlanilla();
+            }
+
+        }
+
+        private void LlenarCampoDeFechas()
+        {
+            string FechaDePlanillaDesdePlanilla = modelo.ObtenerFechaDePlanillaDesdePlanilla(cadenaDeConexion, PersonalID, PlanillaID);
+            txtPlanilaDesde.Text = FechaDePlanillaDesdePlanilla;
+        }
+
+        private void LlenarCampoDeItemPlanilla()
+        {
+
+        }
+
+        private void txtGerenciaCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAreaCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPersonalID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPlanillaID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtItemPlanillaID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPersonal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPlanilla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtItemPlanilla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarPlanilla_Click(object sender, EventArgs e)
         {
 
         }

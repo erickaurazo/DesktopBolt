@@ -35,6 +35,8 @@ namespace ComparativoHorasVisualSATNISIRA
         private int codigoDispotivo, numeroDeDispositivosPorColaborador = 0;
         private string correoCorporativo;
         private string lineaCorporativa;
+        private int ClickFiltro;
+        private string PersonalID;
 
         public ColaboradoresListado()
         {
@@ -233,6 +235,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
+            PersonalID = string.Empty;
             codigoDispotivo = 0;
             btnDetalleDispositivosPorColaborador.Enabled = false;
             btnLineaCorporativa.Enabled = false;
@@ -331,7 +334,8 @@ namespace ComparativoHorasVisualSATNISIRA
             {
                 if (odetalleSelecionado.idcodigogeneral != string.Empty)
                 {
-                    ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(conection, user2, companyId, privilege, odetalleSelecionado);
+                    PersonalID = odetalleSelecionado.idcodigogeneral.Trim();
+                    ColaboradorAsociarConAreaDeTrabajo ofrm = new ColaboradorAsociarConAreaDeTrabajo(conection, user2, companyId, privilege, PersonalID);
                     ofrm.Show();
                 }
             }
@@ -432,7 +436,7 @@ namespace ComparativoHorasVisualSATNISIRA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnIrACatalogo_Click(object sender, EventArgs e)
@@ -508,6 +512,31 @@ namespace ComparativoHorasVisualSATNISIRA
 
                     }
                 }
+            }
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            ClickFiltro += 1;
+            ActivateFilter();
+        }
+
+        private void ActivateFilter()
+        {
+
+            if ((ClickFiltro % 2) == 0)
+            {
+                #region Par() | Activar Filtro()
+                dgvListado.EnableFiltering = !true;
+                dgvListado.ShowHeaderCellButtons = false;
+                #endregion
+            }
+            else
+            {
+                #region Par() | DesActivar Filtro()
+                dgvListado.EnableFiltering = true;
+                dgvListado.ShowHeaderCellButtons = true;
+                #endregion
             }
         }
 
